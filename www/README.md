@@ -1,0 +1,334 @@
+# Arizona Institute for Autism Astro Site
+
+Static Astro + TypeScript migration of the public Arizona Institute for Autism
+website. The read-only source mirror is located at
+`../www.azinstitute4autism.com`.
+
+## Quick Start
+
+Run commands from this directory:
+
+```sh
+cd www
+npm install
+npm run dev
+```
+
+Astro prints the local development URL, normally:
+
+```txt
+http://localhost:4321
+```
+
+The development server watches source files and refreshes the browser after
+edits. Stop it with `Ctrl+C`.
+
+Do **not** run `npm run extract` during normal editing. Extraction regenerates
+migrated Markdown from the raw mirror and can overwrite editorial changes.
+
+## Environment Setup
+
+Requirements:
+
+- Node.js 20 or newer
+- npm
+
+This repository also has a Nix development shell at the repository root:
+
+```sh
+cd ..
+nix --extra-experimental-features "nix-command flakes" develop
+cd www
+npm install
+```
+
+Copy the example environment file when testing the like/view counter:
+
+```sh
+cp .env.example .env
+```
+
+The default value is:
+
+```txt
+PUBLIC_AIA_API_BASE=https://api.azinstitute4autism.com
+```
+
+The site still renders when that API is unavailable.
+
+## View And Build
+
+### Development Server
+
+Use this while editing:
+
+```sh
+npm run dev
+```
+
+Useful development URLs include:
+
+```txt
+/
+/aba-therapy
+/autism-evaluations
+/learner-social-club
+/client-consultation
+/library
+/es
+/es/library
+/ar
+/ar/library
+```
+
+### Production Build
+
+Generate the static production site:
+
+```sh
+npm run build
+```
+
+Build output is written to:
+
+```txt
+dist/
+```
+
+### Preview Production Output
+
+After a successful build:
+
+```sh
+npm run preview
+```
+
+Astro prints the preview URL, normally `http://localhost:4321`.
+
+### Validate Before Committing
+
+```sh
+npm run build
+npm run audit:links
+```
+
+The link audit reads `dist/` and writes:
+
+```txt
+reports/broken-links.md
+```
+
+## Editing Content
+
+Normal content editing happens in Markdown:
+
+```txt
+src/content/pages/en
+src/content/pages/es
+src/content/pages/ar
+src/content/blog/en
+src/content/blog/es
+src/content/blog/ar
+src/content/authors/en
+src/content/authors/es
+src/content/authors/ar
+```
+
+Page and post frontmatter is validated by `src/content.config.ts`.
+
+Example:
+
+```md
+---
+title: "Example Article"
+description: "Short search and social description."
+slug: "example-article"
+canonical: "https://www.azinstitute4autism.com/library/example-article"
+lang: "en"
+translationKey: "example-article"
+featuredImage: "/assets/images/example.webp"
+alt: "Descriptive image alt text"
+date: "2026-06-07"
+author: "rula-diab"
+category: "Library"
+tags:
+  - ABA Therapy
+draft: false
+---
+
+Article content goes here.
+```
+
+Set `draft: true` while preparing unpublished content.
+
+### Front Matter CMS
+
+The project includes `frontmatter.json` for the Front Matter CMS VS Code
+extension. Open the `www` folder as the editor workspace so its content folders
+and media paths resolve correctly.
+
+### Images And Downloads
+
+Store content-referenced assets in:
+
+```txt
+public/assets/images
+public/assets/downloads
+public/assets/media
+```
+
+Reference public assets from Markdown using root-relative paths:
+
+```md
+![Descriptive alt text](/assets/images/example.webp)
+```
+
+Use `src/assets/images` for images imported directly by Astro components and
+processed by Astro.
+
+### Components And Styling
+
+Reusable page sections are in:
+
+```txt
+src/components
+src/layouts
+```
+
+Global styles and design tokens are in:
+
+```txt
+src/styles/variables.css
+src/styles/global.css
+src/styles/rtl.css
+```
+
+Navigation, services, redirects, and site details are in:
+
+```txt
+src/data
+```
+
+## Adding Content
+
+### Add An English Blog Post
+
+1. Create `src/content/blog/en/post-slug.md`.
+2. Add valid frontmatter and article Markdown.
+3. Place referenced images in `public/assets/images`.
+4. Run `npm run dev` and view `/library/post-slug`.
+5. Run the production validation commands before committing.
+
+### Add A Translation
+
+Use the same `translationKey` across translated entries:
+
+```txt
+src/content/blog/en/post-slug.md
+src/content/blog/es/post-slug.md
+src/content/blog/ar/post-slug.md
+```
+
+The URLs become:
+
+```txt
+/library/post-slug
+/es/library/post-slug
+/ar/library/post-slug
+```
+
+Arabic routes automatically render with `lang="ar"` and `dir="rtl"`.
+
+Do not publish unreviewed machine translations. Clearly mark placeholders.
+
+## Mirror Extraction Workflow
+
+The mirror is read-only source material. Never modify:
+
+```txt
+../www.azinstitute4autism.com
+```
+
+Only rerun extraction when intentionally refreshing migrated content from the
+mirror. Commit or back up editorial changes first.
+
+Dependency-free extraction:
+
+```sh
+npm run extract
+```
+
+Full Cheerio/Turndown extraction:
+
+```sh
+npm run extract:full
+```
+
+After extraction:
+
+```sh
+npm run generate:sitemap
+npm run generate:redirects
+npm run build
+npm run audit:links
+```
+
+Extraction regenerates content files, copied assets, and inventories. Review
+the complete Git diff before accepting it.
+
+## Reports And Utilities
+
+Migration reports are stored in `reports/`.
+
+Useful commands:
+
+```sh
+npm run crawl:live
+npm run generate:sitemap
+npm run generate:redirects
+npm run audit:links
+```
+
+The live crawl is optional and may fail in restricted network environments.
+
+## Forms
+
+Forms are intentionally static and do not submit anywhere. Before production:
+
+1. Select a form backend.
+2. Connect the forms.
+3. Add spam protection.
+4. Test validation, confirmation, and failure states.
+
+## Troubleshooting
+
+### `astro: command not found`
+
+Dependencies are not installed:
+
+```sh
+npm install
+```
+
+### npm TLS or certificate errors
+
+Do not disable npm certificate verification. Run `npm install` from a normal
+host terminal or trusted development environment with working CA certificates.
+
+### Link audit says build output is unavailable
+
+Build first:
+
+```sh
+npm run build
+npm run audit:links
+```
+
+### A content page is missing
+
+Check:
+
+- its Markdown file is in the correct language/content folder
+- `draft` is `false`
+- `slug` is unique within that language and content type
+- frontmatter satisfies `src/content.config.ts`

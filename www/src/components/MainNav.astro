@@ -1,0 +1,12 @@
+---
+import en from '../data/navigation.en.json';
+import es from '../data/navigation.es.json';
+import ar from '../data/navigation.ar.json';
+const { lang = 'en' } = Astro.props;
+const nav = { en, es, ar }[lang as 'en' | 'es' | 'ar'] || en;
+---
+<nav class="main-nav" aria-label="Main navigation">
+  <ul>
+    {nav.primary.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+  </ul>
+</nav>

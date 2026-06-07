@@ -1,0 +1,6 @@
+---
+const logos = ['aetna.png', 'bluecrossblueshield-logo-1.webp', 'logo-ahcccs.webp', 'logo-optum.webp', 'logo-tricare-1.webp', 'united-healthcare-logo-1.webp'];
+---
+<section class="insurance-strip" aria-labelledby="insurance-title">
+  <div class="container"><h2 id="insurance-title">Insurance partners</h2><div class="logo-row">{logos.map((logo) => <img src={`/assets/images/${logo}`} alt="" loading="lazy" />)}</div></div>
+</section>

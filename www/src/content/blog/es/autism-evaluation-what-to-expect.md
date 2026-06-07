@@ -1,0 +1,201 @@
+---
+title: "Qué esperar en la primera evaluación de autismo de su hijo"
+description: "Aprenda qué sucede antes, durante y después de una evaluación de autismo en un niño. Vea a quién conocerá, cuánto tiempo lleva y cómo los resultados guían los siguientes pasos."
+slug: "autism-evaluation-what-to-expect"
+canonical: "https://www.azinstitute4autism.com/es/library/autism-evaluation-what-to-expect"
+lang: "es"
+translationKey: "autism-evaluation-what-to-expect"
+featuredImage: "/assets/images/autism-evaluation-expectations_hero.png"
+date: "2026-04-09"
+author: "rula-diab"
+category: "Library"
+tags: []
+draft: false
+---
+# Qué esperar en la primera evaluación de autismo de su hijo
+
+![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
+
+ Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
+
+ 09 abril, 2026
+
+![Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.](/assets/images/autism-evaluation-expectations_hero.png)
+
+Cuando una derivación para una evaluación de autismo llega a su bandeja de entrada, puede sentirse abrumador. Puede sentirse aliviado de estar tomando acción y, al mismo tiempo, ansioso por cómo será la cita. Ambas reacciones son normales.
+
+Una evaluación de autismo infantil no es una prueba que su hijo apruebe o repruebe. Es una forma estructurada en la que profesionales capacitados comprenden la comunicación, la conexión social, el juego y las necesidades de apoyo de su hijo para que usted pueda avanzar con un plan.
+
+Una evaluación de autismo infantil generalmente incluye cuestionarios para padres, una entrevista con el cuidador y observación basada en el juego. Muchos profesionales también utilizan herramientas estandarizadas para comprender la comunicación, la interacción social, los patrones de conducta y las necesidades sensoriales. El objetivo no es aprobar o reprobar, sino obtener recomendaciones claras para apoyos en el hogar, la escuela y la terapia.
+
+## Qué sucede antes, durante y después de una evaluación de autismo
+
+La mayoría de las evaluaciones siguen el mismo ritmo básico, aunque las herramientas exactas y el cronograma pueden variar según la clínica.
+
+- Antes de la visita: usted completa formularios y reúne documentos.
+
+- Durante la visita: el profesional lo entrevista y observa a su hijo, a menudo mediante actividades basadas en el juego.
+
+- Después de la visita: usted recibe retroalimentación, un informe escrito y recomendaciones para los siguientes pasos.
+
+Tranquilidad rápida: Los profesionales buscan patrones a lo largo del tiempo y en distintos entornos. Un día tímido, un día cansado o una sala de espera ruidosa no “arruinan” una evaluación.
+
+## Detección vs. evaluación vs. diagnóstico
+
+Los padres suelen escuchar estas palabras juntas. Las diferencias son importantes porque explican por qué su pediatra puede comenzar con una prueba de detección y luego derivarlo para una evaluación completa.
+
+ Término 
+ Qué significa 
+ Ejemplos comunes 
+
+ Detección 
+ Una revisión breve que indica si se recomienda una evaluación más profunda 
+ Cuestionarios para padres utilizados en visitas de rutina, como el M-CHAT-R/F (consulte la guía del CDC ) 
+
+ Evaluación 
+ Una valoración integral que reúne suficiente información para responder preguntas clave 
+ Entrevista, observación y, en ocasiones, herramientas estandarizadas 
+
+ Diagnóstico 
+ Una determinación clínica formal basada en criterios diagnósticos 
+ Un informe diagnóstico escrito que respalda el acceso a servicios 
+
+Si su hijo recientemente tuvo una prueba de detección, recuerde que un resultado positivo es una razón para aprender más, no una conclusión.
+
+## Documentación y qué llevar
+
+Los cuestionarios pueden sentirse largos, especialmente si ya está cansado. Son extensos porque ayudan al evaluador a comprender cómo es su hijo en un día promedio, no solo en un entorno clínico.
+
+Lleve lo que tenga y no se preocupe por ser “perfecto”. Los elementos útiles suelen incluir:
+
+- evaluaciones previas (lenguaje, terapia ocupacional, evaluaciones escolares)
+
+- notas de la escuela o preescolar, incluyendo un IEP o plan 504 si tiene uno
+
+- historial médico relevante (sueño, preocupaciones auditivas, problemas gastrointestinales, convulsiones, enfermedades importantes)
+
+- objetos de comodidad para su hijo (juguete favorito, mordedor sensorial, audífonos, merienda)
+
+- sus 2–3 preguntas principales, escritas
+
+Después de reunir los materiales, elija un objetivo sencillo: escriba aquello sobre lo que más desea claridad. Eso ayuda a que la conversación de retroalimentación se mantenga enfocada en los siguientes pasos para su familia.
+
+## A quién podría conocer
+
+Un diagnóstico formal es realizado por un profesional calificado y con licencia. Muchas evaluaciones son dirigidas por un psicólogo o un pediatra del desarrollo y, en ocasiones, pueden involucrar a un equipo más amplio según las necesidades de su hijo.
+
+También puede interactuar con especialistas que ayudan a aclarar preguntas sobre lenguaje, aspectos sensoriales, habilidades motoras, aprendizaje o conducta, como patólogos del habla y lenguaje, terapeutas ocupacionales o profesionales del comportamiento. Si no está seguro de por qué participa un determinado profesional, está bien preguntar qué pregunta específica están tratando de responder.
+
+## Qué hará su hijo durante la evaluación
+
+Para los niños pequeños, gran parte de la cita se parece al juego. El profesional observa cómo su hijo se comunica, inicia, responde y se autorregula tanto en momentos estructurados como no estructurados.
+
+Es posible que inviten a su hijo a:
+
+- jugar con juguetes y participar en juego funcional o imaginativo
+
+- probar juegos sociales sencillos (turnarse, imitación, atención compartida)
+
+- hacer transiciones entre actividades
+
+- mostrar cómo pide ayuda o comparte intereses
+
+- participar en tareas apropiadas para su edad
+
+Algunos profesionales utilizan herramientas estandarizadas que incluyen indicaciones estructuradas. Estas herramientas no son “exámenes” en el sentido escolar. Ayudan a organizar las observaciones para que el profesional pueda explicar los resultados con claridad. Si lo desea, puede preguntar qué herramientas se utilizan y qué evalúan.
+
+Si su hijo utiliza CAA , gestos o apoyos visuales: lleve aquello que use con mayor frecuencia.
+
+## Cuánto tiempo toma
+
+Algunas evaluaciones se realizan en una sola visita más larga, mientras que otras se dividen en varias citas. La duración está influenciada por la edad de su hijo, las preguntas que se están respondiendo y si se necesita realizar pruebas adicionales.
+
+Haga a la clínica dos preguntas prácticas desde el principio: cuántas citas deben esperarse y cuándo debería recibir el informe escrito.
+
+## Cómo se explican los resultados y qué sucede después
+
+Una evaluación sólida termina con claridad. Usted debe comprender lo que el profesional observó, qué significan esas observaciones y qué hacer a continuación.
+
+Por lo general, tendrá una conversación de retroalimentación y recibirá un informe escrito que podrá compartir con su pediatra, el equipo escolar y los proveedores de terapia. Las recomendaciones pueden incluir apoyos como terapia del habla, terapia ocupacional, evaluaciones escolares, intervención temprana o terapia ABA, según el perfil y las necesidades de su hijo.
+
+Si se recomienda ABA, puede resultarle útil leer cómo AIA aborda la planificación individualizada en "[Planes Individualizados de Terapia ABA](../../library/individualized-aba-therapy)" y cómo entendemos la colaboración en "[Un Modelo Integrado de ABA](../../library/integrated-aba-model-announcement)".
+
+## Cómo preparar a su hijo para un día más tranquilo
+
+La preparación no tiene que ser complicada. Los apoyos sencillos suelen ayudar más que los grandes discursos.
+
+Considere:
+
+- usar una historia social breve o una declaración de "primero, después" (Primero entramos, después jugamos)
+
+- incluir tiempo adicional para las transiciones
+
+- llevar apoyos sensoriales y meriendas preferidas
+
+- preguntar por una opción de sala de espera más tranquila si su hijo es sensible al ruido
+
+Si está buscando una herramienta de detección a la que su pediatra pueda hacer referencia, el sitio oficial de M-CHAT-R/F está aquí: [M-CHAT-R/F](https://www.mchatscreen.com/). Una prueba de detección no es un diagnóstico, pero puede ayudar a orientar los siguientes pasos.
+
+## Si está en Arizona, AIA puede ayudar con los siguientes pasos
+
+Si aún está tratando de decidir por dónde comenzar, nuestra guía enfocada en Arizona, "[Evaluación y Diagnóstico de Autismo en Arizona: Una Guía Paso a Paso para Padres](../../library/autism-evaluation-diagnosis-arizona-parent-guide)," explica quién puede diagnosticar, qué esperar y cómo dar los primeros pasos con menos abrumación.
+
+Después de una evaluación, las familias a menudo desean ayuda para convertir las recomendaciones en un plan real. Si está explorando servicios de ABA, puede revisar los pasos de admisión de AIA en "[Guía Paso a Paso para Comenzar Terapia ABA](../../aba-therapy-intake-process)." Si prefiere hablar primero, puede [programar una consulta gratuita](../../client-consultation) con nuestro equipo.
+
+ Preguntas Frecuentes 
+
+## Ayuda con las expectativas de la primera evaluación de autismo
+
+### ¿En qué se diferencia un cribado de autismo de una evaluación de autismo?
+
+Una evaluación es una revisión breve que identifica posibles rasgos de autismo e indica si se recomienda una evaluación completa. Una evaluación es un proceso integral que incluye entrevistas y observación, y puede incluir herramientas estandarizadas, para responder si se cumplen los criterios de autismo y qué apoyos se recomiendan.
+
+### ¿Quién puede diagnosticar el autismo en Arizona?
+
+El autismo suele ser diagnosticado por psicólogos licenciados con formación en evaluación del autismo, pediatras del desarrollo y, en algunos casos, neurólogos o psiquiatras infantiles. Su pediatra puede ayudar con las derivaciones.
+
+### ¿Qué debo llevar a la cita de evaluación?
+
+Traiga evaluaciones previas, notas escolares (IEP o 504 si corresponde), una lista de preguntas y artículos de consuelo para su hijo. Si ayuda, traiga un breve video de juego o rutinas típicas en casa.
+
+### ¿Cuánto tiempo se tarda en obtener resultados?
+
+Algunas clínicas comparten impresiones el mismo día, pero muchas programan la retroalimentación después de que el médico revisa toda la información. Pregunta de antemano cuándo estará listo el informe escrito.
+
+### ¿Se le pedirá a mi hijo que hable o siga instrucciones?
+
+El clínico adapta las expectativas al nivel de desarrollo de su hijo. Muchas actividades se basan en el juego y se centran en la comunicación en cualquier forma que utilice su hijo.
+
+### ¿Se puede realizar una evaluación por telemedicina?
+
+Las entrevistas y cuestionarios para cuidadores pueden realizarse de forma remota. La observación directa suele ser mejor en persona para los niños más pequeños, pero las prácticas varían. Pregunta qué se recomienda para tu hijo.
+
+### ¿Qué pasa si mi hijo no cumple los criterios para el autismo?
+
+Aún así deberías recibir una explicación clara y recomendaciones. A veces, la evaluación señala otra necesidad, como un retraso en el lenguaje, ansiedad, TDAH o un perfil de desarrollo diferente.
+
+### ¿Necesitamos un diagnóstico para empezar la terapia ABA?
+
+El seguro comúnmente requiere un diagnóstico formal y documentación para autorizar los servicios de ABA. AIA puede ayudar a las familias de Arizona a comprender los próximos pasos para la admisión y la cobertura.
+
+ Previous Post 
+
+###### [Guía de Autismo para Padres y Cuidadores](parents-guide-to-autism-and-aba)
+
+ Next Post 
+
+###### [Mejorando la generalización para un impacto más amplio en el autismo](enhancing-generalization-skills)
+
+### Similar Blog Posts
+
+![Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona](/assets/images/autism_evaluation_arizona_hero.jpg)
+
+#### [Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres](autism-evaluation-diagnosis-arizona-parent-guide)
+
+![Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal](/assets/images/child-shopping-cart-tired-cranky.jpg)
+
+#### [Por qué la regulación emocional debería ser el corazón de cada programa de ABA](emotional-regulation-aba)
+
+![Parent and autistic child using visual supports, structured play, and calm routines together](/assets/images/family-guide-to-autism-aba-at-home_hero.png)
+
+#### [Guía de Autismo para Padres y Cuidadores](parents-guide-to-autism-and-aba)

@@ -1,0 +1,29 @@
+---
+import site from '../data/site.json';
+import en from '../data/navigation.en.json';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="/assets/images/aia-logo.svg" alt="" width="180" height="88" />
+      <p>Behavioral health and special education services for Arizona families.</p>
+    </div>
+    <div>
+      <h2>About</h2>
+      <ul>{en.footer.slice(0, 2).map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul>
+    </div>
+    <div>
+      <h2>Resources</h2>
+      <ul>{en.footer.slice(2).map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul>
+    </div>
+    <div>
+      <h2>Get In Touch</h2>
+      <p><a href={`tel:${site.phone.replace(/\D/g, '')}`}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a><br />{site.address}</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {year} Arizona Institute for Autism</p>
+    <p><a href="/privacy-policy">Privacy Policy</a></p>
+  </div>
+</footer>

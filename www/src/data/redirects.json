@@ -1,0 +1,20 @@
+[
+  {
+    "from": "/aba",
+    "to": "/aba-therapy",
+    "status": 301,
+    "reason": "Brief alias to preserved mirror URL"
+  },
+  {
+    "from": "/autismevaluations",
+    "to": "/autism-evaluations",
+    "status": 301,
+    "reason": "Brief alias to preserved mirror URL"
+  },
+  {
+    "from": "/learnersocialclub",
+    "to": "/learner-social-club",
+    "status": 301,
+    "reason": "Brief alias to preserved mirror URL"
+  }
+]

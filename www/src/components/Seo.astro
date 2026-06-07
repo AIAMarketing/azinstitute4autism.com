@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  lang?: string;
+  type?: 'website' | 'article';
+}
+const { title, description = '', canonical, image, lang = 'en', type = 'website' } = Astro.props;
+const absoluteImage = image ? new URL(image, Astro.site ?? Astro.url).href : undefined;
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+{canonical && <link rel="canonical" href={canonical} />}
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{canonical && <meta property="og:url" content={canonical} />}
+{absoluteImage && <meta property="og:image" content={absoluteImage} />}
+<meta name="twitter:card" content={absoluteImage ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta property="og:locale" content={lang} />

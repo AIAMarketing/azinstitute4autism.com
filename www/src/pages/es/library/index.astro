@@ -1,0 +1,7 @@
+---
+import { getCollection } from 'astro:content';
+import BlogIndexLayout from '../../../layouts/BlogIndexLayout.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+const posts = await getCollection('blog', ({ data }) => data.lang === 'es' && !data.draft);
+---
+<BlogIndexLayout title="Biblioteca" description="Recursos en español para familias y profesionales." lang="es"><div class="card-grid">{posts.map((post) => <BlogCard post={post} prefix="/es" />)}</div></BlogIndexLayout>

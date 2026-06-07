@@ -1,0 +1,172 @@
+---
+title: "Join Our Team | Autism Careers in AZ | Arizona Institute for Autism"
+description: "Join our caring team. Arizona Institute for Autism is hiring compassionate professionals dedicated to supporting individuals with autism. Apply online now!"
+slug: "careers"
+canonical: "https://www.azinstitute4autism.com/careers"
+lang: "en"
+translationKey: "careers"
+draft: false
+---
+# Employment Opportunities
+
+## Join the AIA Team
+
+Apply to join the Arizona Institute for Autism (AIA) team today. We are on a mission to improve special education and strengthen communities throughout Arizona.
+
+Our talented and passionate employees are a critical piece to the high-quality Autism services we provide along with our commitment to behavioral health, school solutions, and community outreach.
+
+ View Open Positions 
+
+### Our Benefits
+
+- Competitive Salary
+
+- Giveback Opportunity
+
+- Medical Insurance Plan
+
+- Dental Life Insurance Plan
+
+- Vision Insurance Plan
+
+- Life Insurance Plan
+
+- 401 K
+
+- Vacation Time
+
+- Sick Time
+
+![integrated aba model](/assets/images/integrated-aba-model_400x300.webp)
+
+![compassionate aia staff members](/assets/images/proud-aia-staff.webp)
+
+### Our Diverse Culture
+
+- Family-Oriented
+
+- Supportive
+
+- Educational
+
+- Motivating
+
+- Transparent
+
+- Inclusive
+
+![toddler-bcba-support](/assets/images/toddler-bcba-support.webp)
+
+![aba-learn-play-skills](/assets/images/aba-learn-play-skills.webp)
+
+### See Your Impact
+
+The work we do has a direct impact on our learners, families, our communities, our team members, and the healthcare industry.
+
+Every day you'll work with others driven to make a difference through transforming primary autism and pediatric care.
+
+![scottsdale location ribbon-cutting ceremony](/assets/images/scottsdale-ribbon-cutting.webp)
+
+### Expand & Explore Your Potential
+
+We're growing fast, and that makes us a great place for you to grow. Focus on learning, discovering, and trying new areas that interest you. Advance in your chosen field. We'll help you get there.
+
+### Scholarships Awarded in Partnership with GCU
+
+Through AIA's partnership with GCU , all AIA employees, along with their spouses and dependents, are eligible for a tuition discount when they enroll in one of GCU's programs.
+
+![logo - grand canyon university](/assets/images/logo-gcu.webp)
+
+### Build Your Resume with BCBA Internships & Practicum
+
+At the Arizona Institute for Autism, we afford students at Arizona State University to gain practicum experience. Due to our partnership with the Arizona State University Department of Psychology, future Board Certified Behavior Analysts will meet the training requirements of the ASU Department of Psychology MS ABA Program and the BACB .
+
+Students will be given the opportunity to obtain thorough behavior-analytic experience and training in a fashion that fulfills its service provision related functions as an organization, so long as those functions are analytic in nature and the goals of the practicum experience are in accordance with the Behavior Analyst Certification Board.
+
+![asu](/assets/images/asu.webp)
+
+## Choose Your Clinical Career Path
+
+Work someone you love. Begin your journey with Arizona's leading ABA Integrated Therapy provider today!
+
+- Behavioral Technician
+
+- Registered Behavioral Technician (RBT)
+
+- Senior Behavioral Technician, RBT
+
+- Clinical Case Supervisor
+
+- BCBA (Board Certified Behavioral Analyst)
+
+- Clinical Assistant Director, BCBA
+
+- Clinical Director, BCBA
+
+![the council of autism service providers member - logo](/assets/images/casp-member-logo.webp)
+
+![logo-BACB](/assets/images/logo-BACB.png)
+
+ View Open Positions 
+
+## Benefits of Working at Arizona Institute for Autism
+
+![competitive-compensation_blue](/assets/images/competitive-compensation_blue.svg)
+
+### Competitive Compensation
+
+![flexible-scheduling_blue](/assets/images/flexible-scheduling_blue.svg)
+
+### Flexible Scheduling
+
+![caseload-teamwork_blue](/assets/images/caseload-teamwork_blue.svg)
+
+### Caseload Teamwork
+
+![career-growth_blue](/assets/images/career-growth_blue.svg)
+
+### Career Growth
+
+![monthly-training_blue](/assets/images/monthly-training_blue.svg)
+
+### Monthly Training
+
+![diversity-inclusion-opportunity_blue](/assets/images/diversity-inclusion-opportunity_blue.svg)
+
+### Diversity & Inclusive Opportunities
+
+## Your Clinical Path to Success
+
+Behavioral Technician Registered Behavioral Technician Senior Behavioral Technician
+
+Clinical Case Supervisor BCBA Clinical Assistant Director Clinical Director
+
+### Find Your Path
+
+If you have an interest, we have a department for you to step into and teams to support you in your growth.
+
+![clinical-careers](/assets/images/clinical-careers.webp)
+
+#### Clinical
+
+Bring your specialized knowledge to the clinical team. You'll get the training tools you need to serve a community you'll love.
+
+![non-clinical-careers](/assets/images/non-clinical-careers.webp)
+
+#### Non-Clinical
+
+Build a career you love as a member of our non-clinical team. In this role, you'll service team members, families, and the community while ensuring quality service.
+
+![corporate-center-team-support](/assets/images/corporate-center-team-support.webp)
+
+#### Center Support
+
+Take a fresh and innovative approach as a member of the Corporate team. Take on new challenges and opportunities to help shape the future of Pediatric care.
+
+![internships-practicum](/assets/images/internships-practicum.webp)
+
+#### Internships
+
+Our specialty interns help shape the future of our center carefully curated clinical, operations, advocacy, people, and other departments.
+
+ View Open Positions

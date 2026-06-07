@@ -1,0 +1,26 @@
+---
+const { slug } = Astro.props;
+---
+<div class="like-view-counter" data-counter data-slug={slug}>
+  <button type="button" data-like aria-label="Like this article">♡ <span data-likes>—</span></button>
+  <span aria-label="Article views">Views: <span data-views>—</span></span>
+</div>
+<script>
+  const apiBase = import.meta.env.PUBLIC_AIA_API_BASE || 'https://api.azinstitute4autism.com';
+  document.querySelectorAll<HTMLElement>('[data-counter]').forEach(async (counter) => {
+    const slug = counter.dataset.slug;
+    const likes = counter.querySelector('[data-likes]');
+    const views = counter.querySelector('[data-views]');
+    try {
+      const response = await fetch(`${apiBase}/posts/${encodeURIComponent(slug || '')}`);
+      if (!response.ok) throw new Error('Counter unavailable');
+      const data = await response.json();
+      if (likes) likes.textContent = String(data.likes ?? 0);
+      if (views) views.textContent = String(data.views ?? 0);
+    } catch {
+      counter.dataset.unavailable = 'true';
+      if (likes) likes.textContent = '0';
+      if (views) views.textContent = '—';
+    }
+  });
+</script>

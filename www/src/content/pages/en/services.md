@@ -1,0 +1,62 @@
+---
+title: "Behavioral, Psychological, and Sociological Pediatric Autism Services"
+description: "Discover comprehensive autism services for children, from integrative ABA therapy to educational and family support, at the Arizona Institute for Autism."
+slug: "services"
+canonical: "https://www.azinstitute4autism.com/services"
+lang: "en"
+translationKey: "services"
+draft: false
+---
+# ABA & Educational Services
+
+ Discover More 
+
+ Get Started 
+
+- [Home](https://www.hubspot.com/)
+
+- Services
+
+## Autism Spectrum Disorder Services
+
+Autism Spectrum Disorder (ASD) refers to a group of complex brain development disorders and is characterized by difficulties with social interaction, verbal and non-verbal communication, and emotional control.
+
+The Arizona Institute for Autism helps with Autism Evaluations and Diagnostic Screenings, Applied Behavior Analysis (ABA) Therapy, and Educational Programming tailored to each learner’s needs. To support meaningful skill development, we design integrative ABA programs for children diagnosed with autism. We offer both individualized and group ABA Therapy, along with educational services that reflect each child’s unique strengths and goals.
+
+### AIA ABA & Educational Options
+
+- In-Center
+
+- In-School
+
+- In-Home
+
+- Early Intervention
+
+- Academic Readiness
+
+- Clinical Supervision
+
+- Parent Consultation
+
+### Does My Learner Have Autism?
+
+Approximately 1 in 36 children in the United States will receive an autism diagnosis each year. If your child exhibits any of the behaviors listed above, it is possible that he or she may be diagnosed on the autism spectrum. Diagnosing children with Autism Spectrum Disorder can be challenging and complex. The most important thing you can do is consult a professional if you think your child is displaying atypical behavior.
+
+ Consult with a Client Advocate 
+
+## Our Services
+
+Arizona Institute for Autism (AIA) offers a comprehensive range of services tailored to individuals with Autism Spectrum Disorder (ASD). Our programs include early intervention for young children, Applied Behavior Analysis (ABA) therapy, social skills groups, and educational support services. AIA is committed to providing personalized care plans to enhance the quality of life for children with autism and their families.
+
+### Behavioral Services
+
+### Psychological Services
+
+### Sociological Services
+
+## Need Autism Diagnosis Support?
+
+To meet diagnostic criteria for ASD, a child must have persistent deficits in each of three areas of social communication and interaction plus at least two of four types of restricted repetitive behaviors. Consult with a Client Advocate today to receive individual and family support!
+
+ Get a Free Consultation

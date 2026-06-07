@@ -1,0 +1,7 @@
+---
+import { getCollection } from 'astro:content';
+import BlogIndexLayout from '../../../layouts/BlogIndexLayout.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+const posts = await getCollection('blog', ({ data }) => data.lang === 'ar' && !data.draft);
+---
+<BlogIndexLayout title="المكتبة" description="موارد عربية للأسر والمهنيين." lang="ar"><div class="card-grid">{posts.map((post) => <BlogCard post={post} prefix="/ar" />)}</div></BlogIndexLayout>

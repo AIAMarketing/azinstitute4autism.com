@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import BlogCard from '../../components/BlogCard.astro';
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'es' && !data.draft)).slice(0, 3);
+---
+<BaseLayout title="Terapia ABA cerca de mí | Arizona Institute for Autism" description="Servicios de salud conductual y educación para personas con autismo y sus familias." canonical="https://www.azinstitute4autism.com/es" lang="es">
+  <Hero eyebrow="Arizona Institute for Autism" title="Salud Mental y Educación Especial" description="Apoyo clínico y educativo individualizado para familias de Arizona." image="/assets/images/playing-girl.webp" alt="Niña aprendiendo mientras juega" />
+  <section class="section"><div class="container"><div class="section-heading"><h2>Biblioteca</h2></div><div class="card-grid">{posts.map((post) => <BlogCard post={post} prefix="/es" />)}</div></div></section>
+</BaseLayout>

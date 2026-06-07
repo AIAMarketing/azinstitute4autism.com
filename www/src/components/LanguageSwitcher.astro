@@ -1,0 +1,9 @@
+---
+const pathname = Astro.url.pathname;
+const bare = pathname.replace(/^\/(ar|es)(?=\/|$)/, '') || '/';
+---
+<nav class="language-switcher" aria-label="Language">
+  <a href={bare} lang="en" aria-current={!pathname.startsWith('/ar') && !pathname.startsWith('/es') ? 'page' : undefined}>EN</a>
+  <a href={`/es${bare === '/' ? '' : bare}`} lang="es" aria-current={pathname.startsWith('/es') ? 'page' : undefined}>ES</a>
+  <a href={`/ar${bare === '/' ? '' : bare}`} lang="ar" aria-current={pathname.startsWith('/ar') ? 'page' : undefined}>ع</a>
+</nav>

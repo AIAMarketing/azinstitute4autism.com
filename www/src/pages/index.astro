@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import InsuranceStrip from '../components/InsuranceStrip.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+import services from '../data/services.json';
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'en' && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+---
+<BaseLayout title="ABA Therapy Near Me | Arizona Institute for Autism | Scottsdale" description="Arizona Institute for Autism provides behavioral health and education services for individuals with autism and their families." canonical="https://www.azinstitute4autism.com/">
+  <Hero eyebrow="Arizona Institute for Autism" title="Behavioral Health & Special Education" description="Expert clinical care, education, and community support for children and teens with autism." image="/assets/images/playing-boy.webp" alt="Child learning through play" />
+  <section class="section"><div class="container"><div class="section-heading"><p class="eyebrow">Integrated support</p><h2>Services built around each learner</h2></div><div class="card-grid">{services.map((service) => <ServiceCard {...service} />)}</div></div></section>
+  <InsuranceStrip />
+  <section class="section section-tint"><div class="container"><div class="section-heading"><p class="eyebrow">From the library</p><h2>Guides for families and professionals</h2></div><div class="card-grid">{posts.map((post) => <BlogCard post={post} />)}</div></div></section>
+  <ConsultationCTA />
+</BaseLayout>

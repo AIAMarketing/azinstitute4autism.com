@@ -1,0 +1,123 @@
+---
+title: "ASD Sensory-Friendly Recipes: Pancakes"
+description: "Discover sensory-friendly pancake recipes tailored for children with autism, including chocolate chip and blueberry variations, to make mealtime enjoyable."
+slug: "asd-sensory-friendly-recipes-pancakes"
+canonical: "https://www.azinstitute4autism.com/library/asd-sensory-friendly-recipes-pancakes"
+lang: "en"
+translationKey: "asd-sensory-friendly-recipes-pancakes"
+featuredImage: "/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg"
+date: "2023-09-12"
+author: "rula-diab"
+category: "Library"
+tags: []
+draft: false
+---
+# ASD Sensory-Friendly Recipes: Pancakes
+
+![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
+
+ Rula Diab, Clinical Director, M.Ed, BCBA, LBA
+
+ 12 September, 2023
+
+![asd sensory-friendly pancake recipe - hero image](/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg)
+
+If you are the parent of a child with autism spectrum disorder, you probably know how difficult mealtime can be. Many children with an autism diagnosis tend to have sensory processing disorder, which can make it difficult for them to enjoy certain foods due to the texture, consistency, temperature, etc. Your child may only prefer a small variety of foods, which often leaves their diet lacking the essential nutrients they need. In this blog series, I will be sharing sensory-friendly recipes and tips to hopefully make mealtime easy and fun for your kiddo! These recipes will help broaden your child’s horizons when it comes to food and nutrition.
+
+For this blog, I will be sharing an easy recipe that most kids love- Pancakes! This recipe can be modified to your child’s liking, as it’s important to gradually introduce new foods and ingredients. Use ingredients that your child prefers in order to make it more enticing and enjoyable!
+
+## Sensory-Friendly Pancakes Recipe
+
+### Ingredients
+
+- 1 ½ cups of all purpose or baking flour
+
+- 4 tsp baking powder - baking powder gives the pancakes their light and fluffy texture.
+
+- ½ tsp of salt - only add if you are using unsalted butter.
+
+- 3 tbsp sugar - this is to sweeten the pancakes a little extra, but it is optional.
+
+- 1 egg - room temperature is best for this.
+
+- 1 ¼ cups of milk - whole milk, almond, soy, or oat, whichever you prefer.
+
+- 4 tbsp melted butter
+
+- ½ tsp vanilla extract
+
+### Fluffy Pancake Directions
+
+- In a medium sized mixing bowl, add the flour, salt, and sugar. Combine the ingredients together using a wooden spoon or whisk for best results, then set the bowl aside.
+
+- Now onto the wet ingredients. In a separate, smaller bowl, whisk together the egg, milk, melted butter, and vanilla extract with a fork until well combined.
+
+- Add the wet ingredients into the bowl with the dry ingredients and whisk them together to form the batter. Scrape the bowl to make sure everything is combined, but don't over mix!
+
+- Our next step is to heat a frypan or cast-iron skillet over medium low heat. Add about a ½ tsp of butter. Once butter is melted, add about ⅓ cup of the pancake batter.
+
+- Cook the pancake for 2-3 minutes or until the edges are set. Use a spatula to flip the pancake over and cook the other side for another 1-2 minutes.
+
+- The first pancake will show you if you need to adjust the heat up or down, so adjust as needed.
+
+Voila! You have now made a fluffy pancake! This recipe makes around 8 pancakes (depending on the size you make them). Feel free to double or triple the recipe if needed.
+
+### Tips
+
+- For fluffier pancakes, it’s important to add the 4 tsp of baking powder. It helps them to rise up, making them soft, light, and fluffy.
+
+- Don’t over mix! Over mixing will cause the pancakes to be more tough and rubbery as opposed to soft and fluffy. It’s important to stop mixing as soon as you no longer see dry flour, it’s okay if the batter is a little lumpy.
+
+### Variations and Toppings
+
+Your kiddo may not want plain pancakes, which is perfectly fine! There are a few different ways you can vary the recipe to add in more sweetness. This is also a great opportunity to get your child to try different toppings or get a serving of fruit!
+
+#### Toppings
+
+- Butter and maple syrup
+
+- Banana
+
+- Bacon
+
+- Fresh berries
+
+- Caramel or strawberry sauce
+
+- Whipped Cream
+
+#### Variations
+
+- Chocolate Chip Pancakes - Add ½ cup of chocolate chips to the dry ingredients.
+
+- Blueberry Pancakes - Add 1 cup of fresh blueberries to the pancake batter.
+
+- Lemon Pancakes - Add lemon zest to the wet ingredients.
+
+- Strawberry Pancakes - Add ½ cup to 1 cup of fresh strawberries to pancake batter.
+
+Feel free to vary the recipe however you want and give your kiddo the opportunity to choose which toppings or fillings they want. Mealtime should be fun and enjoyable, so allowing your child to help you or pick their preferred ingredients can make eating more enticing for them. I hope you and your child enjoy this sensory-friendly pancake recipe!
+
+For more information on aba therapy services offered by AIA or to book your free consultation, visit our [contact page](../contact), call us at [(480) 687-7099](tel:+14806877099), or email [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com). If you are looking for more applied behavioral analysis and asd diagnosis tips, check out AIA’s clinical director, Rula Diab, monthly blog posts!
+
+ Previous Post 
+
+###### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
+
+ Next Post 
+
+###### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
+
+### Similar Blog Posts
+
+![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
+
+#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)
+
+![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
+
+#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
+
+![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
+
+#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)

@@ -1,0 +1,23 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import MainNav from './MainNav.astro';
+import MobileNav from './MobileNav.astro';
+const { lang = 'en' } = Astro.props;
+---
+<header class="site-header">
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <a href="https://go.carecredit.com/consumer/providersearch">Apply Care Credit</a>
+      <a href="https://www.patientnotebook.com/abaclinic/Enhanced/SendMoney/MakePayment">Pay My Bill</a>
+      <LanguageSwitcher />
+    </div>
+  </div>
+  <div class="container header-inner">
+    <a class="brand" href={lang === 'en' ? '/' : `/${lang}`}>
+      <img src="/assets/images/aia-logo.svg" alt="Arizona Institute for Autism" width="190" height="92" />
+    </a>
+    <MainNav lang={lang} />
+    <MobileNav lang={lang} />
+    <a class="button button-small" href={lang === 'en' ? '/client-consultation' : `/${lang}/client-consultation`}>Free Consultation</a>
+  </div>
+</header>

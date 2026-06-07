@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import BlogIndexLayout from '../../layouts/BlogIndexLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'en' && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BlogIndexLayout title="The Library at AZ Institute for Autism" description="ABA therapy and special education articles, guides, news, and resources.">
+  <div class="card-grid">{posts.map((post) => <BlogCard post={post} />)}</div>
+</BlogIndexLayout>

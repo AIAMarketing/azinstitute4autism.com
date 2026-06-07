@@ -1,0 +1,13 @@
+---
+const { post, prefix = '' } = Astro.props;
+const href = `${prefix}/library/${post.data.slug}`.replace('//', '/');
+---
+<article class="card blog-card">
+  {post.data.featuredImage && <a href={href}><img src={post.data.featuredImage} alt={post.data.alt || ''} loading="lazy" /></a>}
+  <div class="card-body">
+    <p class="eyebrow">{post.data.category || 'Library'}</p>
+    <h2><a href={href}>{post.data.title}</a></h2>
+    <p>{post.data.description}</p>
+    <a class="text-link" href={href}>Read article</a>
+  </div>
+</article>

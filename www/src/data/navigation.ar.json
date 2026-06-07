@@ -1,0 +1,10 @@
+{
+  "primary": [
+    { "label": "الرئيسية", "href": "/ar" },
+    { "label": "الخدمات", "href": "/ar/services" },
+    { "label": "المكتبة", "href": "/ar/library" },
+    { "label": "اتصل بنا", "href": "/ar/contact" }
+  ],
+  "services": [],
+  "footer": []
+}
