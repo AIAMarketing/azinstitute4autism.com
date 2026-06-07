@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ "${1:-}" == "exec" ]]; then
+  shift
+  set -- exec --skip-git-repo-check "$@"
+fi
+
+exec codex \
+  --profile-v2 azi4a2-autonomous \
+  --strict-config \
+  --cd "$repo_root" \
+  "$@"
