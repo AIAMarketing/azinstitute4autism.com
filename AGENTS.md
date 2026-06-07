@@ -1,5 +1,16 @@
 # AGENTS.md
 
+## Instruction precedence
+
+This file is the authoritative project policy for all editors and AI agents.
+`MIGRATION_BRIEF.md` supplies detailed implementation guidance and must be read
+with this file. If the two files appear to conflict, follow `AGENTS.md` and
+update the conflicting documentation before continuing.
+
+The `migration-foundation` branch is a reference and recovery point only. It is
+not the visual or architectural source of truth. Reuse its nonvisual tooling or
+content only after verifying it against the live public site.
+
 ## Project
 
 This repository contains a mirrored copy of the Arizona Institute for Autism website.
@@ -26,9 +37,29 @@ Do not modify, move, rename, or delete `./www.azinstitute4autism.com`.
 
 Treat the mirror as read-only raw source material.
 
+The live public website is the single source of truth:
+
+```txt
+https://www.azinstitute4autism.com
+```
+
+Use the mirror as a convenient local extraction and inspection aid only. The
+mirror may contain stale, missing, rewritten, or incorrectly downloaded
+content and assets. Verify content, design, URLs, metadata, assets, and
+responsive behavior against the live public site before treating them as
+authoritative. When the live site and mirror disagree, follow the live site and
+document material discrepancies.
+
 ## Primary goal
 
-Create a clean, maintainable Astro + TypeScript site in `./www` that reproduces the current public site as faithfully as practical while replacing HubSpot-generated structure with a future-friendly static site architecture.
+Create a clean, maintainable Astro + TypeScript site in `./www` that faithfully
+reproduces the current public site's content, visual design, page structure, and
+responsive behavior while replacing HubSpot-generated implementation details
+with a future-friendly static site architecture.
+
+This is a fidelity-first migration, not a redesign. The live public site is the
+source of truth for both content and presentation. Maintainability must improve
+the implementation without materially changing what visitors see.
 
 The new site should be suitable for:
 
@@ -149,13 +180,31 @@ Do not invent large Arabic or Spanish translations unless source content is avai
 
 ## Design rules
 
-The new design should be mostly faithful to the current site while becoming more maintainable.
+The new site must remain visually faithful to the live public site. Do not
+reinterpret, modernize, simplify, or genericize the design unless a specific
+change is required for accessibility or reliable responsive behavior.
+
+Preserve each source page's:
+
+- section order and visible content
+- typography, font weights, and text hierarchy
+- colors, backgrounds, and decorative treatments
+- container widths, spacing, alignment, and proportions
+- imagery, crops, icons, borders, radii, and shadows
+- header, navigation, footer, calls to action, and forms
+- desktop and mobile responsive behavior
+
+Reuse exact source assets and locally available fonts wherever practical.
+Do not replace distinctive source sections with generic cards, generic heroes,
+or a new site-wide layout merely to make component reuse easier.
 
 Use plain CSS with design tokens.
 
 Create reusable Astro components for repeated layout sections.
 
-Do not create a messy page-by-page clone of HubSpot output.
+Component boundaries must follow genuinely repeated source patterns. Distinctive
+pages and sections may retain page-specific markup and CSS when abstraction
+would reduce fidelity. Do not copy HubSpot's generated DOM or CSS wholesale.
 
 Favor:
 
@@ -163,9 +212,30 @@ Favor:
 - reusable components
 - organized CSS
 - clear data files
-- consistent spacing
+- source-faithful spacing
 - accessible markup
 - predictable file structure
+
+### Visual validation
+
+Before implementing a page family or shared component:
+
+1. Inspect the live page and its HTML, CSS, assets, and responsive behavior.
+2. Use the mirror to accelerate local extraction and inspection.
+3. Resolve any discrepancy in favor of the live public site.
+4. Record the source structure and important visual details.
+5. Identify which patterns are truly shared and which are page-specific.
+
+After implementation, compare the Astro output with the live public site at
+representative desktop and mobile viewport widths. Check the full page, not
+only the header or first viewport. Fix material differences before treating the
+page as complete.
+
+Document intentional visual deviations and their reasons in:
+
+```txt
+reports/migration-summary.md
+```
 
 ## URL and SEO rules
 
@@ -294,9 +364,11 @@ reports/migration-summary.md
 
 Before large filesystem changes:
 
-1. Inspect the mirror.
-2. Summarize the implementation plan.
-3. Proceed methodically.
+1. Inspect the live public site.
+2. Inspect the mirror and identify relevant discrepancies.
+3. Inspect the relevant source HTML, CSS, and assets in detail.
+4. Summarize the implementation and visual-validation plan.
+5. Proceed methodically.
 
 At the end of a task, summarize:
 
@@ -307,4 +379,7 @@ At the end of a task, summarize:
 - audit results
 - unresolved issues
 
-Prioritize a clean, maintainable foundation over a pixel-perfect but messy clone.
+Prioritize visual fidelity and content correctness while implementing them with
+clean, maintainable Astro code. Do not trade away visible source design for a
+generic foundation, and do not copy HubSpot-generated implementation merely to
+obtain fidelity.

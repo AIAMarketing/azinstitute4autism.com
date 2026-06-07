@@ -1,5 +1,18 @@
 # MIGRATION_BRIEF.md
 
+## Authority and interpretation
+
+Read and follow `AGENTS.md` first. It is the authoritative project policy; this
+brief provides detailed implementation guidance. If any wording here appears
+to conflict with `AGENTS.md`, follow `AGENTS.md` and correct this brief before
+continuing.
+
+This is a fidelity-first migration, not a redesign. The raw mirror is a
+convenient local extraction and inspection aid, but the live public site is the
+single content and visual source of truth. The `migration-foundation` branch
+may be consulted for nonvisual tooling and recovered content, but it must not
+be used as the visual baseline.
+
 ## Task
 
 Migrate the public Arizona Institute for Autism website from a mirrored HubSpot-generated static copy into a clean, maintainable Astro + TypeScript site.
@@ -24,15 +37,21 @@ wget --mirror --page-requisites --adjust-extension --convert-links --no-parent h
 
 There is no HubSpot export, no HubSpot CLI access, and no HubSpot API access.
 
-Use the local mirror as the primary source.
-
-If internet access is available, also crawl the live public website to catch missing URLs or assets:
+Use the live public website as the single source of truth:
 
 ```txt
 https://www.azinstitute4autism.com
 ```
 
-The live crawl is only for comparison and gap-filling. The local mirror remains the source of truth.
+Use the local mirror as a convenient extraction and inspection aid. It may
+contain stale, missing, rewritten, or incorrectly downloaded content and
+assets. Verify content, design, URLs, metadata, assets, and responsive behavior
+against the live site. When the live site and mirror disagree, follow the live
+site and document material discrepancies.
+
+If the live site is temporarily unavailable, work that depends on its authority
+must remain explicitly unverified rather than silently treating the mirror as
+authoritative.
 
 ## High-level goal
 
@@ -49,7 +68,7 @@ Create a new Astro site in `./www` that is:
 - SEO-conscious
 - accessible
 - maintainable
-- mostly faithful to the current design
+- faithful to the current design, layout, and responsive behavior
 - free of unnecessary HubSpot-generated structure
 - prepared for future development and publishing
 
@@ -238,17 +257,42 @@ Do not invent extensive translations.
 
 ### Design direction
 
-The new site should be more maintainable while remaining mostly faithful to the current design.
+The new site must faithfully reproduce the live public site's visible design,
+layout, content hierarchy, and responsive behavior. Do not redesign,
+reinterpret, modernize, simplify, or genericize source pages.
 
-Do not create a messy clone of HubSpot output.
+Preserve typography, colors, backgrounds, spacing, proportions, imagery,
+section order, decorative treatments, navigation, calls to action, forms, and
+page-specific distinctions. Reuse exact source assets and fonts wherever
+practical.
 
-Refactor repeated sections into reusable components.
+Do not copy HubSpot-generated DOM or CSS wholesale.
+
+Refactor genuinely repeated sections into reusable components. Do not force
+distinctive source sections into generic components when doing so changes their
+appearance or structure.
 
 Use semantic markup.
 
 Use plain CSS with design tokens.
 
 Do not use Tailwind.
+
+### Fidelity workflow
+
+For each page family or shared component:
+
+1. Inspect the live page, HTML, CSS, assets, and responsive behavior.
+2. Use the mirror to accelerate local extraction and inspection.
+3. Resolve discrepancies in favor of the live public site.
+4. Record important visual details and identify genuine shared patterns.
+5. Implement the page or component in maintainable Astro code.
+6. Compare the complete rendered page with the live public site at representative
+   desktop and mobile viewport widths.
+7. Fix material visual differences before marking it complete.
+
+Document intentional visual deviations and their reasons in
+`reports/migration-summary.md`.
 
 ## Required target structure
 
@@ -643,7 +687,10 @@ src/styles/rtl.css
 src/styles/global.css
 ```
 
-Infer the current site’s visual language from the mirrored CSS and HTML.
+Extract the current site's visual language from the live public site, using the
+mirrored CSS and HTML as a convenient local aid after checking for discrepancies.
+Tokens must encode source values; they must not introduce a replacement visual
+system.
 
 Use design tokens such as:
 
@@ -1168,6 +1215,8 @@ The migration is successful when:
 - `./www` contains a working Astro project
 - `npm run build` succeeds or unresolved build issues are clearly documented
 - main public pages render locally
+- main public pages have been compared with the live site at desktop and mobile
+  widths and have no undocumented material visual differences
 - blog posts are migrated into file-based Markdown where feasible
 - Markdown files work with Front Matter CMS
 - MDX is available but not overused
@@ -1191,18 +1240,22 @@ Proceed methodically:
 1. Read `AGENTS.md`.
 2. Read `CLAUDE.md`, if using Claude Code.
 3. Read this `MIGRATION_BRIEF.md`.
-4. Inspect `./www.azinstitute4autism.com`.
-5. Summarize a concise implementation plan.
-6. Scaffold Astro in `./www`.
-7. Build extraction/reporting scripts.
-8. Extract pages, blog posts, assets, metadata, navigation, and forms.
-9. Refactor repeated sections into Astro components.
-10. Configure content collections and Front Matter CMS.
-11. Add multilingual structure.
-12. Add SEO, sitemap, robots, and redirects.
-13. Add reports.
-14. Run build and audits.
-15. Fix errors.
-16. Summarize what changed and what still needs manual review.
+4. Inspect the live public site.
+5. Inspect `./www.azinstitute4autism.com` and identify relevant discrepancies.
+6. Summarize a concise implementation plan.
+7. Scaffold Astro in `./www`.
+8. Build extraction/reporting scripts.
+9. Extract pages, blog posts, assets, metadata, navigation, and forms.
+10. Refactor repeated sections into Astro components.
+11. Configure content collections and Front Matter CMS.
+12. Add multilingual structure.
+13. Add SEO, sitemap, robots, and redirects.
+14. Add reports.
+15. Run build and audits.
+16. Fix errors.
+17. Summarize what changed and what still needs manual review.
 
-Prioritize a clean, maintainable foundation over a messy pixel-perfect clone.
+Prioritize visual fidelity and content correctness while implementing them with
+clean, maintainable Astro code. Do not trade away visible source design for a
+generic foundation, and do not copy HubSpot-generated implementation merely to
+obtain fidelity.
