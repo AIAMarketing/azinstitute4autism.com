@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+
+# Astro and build output
+www/dist/
+www/.astro/
+www/.vercel/
+www/.netlify/
+
+# Test, audit, and coverage output
+coverage/
+playwright-report/
+test-results/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+www/.env
+www/.env.*
+!www/.env.example
+
+# Local caches and temporary files
+.cache/
+.tmp/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Editor and IDE state
+.idea/
+.vscode/
+*.code-workspace
+
+# Local AI-agent state
+.agents/
+.codex/
+.claude/
+.cursor/
+.continue/
+.windsurf/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Read-only wget mirror used as migration source material
+/www.azinstitute4autism.com/
