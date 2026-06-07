@@ -23,6 +23,7 @@ workspace even when Codex cannot discover its Git metadata.
 The profile:
 
 - never pauses for approval
+- automatically permits configured Playwright and OpenAI documentation MCP tools
 - limits filesystem access to minimal runtime files plus this project
 - allows writes in this project
 - keeps `.codex` and `www.azinstitute4autism.com` read-only
@@ -41,6 +42,21 @@ The profile is stored outside the workspace at:
 
 Do not add `--sandbox`; legacy sandbox flags override the custom permission
 profile. Do not use `--dangerously-bypass-approvals-and-sandbox`.
+
+The launcher also applies these session overrides:
+
+```txt
+approval_policy="never"
+mcp_servers.playwright.default_tools_approval_mode="auto"
+mcp_servers.playwright.tool_timeout_sec=300
+mcp_servers.openaiDeveloperDocs.default_tools_approval_mode="auto"
+mcp_servers.openaiDeveloperDocs.tool_timeout_sec=300
+```
+
+These settings allow MCP tools to run without approval prompts and give
+long-running browser operations up to five minutes. An MCP server may still
+fail or time out. MCP elicitations that inherently require user input are
+rejected rather than shown as unattended prompts.
 
 ## Verification
 
@@ -78,4 +94,10 @@ Check the startup banner before assigning work. It should report:
 ```txt
 approval: never
 sandbox: workspace-write ... (network access enabled)
+```
+
+Then check the MCP configuration:
+
+```txt
+/mcp verbose
 ```
