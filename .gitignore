@@ -38,6 +38,7 @@ temp/
 # Editor and IDE state
 .idea/
 .vscode/
+.frontmatter/
 *.code-workspace
 
 # Local AI-agent state
