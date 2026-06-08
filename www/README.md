@@ -253,6 +253,19 @@ Arabic routes automatically render with `lang="ar"` and `dir="rtl"`.
 
 Do not publish unreviewed machine translations. Clearly mark placeholders.
 
+### Edit A Blog FAQ
+
+Posts with live-style FAQ sections use `.mdx` and import:
+
+```mdx
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+```
+
+Edit the component's `label`, `heading`, and `items` data in the post. Keep
+`answer` as plain text for JSON-LD and `answerHtml` as the matching visible
+answer. Shared FAQ markup, styling, interaction, and schema generation live in
+`src/components/FAQAccordion.astro`.
+
 ## Mirror Extraction Workflow
 
 The mirror is read-only source material. Never modify:
@@ -288,7 +301,9 @@ npm run audit:blog
 ```
 
 Extraction regenerates content files, copied assets, and inventories. Review
-the complete Git diff before accepting it.
+the complete Git diff before accepting it. Extraction may recreate FAQ-bearing
+posts as Markdown; restore their `FAQAccordion` MDX blocks before accepting the
+result. `npm run audit:blog` reports plain Markdown FAQ sections.
 
 ## Reports And Utilities
 

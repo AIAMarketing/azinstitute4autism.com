@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Navigating an autism diagnosis often means learning a whole new vocabulary. Among the most important (and sometimes overwhelming) terms you will encounter are "augmentative and alternative communication" (AAC) and "visual supports."
 
 As a parent, your primary goal is to understand your child and help them be understood. This guide will walk you through what these tools are, how they empower your child to communicate effectively, and why introducing them will not hinder their spoken language development.
@@ -85,41 +87,53 @@ Our therapists use visual supports to clarify expectations during sessions. If a
 
 Collaboration is key to this process. We frequently coordinate with speech-language pathologists to ensure consistency across all environments. We also work closely with families to ensure the tools used in the clinic are practical for use at home. Understanding your child's unique sensory profile also plays a role in how we design these supports, a topic we explore further in our guide on [Understanding Sensory Processing in the Context of ABA Therapy](sensory-processing).
 
- Frequently Asked Questions 
-
-## About AAC and Visual Supports
-
-### What does AAC stand for?
-
-AAC stands for Augmentative and Alternative Communication. It includes all the ways we share our ideas and feelings without talking, such as pointing, using picture boards, or typing on a digital device.
-
-### Will using AAC stop my child from learning to speak?
-
-No. Extensive research shows that AAC does not hinder speech development. In fact, it often encourages vocalizations by removing the pressure and frustration associated with communication.
-
-### How do I know if my child needs visual supports?
-
-If your child struggles with transitions, experiences frequent meltdowns, or has difficulty understanding spoken instructions, visual supports like schedules and First/Then boards can provide much-needed predictability.
-
-### What is a First/Then board?
-
-A First/Then board is a simple visual tool showing a less preferred activity followed by a highly preferred one (for example, 'First wash hands, Then eat snack'). It helps children understand expectations and transitions.
-
-### Are visual supports only for nonverbal children?
-
-Not at all. Even highly verbal autistic children can benefit from visual supports, especially during moments of high stress or sensory overload when processing spoken language becomes difficult.
-
-### How expensive are AAC devices?
-
-The cost varies widely. Low-tech options like printed picture cards are nearly free. High-tech speech-generating tablets can be expensive, but they are often covered by health insurance after an evaluation by a speech-language pathologist.
-
-### Can I use visual supports at home?
-
-Yes, visual supports are incredibly effective at home. You can use them to outline bedtime routines, mealtime expectations, or steps for getting dressed.
-
-### How does ABA therapy use AAC?
-
-ABA therapy incorporates AAC to help children build functional communication skills, reduce frustration-based behaviors, and practice self-advocacy in a supportive environment.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="About AAC and Visual Supports"
+  canonical="https://www.azinstitute4autism.com/library/aac-visual-supports-autism"
+  items={[
+  {
+    "question": "What does AAC stand for?",
+    "answer": "AAC stands for Augmentative and Alternative Communication. It includes all the ways we share our ideas and feelings without talking, such as pointing, using picture boards, or typing on a digital device.",
+    "answerHtml": "<p>AAC stands for Augmentative and Alternative Communication. It includes all the ways we share our ideas and feelings without talking, such as pointing, using picture boards, or typing on a digital device.</p>"
+  },
+  {
+    "question": "Will using AAC stop my child from learning to speak?",
+    "answer": "No. Extensive research shows that AAC does not hinder speech development. In fact, it often encourages vocalizations by removing the pressure and frustration associated with communication.",
+    "answerHtml": "<p>No. Extensive research shows that AAC does not hinder speech development. In fact, it often encourages vocalizations by removing the pressure and frustration associated with communication.</p>"
+  },
+  {
+    "question": "How do I know if my child needs visual supports?",
+    "answer": "If your child struggles with transitions, experiences frequent meltdowns, or has difficulty understanding spoken instructions, visual supports like schedules and First/Then boards can provide much-needed predictability.",
+    "answerHtml": "<p>If your child struggles with transitions, experiences frequent meltdowns, or has difficulty understanding spoken instructions, visual supports like schedules and First/Then boards can provide much-needed predictability.</p>"
+  },
+  {
+    "question": "What is a First/Then board?",
+    "answer": "A First/Then board is a simple visual tool showing a less preferred activity followed by a highly preferred one (for example, 'First wash hands, Then eat snack'). It helps children understand expectations and transitions.",
+    "answerHtml": "<p>A First/Then board is a simple visual tool showing a less preferred activity followed by a highly preferred one (for example, 'First wash hands, Then eat snack'). It helps children understand expectations and transitions.</p>"
+  },
+  {
+    "question": "Are visual supports only for nonverbal children?",
+    "answer": "Not at all. Even highly verbal autistic children can benefit from visual supports, especially during moments of high stress or sensory overload when processing spoken language becomes difficult.",
+    "answerHtml": "<p>Not at all. Even highly verbal autistic children can benefit from visual supports, especially during moments of high stress or sensory overload when processing spoken language becomes difficult.</p>"
+  },
+  {
+    "question": "How expensive are AAC devices?",
+    "answer": "The cost varies widely. Low-tech options like printed picture cards are nearly free. High-tech speech-generating tablets can be expensive, but they are often covered by health insurance after an evaluation by a speech-language pathologist.",
+    "answerHtml": "<p>The cost varies widely. Low-tech options like printed picture cards are nearly free. High-tech speech-generating tablets can be expensive, but they are often covered by health insurance after an evaluation by a speech-language pathologist.</p>"
+  },
+  {
+    "question": "Can I use visual supports at home?",
+    "answer": "Yes, visual supports are incredibly effective at home. You can use them to outline bedtime routines, mealtime expectations, or steps for getting dressed.",
+    "answerHtml": "<p>Yes, visual supports are incredibly effective at home. You can use them to outline bedtime routines, mealtime expectations, or steps for getting dressed.</p>"
+  },
+  {
+    "question": "How does ABA therapy use AAC?",
+    "answer": "ABA therapy incorporates AAC to help children build functional communication skills, reduce frustration-based behaviors, and practice self-advocacy in a supportive environment.",
+    "answerHtml": "<p>ABA therapy incorporates AAC to help children build functional communication skills, reduce frustration-based behaviors, and practice self-advocacy in a supportive environment.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

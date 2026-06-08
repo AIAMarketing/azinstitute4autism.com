@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 El progreso en el Análisis de Conducta Aplicado (ABA) suele mostrarse en gráficas claras y metas alcanzadas. Debajo de cada dato hay algo más humano: la emoción. Cuando un niño aprende a comprender y manejar sus sentimientos, todo lo demás se vuelve más fácil. La concentración aumenta, la comunicación se abre y la vida diaria se siente más segura y predecible.
 
 Idea clave: La regulación emocional no es un "extra." Es el motor que impulsa el aprendizaje, la independencia y la conexión.
@@ -182,33 +184,43 @@ Semana 2: Usar y reforzar
 
 ¿Listo para dar el siguiente paso? Visita nuestra página de [Terapia ABA](../../aba-therapy) o comienza el [Proceso de Admisión del Aprendiz](../../aba-therapy-intake-process).
 
- Preguntas frecuentes 
-
-## Consejos para la Regulación Emocional
-
-### ¿Qué es la regulación emocional en la terapia ABA?
-
-Es un conjunto de habilidades que ayudan a un niño a notar sus sentimientos, hacer una pausa y elegir una respuesta saludable. Enseñamos y practicamos estas habilidades en diferentes entornos hasta que se vuelven automáticas.
-
-### ¿Cómo se diferencia la co-regulación de la autorregulación?
-
-La co-regulación utiliza la presencia tranquila de un adulto para guiar al niño en el momento. La autorregulación es el objetivo a largo plazo donde el niño utiliza las mismas herramientas de manera independiente.
-
-### ¿Por qué centrarse en las emociones en lugar de en el cumplimiento?
-
-El cumplimiento puede parecer bueno brevemente. La regulación emocional produce ganancias duraderas que se generalizan a la escuela, las tiendas y el juego. También fortalece la confianza y la comunicación.
-
-### ¿Qué herramientas son las más útiles en casa?
-
-Comienza con un horario visual, tarjetas de Primero/Luego, un rincón tranquilo y un descanso de movimiento que al niño le guste. Mantén el lenguaje breve. Usa los mismos guiones que usa tu equipo.
-
-### ¿Cómo medimos el progreso?
-
-Seguimos el uso de estrategias independientes, el tiempo de recuperación y cuánta ayuda de un adulto se necesita. El objetivo es un progreso constante hacia la independencia y la generalización.
-
-### ¿Cuándo deberíamos pedir ayuda adicional?
-
-Comuníquese con nosotros si los sentimientos intensos ocurren con más frecuencia, si la recuperación tarda más o si las actividades diarias se vuelven más difíciles. Nuestro equipo puede desarrollar un plan individualizado que satisfaga las necesidades de su hijo.
+<FAQAccordion
+  label="Preguntas frecuentes"
+  heading="Consejos para la Regulación Emocional"
+  canonical="https://www.azinstitute4autism.com/es/library/emotional-regulation-aba"
+  items={[
+  {
+    "question": "¿Qué es la regulación emocional en la terapia ABA?",
+    "answer": "Es un conjunto de habilidades que ayudan a un niño a notar sus sentimientos, hacer una pausa y elegir una respuesta saludable. Enseñamos y practicamos estas habilidades en diferentes entornos hasta que se vuelven automáticas.",
+    "answerHtml": "<p>Es un conjunto de habilidades que ayudan a un niño a notar sus sentimientos, hacer una pausa y elegir una respuesta saludable. Enseñamos y practicamos estas habilidades en diferentes entornos hasta que se vuelven automáticas.</p>"
+  },
+  {
+    "question": "¿Cómo se diferencia la co-regulación de la autorregulación?",
+    "answer": "La co-regulación utiliza la presencia tranquila de un adulto para guiar al niño en el momento. La autorregulación es el objetivo a largo plazo donde el niño utiliza las mismas herramientas de manera independiente.",
+    "answerHtml": "<p>La co-regulación utiliza la presencia tranquila de un adulto para guiar al niño en el momento. La autorregulación es el objetivo a largo plazo donde el niño utiliza las mismas herramientas de manera independiente.</p>"
+  },
+  {
+    "question": "¿Por qué centrarse en las emociones en lugar de en el cumplimiento?",
+    "answer": "El cumplimiento puede parecer bueno brevemente. La regulación emocional produce ganancias duraderas que se generalizan a la escuela, las tiendas y el juego. También fortalece la confianza y la comunicación.",
+    "answerHtml": "<p>El cumplimiento puede parecer bueno brevemente. La regulación emocional produce ganancias duraderas que se generalizan a la escuela, las tiendas y el juego. También fortalece la confianza y la comunicación.</p>"
+  },
+  {
+    "question": "¿Qué herramientas son las más útiles en casa?",
+    "answer": "Comienza con un horario visual, tarjetas de Primero/Luego, un rincón tranquilo y un descanso de movimiento que al niño le guste. Mantén el lenguaje breve. Usa los mismos guiones que usa tu equipo.",
+    "answerHtml": "<p>Comienza con un horario visual, tarjetas de Primero/Luego, un rincón tranquilo y un descanso de movimiento que al niño le guste. Mantén el lenguaje breve. Usa los mismos guiones que usa tu equipo.</p>"
+  },
+  {
+    "question": "¿Cómo medimos el progreso?",
+    "answer": "Seguimos el uso de estrategias independientes, el tiempo de recuperación y cuánta ayuda de un adulto se necesita. El objetivo es un progreso constante hacia la independencia y la generalización.",
+    "answerHtml": "<p>Seguimos el uso de estrategias independientes, el tiempo de recuperación y cuánta ayuda de un adulto se necesita. El objetivo es un progreso constante hacia la independencia y la generalización.</p>"
+  },
+  {
+    "question": "¿Cuándo deberíamos pedir ayuda adicional?",
+    "answer": "Comuníquese con nosotros si los sentimientos intensos ocurren con más frecuencia, si la recuperación tarda más o si las actividades diarias se vuelven más difíciles. Nuestro equipo puede desarrollar un plan individualizado que satisfaga las necesidades de su hijo.",
+    "answerHtml": "<p>Comuníquese con nosotros si los sentimientos intensos ocurren con más frecuencia, si la recuperación tarda más o si las actividades diarias se vuelven más difíciles. Nuestro equipo puede desarrollar un plan individualizado que satisfaga las necesidades de su hijo.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

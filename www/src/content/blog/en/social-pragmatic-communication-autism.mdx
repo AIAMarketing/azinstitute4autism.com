@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 ## The questions parents ask us every week "My child can talk, so why is making friends still so hard?" or "She has words, but she doesn’t know how to have a conversation."
 
 ### The short answer
@@ -132,33 +134,43 @@ Aside for Arizona families: On hot days when the playground is not an option, pr
 
 - [National Autistic Society](https://www.autism.org.uk/advice-and-guidance/topics/family-life-and-relationships/making-friends/parents-and-carers) guidance on helping children make friends.
 
- Frequently Asked Questions 
-
-## Social Communication Tips
-
-### What is pragmatic language in autism?
-
-Pragmatic language is how we use words to relate with people in real situations. It covers turn taking, topic maintenance, personal space, and how tone and volume fit the context. It is common for autistic children to have strong vocabulary yet still need direct teaching in these rules.
-
-### Is my child being rude when they miss jokes or interrupt?
-
-Usually, no. Missing sarcasm, literal interpretations, and interrupting are signs that social inference and timing need to be taught. These skills improve with modeling, practice, and feedback in low-pressure settings.
-
-### Does peer practice actually help?
-
-Yes. Peer-mediated instruction is considered an evidence-based practice for autistic learners and has been shown to support social interaction skills across preschool through high school.
-
-### How is ABA different from speech therapy for social skills?
-
-Speech-language therapy often targets the mechanics and pragmatics of language. ABA looks at the whole context, including motivation, environment, reinforcement, and generalization across settings. The two services complement each other well.
-
-### What visual supports should we start with?
-
-Start with simple tools such as First-Then cards or mini checklists for a single routine. Our overview of [First-Then Cards](first-then-cards-autism-transitions) shows how to set them up and fade them as independence grows.
-
-### How do I get help in Arizona?
-
-You can [schedule a free consultation](../client-consultation) or read more about [AIA’s ABA services](../aba-therapy) and our [intake process](../aba-therapy-intake-process) . We support families across the Phoenix metro area with in-center and at-home options along with caregiver training.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Social Communication Tips"
+  canonical="https://www.azinstitute4autism.com/library/social-pragmatic-communication-autism"
+  items={[
+  {
+    "question": "What is pragmatic language in autism?",
+    "answer": "Pragmatic language is how we use words to relate with people in real situations. It covers turn taking, topic maintenance, personal space, and how tone and volume fit the context. It is common for autistic children to have strong vocabulary yet still need direct teaching in these rules.",
+    "answerHtml": "<p>Pragmatic language is how we use words to relate with people in real situations. It covers turn taking, topic maintenance, personal space, and how tone and volume fit the context. It is common for autistic children to have strong vocabulary yet still need direct teaching in these rules.</p>"
+  },
+  {
+    "question": "Is my child being rude when they miss jokes or interrupt?",
+    "answer": "Usually, no. Missing sarcasm, literal interpretations, and interrupting are signs that social inference and timing need to be taught. These skills improve with modeling, practice, and feedback in low-pressure settings.",
+    "answerHtml": "<p>Usually, no. Missing sarcasm, literal interpretations, and interrupting are signs that social inference and timing need to be taught. These skills improve with modeling, practice, and feedback in low-pressure settings.</p>"
+  },
+  {
+    "question": "Does peer practice actually help?",
+    "answer": "Yes. Peer-mediated instruction is considered an evidence-based practice for autistic learners and has been shown to support social interaction skills across preschool through high school.",
+    "answerHtml": "<p>Yes. Peer-mediated instruction is considered an evidence-based practice for autistic learners and has been shown to support social interaction skills across preschool through high school.</p>"
+  },
+  {
+    "question": "How is ABA different from speech therapy for social skills?",
+    "answer": "Speech-language therapy often targets the mechanics and pragmatics of language. ABA looks at the whole context, including motivation, environment, reinforcement, and generalization across settings. The two services complement each other well.",
+    "answerHtml": "<p>Speech-language therapy often targets the mechanics and pragmatics of language. ABA looks at the whole context, including motivation, environment, reinforcement, and generalization across settings. The two services complement each other well.</p>"
+  },
+  {
+    "question": "What visual supports should we start with?",
+    "answer": "Start with simple tools such as First-Then cards or mini checklists for a single routine. Our overview of First-Then Cards shows how to set them up and fade them as independence grows.",
+    "answerHtml": "<p>Start with simple tools such as First-Then cards or mini checklists for a single routine. Our overview of <a href=\"first-then-cards-autism-transitions\">First-Then Cards</a> shows how to set them up and fade them as independence grows.</p>"
+  },
+  {
+    "question": "How do I get help in Arizona?",
+    "answer": "You can schedule a free consultation or read more about AIA’s ABA services and our intake process . We support families across the Phoenix metro area with in-center and at-home options along with caregiver training.",
+    "answerHtml": "<p>You can <a href=\"../client-consultation\">schedule a free consultation</a> or read more about <a href=\"../aba-therapy\">AIA’s ABA services</a> and our <a href=\"../aba-therapy-intake-process\">intake process</a> . We support families across the Phoenix metro area with in-center and at-home options along with caregiver training.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

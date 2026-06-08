@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 When a referral for an autism evaluation lands in your inbox, it can feel like a lot. You may be relieved that you are taking action, and also anxious about what the appointment will look like. Both reactions are normal.
 
 A child autism evaluation is not a test your child passes or fails. It is a structured way for trained clinicians to understand your child’s communication, social connection, play, and support needs so you can move forward with a plan.
@@ -133,41 +135,53 @@ If you are still figuring out where to start, our Arizona-focused guide, "[Autis
 
 After an evaluation, families often want help turning recommendations into a real plan. If you are exploring ABA services, you can review AIA’s intake steps in "[Starting ABA Therapy Step-by-Step Guide](../aba-therapy-intake-process)." If you would rather talk it through first, you can [schedule a free consultation](../client-consultation) with our team.
 
- Frequently Asked Questions 
-
-## Help with First Autism Evaluation Expectations
-
-### How is an autism screening different from an autism evaluation?
-
-A screening is a brief check that flags possible autism traits and signals whether a full evaluation is recommended. An evaluation is a comprehensive process that includes interviews and observation, and may include standardized tools, to answer whether autism criteria are met and what supports are recommended.
-
-### Who can diagnose autism in Arizona?
-
-Autism is typically diagnosed by licensed psychologists with autism assessment training, developmental pediatricians, and in some cases child neurologists or psychiatrists. Your pediatrician can help with referrals.
-
-### What should I bring to the evaluation appointment?
-
-Bring prior evaluations, school notes (IEP or 504 if applicable), a list of questions, and comfort items for your child. If it helps, bring a short video clip of typical play or routines at home.
-
-### How long does it take to get results?
-
-Some clinics share impressions the same day, but many schedule feedback after the clinician reviews all information. Ask up front when the written report will be ready.
-
-### Will my child be asked to talk or follow directions?
-
-The clinician adapts expectations to your child’s developmental level. Many activities are play-based and focus on communication in whatever form your child uses.
-
-### Can an evaluation be done by telehealth?
-
-Caregiver interviews and questionnaires may be done remotely. Direct observation is often best in person for younger children, but practices vary. Ask what is recommended for your child.
-
-### What happens if my child does not meet criteria for autism?
-
-You should still receive a clear explanation and recommendations. Sometimes the evaluation points to another need, like a language delay, anxiety, ADHD, or a different developmental profile.
-
-### Do we need a diagnosis to start ABA therapy?
-
-Insurance commonly requires a formal diagnosis and documentation to authorize ABA services. AIA can help Arizona families understand next steps for intake and coverage.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Help with First Autism Evaluation Expectations"
+  canonical="https://www.azinstitute4autism.com/library/autism-evaluation-what-to-expect"
+  items={[
+  {
+    "question": "How is an autism screening different from an autism evaluation?",
+    "answer": "A screening is a brief check that flags possible autism traits and signals whether a full evaluation is recommended. An evaluation is a comprehensive process that includes interviews and observation, and may include standardized tools, to answer whether autism criteria are met and what supports are recommended.",
+    "answerHtml": "<p>A screening is a brief check that flags possible autism traits and signals whether a full evaluation is recommended. An evaluation is a comprehensive process that includes interviews and observation, and may include standardized tools, to answer whether autism criteria are met and what supports are recommended.</p>"
+  },
+  {
+    "question": "Who can diagnose autism in Arizona?",
+    "answer": "Autism is typically diagnosed by licensed psychologists with autism assessment training, developmental pediatricians, and in some cases child neurologists or psychiatrists. Your pediatrician can help with referrals.",
+    "answerHtml": "<p>Autism is typically diagnosed by licensed psychologists with autism assessment training, developmental pediatricians, and in some cases child neurologists or psychiatrists. Your pediatrician can help with referrals.</p>"
+  },
+  {
+    "question": "What should I bring to the evaluation appointment?",
+    "answer": "Bring prior evaluations, school notes (IEP or 504 if applicable), a list of questions, and comfort items for your child. If it helps, bring a short video clip of typical play or routines at home.",
+    "answerHtml": "<p>Bring prior evaluations, school notes (IEP or 504 if applicable), a list of questions, and comfort items for your child. If it helps, bring a short video clip of typical play or routines at home.</p>"
+  },
+  {
+    "question": "How long does it take to get results?",
+    "answer": "Some clinics share impressions the same day, but many schedule feedback after the clinician reviews all information. Ask up front when the written report will be ready.",
+    "answerHtml": "<p>Some clinics share impressions the same day, but many schedule feedback after the clinician reviews all information. Ask up front when the written report will be ready.</p>"
+  },
+  {
+    "question": "Will my child be asked to talk or follow directions?",
+    "answer": "The clinician adapts expectations to your child’s developmental level. Many activities are play-based and focus on communication in whatever form your child uses.",
+    "answerHtml": "<p>The clinician adapts expectations to your child’s developmental level. Many activities are play-based and focus on communication in whatever form your child uses.</p>"
+  },
+  {
+    "question": "Can an evaluation be done by telehealth?",
+    "answer": "Caregiver interviews and questionnaires may be done remotely. Direct observation is often best in person for younger children, but practices vary. Ask what is recommended for your child.",
+    "answerHtml": "<p>Caregiver interviews and questionnaires may be done remotely. Direct observation is often best in person for younger children, but practices vary. Ask what is recommended for your child.</p>"
+  },
+  {
+    "question": "What happens if my child does not meet criteria for autism?",
+    "answer": "You should still receive a clear explanation and recommendations. Sometimes the evaluation points to another need, like a language delay, anxiety, ADHD, or a different developmental profile.",
+    "answerHtml": "<p>You should still receive a clear explanation and recommendations. Sometimes the evaluation points to another need, like a language delay, anxiety, ADHD, or a different developmental profile.</p>"
+  },
+  {
+    "question": "Do we need a diagnosis to start ABA therapy?",
+    "answer": "Insurance commonly requires a formal diagnosis and documentation to authorize ABA services. AIA can help Arizona families understand next steps for intake and coverage.",
+    "answerHtml": "<p>Insurance commonly requires a formal diagnosis and documentation to authorize ABA services. AIA can help Arizona families understand next steps for intake and coverage.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

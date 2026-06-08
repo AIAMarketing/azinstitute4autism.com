@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Cada niño es diferente. Algunos necesitan más apoyo con la comunicación. Otros luchan más con las transiciones, la entrada sensorial o la regulación emocional. El autismo es una condición del neurodesarrollo que afecta la forma en que una persona se comunica, aprende, se comporta y experimenta el mundo, y los signos pueden hacerse evidentes temprano en el desarrollo.
 
 Si estás tratando de averiguar cómo ayudar a tu hijo autista, comienza por comprender qué le ayuda a sentirse seguro, comprendido y capaz de tener éxito en la vida diaria.
@@ -159,33 +161,43 @@ A short caregiver plan can help. Agree on one or two goals, the words adults wil
 
 Una buena guía para padres de niños con autismo debería decir esto claramente: tu regulación también importa.
 
- Preguntas Frecuentes 
-
-## Guía para padres sobre autismo y ABA
-
-### ¿Qué debo hacer si creo que mi hijo podría ser autista?
-
-Hable con el pediatra de su hijo, pida una evaluación del desarrollo y comparta ejemplos específicos de casa. Si desea una visión más clara de la detección frente al diagnóstico, la guía de AIA [Evaluación del autismo en Arizona: una guía paso a paso para padres](autism-evaluation-diagnosis-arizona-parent-guide) es un siguiente paso útil.
-
-### ¿Todos los niños autistas necesitan terapia ABA?
-
-No todos los niños necesitan la misma combinación de apoyos. El análisis de comportamiento aplicado (ABA) puede ser muy útil cuando se individualiza, es funcional y colaborativo, especialmente para la comunicación, las rutinas, la independencia y las habilidades de reemplazo.
-
-### ¿Cómo puedo ayudar a mi hijo a comunicarse si es mínimamente verbal?
-
-Use lenguaje sencillo, imágenes o gestos, tiempo de espera adicional y comunicación funcional como "ayuda", "más", "descanso" y "terminado". La comunicación significativa no tiene que empezar con frases completas.
-
-### What should I do during a meltdown?
-
-Concéntrese en la seguridad, reduzca las exigencias y disminuya la entrada sensorial cuando sea posible. Guarda la enseñanza y la resolución de problemas para más tarde, después de que tu hijo se calme.
-
-### ¿Cómo puedo facilitar las transiciones en casa?
-
-Utilice advertencias claras, horarios visuales, lenguaje de "Primero-Después" y rutinas predecibles. Muchas familias se desenvuelven bien con un único apoyo de transición muy sencillo que pueden utilizar todos los días, como un temporizador o una tarjeta de "primero esto, luego esto".
-
-### ¿Cómo pueden los miembros de la familia mantener la coherencia sin volverse rígidos?
-
-Acuerden algunos conceptos básicos compartidos, como las mismas indicaciones cortas, palabras de reemplazo y rutina de transición. No necesitas respuestas idénticas de cada adulto. Necesitas predecibles.
+<FAQAccordion
+  label="Preguntas Frecuentes"
+  heading="Guía para padres sobre autismo y ABA"
+  canonical="https://www.azinstitute4autism.com/es/library/parents-guide-to-autism-and-aba"
+  items={[
+  {
+    "question": "¿Qué debo hacer si creo que mi hijo podría ser autista?",
+    "answer": "Hable con el pediatra de su hijo, pida una evaluación del desarrollo y comparta ejemplos específicos de casa. Si desea una visión más clara de la detección frente al diagnóstico, la guía de AIA Evaluación del autismo en Arizona: una guía paso a paso para padres es un siguiente paso útil.",
+    "answerHtml": "<p>Hable con el pediatra de su hijo, pida una evaluación del desarrollo y comparta ejemplos específicos de casa. Si desea una visión más clara de la detección frente al diagnóstico, la guía de AIA <a href=\"autism-evaluation-diagnosis-arizona-parent-guide\">Evaluación del autismo en Arizona: una guía paso a paso para padres</a> es un siguiente paso útil.</p>"
+  },
+  {
+    "question": "¿Todos los niños autistas necesitan terapia ABA?",
+    "answer": "No todos los niños necesitan la misma combinación de apoyos. El análisis de comportamiento aplicado (ABA) puede ser muy útil cuando se individualiza, es funcional y colaborativo, especialmente para la comunicación, las rutinas, la independencia y las habilidades de reemplazo.",
+    "answerHtml": "<p>No todos los niños necesitan la misma combinación de apoyos. El análisis de comportamiento aplicado (ABA) puede ser muy útil cuando se individualiza, es funcional y colaborativo, especialmente para la comunicación, las rutinas, la independencia y las habilidades de reemplazo.</p>"
+  },
+  {
+    "question": "¿Cómo puedo ayudar a mi hijo a comunicarse si es mínimamente verbal?",
+    "answer": "Use lenguaje sencillo, imágenes o gestos, tiempo de espera adicional y comunicación funcional como \"ayuda\", \"más\", \"descanso\" y \"terminado\". La comunicación significativa no tiene que empezar con frases completas.",
+    "answerHtml": "<p>Use lenguaje sencillo, imágenes o gestos, tiempo de espera adicional y comunicación funcional como &quot;ayuda&quot;, &quot;más&quot;, &quot;descanso&quot; y &quot;terminado&quot;. La comunicación significativa no tiene que empezar con frases completas.</p>"
+  },
+  {
+    "question": "What should I do during a meltdown?",
+    "answer": "Concéntrese en la seguridad, reduzca las exigencias y disminuya la entrada sensorial cuando sea posible. Guarda la enseñanza y la resolución de problemas para más tarde, después de que tu hijo se calme.",
+    "answerHtml": "<p>Concéntrese en la seguridad, reduzca las exigencias y disminuya la entrada sensorial cuando sea posible. Guarda la enseñanza y la resolución de problemas para más tarde, después de que tu hijo se calme.</p>"
+  },
+  {
+    "question": "¿Cómo puedo facilitar las transiciones en casa?",
+    "answer": "Utilice advertencias claras, horarios visuales, lenguaje de \"Primero-Después\" y rutinas predecibles. Muchas familias se desenvuelven bien con un único apoyo de transición muy sencillo que pueden utilizar todos los días, como un temporizador o una tarjeta de \"primero esto, luego esto\".",
+    "answerHtml": "<p>Utilice advertencias claras, horarios visuales, lenguaje de &quot;Primero-Después&quot; y rutinas predecibles. Muchas familias se desenvuelven bien con un único apoyo de transición muy sencillo que pueden utilizar todos los días, como un temporizador o una tarjeta de &quot;primero esto, luego esto&quot;.</p>"
+  },
+  {
+    "question": "¿Cómo pueden los miembros de la familia mantener la coherencia sin volverse rígidos?",
+    "answer": "Acuerden algunos conceptos básicos compartidos, como las mismas indicaciones cortas, palabras de reemplazo y rutina de transición. No necesitas respuestas idénticas de cada adulto. Necesitas predecibles.",
+    "answerHtml": "<p>Acuerden algunos conceptos básicos compartidos, como las mismas indicaciones cortas, palabras de reemplazo y rutina de transición. No necesitas respuestas idénticas de cada adulto. Necesitas predecibles.</p>"
+  }
+]}
+/>
 
 ## Pensamientos finales
 

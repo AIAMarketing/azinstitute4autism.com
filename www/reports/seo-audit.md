@@ -7,6 +7,8 @@
 - Shared templates emit canonical, Open Graph, and Twitter card metadata.
 - Library index layouts emit language-correct canonical URLs.
 - Blog posts emit article metadata and semantic publication dates.
+- Blog FAQ components emit `FAQPage` JSON-LD derived from the same MDX item
+  data used for the visible accordion.
 - `robots.txt` and sitemap generation are included.
 - The live navigation hierarchy, clean English/Spanish/Arabic routes, and
   current library listing structure were checked against the public site during
@@ -28,4 +30,5 @@
 - Organization JSON-LD is emitted globally; service-specific schema still
   requires business review.
 - Validate social preview images after deployment.
-- Add page-specific JSON-LD only after business review of the appropriate schema.
+- Add additional page-specific JSON-LD only after business review of the
+  appropriate schema.

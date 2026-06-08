@@ -44,6 +44,8 @@ Implemented fidelity work includes:
   extracted team content as a generic article.
 - Rebuilt library indexes and blog-post presentation around the live sidebar,
   article list, byline, featured-image, and counter patterns.
+- Converted FAQ-bearing posts to MDX and recreated their live-style accordions
+  with a reusable component that emits matching `FAQPage` JSON-LD.
 - Replaced generic oversized cards, rounded controls, and marketing heroes
   with live-derived typography, palette, widths, spacing, and compact controls.
 - Corrected material live/mirror discrepancies found during the pass,
@@ -115,7 +117,7 @@ unavailable.
 - `npm run audit:images`: passed with no missing mapped page banners, section
   backgrounds, or blog featured images.
 - `npm run audit:blog`: passed with no article-header content duplicated in
-  blog Markdown bodies.
+  blog content and valid MDX FAQ components for 125 questions across 19 posts.
 - `npm run generate:sitemap`: passed; generated 97 URLs.
 - `npm run generate:redirects`: passed.
 - All migration `.mjs` tools and the sandbox DNS helper pass `node --check`.

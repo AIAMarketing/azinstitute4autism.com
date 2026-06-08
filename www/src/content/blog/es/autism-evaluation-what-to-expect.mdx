@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Cuando una derivación para una evaluación de autismo llega a su bandeja de entrada, puede sentirse abrumador. Puede sentirse aliviado de estar tomando acción y, al mismo tiempo, ansioso por cómo será la cita. Ambas reacciones son normales.
 
 Una evaluación de autismo infantil no es una prueba que su hijo apruebe o repruebe. Es una forma estructurada en la que profesionales capacitados comprenden la comunicación, la conexión social, el juego y las necesidades de apoyo de su hijo para que usted pueda avanzar con un plan.
@@ -133,41 +135,53 @@ Si aún está tratando de decidir por dónde comenzar, nuestra guía enfocada en
 
 Después de una evaluación, las familias a menudo desean ayuda para convertir las recomendaciones en un plan real. Si está explorando servicios de ABA, puede revisar los pasos de admisión de AIA en "[Guía Paso a Paso para Comenzar Terapia ABA](../../aba-therapy-intake-process)." Si prefiere hablar primero, puede [programar una consulta gratuita](../../client-consultation) con nuestro equipo.
 
- Preguntas Frecuentes 
-
-## Ayuda con las expectativas de la primera evaluación de autismo
-
-### ¿En qué se diferencia un cribado de autismo de una evaluación de autismo?
-
-Una evaluación es una revisión breve que identifica posibles rasgos de autismo e indica si se recomienda una evaluación completa. Una evaluación es un proceso integral que incluye entrevistas y observación, y puede incluir herramientas estandarizadas, para responder si se cumplen los criterios de autismo y qué apoyos se recomiendan.
-
-### ¿Quién puede diagnosticar el autismo en Arizona?
-
-El autismo suele ser diagnosticado por psicólogos licenciados con formación en evaluación del autismo, pediatras del desarrollo y, en algunos casos, neurólogos o psiquiatras infantiles. Su pediatra puede ayudar con las derivaciones.
-
-### ¿Qué debo llevar a la cita de evaluación?
-
-Traiga evaluaciones previas, notas escolares (IEP o 504 si corresponde), una lista de preguntas y artículos de consuelo para su hijo. Si ayuda, traiga un breve video de juego o rutinas típicas en casa.
-
-### ¿Cuánto tiempo se tarda en obtener resultados?
-
-Algunas clínicas comparten impresiones el mismo día, pero muchas programan la retroalimentación después de que el médico revisa toda la información. Pregunta de antemano cuándo estará listo el informe escrito.
-
-### ¿Se le pedirá a mi hijo que hable o siga instrucciones?
-
-El clínico adapta las expectativas al nivel de desarrollo de su hijo. Muchas actividades se basan en el juego y se centran en la comunicación en cualquier forma que utilice su hijo.
-
-### ¿Se puede realizar una evaluación por telemedicina?
-
-Las entrevistas y cuestionarios para cuidadores pueden realizarse de forma remota. La observación directa suele ser mejor en persona para los niños más pequeños, pero las prácticas varían. Pregunta qué se recomienda para tu hijo.
-
-### ¿Qué pasa si mi hijo no cumple los criterios para el autismo?
-
-Aún así deberías recibir una explicación clara y recomendaciones. A veces, la evaluación señala otra necesidad, como un retraso en el lenguaje, ansiedad, TDAH o un perfil de desarrollo diferente.
-
-### ¿Necesitamos un diagnóstico para empezar la terapia ABA?
-
-El seguro comúnmente requiere un diagnóstico formal y documentación para autorizar los servicios de ABA. AIA puede ayudar a las familias de Arizona a comprender los próximos pasos para la admisión y la cobertura.
+<FAQAccordion
+  label="Preguntas Frecuentes"
+  heading="Ayuda con las expectativas de la primera evaluación de autismo"
+  canonical="https://www.azinstitute4autism.com/es/library/autism-evaluation-what-to-expect"
+  items={[
+  {
+    "question": "¿En qué se diferencia un cribado de autismo de una evaluación de autismo?",
+    "answer": "Una evaluación es una revisión breve que identifica posibles rasgos de autismo e indica si se recomienda una evaluación completa. Una evaluación es un proceso integral que incluye entrevistas y observación, y puede incluir herramientas estandarizadas, para responder si se cumplen los criterios de autismo y qué apoyos se recomiendan.",
+    "answerHtml": "<p>Una evaluación es una revisión breve que identifica posibles rasgos de autismo e indica si se recomienda una evaluación completa. Una evaluación es un proceso integral que incluye entrevistas y observación, y puede incluir herramientas estandarizadas, para responder si se cumplen los criterios de autismo y qué apoyos se recomiendan.</p>"
+  },
+  {
+    "question": "¿Quién puede diagnosticar el autismo en Arizona?",
+    "answer": "El autismo suele ser diagnosticado por psicólogos licenciados con formación en evaluación del autismo, pediatras del desarrollo y, en algunos casos, neurólogos o psiquiatras infantiles. Su pediatra puede ayudar con las derivaciones.",
+    "answerHtml": "<p>El autismo suele ser diagnosticado por psicólogos licenciados con formación en evaluación del autismo, pediatras del desarrollo y, en algunos casos, neurólogos o psiquiatras infantiles. Su pediatra puede ayudar con las derivaciones.</p>"
+  },
+  {
+    "question": "¿Qué debo llevar a la cita de evaluación?",
+    "answer": "Traiga evaluaciones previas, notas escolares (IEP o 504 si corresponde), una lista de preguntas y artículos de consuelo para su hijo. Si ayuda, traiga un breve video de juego o rutinas típicas en casa.",
+    "answerHtml": "<p>Traiga evaluaciones previas, notas escolares (IEP o 504 si corresponde), una lista de preguntas y artículos de consuelo para su hijo. Si ayuda, traiga un breve video de juego o rutinas típicas en casa.</p>"
+  },
+  {
+    "question": "¿Cuánto tiempo se tarda en obtener resultados?",
+    "answer": "Algunas clínicas comparten impresiones el mismo día, pero muchas programan la retroalimentación después de que el médico revisa toda la información. Pregunta de antemano cuándo estará listo el informe escrito.",
+    "answerHtml": "<p>Algunas clínicas comparten impresiones el mismo día, pero muchas programan la retroalimentación después de que el médico revisa toda la información. Pregunta de antemano cuándo estará listo el informe escrito.</p>"
+  },
+  {
+    "question": "¿Se le pedirá a mi hijo que hable o siga instrucciones?",
+    "answer": "El clínico adapta las expectativas al nivel de desarrollo de su hijo. Muchas actividades se basan en el juego y se centran en la comunicación en cualquier forma que utilice su hijo.",
+    "answerHtml": "<p>El clínico adapta las expectativas al nivel de desarrollo de su hijo. Muchas actividades se basan en el juego y se centran en la comunicación en cualquier forma que utilice su hijo.</p>"
+  },
+  {
+    "question": "¿Se puede realizar una evaluación por telemedicina?",
+    "answer": "Las entrevistas y cuestionarios para cuidadores pueden realizarse de forma remota. La observación directa suele ser mejor en persona para los niños más pequeños, pero las prácticas varían. Pregunta qué se recomienda para tu hijo.",
+    "answerHtml": "<p>Las entrevistas y cuestionarios para cuidadores pueden realizarse de forma remota. La observación directa suele ser mejor en persona para los niños más pequeños, pero las prácticas varían. Pregunta qué se recomienda para tu hijo.</p>"
+  },
+  {
+    "question": "¿Qué pasa si mi hijo no cumple los criterios para el autismo?",
+    "answer": "Aún así deberías recibir una explicación clara y recomendaciones. A veces, la evaluación señala otra necesidad, como un retraso en el lenguaje, ansiedad, TDAH o un perfil de desarrollo diferente.",
+    "answerHtml": "<p>Aún así deberías recibir una explicación clara y recomendaciones. A veces, la evaluación señala otra necesidad, como un retraso en el lenguaje, ansiedad, TDAH o un perfil de desarrollo diferente.</p>"
+  },
+  {
+    "question": "¿Necesitamos un diagnóstico para empezar la terapia ABA?",
+    "answer": "El seguro comúnmente requiere un diagnóstico formal y documentación para autorizar los servicios de ABA. AIA puede ayudar a las familias de Arizona a comprender los próximos pasos para la admisión y la cobertura.",
+    "answerHtml": "<p>El seguro comúnmente requiere un diagnóstico formal y documentación para autorizar los servicios de ABA. AIA puede ayudar a las familias de Arizona a comprender los próximos pasos para la admisión y la cobertura.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 If you are here, you may be seeing patterns that make you pause. Maybe your child is not using many words. Maybe eye contact is brief, or routines feel non-negotiable. You are not alone in wondering, Could this be autism, and what should I do next.
 
 This guide explains early signs by age, the difference between screening and diagnosis, who can diagnose in Arizona, and how to move forward with confidence.
@@ -167,33 +169,43 @@ Short journal entries such as "did not look when name called" or "cried when sch
 
 - You know your child best. Your observations guide the process.
 
- Frequently Asked Questions 
-
-## Autism Evaluation Tips for Arizona
-
-### What is the difference between an autism screening and an autism diagnosis?
-
-Screening is a quick check that flags possible traits. Diagnosis is a formal clinical evaluation by a qualified professional that confirms or rules out autism.
-
-### Who can diagnose autism in Arizona?
-
-Licensed psychologists, developmental pediatricians, child neurologists, and psychiatrists can complete a formal diagnostic evaluation in Arizona.
-
-### When should I ask for an evaluation?
-
-If you notice patterns in social communication, play, or flexibility that persist over time, speak with your pediatrician. Early conversation opens access to support.
-
-### What happens during an autism evaluation?
-
-Expect a parent interview, direct observation, and standardized tools such as ADOS-2. Results guide treatment recommendations and school or insurance supports.
-
-### Do I need a diagnosis to start ABA therapy in Arizona?
-
-Insurance plans typically require a formal diagnosis and a referral. AIA can help you understand your coverage and next steps.
-
-### What should I bring to the first appointment?
-
-Bring notes on behaviors and triggers, teacher reports, previous evaluations, insurance information, and a short video of typical play or routines if available.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Autism Evaluation Tips for Arizona"
+  canonical="https://www.azinstitute4autism.com/library/autism-evaluation-diagnosis-arizona-parent-guide"
+  items={[
+  {
+    "question": "What is the difference between an autism screening and an autism diagnosis?",
+    "answer": "Screening is a quick check that flags possible traits. Diagnosis is a formal clinical evaluation by a qualified professional that confirms or rules out autism.",
+    "answerHtml": "<p>Screening is a quick check that flags possible traits. Diagnosis is a formal clinical evaluation by a qualified professional that confirms or rules out autism.</p>"
+  },
+  {
+    "question": "Who can diagnose autism in Arizona?",
+    "answer": "Licensed psychologists, developmental pediatricians, child neurologists, and psychiatrists can complete a formal diagnostic evaluation in Arizona.",
+    "answerHtml": "<p>Licensed psychologists, developmental pediatricians, child neurologists, and psychiatrists can complete a formal diagnostic evaluation in Arizona.</p>"
+  },
+  {
+    "question": "When should I ask for an evaluation?",
+    "answer": "If you notice patterns in social communication, play, or flexibility that persist over time, speak with your pediatrician. Early conversation opens access to support.",
+    "answerHtml": "<p>If you notice patterns in social communication, play, or flexibility that persist over time, speak with your pediatrician. Early conversation opens access to support.</p>"
+  },
+  {
+    "question": "What happens during an autism evaluation?",
+    "answer": "Expect a parent interview, direct observation, and standardized tools such as ADOS-2. Results guide treatment recommendations and school or insurance supports.",
+    "answerHtml": "<p>Expect a parent interview, direct observation, and standardized tools such as ADOS-2. Results guide treatment recommendations and school or insurance supports.</p>"
+  },
+  {
+    "question": "Do I need a diagnosis to start ABA therapy in Arizona?",
+    "answer": "Insurance plans typically require a formal diagnosis and a referral. AIA can help you understand your coverage and next steps.",
+    "answerHtml": "<p>Insurance plans typically require a formal diagnosis and a referral. AIA can help you understand your coverage and next steps.</p>"
+  },
+  {
+    "question": "What should I bring to the first appointment?",
+    "answer": "Bring notes on behaviors and triggers, teacher reports, previous evaluations, insurance information, and a short video of typical play or routines if available.",
+    "answerHtml": "<p>Bring notes on behaviors and triggers, teacher reports, previous evaluations, insurance information, and a short video of typical play or routines if available.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

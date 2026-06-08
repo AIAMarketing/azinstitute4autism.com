@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Play is one of the most important ways children learn. For autistic children, play may look different, but it is still meaningful, valuable, and full of opportunities for growth. Autism play can support communication, imitation, motor skills, problem-solving, flexibility, emotional regulation, and social connection when it is approached with patience and respect for the child's interests.
 
 For many parents, play feels natural until they notice their child interacting with toys or people in unexpected ways. A child may line up cars, spin the wheels of a toy truck, carry one favorite object from room to room, repeat the same play routine, avoid pretend play, or prefer playing near other children rather than directly with them. These patterns are not “bad play.” They are clues about how your child explores the world, manages sensory input, communicates interest, and feels safe.
@@ -171,27 +173,33 @@ For families looking ahead to preschool, kindergarten, or classroom routines, AI
 
 Autism play does not need to look one specific way to be valuable. When children feel safe, understood, and motivated, play can become a bridge to connection, confidence, and lifelong learning.
 
- Frequently Asked Questions 
-
-## About Play & Leisure
-
-### Why doesn't my autistic child play with toys the "right" way?
-
-Children with autism often experience the world through their senses first. Lining up cars, spinning wheels, or focusing on one part of a toy can be deeply satisfying and regulating. It's not "wrong" — it's a starting point. Gently model new ways to use the toy without taking it away.
-
-### At what age should pretend play emerge?
-
-In neurotypical development, pretend play typically appears between 18 and 24 months. Autistic children may develop it later, in fragments, or with explicit teaching. Lack of pretend play by age 2 is one indicator pediatricians watch for, but late-blooming pretend play is still possible with support.
-
-### Is repetitive play harmful?
-
-Not inherently. Repetitive play can be calming and meaningful. The concern is when it crowds out everything else and limits learning. The goal isn't to eliminate it but to expand your child's repertoire so they have more ways to engage.
-
-### Should I force my child to play with peers?
-
-No. Forced peer play often backfires by increasing anxiety. Build interactive play skills with you first, then introduce one peer at a time in short, structured sessions with clear activities.
-
-If you are in Arizona and have questions about your child's play, communication, or development, AIA can help you take the next step. [Schedule a free consultation](../client-consultation) to learn more about evaluation and therapy options for your child.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="About Play & Leisure"
+  canonical="https://www.azinstitute4autism.com/library/play-leisure-skills"
+  items={[
+  {
+    "question": "Why doesn't my autistic child play with toys the \"right\" way?",
+    "answer": "Children with autism often experience the world through their senses first. Lining up cars, spinning wheels, or focusing on one part of a toy can be deeply satisfying and regulating. It's not \"wrong\" — it's a starting point. Gently model new ways to use the toy without taking it away.",
+    "answerHtml": "<p>Children with autism often experience the world through their senses first. Lining up cars, spinning wheels, or focusing on one part of a toy can be deeply satisfying and regulating. It's not &quot;wrong&quot; — it's a starting point. Gently model new ways to use the toy without taking it away.</p>"
+  },
+  {
+    "question": "At what age should pretend play emerge?",
+    "answer": "In neurotypical development, pretend play typically appears between 18 and 24 months. Autistic children may develop it later, in fragments, or with explicit teaching. Lack of pretend play by age 2 is one indicator pediatricians watch for, but late-blooming pretend play is still possible with support.",
+    "answerHtml": "<p>In neurotypical development, pretend play typically appears between 18 and 24 months. Autistic children may develop it later, in fragments, or with explicit teaching. Lack of pretend play by age 2 is one indicator pediatricians watch for, but late-blooming pretend play is still possible with support.</p>"
+  },
+  {
+    "question": "Is repetitive play harmful?",
+    "answer": "Not inherently. Repetitive play can be calming and meaningful. The concern is when it crowds out everything else and limits learning. The goal isn't to eliminate it but to expand your child's repertoire so they have more ways to engage.",
+    "answerHtml": "<p>Not inherently. Repetitive play can be calming and meaningful. The concern is when it crowds out everything else and limits learning. The goal isn't to eliminate it but to expand your child's repertoire so they have more ways to engage.</p>"
+  },
+  {
+    "question": "Should I force my child to play with peers?",
+    "answer": "No. Forced peer play often backfires by increasing anxiety. Build interactive play skills with you first, then introduce one peer at a time in short, structured sessions with clear activities. If you are in Arizona and have questions about your child's play, communication, or development, AIA can help you take the next step. Schedule a free consultation to learn more about evaluation and therapy options for your child.",
+    "answerHtml": "<p>No. Forced peer play often backfires by increasing anxiety. Build interactive play skills with you first, then introduce one peer at a time in short, structured sessions with clear activities. If you are in Arizona and have questions about your child's play, communication, or development, AIA can help you take the next step. <a href=\"../client-consultation\">Schedule a free consultation</a> to learn more about evaluation and therapy options for your child.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

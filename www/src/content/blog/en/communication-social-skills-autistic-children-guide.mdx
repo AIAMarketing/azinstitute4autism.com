@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Communication is the vital bridge children use to share their needs, feelings, ideas, and experiences with the people around them. For children on the autism spectrum, communication development often follows a wonderfully unique path. It is incredibly important for parents to know that a delay in spoken words does not mean communication is absent.
 
 Building communication skills in autistic children means expanding their toolkit so they can express themselves effectively. Parents and professionals can achieve this by observing the child's unique body language, utilizing visual supports or AAC devices, following the child's interests during play, and employing positive reinforcement to celebrate every attempt at connection.
@@ -99,33 +101,43 @@ Finally, celebrate every single attempt your child makes to communicate. Whether
 
 Communication development takes time, patience, and consistency. By recognizing all the beautiful and diverse ways your child interacts with the world, you can help them build the connections they need to thrive.
 
- Frequently Asked Questions 
-
-## Help with First Autism Evaluation Expectations
-
-### At what age should I be concerned about my child's communication skills?
-
-You should discuss your concerns with a pediatrician if your child is not responding to their name by 12 months, not pointing or gesturing by 14 months, or not speaking any single words by 16 months. Early evaluation is always the safest route.
-
-### Will using an AAC device or picture cards stop my child from learning to talk?
-
-No. Extensive research shows that using AAC devices and visual supports does not hinder speech. In most cases, providing a child with an alternative way to communicate lowers their frustration and actually encourages the development of spoken language.
-
-### Why does my child repeat the same phrases from movies over and over?
-
-This is called echolalia or scripting. For many autistic children, repeating familiar phrases is a way to self-soothe, process information, or attempt to communicate a specific feeling they associate with that movie scene.
-
-### How can I improve my child's social interaction if they don't like playing with others?
-
-Start small by simply sharing space. Engage in "parallel play," where you sit near your child playing with similar toys without demanding interaction. Gradually introduce small shared actions, like rolling a ball back and forth, focusing on the joy of the activity rather than strict rules.
-
-### What is the difference between speech therapy and ABA for communication?
-
-A speech-language pathologist primarily focuses on the mechanics of speech, language processing, and oral motor skills. ABA therapy focuses on the functional use of communication in daily life, using reinforcement to encourage the child to use their language skills to get their needs met. The two therapies work wonderfully together.
-
-### How do I handle public meltdowns when my child can't tell me what's wrong?
-
-Prioritize safety and calm. Reduce sensory input if possible (move to a quieter area) and avoid demanding verbal explanations while the child is overwhelmed. Once they are calm, you can use visual supports or simple questions to try and identify the trigger.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Help with First Autism Evaluation Expectations"
+  canonical="https://www.azinstitute4autism.com/library/communication-social-skills-autistic-children-guide"
+  items={[
+  {
+    "question": "At what age should I be concerned about my child's communication skills?",
+    "answer": "You should discuss your concerns with a pediatrician if your child is not responding to their name by 12 months, not pointing or gesturing by 14 months, or not speaking any single words by 16 months. Early evaluation is always the safest route.",
+    "answerHtml": "<p>You should discuss your concerns with a pediatrician if your child is not responding to their name by 12 months, not pointing or gesturing by 14 months, or not speaking any single words by 16 months. Early evaluation is always the safest route.</p>"
+  },
+  {
+    "question": "Will using an AAC device or picture cards stop my child from learning to talk?",
+    "answer": "No. Extensive research shows that using AAC devices and visual supports does not hinder speech. In most cases, providing a child with an alternative way to communicate lowers their frustration and actually encourages the development of spoken language.",
+    "answerHtml": "<p>No. Extensive research shows that using AAC devices and visual supports does not hinder speech. In most cases, providing a child with an alternative way to communicate lowers their frustration and actually encourages the development of spoken language.</p>"
+  },
+  {
+    "question": "Why does my child repeat the same phrases from movies over and over?",
+    "answer": "This is called echolalia or scripting. For many autistic children, repeating familiar phrases is a way to self-soothe, process information, or attempt to communicate a specific feeling they associate with that movie scene.",
+    "answerHtml": "<p>This is called echolalia or scripting. For many autistic children, repeating familiar phrases is a way to self-soothe, process information, or attempt to communicate a specific feeling they associate with that movie scene.</p>"
+  },
+  {
+    "question": "How can I improve my child's social interaction if they don't like playing with others?",
+    "answer": "Start small by simply sharing space. Engage in \"parallel play,\" where you sit near your child playing with similar toys without demanding interaction. Gradually introduce small shared actions, like rolling a ball back and forth, focusing on the joy of the activity rather than strict rules.",
+    "answerHtml": "<p>Start small by simply sharing space. Engage in &quot;parallel play,&quot; where you sit near your child playing with similar toys without demanding interaction. Gradually introduce small shared actions, like rolling a ball back and forth, focusing on the joy of the activity rather than strict rules.</p>"
+  },
+  {
+    "question": "What is the difference between speech therapy and ABA for communication?",
+    "answer": "A speech-language pathologist primarily focuses on the mechanics of speech, language processing, and oral motor skills. ABA therapy focuses on the functional use of communication in daily life, using reinforcement to encourage the child to use their language skills to get their needs met. The two therapies work wonderfully together.",
+    "answerHtml": "<p>A speech-language pathologist primarily focuses on the mechanics of speech, language processing, and oral motor skills. ABA therapy focuses on the functional use of communication in daily life, using reinforcement to encourage the child to use their language skills to get their needs met. The two therapies work wonderfully together.</p>"
+  },
+  {
+    "question": "How do I handle public meltdowns when my child can't tell me what's wrong?",
+    "answer": "Prioritize safety and calm. Reduce sensory input if possible (move to a quieter area) and avoid demanding verbal explanations while the child is overwhelmed. Once they are calm, you can use visual supports or simple questions to try and identify the trigger.",
+    "answerHtml": "<p>Prioritize safety and calm. Reduce sensory input if possible (move to a quieter area) and avoid demanding verbal explanations while the child is overwhelmed. Once they are calm, you can use visual supports or simple questions to try and identify the trigger.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

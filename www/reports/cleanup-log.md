@@ -31,5 +31,8 @@
   from all 65 blog Markdown bodies; these elements are rendered by the shared
   blog-post layout. Updated both extractors and added a blog-content audit to
   prevent recurrence.
+- Converted 19 FAQ-bearing blog posts to MDX and restored a reusable
+  `FAQAccordion.astro` component that owns the live-style accordion and
+  matching `FAQPage` JSON-LD.
 - Added language-qualified content collection IDs to prevent English, Spanish,
   and Arabic entries with the same slug from overwriting each other.

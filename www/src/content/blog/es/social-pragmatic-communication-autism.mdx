@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 ## Las preguntas que los padres nos hacen cada semana "Mi hijo puede hablar, entonces ¿por qué sigue siendo tan difícil hacer amigos?" o "Ella tiene palabras, pero no sabe cómo tener una conversación."
 
 ### La respuesta corta
@@ -132,33 +134,43 @@ Para las familias de Arizona: En los días calurosos cuando el parque infantil n
 
 - [National Autistic Society](https://www.autism.org.uk/advice-and-guidance/topics/family-life-and-relationships/making-friends/parents-and-carers) orientación sobre cómo ayudar a los niños a hacer amigos.
 
- Preguntas Frecuentes 
-
-## Consejos de Comunicación Social
-
-### ¿Qué es el lenguaje pragmático en el autismo?
-
-El lenguaje pragmático es cómo usamos las palabras para relacionarnos con las personas en situaciones reales. Cubre el turno de palabra, el mantenimiento del tema, el espacio personal y cómo el tono y el volumen se ajustan al contexto. Es común que los niños autistas tengan un vocabulario amplio pero aún necesiten enseñanza directa en estas reglas.
-
-### ¿Está siendo grosero mi hijo cuando no entiende los chistes o interrumpe?
-
-Normalmente, no. No captar el sarcasmo, las interpretaciones literales y las interrupciones son señales de que se necesitan enseñar la inferencia social y el momento adecuado. Estas habilidades mejoran con la modelación, la práctica y la retroalimentación en entornos de baja presión.
-
-### ¿Realmente ayuda la práctica entre compañeros?
-
-Sí. La instrucción mediada por pares se considera una práctica basada en la evidencia para los estudiantes autistas y ha demostrado apoyar las habilidades de interacción social desde la educación preescolar hasta la secundaria.
-
-### ¿Cómo se diferencia el ABA de la terapia del habla para las habilidades sociales?
-
-La terapia del habla y lenguaje a menudo se centra en la mecánica y la pragmática del lenguaje. El ABA considera todo el contexto, incluyendo la motivación, el entorno, el refuerzo y la generalización en diferentes entornos. Los dos servicios se complementan bien.
-
-### ¿Qué soportes visuales deberíamos empezar a utilizar?
-
-Comienza con herramientas simples como tarjetas de Primero-Luego o mini listas de verificación para una sola rutina. Nuestra visión general de las [Tarjetas Primero-Luego](../../library/first-then-cards-autism-transitions) muestra cómo configurarlas y desvanecerlas a medida que crece la independencia.
-
-### ¿Cómo consigo ayuda en Arizona?
-
-Puedes [programar una consulta gratuita](../../client-consultation) o leer más sobre los [servicios de ABA de AIA](../../aba-therapy) y nuestro [proceso de admisión](../../aba-therapy-intake-process) . Apoyamos a las familias en toda el área metropolitana de Phoenix con opciones en el centro y en el hogar, junto con capacitación para cuidadores.
+<FAQAccordion
+  label="Preguntas Frecuentes"
+  heading="Consejos de Comunicación Social"
+  canonical="https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism"
+  items={[
+  {
+    "question": "¿Qué es el lenguaje pragmático en el autismo?",
+    "answer": "El lenguaje pragmático es cómo usamos las palabras para relacionarnos con las personas en situaciones reales. Cubre el turno de palabra, el mantenimiento del tema, el espacio personal y cómo el tono y el volumen se ajustan al contexto. Es común que los niños autistas tengan un vocabulario amplio pero aún necesiten enseñanza directa en estas reglas.",
+    "answerHtml": "<p>El lenguaje pragmático es cómo usamos las palabras para relacionarnos con las personas en situaciones reales. Cubre el turno de palabra, el mantenimiento del tema, el espacio personal y cómo el tono y el volumen se ajustan al contexto. Es común que los niños autistas tengan un vocabulario amplio pero aún necesiten enseñanza directa en estas reglas.</p>"
+  },
+  {
+    "question": "¿Está siendo grosero mi hijo cuando no entiende los chistes o interrumpe?",
+    "answer": "Normalmente, no. No captar el sarcasmo, las interpretaciones literales y las interrupciones son señales de que se necesitan enseñar la inferencia social y el momento adecuado. Estas habilidades mejoran con la modelación, la práctica y la retroalimentación en entornos de baja presión.",
+    "answerHtml": "<p>Normalmente, no. No captar el sarcasmo, las interpretaciones literales y las interrupciones son señales de que se necesitan enseñar la inferencia social y el momento adecuado. Estas habilidades mejoran con la modelación, la práctica y la retroalimentación en entornos de baja presión.</p>"
+  },
+  {
+    "question": "¿Realmente ayuda la práctica entre compañeros?",
+    "answer": "Sí. La instrucción mediada por pares se considera una práctica basada en la evidencia para los estudiantes autistas y ha demostrado apoyar las habilidades de interacción social desde la educación preescolar hasta la secundaria.",
+    "answerHtml": "<p>Sí. La instrucción mediada por pares se considera una práctica basada en la evidencia para los estudiantes autistas y ha demostrado apoyar las habilidades de interacción social desde la educación preescolar hasta la secundaria.</p>"
+  },
+  {
+    "question": "¿Cómo se diferencia el ABA de la terapia del habla para las habilidades sociales?",
+    "answer": "La terapia del habla y lenguaje a menudo se centra en la mecánica y la pragmática del lenguaje. El ABA considera todo el contexto, incluyendo la motivación, el entorno, el refuerzo y la generalización en diferentes entornos. Los dos servicios se complementan bien.",
+    "answerHtml": "<p>La terapia del habla y lenguaje a menudo se centra en la mecánica y la pragmática del lenguaje. El ABA considera todo el contexto, incluyendo la motivación, el entorno, el refuerzo y la generalización en diferentes entornos. Los dos servicios se complementan bien.</p>"
+  },
+  {
+    "question": "¿Qué soportes visuales deberíamos empezar a utilizar?",
+    "answer": "Comienza con herramientas simples como tarjetas de Primero-Luego o mini listas de verificación para una sola rutina. Nuestra visión general de las Tarjetas Primero-Luego muestra cómo configurarlas y desvanecerlas a medida que crece la independencia.",
+    "answerHtml": "<p>Comienza con herramientas simples como tarjetas de Primero-Luego o mini listas de verificación para una sola rutina. Nuestra visión general de las <a href=\"../../library/first-then-cards-autism-transitions\">Tarjetas Primero-Luego</a> muestra cómo configurarlas y desvanecerlas a medida que crece la independencia.</p>"
+  },
+  {
+    "question": "¿Cómo consigo ayuda en Arizona?",
+    "answer": "Puedes programar una consulta gratuita o leer más sobre los servicios de ABA de AIA y nuestro proceso de admisión . Apoyamos a las familias en toda el área metropolitana de Phoenix con opciones en el centro y en el hogar, junto con capacitación para cuidadores.",
+    "answerHtml": "<p>Puedes <a href=\"../../client-consultation\">programar una consulta gratuita</a> o leer más sobre los <a href=\"../../aba-therapy\">servicios de ABA de AIA</a> y nuestro <a href=\"../../aba-therapy-intake-process\">proceso de admisión</a> . Apoyamos a las familias en toda el área metropolitana de Phoenix con opciones en el centro y en el hogar, junto con capacitación para cuidadores.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

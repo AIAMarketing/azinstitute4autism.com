@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Progress in Applied Behavior Analysis is often shown in neat graphs and mastered goals. Under every data point is something more human: emotion. When a child learns to understand and manage feelings, everything else gets easier. Focus grows, communication opens up, and daily life feels safer and more predictable.
 
 Key idea: Emotional regulation is not a "nice-to-have." It is the engine that powers learning, independence, and connection.
@@ -182,33 +184,43 @@ Want help designing your plan? [Schedule a free consultation](../client-consulta
 
 Ready to take the next step? Visit our [ABA Therapy](../aba-therapy) page or start the [Learner Intake Process](../aba-therapy-intake-process).
 
- Frequently Asked Questions 
-
-## Emotional Regulation Tips
-
-### What is emotional regulation in ABA therapy?
-
- It is a set of skills that help a child notice feelings, pause, and choose a healthy response. We teach and practice these skills across settings until they become automatic. 
-
-### How is co-regulation different from self-regulation?
-
- Co-regulation uses an adult’s calm presence to guide the child in the moment. Self-regulation is the long-term goal where the child uses the same tools independently. 
-
-### Why focus on emotions instead of compliance?
-
- Compliance may look good briefly. Emotional regulation produces lasting gains that generalize to school, stores, and play. It also strengthens trust and communication. 
-
-### Which tools help most at home?
-
- Start with a visual schedule, First/Then cards, a calm corner, and one movement break the child enjoys. Keep language short. Use the same scripts your team uses. 
-
-### How do we measure progress?
-
- We track independent strategy use, recovery time, and how much adult support is needed. The goal is steady progress toward independence and generalization. 
-
-### When should we ask for extra help?
-
- Reach out if big feelings occur more often, if recovery takes longer, or if daily activities become harder. Our team can develop an individualized plan that meets your child's needs. 
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Emotional Regulation Tips"
+  canonical="https://www.azinstitute4autism.com/library/emotional-regulation-aba"
+  items={[
+  {
+    "question": "What is emotional regulation in ABA therapy?",
+    "answer": "It is a set of skills that help a child notice feelings, pause, and choose a healthy response. We teach and practice these skills across settings until they become automatic.",
+    "answerHtml": "<p>It is a set of skills that help a child notice feelings, pause, and choose a healthy response. We teach and practice these skills across settings until they become automatic.</p>"
+  },
+  {
+    "question": "How is co-regulation different from self-regulation?",
+    "answer": "Co-regulation uses an adult’s calm presence to guide the child in the moment. Self-regulation is the long-term goal where the child uses the same tools independently.",
+    "answerHtml": "<p>Co-regulation uses an adult’s calm presence to guide the child in the moment. Self-regulation is the long-term goal where the child uses the same tools independently.</p>"
+  },
+  {
+    "question": "Why focus on emotions instead of compliance?",
+    "answer": "Compliance may look good briefly. Emotional regulation produces lasting gains that generalize to school, stores, and play. It also strengthens trust and communication.",
+    "answerHtml": "<p>Compliance may look good briefly. Emotional regulation produces lasting gains that generalize to school, stores, and play. It also strengthens trust and communication.</p>"
+  },
+  {
+    "question": "Which tools help most at home?",
+    "answer": "Start with a visual schedule, First/Then cards, a calm corner, and one movement break the child enjoys. Keep language short. Use the same scripts your team uses.",
+    "answerHtml": "<p>Start with a visual schedule, First/Then cards, a calm corner, and one movement break the child enjoys. Keep language short. Use the same scripts your team uses.</p>"
+  },
+  {
+    "question": "How do we measure progress?",
+    "answer": "We track independent strategy use, recovery time, and how much adult support is needed. The goal is steady progress toward independence and generalization.",
+    "answerHtml": "<p>We track independent strategy use, recovery time, and how much adult support is needed. The goal is steady progress toward independence and generalization.</p>"
+  },
+  {
+    "question": "When should we ask for extra help?",
+    "answer": "Reach out if big feelings occur more often, if recovery takes longer, or if daily activities become harder. Our team can develop an individualized plan that meets your child's needs.",
+    "answerHtml": "<p>Reach out if big feelings occur more often, if recovery takes longer, or if daily activities become harder. Our team can develop an individualized plan that meets your child's needs.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

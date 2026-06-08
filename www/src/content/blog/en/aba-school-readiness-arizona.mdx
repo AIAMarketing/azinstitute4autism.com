@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 At the Arizona Institute for Autism (AIA), children ages 2–6 are welcomed into the AIA Preparatory Academy, a unique program that combines accredited curriculum with Applied Behavior Analysis (ABA). Our goal is to create a structured, nurturing, and supportive learning environment where every child can develop the skills they need for long-term success in school and life.
 
 ## Our Unique Approach to Early Childhood Development
@@ -99,37 +101,48 @@ If your child is between the ages of 2 and 6 and could benefit from a program th
  General kindergarten prep 
  Tiered learning paths for smooth transitions 
 
- Frequently Asked Questions 
-
-## AIA Preparatory Academy Tips
-
-### What is AIA Preparatory Academy?
-
-ABA Preparatory Academy combines traditional early education with Applied Behavior Analysis strategies, helping children build communication, social, life skills and academic skills in a structured environment.
-
-### Who benefits most from AIA Preparatory Academy?
-
-AIA Preparatory Academy is especially effective for children with autism or developmental delays, but any child who thrives in structured, individualized settings may benefit.
-
-### How does Our school readiness program prepare children for kindergarten?
-
-Through tiered placement, children gradually transition from one-on-one learning to small group instruction, building confidence and independence before moving to a traditional school environment.
-
-### Is the AIA Preparatory Academy accredited?
-
-Our program integrates an accredited curriculum aligned with Arizona early education standards while incorporating ABA practices.
-
-### How are progress and outcomes measured?
-
-Progress is tracked continuously by BCBA, using data collection and analysis, ensuring that every child’s goals are personalized and updated as they grow.
-
-### What age group does AIA Preparatory Academy serve?
-
-We currently serve children ages 2 to 6 who are in their most critical years of early development.
-
-### How do I enroll my child?
-
-Families can contact the Arizona Institute for Autism directly to schedule a consultation and learn more about the enrollment process.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="AIA Preparatory Academy Tips"
+  canonical="https://www.azinstitute4autism.com/library/aba-school-readiness-arizona"
+  items={[
+  {
+    "question": "What is AIA Preparatory Academy?",
+    "answer": "ABA Preparatory Academy combines traditional early education with Applied Behavior Analysis strategies, helping children build communication, social, life skills and academic skills in a structured environment.",
+    "answerHtml": "<p>ABA Preparatory Academy combines traditional early education with Applied Behavior Analysis strategies, helping children build communication, social, life skills and academic skills in a structured environment.</p>"
+  },
+  {
+    "question": "Who benefits most from AIA Preparatory Academy?",
+    "answer": "AIA Preparatory Academy is especially effective for children with autism or developmental delays, but any child who thrives in structured, individualized settings may benefit.",
+    "answerHtml": "<p>AIA Preparatory Academy is especially effective for children with autism or developmental delays, but any child who thrives in structured, individualized settings may benefit.</p>"
+  },
+  {
+    "question": "How does Our school readiness program prepare children for kindergarten?",
+    "answer": "Through tiered placement, children gradually transition from one-on-one learning to small group instruction, building confidence and independence before moving to a traditional school environment.",
+    "answerHtml": "<p>Through tiered placement, children gradually transition from one-on-one learning to small group instruction, building confidence and independence before moving to a traditional school environment.</p>"
+  },
+  {
+    "question": "Is the AIA Preparatory Academy accredited?",
+    "answer": "Our program integrates an accredited curriculum aligned with Arizona early education standards while incorporating ABA practices.",
+    "answerHtml": "<p>Our program integrates an accredited curriculum aligned with Arizona early education standards while incorporating ABA practices.</p>"
+  },
+  {
+    "question": "How are progress and outcomes measured?",
+    "answer": "Progress is tracked continuously by BCBA, using data collection and analysis, ensuring that every child’s goals are personalized and updated as they grow.",
+    "answerHtml": "<p>Progress is tracked continuously by BCBA, using data collection and analysis, ensuring that every child’s goals are personalized and updated as they grow.</p>"
+  },
+  {
+    "question": "What age group does AIA Preparatory Academy serve?",
+    "answer": "We currently serve children ages 2 to 6 who are in their most critical years of early development.",
+    "answerHtml": "<p>We currently serve children ages 2 to 6 who are in their most critical years of early development.</p>"
+  },
+  {
+    "question": "How do I enroll my child?",
+    "answer": "Families can contact the Arizona Institute for Autism directly to schedule a consultation and learn more about the enrollment process.",
+    "answerHtml": "<p>Families can contact the Arizona Institute for Autism directly to schedule a consultation and learn more about the enrollment process.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

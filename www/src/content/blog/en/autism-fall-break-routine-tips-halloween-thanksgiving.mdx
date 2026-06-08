@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Fall break brings new energy to Arizona families. School pauses. Days feel different. That change can be exciting. It can also be stressful for children with autism who rely on predictable routines. The good news is that a little planning reduces surprises and gives your child clear steps to follow.
 
 In this guide, we share practical strategies that help your child enjoy fall break, Halloween, and Thanksgiving. You will find visual tools, sensory supports, and small adjustments that make a big difference. If you would like personalized coaching, the Arizona Institute for Autism can help you build a calm plan that fits your family.
@@ -155,33 +157,43 @@ Fall break and the holidays don’t have to derail progress or well-being. With 
 
 Ready to deepen your ABA toolkit? Schedule a [free consultation](../client-consultation) with the Arizona Institute for Autism to develop personalized strategies and support your family through every season.
 
- Frequently Asked Questions 
-
-## Fall Break Tips for Children with Autism
-
-### How do I keep structure without a full school schedule?
-
-Pick four to six anchors that will not move. Wake time, meals, quiet time, and bedtime are the most powerful. Add two small activities per block and show them with pictures.
-
-### What if my child refuses a costume?
-
-Costume comfort comes first. Try themed pajamas or a favorite T-shirt with a small accessory. Join one or two friendly doorsteps and end on a success.
-
-### How do I reduce sensory overload during trick-or-treating?
-
-Go early, choose a short and quiet route, and pack headphones. Use First/Then cards for each step. Take frequent breaks and finish before your child is exhausted.
-
-### My family does not understand our child’s needs. What should I say?
-
-Send a short note before the visit. Include how to greet your child, what foods are safe, and that breaks help participation. Offer one positive way relatives can connect.
-
-### What if the meal is very different from what my child eats?
-
-Bring a familiar plate. Allow a small taste of a new food if your child is ready. Celebrate sitting at the table and using polite language. Pressure is not required.
-
-### What should I put in a sensory go-bag for the holidays?
-
-Noise-reducing headphones, a small fidget, sunglasses, chewy or crunchy snacks, water, wipes, and visual supports. Add one comfort item that always helps your child regulate.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Fall Break Tips for Children with Autism"
+  canonical="https://www.azinstitute4autism.com/library/autism-fall-break-routine-tips-halloween-thanksgiving"
+  items={[
+  {
+    "question": "How do I keep structure without a full school schedule?",
+    "answer": "Pick four to six anchors that will not move. Wake time, meals, quiet time, and bedtime are the most powerful. Add two small activities per block and show them with pictures.",
+    "answerHtml": "<p>Pick four to six anchors that will not move. Wake time, meals, quiet time, and bedtime are the most powerful. Add two small activities per block and show them with pictures.</p>"
+  },
+  {
+    "question": "What if my child refuses a costume?",
+    "answer": "Costume comfort comes first. Try themed pajamas or a favorite T-shirt with a small accessory. Join one or two friendly doorsteps and end on a success.",
+    "answerHtml": "<p>Costume comfort comes first. Try themed pajamas or a favorite T-shirt with a small accessory. Join one or two friendly doorsteps and end on a success.</p>"
+  },
+  {
+    "question": "How do I reduce sensory overload during trick-or-treating?",
+    "answer": "Go early, choose a short and quiet route, and pack headphones. Use First/Then cards for each step. Take frequent breaks and finish before your child is exhausted.",
+    "answerHtml": "<p>Go early, choose a short and quiet route, and pack headphones. Use First/Then cards for each step. Take frequent breaks and finish before your child is exhausted.</p>"
+  },
+  {
+    "question": "My family does not understand our child’s needs. What should I say?",
+    "answer": "Send a short note before the visit. Include how to greet your child, what foods are safe, and that breaks help participation. Offer one positive way relatives can connect.",
+    "answerHtml": "<p>Send a short note before the visit. Include how to greet your child, what foods are safe, and that breaks help participation. Offer one positive way relatives can connect.</p>"
+  },
+  {
+    "question": "What if the meal is very different from what my child eats?",
+    "answer": "Bring a familiar plate. Allow a small taste of a new food if your child is ready. Celebrate sitting at the table and using polite language. Pressure is not required.",
+    "answerHtml": "<p>Bring a familiar plate. Allow a small taste of a new food if your child is ready. Celebrate sitting at the table and using polite language. Pressure is not required.</p>"
+  },
+  {
+    "question": "What should I put in a sensory go-bag for the holidays?",
+    "answer": "Noise-reducing headphones, a small fidget, sunglasses, chewy or crunchy snacks, water, wipes, and visual supports. Add one comfort item that always helps your child regulate.",
+    "answerHtml": "<p>Noise-reducing headphones, a small fidget, sunglasses, chewy or crunchy snacks, water, wipes, and visual supports. Add one comfort item that always helps your child regulate.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

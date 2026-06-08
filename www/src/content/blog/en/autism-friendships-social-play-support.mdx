@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Watching your child navigate the social world is a profound experience for any parent. For parents of autistic children, it can also be a source of anxiety. You might notice your child prefers to play alone, struggles to initiate conversations, or seems overwhelmed in group settings. It is easy to worry that they are lonely or missing out on the joy of childhood friendships.
 
 However, supporting friendships and social play for children with autism is rarely about teaching them to act like everyone else. Instead, it is about understanding their unique social language and creating environments where they feel safe enough to connect.
@@ -95,41 +97,53 @@ Our integrated ABA programs focus on functional, meaningful skills. We work on t
 
 Furthermore, we utilize the child's natural environment and interests to shape these skills. By embedding social goals into preferred activities, therapy feels like play. We also work closely with families to ensure that the strategies practiced in the clinic translate to home life and the community. Developing these skills frequently ties into broader developmental milestones, which you can explore further in our breakdown of [Executive Functioning Skills and Autism](executive-functioning-skills-autism).
 
- Frequently Asked Questions 
-
-## About Autism & Play
-
-### Why does my autistic child ignore other children at the park?
-
-They are likely not ignoring them; they may simply be overwhelmed by the sensory environment or unsure how to initiate contact. They may also be perfectly content observing from a distance, which is a valid form of social processing.
-
-### Is it okay if my child only wants to play with adults?
-
-Yes. Adults are generally more predictable, patient, and willing to adapt to the child's rules of play than peers are. This is a common stepping stone to peer relationships.
-
-### What is parallel play, and is it normal for older children?
-
-Parallel play is when children play adjacent to each other without directly interacting. While neurotypical children usually outgrow this in toddlerhood, it remains a comfortable and normal social baseline for many autistic individuals throughout their lives.
-
-### How do I stop my child from info-dumping on peers?
-
-Instead of stopping them, teach them to check for social cues. ABA therapy can help teach a child how to ask, "Do you want to hear more about this?" giving them a tool to share their passion without overwhelming the listener.
-
-### Should I force my child to make eye contact during playdates?
-
-No. Forcing eye contact can be physically uncomfortable and deeply distracting for autistic children, taking their focus away from the actual play and conversation.
-
-### How can I tell if my child is lonely or just prefers to be alone?
-
-Look for signs of distress. If they seem happy and relaxed while alone, they are likely recharging. If they express sadness about not having friends, or hover around groups without knowing how to join, they may need support.
-
-### Can AAC devices be used during playdates?
-
-Absolutely. Augmentative and Alternative Communication (AAC) devices are fantastic tools for play. Ensure the peer is introduced to the device so they understand how your child communicates.
-
-### How does ABA help with play if it's mostly structured learning?
-
-Modern ABA therapy heavily incorporates naturalistic, play-based learning. Therapists use games, toys, and the child's specific interests to naturally reinforce social behaviors like sharing, waiting, and self-advocating.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="About Autism & Play"
+  canonical="https://www.azinstitute4autism.com/library/autism-friendships-social-play-support"
+  items={[
+  {
+    "question": "Why does my autistic child ignore other children at the park?",
+    "answer": "They are likely not ignoring them; they may simply be overwhelmed by the sensory environment or unsure how to initiate contact. They may also be perfectly content observing from a distance, which is a valid form of social processing.",
+    "answerHtml": "<p>They are likely not ignoring them; they may simply be overwhelmed by the sensory environment or unsure how to initiate contact. They may also be perfectly content observing from a distance, which is a valid form of social processing.</p>"
+  },
+  {
+    "question": "Is it okay if my child only wants to play with adults?",
+    "answer": "Yes. Adults are generally more predictable, patient, and willing to adapt to the child's rules of play than peers are. This is a common stepping stone to peer relationships.",
+    "answerHtml": "<p>Yes. Adults are generally more predictable, patient, and willing to adapt to the child's rules of play than peers are. This is a common stepping stone to peer relationships.</p>"
+  },
+  {
+    "question": "What is parallel play, and is it normal for older children?",
+    "answer": "Parallel play is when children play adjacent to each other without directly interacting. While neurotypical children usually outgrow this in toddlerhood, it remains a comfortable and normal social baseline for many autistic individuals throughout their lives.",
+    "answerHtml": "<p>Parallel play is when children play adjacent to each other without directly interacting. While neurotypical children usually outgrow this in toddlerhood, it remains a comfortable and normal social baseline for many autistic individuals throughout their lives.</p>"
+  },
+  {
+    "question": "How do I stop my child from info-dumping on peers?",
+    "answer": "Instead of stopping them, teach them to check for social cues. ABA therapy can help teach a child how to ask, \"Do you want to hear more about this?\" giving them a tool to share their passion without overwhelming the listener.",
+    "answerHtml": "<p>Instead of stopping them, teach them to check for social cues. ABA therapy can help teach a child how to ask, &quot;Do you want to hear more about this?&quot; giving them a tool to share their passion without overwhelming the listener.</p>"
+  },
+  {
+    "question": "Should I force my child to make eye contact during playdates?",
+    "answer": "No. Forcing eye contact can be physically uncomfortable and deeply distracting for autistic children, taking their focus away from the actual play and conversation.",
+    "answerHtml": "<p>No. Forcing eye contact can be physically uncomfortable and deeply distracting for autistic children, taking their focus away from the actual play and conversation.</p>"
+  },
+  {
+    "question": "How can I tell if my child is lonely or just prefers to be alone?",
+    "answer": "Look for signs of distress. If they seem happy and relaxed while alone, they are likely recharging. If they express sadness about not having friends, or hover around groups without knowing how to join, they may need support.",
+    "answerHtml": "<p>Look for signs of distress. If they seem happy and relaxed while alone, they are likely recharging. If they express sadness about not having friends, or hover around groups without knowing how to join, they may need support.</p>"
+  },
+  {
+    "question": "Can AAC devices be used during playdates?",
+    "answer": "Absolutely. Augmentative and Alternative Communication (AAC) devices are fantastic tools for play. Ensure the peer is introduced to the device so they understand how your child communicates.",
+    "answerHtml": "<p>Absolutely. Augmentative and Alternative Communication (AAC) devices are fantastic tools for play. Ensure the peer is introduced to the device so they understand how your child communicates.</p>"
+  },
+  {
+    "question": "How does ABA help with play if it's mostly structured learning?",
+    "answer": "Modern ABA therapy heavily incorporates naturalistic, play-based learning. Therapists use games, toys, and the child's specific interests to naturally reinforce social behaviors like sharing, waiting, and self-advocating.",
+    "answerHtml": "<p>Modern ABA therapy heavily incorporates naturalistic, play-based learning. Therapists use games, toys, and the child's specific interests to naturally reinforce social behaviors like sharing, waiting, and self-advocating.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

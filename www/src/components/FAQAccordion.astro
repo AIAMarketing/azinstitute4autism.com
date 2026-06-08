@@ -1,4 +1,154 @@
 ---
-const { question, answer } = Astro.props;
+interface FAQItem {
+  question: string;
+  answer: string;
+  answerHtml?: string;
+}
+
+interface Props {
+  label: string;
+  heading: string;
+  items: FAQItem[];
+  canonical?: string;
+}
+
+const { label, heading, items, canonical } = Astro.props;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  ...(canonical ? { '@id': `${canonical}#faq` } : {}),
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer
+    }
+  }))
+};
 ---
-<details class="faq"><summary>{question}</summary><p>{answer}</p></details>
+<section class="blog-faq" aria-labelledby="blog-faq-heading">
+  <header class="blog-faq-heading">
+    <h2 id="blog-faq-heading">{label}</h2>
+    <h3>{heading}</h3>
+  </header>
+  <div class="blog-faq-list">
+    {items.map((item, index) => (
+      <details class="faq" open={index === 0}>
+        <summary>
+          <span>{item.question}</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-answer" set:html={item.answerHtml || `<p>${item.answer}</p>`} />
+      </details>
+    ))}
+  </div>
+</section>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<style>
+  .blog-faq {
+    margin-block: 2.5rem 3rem;
+  }
+
+  .blog-faq-heading {
+    margin-bottom: 1.875rem;
+  }
+
+  .blog-faq-heading h2 {
+    color: var(--color-accent-strong);
+    font-family: var(--font-accent);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .blog-faq-heading h3 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin: .5rem 0 0;
+  }
+
+  .blog-faq-list {
+    background: #fcf2e2;
+    padding: 1.25rem;
+  }
+
+  .faq {
+    background: transparent;
+    border-bottom: 1px solid var(--color-accent-strong);
+    padding: 0;
+  }
+
+  .faq:last-child {
+    border-bottom: 0;
+  }
+
+  summary {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 1.875rem;
+    justify-content: space-between;
+    list-style: none;
+    padding: 1rem 0;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary span:first-child {
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .faq-icon {
+    flex: 0 0 auto;
+    height: 14px;
+    margin-inline-end: .5rem;
+    position: relative;
+    width: 14px;
+  }
+
+  .faq-icon::after {
+    border-bottom: 1px solid var(--color-accent-strong);
+    border-right: 1px solid var(--color-accent-strong);
+    content: "";
+    display: block;
+    height: 14px;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    transition: transform 400ms;
+    width: 14px;
+  }
+
+  details[open] .faq-icon::after {
+    transform: rotate(-135deg);
+  }
+
+  .faq-answer {
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+
+  .faq-answer :global(p) {
+    margin: 0 0 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .blog-faq {
+      margin-bottom: 3.125rem;
+    }
+
+    .blog-faq-list {
+      padding: 2.5rem;
+    }
+  }
+</style>

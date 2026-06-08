@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 For many parents, it begins with a familiar worry: "Something feels a little different, but I can't tell if it's a phase, a personality thing, or something I should look into."
 
 That uncertainty is common. It is also why clinicians look for patterns across everyday skills , not one isolated milestone.
@@ -367,33 +369,43 @@ Early understanding helps families:
 
 If you would like to talk through your observations with a local team, you can start with AIA's [free client consultation form](../client-consultation) or explore more parent-friendly resources in the [AIA Library](../library).
 
- Frequently Asked Questions 
-
-## Early Signs of Autism by Age
-
-### What are the earliest signs of autism in toddlers?
-
-Many families notice differences in joint attention, gestures, response to name, and back-and-forth social play. The CDC's list of [autism signs and symptoms](https://www.cdc.gov/autism/signs-symptoms/index) includes several early social communication markers.
-
-### What are signs of autism at 18 months?
-
-Possible signs include limited response to name, fewer gestures (pointing, showing), limited joint attention, and difficulty using communication socially. The AAP notes autism screening is recommended at [18 and 24 months](https://www.aap.org/en/patient-care/autism/).
-
-### What are signs of autism in a 2-year-old?
-
-At age two, concerns often include limited pretend play, difficulty with reciprocity, repeating the same phrases, intense distress with transitions, and challenges using language for connection. For play development ideas, see AIA's guide to [play and leisure skills](play-leisure-skills).
-
-### Does delayed speech automatically mean autism?
-
-No. Speech delay can have many causes. Clinicians look at the whole pattern, including gestures, joint attention, play, flexibility, sensory responses, and how communication is used in daily life.
-
-### When should my child be screened for autism?
-
-The American Academy of Pediatrics recommends autism-specific screening at [18 and 24 months](https://www.aap.org/en/patient-care/autism/). The CDC summarizes that guidance for clinicians on its page about [clinical autism screening](https://www.cdc.gov/autism/hcp/diagnosis/screening).
-
-### What happens during an autism evaluation?
-
-Evaluations usually include caregiver history plus structured observation of social communication and play. AIA explains how tools like the ADOS may be used on its [autism evaluations page](../autism-evaluations), and Mass General provides a general overview of the [ADOS-2 assessment](https://www.massgeneral.org/children/autism/lurie-center/autism-diagnostic-observation-schedulesecond-edition-ados2).
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Early Signs of Autism by Age"
+  canonical="https://www.azinstitute4autism.com/library/early-signs-autism-by-age"
+  items={[
+  {
+    "question": "What are the earliest signs of autism in toddlers?",
+    "answer": "Many families notice differences in joint attention, gestures, response to name, and back-and-forth social play. The CDC's list of autism signs and symptoms includes several early social communication markers.",
+    "answerHtml": "<p>Many families notice differences in joint attention, gestures, response to name, and back-and-forth social play. The CDC's list of <a href=\"https://www.cdc.gov/autism/signs-symptoms/index\">autism signs and symptoms</a> includes several early social communication markers.</p>"
+  },
+  {
+    "question": "What are signs of autism at 18 months?",
+    "answer": "Possible signs include limited response to name, fewer gestures (pointing, showing), limited joint attention, and difficulty using communication socially. The AAP notes autism screening is recommended at 18 and 24 months.",
+    "answerHtml": "<p>Possible signs include limited response to name, fewer gestures (pointing, showing), limited joint attention, and difficulty using communication socially. The AAP notes autism screening is recommended at <a href=\"https://www.aap.org/en/patient-care/autism/\">18 and 24 months</a>.</p>"
+  },
+  {
+    "question": "What are signs of autism in a 2-year-old?",
+    "answer": "At age two, concerns often include limited pretend play, difficulty with reciprocity, repeating the same phrases, intense distress with transitions, and challenges using language for connection. For play development ideas, see AIA's guide to play and leisure skills.",
+    "answerHtml": "<p>At age two, concerns often include limited pretend play, difficulty with reciprocity, repeating the same phrases, intense distress with transitions, and challenges using language for connection. For play development ideas, see AIA's guide to <a href=\"play-leisure-skills\">play and leisure skills</a>.</p>"
+  },
+  {
+    "question": "Does delayed speech automatically mean autism?",
+    "answer": "No. Speech delay can have many causes. Clinicians look at the whole pattern, including gestures, joint attention, play, flexibility, sensory responses, and how communication is used in daily life.",
+    "answerHtml": "<p>No. Speech delay can have many causes. Clinicians look at the whole pattern, including gestures, joint attention, play, flexibility, sensory responses, and how communication is used in daily life.</p>"
+  },
+  {
+    "question": "When should my child be screened for autism?",
+    "answer": "The American Academy of Pediatrics recommends autism-specific screening at 18 and 24 months. The CDC summarizes that guidance for clinicians on its page about clinical autism screening.",
+    "answerHtml": "<p>The American Academy of Pediatrics recommends autism-specific screening at <a href=\"https://www.aap.org/en/patient-care/autism/\">18 and 24 months</a>. The CDC summarizes that guidance for clinicians on its page about <a href=\"https://www.cdc.gov/autism/hcp/diagnosis/screening\">clinical autism screening</a>.</p>"
+  },
+  {
+    "question": "What happens during an autism evaluation?",
+    "answer": "Evaluations usually include caregiver history plus structured observation of social communication and play. AIA explains how tools like the ADOS may be used on its autism evaluations page, and Mass General provides a general overview of the ADOS-2 assessment.",
+    "answerHtml": "<p>Evaluations usually include caregiver history plus structured observation of social communication and play. AIA explains how tools like the ADOS may be used on its <a href=\"../autism-evaluations\">autism evaluations page</a>, and Mass General provides a general overview of the <a href=\"https://www.massgeneral.org/children/autism/lurie-center/autism-diagnostic-observation-schedulesecond-edition-ados2\">ADOS-2 assessment</a>.</p>"
+  }
+]}
+/>
 
  Previous Post 
 

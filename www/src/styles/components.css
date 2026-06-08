@@ -50,8 +50,6 @@
 .like-view-counter button { background: white; border: 1px solid var(--color-border); border-radius: 999px; padding: .6rem 1rem; }
 .like-view-counter button.liked { background: var(--color-primary-dark); border-color: var(--color-primary-dark); color: white; }
 .like-view-counter button:disabled { cursor: wait; opacity: .65; }
-.faq { border-bottom: 1px solid var(--color-border); padding-block: var(--space-md); }
-.faq summary { cursor: pointer; font-weight: 700; }
 .source-page-banner { background: var(--color-tint); padding-block: 4rem; text-align: center; }
 .source-page-banner h1 { margin: 0; }
 .source-page-banner.has-source-image { background-color: var(--color-tint); background-position: center; background-repeat: no-repeat; background-size: cover; padding-block: 10rem; text-align: left; }

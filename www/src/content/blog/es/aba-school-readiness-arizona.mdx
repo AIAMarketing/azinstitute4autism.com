@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 En el Instituto de Autismo de Arizona (AIA), los niños de 2 a 6 años son bienvenidos en la Academia Preparatoria AIA, un programa único que combina un currículo acreditado con Análisis de Comportamiento Aplicado (ABA). Nuestro objetivo es crear un entorno de aprendizaje estructurado, nutritivo y de apoyo donde cada niño pueda desarrollar las habilidades que necesita para el éxito a largo plazo en la escuela y en la vida.
 
 ## Nuestro Enfoque Único para el Desarrollo Infantil Temprano
@@ -99,37 +101,48 @@ Si su hijo tiene entre 2 y 6 años y podría beneficiarse de un programa que int
  Preparación general para el Kinder 
  Rutas de aprendizaje escalonadas para transiciones suaves 
 
- Preguntas frecuentes 
-
-## Consejos de la Academia Preparatoria AIA
-
-### ¿Qué es la Academia Preparatoria AIA?
-
-La Academia Preparatoria AIA combina la educación temprana tradicional con estrategias de Análisis de Comportamiento Aplicado (ABA), ayudando a los niños a desarrollar habilidades de comunicación, sociales, de vida y académicas en un entorno estructurado.
-
-### ¿Quién se beneficia más de la Academia Preparatoria AIA?
-
-La Academia Preparatoria AIA es especialmente efectiva para niños con autismo o retrasos en el desarrollo, pero cualquier niño que prospere en entornos estructurados e individualizados puede beneficiarse.
-
-### ¿Cómo prepara nuestro programa de preparación escolar a los niños para el kinder?
-
-A través de la colocación escalonada, los niños pasan gradualmente de un aprendizaje uno a uno a la instrucción en grupos pequeños, construyendo confianza e independencia antes de pasar a un entorno escolar tradicional.
-
-### ¿Está acreditada la Academia Preparatoria AIA?
-
-Nuestro programa integra un currículo acreditado alineado con los estándares de educación infantil de Arizona mientras incorpora prácticas de ABA.
-
-### ¿Cómo se miden el progreso y los resultados?
-
-El progreso es monitoreado continuamente por el Analista de Comportamiento (BCBA), utilizando la recopilación y el análisis de datos, asegurando que los objetivos de cada niño sean personalizados y actualizados a medida que crecen.
-
-### ¿Qué grupo de edad atiende la Academia Preparatoria AIA?
-
-Actualmente atendemos a niños de 2 a 6 años que se encuentran en sus años más críticos de desarrollo temprano.
-
-### ¿Cómo inscribo a mi hijo/hija?
-
-Las familias pueden contactar directamente al Instituto de Autismo de Arizona para programar una consulta y obtener más información sobre el proceso de inscripción.
+<FAQAccordion
+  label="Preguntas frecuentes"
+  heading="Consejos de la Academia Preparatoria AIA"
+  canonical="https://www.azinstitute4autism.com/es/library/aba-school-readiness-arizona"
+  items={[
+  {
+    "question": "¿Qué es la Academia Preparatoria AIA?",
+    "answer": "La Academia Preparatoria AIA combina la educación temprana tradicional con estrategias de Análisis de Comportamiento Aplicado (ABA), ayudando a los niños a desarrollar habilidades de comunicación, sociales, de vida y académicas en un entorno estructurado.",
+    "answerHtml": "<p>La Academia Preparatoria AIA combina la educación temprana tradicional con estrategias de Análisis de Comportamiento Aplicado (ABA), ayudando a los niños a desarrollar habilidades de comunicación, sociales, de vida y académicas en un entorno estructurado.</p>"
+  },
+  {
+    "question": "¿Quién se beneficia más de la Academia Preparatoria AIA?",
+    "answer": "La Academia Preparatoria AIA es especialmente efectiva para niños con autismo o retrasos en el desarrollo, pero cualquier niño que prospere en entornos estructurados e individualizados puede beneficiarse.",
+    "answerHtml": "<p>La Academia Preparatoria AIA es especialmente efectiva para niños con autismo o retrasos en el desarrollo, pero cualquier niño que prospere en entornos estructurados e individualizados puede beneficiarse.</p>"
+  },
+  {
+    "question": "¿Cómo prepara nuestro programa de preparación escolar a los niños para el kinder?",
+    "answer": "A través de la colocación escalonada, los niños pasan gradualmente de un aprendizaje uno a uno a la instrucción en grupos pequeños, construyendo confianza e independencia antes de pasar a un entorno escolar tradicional.",
+    "answerHtml": "<p>A través de la colocación escalonada, los niños pasan gradualmente de un aprendizaje uno a uno a la instrucción en grupos pequeños, construyendo confianza e independencia antes de pasar a un entorno escolar tradicional.</p>"
+  },
+  {
+    "question": "¿Está acreditada la Academia Preparatoria AIA?",
+    "answer": "Nuestro programa integra un currículo acreditado alineado con los estándares de educación infantil de Arizona mientras incorpora prácticas de ABA.",
+    "answerHtml": "<p>Nuestro programa integra un currículo acreditado alineado con los estándares de educación infantil de Arizona mientras incorpora prácticas de ABA.</p>"
+  },
+  {
+    "question": "¿Cómo se miden el progreso y los resultados?",
+    "answer": "El progreso es monitoreado continuamente por el Analista de Comportamiento (BCBA), utilizando la recopilación y el análisis de datos, asegurando que los objetivos de cada niño sean personalizados y actualizados a medida que crecen.",
+    "answerHtml": "<p>El progreso es monitoreado continuamente por el Analista de Comportamiento (BCBA), utilizando la recopilación y el análisis de datos, asegurando que los objetivos de cada niño sean personalizados y actualizados a medida que crecen.</p>"
+  },
+  {
+    "question": "¿Qué grupo de edad atiende la Academia Preparatoria AIA?",
+    "answer": "Actualmente atendemos a niños de 2 a 6 años que se encuentran en sus años más críticos de desarrollo temprano.",
+    "answerHtml": "<p>Actualmente atendemos a niños de 2 a 6 años que se encuentran en sus años más críticos de desarrollo temprano.</p>"
+  },
+  {
+    "question": "¿Cómo inscribo a mi hijo/hija?",
+    "answer": "Las familias pueden contactar directamente al Instituto de Autismo de Arizona para programar una consulta y obtener más información sobre el proceso de inscripción.",
+    "answerHtml": "<p>Las familias pueden contactar directamente al Instituto de Autismo de Arizona para programar una consulta y obtener más información sobre el proceso de inscripción.</p>"
+  }
+]}
+/>
 
  Next Post 
 

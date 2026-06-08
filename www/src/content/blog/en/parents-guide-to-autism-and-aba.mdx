@@ -13,6 +13,8 @@ tags: []
 draft: false
 ---
 
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
 Every child is different. Some need more support with communication. Others struggle most with transitions, sensory input, or emotional regulation. Autism is a neurodevelopmental condition that affects how a person communicates, learns, behaves, and experiences the world, and signs may become noticeable early in development.
 
 If you are trying to figure out how to help your autistic child, start by understanding what helps them feel safe, understood, and able to succeed in daily life.
@@ -161,33 +163,43 @@ A strong autism parent guide should say this plainly: your regulation matters to
 
 Self-care does not have to be elaborate. It may mean lowering one unrealistic expectation, asking for help with one hard transition, or building a few quiet minutes into your day. AIA’s [Discover Self-Care Hacks for Parents of Children with Autism](autism-family-self-care-tips) keeps this practical and realistic.
 
- Frequently Asked Questions 
-
-## Parent Guide to Autism and ABA
-
-### What should I do if I think my child may be autistic?
-
-Talk with your child’s pediatrician, ask for a developmental screening, and share specific examples from home. If you want a clearer overview of screening versus diagnosis, AIA’s [Autism Evaluation in Arizona: A Parent’s Step-by-Step Guide](autism-evaluation-diagnosis-arizona-parent-guide) is a helpful next step.
-
-### Does every autistic child need ABA therapy?
-
-Not every child needs the same mix of supports. ABA can be very helpful when it is individualized, functional, and collaborative, especially for communication, routines, independence, and replacement skills.
-
-### How can I help my child communicate if they are minimally verbal?
-
-Use simple language, visuals or gestures, extra wait time, and functional communication such as “help,” “more,” “break,” and “all done.” Meaningful communication does not have to start with full sentences.
-
-### What should I do during a meltdown?
-
-Focus on safety, reduce demands, and lower sensory input when possible. Save teaching and problem-solving for later, after your child is calm.
-
-### How can I make transitions easier at home?
-
-Use clear warnings, visual schedules, First-Then language, and predictable routines. Many families do well with one very simple transition support they can use every day, such as a timer or first-then card.
-
-### How can family members stay consistent without becoming rigid?
-
-Agree on a few shared basics, such as the same short prompts, replacement words, and transition routine. You do not need identical responses from every adult. You need predictable ones.
+<FAQAccordion
+  label="Frequently Asked Questions"
+  heading="Parent Guide to Autism and ABA"
+  canonical="https://www.azinstitute4autism.com/library/parents-guide-to-autism-and-aba"
+  items={[
+  {
+    "question": "What should I do if I think my child may be autistic?",
+    "answer": "Talk with your child’s pediatrician, ask for a developmental screening, and share specific examples from home. If you want a clearer overview of screening versus diagnosis, AIA’s Autism Evaluation in Arizona: A Parent’s Step-by-Step Guide is a helpful next step.",
+    "answerHtml": "<p>Talk with your child’s pediatrician, ask for a developmental screening, and share specific examples from home. If you want a clearer overview of screening versus diagnosis, AIA’s <a href=\"autism-evaluation-diagnosis-arizona-parent-guide\">Autism Evaluation in Arizona: A Parent’s Step-by-Step Guide</a> is a helpful next step.</p>"
+  },
+  {
+    "question": "Does every autistic child need ABA therapy?",
+    "answer": "Not every child needs the same mix of supports. ABA can be very helpful when it is individualized, functional, and collaborative, especially for communication, routines, independence, and replacement skills.",
+    "answerHtml": "<p>Not every child needs the same mix of supports. ABA can be very helpful when it is individualized, functional, and collaborative, especially for communication, routines, independence, and replacement skills.</p>"
+  },
+  {
+    "question": "How can I help my child communicate if they are minimally verbal?",
+    "answer": "Use simple language, visuals or gestures, extra wait time, and functional communication such as “help,” “more,” “break,” and “all done.” Meaningful communication does not have to start with full sentences.",
+    "answerHtml": "<p>Use simple language, visuals or gestures, extra wait time, and functional communication such as “help,” “more,” “break,” and “all done.” Meaningful communication does not have to start with full sentences.</p>"
+  },
+  {
+    "question": "What should I do during a meltdown?",
+    "answer": "Focus on safety, reduce demands, and lower sensory input when possible. Save teaching and problem-solving for later, after your child is calm.",
+    "answerHtml": "<p>Focus on safety, reduce demands, and lower sensory input when possible. Save teaching and problem-solving for later, after your child is calm.</p>"
+  },
+  {
+    "question": "How can I make transitions easier at home?",
+    "answer": "Use clear warnings, visual schedules, First-Then language, and predictable routines. Many families do well with one very simple transition support they can use every day, such as a timer or first-then card.",
+    "answerHtml": "<p>Use clear warnings, visual schedules, First-Then language, and predictable routines. Many families do well with one very simple transition support they can use every day, such as a timer or first-then card.</p>"
+  },
+  {
+    "question": "How can family members stay consistent without becoming rigid?",
+    "answer": "Agree on a few shared basics, such as the same short prompts, replacement words, and transition routine. You do not need identical responses from every adult. You need predictable ones.",
+    "answerHtml": "<p>Agree on a few shared basics, such as the same short prompts, replacement words, and transition routine. You do not need identical responses from every adult. You need predictable ones.</p>"
+  }
+]}
+/>
 
 ## Final thoughts
 
