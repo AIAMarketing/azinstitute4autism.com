@@ -15,6 +15,7 @@
     "crawl:live": "node tools/crawl-live-site.mjs",
     "audit:links": "node tools/audit-links.mjs",
     "audit:images": "node tools/audit-page-imagery.mjs",
+    "audit:blog": "node tools/audit-blog-content.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",
     "generate:redirects": "node tools/generate-redirects.mjs"
   },

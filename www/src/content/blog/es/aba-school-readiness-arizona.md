@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Ya se inscriben alumnos: Academia Preparatoria AIA para niños de 2 a 6 años
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 02 septiembre, 2025
-
-![Enseñanza de habilidades académicas, sociales, de comunicación e independencia](/assets/images/hero-aba-preschool-az_800x.jpg)
 
 En el Instituto de Autismo de Arizona (AIA), los niños de 2 a 6 años son bienvenidos en la Academia Preparatoria AIA, un programa único que combina un currículo acreditado con Análisis de Comportamiento Aplicado (ABA). Nuestro objetivo es crear un entorno de aprendizaje estructurado, nutritivo y de apoyo donde cada niño pueda desarrollar las habilidades que necesita para el éxito a largo plazo en la escuela y en la vida.
 

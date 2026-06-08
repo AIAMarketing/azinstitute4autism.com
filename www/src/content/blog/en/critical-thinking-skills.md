@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Critical Thinking Skills for Children with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 28 November, 2022
-
-![Critical Thinking Skills for Children with Autism - hero image](/assets/images/hero-critical-thinking-skills_800x.jpg)
 
 Critical thinking is an important skill our children need to learn. It enables a child to generate the ability for a higher level of conceptual thinking and appropriately solve problems in their everyday life.
 

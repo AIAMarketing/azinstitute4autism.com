@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Autism Evaluation in Arizona: A Parent's Step-by-Step Guide
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 January, 2026
-
-![Pediatrician performing a toddler](/assets/images/autism_evaluation_arizona_hero.jpg)
 
 If you are here, you may be seeing patterns that make you pause. Maybe your child is not using many words. Maybe eye contact is brief, or routines feel non-negotiable. You are not alone in wondering, Could this be autism, and what should I do next.
 

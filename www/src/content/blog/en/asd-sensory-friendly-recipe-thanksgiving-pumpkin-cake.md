@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 15 November, 2023
-
-![asd sensory-friendly pumpkin dump cake thanksgiving recipe](/assets/images/hero-asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake_800x.jpg)
 
 As a parent of a child diagnosed with [autism spectrum disorder](https://www.autismspeaks.org/what-autism), you may experience challenges when it comes to mealtime. Many children on the spectrum struggle with [sensory and food sensitivities](https://www.eatright.org/health/health-conditions/intellectual-and-developmental-disabilities/nutrition-for-your-child-with-autism-spectrum-disorder-asd), making it difficult to find foods that they prefer. With Thanksgiving quickly approaching, you may be wondering if there are any recipes that your child may enjoy for the holiday. Well good news- you are in the right place! For this month’s blog, I will be sharing an easy, delicious Thanksgiving recipe that you and your child will both enjoy- Pumpkin Dump Cake! This recipe is a great twist on the classic pumpkin pie.
 

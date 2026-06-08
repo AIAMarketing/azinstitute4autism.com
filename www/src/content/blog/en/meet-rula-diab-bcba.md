@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Meet Rula Diab | Board Certified Behavior Analyst (BCBA)
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 24 October, 2023
-
-![Meet Rula Diab | Board Certified Behavior Analyst (BCBA) - hero image](/assets/images/hero-meet-rula-diab-shoutout-az_800x.jpg)
 
 Check out this article from Shoutout Arizona about AIA's Clinical Director, Rula Diab. Read about Rula's vision and learn more about the Arizona Institute for Autism. You can find the [original article](https://shoutoutarizona.com/meet-rula-diab-board-certified-behavior-analyst-bcba/) on the Shoutout Arizona website.
 

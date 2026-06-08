@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# New Year Goals for Our Children with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 January, 2023
-
-![New Year Goals for Our Children with Autism - hero image](/assets/images/hero-new-year-goals-2023_800x.jpg)
 
 The New Year can be challenging for children with Autism and may lead to distress. Different factors affect the ability of children with autism to cope during those times. The inability to deal with changes and disruption in routines and cope with unclear expectations can be stressful. Additionally, sensory overload including loud music, bright lighting, strong smells, etc. may cause children to feel uncomfortable.
 

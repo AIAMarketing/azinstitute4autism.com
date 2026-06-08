@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Por qué mi hijo puede hablar pero aún tiene dificultades sociales
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 22 enero, 2026
-
-![niño que habla tiene problemas para socializar - imagen principal](/assets/images/talk-not-social.jpg)
 
 ## Las preguntas que los padres nos hacen cada semana "Mi hijo puede hablar, entonces ¿por qué sigue siendo tan difícil hacer amigos?" o "Ella tiene palabras, pero no sabe cómo tener una conversación."
 

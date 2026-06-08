@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Discover Self‑Care Hacks for Parents of Children with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 November, 2024
-
-![autism family self care tips - hero image](/assets/images/hero-self-care-priority.webp)
 
 As a [clinician](../team) who is deeply connected with the [autism](https://www.psychiatry.org/patients-families/autism/what-is-autism-spectrum-disorder) community, I see firsthand the dedication and resilience that parents of children on the autism spectrum display every day. Your role is invaluable, but it’s also one that requires immense emotional and physical energy. While every parent wants to give their best, this constant dedication can often lead to burnout or feelings of being overwhelmed.
 

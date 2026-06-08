@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 22 enero, 2026
-
-![Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona](/assets/images/autism_evaluation_arizona_hero.jpg)
 
 Si estás aquí, es posible que estés viendo patrones que te hacen detenerte. Tal vez tu hijo no esté usando muchas palabras. Tal vez el contacto visual sea breve, o las rutinas se sientan innegociables. No estás solo en preguntarte, ¿podría ser autismo, y qué debo hacer a continuación?
 

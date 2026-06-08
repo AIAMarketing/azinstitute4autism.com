@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Qué esperar en la primera evaluación de autismo de su hijo
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.](/assets/images/autism-evaluation-expectations_hero.png)
 
 Cuando una derivación para una evaluación de autismo llega a su bandeja de entrada, puede sentirse abrumador. Puede sentirse aliviado de estar tomando acción y, al mismo tiempo, ansioso por cómo será la cita. Ambas reacciones son normales.
 

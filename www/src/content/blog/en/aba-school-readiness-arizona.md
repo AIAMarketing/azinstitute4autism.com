@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Now Enrolling: AIA Preparatory Academy for Children Ages 2–6
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 21 August, 2025
-
-![teaching academic, social, communications, and independence skills](/assets/images/hero-aba-preschool-az_800x.jpg)
 
 At the Arizona Institute for Autism (AIA), children ages 2–6 are welcomed into the AIA Preparatory Academy, a unique program that combines accredited curriculum with Applied Behavior Analysis (ABA). Our goal is to create a structured, nurturing, and supportive learning environment where every child can develop the skills they need for long-term success in school and life.
 

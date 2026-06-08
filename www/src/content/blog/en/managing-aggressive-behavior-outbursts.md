@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 30 October, 2022
-
-![Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments - hero image](/assets/images/hero-managing-aggressive-behavior-outbursts_800x.jpg)
 
 Children with Autism may have difficulty communicating their needs and wants. Struggling to express their needs and escaping an unpreferred situation can all result in a child feeling frustrated. Not having control over their environment can often lead to aggressive and unengaging behaviors.
 

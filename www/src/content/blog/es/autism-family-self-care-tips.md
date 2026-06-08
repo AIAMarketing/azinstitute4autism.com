@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Descubre consejos para el autocuidado de padres de niños con autismo
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![Consejos de autocuidado para familias con autismo - imagen destacada](/assets/images/hero-self-care-priority.webp)
 
 Como [clínico](../../team) profundamente conectado con la comunidad del [autism](https://www.psychiatry.org/patients-families/autism/what-is-autism-spectrum-disorder), veo de primera mano la dedicación y resiliencia que los padres de niños con espectro autista demuestran cada día. Tu papel es invaluable, pero también requiere una inmensa energía emocional y física. Si bien todo padre quiere dar lo mejor de sí, esta dedicación constante a menudo puede llevar al agotamiento o a sentirse abrumado.
 

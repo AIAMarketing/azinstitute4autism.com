@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Master Proactive & Reactive ABA Techniques – Schedule a Consultation
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 September, 2024
-
-![proactive reactive aba strategies guide - hero image](/assets/images/hero-proactive-reactive-strategies.webp)
 
 Proactive and Reactive strategies are essential tools in Applied Behavior Analysis (ABA) to support individuals with autism. These strategies aim to create a positive and supportive environment that promotes desirable behaviors and reduces the likelihood of challenging behaviors. In this blog, we'll explore both proactive and reactive strategies, highlighting their importance in effective ABA therapy.
 

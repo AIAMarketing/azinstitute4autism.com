@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Why Emotional Regulation Should Be the Heart of Every ABA Program
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 November, 2025
-
-![child taking emotional regulation timeout in shopping cart - hero](/assets/images/child-shopping-cart-tired-cranky.jpg)
 
 Progress in Applied Behavior Analysis is often shown in neat graphs and mastered goals. Under every data point is something more human: emotion. When a child learns to understand and manage feelings, everything else gets easier. Focus grows, communication opens up, and daily life feels safer and more predictable.
 

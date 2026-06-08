@@ -19,6 +19,12 @@ const mkdir = (dir) => fs.mkdir(dir, { recursive: true });
 const clean = (value = '') => value.replace(/\s+/g, ' ').trim();
 const csv = (value = '') => `"${String(value).replaceAll('"', '""')}"`;
 const yaml = (value = '') => JSON.stringify(String(value));
+const blogPreamble = /^# .+\n\n!\[[^\]]*\]\(\/assets\/images\/rula-diab-avatar\.jpg\)\n\n[^\n]+\n\n[^\n]+\n\n!\[[^\]]*\]\([^)]+\)\n\n/;
+
+function contentMarkdown(markdown, isBlog) {
+  return isBlog ? markdown.replace(blogPreamble, '') : markdown;
+}
+
 function logicalFile(file) {
   return file.replace(/(?:\.html)?\?(?:hsLang=[^.]+|hs_amp=true)\.html$/, '.html');
 }
@@ -40,6 +46,10 @@ function sourceUrl(file) {
   const logical = logicalFile(file);
   if (logical === 'index.html') return '/';
   return `/${logical.replace(/\/index\.html$/, '').replace(/\.html$/, '')}`;
+}
+
+function isBlogFile(file) {
+  return file.startsWith('library/') || file.includes('/library/');
 }
 
 function languageFor(file, $) {
@@ -71,7 +81,7 @@ function extractRecord(file, html) {
   const dateText = $('meta[property="article:published_time"]').attr('content') ||
     $('time').first().attr('datetime') || '2024-01-01';
   const date = /^\d{4}-\d{2}-\d{2}/.test(dateText) ? dateText.slice(0, 10) : '2024-01-01';
-  const selector = file.includes('/library/') ? '.blog-post__body' : 'main, .body-container-wrapper';
+  const selector = isBlogFile(file) ? '.blog-post__body' : 'main, .body-container-wrapper';
   const body = $(selector).first().clone();
   body.find('header, footer, nav, form, script, style, noscript, .hs_cos_wrapper_type_form').remove();
   body.find('*').removeAttr('style').removeAttr('id').removeAttr('data-hs-cos-general-type').removeAttr('data-hs-cos-type');
@@ -87,7 +97,10 @@ function extractRecord(file, html) {
     const src = localizeAsset($(element).attr('src'));
     if (src) $(element).attr('src', src);
   });
-  const markdown = turndown.turndown(body.html() || '').replace(/\n{3,}/g, '\n\n').trim();
+  const markdown = contentMarkdown(
+    turndown.turndown(body.html() || '').replace(/\n{3,}/g, '\n\n').trim(),
+    isBlogFile(file)
+  );
   return { file, lang, url, title, description, h1, image, alt, date, markdown };
 }
 
@@ -146,9 +159,9 @@ async function main() {
   const files = canonicalFiles(await fg(['**/*.html'], { cwd: mirror, onlyFiles: true }));
   const records = [];
   for (const file of files) records.push(extractRecord(file, await fs.readFile(path.join(mirror, file), 'utf8')));
-  const corePages = new Set(records.filter((r) => !r.file.includes('/library/') && !r.file.startsWith('library/')).map((r) => r.file));
+  const corePages = new Set(records.filter((r) => !isBlogFile(r.file)).map((r) => r.file));
   for (const record of records) {
-    const isBlog = record.file.includes('/library/') || record.file.startsWith('library/');
+    const isBlog = isBlogFile(record.file);
     if (!isBlog && !corePages.has(record.file)) continue;
     const slug = ['/', '/ar', '/es'].includes(record.url) ? 'index' : record.url.split('/').filter(Boolean).at(-1);
     const target = path.join(contentRoot, isBlog ? 'blog' : 'pages', record.lang, `${slug}.md`);
@@ -167,7 +180,7 @@ async function main() {
   const urlRows = ['source_file,url,language,type,title,description,h1'];
   for (const record of records) urlRows.push([
     record.file, record.url, record.lang,
-    record.file.includes('/library/') || record.file.startsWith('library/') ? 'blog' : 'page',
+    isBlogFile(record.file) ? 'blog' : 'page',
     record.title, record.description, record.h1
   ].map(csv).join(','));
   await fs.writeFile(path.join(reportsRoot, 'url-inventory.csv'), `${urlRows.join('\n')}\n`);

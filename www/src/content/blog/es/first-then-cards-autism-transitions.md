@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Tarjetas Primero/Después : Empoderando las transiciones para niños autistas
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![Las tarjetas de](/assets/images/hero-first-then-cards.webp)
 
 Las transiciones pueden ser desafiantes para muchos niños, especialmente para aquellos en el espectro autista. Primero/después, las tarjetas son una herramienta simple pero efectiva que puede ayudar a facilitar estas transiciones, promover comportamientos positivos y apoyar la independencia.
 

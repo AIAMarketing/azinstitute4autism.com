@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Arizona Institute for Autism Adopts an Integrated ABA Model
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 02 August, 2023
-
-![integrated aba model announcement - hero image](/assets/images/hero-integrated-aba-model-announcement_800x.jpg)
 
 The Arizona Institute for Autism is thrilled to announce its transformation into an Integrated ABA Model, an approach that brings together clinicians and educators to provide exceptional intervention, learning experience, and individualized support for learners with autism. This model incorporates evidence-based interventions, ensuring a comprehensive approach tailored to each child's abilities, interests, and learning style.
 

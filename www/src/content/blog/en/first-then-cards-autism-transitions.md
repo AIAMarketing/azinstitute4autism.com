@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# First/Then Cards: Empowering Transitions for Autistic Children
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 June, 2025
-
-![first then cards help autistic children with transitions](/assets/images/hero-first-then-cards.webp)
 
 Transitions can be challenging for many children, especially those on the autism spectrum. First/Then cards are a simple yet effective tool that can help ease these transitions, promote positive behaviors, and support independence.
 

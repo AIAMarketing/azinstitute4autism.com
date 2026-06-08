@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# The Benefits of ABA Therapy for Children with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 19 September, 2023
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
 
 Applied Behavior Analysis (ABA) is an evidence-based approach that utilizes the principles of behavior analysis to modify maladaptive behaviors and enhance socially significant behaviors. It is often employed for children with Autism Spectrum Disorder (ASD). ABA aims to teach a variety of skills, such as communication, social interactions, and daily skills, all within a safe, engaging, and fun environment conducive to therapeutic success. It also helps children minimize disruptive behaviors that may impede their learning, while prioritizing the child's individual autonomy.
 

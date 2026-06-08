@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# AIA’s World Autism Community Day of Celebration
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 30 January, 2023
-
-![aia world autism community day of celebration - hero image](/assets/images/hero-aia-world-autism-community-day-celebration_800x.jpg)
 
 Hello AIA families,
 

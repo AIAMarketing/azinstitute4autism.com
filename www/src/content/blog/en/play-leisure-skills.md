@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Autism Play: Helping Autistic Children Build Play and Leisure Skills
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 26 September, 2022
-
-![autism play and leisure skills for children with autism](/assets/images/hero-play-leisure-skills-children-autism_800x.jpg)
 
 Play is one of the most important ways children learn. For autistic children, play may look different, but it is still meaningful, valuable, and full of opportunities for growth. Autism play can support communication, imitation, motor skills, problem-solving, flexibility, emotional regulation, and social connection when it is approached with patience and respect for the child's interests.
 

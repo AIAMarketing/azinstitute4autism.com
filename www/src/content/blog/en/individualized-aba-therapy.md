@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Individualized Care Plans in ABA Therapy
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 October, 2024
-
-![individualized aba therapy - hero image](/assets/images/hero-aba-individual-care-plans.webp)
 
 Applied Behavior Analysis (ABA) can profoundly impact children with autism, but the key to success lies in individualizing therapy to meet each child's unique developmental and sensory needs. Individualized care is not just a best practice; it's essential for meaningful progress and long-term success.
 

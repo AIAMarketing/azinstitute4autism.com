@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Ease Back-to-School Time | ABA Antecedent & Consequence Interventions
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 30 July, 2024
-
-![Antecedent & Consequence Hacks Every Autism Parent Needs to Unlock School Readiness - hero image](/assets/images/hero-back-to-school.webp)
 
 For families with children with autism, navigating back to school period can be particularly challenging, given the transitions and changes in routine. However, utilizing Antecedent and Consequence Interventions can provide significant support in making this transition smoother and more successful for your child.
 

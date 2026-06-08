@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Understanding Sensory Processing in the Context of ABA Therapy
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 30 January, 2024
-
-![sensory processing challenges in aba therapy - hero image](/assets/images/hero-sensory-processing.webp)
 
 Many individuals with Autism Spectrum Disorder (ASD) may face challenges with sensory processing, which can have a significant impact on their behavior and learning. An awareness of these sensory needs allows Applied Behavior Analysts to tailor their methods to meet each individual's specific requirements and improve the effectiveness of their interventions. Making sensory integration a part of a child's daily routine can have a significant impact on their daily functioning, communication, social interactions, independence, and overall well-being.
 

@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Autism Guide for Parents and Caregivers
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 02 April, 2026
-
-![Parent and autistic child using visual supports, structured play, and calm routines together](/assets/images/family-guide-to-autism-aba-at-home_hero.png)
 
 Every child is different. Some need more support with communication. Others struggle most with transitions, sensory input, or emotional regulation. Autism is a neurodevelopmental condition that affects how a person communicates, learns, behaves, and experiences the world, and signs may become noticeable early in development.
 

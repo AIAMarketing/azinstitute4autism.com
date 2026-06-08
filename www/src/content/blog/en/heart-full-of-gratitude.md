@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Heart Full of Gratitude
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 24 November, 2025
-
-![AZ Institute for Autism Clinical Director Rula Diab gives thanks](/assets/images/giving-thanks-1.jpg)
 
 ## Reflections from My Journey with Arizona Institute for Autism As I look back on my journey with AIA, my heart is overflowing with gratitude, for our learners, their families, and the remarkable team who pour their hearts into every session, every plan, and every breakthrough moment and continue to bring our mission to life every single day.
 

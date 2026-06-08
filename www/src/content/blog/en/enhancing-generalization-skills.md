@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Enhancing Generalization for Broader Impact in Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 04 July, 2023
-
-![enhancing generalization skills in children with autism - hero image](/assets/images/hero-enhancing-generalization-skills_800x.jpg)
 
 Generalization is a crucial aspect of learning, ensuring that skills and behaviors extend beyond the initial learning environment. Without generalization, individuals may struggle to apply what they’ve learned to new situations, limiting the effectiveness of their education or therapy.
 

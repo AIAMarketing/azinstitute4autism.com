@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Master Behavior Management: Discover the Four Functions of Behavior
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 28 June, 2024
-
-![Master Behavior Management: Discover the Four Functions of Behavior - hero image](/assets/images/hero-behavior-functions-management.webp)
 
 Behavior is a form of communication and interaction that plays a crucial role in Applied Behavior Analysis. The management of behavior is key to understanding and modifying behaviors to achieve positive outcomes and enhance overall well-being. One important aspect of understanding behavior is determining its functions, which are the underlying reasons or motivations driving specific actions. Let's explore the importance of behavior management and the core functions of behavior.
 

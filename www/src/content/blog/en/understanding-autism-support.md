@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Navigating the Autism Journey: Understanding and Supporting Our Children with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 11 June, 2023
-
-![navigating the autism journey: understanding and supporting our children with autism - hero image](/assets/images/hero-understanding-autism-support_800x.jpg)
 
 Parenting a child with autism is an immensely rewarding experience, but it also presents unique challenges. To provide the best support, it is crucial to navigate our children's development while comprehending their needs.
 

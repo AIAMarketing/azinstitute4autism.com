@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Habilidades de funcionamiento ejecutivo y autismo
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![estrategias para el desarrollo de habilidades de funcionamiento ejecutivo en niños autistas - imagen destacada](/assets/images/hero-executive-functioning-skills-autism.webp)
 
 La función ejecutiva se refiere a un conjunto de habilidades cognitivas esenciales para la resolución de problemas y la gestión de tareas diarias. Estas habilidades ayudan a los niños a planificar, organizar, regular sus emociones y completar tareas de manera efectiva.
 

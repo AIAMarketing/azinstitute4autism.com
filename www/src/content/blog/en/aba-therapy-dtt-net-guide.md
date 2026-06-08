@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Learn About DTT and NET Methods for More Effective ABA Therapy
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 29 February, 2024
-
-![Learn About DTT and NET Methods for More Effective ABA Therapy - hero image](/assets/images/hero-learn-dtt-net-methods.webp)
 
 In the dynamic realm of Applied Behavior Analysis (ABA) therapy, we continuously seek the most impactful strategies to cater to our learners' diverse needs. This month, I want to delve into two foundational methodologies within ABA: Discrete Trial Training (DTT) and Natural Environment Training (NET). These approaches are integral to our ABA therapeutic framework,addressing various aspects of learning, development and growth.
 

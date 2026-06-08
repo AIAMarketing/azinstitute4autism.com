@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# AAC and Visual Supports 101: Helping Your Child Be Heard
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 28 May, 2026
-
-![child pointing to a picture on a digital AAC tablet during play](/assets/images/visual-supports-aac-communication.png)
 
 Navigating an autism diagnosis often means learning a whole new vocabulary. Among the most important (and sometimes overwhelming) terms you will encounter are "augmentative and alternative communication" (AAC) and "visual supports."
 

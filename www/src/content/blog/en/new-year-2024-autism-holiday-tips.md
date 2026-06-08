@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# New Year 2024: Holiday Tips for Autism Support & Awareness
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 27 December, 2023
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
 
 The start of a new year is often associated with feelings of joy and optimism. It is also a time for parents of children with autism to reflect on their child's progress and set goals for the future. Here are some important factors to keep in mind for New Year 2024 when it comes to Applied Behavioral Analysis (ABA) therapy and holiday time:
 

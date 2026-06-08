@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Benefits of Prompting & Parenting in ABA Therapy
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 02 April, 2024
-
-![Benefits of Prompting & Parenting in ABA Therapy - hero image](/assets/images/hero-prompting-parenting-benefits.webp)
 
 In the field of Applied Behavior Analysis (ABA), the use of prompting as a teaching strategy is recognized for its effectiveness in helping learners achieve desired behaviors and develop new skills independently.
 

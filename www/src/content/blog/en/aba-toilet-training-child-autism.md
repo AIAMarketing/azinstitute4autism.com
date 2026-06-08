@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Guide: Simple ABA Techniques for Toilet Training Children with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 20 November, 2023
-
-![potty train children with autism using simple aba techniques - hero image](/assets/images/hero-aba-toilet-training-child-autism.webp)
 
 Toilet training a child with autism can be a complex process that requires patience, consistency, and tailored strategies. Applied Behavior Analysis (ABA) offers effective techniques to support this journey. Here's a structured approach to facilitate toilet training for children with autism:
 

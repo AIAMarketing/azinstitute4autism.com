@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# ASD Sensory-Friendly Recipes: Pancakes
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 12 September, 2023
-
-![asd sensory-friendly pancake recipe - hero image](/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg)
 
 If you are the parent of a child with autism spectrum disorder, you probably know how difficult mealtime can be. Many children with an autism diagnosis tend to have sensory processing disorder, which can make it difficult for them to enjoy certain foods due to the texture, consistency, temperature, etc. Your child may only prefer a small variety of foods, which often leaves their diet lacking the essential nutrients they need. In this blog series, I will be sharing sensory-friendly recipes and tips to hopefully make mealtime easy and fun for your kiddo! These recipes will help broaden your child’s horizons when it comes to food and nutrition.
 

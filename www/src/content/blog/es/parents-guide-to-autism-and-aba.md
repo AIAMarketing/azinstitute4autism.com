@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Guía de Autismo para Padres y Cuidadores
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![Parent and autistic child using visual supports, structured play, and calm routines together](/assets/images/family-guide-to-autism-aba-at-home_hero.png)
 
 Cada niño es diferente. Algunos necesitan más apoyo con la comunicación. Otros luchan más con las transiciones, la entrada sensorial o la regulación emocional. El autismo es una condición del neurodesarrollo que afecta la forma en que una persona se comunica, aprende, se comporta y experimenta el mundo, y los signos pueden hacerse evidentes temprano en el desarrollo.
 

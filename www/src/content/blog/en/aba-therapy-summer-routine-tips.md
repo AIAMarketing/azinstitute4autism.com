@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# How to Support ABA Therapy Over Summer Break
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 July, 2025
-
-![aba therapy summer time tips for parents and caregivers](/assets/images/hero-summer-aba.webp)
 
 Summer break can bring much-needed relaxation, but for children with autism, the sudden lack of structure can present real challenges. When applied consistently, ABA therapy is a powerful tool for helping children maintain and build on progress year-round. Without routine reinforcement, even mastered skills may begin to fade.
 

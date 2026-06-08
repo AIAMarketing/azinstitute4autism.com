@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Autism and Fall Break: How to Keep Routines Calm and Predictable
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 October, 2025
-
-![visual schedule and sensory tools help keep routines during fall break - hero image](/assets/images/hero-autumn-break-autism-routines-1.jpg)
 
 Fall break brings new energy to Arizona families. School pauses. Days feel different. That change can be exciting. It can also be stressful for children with autism who rely on predictable routines. The good news is that a little planning reduces surprises and gives your child clear steps to follow.
 

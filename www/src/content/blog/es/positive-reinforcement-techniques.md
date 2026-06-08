@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![terapia aba refuerzo positivo](/assets/images/hero-positive-reinforcement-techniques.webp)
 
 El refuerzo positivo es una de las herramientas más poderosas en el Análisis de Comportamiento Aplicado (ABA), y es especialmente eficaz para apoyar a los niños con autismo. En lugar de centrarse en los errores, el refuerzo positivo celebra cada paso en la dirección correcta, lo que aumenta la motivación, la confianza y los lazos familiares más fuertes. En este artículo, aprenderás:
 

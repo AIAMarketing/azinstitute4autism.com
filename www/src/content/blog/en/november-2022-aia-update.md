@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# November AIA Update
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 31 October, 2022
-
-![November AIA Update - hero image](/assets/images/hero-november-2022-aia-update_800x.jpg)
 
 Hello AIA Families,
 

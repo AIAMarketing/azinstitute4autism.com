@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 February, 2023
-
-![Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory - hero image](/assets/images/hero-behavior-modification-techniques-reinforcement-theory_800x.jpg)
 
 Children may exhibit maladaptive behaviors for various reasons, often driven by underlying functions. To address these behaviors, Applied Behavior clinicians use the [ABC model](https://www.iidc.indiana.edu/irca/articles/observing-behavior-using-a-b-c-data), a structured approach that helps identify patterns and triggers. This model involves observing a child's behavior in their natural environment, focusing on three key elements: the Antecedent (what happens before the behavior), the Behavior itself, and the Consequence (what follows the behavior). By carefully analyzing these factors, clinicians gain insights into why certain behaviors occur.
 

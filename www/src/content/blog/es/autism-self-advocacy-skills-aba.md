@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Guía para enseñar la autodefensa en el ABA
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![Habilidades de autodefensa para el autismo a través del ABA - imagen destacada](/assets/images/hero-teach-self-advocacy.webp)
 
 La autodefensa es una habilidad esencial para la vida que permite a las personas expresar sus pensamientos, necesidades y preferencias. Para los niños con autismo o discapacidades del desarrollo, aprender a defenderse a sí mismos puede fomentar la independencia, mejorar las relaciones y aumentar su calidad de vida en general. A través del Análisis de Comportamiento Aplicado (ABA), la autodefensa se puede enseñar y reforzar sistemáticamente, proporcionando a los niños las herramientas para navegar por su mundo con confianza.
 

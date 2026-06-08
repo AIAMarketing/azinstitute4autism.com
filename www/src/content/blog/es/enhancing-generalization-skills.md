@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Mejorando la generalización para un impacto más amplio en el autismo
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 09 abril, 2026
-
-![Mejorar las habilidades de generalización en niños con autismo](/assets/images/hero-enhancing-generalization-skills_800x.jpg)
 
 La generalización es un aspecto crucial del aprendizaje, ya que garantiza que las habilidades y los comportamientos se extiendan más allá del entorno de aprendizaje inicial. Sin generalización, los individuos pueden tener dificultades para aplicar lo que han aprendido a nuevas situaciones, limitando la efectividad de su educación o terapia.
 

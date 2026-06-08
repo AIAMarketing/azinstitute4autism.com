@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# 4 Ways on How to Reduce Behavior Management
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 26 August, 2022
-
-![reduce behavior management - hero image](/assets/images/hero-reduce-behavior-management_800x.jpg)
 
 Children can get overwhelmed, frustrated, and sensory overloaded at any time because of different needs, which can result in a child engaging in challenging behaviors. However, the common thing among all children is that they are in need of support with their communication skills. Different strategies can be used to prevent or minimize challenging behavior, including:
 

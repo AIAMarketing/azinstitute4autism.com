@@ -114,6 +114,8 @@ unavailable.
   Markdown links, and public assets when rendered output is unavailable.
 - `npm run audit:images`: passed with no missing mapped page banners, section
   backgrounds, or blog featured images.
+- `npm run audit:blog`: passed with no article-header content duplicated in
+  blog Markdown bodies.
 - `npm run generate:sitemap`: passed; generated 97 URLs.
 - `npm run generate:redirects`: passed.
 - All migration `.mjs` tools and the sandbox DNS helper pass `node --check`.

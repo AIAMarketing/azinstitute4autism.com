@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Supporting Friendships and Social Play for Children with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 June, 2026
-
-![Three children engaging happily in parallel play on a colorful rug.](/assets/images/parallel-players-hero.png)
 
 Watching your child navigate the social world is a profound experience for any parent. For parents of autistic children, it can also be a source of anxiety. You might notice your child prefers to play alone, struggles to initiate conversations, or seems overwhelmed in group settings. It is easy to worry that they are lonely or missing out on the joy of childhood friendships.
 

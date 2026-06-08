@@ -27,5 +27,9 @@
 - Restored the live library banner and consultation form section background.
 - Added a mapped-page-imagery audit to prevent missing visual assets from
   silently passing the source link audit.
+- Removed duplicated article titles, author/date blocks, and featured images
+  from all 65 blog Markdown bodies; these elements are rendered by the shared
+  blog-post layout. Updated both extractors and added a blog-content audit to
+  prevent recurrence.
 - Added language-qualified content collection IDs to prevent English, Spanish,
   and Arabic entries with the same slug from overwriting each other.

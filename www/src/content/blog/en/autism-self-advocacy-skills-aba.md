@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Guide to Teaching Self‑Advocacy in ABA
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 02 December, 2024
-
-![autism self-advocacy skills through aba - hero image](/assets/images/hero-teach-self-advocacy.webp)
 
 Self-advocacy is an essential life skill that allows individuals to express their thoughts, needs, and preferences. For children with autism or developmental disabilities, learning to advocate for themselves can foster independence, improve relationships, and enhance their overall quality of life. Through Applied Behavior Analysis (ABA), self-advocacy can be systematically taught and reinforced, providing children with the tools to navigate their world confidently.
 

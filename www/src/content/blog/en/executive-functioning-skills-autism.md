@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Executive Functioning Skills and Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 May, 2025
-
-![hero image - executive functioning skills strategies for autistic children](/assets/images/hero-executive-functioning-skills-autism.webp)
 
 Executive functioning refers to a set of cognitive skills that are essential for problem-solving, and managing daily tasks. These skills help children plan, organize, regulate their emotions, and complete tasks effectively.
 

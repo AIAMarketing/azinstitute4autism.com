@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# What to Expect at Your Child’s First Autism Evaluation
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 March, 2026
-
-![Parent and child meeting with a clinician in a calm, play-based autism evaluation setting](/assets/images/autism-evaluation-expectations_hero.png)
 
 When a referral for an autism evaluation lands in your inbox, it can feel like a lot. You may be relieved that you are taking action, and also anxious about what the appointment will look like. Both reactions are normal.
 

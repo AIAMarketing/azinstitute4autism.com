@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Repetitive Behaviors with Children Diagnosed with Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 04 September, 2023
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
 
 Children with autism often engage in repetitive behaviors as a way to cope with sensory overload. These behaviors can manifest in various ways including repetitive motor behaviors. Repetitive behaviors can affect children's learning experiences, social interactions, and engagement in daily activities.
 

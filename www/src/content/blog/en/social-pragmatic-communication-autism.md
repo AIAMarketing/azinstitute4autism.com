@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Why My Child Can Talk but Still Struggles Socially
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 December, 2025
-
-![talking child has trouble socializing - hero](/assets/images/talk-not-social.jpg)
 
 ## The questions parents ask us every week "My child can talk, so why is making friends still so hard?" or "She has words, but she doesn’t know how to have a conversation."
 

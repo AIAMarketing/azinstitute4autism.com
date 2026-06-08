@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Learn the Secrets to Effective Rapport Building in ABA Therapy
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 03 June, 2024
-
-![rapport strategies for effective aba therapy - hero image](/assets/images/hero-rapport-strategies.webp)
 
 [Applied Behavior Analysis (ABA)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4883454/) therapy plays a crucial role in empowering children with Autism Spectrum Disorder (ASD) and other developmental conditions to acquire essential skills, achieve independence, and maximize their potential. A key aspect of effective ABA therapy involves developing a strong rapport with the child. Establishing a relationship built on trust and respect can greatly enhance the effectiveness and enjoyment of therapy sessions.
 

@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Building Communication & Social Skills in Autistic Children: A Practical Guide for Families
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 02 April, 2026
-
-![A parent and an autistic child smiling while using a picture communication board during playtime.](/assets/images/communication-skills-autistic-children-hero_img.png)
 
 Communication is the vital bridge children use to share their needs, feelings, ideas, and experiences with the people around them. For children on the autism spectrum, communication development often follows a wonderfully unique path. It is incredibly important for parents to know that a delay in spoken words does not mean communication is absent.
 

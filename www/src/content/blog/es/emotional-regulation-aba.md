@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Por qué la regulación emocional debería ser el corazón de cada programa de ABA
-
-![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
-
- 01 noviembre, 2025
-
-![Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal](/assets/images/child-shopping-cart-tired-cranky.jpg)
 
 El progreso en el Análisis de Conducta Aplicado (ABA) suele mostrarse en gráficas claras y metas alcanzadas. Debajo de cada dato hay algo más humano: la emoción. Cuando un niño aprende a comprender y manejar sus sentimientos, todo lo demás se vuelve más fácil. La concentración aumenta, la comunicación se abre y la vida diaria se siente más segura y predecible.
 

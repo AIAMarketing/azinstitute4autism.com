@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Community Highlights: Meet Rula Diab of Arizona Institute for Autism
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 24 October, 2023
-
-![meet rula diab of aia - hero image](/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg)
 
 Check out the following article from Voyage Phoenix about our Clinical Director Rula Diab. Read how Rula's passion to provide accessible ABA therapy for children with Autism Spectrum Disorder drove her to create the Arizona Institute for Autism. You may also read the [original article](https://voyagephoenix.com/interview/community-highlights-meet-rula-diab-of-arizona-institute-for-autism/) on the Voyage Phoenix website.
 

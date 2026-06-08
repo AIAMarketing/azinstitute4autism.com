@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 24 October, 2023
-
-![Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image](/assets/images/hero-integrity-empowerment-excellence_800x.jpg)
 
 Check out this article about our new clinic location. Our Clinical Director Rula Diab met with Scottsdale Airpark to share the details of the expansion. You can find [the original article](https://www.scottsdale.org/airpark/features/integrity-empowerment-and-excellence-arizona-institute-for-autism-expands-to-new-office/article_79c31a18-2f35-11ee-9459-6f29f5a08420) on the Scottsdale Airpark News website.
 

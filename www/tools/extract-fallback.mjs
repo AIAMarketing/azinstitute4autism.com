@@ -11,6 +11,7 @@ const site = 'https://www.azinstitute4autism.com';
 const mkdir = (value) => fs.mkdir(value, { recursive: true });
 const quote = (value = '') => JSON.stringify(String(value).replace(/\s+/g, ' ').trim());
 const csv = (value = '') => `"${String(value).replaceAll('"', '""')}"`;
+const blogPreamble = /^# .+\n\n!\[[^\]]*\]\(\/assets\/images\/rula-diab-avatar\.jpg\)\n\n[^\n]+\n\n[^\n]+\n\n!\[[^\]]*\]\([^)]+\)\n\n/;
 
 async function walk(dir, prefix = '') {
   const output = [];
@@ -129,7 +130,7 @@ function frontmatter(item, blog) {
     'draft: false',
     '---',
     '',
-    item.markdown || `# ${item.h1}`,
+    (blog ? item.markdown.replace(blogPreamble, '') : item.markdown) || `# ${item.h1}`,
     ''
   ].filter((line) => line !== '');
   return `${lines.join('\n')}\n`;

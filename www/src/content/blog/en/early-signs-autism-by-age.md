@@ -12,15 +12,6 @@ category: "Library"
 tags: []
 draft: false
 ---
-# Early Signs of Autism by Age: 12 Months to 4 Years
-
-![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
-
- Rula Diab, Clinical Director, M.Ed, BCBA, LBA
-
- 01 February, 2026
-
-![Parent and toddler playing with blocks, sharing eye contact and pointing during play.](/assets/images/early_signs_autism_by_age_hero.png)
 
 For many parents, it begins with a familiar worry: "Something feels a little different, but I can't tell if it's a phase, a personality thing, or something I should look into."
 
