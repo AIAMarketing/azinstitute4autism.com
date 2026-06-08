@@ -1,0 +1,58 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.pageFolders": [
+    { "title": "Pages", "path": "[[workspace]]/src/content/pages" },
+    { "title": "Blog", "path": "[[workspace]]/src/content/blog" },
+    { "title": "Authors", "path": "[[workspace]]/src/content/authors" }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "page",
+      "pageBundle": false,
+      "fields": [
+        { "title": "Title", "name": "title", "type": "string", "required": true },
+        { "title": "Description", "name": "description", "type": "string" },
+        { "title": "Slug", "name": "slug", "type": "string", "required": true },
+        { "title": "Language", "name": "lang", "type": "choice", "choices": ["en", "ar", "es"] },
+        { "title": "Canonical", "name": "canonical", "type": "string" },
+        { "title": "Featured image", "name": "featuredImage", "type": "image" },
+        { "title": "Alt text", "name": "alt", "type": "string" },
+        { "title": "Translation key", "name": "translationKey", "type": "string" },
+        { "title": "Draft", "name": "draft", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "blog",
+      "pageBundle": false,
+      "fields": [
+        { "title": "Title", "name": "title", "type": "string", "required": true },
+        { "title": "Description", "name": "description", "type": "string" },
+        { "title": "Slug", "name": "slug", "type": "string", "required": true },
+        { "title": "Date", "name": "date", "type": "datetime", "required": true },
+        { "title": "Author", "name": "author", "type": "string", "default": "rula-diab" },
+        { "title": "Category", "name": "category", "type": "string" },
+        { "title": "Tags", "name": "tags", "type": "tags" },
+        { "title": "Language", "name": "lang", "type": "choice", "choices": ["en", "ar", "es"] },
+        { "title": "Featured image", "name": "featuredImage", "type": "image" },
+        { "title": "Alt text", "name": "alt", "type": "string" },
+        { "title": "Canonical", "name": "canonical", "type": "string" },
+        { "title": "Translation key", "name": "translationKey", "type": "string" },
+        { "title": "Draft", "name": "draft", "type": "boolean", "default": false }
+      ]
+    },
+    {
+      "name": "author",
+      "pageBundle": false,
+      "fields": [
+        { "title": "Name", "name": "name", "type": "string", "required": true },
+        { "title": "Slug", "name": "slug", "type": "string", "required": true },
+        { "title": "Description", "name": "description", "type": "string" },
+        { "title": "Avatar", "name": "avatar", "type": "image" },
+        { "title": "Language", "name": "lang", "type": "choice", "choices": ["en", "ar", "es"] },
+        { "title": "Translation key", "name": "translationKey", "type": "string" }
+      ]
+    }
+  ]
+}

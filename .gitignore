@@ -47,6 +47,11 @@ temp/
 .cursor/
 .continue/
 .windsurf/
+/.playwright-mcp/
+
+# Local visual-comparison captures
+/live-*.png
+/live-*-snapshot.md
 
 # Operating-system metadata
 .DS_Store

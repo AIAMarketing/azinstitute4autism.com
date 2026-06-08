@@ -1,0 +1,43 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Seo from '../components/Seo.astro';
+import site from '../data/site.json';
+import '../styles/global.css';
+import '../styles/rtl.css';
+const { title, description, canonical, image, lang = 'en', type = 'website' } = Astro.props;
+const dir = lang === 'ar' ? 'rtl' : 'ltr';
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalOrganization',
+  name: site.name,
+  url: site.url,
+  telephone: site.phone,
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '8901 E Raintree Dr Ste 160',
+    addressLocality: 'Scottsdale',
+    addressRegion: 'AZ',
+    postalCode: '85260',
+    addressCountry: 'US'
+  },
+  sameAs: Object.values(site.social)
+};
+---
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/assets/images/aia-logo.svg" />
+    <Seo title={title} description={description} canonical={canonical} image={image} lang={lang} type={type} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header lang={lang} />
+    <main id="main"><slot /></main>
+    <Footer lang={lang} />
+  </body>
+</html>

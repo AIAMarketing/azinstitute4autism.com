@@ -1,0 +1,19 @@
+---
+const { title = 'Schedule Your Free Consultation' } = Astro.props;
+---
+<section class="form-section" aria-labelledby="form-title">
+  <div class="container form-grid">
+    <div><p class="eyebrow">Get started</p><h2 id="form-title">{title}</h2><p>Tell our client advocates how we can help. Submission is disabled until a production form backend is selected.</p></div>
+    <form class="form" method="post" action="">
+      <!-- TODO: Wire this form to Netlify Forms, a custom API endpoint, or another backend service. -->
+      <!-- TODO: Add spam protection before production launch. -->
+      <label>Parent or guardian name<input name="name" autocomplete="name" /></label>
+      <label>Email<input type="email" name="email" autocomplete="email" /></label>
+      <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+      <label>Service of interest<select name="service"><option>ABA Therapy</option><option>Autism Evaluation</option><option>Learner Social Club</option><option>Other</option></select></label>
+      <label>How can we help?<textarea name="message" rows="5"></textarea></label>
+      <button class="button" type="submit" disabled aria-describedby="form-note">Submit</button>
+      <p id="form-note" class="form-note">Online submission is not yet connected. Please call (480) 687-7099.</p>
+    </form>
+  </div>
+</section>

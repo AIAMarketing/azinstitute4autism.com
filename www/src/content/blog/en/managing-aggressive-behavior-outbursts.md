@@ -1,0 +1,67 @@
+---
+title: "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments"
+description: "Learn strategies to manage aggressive behaviors in children with autism by promoting functional communication and providing positive reinforcement."
+slug: "managing-aggressive-behavior-outbursts"
+canonical: "https://www.azinstitute4autism.com/library/managing-aggressive-behavior-outbursts"
+lang: "en"
+translationKey: "managing-aggressive-behavior-outbursts"
+featuredImage: "/assets/images/hero-managing-aggressive-behavior-outbursts_800x.jpg"
+date: "2022-10-30"
+author: "rula-diab"
+category: "Library"
+tags: []
+draft: false
+---
+# Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments
+
+![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
+
+ Rula Diab, Clinical Director, M.Ed, BCBA, LBA
+
+ 30 October, 2022
+
+![Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments - hero image](/assets/images/hero-managing-aggressive-behavior-outbursts_800x.jpg)
+
+Children with Autism may have difficulty communicating their needs and wants. Struggling to express their needs and escaping an unpreferred situation can all result in a child feeling frustrated. Not having control over their environment can often lead to aggressive and unengaging behaviors.
+
+Communicating with our kiddos when they are engaging in challenging behaviors can be difficult. It is important to understand that behaviors are just an expression of distress. Understanding the function of your child's aggressive behavior can direct you to determine the proper ways to support your kiddos to communicate those needs appropriately and functionally.
+
+Parents and caregivers may respond to signs of aggression quickly; responding to your child's challenging behaviors can be reinforcing for such behaviors as a child sees that his needs are being met (e.g., getting negative attention from his parents, or being able to escape an undesirable demand placed on him).
+
+The best strategy for parents to manage aggressive behavior outburst are the following:
+
+- Avoid reacting to aggressive behaviors and make sure to maintain a natural demeanor. Putting a behavior on extinction by not reacting to the behavior can help to reduce the probability of it happening again in the future.
+
+- Calmly redirect your child to engage in a different activity (unless a child is engaging in aggression to escape a non-preferred demand).
+
+- Model the expected functional and socially appropriate behavior that helps your child to get their needs met.
+
+- Make sure to reinforce and provide positive feedback for your child's positive behavior. This can help motivate a child to engage in non-aggressive behavior and appropriately communicate their needs in the future.
+
+- It is important to avoid talking about aggressive behavior during those moments of stressful times to help your child de-escalate (your child is not receptive at those moments and not ready to learn).
+
+- Use less verbal interaction and use more visuals to help to de-escalate the challenging behavior.
+
+For more information on how to manage aggressive behavior and proper communication, connect with us by sending your messages and questions to hello@azinsitute4autism.com or contact us directly at www.azinstitute4autism.com/contactus.
+
+ Previous Post 
+
+###### [Play and Leisure Skills for Children with Autism](play-leisure-skills)
+
+ Next Post 
+
+###### [November AIA Update](november-2022-aia-update)
+
+### Similar Blog Posts
+
+![Critical Thinking Skills for Children with Autism - hero image](/assets/images/hero-critical-thinking-skills_800x.jpg)
+
+#### [Critical Thinking Skills for Children with Autism](critical-thinking-skills)
+
+![proactive reactive aba strategies guide - hero image](/assets/images/hero-proactive-reactive-strategies.webp)
+
+#### [Master Proactive & Reactive ABA Techniques – Schedule a Consultation](proactive-reactive-aba-strategies-guide)
+
+![New Year Goals for Our Children with Autism - hero image](/assets/images/hero-new-year-goals-2023_800x.jpg)
+
+#### [New Year Goals for Our Children with Autism](new-year-goals-2023)

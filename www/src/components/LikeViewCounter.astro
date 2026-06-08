@@ -1,0 +1,98 @@
+---
+const { slug } = Astro.props;
+---
+<div class="like-view-counter likes-views" data-counter>
+  <button class="like-button" type="button" data-like data-slug={slug} aria-label="Like this article" aria-pressed="false">
+    <span aria-hidden="true">♡</span> <span class="like-count" data-likes>—</span>
+  </button>
+  <span aria-label="Article views">Views: <span class="view-count" data-views>—</span></span>
+</div>
+<script>
+  const apiBase = import.meta.env.PUBLIC_AIA_API_BASE || 'https://api.azinstitute4autism.com';
+
+  const cleanSlug = (raw: string | undefined) =>
+    raw ? raw.split('?')[0].replace(/^\/+|\/+$/g, '') : '';
+
+  const readCookies = () =>
+    Object.fromEntries(
+      document.cookie
+        .split('; ')
+        .filter(Boolean)
+        .map((pair) => pair.split('=').map(decodeURIComponent)),
+    );
+
+  const setLikedCookie = (name: string, liked: boolean) => {
+    if (!liked) {
+      document.cookie = `${encodeURIComponent(name)}=; Max-Age=0; path=/`;
+      return;
+    }
+
+    const expires = new Date(Date.now() + 365 * 864e5).toUTCString();
+    document.cookie = `${encodeURIComponent(name)}=1; expires=${expires}; path=/`;
+  };
+
+  const fetchJson = async (url: string, options: RequestInit) => {
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-counter]').forEach(async (counter) => {
+    const button = counter.querySelector<HTMLButtonElement>('[data-like]');
+    const slug = cleanSlug(button?.dataset.slug);
+    const likes = counter.querySelector<HTMLElement>('[data-likes]');
+    const views = counter.querySelector<HTMLElement>('[data-views]');
+    if (!button || !slug) return;
+
+    const cookieName = `liked_${slug}`;
+    const renderLiked = (liked: boolean) => {
+      button.classList.toggle('liked', liked);
+      button.setAttribute('aria-pressed', String(liked));
+    };
+
+    renderLiked(Object.prototype.hasOwnProperty.call(readCookies(), cookieName));
+
+    try {
+      const data = await fetchJson(`${apiBase}/stats/batch`, {
+        method: 'POST',
+        credentials: 'include',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slugs: [slug] }),
+      });
+      const stats = data[slug];
+      if (likes) likes.textContent = String(stats?.likes ?? 0);
+      if (views) views.textContent = String(stats?.views ?? 0);
+    } catch {
+      counter.dataset.unavailable = 'true';
+      if (likes) likes.textContent = '0';
+      if (views) views.textContent = '—';
+    }
+
+    button.addEventListener('click', async () => {
+      const willLike = !button.classList.contains('liked');
+      button.disabled = true;
+
+      try {
+        const data = await fetchJson(
+          willLike ? `${apiBase}/likes` : `${apiBase}/likes/${encodeURIComponent(slug)}`,
+          willLike
+            ? {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ slug }),
+              }
+            : { method: 'DELETE', credentials: 'include' },
+        );
+        setLikedCookie(cookieName, willLike);
+        renderLiked(willLike);
+        if (likes) likes.textContent = String(data.count ?? 0);
+      } catch {
+        counter.dataset.unavailable = 'true';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+</script>

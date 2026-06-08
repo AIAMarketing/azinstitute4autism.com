@@ -1,0 +1,15 @@
+{
+  "primary": [
+    { "label": "Inicio", "href": "/es" },
+    { "label": "Sobre", "href": "/about" },
+    { "label": "Servicios", "href": "/es/services" },
+    { "label": "Biblioteca", "href": "/es/library" },
+    { "label": "Contacto", "href": "/es/contact" }
+  ],
+  "services": [
+    { "label": "Terapia ABA", "href": "/es/aba-therapy" },
+    { "label": "Evaluaciones", "href": "/es/autism-evaluations" },
+    { "label": "Club Social", "href": "/es/learner-social-club" }
+  ],
+  "footer": []
+}

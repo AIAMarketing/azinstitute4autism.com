@@ -12,9 +12,9 @@ exec codex \
   --profile-v2 azi4a2-autonomous \
   --strict-config \
   --config 'approval_policy="never"' \
-  --config 'mcp_servers.playwright.default_tools_approval_mode="auto"' \
+  --config 'mcp_servers.playwright.default_tools_approval_mode="approve"' \
   --config 'mcp_servers.playwright.tool_timeout_sec=300' \
-  --config 'mcp_servers.openaiDeveloperDocs.default_tools_approval_mode="auto"' \
+  --config 'mcp_servers.openaiDeveloperDocs.default_tools_approval_mode="approve"' \
   --config 'mcp_servers.openaiDeveloperDocs.tool_timeout_sec=300' \
   --cd "$repo_root" \
   "$@"

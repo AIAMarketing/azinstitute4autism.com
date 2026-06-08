@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LikeViewCounter from '../components/LikeViewCounter.astro';
+const { entry } = Astro.props;
+---
+<BaseLayout title={entry.data.title} description={entry.data.description} canonical={entry.data.canonical} image={entry.data.featuredImage} lang={entry.data.lang} type="article">
+  <article class="blog-post">
+    <header class="article-header container">
+      <h1>{entry.data.title}</h1>
+      <div class="article-byline">
+        <img src="/assets/images/rula-diab-avatar.jpg" alt="" />
+        <p><strong>Rula Diab, Clinical Director, M.Ed, BCBA, LBA</strong><br /><time datetime={entry.data.date.toISOString()}>{entry.data.date.toLocaleDateString(entry.data.lang, { day: '2-digit', month: 'long', year: 'numeric' })}</time></p>
+      </div>
+      {entry.data.featuredImage && <div class="article-featured"><img src={entry.data.featuredImage} alt={entry.data.alt || ''} /></div>}
+    </header>
+    <div class="prose blog-post-body container"><slot /></div>
+    <div class="container"><LikeViewCounter slug={entry.data.slug} /></div>
+  </article>
+</BaseLayout>

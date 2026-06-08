@@ -1,0 +1,24 @@
+---
+import en from '../data/navigation.en.json';
+import es from '../data/navigation.es.json';
+const { lang = 'en' } = Astro.props;
+const nav = { en, es, ar: en }[lang as 'en' | 'es' | 'ar'] || en;
+const aboutLinks = lang === 'es'
+  ? [['Equipo', '/team'], ['Carreras', '/careers'], ['Preguntas frecuentes', '/faqs']]
+  : [['Team', '/team'], ['Careers', '/careers'], ['FAQ', '/faqs']];
+---
+<nav class="main-nav" aria-label="Main navigation">
+  <ul>
+    {nav.primary.map((item) => (
+      <li class:list={{ 'has-submenu': item.href.endsWith('/about') || item.href.endsWith('/services') }}>
+        <a href={item.href}>{item.label}</a>
+        {item.href.endsWith('/about') && <ul class="submenu">
+          {aboutLinks.map(([label, href]) => <li><a href={href}>{label}</a></li>)}
+        </ul>}
+        {item.href.endsWith('/services') && <ul class="submenu">
+          {nav.services.map((service) => <li><a href={service.href}>{service.label}</a></li>)}
+        </ul>}
+      </li>
+    ))}
+  </ul>
+</nav>

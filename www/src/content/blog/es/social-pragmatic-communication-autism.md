@@ -1,0 +1,192 @@
+---
+title: "Por qué mi hijo puede hablar pero aún tiene dificultades sociales"
+description: "Tu hijo puede hablar, pero tiene dificultades sociales. Vea cómo el lenguaje pragmático, la inferencia y las señales no verbales moldean la conexión, y cómo el ABA desarrolla habilidades."
+slug: "social-pragmatic-communication-autism"
+canonical: "https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism"
+lang: "es"
+translationKey: "social-pragmatic-communication-autism"
+featuredImage: "/assets/images/talk-not-social.jpg"
+date: "2026-01-22"
+author: "rula-diab"
+category: "Library"
+tags: []
+draft: false
+---
+# Por qué mi hijo puede hablar pero aún tiene dificultades sociales
+
+![Rula Diab, Directora Clínica, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
+
+ Rula Diab, Directora Clínica, M.Ed, BCBA, LBA
+
+ 22 enero, 2026
+
+![niño que habla tiene problemas para socializar - imagen principal](/assets/images/talk-not-social.jpg)
+
+## Las preguntas que los padres nos hacen cada semana "Mi hijo puede hablar, entonces ¿por qué sigue siendo tan difícil hacer amigos?" o "Ella tiene palabras, pero no sabe cómo tener una conversación."
+
+### La respuesta corta
+
+No estás solo. El habla y la conexión social están relacionadas, pero no son el mismo conjunto de habilidades. Hablar es formar palabras y oraciones. La comunicación social se trata de cuándo, por qué y cómo usamos esas palabras con otras personas. Muchos niños autistas tienen un vocabulario y una gramática sólidos, pero aún necesitan apoyo en el aspecto social de la comunicación.
+
+Resumen rápido: Si tu hijo puede hablar pero tiene dificultades en grupos, las piezas que faltan suelen ser el lenguaje pragmático, la inferencia social, la toma de perspectiva y la lectura de señales no verbales.
+
+## Hablar vs. Comunicación Social
+
+ Hablando (forma) 
+ Comunicación social (uso) 
+
+ Saber palabras y gramática 
+ Iniciar, mantener y terminar una conversación en el momento adecuado 
+
+ Pronunciando sonidos 
+ Ajustar el tono y el volumen al entorno 
+
+ Construyendo oraciones 
+ Leer el lenguaje corporal y las expresiones faciales 
+
+ Etiquetar y responder 
+ Hacer preguntas de seguimiento, compartir temas, turnarse 
+
+Los clínicos llaman al lado derecho lenguaje pragmático . Es el manual para usar el lenguaje con las personas. Muchos niños autistas necesitan que estas reglas se enseñen directamente y se practiquen en situaciones reales.
+
+## Lo que los padres suelen notar primero
+
+- Tu hijo tiene mucho que decir sobre un interés favorito, pero sus compañeros se alejan.
+
+- Los chistes o el sarcasmo no funcionan.
+
+- Las citas de juego se sienten incómodas. Tu hijo habla a la gente en lugar de con ellos.
+
+- Las nuevas situaciones llevan a congelarse, decir la "cosa equivocada" o evitar.
+
+No son desobediencia ni grosería. Son señales de que las habilidades de comunicación social necesitan enseñanza y apoyo.
+
+## Habilidad 1: Lenguaje pragmático en momentos cotidianos
+
+El lenguaje pragmático es usar las palabras adecuadas de la manera correcta para el momento. Eso incluye cómo empezar una conversación, mantenerla, cambiar de tema y terminarla de manera educada. También incluye el espacio personal, el turno de palabra y el tono apropiado. Muchos estudiantes autistas se benefician de la enseñanza explícita y de mucha práctica sin presión.
+
+Intenta esto en casa: Elige una rutina, como la hora del refrigerio. Practica un guion simple de tres pasos: "Ofrecer" (¿Quieres un poco?), "Esperar," "Seguimiento" (Genial, ¿qué quieres después?). Desvanece el guion a medida que tu hijo tenga éxito.
+
+## Habilidad 2: Inferencia social, o entender lo que no se dice
+
+Los humanos a menudo implican en lugar de afirmar las cosas. Suspiramos, encogemos los hombros o decimos "tal vez más tarde", y los demás infieren lo que queremos decir. Los niños autistas pueden perderse estas señales sutiles o tomar el lenguaje de manera literal, lo que puede hacer que parezcan desinteresados o demasiado insistentes cuando en realidad quieren conectarse. Enseñar a notar la situación, la persona y las palabras juntas puede ayudar.
+
+Idea de práctica: Vean juntos un breve clip en silencio. Pausa y pregunta, "¿Qué crees que ella quiere?" o "¿Qué cambió cuando él miró hacia otro lado?"
+
+## Habilidad 3: Toma de perspectiva
+
+Tomar perspectiva significa entender que otra persona puede querer jugar algo diferente, puede no saber lo que tú sabes y puede sentir de manera diferente a como tú lo haces. Esta habilidad se desarrolla con la modelación, el juego de roles y la práctica estructurada con compañeros.
+
+En sesión en la AIA: Usamos breves dramatizaciones, clips de video e historias sociales, luego practicamos con compañeros y cuidadores para que la habilidad se manifieste en la escuela y en casa. La práctica mediada por pares es una forma basada en evidencia para desarrollar la comprensión social.
+
+## Habilidad 4: Leer las señales no verbales
+
+Gran parte de la comunicación humana reside en la cara, el cuerpo y la voz. Un paso atrás puede significar "necesito espacio." Mirar hacia otro lado puede significar "Estoy listo para seguir adelante." Un cambio en el tono puede señalar una broma o frustración. Enseñar a los niños a buscar algunas señales predecibles construye confianza en el mundo real.
+
+Juego para probar: Hazlo una búsqueda del tesoro. Durante un programa familiar, haz una pausa cuando veas una señal y etiquétala juntos: "Se cruzó de brazos." ¿Qué podría significar eso en este momento?
+
+## Las reglas ocultas que cambian según el contexto
+
+Reglas como "no te acerques demasiado," "pregunta qué le gusta a la otra persona," y "cambia tu voz en la biblioteca" rara vez se dicen en voz alta. En AIA, desglosamos cada regla en pequeños pasos, modelamos ejemplos y no ejemplos, practicamos con compañeros y reforzamos aproximaciones para que los niños puedan usar la habilidad en clase, en el patio de recreo y en casa. Este enfoque gradual se alinea con prácticas basadas en evidencia, como la modelación, los apoyos visuales, la instrucción mediada por pares y las narrativas sociales.
+
+## Cómo ABA en AIA fomenta la comunicación social
+
+Nos enfocamos en la conexión, la comunicación y la regulación emocional. Cada plan es individualizado y puede incluir:
+
+- Enseñanza naturalista, incorporar habilidades en el juego y las rutinas diarias.
+
+- Modelado y modelado en video, para que los niños puedan ver exactamente cómo es el éxito.
+
+- Práctica mediada por pares, aprender con compañeros solidarios en escenarios estructurados.
+
+- Narrativas y guiones sociales, usado brevemente, luego se desvaneció a medida que la independencia aumentaba.
+
+- Regulación emocional, enseñando qué hacer cuando te sientes abrumado, confundido o ansioso.
+
+- Práctica comunitaria, llevando habilidades a parques infantiles, tiendas y clubes alrededor de Phoenix y el Valle del Este.
+
+Estas estrategias se identifican como basadas en evidencia para los estudiantes autistas, lo que significa que múltiples estudios de alta calidad muestran efectos positivos en los resultados sociales y de comunicación.
+
+¿Quieres profundizar más? Consulta nuestras guías sobre [Proactive and Reactive ABA Strategies](../../library/proactive-reactive-aba-strategies-guide) , [Individualized Care Plans](../../library/individualized-aba-therapy) , y [Sensory Processing](../../library/sensory-processing) para entender cómo adaptamos el apoyo.
+
+## Un plan simple que puedes usar esta semana
+
+- Elige una situación eso sucede a diario, como hacer fila para el recreo o unirse a un juego en el cuidado después de clases.
+
+- Vista previa del plan con un visual como una tarjeta de Primero-Luego , luego practícalo una vez antes del momento real. Nuestro artículo muestra ejemplos que puedes imprimir.
+
+- Entrena una señal para notar, como "busca ojos que miran hacia otro lado."
+
+- Refuerza el intento, no solo el resultado, y escribe una nota rápida al maestro sobre lo que practicaron.
+
+- Revisa con tu hijo durante el viaje a casa, luego celebra una victoria específica.
+
+## Cuándo buscar apoyo adicional
+
+Si su hijo quiere hacer amigos pero sigue enfrentando los mismos obstáculos, la enseñanza estructurada puede ayudar. Inicie una conversación con nuestro equipo sobre la [terapia ABA](../../aba-therapy) y el [proceso de admisión](../../aba-therapy-intake-process) . O [reserve una consulta gratuita](../../client-consultation) hoy. Atendemos a familias en Scottsdale, Tempe, Mesa, Gilbert y el área metropolitana de Phoenix.
+
+### Soporte visual para probar
+
+Para las familias de Arizona: En los días calurosos cuando el parque infantil no es una opción, practiquen juegos sociales durante actividades en interiores como juegos de mesa, proyectos de arte o construcciones con LEGO. La práctica corta y predecible es muy efectiva en el verano de Phoenix.
+
+## Fuentes que utilizamos al construir planes de comunicación social
+
+- [NIDCD](https://www.nidcd.nih.gov/health/autism-spectrum-disorder-communication-problems-children) (National Institute on Deafness and Other Communication Disorders): desafíos de comunicación y no verbales en el TEA (Trastorno del Espectro Autista).
+
+- [Hospital Infantil de Cincinnati](https://www.cincinnatichildrens.org/-/media/Cincinnati-Childrens/Home/service/s/speech/hcp/doctor-info/information-language-PDF-pragmatic-lan-6.pdf) definición de lenguaje pragmático.
+
+- [NCAEP](https://ncaep.fpg.unc.edu/wp-content/uploads/EBP-Report-2020.pdf) (National Clearinghouse on Autism Evidence and Practice) informe que identifica la modelación, los apoyos visuales, las narrativas sociales, la instrucción mediada por pares y estrategias relacionadas como basadas en evidencia.
+
+- [Intervenciones mediadas por pares](https://files.eric.ed.gov/fulltext/ED595339.pdf) y la investigación de modelado en video que apoyan el desarrollo de habilidades sociales.
+
+- [National Autistic Society](https://www.autism.org.uk/advice-and-guidance/topics/family-life-and-relationships/making-friends/parents-and-carers) orientación sobre cómo ayudar a los niños a hacer amigos.
+
+ Preguntas Frecuentes 
+
+## Consejos de Comunicación Social
+
+### ¿Qué es el lenguaje pragmático en el autismo?
+
+El lenguaje pragmático es cómo usamos las palabras para relacionarnos con las personas en situaciones reales. Cubre el turno de palabra, el mantenimiento del tema, el espacio personal y cómo el tono y el volumen se ajustan al contexto. Es común que los niños autistas tengan un vocabulario amplio pero aún necesiten enseñanza directa en estas reglas.
+
+### ¿Está siendo grosero mi hijo cuando no entiende los chistes o interrumpe?
+
+Normalmente, no. No captar el sarcasmo, las interpretaciones literales y las interrupciones son señales de que se necesitan enseñar la inferencia social y el momento adecuado. Estas habilidades mejoran con la modelación, la práctica y la retroalimentación en entornos de baja presión.
+
+### ¿Realmente ayuda la práctica entre compañeros?
+
+Sí. La instrucción mediada por pares se considera una práctica basada en la evidencia para los estudiantes autistas y ha demostrado apoyar las habilidades de interacción social desde la educación preescolar hasta la secundaria.
+
+### ¿Cómo se diferencia el ABA de la terapia del habla para las habilidades sociales?
+
+La terapia del habla y lenguaje a menudo se centra en la mecánica y la pragmática del lenguaje. El ABA considera todo el contexto, incluyendo la motivación, el entorno, el refuerzo y la generalización en diferentes entornos. Los dos servicios se complementan bien.
+
+### ¿Qué soportes visuales deberíamos empezar a utilizar?
+
+Comienza con herramientas simples como tarjetas de Primero-Luego o mini listas de verificación para una sola rutina. Nuestra visión general de las [Tarjetas Primero-Luego](../../library/first-then-cards-autism-transitions) muestra cómo configurarlas y desvanecerlas a medida que crece la independencia.
+
+### ¿Cómo consigo ayuda en Arizona?
+
+Puedes [programar una consulta gratuita](../../client-consultation) o leer más sobre los [servicios de ABA de AIA](../../aba-therapy) y nuestro [proceso de admisión](../../aba-therapy-intake-process) . Apoyamos a las familias en toda el área metropolitana de Phoenix con opciones en el centro y en el hogar, junto con capacitación para cuidadores.
+
+ Previous Post 
+
+###### [Por qué la regulación emocional debería ser el corazón de cada programa de ABA](emotional-regulation-aba)
+
+ Next Post 
+
+###### [Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres](autism-evaluation-diagnosis-arizona-parent-guide)
+
+### Similar Blog Posts
+
+![Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.](/assets/images/autism-evaluation-expectations_hero.png)
+
+#### [Qué esperar en la primera evaluación de autismo de su hijo](autism-evaluation-what-to-expect)
+
+![Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal](/assets/images/child-shopping-cart-tired-cranky.jpg)
+
+#### [Por qué la regulación emocional debería ser el corazón de cada programa de ABA](emotional-regulation-aba)
+
+![Enseñanza de habilidades académicas, sociales, de comunicación e independencia](/assets/images/hero-aba-preschool-az_800x.jpg)
+
+#### [Ya se inscriben alumnos: Academia Preparatoria AIA para niños de 2 a 6 años](aba-school-readiness-arizona)

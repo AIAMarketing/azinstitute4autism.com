@@ -1,0 +1,11 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { title, description, lang = 'en' } = Astro.props;
+const languagePrefix = lang === 'en' ? '' : `/${lang}`;
+const canonical = `https://www.azinstitute4autism.com${languagePrefix}/library`;
+---
+<BaseLayout title={title} description={description} canonical={canonical} lang={lang}>
+  <header class="library-banner"><div class="container"><p class="script-label">Welcome to</p><h1>{title}</h1></div></header>
+  <section class="library-intro"><div class="container"><h2>Library</h2><p>{description}</p></div></section>
+  <div class="container section library-layout"><slot /></div>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+title: "Boost Emotional and Social Functioning with Learner Social Club at AIA"
+description: "Contact AIA for a free 1-day trial pass to see how your child"
+slug: "learner-social-club"
+canonical: "https://www.azinstitute4autism.com/learner-social-club"
+lang: "en"
+translationKey: "learner-social-club"
+draft: false
+---
+## Learner Social Club
+
+Every child needs opportunities to have fun, make friends, and build social connections while developing valuable skills. The Learner Social Club is designed specifically to support your learner’s emotional and social well-being through engaging, evidence-based enrichment activities.
+
+### What We Offer
+
+Our integrative wellness enrichment services include:
+
+- Music
+
+- Art
+
+- Games
+
+- Dance
+
+- Recreational activities
+
+These thoughtfully designed activities help nurture your learner’s mind and body, providing holistic wellness and saving you valuable time.
+
+### Enrollment Reminders for Parents/Guardians
+
+To ensure the best experience for your learner, please keep the following in mind:
+
+- Potty Training: Learners must be potty-trained before enrolling.
+
+- Wipes: Pack wipes for your learner. These can be stored at our clinic.
+
+- Snack & Water: Send your learner with a snack and water. These items can also be stored on-site.
+
+- Pause/Cancellation Notice: Please provide AIA staff with at least a 30-day notice if you plan to pause or cancel your Learner Social Club services.
+
+### Program Schedule & Ages Served
+
+![stem-sped-social-learners](/assets/images/stem-sped-social-learners.webp)
+
+The Learner Social Club currently serves youth learners aged 8–17 years . Our flexible scheduling options currently include:
+
+- 2 days/week (Monday, Wednesday): 4:00 PM – 6:00 PM
+
+- 1 day/week (Wednesday only): 4:00 PM – 6:00 PM
+
+### Payment Information
+
+- Payment Type: Private Pay
+
+Interested in Trying Out Our Program?
+
+Get a 1-Day Trial Pass by emailing us at info [at] azinstitute4autism [dot] com .
+
+[Enroll Now](/client-consultation)

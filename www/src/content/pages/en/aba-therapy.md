@@ -1,0 +1,60 @@
+---
+title: "Integrated ABA Therapy for Autism | Arizona Institute for Autism"
+description: "Empower your child for life with one-on-one integrated ABA therapy. Book a free consultation and join our supportive autism community!"
+slug: "aba-therapy"
+canonical: "https://www.azinstitute4autism.com/aba-therapy"
+lang: "en"
+translationKey: "aba-therapy"
+draft: false
+---
+## ABA Therapy
+
+The Arizona Institute for Autism offers a variety of evidence-based, clinical services for children who have been diagnosed with Autism Spectrum Disorder or other related developmental disorders. Depending on your individual preference as well as your child's specific needs, some of our comprehensive clinical services are conducted in our institute with a focus on helping your child attain a better quality of life & and a greater sense of independence.
+
+Our ABA Therapy programs address the comprehensive needs of each learner, equipping children with the skills necessary to become independent learners.
+
+### Services We Offer
+
+ Individual Learning 
+
+#### ABA Therapy 1:1 Program
+
+![aba-daughter-toddler-belonging](/assets/images/aba-daughter-toddler-belonging.webp)
+
+The ABA Therapy 1:1 program, designed for children aged 2 to 8 years, adopts an integrative approach aimed at fostering independent learning. The Arizona Institute for Autism employs a naturalistic, neurodiversity-affirming model within its applied behavior analysis (ABA) program, incorporating essential insights from neuroscientific research.
+
+Our ABA therapy focuses on improving socially significant behaviors by using positive reinforcement, systematic teaching, and data-driven methods. AIA Clinicians focus on tailoring our services to accommodate the unique neurodevelopmental profiles of each learner.
+
+ Group Learning 
+
+#### ABA Therapy 1:2 Academic Readiness Program
+
+![aba-academic-readiness](/assets/images/aba-academic-readiness.webp)
+
+The ABA Therapy 1:2 Academic Readiness Program is specifically designed for children aged 2 to 6 years and utilizes a tailored group therapy approach to prepare learners for successful integration into the mainstream classroom.This program incorporates the [AIA Preparatory Academy©](https://aiaprep.org/) curriculum, combining the esteemed Montessori method with Applied Behavior Analysis (ABA). This integrated approach fosters a supportive environment tailored to the individual learning styles and strengths of our learners, facilitating the development of essential social, communication, cognitive, and motor skills necessary for success in mainstream classrooms.
+
+The primary developmental milestones emphasized in this program include social, communication, cognitive, social-emotional, executive functioning, and motor skills. Throughout the Academic Readiness Program, your child will engage in a variety of structured electives such as speech therapy, recreational therapy, and music therapy. These electives, including circle time, arts and crafts, music, play, and other group interactions, that are designed to support skills development in these key areas.
+
+ Family Education 
+
+#### Parent Consultation Program
+
+![aba-daughter-toddler-belonging](/assets/images/aba-speech-therapy.webp)
+
+We believe that parents, siblings and caregivers play a crucial role in the success of their child’s therapy. That’s why we offer Parent Consultation Services as part of our comprehensive ABA program.
+
+Our goal is to empower families with the knowledge, tools, and support they need to confidently help their child navigate this developmental journey. Parent consultation is a vital component of ABA therapy, designed to ensure that the progress made during therapy extends beyond the clinic.
+
+These consultations provide parents with personalized guidance, training, and strategies tailored to their child’s unique needs.
+
+[Make an Appointment](/client-consultation)
+
+## About Rula Diab, Chief Clinical Director, BCBA, LBA
+
+![rula-diab-1](/assets/images/rula-diab-1.webp)
+
+Rula Diab, M.Ed, BCBA, LBA, is the Clinical Director at the Arizona Institute for Autism and an industry expert with over 15 years of experience in Special Education and Behavioral Analysis. In her role as Clinical Director, Diab guides and shapes the clinical practices and ABA therapy programs at the Arizona Institute for Autism.
+
+Rula collaborates closely with practitioners, academics, policymakers, teachers, families, and, most significantly, children with developmental disabilities throughout Arizona.
+
+Recognizing significant gaps in the way Applied Behavior Analysis (ABA) principles were traditionally implemented, Rula pioneered the Arizona Institute for Autism educational model. This innovative approach celebrates individuality while honoring dignity and nurturing each child's unique interests, preferences, and motivations. She firmly believes that education should be engaging and enjoyable for every child.

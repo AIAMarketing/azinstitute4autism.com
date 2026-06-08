@@ -1,0 +1,192 @@
+---
+title: "Why My Child Can Talk but Still Struggles Socially"
+description: "Your child can talk yet struggles socially. See how pragmatic language, inference, and nonverbal cues shape connection, and how ABA builds skills."
+slug: "social-pragmatic-communication-autism"
+canonical: "https://www.azinstitute4autism.com/library/social-pragmatic-communication-autism"
+lang: "en"
+translationKey: "social-pragmatic-communication-autism"
+featuredImage: "/assets/images/talk-not-social.jpg"
+date: "2025-12-01"
+author: "rula-diab"
+category: "Library"
+tags: []
+draft: false
+---
+# Why My Child Can Talk but Still Struggles Socially
+
+![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
+
+ Rula Diab, Clinical Director, M.Ed, BCBA, LBA
+
+ 01 December, 2025
+
+![talking child has trouble socializing - hero](/assets/images/talk-not-social.jpg)
+
+## The questions parents ask us every week "My child can talk, so why is making friends still so hard?" or "She has words, but she doesn’t know how to have a conversation."
+
+### The short answer
+
+You are not alone. Speech and social connection are related, but they are not the same skill set. Talking is about forming words and sentences. Social communication is about when, why, and how we use those words with other people. Many autistic children have solid vocabulary and grammar yet still need support in the social side of communication.
+
+Quick take: If your child can talk but struggles in groups, the missing pieces are usually pragmatic language, social inference, perspective taking, and reading nonverbal cues.
+
+## Talking vs. Social Communication
+
+ Talking (form) 
+ Social communication (use) 
+
+ Knowing words and grammar 
+ Starting, keeping, and ending a conversation at a good time 
+
+ Pronouncing sounds 
+ Matching tone and volume to the setting 
+
+ Building sentences 
+ Reading body language and facial expressions 
+
+ Labeling and answering 
+ Asking follow-up questions, sharing topics, taking turns 
+
+Clinicians call the right side pragmatic language . It is the rulebook for using language with people. Many autistic children need these rules taught directly and practiced in real settings.
+
+## What parents usually notice first
+
+- Your child has lots to say about a favorite interest, but peers drift away.
+
+- Jokes or sarcasm do not land.
+
+- Playdates feel awkward. Your child talks to people rather than with them.
+
+- New situations lead to freezing, saying the "wrong thing," or avoiding.
+
+These are not defiance or rudeness. They are signs that social communication skills need teaching and support.
+
+## Skill 1: Pragmatic language in everyday moments
+
+Pragmatic language is using the right words in the right way for the moment. That includes how to start a chat, keep it going, change topics, and end politely. It also includes personal space, turn taking, and appropriate tone. Many autistic learners benefit from explicit teaching and plenty of low-pressure practice.
+
+Try this at home: Pick one routine, such as snack time. Practice a simple three-beat script: "Offer" (Would you like some?), "Wait," "Follow-up" (Great, what do you want next?). Fade the script as your child succeeds.
+
+## Skill 2: Social inference, or understanding what is not said
+
+Humans often imply rather than state things. We sigh, shrug, or say "maybe later," and others infer what we mean. Autistic children may miss these subtle cues or take language literally, which can make them seem disinterested or too persistent when they actually want to connect. Teaching how to notice the situation, the person, and the words together can help.
+
+Practice idea: Watch a short, silent clip together. Pause and ask, "What do you think she wants?" or "What changed when he looked away?"
+
+## Skill 3: Perspective taking
+
+Perspective taking means understanding that another person may want to play something different, may not know what you know, and may feel differently than you do. This skill grows with modeling, role-play, and structured peer practice.
+
+In session at AIA: We use brief role-plays, video clips, and social stories, then practice with peers and caregivers so the skill shows up at school and at home. Peer-mediated practice is an evidence-based way to build social understanding.
+
+## Skill 4: Reading nonverbal cues
+
+Much of human communication lives in the face, the body, and the voice. A step back may mean "I need space." Looking away may mean "I am ready to move on." A change in tone can signal a joke or frustration. Teaching children to look for a few predictable signals builds real-world confidence.
+
+Game to try: Make it a scavenger hunt. During a family show, pause when you see a cue and label it together: "He crossed his arms. What might that mean right now?"
+
+## The hidden rules that change by setting
+
+Rules like "do not stand too close," "ask what the other person likes," and "change your voice in the library" are seldom said out loud. At AIA, we break each rule into small steps, model examples and non-examples, practice with peers, and reinforce approximations so children can use the skill in class, on the playground, and at home. This stepwise approach aligns with evidence-based practices such as modeling, visual supports, peer-mediated instruction, and social narratives.
+
+## How ABA at AIA grows social communication
+
+We focus on connection, communication, and emotional regulation. Each plan is individualized and may include:
+
+- Naturalistic teaching, embedding skills in play and daily routines.
+
+- Modeling and video modeling, so children can see exactly what success looks like.
+
+- Peer-mediated practice, learning with supportive peers in structured scenarios.
+
+- Social narratives and scripts, used briefly, then faded as independence rises.
+
+- Emotion regulation, teaching what to do when you feel overwhelmed, confused, or anxious.
+
+- Community practice, taking skills to playgrounds, stores, and clubs around Phoenix and the East Valley.
+
+These strategies are identified as evidence-based for autistic learners, which means multiple high-quality studies show positive effects on social and communication outcomes.
+
+Want a deeper dive? See our guides on [Proactive and Reactive ABA Strategies](proactive-reactive-aba-strategies-guide) , [Individualized Care Plans](individualized-aba-therapy) , and [Sensory Processing](sensory-processing) to understand how we tailor support.
+
+## A simple roadmap you can use this week
+
+- Choose one situation that happens daily, such as lining up for recess or joining a game at aftercare.
+
+- Preview the plan with a visual like a First-Then card, then practice it once before the real moment. Our article shows examples you can print.
+
+- Coach one cue to notice, such as "look for eyes looking away."
+
+- Reinforce the attempt, not just the outcome, and write a quick note to the teacher about what you practiced.
+
+- Review with your child on the ride home, then celebrate one specific win.
+
+## When to seek extra support
+
+If your child wants friends but keeps hitting the same hurdles, structured teaching can help. Start a conversation with our team about [ABA therapy](../aba-therapy) and the [intake process](../aba-therapy-intake-process) . Or [book a free consultation](../client-consultation) today. We serve families across Scottsdale, Tempe, Mesa, Gilbert, and the greater Phoenix area.
+
+### Visual support to try
+
+Aside for Arizona families: On hot days when the playground is not an option, practice social games during indoor activities such as board games, art projects, or LEGO builds. Short, predictable practice goes a long way in the Phoenix summer.
+
+## Sources we use when building social-communication plans
+
+- [National Institute on Deafness and Other Communication Disorders](https://www.nidcd.nih.gov/health/autism-spectrum-disorder-communication-problems-children): communication and nonverbal challenges in ASD.
+
+- [Cincinnati Children's Hospital](https://www.cincinnatichildrens.org/-/media/Cincinnati-Childrens/Home/service/s/speech/hcp/doctor-info/information-language-PDF-pragmatic-lan-6.pdf) definition of pragmatic language.
+
+- [NCAEP](https://ncaep.fpg.unc.edu/wp-content/uploads/EBP-Report-2020.pdf) (National Clearinghouse on Autism Evidence and Practice) report identifying modeling, visual supports, social narratives, peer-mediated instruction, and related strategies as evidence-based.
+
+- [Peer-mediated interventions](https://files.eric.ed.gov/fulltext/ED595339.pdf) and video modeling research supporting social skill gains.
+
+- [National Autistic Society](https://www.autism.org.uk/advice-and-guidance/topics/family-life-and-relationships/making-friends/parents-and-carers) guidance on helping children make friends.
+
+ Frequently Asked Questions 
+
+## Social Communication Tips
+
+### What is pragmatic language in autism?
+
+Pragmatic language is how we use words to relate with people in real situations. It covers turn taking, topic maintenance, personal space, and how tone and volume fit the context. It is common for autistic children to have strong vocabulary yet still need direct teaching in these rules.
+
+### Is my child being rude when they miss jokes or interrupt?
+
+Usually, no. Missing sarcasm, literal interpretations, and interrupting are signs that social inference and timing need to be taught. These skills improve with modeling, practice, and feedback in low-pressure settings.
+
+### Does peer practice actually help?
+
+Yes. Peer-mediated instruction is considered an evidence-based practice for autistic learners and has been shown to support social interaction skills across preschool through high school.
+
+### How is ABA different from speech therapy for social skills?
+
+Speech-language therapy often targets the mechanics and pragmatics of language. ABA looks at the whole context, including motivation, environment, reinforcement, and generalization across settings. The two services complement each other well.
+
+### What visual supports should we start with?
+
+Start with simple tools such as First-Then cards or mini checklists for a single routine. Our overview of [First-Then Cards](first-then-cards-autism-transitions) shows how to set them up and fade them as independence grows.
+
+### How do I get help in Arizona?
+
+You can [schedule a free consultation](../client-consultation) or read more about [AIA’s ABA services](../aba-therapy) and our [intake process](../aba-therapy-intake-process) . We support families across the Phoenix metro area with in-center and at-home options along with caregiver training.
+
+ Previous Post 
+
+###### [Heart Full of Gratitude](heart-full-of-gratitude)
+
+ Next Post 
+
+###### [Autism Evaluation in Arizona: A Parent's Step-by-Step Guide](autism-evaluation-diagnosis-arizona-parent-guide)
+
+### Similar Blog Posts
+
+![hero image - executive functioning skills strategies for autistic children](/assets/images/hero-executive-functioning-skills-autism.webp)
+
+#### [Executive Functioning Skills and Autism](executive-functioning-skills-autism)
+
+![Parent and child meeting with a clinician in a calm, play-based autism evaluation setting](/assets/images/autism-evaluation-expectations_hero.png)
+
+#### [What to Expect at Your Child’s First Autism Evaluation](autism-evaluation-what-to-expect)
+
+![A parent and an autistic child smiling while using a picture communication board during playtime.](/assets/images/communication-skills-autistic-children-hero_img.png)
+
+#### [Building Communication & Social Skills in Autistic Children: A Practical Guide for Families](communication-social-skills-autistic-children-guide)

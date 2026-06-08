@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import BlogIndexLayout from '../../../layouts/BlogIndexLayout.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'ar' && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const popular = posts.slice(0, 5);
+---
+<BlogIndexLayout title="مكتبة معهد أريزونا للتوحد" description="مقالات إخبارية حول علاج تحليل السلوك التطبيقي والتعليم الخاص، ودراسات حالة، ووصفات، ومقالات افتتاحية، ودروس تعليمية." lang="ar">
+  <aside class="library-sidebar"><h2>المقالات الشائعة</h2><ul>{popular.map((post) => <li><a href={`/ar/library/${post.data.slug}`}>{post.data.title}</a></li>)}</ul></aside>
+  <div class="blog-list">{posts.map((post) => <BlogCard post={post} prefix="/ar" />)}</div>
+</BlogIndexLayout>

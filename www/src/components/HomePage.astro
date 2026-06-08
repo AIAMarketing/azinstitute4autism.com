@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const { lang = 'en' } = Astro.props;
+const es = lang === 'es';
+const consultation = es ? '/es/client-consultation' : '/client-consultation';
+const title = es ? 'Terapia ABA cerca de mí | Arizona Institute for Autism | Scottsdale' : 'ABA Therapy Near Me | Arizona Institute for Autism | Scottsdale';
+const description = es
+  ? 'Arizona Institute for Autism: centro de servicios de salud conductual y educación ubicado en Scottsdale. Atendemos a personas con autismo y a sus familias.'
+  : 'Arizona Institute for Autism provides behavioral health and education services for individuals with autism and their families.';
+const canonical = `https://www.azinstitute4autism.com${es ? '/es' : '/'}`;
+const services = es
+  ? ['Apoyo a la defensa del autismo', 'Apoyo a la evaluación y valoración', 'Servicios de Autismo para Niños', 'Servicios Comunitarios de Autismo', 'Servicios de Capacitación Familiar']
+  : ['Autism Advocacy Support', 'Evaluation & Assessment Support', 'Children Autism Services', 'Community Autism Services', 'Family Training Services'];
+const commitments = es
+  ? ['En el centro', 'En casa', 'Tratamiento de terapia integrada', 'Intervención temprana', 'Preparación Académica', 'Supervisión clínica', 'Consulta de padres']
+  : ['In-Center', 'In-Home', 'Integrated Therapy Treatment', 'Early Intervention', 'Academic Readiness', 'Clinical Supervision', 'Parent Consultation'];
+const skills = es
+  ? [['icon-Social_Engagement.png', 'Compromiso social'], ['icon-Eye_Contact.png', 'Contacto visual'], ['icon-Listening.png', 'Escuchar'], ['icon-Repetitive_Movement.png', 'Movimiento repetitivo'], ['icon-Playing.png', 'Jugando'], ['icon-Speach.png', 'Discurso']]
+  : [['icon-Social_Engagement.png', 'Social Engagement'], ['icon-Eye_Contact.png', 'Eye Contact'], ['icon-Listening.png', 'Listening'], ['icon-Repetitive_Movement.png', 'Repetitive Movement'], ['icon-Playing.png', 'Playing'], ['icon-Speach.png', 'Speech']];
+const process = es
+  ? [['learner-journey-step-1a.svg', 'Complete el formulario de información del estudiante'], ['learner-journey-step-2.svg', 'Hable con un Defensor del Cliente'], ['learner-journey-step-3.svg', 'Llenar y firmar un paquete de admisión de clientes'], ['learner-journey-step-4.svg', 'Verificar la información de facturación, seguro y beneficios'], ['learner-journey-step-5.svg', 'Programar una evaluación'], ['learner-journey-step-6.svg', 'Colaborar en un Plan de Cuidados']]
+  : [['learner-journey-step-1a.svg', 'Fill Out Learner Information Form'], ['learner-journey-step-2.svg', 'Speak with a Client Advocate'], ['learner-journey-step-3.svg', 'Fill and Sign a Client Intake Packet'], ['learner-journey-step-4.svg', 'Verify Billing and Insurance Information and Benefits'], ['learner-journey-step-5.svg', 'Schedule an Assessment'], ['learner-journey-step-6.svg', 'Collaborate on a Care Plan']];
+const logos = ['bluecrossblueshield-logo-1.webp', 'aetna.png', 'logo-optum.webp', 'logo-tricare-1.webp', 'logo-ahcccs.webp', 'united-healthcare-logo-1.webp'];
+---
+<BaseLayout title={title} description={description} canonical={canonical} lang={lang}>
+  <section class="home-hero">
+    <div class="container home-hero-grid">
+      <div>
+        <p class="script-label">{es ? 'Los principales expertos de Arizona' : "Arizona's Leading Experts"}</p>
+        <h1>{es ? <>Salud Mental y<br />Educación Especial</> : <>Behavioral Health<br />&amp; Special<br />Education</>}</h1>
+        <p>{es ? 'Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños y adolescentes con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix.' : 'Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children and teens who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas.'}</p>
+        <a class="button" href={consultation}>{es ? 'Empezar' : 'Get Started'}</a>
+      </div>
+      <img src="/assets/images/bcba-with-happy-toddler.webp" alt="BCBA therapist with happy toddler" loading="eager" />
+    </div>
+  </section>
+
+  <section class="section services-intro">
+    <div class="container feature-grid">
+      <img class="gear-photo" src="/assets/images/playing-girl.webp" alt={es ? 'Niña aprendiendo mientras juega' : 'Girl learning by playing'} />
+      <div>
+        <h2>{es ? 'Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA' : 'ABA Therapy Services for Children and Teens Diagnosed with Autism Spectrum Disorder'}</h2>
+        <ul class="source-list">{services.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <div>
+        <h2>{es ? 'Nuestro compromiso con el éxito de su estudiante' : "Our Commitment To Your Learner's Success"}</h2>
+        <ul class="source-list two-column-list">{commitments.map((item) => <li>{item}</li>)}</ul>
+        <a class="button" href={consultation}>{es ? 'Programar una evaluación' : 'Schedule an Assessment'}</a>
+      </div>
+      <img class="gear-photo gear-photo-right" src="/assets/images/playing-boy.webp" alt={es ? 'Niño jugando mientras aprende' : 'Boy playing while learning'} />
+    </div>
+  </section>
+
+  <section class="section cream-section">
+    <div class="container feature-grid benefit-grid">
+      <div><h2>{es ? 'Beneficios que van más allá de un proveedor de terapia integrada típico' : 'Benefits that go Beyond a Typical Integrated Therapy Provider'}</h2><h3>{es ? 'La Diferencia AIA' : 'The AIA Difference'}</h3><ul class="source-list">{(es ? ['Cuidado compasivo', 'Resultados individualizados', 'Salas sensoriales', 'Conveniente y asequible'] : ['Compassionate Care', 'Individualized Results', 'Sensory-Friendly Rooms', 'Convenient and Affordable']).map((item) => <li>{item}</li>)}</ul></div>
+      <a class="video-card" href="/tour"><img src="/assets/images/learner-journey.webp" alt={es ? 'Video del recorrido del estudiante' : 'Learner journey for children with autism video'} /><span>▶</span></a>
+    </div>
+  </section>
+
+  <section class="skills-section"><div class="container"><h2>{es ? '¿Su alumno tiene dificultades con estas habilidades?' : 'Does Your Learner Struggle With These Skills?'}</h2><div class="skills-grid">{skills.map(([icon, label]) => <div><img src={`/assets/images/${icon}`} alt="" /><span>{label}</span></div>)}</div></div></section>
+
+  <section class="section insurance-section"><div class="container"><h2>{es ? 'Sí, aceptamos seguros.' : 'Yes, We Take Insurance'}</h2><p>{es ? 'Un servicio integrado todo en uno para las necesidades de educación especial de su hijo, el Instituto de Autismo de Arizona (AIA) ofrece y acepta la mayoría de los planes de seguro que cubren la terapia ABA. Estos incluyen BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS y UnitedHealth.' : 'An all-in-one integrated service for your kiddo’s special education needs, the Arizona Institute for Autism (AIA) offers and accepts most insurance plans that cover ABA therapy. These include BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS, and UnitedHealth.'}</p><div class="logo-row">{logos.map((logo) => <img src={`/assets/images/${logo}`} alt="" />)}</div></div></section>
+
+  <section class="section cream-section"><div class="container feature-grid esa-grid"><div><h2>{es ? 'Cuenta de Becas de Arizona (ESA)' : 'Arizona Scholarship Account (ESA)'}</h2><p>{es ? 'Miles de estudiantes de Arizona son actualmente elegibles para la ESA financiada por el estado, que otorga entre $4,000 y $6,500 anualmente por estudiante para la matrícula de educación privada, educación en el hogar y otros servicios. El Instituto de Autismo de Arizona (AIA) está aprobado por el Departamento de Educación de Arizona como proveedor para padres con estudiantes que califican para la Beca de Empoderamiento. Si eres elegible para el programa ESA, puedes usar tus fondos para la matrícula de nuestros programas ABA.' : 'Thousands of Arizona learners are currently eligible for the state funded ESA, which awards $4,000 – $6,500 annually per student towards private education tuition, home based education, and other services. The Arizona Institute for Autism (AIA) is approved by the Arizona Department of Education as a vendor for parents with learners who qualify for the Empowerment Scholarship Award. If you are eligible for the ESA program, you can use your funds towards tuition for our ABA programs.'}</p></div><img src="/assets/images/logo-az-dept-of-education.webp" alt="Arizona Department of Education" /></div></section>
+
+  <section class="section"><div class="container"><h2>{es ? '¿Necesita ayuda para pagar su atención?' : 'Need Help Paying for Your Care?'}</h2><p>{es ? 'El Instituto de Autismo de Arizona ofrece asistencia financiera flexible a las personas sin seguro. Obtén la atención que deseas o necesitas y paga a plazos.' : 'The Arizona Institute for Autism offers flexible financial assistance to the uninsured. Get the care you want or need and pay over time.'}</p><a class="button" href={consultation}>{es ? 'Solicitar cita' : 'Request an Appointment'}</a></div></section>
+
+  <section class="section cream-section process-section"><div class="container"><h2>{es ? 'Nuestro proceso' : 'Our Process'}</h2><div class="process-grid">{process.map(([icon, label]) => <div><img src={`/assets/images/${icon}`} alt="" /><p>{label}</p></div>)}</div></div></section>
+
+  <section class="section family-section"><div class="container feature-grid"><div class="director-card"><img src="/assets/images/rula-diab.webp" alt="Rula Diab" /><p><strong>{es ? 'Directora Clínica Rula Diab' : 'Clinical Director Rula Diab'}</strong><br />BCBA, LBA, M.Ed.</p></div><div><h2>{es ? 'Una extensión de tu familia' : 'An Extension of Your Family'}</h2><p>{es ? '“En AIA, nos esforzamos por brindar atención excelente y compasiva a todas las comunidades a las que servimos. No podríamos lograr eso sin un personal y familias excelentes, apasionados y comprometidos. Esperamos con ansias nuestra colaboración con usted a medida que continuamos creciendo, sirviendo y apoyando a nuestros estudiantes en la búsqueda de su potencial individual.”' : '“At AIA, We strive to provide excellent and compassionate care to all communities we serve. We could not accomplish that without excellent, passionate, and committed staff and families. We look forward to our collaboration with you as we continue to grow, serve and support our Learners in the pursuit of their individual potential.”'}</p><img class="signature" src="/assets/images/clinical-director-rula-diab.png" alt="Clinical Director Rula Diab" /></div></div></section>
+
+  <section class="section cream-section testimonial-section"><div class="container"><h2>{es ? 'Lo que dicen los clientes' : 'What Clients Say'}</h2><blockquote><strong>Claudia</strong><p>Our son is an autistic kid. We struggled to find the correct place for him, that place where you can feel comfortable leaving your kid. We visited five companies, and no one gave us that confidence until we found AIA. You can see the dedication from each employee (Director, therapists, coordinators, etc.) to every kid. Their therapy rooms are huge and spacious; every kid can play and learn simultaneously in their own spaces. We are thankful to Arizona Institute for Autism for caring for Misael.</p><p>All of you are Amazing!!! Thank you</p></blockquote><div class="testimonial-dots" aria-hidden="true">• • • • • • • • • • •</div></div></section>
+</BaseLayout>

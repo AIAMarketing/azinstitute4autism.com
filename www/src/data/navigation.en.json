@@ -1,0 +1,21 @@
+{
+  "primary": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Library", "href": "/library" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "services": [
+    { "label": "Behavioral", "href": "/aba-therapy" },
+    { "label": "Psychological", "href": "/autism-evaluations" },
+    { "label": "Sociological", "href": "/learner-social-club" }
+  ],
+  "footer": [
+    { "label": "Team", "href": "/team" },
+    { "label": "Careers", "href": "/careers" },
+    { "label": "Forms", "href": "/client-forms" },
+    { "label": "Insurance", "href": "/insurance" },
+    { "label": "Referrals", "href": "/referrals" }
+  ]
+}

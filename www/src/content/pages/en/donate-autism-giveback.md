@@ -1,0 +1,32 @@
+---
+title: "Help Autism Families Thrive | Donate to Arizona Institute for Autism"
+description: "Empower families of children with autism. Donate now to help expand therapy, education, research, & community support. Your contribution transforms lives."
+slug: "donate-autism-giveback"
+canonical: "https://www.azinstitute4autism.com/donate-autism-giveback"
+lang: "en"
+translationKey: "donate-autism-giveback"
+draft: false
+---
+## Ways to Giveback
+
+Every act of generosity, no matter how big or small, makes a difference at the Arizona Institute for Autism. Whether you donate items directly, support our Amazon iGiveback Wishlist, or contribute to our 501(c)(3) public charity, your support helps improve the lives of children with autism, their families, and the communities around them.
+
+![giveback donation gift](/assets/images/giveback-donation-gift.webp)
+
+### Give the Gift of a Smile!
+
+Visit AIA’s Amazon iGiveback Wishlist today, pick an item (or two!), and help us turn everyday needs into moments of happiness and growth.
+
+ View our Amazon Wishlist 
+
+### Host a Fundraiser
+
+Would you like to host a fundraiser to benefit the Arizona Institute for Autism? Please contact us at moc.msitua4etutitsniza@ofni and a member of our team will be in touch to discuss next steps! All potential third party events will be evaluated in terms of their alignment with Arizona Institute for Autism's mission.
+
+## Community 4 Autism
+
+A 501(c)(3) nonprofit organization (EIN 92-2808564), Community 4 Autism was established in June 2023. Your tax-deductible donation directly supports families of children and individuals diagnosed with autism.
+
+![Community 4 Autism - Nonprofit Giveback Solution](/assets/images/community-4-autism-logo-blue-1.png)
+
+ Donate with GivingFountain

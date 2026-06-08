@@ -1,0 +1,28 @@
+{
+  "name": "arizona-institute-for-autism",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:sandbox": "NODE_OPTIONS=--require=./tools/localhost-dns.cjs astro build",
+    "preview": "astro preview",
+    "extract": "node tools/extract-fallback.mjs",
+    "extract:full": "node tools/extract-site.mjs",
+    "crawl:live": "node tools/crawl-live-site.mjs",
+    "audit:links": "node tools/audit-links.mjs",
+    "generate:sitemap": "node tools/generate-sitemap.mjs",
+    "generate:redirects": "node tools/generate-redirects.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.10.0",
+    "cheerio": "^1.1.0",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "turndown": "^7.2.0",
+    "zod": "^3.25.0"
+  }
+}

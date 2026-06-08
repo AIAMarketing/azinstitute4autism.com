@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Behavioral",
+    "description": "Integrated, individualized ABA therapy that builds practical skills and independence.",
+    "href": "/aba-therapy",
+    "image": "/assets/images/playing-boy.webp"
+  },
+  {
+    "title": "Psychological",
+    "description": "Comprehensive autism evaluations for children and families.",
+    "href": "/autism-evaluations",
+    "image": "/assets/images/autism_evaluation_arizona_hero.jpg"
+  },
+  {
+    "title": "Sociological",
+    "description": "Social and emotional learning opportunities for children and teens.",
+    "href": "/learner-social-club",
+    "image": "/assets/images/playing-girl.webp"
+  }
+]

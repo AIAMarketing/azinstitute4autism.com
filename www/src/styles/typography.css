@@ -1,0 +1,13 @@
+@font-face { font-family: "Playfair Display"; src: url('/assets/fonts/Playfair_Display/700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: Caveat; src: url('/assets/fonts/Caveat/700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: Rubik; src: url('/assets/fonts/Rubik/regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: Rubik; src: url('/assets/fonts/Rubik/700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+body { color: var(--color-text); font-family: var(--font-body); font-size: 16px; line-height: 1.625; }
+h1, h2, h3 { color: var(--color-primary-dark); font-family: var(--font-heading); line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 5vw, 3rem); line-height: 1.12; margin: 0 0 var(--space-md); }
+h2 { font-size: clamp(2rem, 4vw, 2.4rem); line-height: 1.25; }
+h3 { font-size: 1.5rem; }
+a { color: var(--color-primary); }
+.eyebrow { color: var(--color-secondary); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.lede, .hero-copy { color: var(--color-muted); font-size: 1.25rem; }
+.script-label { color: var(--color-accent-strong); font-family: var(--font-accent); font-size: 1.5rem; margin: 0 0 .5rem; }

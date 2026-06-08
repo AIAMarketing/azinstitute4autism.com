@@ -1,0 +1,8 @@
+---
+import MainNav from './MainNav.astro';
+const { lang = 'en' } = Astro.props;
+---
+<details class="mobile-nav">
+  <summary>Menu</summary>
+  <MainNav lang={lang} />
+</details>

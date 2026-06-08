@@ -1,0 +1,44 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+const { lang = 'en' } = Astro.props;
+const labels = lang === 'es'
+  ? { about: 'Información', overview: 'Acerca de AIA', team: 'Equipo', careers: 'Carreras', giveback: 'Devolver', resources: 'Recursos', forms: 'Formularios', insurance: 'Seguros', referrals: 'Referencias', employee: 'Portal para empleados', contact: 'Contáctanos' }
+  : { about: 'About', overview: 'Overview', team: 'Team', careers: 'Careers', giveback: 'Giveback', resources: 'Resources', forms: 'Forms', insurance: 'Insurance', referrals: 'Referrals', employee: 'Employee Portal', contact: 'Get In Touch' };
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h2>{labels.about}</h2>
+      <ul>
+        <li><a href="/about">{labels.overview}</a></li>
+        <li><a href="/team">{labels.team}</a></li>
+        <li><a href="/careers">{labels.careers}</a></li>
+        <li><a href="/donate-autism-giveback">{labels.giveback}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>{labels.resources}</h2>
+      <ul>
+        <li><a href="/client-forms">{labels.forms}</a></li>
+        <li><a href="/insurance">{labels.insurance}</a></li>
+        <li><a href="/referrals">{labels.referrals}</a></li>
+        <li><a href="/employee-portal">{labels.employee}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>{labels.contact}</h2>
+      <p><a href={`tel:${site.phone.replace(/\D/g, '')}`}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a><br />{site.address}</p>
+      <p class="social-links">
+        <a href={site.social.facebook} aria-label="Facebook">f</a>
+        <a href={site.social.instagram} aria-label="Instagram">◎</a>
+        <a href={site.social.linkedin} aria-label="LinkedIn">in</a>
+        <a href={site.social.youtube} aria-label="YouTube">▶</a>
+      </p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2018-{year} Arizona Institute for Autism ♥ All Rights Reserved</p>
+    <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/faqs">FAQ</a></p>
+  </div>
+</footer>

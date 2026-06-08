@@ -1,0 +1,225 @@
+---
+title: "Autism Play: Helping Autistic Children Build Play and Leisure Skills"
+description: "Learn how autistic children play, why play skills matter, and how parents can support functional, sensory, pretend, and social play."
+slug: "play-leisure-skills"
+canonical: "https://www.azinstitute4autism.com/library/play-leisure-skills"
+lang: "en"
+translationKey: "play-leisure-skills"
+featuredImage: "/assets/images/hero-play-leisure-skills-children-autism_800x.jpg"
+date: "2022-09-26"
+author: "rula-diab"
+category: "Library"
+tags: []
+draft: false
+---
+# Autism Play: Helping Autistic Children Build Play and Leisure Skills
+
+![Rula Diab, Clinical Director, M.Ed, BCBA, LBA](/assets/images/rula-diab-avatar.jpg)
+
+ Rula Diab, Clinical Director, M.Ed, BCBA, LBA
+
+ 26 September, 2022
+
+![autism play and leisure skills for children with autism](/assets/images/hero-play-leisure-skills-children-autism_800x.jpg)
+
+Play is one of the most important ways children learn. For autistic children, play may look different, but it is still meaningful, valuable, and full of opportunities for growth. Autism play can support communication, imitation, motor skills, problem-solving, flexibility, emotional regulation, and social connection when it is approached with patience and respect for the child's interests.
+
+For many parents, play feels natural until they notice their child interacting with toys or people in unexpected ways. A child may line up cars, spin the wheels of a toy truck, carry one favorite object from room to room, repeat the same play routine, avoid pretend play, or prefer playing near other children rather than directly with them. These patterns are not “bad play.” They are clues about how your child explores the world, manages sensory input, communicates interest, and feels safe.
+
+The goal is not to make autistic play look exactly like neurotypical play. The goal is to help your child enjoy play, expand their skills, and build more ways to connect with people and activities that matter to them.
+
+For children with autism, play may include sensory exploration, repeated actions, lining up toys, parallel play, pretend play, or highly focused interests. The goal is not to force play to look typical, but to help each child expand communication, flexibility, confidence, social interaction, problem-solving, and connection through enjoyable activities.
+
+## Why Play Skills Matter for Autistic Children
+
+Play is more than entertainment. It gives children a low-pressure way to practice skills they will use throughout daily life. Through play, children can learn how to explore new materials, use their hands and bodies, copy actions, solve small problems, wait, take turns, request help, share attention, and express preferences.
+
+For autistic children, these skills may need to be taught more intentionally. Some children do not automatically learn by watching other children play. Others may have strong interests, sensory sensitivities, difficulty with transitions, or anxiety when play becomes unpredictable. This is why structured, supportive play can be so helpful.
+
+Play can support:
+
+- Communication skills , such as requesting, labeling, gesturing, using AAC, or responding to another person.
+
+- Imitation skills , such as copying sounds, actions, facial expressions, or play routines.
+
+- Fine and gross motor skills , such as stacking blocks, turning pages, jumping, climbing, or drawing.
+
+- Cognitive skills , such as problem-solving, matching, sorting, sequencing, and flexible thinking.
+
+- Social skills , such as turn-taking, sharing space, responding to peers, and joining group activities.
+
+- Emotional regulation , because enjoyable play can help children feel calm, confident, and connected.
+
+When play is reinforcing, children are more likely to stay engaged and try new things. That is why the best place to begin is almost always with what your child already enjoys.
+
+## How Autistic Children May Play Differently
+
+Autistic children often show strong preferences in play. A child may enjoy sensory play, repetitive actions, visual patterns, water play, building, sorting, music, movement, letters, numbers, animals, vehicles, or very specific characters. Some children prefer quiet independent play. Others want interaction but may not know how to start or sustain it.
+
+Common autism play patterns can include:
+
+- Playing with one part of a toy, such as wheels, buttons, doors, or textures.
+
+- Repeating the same action many times, such as dropping, spinning, stacking, or lining up objects.
+
+- Preferring predictable routines or scripts during play.
+
+- Becoming upset if another person changes the play pattern.
+
+- Showing limited interest in pretend play or role-play.
+
+- Enjoying parallel play, which means playing near others without direct interaction.
+
+- Seeking or avoiding certain sensory experiences, such as sound, touch, light, or movement.
+
+These patterns can tell parents and therapists what a child finds interesting, calming, or difficult. For example, a child who loves spinning wheels may be interested in movement, cause and effect, visual patterns, or vehicles. Instead of removing that interest, an adult can use it as a bridge. You might roll the car back and forth, add a ramp, take turns pushing it, model “go” and “stop,” or introduce a second vehicle for simple pretend play.
+
+[![autistic-play-appearance-infographic](/assets/images/autistic-play-appearance-infographic.png)](/assets/images/autistic-play-appearance-infographic.png)
+
+ × 
+
+![Play appearance infographic (expanded view)](/assets/images/play-appearance-infographic.png)
+
+## Types of Play to Build Over Time
+
+Children usually develop play skills in stages, but autistic children may move through these stages at their own pace. Some children may be strong in one type of play and need more support in another.
+
+### Exploratory and Sensory Play
+
+Exploratory play happens when children investigate how things feel, sound, look, smell, or move. Sensory play might include water, sand, play dough, textured toys, bubbles, music, lights, or movement games. This type of play helps children learn about their environment and can also support regulation.
+
+For an autistic child, sensory play should be comfortable, not overwhelming. If your child avoids sticky textures, start with dry materials. If your child seeks movement, try safe jumping, swinging, animal walks, or obstacle courses. Watch your child's body language and adjust before play becomes stressful.
+
+### Cause-and-Effect Play
+
+Cause-and-effect play teaches children that their actions can make something happen. Examples include pressing a button to make music, pushing a car down a ramp, knocking down blocks, or popping bubbles. This type of play is especially useful for building attention, requesting, imitation, and early turn-taking.
+
+A parent might say, “Ready, set...” and pause before blowing bubbles, giving the child a chance to look, gesture, vocalize, or use a communication device to request “go.”
+
+### Functional Play
+
+Functional play means using toys in ways that match their common purpose, such as rolling a car, stacking blocks, putting puzzle pieces into a puzzle, brushing a doll's hair, or stirring with a toy spoon. Some autistic children need direct modeling to learn these actions.
+
+Start with one simple action. Model it, help if needed, and then celebrate the attempt. Once the child can do the action, add a small expansion. A car can go down a ramp, stop at a garage, pick up a toy person, or race another car.
+
+### Constructive Play
+
+Constructive play includes building, drawing, assembling, and creating. Blocks, magnetic tiles, puzzles, train tracks, art materials, and simple craft activities can help children practice planning, problem-solving, fine motor coordination, and persistence.
+
+For children who prefer order or repetition, constructive play can be a comfortable starting point. You can slowly add flexibility by changing one small part of the design, offering two choices, or taking turns adding pieces.
+
+### Pretend Play
+
+Pretend play, also called imaginative or symbolic play, involves using imagination during play. Examples include feeding a stuffed animal, pretending a block is a phone, acting like a superhero, or making a toy animal go to sleep.
+
+Some autistic children enjoy pretend play naturally. Others may need support because pretend play requires flexible thinking, imitation, language, sequencing, and understanding social roles. Begin with familiar routines from daily life. Pretend to eat, sleep, wash hands, drive, cook, or visit the doctor. Keep it simple and repeatable before adding new ideas.
+
+### Social and Peer Play
+
+Social play can include sharing space, taking turns, playing a simple game, building together, chasing, singing, or pretending with another child. Many autistic children benefit from practicing social play with adults before being expected to play with peers. Adults are usually more predictable, patient, and able to gently guide the interaction.
+
+Once a child is comfortable, peer play can be introduced gradually. A short, structured play activity with clear roles is often easier than open-ended free play. For example, a simple board game, building a train track together, making cookies, or taking turns with a favorite toy may work better than “go play together.”
+
+## How Parents Can Support Autism Play at Home
+
+The most effective play support begins with connection. Before trying to teach a new skill, watch what your child already does. Notice what they choose, what they avoid, what makes them smile, what helps them calm, and what keeps them engaged.
+
+Then, join without taking over.
+
+Sit near your child, get on their level, and copy what they are doing when appropriate. If your child taps a block, tap another block. If they roll a car, roll a car beside them. This shows your child that you are interested in their world. It may also make them more likely to notice you, copy you, or allow you to add something new.
+
+Once your child is comfortable, expand play by one small step. If they line up animals, you might add a fence. If they spin wheels, you might roll the car once and then let them spin again. If they stack blocks, you might add a figure on top and say, “Up!” Small expansions work better than sudden changes.
+
+Helpful strategies include:
+
+- Follow your child's interests before introducing your own idea.
+
+- Use simple language, gestures, [visual supports, or AAC](aac-visual-supports-autism) to support communication.
+
+- Offer choices between two toys or activities.
+
+- Practice turn-taking with very short turns.
+
+- Use visual schedules for play routines or play dates.
+
+- Keep new play activities brief and positive.
+
+- Reinforce effort, not perfection.
+
+- Stop or adjust if your child becomes overwhelmed.
+
+Play should not feel like a test. It should feel safe, motivating, and enjoyable.
+
+[![how to support autistic play infographic](/assets/images/how-to-support-playtime-sm.png)](/assets/images/how-to-support-playtime.png)
+
+ × 
+
+![support play infographic (expanded view)](/assets/images/how-to-support-playtime.png)
+
+## Supporting Parallel Play and Shared Attention
+
+Many autistic children enjoy parallel play. This means they may play next to another person without much talking or direct interaction. Parallel play can be an important step toward social play because the child is sharing space, tolerating another person nearby, and sometimes noticing what the other person is doing.
+
+Parents can build from parallel play by gently creating moments of shared attention. Shared attention happens when a child and another person focus on the same object or activity. You can encourage this by making something interesting happen, pausing, and waiting. For example, you might roll a ball, pause with a playful expression, and wait to see whether your child looks, gestures, vocalizes, or reaches.
+
+The key is to invite interaction, not demand it. Some children show attention through proximity, body orientation, smiles, movement, or returning to the activity. Eye contact is not the only sign that a child is engaged.
+
+## When Play Concerns May Signal a Need for Support
+
+Every child develops differently, and many children have unique play preferences. Still, play can sometimes reveal developmental concerns. Parents may want to seek guidance if their child rarely engages with others, does not respond to simple social games, does not imitate actions, does not use gestures to share interest, has very limited functional play, becomes extremely distressed by small play changes, or is not developing pretend play as expected.
+
+If you have concerns, you do not have to wait. A [developmental screening or autism evaluation](autism-evaluation-diagnosis-arizona-parent-guide) can help clarify your child's needs and connect your family with support.
+
+## How AIA Helps Children Build Play and Leisure Skills
+
+At the Arizona Institute for Autism, play is viewed as a powerful part of learning. For young children, [play-based ABA therapy](aba-therapy-benefits) can help build communication, imitation, flexibility, functional play, social readiness, emotional regulation, and independence in ways that are individualized to each child.
+
+AIA's team works with families to understand what motivates each child and how to expand those interests into meaningful learning opportunities. For some children, that may begin with sensory play or cause-and-effect toys. For others, it may include pretend play, peer interaction, visual supports, or structured games that teach turn-taking and communication.
+
+For families looking ahead to preschool, kindergarten, or classroom routines, AIA also supports [early school readiness](aba-school-readiness-arizona) by helping children strengthen communication, independence, group participation, and learning behaviors in a supportive environment.
+
+Autism play does not need to look one specific way to be valuable. When children feel safe, understood, and motivated, play can become a bridge to connection, confidence, and lifelong learning.
+
+ Frequently Asked Questions 
+
+## About Play & Leisure
+
+### Why doesn't my autistic child play with toys the "right" way?
+
+Children with autism often experience the world through their senses first. Lining up cars, spinning wheels, or focusing on one part of a toy can be deeply satisfying and regulating. It's not "wrong" — it's a starting point. Gently model new ways to use the toy without taking it away.
+
+### At what age should pretend play emerge?
+
+In neurotypical development, pretend play typically appears between 18 and 24 months. Autistic children may develop it later, in fragments, or with explicit teaching. Lack of pretend play by age 2 is one indicator pediatricians watch for, but late-blooming pretend play is still possible with support.
+
+### Is repetitive play harmful?
+
+Not inherently. Repetitive play can be calming and meaningful. The concern is when it crowds out everything else and limits learning. The goal isn't to eliminate it but to expand your child's repertoire so they have more ways to engage.
+
+### Should I force my child to play with peers?
+
+No. Forced peer play often backfires by increasing anxiety. Build interactive play skills with you first, then introduce one peer at a time in short, structured sessions with clear activities.
+
+If you are in Arizona and have questions about your child's play, communication, or development, AIA can help you take the next step. [Schedule a free consultation](../client-consultation) to learn more about evaluation and therapy options for your child.
+
+ Previous Post 
+
+###### [4 Ways on How to Reduce Behavior Management](reduce-behavior-management)
+
+ Next Post 
+
+###### [Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments](managing-aggressive-behavior-outbursts)
+
+### Similar Blog Posts
+
+![Three children engaging happily in parallel play on a colorful rug.](/assets/images/parallel-players-hero.png)
+
+#### [Supporting Friendships and Social Play for Children with Autism](autism-friendships-social-play-support)
+
+![A parent and an autistic child smiling while using a picture communication board during playtime.](/assets/images/communication-skills-autistic-children-hero_img.png)
+
+#### [Building Communication & Social Skills in Autistic Children: A Practical Guide for Families](communication-social-skills-autistic-children-guide)
+
+![New Year Goals for Our Children with Autism - hero image](/assets/images/hero-new-year-goals-2023_800x.jpg)
+
+#### [New Year Goals for Our Children with Autism](new-year-goals-2023)

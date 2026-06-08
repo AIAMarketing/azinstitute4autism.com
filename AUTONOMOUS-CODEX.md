@@ -47,16 +47,22 @@ The launcher also applies these session overrides:
 
 ```txt
 approval_policy="never"
-mcp_servers.playwright.default_tools_approval_mode="auto"
+mcp_servers.playwright.default_tools_approval_mode="approve"
 mcp_servers.playwright.tool_timeout_sec=300
-mcp_servers.openaiDeveloperDocs.default_tools_approval_mode="auto"
+mcp_servers.openaiDeveloperDocs.default_tools_approval_mode="approve"
 mcp_servers.openaiDeveloperDocs.tool_timeout_sec=300
 ```
 
-These settings allow MCP tools to run without approval prompts and give
+The server-level `approve` settings pre-approve MCP tools without writing
+incompatible per-tool approval tables into the profile. These settings allow
+MCP tools to run without approval prompts and give
 long-running browser operations up to five minutes. An MCP server may still
 fail or time out. MCP elicitations that inherently require user input are
 rejected rather than shown as unattended prompts.
+
+Do not persist an individual MCP tool approval when prompted by an older or
+misconfigured session. Codex CLI 0.133.0 may write a per-tool table that the
+profile-v2 parser rejects on the next launch.
 
 ## Verification
 
