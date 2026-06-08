@@ -3,9 +3,9 @@
   "frontMatter.framework.id": "astro",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.pageFolders": [
-    { "title": "Pages", "path": "[[workspace]]/src/content/pages" },
-    { "title": "Blog", "path": "[[workspace]]/src/content/blog" },
-    { "title": "Authors", "path": "[[workspace]]/src/content/authors" }
+    { "title": "Pages", "path": "[[workspace]]/www/src/content/pages" },
+    { "title": "Blog", "path": "[[workspace]]/www/src/content/blog" },
+    { "title": "Authors", "path": "[[workspace]]/www/src/content/authors" }
   ],
   "frontMatter.taxonomy.contentTypes": [
     {
