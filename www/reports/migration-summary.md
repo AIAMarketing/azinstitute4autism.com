@@ -12,7 +12,7 @@ family, team page, library indexes, and blog-post family.
 - 46 English, 12 Spanish, and 7 Arabic library posts.
 - 21 English, 9 Spanish, and 2 Arabic page records.
 - One author record per language.
-- 149 self-hosted images, 20 font files, and two PDF downloads.
+- 167 self-hosted images, 20 font files, and two PDF downloads.
 - Current June and May 2026 English library articles are included.
 
 The raw mirror remains untouched. HubSpot-generated wrappers, analytics,
@@ -37,6 +37,9 @@ Implemented fidelity work includes:
   order using one reusable Astro component and self-hosted source assets.
 - Rebuilt service pages around the live compact title banner and editorial
   presentation, with current visible headings and working calls to action.
+- Recovered and restored the live decorative hero imagery for all mapped
+  English and Spanish page routes plus every language's library index.
+- Restored the consultation form section's injected background image.
 - Added a dedicated live-derived team card grid rather than presenting the
   extracted team content as a generic article.
 - Rebuilt library indexes and blog-post presentation around the live sidebar,
@@ -109,6 +112,8 @@ unavailable.
 - `npm run audit:links`: passed with zero broken internal source links. The
   audit now checks generated routes, root-relative references, relative
   Markdown links, and public assets when rendered output is unavailable.
+- `npm run audit:images`: passed with no missing mapped page banners, section
+  backgrounds, or blog featured images.
 - `npm run generate:sitemap`: passed; generated 97 URLs.
 - `npm run generate:redirects`: passed.
 - All migration `.mjs` tools and the sandbox DNS helper pass `node --check`.

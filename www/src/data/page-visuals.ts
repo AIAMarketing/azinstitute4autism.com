@@ -1,0 +1,20 @@
+export const pageHeroImages: Record<string, string> = {
+  'aba-therapy-intake-process': '/assets/images/hero-aba-therapy-intake-process.webp',
+  'aba-therapy': '/assets/images/hero-services-behavioral-aba.webp',
+  about: '/assets/images/hero-about.webp',
+  'autism-evaluations': '/assets/images/hero-services-psychological.webp',
+  careers: '/assets/images/hero-careers.webp',
+  'client-consultation': '/assets/images/hero-bg-blank.png',
+  'client-forms': '/assets/images/hero-client-forms.webp',
+  contact: '/assets/images/hero-contact-aia.webp',
+  'donate-autism-giveback': '/assets/images/hero-ways-to-giveback.webp',
+  'employee-portal': '/assets/images/hero-aba-employee-portal.webp',
+  faqs: '/assets/images/hero-faq.webp',
+  insurance: '/assets/images/hero-insurance-coverage-guide.webp',
+  'learner-social-club': '/assets/images/hero-services-sociological.webp',
+  'privacy-policy': '/assets/images/hero-bg-blank.png',
+  referrals: '/assets/images/hero-referrals.webp',
+  services: '/assets/images/hero-pediatric-services.webp',
+  team: '/assets/images/hero-meet-the-aia-team.webp',
+  tour: '/assets/images/hero-schedule-aia-tour.webp'
+};

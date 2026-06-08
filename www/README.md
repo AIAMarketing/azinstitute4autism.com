@@ -118,6 +118,7 @@ Astro prints the preview URL, normally `http://localhost:4321`.
 ```sh
 npm run build
 npm run audit:links
+npm run audit:images
 ```
 
 The link audit reads `dist/` after a successful build. If rendered output is
@@ -281,6 +282,7 @@ npm run generate:sitemap
 npm run generate:redirects
 npm run build
 npm run audit:links
+npm run audit:images
 ```
 
 Extraction regenerates content files, copied assets, and inventories. Review
@@ -332,6 +334,7 @@ Build first:
 ```sh
 npm run build
 npm run audit:links
+npm run audit:images
 ```
 
 ### A content page is missing

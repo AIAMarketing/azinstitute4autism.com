@@ -22,5 +22,10 @@
 - Repaired mirror-rewritten PDF, lightbox, CTA, and relative content links.
 - Limited language-switcher choices to translations that have generated routes.
 - Verified and implemented the current production likes/views API contract.
+- Recovered 18 live page-banner assets that the wget mirror missed because
+  HubSpot injected them through malformed inline `background-image` styles.
+- Restored the live library banner and consultation form section background.
+- Added a mapped-page-imagery audit to prevent missing visual assets from
+  silently passing the source link audit.
 - Added language-qualified content collection IDs to prevent English, Spanish,
   and Arabic entries with the same slug from overwriting each other.

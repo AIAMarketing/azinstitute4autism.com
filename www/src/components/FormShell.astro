@@ -1,7 +1,7 @@
 ---
-const { title = 'Schedule Your Free Consultation' } = Astro.props;
+const { title = 'Schedule Your Free Consultation', showBackground = false } = Astro.props;
 ---
-<section class="form-section" aria-labelledby="form-title">
+<section class:list={['form-section', { 'form-section-background': showBackground }]} aria-labelledby="form-title">
   <div class="container form-grid">
     <div><p class="eyebrow">Get started</p><h2 id="form-title">{title}</h2><p>Tell our client advocates how we can help. Submission is disabled until a production form backend is selected.</p></div>
     <form class="form" method="post" action="">

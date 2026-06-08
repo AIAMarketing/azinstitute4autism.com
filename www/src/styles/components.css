@@ -54,8 +54,10 @@
 .faq summary { cursor: pointer; font-weight: 700; }
 .source-page-banner { background: var(--color-tint); padding-block: 4rem; text-align: center; }
 .source-page-banner h1 { margin: 0; }
-.service-banner { background-color: #e8f1ee; background-image: radial-gradient(circle at 14% 45%, rgb(37 64 128 / 9%) 0 54px, transparent 55px), radial-gradient(circle at 28% 25%, rgb(37 64 128 / 10%) 0 22px, transparent 23px), radial-gradient(circle at 74% 50%, rgb(37 64 128 / 8%) 0 42px, transparent 43px); padding-block: 7rem; }
-.library-banner { background: var(--color-tint); padding-block: 5rem; text-align: center; }
+.source-page-banner.has-source-image { background-color: var(--color-tint); background-position: center; background-repeat: no-repeat; background-size: cover; padding-block: 10rem; text-align: left; }
+.source-page-banner.has-source-image h1 { max-width: 600px; }
+.library-banner { background-color: var(--color-tint); background-image: url('/assets/images/hero-library-index.webp'); background-position: center; background-repeat: no-repeat; background-size: cover; padding-block: 10rem; text-align: left; }
+.library-banner-copy { max-width: 600px; }
 .library-banner h1 { margin: 0; }
 .library-intro { background: var(--color-primary); color: white; padding-block: 3rem; }
 .library-intro h2 { color: white; }
@@ -140,5 +142,7 @@
   .blog-list .blog-card { grid-template-columns: 1fr; }
   .article-featured { height: auto; }
   .team-grid { grid-template-columns: 1fr; }
+  .source-page-banner.has-source-image, .library-banner { padding-block: 6.25rem; text-align: center; }
+  .source-page-banner.has-source-image h1, .library-banner-copy { margin-inline: auto; }
 }
 @media (min-width: 761px) and (max-width: 1050px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

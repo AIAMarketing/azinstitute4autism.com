@@ -1,4 +1,5 @@
 .form-section { background: var(--color-tint); padding-block: var(--space-xl); }
+.form-section.form-section-background { background-image: url('/assets/images/rbt-toddler-play.webp'); background-position: center bottom; background-repeat: no-repeat; background-size: contain; }
 .form-grid { display: grid; gap: var(--space-xl); grid-template-columns: .8fr 1.2fr; }
 .form { background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: grid; gap: var(--space-md); padding: var(--space-lg); }
 .form label { display: grid; font-weight: 700; gap: var(--space-xs); }
