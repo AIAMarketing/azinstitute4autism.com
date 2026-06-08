@@ -34,5 +34,8 @@
 - Converted 19 FAQ-bearing blog posts to MDX and restored a reusable
   `FAQAccordion.astro` component that owns the live-style accordion and
   matching `FAQPage` JSON-LD.
+- Restored 32 blockquotes across 15 English and Spanish blog posts, including
+  source emphasis, links, and the self-hosted quote-mark decoration; fixed
+  fallback extraction to preserve them.
 - Added language-qualified content collection IDs to prevent English, Spanish,
   and Arabic entries with the same slug from overwriting each other.

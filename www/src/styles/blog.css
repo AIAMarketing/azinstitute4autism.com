@@ -2,7 +2,9 @@
 .prose h2, .prose h3 { margin-top: 2em; }
 .prose img { border-radius: var(--radius-md); margin-block: var(--space-lg); }
 .prose a { overflow-wrap: anywhere; }
-.prose blockquote { border-inline-start: 4px solid var(--color-accent); color: var(--color-muted); margin-inline: 0; padding-inline-start: var(--space-md); }
+.blog-post-body blockquote { background: var(--color-tint); border: 0; border-radius: 16px; color: var(--color-primary); margin: 0 auto 2.5rem; max-width: 767px; padding: 45px; position: relative; z-index: 0; }
+.blog-post-body blockquote::before { background-image: url('/assets/images/blockquote.svg'); content: ""; display: block; height: 41px; inset-inline-start: 6px; position: absolute; top: 22px; width: 50px; z-index: -1; }
+.blog-post-body blockquote p { color: var(--color-primary); margin: 0 0 1.55rem; }
 .source-page { max-width: 980px; }
 .source-page > h2:first-of-type { margin-top: 0; }
 .source-page > p > a:only-child { background: var(--color-accent); border: 2px solid var(--color-accent); border-radius: 4px; color: var(--color-primary); display: inline-block; font-weight: 700; padding: .65rem 1.2rem; text-decoration: none; }

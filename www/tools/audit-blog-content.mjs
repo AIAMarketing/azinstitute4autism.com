@@ -9,11 +9,13 @@ const failures = [];
 const files = await fg('src/content/blog/**/*.{md,mdx}', { cwd: root, absolute: true });
 let faqPosts = 0;
 let faqQuestions = 0;
+let blockquotes = 0;
 
 for (const file of files) {
   const source = await fs.readFile(file, 'utf8');
   const { content, data } = matter(source);
   const body = content.trimStart();
+  blockquotes += [...content.matchAll(/^>\s+/gm)].length;
   if (body.startsWith('# ')) failures.push(`${path.relative(root, file)}: body begins with a duplicate article title`);
   if (body.includes(data.featuredImage) && body.indexOf(data.featuredImage) < 500) {
     failures.push(`${path.relative(root, file)}: body begins with a duplicate featured image`);
@@ -55,6 +57,7 @@ const report = [
   '',
   `Checked ${files.length} blog post bodies for layout content duplicated in Markdown.`,
   `Verified ${faqQuestions} FAQ questions across ${faqPosts} FAQ-bearing posts.`,
+  `Detected ${blockquotes} source-faithful blog blockquotes.`,
   '',
   failures.length ? failures.map((failure) => `- ${failure}`).join('\n') : 'No duplicated article headers or invalid MDX FAQ components were detected.',
   ''

@@ -46,6 +46,8 @@ Implemented fidelity work includes:
   article list, byline, featured-image, and counter patterns.
 - Converted FAQ-bearing posts to MDX and recreated their live-style accordions
   with a reusable component that emits matching `FAQPage` JSON-LD.
+- Restored 32 live-source blog blockquotes with their original emphasis,
+  links, fawn backgrounds, spacing, rounded presentation, and quote-mark SVG.
 - Replaced generic oversized cards, rounded controls, and marketing heroes
   with live-derived typography, palette, widths, spacing, and compact controls.
 - Corrected material live/mirror discrepancies found during the pass,

@@ -23,6 +23,7 @@ for (const match of visualSource.matchAll(/['"](?<reference>\/assets\/images\/[^
 }
 await checkAsset('/assets/images/hero-library-index.webp', 'library banner');
 await checkAsset('/assets/images/rbt-toddler-play.webp', 'consultation form background');
+await checkAsset('/assets/images/blockquote.svg', 'blog blockquote decoration');
 
 for (const file of await fg('src/content/blog/**/*.{md,mdx}', { cwd: root, absolute: true })) {
   const { data } = matter(await fs.readFile(file, 'utf8'));

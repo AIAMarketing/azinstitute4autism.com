@@ -83,6 +83,7 @@ function markdownFrom(html) {
     '';
   body = body
     .replace(/<(script|style|noscript|header|footer|nav|form)\b[\s\S]*?<\/\1>/gi, '')
+    .replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, (_, value) => `\n\n> ${inline(value)}\n\n`)
     .replace(/<img[^>]+src=["']([^"']+)["'][^>]*alt=["']([^"']*)["'][^>]*>/gi, (_, src, alt) => {
       const local = asset(src);
       return local ? `\n\n![${text(alt)}](${local})\n\n` : '';
