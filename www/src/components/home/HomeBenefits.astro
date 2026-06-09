@@ -1,5 +1,6 @@
 ---
 import type { BenefitsSection } from '../../types/home-sections';
+import VideoCard from '../VideoCard.astro';
 interface Props { section: BenefitsSection }
 const { section } = Astro.props;
 ---
@@ -10,9 +11,11 @@ const { section } = Astro.props;
       <h3>{section.subheading}</h3>
       <ul class="source-list">{section.items.map((item) => <li>{item}</li>)}</ul>
     </div>
-    <a class="video-card" href={section.videoHref}>
-      <img src={`/assets/images/${section.videoImage}`} alt={section.videoImageAlt} />
-      <span>▶</span>
-    </a>
+    <VideoCard
+      image={section.videoImage}
+      alt={section.videoImageAlt}
+      videoUrl={section.videoUrl}
+      videoTitle={section.videoTitle}
+    />
   </div>
 </section>

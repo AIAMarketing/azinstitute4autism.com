@@ -17,7 +17,8 @@ interface Props { lang?: string }
 const { lang = 'en' } = Astro.props;
 const es = lang === 'es';
 const entry = await getEntry('pages', es ? 'es/index' : 'en/index');
-const { title, description, canonical, sections = [] } = entry!.data;
+if (!entry) throw new Error(`[HomePage] Content entry not found for lang="${lang}". If running in dev, restart the dev server to rebuild the content layer cache.`);
+const { title, description, canonical, sections = [] } = entry.data;
 ---
 <BaseLayout {title} {description} {canonical} {lang}>
   {(sections as HomeSection[]).map((section) => {

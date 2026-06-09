@@ -50,7 +50,8 @@ sections:
       - Resultados individualizados
       - Salas sensoriales
       - Conveniente y asequible
-    videoHref: /tour
+    videoUrl: "https://www.youtube-nocookie.com/embed/EczPH1jx9mc?si=beestOCaO4tL7Re6"
+    videoTitle: AIA Learner Journey
     videoImage: learner-journey.webp
     videoImageAlt: Video del recorrido del estudiante
 

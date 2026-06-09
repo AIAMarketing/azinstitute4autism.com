@@ -26,7 +26,8 @@ export interface BenefitsSection {
   heading: string;
   subheading: string;
   items: string[];
-  videoHref: string;
+  videoUrl: string;
+  videoTitle: string;
   videoImage: string;
   videoImageAlt: string;
 }

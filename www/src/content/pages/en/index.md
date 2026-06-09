@@ -50,7 +50,8 @@ sections:
       - Individualized Results
       - Sensory-Friendly Rooms
       - Convenient and Affordable
-    videoHref: /tour
+    videoUrl: "https://www.youtube-nocookie.com/embed/EczPH1jx9mc?si=beestOCaO4tL7Re6"
+    videoTitle: AIA Learner Journey
     videoImage: learner-journey.webp
     videoImageAlt: Learner journey for children with autism video
 
