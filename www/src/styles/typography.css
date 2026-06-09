@@ -11,3 +11,39 @@ a { color: var(--color-primary); }
 .eyebrow { color: var(--color-secondary); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .lede, .hero-copy { color: var(--color-muted); font-size: 1.25rem; }
 .script-label { color: var(--color-accent-strong); font-family: var(--font-accent); font-size: 1.5rem; margin: 0 0 .5rem; }
+
+.prose :where(ul, ol) {
+  margin-block: 0 1.5rem;
+  padding-inline-start: 2.5rem;
+}
+
+.prose :where(ul, ol) :where(ul, ol) {
+  margin-block: .25rem 0;
+}
+
+.prose li {
+  line-height: 1.625;
+  margin-block: 0;
+  padding-inline-start: .15rem;
+}
+
+.prose li > p {
+  margin-block: 0;
+}
+
+.prose ul > li::marker {
+  color: var(--color-accent);
+}
+
+.prose ol > li::marker {
+  color: var(--color-primary);
+}
+
+.blog-post-body :where(ul, ol) {
+  padding-inline-start: 1.875rem;
+}
+
+.blog-post-body li {
+  line-height: 1.5;
+  margin-bottom: .25rem;
+}
