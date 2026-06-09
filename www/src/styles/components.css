@@ -59,7 +59,7 @@
 .library-banner h1 { margin: 0; }
 .library-intro { background: var(--color-primary); color: white; padding-block: 3rem; }
 .library-intro h2 { color: white; }
-.library-layout { align-items: start; display: grid; gap: 3rem; grid-template-columns: 240px 1fr; }
+.library-layout { align-items: start; display: grid; gap: 3rem; grid-template-columns: 1fr 240px; }
 .library-sidebar { position: sticky; top: 1rem; }
 .library-sidebar label { display: block; font-weight: 700; margin-bottom: .4rem; }
 .library-sidebar input { border: 1px solid var(--color-border); border-radius: 4px; font: inherit; padding: .7rem; width: 100%; }

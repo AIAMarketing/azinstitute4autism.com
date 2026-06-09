@@ -6,6 +6,6 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === 'es' && !
 const popular = posts.slice(0, 5);
 ---
 <BlogIndexLayout title="La Biblioteca en AZ Institute for Autism" description="Noticias sobre terapia ABA y educación especial, casos de estudio, recetas, editoriales y tutoriales para y sobre nuestros estudiantes con autismo." lang="es">
-  <aside class="library-sidebar"><h2>Publicaciones populares</h2><ul>{popular.map((post) => <li><a href={`/es/library/${post.data.slug}`}>{post.data.title}</a></li>)}</ul></aside>
   <div class="blog-list">{posts.map((post) => <BlogCard post={post} prefix="/es" />)}</div>
+  <aside class="library-sidebar"><h2>Publicaciones populares</h2><ul>{popular.map((post) => <li><a href={`/es/library/${post.data.slug}`}>{post.data.title}</a></li>)}</ul></aside>
 </BlogIndexLayout>
