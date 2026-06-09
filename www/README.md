@@ -173,6 +173,42 @@ Article content goes here.
 
 Set `draft: true` while preparing unpublished content.
 
+### Links And Buttons
+
+Use normal Markdown links for links within prose:
+
+```md
+Read the [ABA therapy guide](/aba-therapy) for more information.
+```
+
+Prose links render as the live site's orange inline links. Do not place an
+ordinary Markdown link on its own line merely to make it look like a button.
+
+Use `.mdx` and the `Button` component only for a source-verified call to action:
+
+```mdx
+import Button from '../../../components/Button.astro';
+
+<Button href="/client-consultation">Request an Appointment</Button>
+<Button href="/services" variant="outlined">Explore Services</Button>
+<Button href="https://example.com" target="_blank">External Action</Button>
+```
+
+Available `Button` variants are `filled` (default), `outlined`, and `light`.
+Available sizes are `default` and `small`. A `_blank` target automatically adds
+`rel="noopener noreferrer"`.
+
+Use the optional `Link` component only when an inline link needs an explicit
+variant or target:
+
+```mdx
+import Link from '../../../components/Link.astro';
+
+<Link href="/library" variant="strong">Browse the library</Link>
+```
+
+Normal Markdown links remain preferred for ordinary page and article content.
+
 ### Front Matter CMS
 
 The project includes `frontmatter.json` for the Front Matter CMS VS Code
@@ -302,8 +338,9 @@ npm run audit:blog
 
 Extraction regenerates content files, copied assets, and inventories. Review
 the complete Git diff before accepting it. Extraction may recreate FAQ-bearing
-posts as Markdown; restore their `FAQAccordion` MDX blocks before accepting the
-result. `npm run audit:blog` reports plain Markdown FAQ sections.
+posts and CTA-bearing pages as Markdown; restore their `FAQAccordion` and
+`Button` MDX blocks before accepting the result. `npm run audit:blog` reports
+plain Markdown FAQ sections.
 
 ## Reports And Utilities
 

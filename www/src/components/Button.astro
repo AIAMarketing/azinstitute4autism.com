@@ -1,0 +1,70 @@
+---
+interface Props {
+  href: string;
+  variant?: 'filled' | 'outlined' | 'light';
+  size?: 'default' | 'small';
+  target?: '_blank' | '_self';
+  rel?: string;
+  class?: string;
+}
+
+const {
+  href,
+  variant = 'filled',
+  size = 'default',
+  target,
+  rel = target === '_blank' ? 'noopener noreferrer' : undefined,
+  class: className
+} = Astro.props;
+---
+
+<a
+  class:list={['content-button', `content-button--${variant}`, { 'content-button--small': size === 'small' }, className]}
+  href={href}
+  target={target}
+  rel={rel}
+>
+  <slot />
+</a>
+
+<style>
+  .content-button {
+    background: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: 4px;
+    color: var(--color-primary);
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: .8rem 1.2rem;
+    text-decoration: none;
+  }
+
+  .content-button:hover,
+  .content-button:focus-visible {
+    background: transparent;
+    border-color: var(--color-accent-strong);
+    color: var(--color-primary);
+  }
+
+  .content-button--outlined {
+    background: transparent;
+  }
+
+  .content-button--outlined:hover,
+  .content-button--outlined:focus-visible {
+    background: rgb(37 64 128 / 4%);
+    border-color: var(--color-primary);
+  }
+
+  .content-button--light {
+    background: white;
+    border-color: white;
+    color: var(--color-primary-dark);
+  }
+
+  .content-button--small {
+    font-size: .9rem;
+    padding: .5rem 1rem;
+  }
+</style>
