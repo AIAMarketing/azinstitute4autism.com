@@ -95,7 +95,7 @@
 .home-hero-grid p:not(.script-label) { max-width: 570px; }
 .home-hero-grid img { align-self: end; justify-self: end; max-height: 500px; object-fit: contain; }
 .services-intro .feature-grid { grid-template-columns: .75fr 1.25fr; }
-.gear-photo { border-radius: 50%; justify-self: center; max-width: 270px; outline: 18px solid #fddca7; }
+.gear-photo { justify-self: center; max-width: 270px; }
 .gear-photo-right { outline-color: #dce0e5; }
 .source-list { padding-left: 1.2rem; }
 .source-list li { margin-bottom: .3rem; }
