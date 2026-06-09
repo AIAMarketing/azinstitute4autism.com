@@ -55,25 +55,41 @@ Este enfoque aprovecha el Principio de Premack, que sugiere que una actividad m�
 
 ## Ejemplos prácticos
 
- Entorno 
- Primera tarea 
- Luego recompensa 
 
- Mañana 
- Cepillarse los dientes 
- Ver dibujos animados 
 
- Comunidad 
- Comprar comestibles 
- Visitar el parque 
+<table>
+<thead>
+<tr>
+<th>Entorno</th>
+<th>Primera tarea</th>
+<th>Luego recompensa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mañana</td>
+<td>Cepillarse los dientes</td>
+<td>Ver dibujos animados</td>
+</tr>
+<tr>
+<td>Comunidad</td>
+<td>Comprar comestibles</td>
+<td>Visitar el parque</td>
+</tr>
+<tr>
+<td>Escuela</td>
+<td>Escriba el nombre</td>
+<td>Jugar con juguetes sensoriales</td>
+</tr>
+<tr>
+<td>Clínica</td>
+<td>Completar actividad</td>
+<td>Tiempo de tableta</td>
+</tr>
+</tbody>
+</table>
 
- Escuela 
- Escriba el nombre 
- Jugar con juguetes sensoriales 
 
- Clínica 
- Completar actividad 
- Tiempo de tableta 
 
 ## Consejos para el éxito
 
@@ -93,11 +109,11 @@ Ubicado en Scottsdale, dentro del Valle del Este de Phoenix, el Instituto de Aut
 
 - Próximamente, Gifted Shop de AIA : Pronto, podrá acceder a una variedad de herramientas de apoyo visual, incluyendo tarjetas de Primero/Después y colecciones de PECS, a través de nuestra tienda en línea. Manténgase atento a las actualizaciones.
 
- Previous Post 
+ Previous Post
 
 ###### [Descubre consejos para el autocuidado de padres de niños con autismo](autism-family-self-care-tips)
 
- Next Post 
+ Next Post
 
 ###### [Guía para enseñar la autodefensa en el ABA](autism-self-advocacy-skills-aba)
 

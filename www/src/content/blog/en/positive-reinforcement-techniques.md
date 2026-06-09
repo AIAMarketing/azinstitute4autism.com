@@ -47,23 +47,40 @@ Positive reinforcement occurs when a desirable consequence immediately follows a
 
 ## Key Benefits for Children with Autism
 
- Benefit 
- How It Helps 
 
- Cooperation & Routine‑Following 
- Children predict outcomes and feel safe 
 
- Self‑Esteem 
- Success experiences boost confidence 
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>How It Helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cooperation &amp; Routine‑Following</td>
+<td>Children predict outcomes and feel safe</td>
+</tr>
+<tr>
+<td>Self‑Esteem</td>
+<td>Success experiences boost confidence</td>
+</tr>
+<tr>
+<td>Communication &amp; Social Skills</td>
+<td>Encourages interaction with caregivers</td>
+</tr>
+<tr>
+<td>Transition Management</td>
+<td>Reduces anxiety around changes</td>
+</tr>
+<tr>
+<td>Skill Acquisition</td>
+<td>Breaks complex tasks into manageable steps</td>
+</tr>
+</tbody>
+</table>
 
- Communication & Social Skills 
- Encourages interaction with caregivers 
 
- Transition Management 
- Reduces anxiety around changes 
-
- Skill Acquisition 
- Breaks complex tasks into manageable steps 
 
 ## Step‑by‑Step Guide for Parents
 
@@ -97,7 +114,28 @@ Observe what your child truly values:
 
 - First/Then Boards: "First finish your homework, then play outside."
 
-- Example Table: First… Then… Put on your shoes Choose a bedtime book Finish 5 math problems 5 minutes of tablet time
+**Example Table:**
+
+<table>
+<thead>
+<tr>
+<th>First…</th>
+<th>Then…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Put on your shoes</td>
+<td>Choose a bedtime book</td>
+</tr>
+<tr>
+<td>Finish 5 math problems</td>
+<td>5 minutes of tablet time</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ### 5. Reinforce Effort, Not Just Outcomes
 
@@ -107,39 +145,71 @@ Observe what your child truly values:
 
 ## Common Pitfalls & How to Avoid Them
 
- Pitfall 
- Solution 
 
- Delayed Rewards 
- Keep timers handy to mark the moment 
 
- Reinforcing Undesired Behavior 
- Only deliver the reward after the correct action 
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delayed Rewards</td>
+<td>Keep timers handy to mark the moment</td>
+</tr>
+<tr>
+<td>Reinforcing Undesired Behavior</td>
+<td>Only deliver the reward after the correct action</td>
+</tr>
+<tr>
+<td>Using Bribes</td>
+<td>Plan reinforcers in advance, don't wait for tantrums</td>
+</tr>
+<tr>
+<td>Overusing One Reinforcer</td>
+<td>Rotate through a "reinforcer menu"</td>
+</tr>
+<tr>
+<td>Vague Instructions</td>
+<td>Be specific and observable</td>
+</tr>
+<tr>
+<td>Inconsistent Follow‑Through</td>
+<td>Set reminders or charts for yourself</td>
+</tr>
+</tbody>
+</table>
 
- Using Bribes 
- Plan reinforcers in advance, don't wait for tantrums 
 
- Overusing One Reinforcer 
- Rotate through a "reinforcer menu" 
-
- Vague Instructions 
- Be specific and observable 
-
- Inconsistent Follow‑Through 
- Set reminders or charts for yourself 
 
 ## Reinforcement vs. Bribery
 
 Reinforcement is planned , consistent , and follows desired behaviors. Bribery is reactive , offered to stop misbehavior.
 
- Reinforcement 
- Bribery 
 
- "You completed your homework, so now it's play time!" 
- "Stop shouting and I'll give you candy." 
 
- Increases motivation over time 
- Often reduces trust and long‑term gains 
+<table>
+<thead>
+<tr>
+<th>Reinforcement</th>
+<th>Bribery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"You completed your homework, so now it's play time!"</td>
+<td>"Stop shouting and I'll give you candy."</td>
+</tr>
+<tr>
+<td>Increases motivation over time</td>
+<td>Often reduces trust and long‑term gains</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ## When to Troubleshoot Your Approach
 
@@ -163,19 +233,33 @@ If you're not seeing progress:
 
 - Fading Reinforcers: Gradually increase the effort required or reduce magnitude to build independence.
 
-Quick Chart:
+**Quick Chart:**
 
- Schedule Type 
- Example 
- When to Use 
 
- FR2 
- Reward every 2 correct steps 
- Building initial skills 
 
- VR3 
- Reward on average every 3 
- Maintaining established behaviors 
+<table>
+<thead>
+<tr>
+<th>Schedule Type</th>
+<th>Example</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR2</td>
+<td>Reward every 2 correct steps</td>
+<td>Building initial skills</td>
+</tr>
+<tr>
+<td>VR3</td>
+<td>Reward on average every 3</td>
+<td>Maintaining established behaviors</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ## Foster Motivation and Independence: Next Steps
 
@@ -183,11 +267,11 @@ Positive reinforcement in ABA is more than a technique; it's a way to build last
 
 For personalized guidance and ABA support, reach out to the Arizona Institute for Autism and schedule your free consultation today. Let's celebrate every success together!
 
- Previous Post 
+ Previous Post
 
 ###### [How to Support ABA Therapy Over Summer Break](aba-therapy-summer-routine-tips)
 
- Next Post 
+ Next Post
 
 ###### [Now Enrolling: AIA Preparatory Academy for Children Ages 2–6](aba-school-readiness-arizona)
 

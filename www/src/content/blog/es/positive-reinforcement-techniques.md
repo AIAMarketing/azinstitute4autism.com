@@ -47,23 +47,40 @@ El refuerzo positivo ocurre cuando una consecuencia deseable sigue inmediatament
 
 ## Beneficios clave para niños con autismo
 
- Beneficio 
- Cómo ayuda 
 
- Cooperación y seguimiento de rutinas 
- Los niños predicen resultados y se sienten seguros 
 
- Autoestima 
- Las experiencias de éxito aumentan la confianza 
+<table>
+<thead>
+<tr>
+<th>Beneficio</th>
+<th>Cómo ayuda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cooperación y seguimiento de rutinas</td>
+<td>Los niños predicen resultados y se sienten seguros</td>
+</tr>
+<tr>
+<td>Autoestima</td>
+<td>Las experiencias de éxito aumentan la confianza</td>
+</tr>
+<tr>
+<td>Habilidades de comunicación y sociales</td>
+<td>Fomenta la interacción con los cuidadores</td>
+</tr>
+<tr>
+<td>Gestión de la transición</td>
+<td>Reduce la ansiedad ante los cambios</td>
+</tr>
+<tr>
+<td>Adquisición de habilidades</td>
+<td>Divide las tareas complejas en pasos manejables</td>
+</tr>
+</tbody>
+</table>
 
- Habilidades de comunicación y sociales 
- Fomenta la interacción con los cuidadores 
 
- Gestión de la transición 
- Reduce la ansiedad ante los cambios 
-
- Adquisición de habilidades 
- Divide las tareas complejas en pasos manejables 
 
 ## Guía paso a paso para padres
 
@@ -97,7 +114,28 @@ Observe lo que su hijo realmente valora:
 
 - Tableros Primero/Luego: "Primero termina tu tarea, luego juega afuera."
 
-- Tabla de ejemplo: Primero… Luego… Ponte los zapatos Elige un libro para la hora de dormir Termina 5 problemas de matemáticas 5 minutos de tiempo con la tableta
+**Tabla de ejemplo:**
+
+<table>
+<thead>
+<tr>
+<th>Primero…</th>
+<th>Luego…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ponte los zapatos</td>
+<td>Elige un libro para la hora de dormir</td>
+</tr>
+<tr>
+<td>Termina 5 problemas de matemáticas</td>
+<td>5 minutos de tiempo con la tableta</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ### 5. Reforzar el esfuerzo, no solo los resultados
 
@@ -107,39 +145,71 @@ Observe lo que su hijo realmente valora:
 
 ## Errores comunes y cómo evitarlos
 
- Trampa 
- Solución 
 
- Recompensas retrasadas 
- Ten a mano temporizadores para marcar el momento. 
 
- Reforzar el comportamiento no deseado 
- Entrega la recompensa solo después de la acción correcta. 
+<table>
+<thead>
+<tr>
+<th>Trampa</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recompensas retrasadas</td>
+<td>Ten a mano temporizadores para marcar el momento.</td>
+</tr>
+<tr>
+<td>Reforzar el comportamiento no deseado</td>
+<td>Entrega la recompensa solo después de la acción correcta.</td>
+</tr>
+<tr>
+<td>Usando Sobornos</td>
+<td>Planifica los reforzadores con anticipación, no esperes a los berrinches.</td>
+</tr>
+<tr>
+<td>Usar en exceso un solo reforzador</td>
+<td>Rotar a través de un "menú de reforzadores"</td>
+</tr>
+<tr>
+<td>Instrucciones vagas</td>
+<td>Sé específico y observable</td>
+</tr>
+<tr>
+<td>Seguimiento inconsistente</td>
+<td>Establece recordatorios o gráficos para ti mismo.</td>
+</tr>
+</tbody>
+</table>
 
- Usando Sobornos 
- Planifica los reforzadores con anticipación, no esperes a los berrinches. 
 
- Usar en exceso un solo reforzador 
- Rotar a través de un "menú de reforzadores" 
-
- Instrucciones vagas 
- Sé específico y observable 
-
- Seguimiento inconsistente 
- Establece recordatorios o gráficos para ti mismo. 
 
 ## Refuerzo vs. Soborno
 
 El refuerzo es planificado , consistente y sigue los comportamientos deseados. El soborno es reactivo , se ofrece para detener el mal comportamiento.
 
- Refuerzo 
- Soborno 
 
- "Completaste tu tarea, ¡así que ahora es hora de jugar!" 
- "Deja de gritar y te daré un caramelo." 
 
- Aumenta la motivación con el tiempo 
- A menudo reduce la confianza y las ganancias a largo plazo. 
+<table>
+<thead>
+<tr>
+<th>Refuerzo</th>
+<th>Soborno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Completaste tu tarea, ¡así que ahora es hora de jugar!"</td>
+<td>"Deja de gritar y te daré un caramelo."</td>
+</tr>
+<tr>
+<td>Aumenta la motivación con el tiempo</td>
+<td>A menudo reduce la confianza y las ganancias a largo plazo.</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ## Cuándo solucionar problemas de tu enfoque
 
@@ -163,19 +233,33 @@ Si no estás viendo progreso:
 
 - Reforzadores desvanecidos: Aumente gradualmente el esfuerzo requerido o reduzca la magnitud para fomentar la independencia.
 
-Gráfico rápido:
+**Gráfico rápido:**
 
- Tipo de programación 
- Ejemplo 
- Cuándo usar 
 
- FR2 
- Recompensa cada 2 pasos correctos 
- Construyendo habilidades iniciales 
 
- VR3 
- Recompensa en promedio cada 3 
- Mantener comportamientos establecidos 
+<table>
+<thead>
+<tr>
+<th>Tipo de programación</th>
+<th>Ejemplo</th>
+<th>Cuándo usar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR2</td>
+<td>Recompensa cada 2 pasos correctos</td>
+<td>Construyendo habilidades iniciales</td>
+</tr>
+<tr>
+<td>VR3</td>
+<td>Recompensa en promedio cada 3</td>
+<td>Mantener comportamientos establecidos</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ## Fomentar la motivación y la independencia: Próximos pasos
 
@@ -183,11 +267,11 @@ El refuerzo positivo en el análisis de comportamiento aplicado (ABA) es más qu
 
 Para obtener orientación personalizada y apoyo ABA, comuníquese con el Instituto de Autismo de Arizona y programe su consulta gratuita hoy mismo. ¡Celebremos cada éxito juntos!
 
- Previous Post 
+ Previous Post
 
 ###### [Habilidades de funcionamiento ejecutivo y autismo](executive-functioning-skills-autism)
 
- Next Post 
+ Next Post
 
 ###### [Guía de Autismo para Padres y Cuidadores](parents-guide-to-autism-and-aba)
 

@@ -55,25 +55,41 @@ This approach leverages the Premack Principle, which suggests that a more prefer
 
 ## Practical Examples
 
- Setting 
- First Task 
- Then Reward 
 
- Morning 
- Brush teeth 
- Watch cartoon 
 
- Community 
- Grocery shop 
- Visit park 
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>First Task</th>
+<th>Then Reward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Morning</td>
+<td>Brush teeth</td>
+<td>Watch cartoon</td>
+</tr>
+<tr>
+<td>Community</td>
+<td>Grocery shop</td>
+<td>Visit park</td>
+</tr>
+<tr>
+<td>School</td>
+<td>Write name</td>
+<td>Sensory bin play</td>
+</tr>
+<tr>
+<td>Clinic</td>
+<td>Complete activity</td>
+<td>Tablet time</td>
+</tr>
+</tbody>
+</table>
 
- School 
- Write name 
- Sensory bin play 
 
- Clinic 
- Complete activity 
- Tablet time 
 
 ## Tips for Success
 
@@ -93,11 +109,11 @@ Located in Scottsdale within Phoenix's East Valley, the Arizona Institute for Au
 
 - Upcoming AIA Gifted Shop : Soon, you'll be able to access a variety of visual support tools, including First/Then cards and PECS collections, through our online storefront. Stay tuned for updates.
 
- Previous Post 
+ Previous Post
 
 ###### [Executive Functioning Skills and Autism](executive-functioning-skills-autism)
 
- Next Post 
+ Next Post
 
 ###### [How to Support ABA Therapy Over Summer Break](aba-therapy-summer-routine-tips)
 

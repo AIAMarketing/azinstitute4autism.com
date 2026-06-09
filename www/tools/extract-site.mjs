@@ -97,8 +97,15 @@ function extractRecord(file, html) {
     const src = localizeAsset($(element).attr('src'));
     if (src) $(element).attr('src', src);
   });
+  const tables = [];
+  body.find('table').each((_, element) => {
+    const token = `__TABLE_${tables.length}__`;
+    tables.push($(element).prop('outerHTML'));
+    $(element).replaceWith(`\n\n${token}\n\n`);
+  });
   const markdown = contentMarkdown(
-    turndown.turndown(body.html() || '').replace(/\n{3,}/g, '\n\n').trim(),
+    tables.reduce((output, table, index) => output.replaceAll(`__TABLE_${index}__`, table),
+      turndown.turndown(body.html() || '').replace(/\n{3,}/g, '\n\n').trim()),
     isBlogFile(file)
   );
   return { file, lang, url, title, description, h1, image, alt, date, markdown };

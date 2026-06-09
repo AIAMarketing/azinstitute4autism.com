@@ -77,12 +77,26 @@ function asset(value = '') {
   return match ? `/assets/images/${path.basename(decodeURIComponent(match[1])).split('?')[0]}` : undefined;
 }
 
+function normalizeTable(value = '') {
+  return value
+    .replace(/(<a\b[^>]*\bhref=["'])([^"']+)(["'])/gi,
+      (_, prefix, href, suffix) => `${prefix}${normalizeHref(href)}${suffix}`)
+    .replace(/(<img\b[^>]*\bsrc=["'])([^"']+)(["'])/gi,
+      (_, prefix, src, suffix) => `${prefix}${asset(src) || src}${suffix}`);
+}
+
 function markdownFrom(html) {
   let body = html.match(/<main[\s\S]*?<\/main>/i)?.[0] ||
     html.match(/blog-post__body[\s\S]*?(?=<footer|blog-post__tags|<\/article>)/i)?.[0] ||
     '';
+  const tables = [];
   body = body
     .replace(/<(script|style|noscript|header|footer|nav|form)\b[\s\S]*?<\/\1>/gi, '')
+    .replace(/<table[\s\S]*?<\/table>/gi, (match) => {
+      const token = `__TABLE_${tables.length}__`;
+      tables.push(normalizeTable(match));
+      return `\n\n${token}\n\n`;
+    })
     .replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, (_, value) => `\n\n> ${inline(value)}\n\n`)
     .replace(/<img[^>]+src=["']([^"']+)["'][^>]*alt=["']([^"']*)["'][^>]*>/gi, (_, src, alt) => {
       const local = asset(src);
@@ -93,7 +107,8 @@ function markdownFrom(html) {
     .replace(/<p[^>]*>([\s\S]*?)<\/p>/gi, (_, value) => `\n\n${inline(value)}\n\n`)
     .replace(/<br\s*\/?>/gi, '\n')
     .replace(/<[^>]+>/g, ' ');
-  return decode(body).replace(/[ \t]+/g, ' ').replace(/^\s+$/gm, '').replace(/\n{3,}/g, '\n\n').trim();
+  body = decode(body).replace(/[ \t]+/g, ' ').replace(/^\s+$/gm, '').replace(/\n{3,}/g, '\n\n').trim();
+  return tables.reduce((output, table, index) => output.replaceAll(`__TABLE_${index}__`, table), body);
 }
 
 function record(file, html) {
