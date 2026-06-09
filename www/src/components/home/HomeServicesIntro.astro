@@ -3,6 +3,21 @@ import type { ServicesIntroSection } from '../../types/home-sections';
 interface Props { section: ServicesIntroSection }
 const { section } = Astro.props;
 ---
+<style>
+  .services-grid { display: grid; gap: clamp(2rem, 6vw, 5rem); }
+  .feature-grid--intro { grid-template-columns: .75fr 1.25fr; }
+  .feature-grid--reverse { grid-template-columns: 1.25fr .75fr; }
+  .gear-photo { justify-self: center; max-width: 270px; }
+  .gear-photo-right { outline-color: #dce0e5; }
+  .two-column-list { columns: 2; }
+  @media (max-width: 760px) {
+    .services-grid { gap: 2rem; }
+    .services-grid .feature-grid { grid-template-columns: 1fr; }
+    .feature-grid > .gear-photo-right { grid-row: 3; }
+    .two-column-list { columns: 1; }
+  }
+</style>
+
 <section class="section services-intro">
   <div class="container services-grid">
     <div class="feature-grid feature-grid--intro">

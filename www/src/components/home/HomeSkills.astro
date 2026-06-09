@@ -3,6 +3,22 @@ import type { SkillsSection } from '../../types/home-sections';
 interface Props { section: SkillsSection }
 const { section } = Astro.props;
 ---
+<style>
+  .skills-section { background: var(--color-primary); color: white; padding-block: 4rem; text-align: center; }
+  .skills-section h2 { color: white; }
+  .skills-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
+  .skills-grid div { display: grid; gap: .75rem; justify-items: center; }
+  .skills-grid img { max-height: 12vw; max-width: 12vw; }
+  @media (max-width: 760px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid img { max-height: 24vw; max-width: 24vw; }
+  }
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .skills-grid img { max-height: 32vw; max-width: 32vw; }
+  }
+</style>
+
 <section class="skills-section">
   <div class="container">
     <h2>{section.heading}</h2>

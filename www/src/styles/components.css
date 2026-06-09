@@ -89,22 +89,10 @@
 .team-member p { margin: 0; }
 .team-careers { background: var(--color-tint); padding-block: 5rem; text-align: center; }
 @media (max-width: 950px) { .main-nav, .header-inner > .button { display: none; } .mobile-nav { display: block; } .mobile-nav .main-nav { display: block; } .mobile-nav .main-nav ul { align-items: flex-start; flex-direction: column; padding: var(--space-md); } .hero-grid, .footer-grid { grid-template-columns: 1fr; } }
-.home-hero { background: var(--color-tint); overflow: hidden; }
-.home-hero-grid { align-items: end; display: grid; grid-template-columns: 1fr .9fr; min-height: 520px; padding-top: 4rem; }
-.home-hero-grid > div { align-self: center; padding-bottom: 4rem; }
-.home-hero-grid p:not(.script-label) { max-width: 570px; }
-.home-hero-grid img { align-self: end; justify-self: end; max-height: 500px; object-fit: contain; }
-.services-grid { display: grid; gap: clamp(2rem, 6vw, 5rem); }
-.feature-grid--intro { grid-template-columns: .75fr 1.25fr; }
-.feature-grid--reverse { grid-template-columns: 1.25fr .75fr; }
-.gear-photo { justify-self: center; max-width: 270px; }
-.gear-photo-right { outline-color: #dce0e5; }
 .source-list { margin-block: 0 1.5rem; padding-inline-start: 2.5rem; }
 .source-list li { line-height: 1.625; margin: 0; padding-inline-start: .15rem; }
 .source-list li::marker { color: var(--color-accent); }
 .source-list li > p { margin-block: 0; }
-.two-column-list { columns: 2; }
-.benefit-grid { grid-template-columns: 1.1fr .9fr; }
 .video-card { background: none; border: none; cursor: pointer; display: block; padding: 0; position: relative; }
 .video-card img { width: 100%; }
 .video-card span { align-items: center; background: var(--color-accent); border-radius: 50%; color: white; display: flex; height: 64px; justify-content: center; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 64px; z-index: 1; }
@@ -117,25 +105,11 @@
 .video-dialog-frame { aspect-ratio: 16 / 9; width: 100%; }
 .video-dialog-frame iframe { border: none; height: 100%; width: 100%; }
 .video-dialog-close { background: white; border: none; border-radius: 50%; cursor: pointer; font-size: 1rem; height: 2rem; line-height: 2rem; position: absolute; right: -1rem; top: -1rem; width: 2rem; }
-.skills-section { background: var(--color-primary); color: white; padding-block: 4rem; text-align: center; }
-.skills-section h2 { color: white; }
-.skills-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
-.skills-grid div { display: grid; gap: .75rem; justify-items: center; }
-.skills-grid img { max-height: 12vw; max-width: 12vw; }
-.insurance-section .logo-row { margin-top: 2rem; }
-.logo-row img { filter: none; }
-.esa-grid { grid-template-columns: 1.5fr .5fr; }
-.esa-grid img { max-height: 170px; justify-self: center; }
 .process-section h2, .testimonial-section h2 { text-align: center; }
 .process-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
 .process-grid div { background: white; min-height: 190px; padding: 3.2rem 1rem; position: relative; text-align: center; transition: transform .3s ease-in-out; }
 .process-grid div:hover { transform: scale(1.05); z-index: 1; }
 .process-grid img { margin: 0 auto 1rem; width: 42%; }
-.director-layout { grid-template-columns: 1fr 3.6fr; }
-.director-card { text-align: left; }
-.director-card img { border-radius: 3px ;height: auto; margin: 0 auto; width: 100%; }
-.director-card h3 { font-family: var(--font-body); font-size: .84rem; letter-spacing: .5px; margin-top: 1rem; }
-.signature { max-width: 270px; }
 .testimonial-section blockquote { margin: 0 auto; max-width: 720px; padding: 0 2rem; text-align: center; }
 .testimonial-author { font-size: 1.25rem; font-weight: 700; margin-bottom: .5rem; }
 .testimonial-swiper { --swiper-pagination-bullet-horizontal-gap: 1vw; padding-bottom: 3rem !important; }
@@ -147,16 +121,7 @@
   .utility-inner { justify-content: center; }
   .header-inner { min-height: 88px; }
   .header-inner .language-switcher { margin-left: auto; }
-  .home-hero-grid { grid-template-columns: 1fr; padding-top: 3rem; text-align: center; }
-  .home-hero-grid > div { padding-bottom: 1rem; }
-  .home-hero-grid img { justify-self: center; max-height: 330px; }
-  .services-grid { gap: 2rem; }
-  .services-grid .feature-grid, .benefit-grid, .esa-grid { grid-template-columns: 1fr; }
-  .feature-grid > .gear-photo-right { grid-row: 3; }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .skills-grid img { max-height: 24vw; max-width: 24vw; }
   .process-grid { grid-template-columns: 1fr 1fr; }
-  .two-column-list { columns: 1; }
   .footer-bottom { align-items: flex-start; flex-direction: column; }
   .library-layout { grid-template-columns: 1fr; }
   .library-sidebar { position: static; }
@@ -165,9 +130,5 @@
   .team-grid { grid-template-columns: 1fr; }
   .source-page-banner.has-source-image, .library-banner { padding-block: 6.25rem; text-align: center; }
   .source-page-banner.has-source-image h1, .library-banner-copy { margin-inline: auto; }
-}
-@media (max-width: 480px) {
-  .skills-grid { grid-template-columns: 1fr; }
-  .skills-grid img { max-height: 32vw; max-width: 32vw; }
 }
 @media (min-width: 761px) and (max-width: 1050px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

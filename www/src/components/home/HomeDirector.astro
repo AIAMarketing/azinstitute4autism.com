@@ -3,6 +3,14 @@ import type { DirectorSection } from '../../types/home-sections';
 interface Props { section: DirectorSection }
 const { section } = Astro.props;
 ---
+<style>
+  .director-layout { grid-template-columns: 1fr 3.6fr; }
+  .director-card { text-align: left; }
+  .director-card img { border-radius: 3px; height: auto; margin: 0 auto; width: 100%; }
+  .director-card h3 { font-family: var(--font-body); font-size: .84rem; letter-spacing: .5px; margin-top: 1rem; }
+  .signature { max-width: 270px; }
+</style>
+
 <section class="section director-section">
   <div class="container feature-grid director-layout">
     <div class="director-card">

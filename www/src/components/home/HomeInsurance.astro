@@ -3,6 +3,11 @@ import type { InsuranceSection } from '../../types/home-sections';
 interface Props { section: InsuranceSection }
 const { section } = Astro.props;
 ---
+<style>
+  .insurance-section .logo-row { margin-top: 2rem; }
+  .logo-row img { filter: none; }
+</style>
+
 <section class="section insurance-section">
   <div class="container">
     <h2>{section.heading}</h2>

@@ -14,3 +14,16 @@ const { section } = Astro.props;
     <img src={`/assets/images/${section.image}`} alt={section.imageAlt} loading="eager" />
   </div>
 </section>
+
+<style>
+  .home-hero { background: var(--color-tint); overflow: hidden; }
+  .home-hero-grid { align-items: end; display: grid; grid-template-columns: 1fr .9fr; min-height: 520px; padding-top: 4rem; }
+  .home-hero-grid > div { align-self: center; padding-bottom: 4rem; }
+  .home-hero-grid p:not(.script-label) { max-width: 570px; }
+  .home-hero-grid img { align-self: end; justify-self: end; max-height: 500px; object-fit: contain; }
+  @media (max-width: 760px) {
+    .home-hero-grid { grid-template-columns: 1fr; padding-top: 3rem; text-align: center; }
+    .home-hero-grid > div { padding-bottom: 1rem; }
+    .home-hero-grid img { justify-self: center; max-height: 330px; }
+  }
+</style>

@@ -3,6 +3,14 @@ import type { EsaSection } from '../../types/home-sections';
 interface Props { section: EsaSection }
 const { section } = Astro.props;
 ---
+<style>
+  .esa-grid { grid-template-columns: 1.5fr .5fr; }
+  .esa-grid img { max-height: 170px; justify-self: center; }
+  @media (max-width: 760px) {
+    .esa-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
 <section class="section cream-section">
   <div class="container feature-grid esa-grid">
     <div>
