@@ -136,9 +136,27 @@ sections:
 
   - type: testimonials
     heading: Lo que dicen los clientes
-    featured:
-      author: Claudia
-      paragraphs:
-        - "Our son is an autistic kid. We struggled to find the correct place for him, that place where you can feel comfortable leaving your kid. We visited five companies, and no one gave us that confidence until we found AIA. You can see the dedication from each employee (Director, therapists, coordinators, etc.) to every kid. Their therapy rooms are huge and spacious; every kid can play and learn simultaneously in their own spaces. We are thankful to Arizona Institute for Autism for caring for Misael."
-        - All of you are Amazing!!! Thank you
+    items:
+      - author: Claudia
+        text: "Our son \U0001F499 is an autistic kid. We struggled to find the correct place for him, that place where you can feel comfortable leaving your kid. We visited five companies, and no one gave us that confidence until we found AIA. You can see the dedication from each employee (Director, therapists, coordinators, etc.) to every kid. Their therapy rooms are huge and spacious; every kid can play and learn simultaneously in their own spaces. We are thankful \U0001F64F to Arizona Institute for Autism for caring for Misael. All of you are Amazing!!! Thank you \U0001F60A"
+      - author: Kristin
+        text: "My son has grown and learned so much from the team at AIA. He loves the team and they love him..."
+      - author: Amanda
+        text: "My son loves this program. He started when he was 21 months year old, so I was picky in choosing where he would go. I love that it is play based and he is 1-on-1 with a therapist the whole time."
+      - author: Dave
+        text: "I highly recommend Arizona Institute for Autism. Rula Diab runs a fantastic clinic and has an amazing team. Shoutout to Coach D - it is incredible that they have a former NFL Player helping with P.E.! They also held a birthday party for our son. Amazing and so full of love & care..."
+      - author: Meagan
+        text: "We are incredibly grateful for the support and guidance our child has received from the team at Arizona Institute for Autism. The professionalism and dedication of the team have made a remarkable difference in our child's development. They truly care about each child's growth and tailor their approach to meet individual needs. Our child has made significant strides in communication and social skills, and we couldn't be happier with the positive impact they've had on our family. Highly recommend AIA."
+      - author: Macey
+        text: "We love AIA, you can expect amazing staff and a clean facility. Along with a safe environment for your children. We love the mission behind AIA and feel like there's no other place here in Arizona that does what they do here."
+      - author: S.L.
+        text: "My son has developed faster and been happier at this Autism center over all others he's experienced. The therapist/teachers and all the way to the Rula the manager have gone above and beyond to work with my son's special needs. As every Autistic child is different they have developed a plan specifically fit to him. We have weekly meetings to join our knowledge to develop my son as quickly and efficiently comfortably for him as possible. I'm blown away by how I finally feel like part of a team that is my son's team. Thank you."
+      - author: Emily
+        text: "AIA is phenomenal!!! Rula and her staff are fantastic. They are patient, professional, compassionate and extremely knowledgeable. My son loves his providers. They have helped me navigate some extremely tough times. I highly recommend AIA."
+      - author: Raye
+        text: "I absolutely love it here! They care about your child so much! They work with you when it comes to your schedule. They are all so very friendly here. Anytime I step in here I feel a warm welcoming from everyone. My son loves coming here. They care about helping your child succeed in every possible way, my din is going to flourish here!"
+      - author: Danielle
+        text: "AIA has done wonders for my son. I drive from NW Peoria just to come here. Everyone is very professional and kind. They truly care about the kids and seeing them succeed. I'm so lucky to have found them. I would recommend them to anyone!"
+      - author: Tim
+        text: "The staff at AIA is my second family. Not only does my son receive the best care possible, they also keep me in check and help make sure I'm doing my part. That's the kind of love you get in this big family!"
 ---

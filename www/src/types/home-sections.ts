@@ -81,7 +81,7 @@ export interface DirectorSection {
 export interface TestimonialsSection {
   type: 'testimonials';
   heading: string;
-  featured: { author: string; paragraphs: string[] };
+  items: { author: string; text: string }[];
 }
 
 export type HomeSection =

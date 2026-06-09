@@ -6,10 +6,47 @@ const { section } = Astro.props;
 <section class="section cream-section testimonial-section">
   <div class="container">
     <h2>{section.heading}</h2>
-    <blockquote>
-      <strong>{section.featured.author}</strong>
-      {section.featured.paragraphs.map((p) => <p>{p}</p>)}
-    </blockquote>
-    <div class="testimonial-dots" aria-hidden="true">• • • • • • • • • • •</div>
+    <div class="testimonial-swiper swiper">
+      <div class="swiper-wrapper">
+        {section.items.map(({ author, text }) => (
+          <div class="swiper-slide">
+            <blockquote>
+              <p class="testimonial-author">{author}</p>
+              <p>{text}</p>
+            </blockquote>
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </div>
 </section>
+
+<style is:global>
+  @import 'swiper/css/bundle';
+</style>
+
+<script>
+  import Swiper from 'swiper/bundle';
+
+  new Swiper('.testimonial-swiper', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+      delay: 6400,
+      disableOnInteraction: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 50,
+    pagination: {
+      el: '.testimonial-swiper .swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.testimonial-swiper .swiper-button-next',
+      prevEl: '.testimonial-swiper .swiper-button-prev',
+    },
+  });
+</script>

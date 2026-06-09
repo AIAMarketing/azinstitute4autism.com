@@ -136,8 +136,13 @@
 .director-card img { border-radius: 3px ;height: auto; margin: 0 auto; width: 100%; }
 .director-card h3 { font-family: var(--font-body); font-size: .84rem; letter-spacing: .5px; margin-top: 1rem; }
 .signature { max-width: 270px; }
-.testimonial-section blockquote { margin: 2rem auto; max-width: 720px; text-align: center; }
-.testimonial-dots { color: var(--color-accent-strong); letter-spacing: .9rem; text-align: center; }
+.testimonial-section blockquote { margin: 0 auto; max-width: 720px; padding: 0 2rem; text-align: center; }
+.testimonial-author { font-size: 1.25rem; font-weight: 700; margin-bottom: .5rem; }
+.testimonial-swiper { --swiper-pagination-bullet-horizontal-gap: 1vw; padding-bottom: 3rem !important; }
+.testimonial-swiper .swiper-pagination-bullet { background-color: var(--color-accent); opacity: 1; }
+.testimonial-swiper .swiper-pagination-bullet-active { background-color: var(--color-accent-strong); }
+.testimonial-swiper .swiper-button-next, .testimonial-swiper .swiper-button-prev { color: var(--color-accent); }
+.testimonial-swiper .swiper-button-next:hover, .testimonial-swiper .swiper-button-prev:hover { color: var(--color-accent-strong); }
 @media (max-width: 760px) {
   .utility-inner { justify-content: center; }
   .header-inner { min-height: 88px; }
