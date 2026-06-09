@@ -128,8 +128,9 @@
 .esa-grid img { max-height: 170px; justify-self: center; }
 .process-section h2, .testimonial-section h2 { text-align: center; }
 .process-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
-.process-grid div { background: white; min-height: 190px; padding: 2rem 1rem; text-align: center; }
-.process-grid img { margin: 0 auto 1rem; width: 72px; }
+.process-grid div { background: white; min-height: 190px; padding: 3.2rem 1rem; position: relative; text-align: center; transition: transform .3s ease-in-out; }
+.process-grid div:hover { transform: scale(1.05); z-index: 1; }
+.process-grid img { margin: 0 auto 1rem; width: 42%; }
 .director-card { align-items: center; display: flex; gap: 1.5rem; }
 .director-card img { max-height: 260px; width: auto; }
 .signature { max-width: 270px; }

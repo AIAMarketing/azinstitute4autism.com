@@ -115,9 +115,9 @@ sections:
       - icon: learner-journey-step-2.svg
         label: Speak with a Client Advocate
       - icon: learner-journey-step-3.svg
-        label: Fill and Sign a Client Intake Packet
+        label: Fill and Sign an Intake Packet
       - icon: learner-journey-step-4.svg
-        label: Verify Billing and Insurance Information and Benefits
+        label: Verify Billing and Insurance
       - icon: learner-journey-step-5.svg
         label: Schedule an Assessment
       - icon: learner-journey-step-6.svg

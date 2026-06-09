@@ -16,3 +16,14 @@ const { section } = Astro.props;
     </div>
   </div>
 </section>
+
+<script>
+  function equalizeProcessCards() {
+    const cards = [...document.querySelectorAll('.process-grid > div')] as HTMLElement[];
+    cards.forEach(c => (c.style.height = ''));
+    const max = Math.max(...cards.map(c => c.offsetHeight));
+    if (max > 0) cards.forEach(c => (c.style.height = `${max}px`));
+  }
+  equalizeProcessCards();
+  window.addEventListener('resize', equalizeProcessCards);
+</script>
