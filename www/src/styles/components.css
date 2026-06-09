@@ -30,7 +30,7 @@
 .text-link { font-weight: 700; }
 .insurance-strip { background: white; border-block: 1px solid var(--color-border); padding-block: var(--space-lg); text-align: center; }
 .insurance-strip h2 { font-size: 1.4rem; }
-.logo-row { align-items: center; display: flex; flex-wrap: wrap; gap: var(--space-lg); justify-content: center; }
+.logo-row { align-items: center; display: flex; flex-wrap: wrap; justify-content: space-around; }
 .logo-row img { filter: grayscale(1); max-height: 55px; max-width: 130px; }
 .cta-band { background: var(--color-primary); color: white; padding-block: var(--space-xl); }
 .cta-band h2, .cta-band .eyebrow { color: white; margin: 0; }
@@ -110,9 +110,9 @@
 .video-card span { align-items: center; background: var(--color-accent); border-radius: 50%; color: white; display: flex; height: 64px; justify-content: center; left: calc(50% - 32px); position: absolute; top: calc(50% - 32px); width: 64px; }
 .skills-section { background: var(--color-primary); color: white; padding-block: 4rem; text-align: center; }
 .skills-section h2 { color: white; }
-.skills-grid { display: grid; gap: 1rem; grid-template-columns: repeat(6, 1fr); margin-top: 2.5rem; }
+.skills-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
 .skills-grid div { display: grid; gap: .75rem; justify-items: center; }
-.skills-grid img { max-height: 54px; max-width: 54px; }
+.skills-grid img { max-height: 12vw; max-width: 12vw; }
 .insurance-section .logo-row { margin-top: 2rem; }
 .logo-row img { filter: none; }
 .esa-grid { grid-template-columns: 1.5fr .5fr; }
@@ -137,6 +137,7 @@
   .services-grid .feature-grid, .benefit-grid, .esa-grid { grid-template-columns: 1fr; }
   .feature-grid > .gear-photo-right { grid-row: 3; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid img { max-height: 24vw; max-width: 24vw; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .two-column-list { columns: 1; }
   .footer-bottom { align-items: flex-start; flex-direction: column; }
@@ -147,5 +148,9 @@
   .team-grid { grid-template-columns: 1fr; }
   .source-page-banner.has-source-image, .library-banner { padding-block: 6.25rem; text-align: center; }
   .source-page-banner.has-source-image h1, .library-banner-copy { margin-inline: auto; }
+}
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .skills-grid img { max-height: 32vw; max-width: 32vw; }
 }
 @media (min-width: 761px) and (max-width: 1050px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
