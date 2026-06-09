@@ -131,8 +131,10 @@
 .process-grid div { background: white; min-height: 190px; padding: 3.2rem 1rem; position: relative; text-align: center; transition: transform .3s ease-in-out; }
 .process-grid div:hover { transform: scale(1.05); z-index: 1; }
 .process-grid img { margin: 0 auto 1rem; width: 42%; }
-.director-card { align-items: center; display: flex; gap: 1.5rem; }
-.director-card img { max-height: 260px; width: auto; }
+.director-layout { grid-template-columns: 1fr 3.6fr; }
+.director-card { text-align: left; }
+.director-card img { border-radius: 3px ;height: auto; margin: 0 auto; width: 100%; }
+.director-card h3 { font-family: var(--font-body); font-size: .84rem; letter-spacing: .5px; margin-top: 1rem; }
 .signature { max-width: 270px; }
 .testimonial-section blockquote { margin: 2rem auto; max-width: 720px; text-align: center; }
 .testimonial-dots { color: var(--color-accent-strong); letter-spacing: .9rem; text-align: center; }

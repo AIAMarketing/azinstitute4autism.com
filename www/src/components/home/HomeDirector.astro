@@ -3,15 +3,15 @@ import type { DirectorSection } from '../../types/home-sections';
 interface Props { section: DirectorSection }
 const { section } = Astro.props;
 ---
-<section class="section family-section">
-  <div class="container feature-grid">
+<section class="section director-section">
+  <div class="container feature-grid director-layout">
     <div class="director-card">
       <img src={`/assets/images/${section.photo}`} alt={section.photoAlt} />
-      <p><strong>{section.name}</strong><br />{section.credentials}</p>
+      <h3 class="no-balance">{section.name}, {section.credentials}</h3>
     </div>
     <div>
       <h2>{section.heading}</h2>
-      <p>{section.quote}</p>
+      <p><em>{section.quote}</em></p>
       <img class="signature" src={`/assets/images/${section.signature}`} alt={section.signatureAlt} />
     </div>
   </div>
