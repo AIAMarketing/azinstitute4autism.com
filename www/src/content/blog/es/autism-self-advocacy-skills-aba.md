@@ -35,38 +35,38 @@ Aplicando esta habilidad a niños con autismo, la autodefensa podría verse así
 
 Enseñar la autodefensa empodera a los niños para:
 
-- Fomentar la independencia : Reducir la dependencia de otros para interpretar sus necesidades.
+- **Fomentar la independencia** : Reducir la dependencia de otros para interpretar sus necesidades.
 
-- Mejorar las habilidades de comunicación : Fomentar una comunicación clara e intencional.
+- **Mejorar las habilidades de comunicación** : Fomentar una comunicación clara e intencional.
 
-- Aumentar la autoestima : Fomentar la confianza en su capacidad para expresarse.
+- **Aumentar la autoestima** : Fomentar la confianza en su capacidad para expresarse.
 
-- Promover la seguridad : Ayudar a los niños a articular cuándo se sienten inseguros o necesitan ayuda.
+- **Promover la seguridad** : Ayudar a los niños a articular cuándo se sienten inseguros o necesitan ayuda.
 
 ## Cómo el análisis de comportamiento aplicado (ABA) enseña la autodefensa
 
 La terapia ABA proporciona un enfoque estructurado e individualizado para enseñar habilidades de autodefensa. A continuación se presentan algunas estrategias clave utilizadas por los profesionales del análisis de comportamiento aplicado (ABA):
 
-- Entrenamiento de Comunicación Funcional (ECF) : Enseña a los niños a usar la comunicación para expresar sus necesidades en lugar de recurrir a comportamientos desafiantes. Ejemplo: En lugar de tener una rabieta cuando se siente abrumado, un niño aprende a decir: "Necesito un descanso" o a usar una tarjeta de descanso.
+- **Entrenamiento de Comunicación Funcional (ECF)** : Enseña a los niños a usar la comunicación para expresar sus necesidades en lugar de recurrir a comportamientos desafiantes. Ejemplo: En lugar de tener una rabieta cuando se siente abrumado, un niño aprende a decir: "Necesito un descanso" o a usar una tarjeta de descanso.
 
-- Oportunidades para tomar decisiones : Empodera a los niños para que tomen decisiones en sus rutinas diarias. Ejemplo: Ofrecer opciones como "¿Quieres trabajar con bloques o jugar con rompecabezas?"
+- **Oportunidades para tomar decisiones** : Empodera a los niños para que tomen decisiones en sus rutinas diarias. Ejemplo: Ofrecer opciones como "¿Quieres trabajar con bloques o jugar con rompecabezas?"
 
-- Solicitud de enseñanza (manding) : Se centra en enseñar a los niños a pedir lo que necesitan o quieren. Por ejemplo, usar frases como "Necesito ayuda" o presionar un botón en un dispositivo de comunicación aumentativa.
+- **Solicitud de enseñanza (manding)** : Se centra en enseñar a los niños a pedir lo que necesitan o quieren. Por ejemplo, usar frases como "Necesito ayuda" o presionar un botón en un dispositivo de comunicación aumentativa.
 
-- Escenarios de juego de rol : Prepara a los niños para situaciones de la vida real practicando habilidades de autodefensa en un entorno controlado.
+- **Escenarios de juego de rol** : Prepara a los niños para situaciones de la vida real practicando habilidades de autodefensa en un entorno controlado.
 
-- Reforzando los intentos de autodefensa : Fomenta el comportamiento recompensando los intentos apropiados de autoexpresión.
+- **Reforzando los intentos de autodefensa** : Fomenta el comportamiento recompensando los intentos apropiados de autoexpresión.
 
 Los padres desempeñan un papel fundamental en el refuerzo de las habilidades de autodefensa aprendidas en la terapia ABA.
 
 ## Consejos para cuidadores
 
-- Fomenta la comunicación : Anima a tu hijo a expresar sus necesidades en lugar de anticiparlas.
+-   **Fomenta la comunicación**: Anima a tu hijo a expresar sus necesidades en lugar de anticiparlas.
 
-- Celebra el éxito : Reconozca y recompense incluso los pequeños intentos de autodefensa.
+-   **Celebra el éxito**: Reconozca y recompense incluso los pequeños intentos de autodefensa.
 
-- Sé paciente : Aprender a autogestionarse lleva tiempo y práctica.
+-   **Sé paciente**: Aprender a autogestionarse lleva tiempo y práctica.
 
-- Defensa del modelo : Demuestre cómo aboga por sus propias necesidades, proporcionando un ejemplo del mundo real.
+-   **Defensa del modelo**: Demuestre cómo aboga por sus propias necesidades, proporcionando un ejemplo del mundo real.
 
 Enseñar la autodefensa a través del análisis de comportamiento aplicado (ABA) empodera a los niños para que se hagan cargo de sus necesidades, preferencias y elecciones. Al fomentar la independencia y mejorar las habilidades de comunicación, el análisis de comportamiento aplicado (ABA) ayuda a los niños a desenvolverse en sus entornos con confianza y dignidad. Ya sea en sesiones de terapia o en casa, la autodefensa es un regalo que equipa a los niños para el éxito de por vida.

@@ -19,15 +19,15 @@ Las transiciones pueden ser desafiantes para muchos niños, especialmente para a
 
 Primero/después, las tarjetas son ayudas visuales que describen una secuencia de actividades:
 
-- Primero : La tarea o actividad que necesita ser completada.
+-   **Primero**: La tarea o actividad que necesita ser completada.
 
-- Después : Una actividad o recompensa preferida que sigue.
+-   **Después**: Una actividad o recompensa preferida que sigue.
 
 Por ejemplo:
 
-- Primero : Abróchese el cinturón de seguridad
+-   **Primero**: Abróchese el cinturón de seguridad
 
-- Después : Ver iPad
+-   **Después**: Ver iPad
 
 ![first then cards](/assets/images/first-then-cards-seatbelt-ipad.png)
 
@@ -35,23 +35,23 @@ Este enfoque aprovecha el Principio de Premack, que sugiere que una actividad m�
 
 ## Beneficios de usar tarjetas de Primero/Después
 
-- Reduce la ansiedad : Los horarios visuales brindan previsibilidad, lo que puede aliviar el estrés asociado con las transiciones.
+-   **Reduce la ansiedad**: Los horarios visuales brindan previsibilidad, lo que puede aliviar el estrés asociado con las transiciones.
 
-- Mejora la comunicación : Especialmente beneficiosas para niños no verbales o con habla mínima, estas tarjetas ofrecen un método claro para transmitir expectativas.
+-   **Mejora la comunicación**: Especialmente beneficiosas para niños no verbales o con habla mínima, estas tarjetas ofrecen un método claro para transmitir expectativas.
 
-- Promueve la independencia : Los niños aprenden a seguir rutinas con menos indicaciones con el tiempo.
+-   **Promueve la independencia**: Los niños aprenden a seguir rutinas con menos indicaciones con el tiempo.
 
-- Apoya el comportamiento positivo : Al establecer expectativas y recompensas claras, es más probable que los niños adopten los comportamientos deseados.
+-   **Apoya el comportamiento positivo**: Al establecer expectativas y recompensas claras, es más probable que los niños adopten los comportamientos deseados.
 
 ## Implementando tarjetas de Primero/Después en casa
 
-- Identificar tareas y recompensas : Elige una tarea que deba completarse y una recompensa motivadora.
+- **Identificar tareas y recompensas** : Elige una tarea que deba completarse y una recompensa motivadora.
 
-- Crea visuales : Usa imágenes o símbolos que tu hijo entienda. Recursos como [LessonPix](https://lessonpix.com/articles/5/35/First%2BThen%2BBoards) ofrecen plantillas personalizables.
+- **Crea visuales** : Usa imágenes o símbolos que tu hijo entienda. Recursos como [LessonPix](https://lessonpix.com/articles/5/35/First%2BThen%2BBoards) ofrecen plantillas personalizables.
 
-- Introduzca la tarjeta : Presente la tarjeta antes de comenzar la tarea, explicando la secuencia.
+- **Introduzca la tarjeta** : Presente la tarjeta antes de comenzar la tarea, explicando la secuencia.
 
-- Seguimiento : Asegúrese de que la recompensa siga inmediatamente después de completar la tarea para reforzar el comportamiento.
+- **Seguimiento** : Asegúrese de que la recompensa siga inmediatamente después de completar la tarea para reforzar el comportamiento.
 
 ## Ejemplos prácticos
 
@@ -93,18 +93,18 @@ Este enfoque aprovecha el Principio de Premack, que sugiere que una actividad m�
 
 ## Consejos para el éxito
 
-- La consistencia es clave : Usa las tarjetas regularmente para establecer rutinas.
+-   **La consistencia es clave**: Usa las tarjetas regularmente para establecer rutinas.
 
-- Personaliza para tu hijo : Adapta las imágenes y las recompensas a las preferencias y comprensión de tu hijo.
+-   **Personaliza para tu hijo**: Adapta las imágenes y las recompensas a las preferencias y comprensión de tu hijo.
 
-- Empieza de forma sencilla : Comienza con tareas fáciles y aumenta gradualmente la complejidad a medida que tu hijo se sienta más cómodo.
+-   **Empieza de forma sencilla**: Comienza con tareas fáciles y aumenta gradualmente la complejidad a medida que tu hijo se sienta más cómodo.
 
 ## Recursos locales de Arizona
 
 Ubicado en Scottsdale, dentro del Valle del Este de Phoenix, el Instituto de Autismo de Arizona (AIA) ofrece apoyo y recursos para familias en las áreas metropolitanas de Phoenix y Tucson:
 
-- Consultas gratuitas : Programa una [consulta gratuita](../../client-consultation) para discutir estrategias personalizadas para tu hijo.
+- **Consultas gratuitas** : Programa una [consulta gratuita](../../client-consultation) para discutir estrategias personalizadas para tu hijo.
 
-- Terapia en el hogar : Disponible en Tucson para brindar apoyo dentro del entorno natural de su hijo.
+-   **Terapia en el hogar**: Disponible en Tucson para brindar apoyo dentro del entorno natural de su hijo.
 
-- Próximamente, Gifted Shop de AIA : Pronto, podrá acceder a una variedad de herramientas de apoyo visual, incluyendo tarjetas de Primero/Después y colecciones de PECS, a través de nuestra tienda en línea. Manténgase atento a las actualizaciones.
+- **Próximamente, Gifted Shop de AIA** : Pronto, podrá acceder a una variedad de herramientas de apoyo visual, incluyendo tarjetas de Primero/Después y colecciones de PECS, a través de nuestra tienda en línea. Manténgase atento a las actualizaciones.

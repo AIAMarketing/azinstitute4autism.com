@@ -29,7 +29,7 @@ It is important to understand our children while equipping them with the skills 
 
 - Provide them with visual support to clarify expectations such as schedules and decrease verbal interactions during challenging times.
 
-Applied Behavior Analysis is “ the process of systematically applying interventions based upon the principles of learning theory to improve socially significant behaviors to a meaningful degree, and to demonstrate that the interventions employed are responsible for the improvement in behavior ”- 1968 Baer, Wolf, & Risley.
+Applied Behavior Analysis is “*the process of systematically applying interventions based upon the principles of learning theory to improve socially significant behaviors to a meaningful degree, and to demonstrate that the interventions employed are responsible for the improvement in behavior*”- 1968 Baer, Wolf, & Risley.
 
 It is okay for our children to make errors, however, as caregivers and parents, we should create learning opportunities for our children, give them the emotional support they need and model proper responses.
 

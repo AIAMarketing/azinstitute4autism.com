@@ -13,7 +13,9 @@ tags: []
 draft: false
 ---
 
-## Reflections from My Journey with Arizona Institute for Autism As I look back on my journey with AIA, my heart is overflowing with gratitude, for our learners, their families, and the remarkable team who pour their hearts into every session, every plan, and every breakthrough moment and continue to bring our mission to life every single day.
+## **Reflections from My Journey with Arizona Institute for Autism**
+
+As I look back on my journey with AIA, my heart is overflowing with gratitude, for our learners, their families, and the remarkable team who pour their hearts into every session, every plan, and every breakthrough moment and continue to bring our mission to life every single day.
 
 When I began this journey, my vision was to create more than a clinic. I wanted to build a space where every child is seen, understood, and valued for exactly who they are, a place where learning, compassion, and understanding come together to change lives.
 
@@ -21,17 +23,17 @@ What I didn't realize at the time was just how profoundly our learners would sha
 
 Each child who walks through our doors has taught me something far greater than any textbook ever could:
 
-- Patience : real growth takes time, and every small victory deserves to be celebrated.
+-   **Patience**: real growth takes time, and every small victory deserves to be celebrated.
 
-- Perspective : through their eyes, I've learned to slow down and appreciate the world in new, beautiful ways.
+-   **Perspective**: through their eyes, I've learned to slow down and appreciate the world in new, beautiful ways.
 
-- Compassion : understanding others begins with genuine listening, not judgment.
+-   **Compassion**: understanding others begins with genuine listening, not judgment.
 
-- Love : unconditional, pure, and freely given, the kind that fills a room without words.
+-   **Love**: unconditional, pure, and freely given, the kind that fills a room without words.
 
 There is a deep, quiet joy in this work. Every day at AIA brings me a soothing internal satisfaction that words can't fully capture or describe.
 
-- It's the joy of watching a learner master their first mand (" I want more bubbles! ") after weeks of work.
+- It's the joy of watching a learner master their first mand ("*I want more bubbles!*") after weeks of work.
 
 - It's hearing the once-silent room fill with spontaneous laughter during social play.
 

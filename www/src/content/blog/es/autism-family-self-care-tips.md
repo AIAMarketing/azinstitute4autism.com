@@ -21,19 +21,19 @@ Una cosa que he observado, una y otra vez, es la importancia del autocuidado, no
 
 Criar a un niño con autismo conlleva alegrías y desafíos únicos. Desde navegar sesiones de terapia hasta gestionar rutinas diarias, es fácil poner tus necesidades en último lugar. Sin embargo, cuando hay dedicación constante y se descuida el autocuidado, puede llevar al agotamiento, el estrés y la fatiga, lo que en última instancia puede afectar su capacidad para brindar el nivel de atención que su hijo necesita.
 
-### Maneras sencillas de practicar el autocuidado
+### *Maneras sencillas de practicar el autocuidado*
 
 El [autocuidado](https://www.autismparentingmagazine.com/ways-reducing-stress-gain-clarity/) se trata de encontrar pequeños momentos en tu día para refrescarte y concentrarte en tu salud mental, emocional y física. Aquí hay algunas sugerencias que pueden ayudar:
 
-- Prioriza los pequeños descansos: Incluso los descansos cortos a lo largo del día pueden marcar la diferencia. Ya sea sentarse en una habitación tranquila durante cinco minutos o salir a tomar aire fresco, tomarse un tiempo para hacer una pausa ayuda a despejar la mente y restablecer la energía. Incluso unos pocos minutos de atención plena cada día pueden marcar una diferencia significativa en cómo manejas las exigencias de la crianza.
+- ***Prioriza los pequeños descansos:*** Incluso los descansos cortos a lo largo del día pueden marcar la diferencia. Ya sea sentarse en una habitación tranquila durante cinco minutos o salir a tomar aire fresco, tomarse un tiempo para hacer una pausa ayuda a despejar la mente y restablecer la energía. Incluso unos pocos minutos de atención plena cada día pueden marcar una diferencia significativa en cómo manejas las exigencias de la crianza.
 
-- Construye tu sistema de apoyo: Rodéate de amigos, familiares o grupos de apoyo que comprendan tu viaje. Hablar con otros padres de niños con autismo puede brindar consuelo y tranquilidad, y recordarte que no estás solo. Compartir experiencias y consejos puede aligerar la carga emocional.
+- ***Construye tu sistema de apoyo:*** Rodéate de amigos, familiares o grupos de apoyo que comprendan tu viaje. Hablar con otros padres de niños con autismo puede brindar consuelo y tranquilidad, y recordarte que no estás solo. Compartir experiencias y consejos puede aligerar la carga emocional.
 
-- Pide ayuda cuando la necesites: No dudes en pedir ayuda. Ya sea coordinando con terapeutas, utilizando [cuidados de relevo](https://www.helpguide.org/family/caregiving/respite-care) o pidiendo ayuda a familiares, confiar en tu red te permite tener momentos para ti sin sentirte culpable. Tomar un descanso es necesario para mantener tu propia salud.
+- ***Pide ayuda cuando la necesites:*** No dudes en pedir ayuda. Ya sea coordinando con terapeutas, utilizando [cuidados de relevo](https://www.helpguide.org/family/caregiving/respite-care) o pidiendo ayuda a familiares, confiar en tu red te permite tener momentos para ti sin sentirte culpable. Tomar un descanso es necesario para mantener tu propia salud.
 
-- Haz algo que te guste: Participa en una actividad que te traiga alegría o relajación. Ya sea leer, jardinería o hacer ejercicio, cultivar tus propios pasatiempos te dará un respiro mental del cuidado y te recordará que tu felicidad importa.
+- ***Haz algo que te guste:*** Participa en una actividad que te traiga alegría o relajación. Ya sea leer, jardinería o hacer ejercicio, cultivar tus propios pasatiempos te dará un respiro mental del cuidado y te recordará que tu felicidad importa.
 
-- Celebra las pequeñas victorias: Tómate tiempo para reconocer las pequeñas victorias, ya sea una nueva habilidad que tu hijo dominó o un momento familiar tranquilo. Celebrar estos éxitos, por pequeños que sean, ayuda a generar positividad y te motiva para el futuro.
+- ***Celebra las pequeñas victorias:*** Tómate tiempo para reconocer las pequeñas victorias, ya sea una nueva habilidad que tu hijo dominó o un momento familiar tranquilo. Celebrar estos éxitos, por pequeños que sean, ayuda a generar positividad y te motiva para el futuro.
 
 ## Recuerda: Tú también mereces cuidado
 

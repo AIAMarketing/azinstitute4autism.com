@@ -21,19 +21,19 @@ One thing I’ve observed, time and again, is the importance of self-care — no
 
 Parenting a child with autism comes with unique joys and challenges. From navigating therapy sessions to managing daily routines, it’s easy to put your needs last. However, when constant dedication and neglecting self-care, it can lead to burnout, stress, and fatigue, which can ultimately affect your ability to provide the level of care your child needs.
 
-### Simple Ways to Practice Self-Care
+### *Simple Ways to Practice Self-Care*
 
 [Self-care](https://www.autismparentingmagazine.com/ways-reducing-stress-gain-clarity/) is about finding small moments in your day to refresh and focus on your mental, emotional, and physical health. Here are a few suggestions that may help:
 
-- Prioritize Small Breaks : Even short breaks throughout the day can make a difference. Whether it’s sitting in a quiet room for five minutes or stepping outside for fresh air, taking time to pause helps clear your mind and reset your energy. Even a few minutes of mindfulness each day can make a significant difference in how you manage the demands of parenting.
+- ***Prioritize Small Breaks*** : Even short breaks throughout the day can make a difference. Whether it’s sitting in a quiet room for five minutes or stepping outside for fresh air, taking time to pause helps clear your mind and reset your energy. Even a few minutes of mindfulness each day can make a significant difference in how you manage the demands of parenting.
 
-- Build Your Support System: Surround yourself with friends, family, or support groups who understand your journey. Talking with other parents of children with autism can provide comfort and reassurance, and remind you that you are not alone. Sharing experiences and tips can lighten the emotional load.
+- ***Build Your Support System:*** Surround yourself with friends, family, or support groups who understand your journey. Talking with other parents of children with autism can provide comfort and reassurance, and remind you that you are not alone. Sharing experiences and tips can lighten the emotional load.
 
-- Ask for Help When You Need It: Don’t hesitate to reach out for support. Whether it’s coordinating with therapists, using [respite care](https://www.helpguide.org/family/caregiving/respite-care), or asking family members for help, relying on your network allows you to have moments to yourself without feeling guilty. Taking a break is necessary to maintain your own health.
+- ***Ask for Help When You Need It:*** Don’t hesitate to reach out for support. Whether it’s coordinating with therapists, using [respite care](https://www.helpguide.org/family/caregiving/respite-care), or asking family members for help, relying on your network allows you to have moments to yourself without feeling guilty. Taking a break is necessary to maintain your own health.
 
-- Do Something You Love: Engage in an activity that brings you joy or relaxation. Whether it’s reading, gardening, or exercising, nurturing your own hobbies will give you a mental break from caregiving and remind you that your happiness matters.
+- ***Do Something You Love:*** Engage in an activity that brings you joy or relaxation. Whether it’s reading, gardening, or exercising, nurturing your own hobbies will give you a mental break from caregiving and remind you that your happiness matters.
 
-- Celebrate Small Wins: Take time to acknowledge the little victories, whether it’s a new skill your child mastered or a peaceful family moment. Celebrating these successes, however small, helps build positivity and motivates you for the future.
+- ***Celebrate Small Wins:*** Take time to acknowledge the little victories, whether it’s a new skill your child mastered or a peaceful family moment. Celebrating these successes, however small, helps build positivity and motivates you for the future.
 
 ## Remember: You Deserve Care, Too
 

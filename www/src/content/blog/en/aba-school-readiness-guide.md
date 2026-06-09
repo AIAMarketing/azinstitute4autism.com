@@ -13,11 +13,11 @@ tags: []
 draft: false
 ---
 
-For families with children with autism, navigating back to school period can be particularly challenging, given the transitions and changes in routine. However, utilizing Antecedent and Consequence Interventions can provide significant support in making this transition smoother and more successful for your child.
+For families with children with autism, navigating back to school period can be particularly challenging, given the transitions and changes in routine. However, utilizing **Antecedent and Consequence Interventions** can provide significant support in making this transition smoother and more successful for your child.
 
 ## What are Antecedent Interventions?
 
-[Antecedent interventions](https://specialconnections.ku.edu/behavior_plans/positive_behavior_support_interventions/teacher_tools/antecedent_interventions) are strategies that modify the environment before a behavior occurs, with the intention of preventing [maladaptive](https://www.merriam-webster.com/dictionary/maladaptive) behavior and encouraging positive behavior. Essentially, these interventions aim to set the stage for success by addressing triggers before they happen.
+[Antecedent interventions](https://specialconnections.ku.edu/behavior_plans/positive_behavior_support_interventions/teacher_tools/antecedent_interventions) are strategies that modify the environment before a behavior occurs, with the intention of preventing [maladaptive](https://www.merriam-webster.com/dictionary/maladaptive) behavior and encouraging positive behavior. Essentially, these interventions aim to set the stage for success by addressing triggers *before* they happen.
 
 ### Key Antecedent Intervention Techniques
 

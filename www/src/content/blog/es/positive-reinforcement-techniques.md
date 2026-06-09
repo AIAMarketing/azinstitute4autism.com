@@ -35,15 +35,15 @@ El refuerzo positivo ocurre cuando una consecuencia deseable sigue inmediatament
 
 ## Por qué el refuerzo positivo es importante en el ABA
 
-- Construye motivación y confianza. Los niños aprenden más rápido cuando saben que serán recompensados por su esfuerzo.
+-   **Construye motivación y confianza.** Los niños aprenden más rápido cuando saben que serán recompensados por su esfuerzo.
 
-- Fortalece las relaciones. Las interacciones positivas fomentan la confianza entre usted y su hijo.
+-   **Fortalece las relaciones.** Las interacciones positivas fomentan la confianza entre usted y su hijo.
 
-- Reduce los comportamientos desafiantes. A medida que aumentan los comportamientos deseados, los comportamientos indeseables disminuyen naturalmente.
+-   **Reduce los comportamientos desafiantes.** A medida que aumentan los comportamientos deseados, los comportamientos indeseables disminuyen naturalmente.
 
-- Mejora la regulación emocional. Las recompensas ayudan a los niños a asociar sentimientos positivos con el autocontrol.
+-   **Mejora la regulación emocional.** Las recompensas ayudan a los niños a asociar sentimientos positivos con el autocontrol.
 
-⚙️ Tip: Reinforcement is more effective when it feels genuine. Use specific praise like "I love how you put your shoes away!" instead of a generic "Good job!"
+⚙️ **Tip:** Reinforcement is more effective when it feels genuine. Use specific praise like "I love how you put your shoes away!" instead of a generic "Good job!"
 
 ## Beneficios clave para niños con autismo
 
@@ -86,9 +86,9 @@ El refuerzo positivo ocurre cuando una consecuencia deseable sigue inmediatament
 
 ### 1. Definir el comportamiento objetivo claramente
 
-- Vago: "Sé bueno."
+-   **Vago:** "Sé bueno."
 
-- Claro: "Guarda tus juguetes en el cubo cuando termines de jugar."
+-   **Claro:** "Guarda tus juguetes en el cubo cuando termines de jugar."
 
 ### 2. Elige el reforzador adecuado
 
@@ -100,7 +100,7 @@ Observe lo que su hijo realmente valora:
 
 - Un bocadillo especial o una actividad divertida
 
-⚙️ Consejo profesional: Rote a través de un menú de 3 a 5 reforzadores para prevenir el aburrimiento y la saciedad.
+⚙️ **Consejo profesional:** Rote a través de un menú de 3 a 5 reforzadores para prevenir el aburrimiento y la saciedad.
 
 ### 3. Entrega refuerzo inmediatamente
 
@@ -110,9 +110,9 @@ Observe lo que su hijo realmente valora:
 
 ### 4. Usa apoyos visuales
 
-- Tablas de comportamiento: Haz un seguimiento del progreso con pegatinas.
+-   **Tablas de comportamiento:** Haz un seguimiento del progreso con pegatinas.
 
-- Tableros Primero/Luego: "Primero termina tu tarea, luego juega afuera."
+-   **Tableros Primero/Luego:** "Primero termina tu tarea, luego juega afuera."
 
 **Tabla de ejemplo:**
 
@@ -215,23 +215,23 @@ El refuerzo es planificado , consistente y sigue los comportamientos deseados. E
 
 Si no estás viendo progreso:
 
-- Verificar la comprensión: ¿Entiende tu hijo lo que le estás preguntando?
+- **Verificar la comprensión:** ¿Entiende tu hijo lo que le estás preguntando?
 
-- Ajustar los reforzadores: Prueba algo más motivador.
+- **Ajustar los reforzadores:** Prueba algo más motivador.
 
-- Moldee conductas: Reforzar las aproximaciones más pequeñas hacia el objetivo.
+- **Moldee conductas:** Reforzar las aproximaciones más pequeñas hacia el objetivo.
 
-- Revisar el entorno: Reduce las distracciones, la fatiga o las señales poco claras.
+- **Revisar el entorno:** Reduce las distracciones, la fatiga o las señales poco claras.
 
-- Busca Apoyo Profesional: Consulte a su terapeuta de AIA para obtener estrategias personalizadas.
+- **Busca Apoyo Profesional:** Consulte a su terapeuta de AIA para obtener estrategias personalizadas.
 
 ## Estrategias Avanzadas: Programas y Desvanecimiento
 
-- Programa de razón fija (FR): Recompensa después de un número determinado de respuestas (por ejemplo, cada 3ª vez).
+-   **Programa de razón fija (FR):** Recompensa después de un número determinado de respuestas (por ejemplo, cada 3ª vez).
 
-- Programa de razón variable (VR): Recompensa de manera impredecible (por ejemplo, al estilo de una máquina tragamonedas) para mantener el comportamiento.
+-   **Programa de razón variable (VR):** Recompensa de manera impredecible (por ejemplo, al estilo de una máquina tragamonedas) para mantener el comportamiento.
 
-- Reforzadores desvanecidos: Aumente gradualmente el esfuerzo requerido o reduzca la magnitud para fomentar la independencia.
+-   **Reforzadores desvanecidos:** Aumente gradualmente el esfuerzo requerido o reduzca la magnitud para fomentar la independencia.
 
 **Gráfico rápido:**
 

@@ -31,19 +31,19 @@ Whether you're navigating daily routines, teaching new skills, or simply looking
 
 Positive reinforcement occurs when a desirable consequence immediately follows a behavior, increasing the likelihood that the behavior will occur again. In ABA, this might mean giving praise, a preferred toy, extra screen time, or a special snack right after your child completes a task.
 
-⚙️ Did you know? ABA research shows that immediate reinforcement strengthens the behavior–reward connection more than delayed rewards.
+⚙️ **Did you know?** ABA research shows that immediate reinforcement strengthens the behavior–reward connection more than delayed rewards.
 
 ## Why Positive Reinforcement Matters in ABA
 
-- Builds Motivation & Confidence. Children learn faster when they know they'll be rewarded for effort.
+-   **Builds Motivation & Confidence.** Children learn faster when they know they'll be rewarded for effort.
 
-- Strengthens Relationships. Positive interactions foster trust between you and your child.
+-   **Strengthens Relationships.** Positive interactions foster trust between you and your child.
 
-- Reduces Challenging Behaviors. As desired behaviors increase, undesirable behaviors naturally decrease.
+-   **Reduces Challenging Behaviors.** As desired behaviors increase, undesirable behaviors naturally decrease.
 
-- Enhances Emotional Regulation. Rewards help children associate positive feelings with self‑control.
+-   **Enhances Emotional Regulation.** Rewards help children associate positive feelings with self‑control.
 
-⚙️ Tip: Reinforcement is more effective when it feels genuine. Use specific praise like "I love how you put your shoes away!" instead of a generic "Good job!"
+⚙️ **Tip:** Reinforcement is more effective when it feels genuine. Use specific praise like "I love how you put your shoes away!" instead of a generic "Good job!"
 
 ## Key Benefits for Children with Autism
 
@@ -86,9 +86,9 @@ Positive reinforcement occurs when a desirable consequence immediately follows a
 
 ### 1. Define the Target Behavior Clearly
 
-- Vague: "Be good."
+-   **Vague:** "Be good."
 
-- Clear: "Put your toys in the bin when you're done playing."
+-   **Clear:** "Put your toys in the bin when you're done playing."
 
 ### 2. Choose the Right Reinforcer
 
@@ -100,7 +100,7 @@ Observe what your child truly values:
 
 - A special snack or a fun activity
 
-⚙️ Pro Tip: Rotate through a menu of 3–5 reinforcers to prevent boredom and satiation.
+⚙️ **Pro Tip:** Rotate through a menu of 3–5 reinforcers to prevent boredom and satiation.
 
 ### 3. Deliver Reinforcement Immediately
 
@@ -110,9 +110,9 @@ Observe what your child truly values:
 
 ### 4. Use Visual Supports
 
-- Behavior Charts: Track progress with stickers.
+-   **Behavior Charts:** Track progress with stickers.
 
-- First/Then Boards: "First finish your homework, then play outside."
+-   **First/Then Boards:** "First finish your homework, then play outside."
 
 **Example Table:**
 
@@ -186,7 +186,7 @@ Observe what your child truly values:
 
 ## Reinforcement vs. Bribery
 
-Reinforcement is planned , consistent , and follows desired behaviors. Bribery is reactive , offered to stop misbehavior.
+Reinforcement is **planned**, **consistent**, and follows desired behaviors. Bribery is **reactive**, offered to stop misbehavior.
 
 
 
@@ -215,23 +215,23 @@ Reinforcement is planned , consistent , and follows desired behaviors. Bribery i
 
 If you're not seeing progress:
 
-- Check Comprehension: Does your child understand what you're asking?
+- **Check Comprehension:** Does your child understand what you're asking?
 
-- Adjust Reinforcers: Try something more motivating.
+- **Adjust Reinforcers:** Try something more motivating.
 
-- Shape Behaviors: Reinforce smaller approximations toward the goal.
+- **Shape Behaviors:** Reinforce smaller approximations toward the goal.
 
-- Review the Environment: Reduce distractions, fatigue, or unclear cues.
+- **Review the Environment:** Reduce distractions, fatigue, or unclear cues.
 
-- Seek Professional Support: Consult your AIA therapist for tailored strategies.
+- **Seek Professional Support:** Consult your AIA therapist for tailored strategies.
 
 ## Advanced Strategies: Schedules & Fading
 
-- Fixed‑Ratio Schedule (FR): Reward after a set number of responses (e.g., every 3rd time).
+-   **Fixed‑Ratio Schedule (FR):** Reward after a set number of responses (e.g., every 3rd time).
 
-- Variable‑Ratio Schedule (VR): Reward unpredictably (e.g., slot‑machine style) to maintain behavior.
+-   **Variable‑Ratio Schedule (VR):** Reward unpredictably (e.g., slot‑machine style) to maintain behavior.
 
-- Fading Reinforcers: Gradually increase the effort required or reduce magnitude to build independence.
+-   **Fading Reinforcers:** Gradually increase the effort required or reduce magnitude to build independence.
 
 **Quick Chart:**
 

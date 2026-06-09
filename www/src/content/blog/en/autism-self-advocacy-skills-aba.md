@@ -35,38 +35,38 @@ Applying this skill to children with autism, self-advocacy might look like:
 
 Teaching self-advocacy empowers children to:
 
-- Build Independence : Reducing reliance on others to interpret their needs.
+- **Build Independence** : Reducing reliance on others to interpret their needs.
 
-- Enhance Communication Skills : Encouraging clear, and intentional communication.
+- **Enhance Communication Skills** : Encouraging clear, and intentional communication.
 
-- Boost Self-Esteem : Fostering confidence in their ability to express themselves.
+- **Boost Self-Esteem** : Fostering confidence in their ability to express themselves.
 
-- Promote Safety : Helping children articulate when they feel unsafe or need help.
+- **Promote Safety** : Helping children articulate when they feel unsafe or need help.
 
 ## How ABA Teaches Self-Advocacy
 
 ABA therapy provides a structured and individualized approach to teaching self-advocacy skills. Below are some key strategies used by ABA professionals:
 
-- Functional Communication Training (FCT) : Teaches children to use communication to express their needs instead of engaging in challenging behaviors. Example: Instead of having a tantrum when overwhelmed, a child learns to say, “I need a break” or use a break card.
+- **Functional Communication Training (FCT)** : Teaches children to use communication to express their needs instead of engaging in challenging behaviors. Example: Instead of having a tantrum when overwhelmed, a child learns to say, “I need a break” or use a break card.
 
-- Choice-Making Opportunities : Empowers children to make decisions in their daily routines. Example: Offering choices like, “Do you want to work with blocks or play with puzzles?”
+- **Choice-Making Opportunities** : Empowers children to make decisions in their daily routines. Example: Offering choices like, “Do you want to work with blocks or play with puzzles?”
 
-- Teaching Requesting (Manding) : Focuses on teaching children to ask for what they need or want. For example, using phrases like, “I need help” or pressing a button on an augmentative communication device.
+- **Teaching Requesting (Manding)** : Focuses on teaching children to ask for what they need or want. For example, using phrases like, “I need help” or pressing a button on an augmentative communication device.
 
-- Role-Playing Scenarios : Prepares children for real-life situations by practicing self-advocacy skills in a controlled setting.
+- **Role-Playing Scenarios** : Prepares children for real-life situations by practicing self-advocacy skills in a controlled setting.
 
-- Reinforcing Self-Advocacy Attempts : Encourages the behavior by rewarding appropriate attempts at self-expression.
+- **Reinforcing Self-Advocacy Attempts** : Encourages the behavior by rewarding appropriate attempts at self-expression.
 
 Parents play a critical role in reinforcing self-advocacy skills learned in ABA therapy.
 
 ## Tips for Caregivers
 
-- Encourage Communication : Prompt your child to express their needs instead of anticipating them.
+-   **Encourage Communication**: Prompt your child to express their needs instead of anticipating them.
 
-- Celebrate Success : Acknowledge and reward even small attempts at self-advocacy.
+-   **Celebrate Success**: Acknowledge and reward even small attempts at self-advocacy.
 
-- Be Patient : Learning self-advocacy takes time and practice.
+-   **Be Patient**: Learning self-advocacy takes time and practice.
 
-- Model Advocacy : Demonstrate how you advocate for your own needs, providing a real-world example.
+-   **Model Advocacy**: Demonstrate how you advocate for your own needs, providing a real-world example.
 
 Teaching self-advocacy through ABA empowers children to take charge of their needs, preferences, and choices. By fostering independence and enhancing communication skills, ABA helps children navigate their environments with confidence and dignity. Whether in therapy sessions or at home, self-advocacy is a gift that equips children for lifelong success.

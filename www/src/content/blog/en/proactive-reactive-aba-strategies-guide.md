@@ -21,33 +21,33 @@ Proactive and Reactive strategies are essential tools in Applied Behavior Analys
 
 By focusing on prevention and skill acquisition, proactive strategies empower individuals to succeed and minimize the likelihood of problematic behaviors. Here are some common proactive strategies used in ABA:
 
-- Environmental Modifications: Adjusting the physical environment to reduce distractions or potential triggers for challenging behavior.
+- **Environmental Modifications:** Adjusting the physical environment to reduce distractions or potential triggers for challenging behavior.
 
 - Establishing a consistent and predictable routine to help individuals understand what to expect, thereby reducing uncertainty.
 
-- Antecedent Interventions: Modifying difficult or challenging tasks to make them more manageable. This may involve breaking tasks into smaller steps, providing additional support, or adjusting the difficulty level to match the individual’s abilities.
+- **Antecedent Interventions:** Modifying difficult or challenging tasks to make them more manageable. This may involve breaking tasks into smaller steps, providing additional support, or adjusting the difficulty level to match the individual’s abilities.
 
 - Offering choices gives individuals a sense of control, which can reduce resistance. For example, allowing a child to choose between two tasks or select the order in which activities are completed can empower them and reduce challenging behaviors.
 
-- Teaching Replacement Behaviors: Educating individuals to implement alternative, more appropriate behaviors helps replace challenging ones.
+- **Teaching Replacement Behaviors:** Educating individuals to implement alternative, more appropriate behaviors helps replace challenging ones.
 
 - Teaching functional communication allows individuals to express their needs and desires appropriately. For example, if a child is screaming for attention, they can be taught to use words, [PECS system](https://www.iidc.indiana.edu/irca/articles/what-is-the-picture-exchange-communication-system-or-pecs), or a communication device to ask for help or communicate their needs.
 
-- Reinforcing Replacement Behaviors: Reinforcement is key to maintaining new behaviors. By consistently providing positive reinforcement, the likelihood of the new behavior replacing the old one increases over time.
+- **Reinforcing Replacement Behaviors:** Reinforcement is key to maintaining new behaviors. By consistently providing positive reinforcement, the likelihood of the new behavior replacing the old one increases over time.
 
-- Identifying and Addressing Triggers: Identifying triggers that influence behavior and addressing these factors can prevent problematic behaviors from occurring.
+- **Identifying and Addressing Triggers:** Identifying triggers that influence behavior and addressing these factors can prevent problematic behaviors from occurring.
 
-- Setting Clear Expectations: Providing visual support to reinforce expected behaviors and provide structure. Tools such as visual schedules, timers, and clear transitions between activities can be very effective.
+- **Setting Clear Expectations:** Providing visual support to reinforce expected behaviors and provide structure. Tools such as visual schedules, timers, and clear transitions between activities can be very effective.
 
-- Regular Positive Reinforcement: Consistently providing positive reinforcement for desirable behaviors encourages their continuation and reduces the likelihood of problem behaviors.
+- **Regular Positive Reinforcement:** Consistently providing positive reinforcement for desirable behaviors encourages their continuation and reduces the likelihood of problem behaviors.
 
 ## What Are Reactive Strategies?
 
 [Reactive strategies](https://www.ncbi.nlm.nih.gov/books/NBK355364/) are employed when a problem behavior occurs. These strategies aim to address and modify challenging behaviors effectively and support the individual during those moments. Some common reactive strategies include:
 
-- Crisis Management: Applying de-escalation techniques to calm individuals and manage aggressive or disruptive behavior in the moment.
+- **Crisis Management:** Applying de-escalation techniques to calm individuals and manage aggressive or disruptive behavior in the moment.
 
-- Behavior Intervention Plans (BIPs): Following tailored BIPs, that are developed by the behavior analyst, which are based on the specific needs, strengths, and challenges of the individual. These plans provide clear guidelines on how to respond to challenging behaviors effectively.
+- **Behavior Intervention Plans (BIPs):** Following tailored BIPs, that are developed by the behavior analyst, which are based on the specific needs, strengths, and challenges of the individual. These plans provide clear guidelines on how to respond to challenging behaviors effectively.
 
 Both [proactive and reactive strategies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7473487/) play crucial roles in ABA therapy. Proactive strategies help create an environment where positive behaviors are encouraged and challenging behaviors are less likely to occur, while reactive strategies provide a framework for addressing behaviors when they do arise.
 
