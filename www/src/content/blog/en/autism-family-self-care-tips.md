@@ -40,25 +40,3 @@ Parenting a child with autism comes with unique joys and challenges. From naviga
 At the [Arizona Institute for Autism](../index), we understand that caring for a child with autism is a journey that requires balance. We believe that the well-being of autism parents is just as important as the therapies we provide to children. You are your child’s greatest advocate and most constant source of support. To continue being that pillar of strength, it’s essential to prioritize your health, happiness, and peace of mind.
 
 We’re here to support, not only your child’s development, but also your journey as a parent during parent consultation sessions. If you ever feel overwhelmed, know that you’re not alone. Lean on your support network, practice self-care, and take it one day at a time.
-
- Previous Post 
-
-###### [Individualized Care Plans in ABA Therapy](individualized-aba-therapy)
-
- Next Post 
-
-###### [Guide to Teaching Self‑Advocacy in ABA](autism-self-advocacy-skills-aba)
-
-### Similar Blog Posts
-
-![proactive reactive aba strategies guide - hero image](/assets/images/hero-proactive-reactive-strategies.webp)
-
-#### [Master Proactive & Reactive ABA Techniques – Schedule a Consultation](proactive-reactive-aba-strategies-guide)
-
-![Benefits of Prompting & Parenting in ABA Therapy - hero image](/assets/images/hero-prompting-parenting-benefits.webp)
-
-#### [Benefits of Prompting & Parenting in ABA Therapy](aba-therapy-prompting-parenting-benefits)
-
-![talking child has trouble socializing - hero](/assets/images/talk-not-social.jpg)
-
-#### [Why My Child Can Talk but Still Struggles Socially](social-pragmatic-communication-autism)

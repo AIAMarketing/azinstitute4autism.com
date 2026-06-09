@@ -1,0 +1,1924 @@
+{
+  "ar/aba-school-readiness-guide": {
+    "previous": {
+      "title": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+      "href": "/ar/library/behavior-management-functions-guide"
+    },
+    "next": {
+      "title": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+      "href": "/ar/library/autism-self-advocacy-skills-aba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-first-then-cards.webp",
+        "alt": "بطاقات",
+        "title": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "href": "/ar/library/first-then-cards-autism-transitions"
+      },
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد",
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "href": "/ar/library/executive-functioning-skills-autism"
+      }
+    ]
+  },
+  "ar/autism-self-advocacy-skills-aba": {
+    "previous": {
+      "title": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+      "href": "/ar/library/aba-school-readiness-guide"
+    },
+    "next": {
+      "title": "مهارات الوظائف التنفيذية والتوحّد",
+      "href": "/ar/library/executive-functioning-skills-autism"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد",
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "href": "/ar/library/executive-functioning-skills-autism"
+      },
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+      },
+      {
+        "image": "/assets/images/hero-first-then-cards.webp",
+        "alt": "بطاقات",
+        "title": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "href": "/ar/library/first-then-cards-autism-transitions"
+      }
+    ]
+  },
+  "ar/behavior-management-functions-guide": {
+    "next": {
+      "title": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+      "href": "/ar/library/aba-school-readiness-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-first-then-cards.webp",
+        "alt": "بطاقات",
+        "title": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "href": "/ar/library/first-then-cards-autism-transitions"
+      },
+      {
+        "image": "/assets/images/hero-back-to-school.webp",
+        "alt": "نصائح حول المقدمات والنتائج التي يحتاجها كل والد/ة مصاب/ة بالتوحد لتجهيز أطفالهم للمدرسة - صورة رئيسية",
+        "title": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+        "href": "/ar/library/aba-school-readiness-guide"
+      },
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+      }
+    ]
+  },
+  "ar/executive-functioning-skills-autism": {
+    "previous": {
+      "title": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+      "href": "/ar/library/autism-self-advocacy-skills-aba"
+    },
+    "next": {
+      "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+      "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+      },
+      {
+        "image": "/assets/images/hero-back-to-school.webp",
+        "alt": "نصائح حول المقدمات والنتائج التي يحتاجها كل والد/ة مصاب/ة بالتوحد لتجهيز أطفالهم للمدرسة - صورة رئيسية",
+        "title": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+        "href": "/ar/library/aba-school-readiness-guide"
+      },
+      {
+        "image": "/assets/images/hero-first-then-cards.webp",
+        "alt": "بطاقات",
+        "title": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "href": "/ar/library/first-then-cards-autism-transitions"
+      }
+    ]
+  },
+  "ar/first-then-cards-autism-transitions": {
+    "previous": {
+      "title": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+      "href": "/ar/library/positive-reinforcement-techniques"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-behavior-functions-management.webp",
+        "alt": "أتقن إدارة السلوك: اكتشف الوظائف الأربع للسلوك – الصورة الرئيسية",
+        "title": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "href": "/ar/library/behavior-management-functions-guide"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد",
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "href": "/ar/library/executive-functioning-skills-autism"
+      },
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+      }
+    ]
+  },
+  "ar/positive-reinforcement-techniques": {
+    "previous": {
+      "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+      "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+    },
+    "next": {
+      "title": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+      "href": "/ar/library/first-then-cards-autism-transitions"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "href": "/ar/library/proactive-reactive-aba-strategies-guide"
+      },
+      {
+        "image": "/assets/images/hero-back-to-school.webp",
+        "alt": "نصائح حول المقدمات والنتائج التي يحتاجها كل والد/ة مصاب/ة بالتوحد لتجهيز أطفالهم للمدرسة - صورة رئيسية",
+        "title": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+        "href": "/ar/library/aba-school-readiness-guide"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد",
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "href": "/ar/library/executive-functioning-skills-autism"
+      }
+    ]
+  },
+  "ar/proactive-reactive-aba-strategies-guide": {
+    "previous": {
+      "title": "مهارات الوظائف التنفيذية والتوحّد",
+      "href": "/ar/library/executive-functioning-skills-autism"
+    },
+    "next": {
+      "title": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+      "href": "/ar/library/positive-reinforcement-techniques"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد",
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "href": "/ar/library/executive-functioning-skills-autism"
+      },
+      {
+        "image": "/assets/images/hero-first-then-cards.webp",
+        "alt": "بطاقات",
+        "title": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "href": "/ar/library/first-then-cards-autism-transitions"
+      },
+      {
+        "image": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "مهارات الدفاع عن النفس لدى الأطفال ذوي التوحّد عبر تحليل السلوك التطبيقي (ABA) – الصورة الرئيسية",
+        "title": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "href": "/ar/library/autism-self-advocacy-skills-aba"
+      }
+    ]
+  },
+  "es/aba-school-readiness-arizona": {
+    "next": {
+      "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+      "href": "/es/library/emotional-regulation-aba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      },
+      {
+        "image": "/assets/images/talk-not-social.jpg",
+        "alt": "niño que habla tiene problemas para socializar - imagen principal",
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "href": "/es/library/social-pragmatic-communication-autism"
+      },
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      }
+    ]
+  },
+  "es/autism-evaluation-diagnosis-arizona-parent-guide": {
+    "previous": {
+      "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+      "href": "/es/library/social-pragmatic-communication-autism"
+    },
+    "next": {
+      "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+      "href": "/es/library/autism-family-self-care-tips"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "href": "/es/library/autism-family-self-care-tips"
+      },
+      {
+        "image": "/assets/images/talk-not-social.jpg",
+        "alt": "niño que habla tiene problemas para socializar - imagen principal",
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "href": "/es/library/social-pragmatic-communication-autism"
+      }
+    ]
+  },
+  "es/autism-evaluation-what-to-expect": {
+    "previous": {
+      "title": "Guía de Autismo para Padres y Cuidadores",
+      "href": "/es/library/parents-guide-to-autism-and-aba"
+    },
+    "next": {
+      "title": "Mejorando la generalización para un impacto más amplio en el autismo",
+      "href": "/es/library/enhancing-generalization-skills"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      },
+      {
+        "image": "/assets/images/child-shopping-cart-tired-cranky.jpg",
+        "alt": "Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal",
+        "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "href": "/es/library/emotional-regulation-aba"
+      },
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Guía de Autismo para Padres y Cuidadores",
+        "href": "/es/library/parents-guide-to-autism-and-aba"
+      }
+    ]
+  },
+  "es/autism-family-self-care-tips": {
+    "previous": {
+      "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+      "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+    },
+    "next": {
+      "title": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+      "href": "/es/library/first-then-cards-autism-transitions"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      },
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Guía de Autismo para Padres y Cuidadores",
+        "href": "/es/library/parents-guide-to-autism-and-aba"
+      }
+    ]
+  },
+  "es/autism-self-advocacy-skills-aba": {
+    "previous": {
+      "title": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+      "href": "/es/library/first-then-cards-autism-transitions"
+    },
+    "next": {
+      "title": "Habilidades de funcionamiento ejecutivo y autismo",
+      "href": "/es/library/executive-functioning-skills-autism"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "href": "/es/library/autism-family-self-care-tips"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "estrategias para el desarrollo de habilidades de funcionamiento ejecutivo en niños autistas - imagen destacada",
+        "title": "Habilidades de funcionamiento ejecutivo y autismo",
+        "href": "/es/library/executive-functioning-skills-autism"
+      },
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      }
+    ]
+  },
+  "es/emotional-regulation-aba": {
+    "previous": {
+      "title": "Ya se inscriben alumnos: Academia Preparatoria AIA para niños de 2 a 6 años",
+      "href": "/es/library/aba-school-readiness-arizona"
+    },
+    "next": {
+      "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+      "href": "/es/library/social-pragmatic-communication-autism"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/talk-not-social.jpg",
+        "alt": "niño que habla tiene problemas para socializar - imagen principal",
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "href": "/es/library/social-pragmatic-communication-autism"
+      },
+      {
+        "image": "/assets/images/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "href": "/es/library/autism-family-self-care-tips"
+      }
+    ]
+  },
+  "es/enhancing-generalization-skills": {
+    "previous": {
+      "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+      "href": "/es/library/autism-evaluation-what-to-expect"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      },
+      {
+        "image": "/assets/images/talk-not-social.jpg",
+        "alt": "niño que habla tiene problemas para socializar - imagen principal",
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "href": "/es/library/social-pragmatic-communication-autism"
+      }
+    ]
+  },
+  "es/executive-functioning-skills-autism": {
+    "previous": {
+      "title": "Guía para enseñar la autodefensa en el ABA",
+      "href": "/es/library/autism-self-advocacy-skills-aba"
+    },
+    "next": {
+      "title": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+      "href": "/es/library/positive-reinforcement-techniques"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-positive-reinforcement-techniques.webp",
+        "alt": "terapia aba refuerzo positivo",
+        "title": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "href": "/es/library/positive-reinforcement-techniques"
+      },
+      {
+        "image": "/assets/images/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "href": "/es/library/autism-family-self-care-tips"
+      },
+      {
+        "image": "/assets/images/child-shopping-cart-tired-cranky.jpg",
+        "alt": "Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal",
+        "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "href": "/es/library/emotional-regulation-aba"
+      }
+    ]
+  },
+  "es/first-then-cards-autism-transitions": {
+    "previous": {
+      "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+      "href": "/es/library/autism-family-self-care-tips"
+    },
+    "next": {
+      "title": "Guía para enseñar la autodefensa en el ABA",
+      "href": "/es/library/autism-self-advocacy-skills-aba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "href": "/es/library/autism-family-self-care-tips"
+      },
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      }
+    ]
+  },
+  "es/parents-guide-to-autism-and-aba": {
+    "previous": {
+      "title": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+      "href": "/es/library/positive-reinforcement-techniques"
+    },
+    "next": {
+      "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+      "href": "/es/library/autism-evaluation-what-to-expect"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "href": "/es/library/autism-family-self-care-tips"
+      },
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      }
+    ]
+  },
+  "es/positive-reinforcement-techniques": {
+    "previous": {
+      "title": "Habilidades de funcionamiento ejecutivo y autismo",
+      "href": "/es/library/executive-functioning-skills-autism"
+    },
+    "next": {
+      "title": "Guía de Autismo para Padres y Cuidadores",
+      "href": "/es/library/parents-guide-to-autism-and-aba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "href": "/es/library/autism-family-self-care-tips"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "estrategias para el desarrollo de habilidades de funcionamiento ejecutivo en niños autistas - imagen destacada",
+        "title": "Habilidades de funcionamiento ejecutivo y autismo",
+        "href": "/es/library/executive-functioning-skills-autism"
+      },
+      {
+        "image": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "Habilidades de autodefensa para el autismo a través del ABA - imagen destacada",
+        "title": "Guía para enseñar la autodefensa en el ABA",
+        "href": "/es/library/autism-self-advocacy-skills-aba"
+      }
+    ]
+  },
+  "es/social-pragmatic-communication-autism": {
+    "previous": {
+      "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+      "href": "/es/library/emotional-regulation-aba"
+    },
+    "next": {
+      "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+      "href": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "href": "/es/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/child-shopping-cart-tired-cranky.jpg",
+        "alt": "Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal",
+        "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "href": "/es/library/emotional-regulation-aba"
+      },
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "Enseñanza de habilidades académicas, sociales, de comunicación e independencia",
+        "title": "Ya se inscriben alumnos: Academia Preparatoria AIA para niños de 2 a 6 años",
+        "href": "/es/library/aba-school-readiness-arizona"
+      }
+    ]
+  },
+  "en/aac-visual-supports-autism": {
+    "previous": {
+      "title": "Autism Guide for Parents and Caregivers",
+      "href": "/library/parents-guide-to-autism-and-aba"
+    },
+    "next": {
+      "title": "Supporting Friendships and Social Play for Children with Autism",
+      "href": "/library/autism-friendships-social-play-support"
+    },
+    "related": [
+      {
+        "image": "/assets/images/communication-skills-autistic-children-hero_img.png",
+        "alt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+        "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+        "href": "/library/communication-social-skills-autistic-children-guide"
+      },
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Autism Guide for Parents and Caregivers",
+        "href": "/library/parents-guide-to-autism-and-aba"
+      },
+      {
+        "image": "/assets/images/parallel-players-hero.png",
+        "alt": "Three children engaging happily in parallel play on a colorful rug.",
+        "title": "Supporting Friendships and Social Play for Children with Autism",
+        "href": "/library/autism-friendships-social-play-support"
+      }
+    ]
+  },
+  "en/aba-school-readiness-arizona": {
+    "previous": {
+      "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+      "href": "/library/positive-reinforcement-techniques"
+    },
+    "next": {
+      "title": "Autism and Fall Break: How to Keep Routines Calm and Predictable",
+      "href": "/library/autism-fall-break-routine-tips-halloween-thanksgiving"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-november-2022-aia-update_800x.jpg",
+        "alt": "November AIA Update - hero image",
+        "title": "November AIA Update",
+        "href": "/library/november-2022-aia-update"
+      },
+      {
+        "image": "/assets/images/hero-critical-thinking-skills_800x.jpg",
+        "alt": "Critical Thinking Skills for Children with Autism - hero image",
+        "title": "Critical Thinking Skills for Children with Autism",
+        "href": "/library/critical-thinking-skills"
+      },
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "proactive reactive aba strategies guide - hero image",
+        "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "href": "/library/proactive-reactive-aba-strategies-guide"
+      }
+    ]
+  },
+  "en/aba-school-readiness-guide": {
+    "previous": {
+      "title": "Master Behavior Management: Discover the Four Functions of Behavior",
+      "href": "/library/behavior-management-functions-guide"
+    },
+    "next": {
+      "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+      "href": "/library/proactive-reactive-aba-strategies-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "teaching academic, social, communications, and independence skills",
+        "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+        "href": "/library/aba-school-readiness-arizona"
+      },
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatrician performing a toddler",
+        "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "href": "/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      },
+      {
+        "image": "/assets/images/hero-rapport-strategies.webp",
+        "alt": "rapport strategies for effective aba therapy - hero image",
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "href": "/library/autism-therapy-rapport-strategies"
+      }
+    ]
+  },
+  "en/aba-therapy-benefits": {
+    "previous": {
+      "title": "ASD Sensory-Friendly Recipes: Pancakes",
+      "href": "/library/asd-sensory-friendly-recipes-pancakes"
+    },
+    "next": {
+      "title": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+      "href": "/library/meet-rula-diab-bcba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      },
+      {
+        "image": "/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg",
+        "alt": "asd sensory-friendly pancake recipe - hero image",
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "href": "/library/asd-sensory-friendly-recipes-pancakes"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      }
+    ]
+  },
+  "en/aba-therapy-dtt-net-guide": {
+    "previous": {
+      "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+      "href": "/library/sensory-processing"
+    },
+    "next": {
+      "title": "Benefits of Prompting & Parenting in ABA Therapy",
+      "href": "/library/aba-therapy-prompting-parenting-benefits"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-toilet-training-child-autism.webp",
+        "alt": "potty train children with autism using simple aba techniques - hero image",
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "href": "/library/aba-toilet-training-child-autism"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      }
+    ]
+  },
+  "en/aba-therapy-prompting-parenting-benefits": {
+    "previous": {
+      "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+      "href": "/library/aba-therapy-dtt-net-guide"
+    },
+    "next": {
+      "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+      "href": "/library/autism-therapy-rapport-strategies"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-positive-reinforcement-techniques.webp",
+        "alt": "aba therapy positive reinforcement",
+        "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "href": "/library/positive-reinforcement-techniques"
+      },
+      {
+        "image": "/assets/images/hero-play-leisure-skills-children-autism_800x.jpg",
+        "alt": "Play and Leisure Skills for Children with Autism - hero image",
+        "title": "Play and Leisure Skills for Children with Autism",
+        "href": "/library/play-leisure-skills"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      }
+    ]
+  },
+  "en/aba-therapy-summer-routine-tips": {
+    "previous": {
+      "title": "First/Then Cards: Empowering Transitions for Autistic Children",
+      "href": "/library/first-then-cards-autism-transitions"
+    },
+    "next": {
+      "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+      "href": "/library/positive-reinforcement-techniques"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "teaching academic, social, communications, and independence skills",
+        "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+        "href": "/library/aba-school-readiness-arizona"
+      },
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Autism Guide for Parents and Caregivers",
+        "href": "/library/parents-guide-to-autism-and-aba"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "hero image - executive functioning skills strategies for autistic children",
+        "title": "Executive Functioning Skills and Autism",
+        "href": "/library/executive-functioning-skills-autism"
+      }
+    ]
+  },
+  "en/aba-toilet-training-child-autism": {
+    "previous": {
+      "title": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+      "href": "/library/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake"
+    },
+    "next": {
+      "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+      "href": "/library/new-year-2024-autism-holiday-tips"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      },
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      }
+    ]
+  },
+  "en/aia-world-autism-community-day-celebration": {
+    "previous": {
+      "title": "New Year Goals for Our Children with Autism",
+      "href": "/library/new-year-goals-2023"
+    },
+    "next": {
+      "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+      "href": "/library/behavior-modification-techniques-reinforcement-theory"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg",
+        "alt": "asd sensory-friendly pancake recipe - hero image",
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "href": "/library/asd-sensory-friendly-recipes-pancakes"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2023_800x.jpg",
+        "alt": "New Year Goals for Our Children with Autism - hero image",
+        "title": "New Year Goals for Our Children with Autism",
+        "href": "/library/new-year-goals-2023"
+      },
+      {
+        "image": "/assets/images/hero-back-to-school.webp",
+        "alt": "Antecedent & Consequence Hacks Every Autism Parent Needs to Unlock School Readiness - hero image",
+        "title": "Ease Back-to-School Time | ABA Antecedent & Consequence Interventions",
+        "href": "/library/aba-school-readiness-guide"
+      }
+    ]
+  },
+  "en/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake": {
+    "previous": {
+      "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+      "href": "/library/community-highlight-meet-rula-diab"
+    },
+    "next": {
+      "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+      "href": "/library/aba-toilet-training-child-autism"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-toilet-training-child-autism.webp",
+        "alt": "potty train children with autism using simple aba techniques - hero image",
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "href": "/library/aba-toilet-training-child-autism"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      },
+      {
+        "image": "/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg",
+        "alt": "asd sensory-friendly pancake recipe - hero image",
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "href": "/library/asd-sensory-friendly-recipes-pancakes"
+      }
+    ]
+  },
+  "en/asd-sensory-friendly-recipes-pancakes": {
+    "previous": {
+      "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+      "href": "/library/repetitive-behavior"
+    },
+    "next": {
+      "title": "The Benefits of ABA Therapy for Children with Autism",
+      "href": "/library/aba-therapy-benefits"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      },
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      }
+    ]
+  },
+  "en/autism-evaluation-diagnosis-arizona-parent-guide": {
+    "previous": {
+      "title": "Why My Child Can Talk but Still Struggles Socially",
+      "href": "/library/social-pragmatic-communication-autism"
+    },
+    "next": {
+      "title": "Early Signs of Autism by Age: 12 Months to 4 Years",
+      "href": "/library/early-signs-autism-by-age"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-sensory-processing.webp",
+        "alt": "sensory processing challenges in aba therapy - hero image",
+        "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "href": "/library/sensory-processing"
+      },
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "href": "/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Autism Guide for Parents and Caregivers",
+        "href": "/library/parents-guide-to-autism-and-aba"
+      }
+    ]
+  },
+  "en/autism-evaluation-what-to-expect": {
+    "previous": {
+      "title": "Early Signs of Autism by Age: 12 Months to 4 Years",
+      "href": "/library/early-signs-autism-by-age"
+    },
+    "next": {
+      "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+      "href": "/library/communication-social-skills-autistic-children-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatrician performing a toddler",
+        "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "href": "/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      },
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Autism Guide for Parents and Caregivers",
+        "href": "/library/parents-guide-to-autism-and-aba"
+      },
+      {
+        "image": "/assets/images/early_signs_autism_by_age_hero.png",
+        "alt": "Parent and toddler playing with blocks, sharing eye contact and pointing during play.",
+        "title": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "href": "/library/early-signs-autism-by-age"
+      }
+    ]
+  },
+  "en/autism-fall-break-routine-tips-halloween-thanksgiving": {
+    "previous": {
+      "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+      "href": "/library/aba-school-readiness-arizona"
+    },
+    "next": {
+      "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+      "href": "/library/emotional-regulation-aba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "teaching academic, social, communications, and independence skills",
+        "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+        "href": "/library/aba-school-readiness-arizona"
+      },
+      {
+        "image": "/assets/images/hero-summer-aba.webp",
+        "alt": "aba therapy summer time tips for parents and caregivers",
+        "title": "How to Support ABA Therapy Over Summer Break",
+        "href": "/library/aba-therapy-summer-routine-tips"
+      },
+      {
+        "image": "/assets/images/child-shopping-cart-tired-cranky.jpg",
+        "alt": "child taking emotional regulation timeout in shopping cart - hero",
+        "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "href": "/library/emotional-regulation-aba"
+      }
+    ]
+  },
+  "en/autism-family-self-care-tips": {
+    "previous": {
+      "title": "Individualized Care Plans in ABA Therapy",
+      "href": "/library/individualized-aba-therapy"
+    },
+    "next": {
+      "title": "Guide to Teaching Self‑Advocacy in ABA",
+      "href": "/library/autism-self-advocacy-skills-aba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "proactive reactive aba strategies guide - hero image",
+        "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "href": "/library/proactive-reactive-aba-strategies-guide"
+      },
+      {
+        "image": "/assets/images/hero-prompting-parenting-benefits.webp",
+        "alt": "Benefits of Prompting & Parenting in ABA Therapy - hero image",
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "href": "/library/aba-therapy-prompting-parenting-benefits"
+      },
+      {
+        "image": "/assets/images/talk-not-social.jpg",
+        "alt": "talking child has trouble socializing - hero",
+        "title": "Why My Child Can Talk but Still Struggles Socially",
+        "href": "/library/social-pragmatic-communication-autism"
+      }
+    ]
+  },
+  "en/autism-friendships-social-play-support": {
+    "previous": {
+      "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+      "href": "/library/aac-visual-supports-autism"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-play-leisure-skills-children-autism_800x.jpg",
+        "alt": "autism play and leisure skills for children with autism",
+        "title": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "href": "/library/play-leisure-skills"
+      },
+      {
+        "image": "/assets/images/visual-supports-aac-communication.png",
+        "alt": "child pointing to a picture on a digital AAC tablet during play",
+        "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "href": "/library/aac-visual-supports-autism"
+      },
+      {
+        "image": "/assets/images/communication-skills-autistic-children-hero_img.png",
+        "alt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+        "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+        "href": "/library/communication-social-skills-autistic-children-guide"
+      }
+    ]
+  },
+  "en/autism-self-advocacy-skills-aba": {
+    "previous": {
+      "title": "Discover Self‑Care Hacks for Parents of Children with Autism",
+      "href": "/library/autism-family-self-care-tips"
+    },
+    "next": {
+      "title": "Executive Functioning Skills and Autism",
+      "href": "/library/executive-functioning-skills-autism"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-individual-care-plans.webp",
+        "alt": "individualized aba therapy - hero image",
+        "title": "Individualized Care Plans in ABA Therapy",
+        "href": "/library/individualized-aba-therapy"
+      },
+      {
+        "image": "/assets/images/hero-integrity-empowerment-excellence_800x.jpg",
+        "alt": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image",
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "href": "/library/new-aia-scottsdale-office"
+      },
+      {
+        "image": "/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg",
+        "alt": "meet rula diab of aia - hero image",
+        "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "href": "/library/community-highlight-meet-rula-diab"
+      }
+    ]
+  },
+  "en/autism-therapy-rapport-strategies": {
+    "previous": {
+      "title": "Benefits of Prompting & Parenting in ABA Therapy",
+      "href": "/library/aba-therapy-prompting-parenting-benefits"
+    },
+    "next": {
+      "title": "Master Behavior Management: Discover the Four Functions of Behavior",
+      "href": "/library/behavior-management-functions-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-integrity-empowerment-excellence_800x.jpg",
+        "alt": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image",
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "href": "/library/new-aia-scottsdale-office"
+      },
+      {
+        "image": "/assets/images/hero-november-2022-aia-update_800x.jpg",
+        "alt": "November AIA Update - hero image",
+        "title": "November AIA Update",
+        "href": "/library/november-2022-aia-update"
+      },
+      {
+        "image": "/assets/images/hero-understanding-autism-support_800x.jpg",
+        "alt": "navigating the autism journey: understanding and supporting our children with autism - hero image",
+        "title": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "href": "/library/understanding-autism-support"
+      }
+    ]
+  },
+  "en/behavior-management-functions-guide": {
+    "previous": {
+      "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+      "href": "/library/autism-therapy-rapport-strategies"
+    },
+    "next": {
+      "title": "Ease Back-to-School Time | ABA Antecedent & Consequence Interventions",
+      "href": "/library/aba-school-readiness-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-behavior-modification-techniques-reinforcement-theory_800x.jpg",
+        "alt": "Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory - hero image",
+        "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "href": "/library/behavior-modification-techniques-reinforcement-theory"
+      },
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      },
+      {
+        "image": "/assets/images/hero-reduce-behavior-management_800x.jpg",
+        "alt": "reduce behavior management - hero image",
+        "title": "4 Ways on How to Reduce Behavior Management",
+        "href": "/library/reduce-behavior-management"
+      }
+    ]
+  },
+  "en/behavior-modification-techniques-reinforcement-theory": {
+    "previous": {
+      "title": "AIA’s World Autism Community Day of Celebration",
+      "href": "/library/aia-world-autism-community-day-celebration"
+    },
+    "next": {
+      "title": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+      "href": "/library/understanding-autism-support"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "enhancing generalization skills in children with autism - hero image",
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "href": "/library/enhancing-generalization-skills"
+      },
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      },
+      {
+        "image": "/assets/images/hero-integrated-aba-model-announcement_800x.jpg",
+        "alt": "integrated aba model announcement - hero image",
+        "title": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "href": "/library/integrated-aba-model-announcement"
+      }
+    ]
+  },
+  "en/communication-social-skills-autistic-children-guide": {
+    "previous": {
+      "title": "What to Expect at Your Child’s First Autism Evaluation",
+      "href": "/library/autism-evaluation-what-to-expect"
+    },
+    "next": {
+      "title": "Autism Guide for Parents and Caregivers",
+      "href": "/library/parents-guide-to-autism-and-aba"
+    },
+    "related": [
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Autism Guide for Parents and Caregivers",
+        "href": "/library/parents-guide-to-autism-and-aba"
+      },
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "href": "/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/talk-not-social.jpg",
+        "alt": "talking child has trouble socializing - hero",
+        "title": "Why My Child Can Talk but Still Struggles Socially",
+        "href": "/library/social-pragmatic-communication-autism"
+      }
+    ]
+  },
+  "en/community-highlight-meet-rula-diab": {
+    "previous": {
+      "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+      "href": "/library/new-aia-scottsdale-office"
+    },
+    "next": {
+      "title": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+      "href": "/library/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-individual-care-plans.webp",
+        "alt": "individualized aba therapy - hero image",
+        "title": "Individualized Care Plans in ABA Therapy",
+        "href": "/library/individualized-aba-therapy"
+      },
+      {
+        "image": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "autism self-advocacy skills through aba - hero image",
+        "title": "Guide to Teaching Self‑Advocacy in ABA",
+        "href": "/library/autism-self-advocacy-skills-aba"
+      },
+      {
+        "image": "/assets/images/hero-integrity-empowerment-excellence_800x.jpg",
+        "alt": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image",
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "href": "/library/new-aia-scottsdale-office"
+      }
+    ]
+  },
+  "en/critical-thinking-skills": {
+    "previous": {
+      "title": "November AIA Update",
+      "href": "/library/november-2022-aia-update"
+    },
+    "next": {
+      "title": "New Year Goals for Our Children with Autism",
+      "href": "/library/new-year-goals-2023"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-managing-aggressive-behavior-outbursts_800x.jpg",
+        "alt": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments - hero image",
+        "title": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "href": "/library/managing-aggressive-behavior-outbursts"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      },
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "teaching academic, social, communications, and independence skills",
+        "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+        "href": "/library/aba-school-readiness-arizona"
+      }
+    ]
+  },
+  "en/early-signs-autism-by-age": {
+    "previous": {
+      "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+      "href": "/library/autism-evaluation-diagnosis-arizona-parent-guide"
+    },
+    "next": {
+      "title": "What to Expect at Your Child’s First Autism Evaluation",
+      "href": "/library/autism-evaluation-what-to-expect"
+    },
+    "related": [
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "href": "/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatrician performing a toddler",
+        "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "href": "/library/autism-evaluation-diagnosis-arizona-parent-guide"
+      },
+      {
+        "image": "/assets/images/hero-behavior-modification-techniques-reinforcement-theory_800x.jpg",
+        "alt": "Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory - hero image",
+        "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "href": "/library/behavior-modification-techniques-reinforcement-theory"
+      }
+    ]
+  },
+  "en/emotional-regulation-aba": {
+    "previous": {
+      "title": "Autism and Fall Break: How to Keep Routines Calm and Predictable",
+      "href": "/library/autism-fall-break-routine-tips-halloween-thanksgiving"
+    },
+    "next": {
+      "title": "Heart Full of Gratitude",
+      "href": "/library/heart-full-of-gratitude"
+    },
+    "related": [
+      {
+        "image": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "title": "Autism Guide for Parents and Caregivers",
+        "href": "/library/parents-guide-to-autism-and-aba"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "hero image - executive functioning skills strategies for autistic children",
+        "title": "Executive Functioning Skills and Autism",
+        "href": "/library/executive-functioning-skills-autism"
+      },
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "href": "/library/autism-evaluation-what-to-expect"
+      }
+    ]
+  },
+  "en/enhancing-generalization-skills": {
+    "previous": {
+      "title": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+      "href": "/library/understanding-autism-support"
+    },
+    "next": {
+      "title": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+      "href": "/library/integrated-aba-model-announcement"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      }
+    ]
+  },
+  "en/executive-functioning-skills-autism": {
+    "previous": {
+      "title": "Guide to Teaching Self‑Advocacy in ABA",
+      "href": "/library/autism-self-advocacy-skills-aba"
+    },
+    "next": {
+      "title": "First/Then Cards: Empowering Transitions for Autistic Children",
+      "href": "/library/first-then-cards-autism-transitions"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-rapport-strategies.webp",
+        "alt": "rapport strategies for effective aba therapy - hero image",
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "href": "/library/autism-therapy-rapport-strategies"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      },
+      {
+        "image": "/assets/images/hero-sensory-processing.webp",
+        "alt": "sensory processing challenges in aba therapy - hero image",
+        "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "href": "/library/sensory-processing"
+      }
+    ]
+  },
+  "en/first-then-cards-autism-transitions": {
+    "previous": {
+      "title": "Executive Functioning Skills and Autism",
+      "href": "/library/executive-functioning-skills-autism"
+    },
+    "next": {
+      "title": "How to Support ABA Therapy Over Summer Break",
+      "href": "/library/aba-therapy-summer-routine-tips"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-sensory-processing.webp",
+        "alt": "sensory processing challenges in aba therapy - hero image",
+        "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "href": "/library/sensory-processing"
+      },
+      {
+        "image": "/assets/images/hero-learn-dtt-net-methods.webp",
+        "alt": "Learn About DTT and NET Methods for More Effective ABA Therapy - hero image",
+        "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "href": "/library/aba-therapy-dtt-net-guide"
+      },
+      {
+        "image": "/assets/images/hero-prompting-parenting-benefits.webp",
+        "alt": "Benefits of Prompting & Parenting in ABA Therapy - hero image",
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "href": "/library/aba-therapy-prompting-parenting-benefits"
+      }
+    ]
+  },
+  "en/heart-full-of-gratitude": {
+    "previous": {
+      "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+      "href": "/library/emotional-regulation-aba"
+    },
+    "next": {
+      "title": "Why My Child Can Talk but Still Struggles Socially",
+      "href": "/library/social-pragmatic-communication-autism"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-integrity-empowerment-excellence_800x.jpg",
+        "alt": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image",
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "href": "/library/new-aia-scottsdale-office"
+      },
+      {
+        "image": "/assets/images/hero-meet-rula-diab-shoutout-az_800x.jpg",
+        "alt": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA) - hero image",
+        "title": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "href": "/library/meet-rula-diab-bcba"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      }
+    ]
+  },
+  "en/individualized-aba-therapy": {
+    "previous": {
+      "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+      "href": "/library/proactive-reactive-aba-strategies-guide"
+    },
+    "next": {
+      "title": "Discover Self‑Care Hacks for Parents of Children with Autism",
+      "href": "/library/autism-family-self-care-tips"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg",
+        "alt": "meet rula diab of aia - hero image",
+        "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "href": "/library/community-highlight-meet-rula-diab"
+      },
+      {
+        "image": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "autism self-advocacy skills through aba - hero image",
+        "title": "Guide to Teaching Self‑Advocacy in ABA",
+        "href": "/library/autism-self-advocacy-skills-aba"
+      },
+      {
+        "image": "/assets/images/hero-integrity-empowerment-excellence_800x.jpg",
+        "alt": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image",
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "href": "/library/new-aia-scottsdale-office"
+      }
+    ]
+  },
+  "en/integrated-aba-model-announcement": {
+    "previous": {
+      "title": "Enhancing Generalization for Broader Impact in Autism",
+      "href": "/library/enhancing-generalization-skills"
+    },
+    "next": {
+      "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+      "href": "/library/repetitive-behavior"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      },
+      {
+        "image": "/assets/images/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "enhancing generalization skills in children with autism - hero image",
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "href": "/library/enhancing-generalization-skills"
+      },
+      {
+        "image": "/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg",
+        "alt": "asd sensory-friendly pancake recipe - hero image",
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "href": "/library/asd-sensory-friendly-recipes-pancakes"
+      }
+    ]
+  },
+  "en/managing-aggressive-behavior-outbursts": {
+    "previous": {
+      "title": "Play and Leisure Skills for Children with Autism",
+      "href": "/library/play-leisure-skills"
+    },
+    "next": {
+      "title": "November AIA Update",
+      "href": "/library/november-2022-aia-update"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-critical-thinking-skills_800x.jpg",
+        "alt": "Critical Thinking Skills for Children with Autism - hero image",
+        "title": "Critical Thinking Skills for Children with Autism",
+        "href": "/library/critical-thinking-skills"
+      },
+      {
+        "image": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "proactive reactive aba strategies guide - hero image",
+        "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "href": "/library/proactive-reactive-aba-strategies-guide"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2023_800x.jpg",
+        "alt": "New Year Goals for Our Children with Autism - hero image",
+        "title": "New Year Goals for Our Children with Autism",
+        "href": "/library/new-year-goals-2023"
+      }
+    ]
+  },
+  "en/meet-rula-diab-bcba": {
+    "previous": {
+      "title": "The Benefits of ABA Therapy for Children with Autism",
+      "href": "/library/aba-therapy-benefits"
+    },
+    "next": {
+      "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+      "href": "/library/new-aia-scottsdale-office"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg",
+        "alt": "meet rula diab of aia - hero image",
+        "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "href": "/library/community-highlight-meet-rula-diab"
+      },
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      },
+      {
+        "image": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "autism self-advocacy skills through aba - hero image",
+        "title": "Guide to Teaching Self‑Advocacy in ABA",
+        "href": "/library/autism-self-advocacy-skills-aba"
+      }
+    ]
+  },
+  "en/new-aia-scottsdale-office": {
+    "previous": {
+      "title": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+      "href": "/library/meet-rula-diab-bcba"
+    },
+    "next": {
+      "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+      "href": "/library/community-highlight-meet-rula-diab"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "autism self-advocacy skills through aba - hero image",
+        "title": "Guide to Teaching Self‑Advocacy in ABA",
+        "href": "/library/autism-self-advocacy-skills-aba"
+      },
+      {
+        "image": "/assets/images/hero-aba-individual-care-plans.webp",
+        "alt": "individualized aba therapy - hero image",
+        "title": "Individualized Care Plans in ABA Therapy",
+        "href": "/library/individualized-aba-therapy"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      }
+    ]
+  },
+  "en/new-year-2024-autism-holiday-tips": {
+    "previous": {
+      "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+      "href": "/library/aba-toilet-training-child-autism"
+    },
+    "next": {
+      "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+      "href": "/library/sensory-processing"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      },
+      {
+        "image": "/assets/images/hero-aba-toilet-training-child-autism.webp",
+        "alt": "potty train children with autism using simple aba techniques - hero image",
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "href": "/library/aba-toilet-training-child-autism"
+      },
+      {
+        "image": "/assets/images/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "enhancing generalization skills in children with autism - hero image",
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "href": "/library/enhancing-generalization-skills"
+      }
+    ]
+  },
+  "en/new-year-goals-2023": {
+    "previous": {
+      "title": "Critical Thinking Skills for Children with Autism",
+      "href": "/library/critical-thinking-skills"
+    },
+    "next": {
+      "title": "AIA’s World Autism Community Day of Celebration",
+      "href": "/library/aia-world-autism-community-day-celebration"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-behavior-functions-management.webp",
+        "alt": "Master Behavior Management: Discover the Four Functions of Behavior - hero image",
+        "title": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "href": "/library/behavior-management-functions-guide"
+      },
+      {
+        "image": "/assets/images/hero-behavior-modification-techniques-reinforcement-theory_800x.jpg",
+        "alt": "Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory - hero image",
+        "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "href": "/library/behavior-modification-techniques-reinforcement-theory"
+      },
+      {
+        "image": "/assets/images/hero-rapport-strategies.webp",
+        "alt": "rapport strategies for effective aba therapy - hero image",
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "href": "/library/autism-therapy-rapport-strategies"
+      }
+    ]
+  },
+  "en/november-2022-aia-update": {
+    "previous": {
+      "title": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+      "href": "/library/managing-aggressive-behavior-outbursts"
+    },
+    "next": {
+      "title": "Critical Thinking Skills for Children with Autism",
+      "href": "/library/critical-thinking-skills"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-reduce-behavior-management_800x.jpg",
+        "alt": "reduce behavior management - hero image",
+        "title": "4 Ways on How to Reduce Behavior Management",
+        "href": "/library/reduce-behavior-management"
+      },
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      },
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "teaching academic, social, communications, and independence skills",
+        "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+        "href": "/library/aba-school-readiness-arizona"
+      }
+    ]
+  },
+  "en/parents-guide-to-autism-and-aba": {
+    "previous": {
+      "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+      "href": "/library/communication-social-skills-autistic-children-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "teaching academic, social, communications, and independence skills",
+        "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+        "href": "/library/aba-school-readiness-arizona"
+      },
+      {
+        "image": "/assets/images/child-shopping-cart-tired-cranky.jpg",
+        "alt": "child taking emotional regulation timeout in shopping cart - hero",
+        "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "href": "/library/emotional-regulation-aba"
+      },
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "href": "/library/autism-evaluation-what-to-expect"
+      }
+    ]
+  },
+  "en/play-leisure-skills": {
+    "previous": {
+      "title": "4 Ways on How to Reduce Behavior Management",
+      "href": "/library/reduce-behavior-management"
+    },
+    "next": {
+      "title": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+      "href": "/library/managing-aggressive-behavior-outbursts"
+    },
+    "related": [
+      {
+        "image": "/assets/images/parallel-players-hero.png",
+        "alt": "Three children engaging happily in parallel play on a colorful rug.",
+        "title": "Supporting Friendships and Social Play for Children with Autism",
+        "href": "/library/autism-friendships-social-play-support"
+      },
+      {
+        "image": "/assets/images/communication-skills-autistic-children-hero_img.png",
+        "alt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+        "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+        "href": "/library/communication-social-skills-autistic-children-guide"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2023_800x.jpg",
+        "alt": "New Year Goals for Our Children with Autism - hero image",
+        "title": "New Year Goals for Our Children with Autism",
+        "href": "/library/new-year-goals-2023"
+      }
+    ]
+  },
+  "en/positive-reinforcement-techniques": {
+    "previous": {
+      "title": "How to Support ABA Therapy Over Summer Break",
+      "href": "/library/aba-therapy-summer-routine-tips"
+    },
+    "next": {
+      "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+      "href": "/library/aba-school-readiness-arizona"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-prompting-parenting-benefits.webp",
+        "alt": "Benefits of Prompting & Parenting in ABA Therapy - hero image",
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "href": "/library/aba-therapy-prompting-parenting-benefits"
+      },
+      {
+        "image": "/assets/images/hero-learn-dtt-net-methods.webp",
+        "alt": "Learn About DTT and NET Methods for More Effective ABA Therapy - hero image",
+        "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "href": "/library/aba-therapy-dtt-net-guide"
+      },
+      {
+        "image": "/assets/images/hero-rapport-strategies.webp",
+        "alt": "rapport strategies for effective aba therapy - hero image",
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "href": "/library/autism-therapy-rapport-strategies"
+      }
+    ]
+  },
+  "en/proactive-reactive-aba-strategies-guide": {
+    "previous": {
+      "title": "Ease Back-to-School Time | ABA Antecedent & Consequence Interventions",
+      "href": "/library/aba-school-readiness-guide"
+    },
+    "next": {
+      "title": "Individualized Care Plans in ABA Therapy",
+      "href": "/library/individualized-aba-therapy"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+        "alt": "teaching academic, social, communications, and independence skills",
+        "title": "Now Enrolling: AIA Preparatory Academy for Children Ages 2–6",
+        "href": "/library/aba-school-readiness-arizona"
+      },
+      {
+        "image": "/assets/images/hero-prompting-parenting-benefits.webp",
+        "alt": "Benefits of Prompting & Parenting in ABA Therapy - hero image",
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "href": "/library/aba-therapy-prompting-parenting-benefits"
+      },
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "hero image - executive functioning skills strategies for autistic children",
+        "title": "Executive Functioning Skills and Autism",
+        "href": "/library/executive-functioning-skills-autism"
+      }
+    ]
+  },
+  "en/reduce-behavior-management": {
+    "next": {
+      "title": "Play and Leisure Skills for Children with Autism",
+      "href": "/library/play-leisure-skills"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg",
+        "alt": "asd sensory-friendly pancake recipe - hero image",
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "href": "/library/asd-sensory-friendly-recipes-pancakes"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2023_800x.jpg",
+        "alt": "New Year Goals for Our Children with Autism - hero image",
+        "title": "New Year Goals for Our Children with Autism",
+        "href": "/library/new-year-goals-2023"
+      },
+      {
+        "image": "/assets/images/hero-aba-toilet-training-child-autism.webp",
+        "alt": "potty train children with autism using simple aba techniques - hero image",
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "href": "/library/aba-toilet-training-child-autism"
+      }
+    ]
+  },
+  "en/repetitive-behavior": {
+    "previous": {
+      "title": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+      "href": "/library/integrated-aba-model-announcement"
+    },
+    "next": {
+      "title": "ASD Sensory-Friendly Recipes: Pancakes",
+      "href": "/library/asd-sensory-friendly-recipes-pancakes"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      },
+      {
+        "image": "/assets/images/hero-aba-toilet-training-child-autism.webp",
+        "alt": "potty train children with autism using simple aba techniques - hero image",
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "href": "/library/aba-toilet-training-child-autism"
+      },
+      {
+        "image": "/assets/images/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "enhancing generalization skills in children with autism - hero image",
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "href": "/library/enhancing-generalization-skills"
+      }
+    ]
+  },
+  "en/sensory-processing": {
+    "previous": {
+      "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+      "href": "/library/new-year-2024-autism-holiday-tips"
+    },
+    "next": {
+      "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+      "href": "/library/aba-therapy-dtt-net-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-prompting-parenting-benefits.webp",
+        "alt": "Benefits of Prompting & Parenting in ABA Therapy - hero image",
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "href": "/library/aba-therapy-prompting-parenting-benefits"
+      },
+      {
+        "image": "/assets/images/hero-rapport-strategies.webp",
+        "alt": "rapport strategies for effective aba therapy - hero image",
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "href": "/library/autism-therapy-rapport-strategies"
+      },
+      {
+        "image": "/assets/images/hero-positive-reinforcement-techniques.webp",
+        "alt": "aba therapy positive reinforcement",
+        "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "href": "/library/positive-reinforcement-techniques"
+      }
+    ]
+  },
+  "en/social-pragmatic-communication-autism": {
+    "previous": {
+      "title": "Heart Full of Gratitude",
+      "href": "/library/heart-full-of-gratitude"
+    },
+    "next": {
+      "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+      "href": "/library/autism-evaluation-diagnosis-arizona-parent-guide"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "hero image - executive functioning skills strategies for autistic children",
+        "title": "Executive Functioning Skills and Autism",
+        "href": "/library/executive-functioning-skills-autism"
+      },
+      {
+        "image": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "href": "/library/autism-evaluation-what-to-expect"
+      },
+      {
+        "image": "/assets/images/communication-skills-autistic-children-hero_img.png",
+        "alt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+        "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+        "href": "/library/communication-social-skills-autistic-children-guide"
+      }
+    ]
+  },
+  "en/understanding-autism-support": {
+    "previous": {
+      "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+      "href": "/library/behavior-modification-techniques-reinforcement-theory"
+    },
+    "next": {
+      "title": "Enhancing Generalization for Broader Impact in Autism",
+      "href": "/library/enhancing-generalization-skills"
+    },
+    "related": [
+      {
+        "image": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "href": "/library/aba-therapy-benefits"
+      },
+      {
+        "image": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "href": "/library/new-year-2024-autism-holiday-tips"
+      },
+      {
+        "image": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "href": "/library/repetitive-behavior"
+      }
+    ]
+  }
+}

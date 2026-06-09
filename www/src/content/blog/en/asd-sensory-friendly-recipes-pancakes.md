@@ -90,25 +90,3 @@ Your kiddo may not want plain pancakes, which is perfectly fine! There are a few
 Feel free to vary the recipe however you want and give your kiddo the opportunity to choose which toppings or fillings they want. Mealtime should be fun and enjoyable, so allowing your child to help you or pick their preferred ingredients can make eating more enticing for them. I hope you and your child enjoy this sensory-friendly pancake recipe!
 
 For more information on aba therapy services offered by AIA or to book your free consultation, visit our [contact page](../contact), call us at [(480) 687-7099](tel:+14806877099), or email [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com). If you are looking for more applied behavioral analysis and asd diagnosis tips, check out AIA’s clinical director, Rula Diab, monthly blog posts!
-
- Previous Post 
-
-###### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
- Next Post 
-
-###### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
-### Similar Blog Posts
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
-
-#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
-
-#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)

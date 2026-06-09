@@ -24,21 +24,3 @@ Children can get overwhelmed, frustrated, and sensory overloaded at any time bec
 - Allow your child to make a choice in the type of the activity or task presented (e.g., “Do you want to read a book about a cat or a book about a dog?”) or the place to engage in the activity (e.g. “Do you like to play with Lego inside or outside”).
 
 For more information on how to reduce behavior management, schedule a consultation with us today at [(480) 687-7099](tel:+14806877099) or reach out via our [contact form](../contact).
-
- Next Post 
-
-###### [Play and Leisure Skills for Children with Autism](play-leisure-skills)
-
-### Similar Blog Posts
-
-![asd sensory-friendly pancake recipe - hero image](/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg)
-
-#### [ASD Sensory-Friendly Recipes: Pancakes](asd-sensory-friendly-recipes-pancakes)
-
-![New Year Goals for Our Children with Autism - hero image](/assets/images/hero-new-year-goals-2023_800x.jpg)
-
-#### [New Year Goals for Our Children with Autism](new-year-goals-2023)
-
-![potty train children with autism using simple aba techniques - hero image](/assets/images/hero-aba-toilet-training-child-autism.webp)
-
-#### [Guide: Simple ABA Techniques for Toilet Training Children with Autism](aba-toilet-training-child-autism)

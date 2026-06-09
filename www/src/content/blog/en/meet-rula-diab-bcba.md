@@ -32,25 +32,3 @@ Overall, our dedication to providing high-quality, culturally competent care hel
 ## If you had a friend visiting you, what are some of the local spots you’d want to take them around to?
 
 Scottsdale is a beautiful city with many interesting places to explore. Downtown Scottsdale/Old Town is a great destination to visit due to its rich history, art galleries, boutiques, and restaurants. As someone who loves nature and flowers, I will recommend visiting the Desert Botanical Garden, which showcases a wide range of native plant species and provides stunning views of the desert landscapes at sunset. If we have time for a day trip, I will suggest visiting Sedona, a picturesque town famous for its red rock formations and spiritual energy. If the weather permits, hiking in the beautiful Red Rock State Park would be a great way to experience the natural beauty of the area.
-
- Previous Post 
-
-###### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
- Next Post 
-
-###### [Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office](new-aia-scottsdale-office)
-
-### Similar Blog Posts
-
-![meet rula diab of aia - hero image](/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg)
-
-#### [Community Highlights: Meet Rula Diab of Arizona Institute for Autism](community-highlight-meet-rula-diab)
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
-
-#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
-![autism self-advocacy skills through aba - hero image](/assets/images/hero-teach-self-advocacy.webp)
-
-#### [Guide to Teaching Self‑Advocacy in ABA](autism-self-advocacy-skills-aba)

@@ -26,25 +26,3 @@ Our approach focuses on teaching children to apply the skills they acquire durin
 At the Arizona Institute for Autism, we are committed to empowering children with autism, maximizing their potential for growth and development, and paving the way for a brighter future filled with endless possibilities.
 
 For more information on services offered by AIA or to book your free consultation, visit [https://www.azinstitute4autism.com](../index), call us at [(480) 687-7099](tel:+14806877099), or email [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com). If you are looking for more tips, check out monthly [blog posts](../library) from AIA's clinical director, Rula Diab!
-
- Previous Post 
-
-###### [Enhancing Generalization for Broader Impact in Autism](enhancing-generalization-skills)
-
- Next Post 
-
-###### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
-### Similar Blog Posts
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
-
-#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
-![enhancing generalization skills in children with autism - hero image](/assets/images/hero-enhancing-generalization-skills_800x.jpg)
-
-#### [Enhancing Generalization for Broader Impact in Autism](enhancing-generalization-skills)
-
-![asd sensory-friendly pancake recipe - hero image](/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg)
-
-#### [ASD Sensory-Friendly Recipes: Pancakes](asd-sensory-friendly-recipes-pancakes)

@@ -42,25 +42,3 @@ draft: false
 - الاستمرارية في الاستجابة للسلوكيات المختلفة تساعد طفلك على فهم العلاقة بين أفعاله والنتائج المترتبة عليها.
 
 قد تكون التغييرات في الروتين اليومي صعبة وتحديًا كبيرًا، ولكن من خلال تنفيذ تدخلات مناسبة قائمة على المقدمات والنتائج، يمكن خلق بيئة داعمة، منظمة، ومحفزة لطفلك.
-
- Previous Post 
-
-###### [إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك](behavior-management-functions-guide)
-
- Next Post 
-
-###### [دليل تعليم مهارات الدفاع عن النفس في ABA](autism-self-advocacy-skills-aba)
-
-### Similar Blog Posts
-
-![بطاقات](/assets/images/hero-first-then-cards.webp)
-
-#### [بطاقات "أولاً/ثم": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد](first-then-cards-autism-transitions)
-
-![دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية](/assets/images/hero-proactive-reactive-strategies.webp)
-
-#### [إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن](proactive-reactive-aba-strategies-guide)
-
-![الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد](/assets/images/hero-executive-functioning-skills-autism.webp)
-
-#### [مهارات الوظائف التنفيذية والتوحّد](executive-functioning-skills-autism)

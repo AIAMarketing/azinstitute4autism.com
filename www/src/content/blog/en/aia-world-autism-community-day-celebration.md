@@ -46,25 +46,3 @@ Celebrate and support neurodiversity and inclusion with our AIA family by attend
 ## Additional questions?
 
 If you have questions about AIA's World Autism Community Day of Celebration or are interested in providing a sensory-friendly booth, contact kelly@azinstitute4autism.com.
-
- Previous Post 
-
-###### [New Year Goals for Our Children with Autism](new-year-goals-2023)
-
- Next Post 
-
-###### [The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory](behavior-modification-techniques-reinforcement-theory)
-
-### Similar Blog Posts
-
-![asd sensory-friendly pancake recipe - hero image](/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg)
-
-#### [ASD Sensory-Friendly Recipes: Pancakes](asd-sensory-friendly-recipes-pancakes)
-
-![New Year Goals for Our Children with Autism - hero image](/assets/images/hero-new-year-goals-2023_800x.jpg)
-
-#### [New Year Goals for Our Children with Autism](new-year-goals-2023)
-
-![Antecedent & Consequence Hacks Every Autism Parent Needs to Unlock School Readiness - hero image](/assets/images/hero-back-to-school.webp)
-
-#### [Ease Back-to-School Time | ABA Antecedent & Consequence Interventions](aba-school-readiness-guide)

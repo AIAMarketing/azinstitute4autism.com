@@ -18,25 +18,3 @@ The New Year can be challenging for children with Autism and may lead to distres
 To decrease stress as much as possible during the holiday time, it is important to provide your child with visual Support (i.e., visual schedules) for the purpose of preparing your child to manage changes in schedule and minimize disruption and triggers. Additionally, social stories can be great visual support to clarify activities and events during the holidays along with using a reinforcer system (i.e., Token System) to handle behaviors before it happens.
 
 For more information on how to manage aggressive behavior and proper communication, connect with us by sending your messages and questions to [hello@azinsitute4autism.com](mailto:hello@azinsitute4autism.com) or contact us directly from our contact page.
-
- Previous Post 
-
-###### [Critical Thinking Skills for Children with Autism](critical-thinking-skills)
-
- Next Post 
-
-###### [AIA’s World Autism Community Day of Celebration](aia-world-autism-community-day-celebration)
-
-### Similar Blog Posts
-
-![Master Behavior Management: Discover the Four Functions of Behavior - hero image](/assets/images/hero-behavior-functions-management.webp)
-
-#### [Master Behavior Management: Discover the Four Functions of Behavior](behavior-management-functions-guide)
-
-![Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory - hero image](/assets/images/hero-behavior-modification-techniques-reinforcement-theory_800x.jpg)
-
-#### [The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory](behavior-modification-techniques-reinforcement-theory)
-
-![rapport strategies for effective aba therapy - hero image](/assets/images/hero-rapport-strategies.webp)
-
-#### [Learn the Secrets to Effective Rapport Building in ABA Therapy](autism-therapy-rapport-strategies)

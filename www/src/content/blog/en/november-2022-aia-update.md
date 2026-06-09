@@ -24,25 +24,3 @@ AIA Give Thanks to the Latest AIA Achievements
 - AIA will have a Parent Advisory Committee for the 2023-2024 year. Applications are now open and available HERE.
 
 Thank you for your continued collaboration as we continue to grow, serve and support our Learners in the pursuit of their individual potential.
-
- Previous Post 
-
-###### [Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments](managing-aggressive-behavior-outbursts)
-
- Next Post 
-
-###### [Critical Thinking Skills for Children with Autism](critical-thinking-skills)
-
-### Similar Blog Posts
-
-![reduce behavior management - hero image](/assets/images/hero-reduce-behavior-management_800x.jpg)
-
-#### [4 Ways on How to Reduce Behavior Management](reduce-behavior-management)
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
-![teaching academic, social, communications, and independence skills](/assets/images/hero-aba-preschool-az_800x.jpg)
-
-#### [Now Enrolling: AIA Preparatory Academy for Children Ages 2–6](aba-school-readiness-arizona)

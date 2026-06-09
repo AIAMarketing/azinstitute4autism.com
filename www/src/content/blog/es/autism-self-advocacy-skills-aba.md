@@ -70,25 +70,3 @@ Los padres desempeñan un papel fundamental en el refuerzo de las habilidades de
 - Defensa del modelo : Demuestre cómo aboga por sus propias necesidades, proporcionando un ejemplo del mundo real.
 
 Enseñar la autodefensa a través del análisis de comportamiento aplicado (ABA) empodera a los niños para que se hagan cargo de sus necesidades, preferencias y elecciones. Al fomentar la independencia y mejorar las habilidades de comunicación, el análisis de comportamiento aplicado (ABA) ayuda a los niños a desenvolverse en sus entornos con confianza y dignidad. Ya sea en sesiones de terapia o en casa, la autodefensa es un regalo que equipa a los niños para el éxito de por vida.
-
- Previous Post 
-
-###### [Tarjetas Primero/Después : Empoderando las transiciones para niños autistas](first-then-cards-autism-transitions)
-
- Next Post 
-
-###### [Habilidades de funcionamiento ejecutivo y autismo](executive-functioning-skills-autism)
-
-### Similar Blog Posts
-
-![Consejos de autocuidado para familias con autismo - imagen destacada](/assets/images/hero-self-care-priority.webp)
-
-#### [Descubre consejos para el autocuidado de padres de niños con autismo](autism-family-self-care-tips)
-
-![estrategias para el desarrollo de habilidades de funcionamiento ejecutivo en niños autistas - imagen destacada](/assets/images/hero-executive-functioning-skills-autism.webp)
-
-#### [Habilidades de funcionamiento ejecutivo y autismo](executive-functioning-skills-autism)
-
-![Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.](/assets/images/autism-evaluation-expectations_hero.png)
-
-#### [Qué esperar en la primera evaluación de autismo de su hijo](autism-evaluation-what-to-expect)

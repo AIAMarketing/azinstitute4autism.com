@@ -40,25 +40,3 @@ El [autocuidado](https://www.autismparentingmagazine.com/ways-reducing-stress-ga
 En el [Instituto de Autismo de Arizona](../../index), entendemos que cuidar a un niño con autismo es un viaje que requiere equilibrio. Creemos que el bienestar de los padres de niños con autismo es tan importante como las terapias que brindamos a los niños. Eres el mayor defensor de tu hijo y la fuente de apoyo más constante. Para seguir siendo ese pilar de fortaleza, es esencial priorizar tu salud, felicidad y paz mental.
 
 Estamos aquí para apoyar, no solo el desarrollo de su hijo, sino también su viaje como padres durante las sesiones de consulta para padres. Si alguna vez te sientes abrumado, debes saber que no estás solo. Apóyate en tu red de apoyo, practica el autocuidado y tómalo un día a la vez.
-
- Previous Post 
-
-###### [Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres](autism-evaluation-diagnosis-arizona-parent-guide)
-
- Next Post 
-
-###### [Tarjetas Primero/Después : Empoderando las transiciones para niños autistas](first-then-cards-autism-transitions)
-
-### Similar Blog Posts
-
-![Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.](/assets/images/autism-evaluation-expectations_hero.png)
-
-#### [Qué esperar en la primera evaluación de autismo de su hijo](autism-evaluation-what-to-expect)
-
-![Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona](/assets/images/autism_evaluation_arizona_hero.jpg)
-
-#### [Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres](autism-evaluation-diagnosis-arizona-parent-guide)
-
-![Parent and autistic child using visual supports, structured play, and calm routines together](/assets/images/family-guide-to-autism-aba-at-home_hero.png)
-
-#### [Guía de Autismo para Padres y Cuidadores](parents-guide-to-autism-and-aba)

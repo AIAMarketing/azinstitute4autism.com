@@ -328,6 +328,7 @@ npm run extract:full
 After extraction:
 
 ```sh
+npm run extract:blog-footers
 npm run generate:sitemap
 npm run generate:redirects
 npm run build
@@ -341,6 +342,10 @@ the complete Git diff before accepting it. Extraction may recreate FAQ-bearing
 posts and CTA-bearing pages as Markdown; restore their `FAQAccordion` and
 `Button` MDX blocks before accepting the result. `npm run audit:blog` reports
 plain Markdown FAQ sections.
+
+`npm run extract:blog-footers` preserves the extracted previous/next and
+similar-post relationships in `src/data/blog-footers.json`, then removes those
+footer fragments from article prose so `BlogPostFooter.astro` can render them.
 
 ## Reports And Utilities
 

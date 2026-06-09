@@ -52,25 +52,3 @@ By focusing on prevention and skill acquisition, proactive strategies empower in
 Both [proactive and reactive strategies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7473487/) play crucial roles in ABA therapy. Proactive strategies help create an environment where positive behaviors are encouraged and challenging behaviors are less likely to occur, while reactive strategies provide a framework for addressing behaviors when they do arise.
 
 At the Arizona Institute for Autism, we are committed to implementing these strategies effectively to support the individuals we work with.
-
- Previous Post 
-
-###### [Ease Back-to-School Time | ABA Antecedent & Consequence Interventions](aba-school-readiness-guide)
-
- Next Post 
-
-###### [Individualized Care Plans in ABA Therapy](individualized-aba-therapy)
-
-### Similar Blog Posts
-
-![teaching academic, social, communications, and independence skills](/assets/images/hero-aba-preschool-az_800x.jpg)
-
-#### [Now Enrolling: AIA Preparatory Academy for Children Ages 2–6](aba-school-readiness-arizona)
-
-![Benefits of Prompting & Parenting in ABA Therapy - hero image](/assets/images/hero-prompting-parenting-benefits.webp)
-
-#### [Benefits of Prompting & Parenting in ABA Therapy](aba-therapy-prompting-parenting-benefits)
-
-![hero image - executive functioning skills strategies for autistic children](/assets/images/hero-executive-functioning-skills-autism.webp)
-
-#### [Executive Functioning Skills and Autism](executive-functioning-skills-autism)

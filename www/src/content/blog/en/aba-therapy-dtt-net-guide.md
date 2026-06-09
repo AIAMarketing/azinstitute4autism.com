@@ -30,25 +30,3 @@ On the other hand, Natural Environment Training (NET) emphasizes learning within
 Integrating DTT and NET allows us to create a comprehensive therapeutic experience that meets the diverse needs of our learners. By employing both methodologies ensure not only the efficacy of learning, but also extend and apply the acquired skills across various settings.
 
 In Summary, leveraging the combined strengths of DTT and NET enhances our therapeutic practices, amplifying our capability to foster significant and lasting development.
-
- Previous Post 
-
-###### [Understanding Sensory Processing in the Context of ABA Therapy](sensory-processing)
-
- Next Post 
-
-###### [Benefits of Prompting & Parenting in ABA Therapy](aba-therapy-prompting-parenting-benefits)
-
-### Similar Blog Posts
-
-![potty train children with autism using simple aba techniques - hero image](/assets/images/hero-aba-toilet-training-child-autism.webp)
-
-#### [Guide: Simple ABA Techniques for Toilet Training Children with Autism](aba-toilet-training-child-autism)
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
-
-#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)

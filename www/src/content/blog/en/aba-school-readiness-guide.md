@@ -42,25 +42,3 @@ For families with children with autism, navigating back to school period can be 
 - Consistency in your response to different behaviors helps your child to understand the connection between their actions and outcomes.
 
 Changes in daily routines can be difficult and challenging, However Implementing appropriate antecedent and consequence interventions can create a supportive, structured, and motivated environment for your child.
-
- Previous Post 
-
-###### [Master Behavior Management: Discover the Four Functions of Behavior](behavior-management-functions-guide)
-
- Next Post 
-
-###### [Master Proactive & Reactive ABA Techniques – Schedule a Consultation](proactive-reactive-aba-strategies-guide)
-
-### Similar Blog Posts
-
-![teaching academic, social, communications, and independence skills](/assets/images/hero-aba-preschool-az_800x.jpg)
-
-#### [Now Enrolling: AIA Preparatory Academy for Children Ages 2–6](aba-school-readiness-arizona)
-
-![Pediatrician performing a toddler](/assets/images/autism_evaluation_arizona_hero.jpg)
-
-#### [Autism Evaluation in Arizona: A Parent's Step-by-Step Guide](autism-evaluation-diagnosis-arizona-parent-guide)
-
-![rapport strategies for effective aba therapy - hero image](/assets/images/hero-rapport-strategies.webp)
-
-#### [Learn the Secrets to Effective Rapport Building in ABA Therapy](autism-therapy-rapport-strategies)

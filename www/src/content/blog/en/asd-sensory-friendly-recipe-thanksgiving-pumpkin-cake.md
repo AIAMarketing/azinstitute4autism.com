@@ -74,25 +74,3 @@ If you have any leftovers, they can be stored for up to 4 days in the fridge or 
 This recipe is simple, easy, and delicious! We hope that you encourage your child to help you prepare the cake and have a great time while doing it. Enjoy!
 
 For more information on aba therapy services offered by AIA or to book your free consultation, visit us at [https://www.azinstitute4autism.com](../index), contact us at (480) 707-2195, or email info@azinstitute4autism.com. If you are looking for more applied behavioral analysis and asd diagnosis tips, check out AIA’s clinical director, Rula Diab, monthly [blog posts](../library)!
-
- Previous Post 
-
-###### [Community Highlights: Meet Rula Diab of Arizona Institute for Autism](community-highlight-meet-rula-diab)
-
- Next Post 
-
-###### [Guide: Simple ABA Techniques for Toilet Training Children with Autism](aba-toilet-training-child-autism)
-
-### Similar Blog Posts
-
-![potty train children with autism using simple aba techniques - hero image](/assets/images/hero-aba-toilet-training-child-autism.webp)
-
-#### [Guide: Simple ABA Techniques for Toilet Training Children with Autism](aba-toilet-training-child-autism)
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
-![asd sensory-friendly pancake recipe - hero image](/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg)
-
-#### [ASD Sensory-Friendly Recipes: Pancakes](asd-sensory-friendly-recipes-pancakes)

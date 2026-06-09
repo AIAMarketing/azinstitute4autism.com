@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import BlogPostFooter from '../components/BlogPostFooter.astro';
 import LikeViewCounter from '../components/LikeViewCounter.astro';
 const { entry } = Astro.props;
 ---
@@ -16,4 +17,5 @@ const { entry } = Astro.props;
     <div class="prose blog-post-body container"><slot /></div>
     <div class="container"><LikeViewCounter slug={entry.data.slug} /></div>
   </article>
+  <BlogPostFooter entryId={entry.id} />
 </BaseLayout>

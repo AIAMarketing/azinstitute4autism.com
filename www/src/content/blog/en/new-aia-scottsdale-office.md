@@ -58,25 +58,3 @@ But nothing makes her and her staff happier than seeing a lasting impact made on
 “Having everyone on the team — whether it's a family clinician or our caregivers — on the same page to help to support them so that at the end we can see that they are able to be independent in their life, it's very sweet.
 
 “I think we are very lucky to work with our learners at AIA.”
-
- Previous Post 
-
-###### [Meet Rula Diab | Board Certified Behavior Analyst (BCBA)](meet-rula-diab-bcba)
-
- Next Post 
-
-###### [Community Highlights: Meet Rula Diab of Arizona Institute for Autism](community-highlight-meet-rula-diab)
-
-### Similar Blog Posts
-
-![autism self-advocacy skills through aba - hero image](/assets/images/hero-teach-self-advocacy.webp)
-
-#### [Guide to Teaching Self‑Advocacy in ABA](autism-self-advocacy-skills-aba)
-
-![individualized aba therapy - hero image](/assets/images/hero-aba-individual-care-plans.webp)
-
-#### [Individualized Care Plans in ABA Therapy](individualized-aba-therapy)
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)

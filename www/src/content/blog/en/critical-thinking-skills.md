@@ -34,25 +34,3 @@ Applied Behavior Analysis is “ the process of systematically applying interven
 It is okay for our children to make errors, however, as caregivers and parents, we should create learning opportunities for our children, give them the emotional support they need and model proper responses.
 
 For more information on how to manage aggressive behavior and proper communication, connect with us by sending your messages and questions to [hello@azinsitute4autism.com](mailto:hello@azinsitute4autism.com) or contact us directly from our contact page.
-
- Previous Post 
-
-###### [November AIA Update](november-2022-aia-update)
-
- Next Post 
-
-###### [New Year Goals for Our Children with Autism](new-year-goals-2023)
-
-### Similar Blog Posts
-
-![Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments - hero image](/assets/images/hero-managing-aggressive-behavior-outbursts_800x.jpg)
-
-#### [Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments](managing-aggressive-behavior-outbursts)
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
-
-#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)
-
-![teaching academic, social, communications, and independence skills](/assets/images/hero-aba-preschool-az_800x.jpg)
-
-#### [Now Enrolling: AIA Preparatory Academy for Children Ages 2–6](aba-school-readiness-arizona)

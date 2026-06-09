@@ -34,25 +34,3 @@ The best strategy for parents to manage aggressive behavior outburst are the fol
 - Use less verbal interaction and use more visuals to help to de-escalate the challenging behavior.
 
 For more information on how to manage aggressive behavior and proper communication, connect with us by sending your messages and questions to hello@azinsitute4autism.com or contact us directly at www.azinstitute4autism.com/contactus.
-
- Previous Post 
-
-###### [Play and Leisure Skills for Children with Autism](play-leisure-skills)
-
- Next Post 
-
-###### [November AIA Update](november-2022-aia-update)
-
-### Similar Blog Posts
-
-![Critical Thinking Skills for Children with Autism - hero image](/assets/images/hero-critical-thinking-skills_800x.jpg)
-
-#### [Critical Thinking Skills for Children with Autism](critical-thinking-skills)
-
-![proactive reactive aba strategies guide - hero image](/assets/images/hero-proactive-reactive-strategies.webp)
-
-#### [Master Proactive & Reactive ABA Techniques – Schedule a Consultation](proactive-reactive-aba-strategies-guide)
-
-![New Year Goals for Our Children with Autism - hero image](/assets/images/hero-new-year-goals-2023_800x.jpg)
-
-#### [New Year Goals for Our Children with Autism](new-year-goals-2023)

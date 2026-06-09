@@ -20,25 +20,3 @@ As each child is unique and often requires tailored support, it's essential to c
 ## Looking for more information?
 
 For more information on services offered by AIA or to book your free consultation, visit us at [https://www.azinstitute4autism.com](../index), contact us at [(480) 687-7099](tel:+14806877099), or email [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com). If you are looking for more tips, check out monthly [blog posts](../library) from AIA’s clinical director, Rula Diab!
-
- Previous Post 
-
-###### [Arizona Institute for Autism Adopts an Integrated ABA Model](integrated-aba-model-announcement)
-
- Next Post 
-
-###### [ASD Sensory-Friendly Recipes: Pancakes](asd-sensory-friendly-recipes-pancakes)
-
-### Similar Blog Posts
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
-![potty train children with autism using simple aba techniques - hero image](/assets/images/hero-aba-toilet-training-child-autism.webp)
-
-#### [Guide: Simple ABA Techniques for Toilet Training Children with Autism](aba-toilet-training-child-autism)
-
-![enhancing generalization skills in children with autism - hero image](/assets/images/hero-enhancing-generalization-skills_800x.jpg)
-
-#### [Enhancing Generalization for Broader Impact in Autism](enhancing-generalization-skills)

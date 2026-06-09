@@ -1,0 +1,191 @@
+---
+import footerData from '../data/blog-footers.json';
+
+interface FooterLink {
+  title: string;
+  href: string;
+}
+
+interface RelatedPost extends FooterLink {
+  image: string;
+  alt: string;
+}
+
+interface FooterData {
+  previous?: FooterLink;
+  next?: FooterLink;
+  related: RelatedPost[];
+}
+
+const { entryId } = Astro.props as { entryId: string };
+const footer = (footerData as Record<string, FooterData>)[entryId];
+---
+
+{footer && (
+  <footer class="blog-post-footer">
+    {(footer.previous || footer.next) && (
+      <nav class="post-pagination" aria-label="Article navigation">
+        <div class="post-pagination__item post-pagination__item--previous">
+          {footer.previous && (
+            <>
+              <span>Previous Post</span>
+              <h2><a href={footer.previous.href}>{footer.previous.title}</a></h2>
+            </>
+          )}
+        </div>
+        <div class="post-pagination__item post-pagination__item--next">
+          {footer.next && (
+            <>
+              <span>Next Post</span>
+              <h2><a href={footer.next.href}>{footer.next.title}</a></h2>
+            </>
+          )}
+        </div>
+      </nav>
+    )}
+
+    {footer.related.length > 0 && (
+      <section class="related-posts" aria-labelledby={`related-posts-${entryId.replace('/', '-')}`}>
+        <div class="container">
+          <h2 id={`related-posts-${entryId.replace('/', '-')}`}>Similar Blog Posts</h2>
+          <div class="related-posts__list">
+            {footer.related.map((post) => (
+              <article class="related-post">
+                <a class="related-post__image-link" href={post.href} aria-label={`Read full post: ${post.title}`}>
+                  <img src={post.image} alt={post.alt} loading="lazy" />
+                </a>
+                <h3><a href={post.href}>{post.title}</a></h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </footer>
+)}
+
+<style>
+  .post-pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 3.125rem auto 5rem;
+    padding-top: 1.5625rem;
+    width: min(calc(100% - 2rem), 948px);
+  }
+
+  .post-pagination__item {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+
+  .post-pagination__item--next {
+    text-align: end;
+  }
+
+  .post-pagination span {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: .35rem;
+  }
+
+  .post-pagination h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .post-pagination a,
+  .related-post a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .post-pagination a:hover,
+  .post-pagination a:focus-visible,
+  .related-post a:hover,
+  .related-post a:focus-visible {
+    color: var(--color-accent);
+  }
+
+  .related-posts {
+    background: #fafafa;
+    padding-block: 5rem 3.75rem;
+  }
+
+  .related-posts .container {
+    padding-inline: 1rem;
+    width: min(100%, 980px);
+  }
+
+  .related-posts h2 {
+    font-size: 2.2rem;
+    line-height: 1.275;
+    margin: 0 0 2.5rem;
+  }
+
+  .related-posts__list {
+    display: grid;
+    gap: 1.875rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .related-post {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: .5rem;
+  }
+
+  .related-post__image-link,
+  .related-post img {
+    display: block;
+  }
+
+  .related-post img {
+    border-radius: 4px;
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .related-post h3 {
+    font-size: 1rem;
+    line-height: 1.625;
+    margin: .7rem 0 0;
+  }
+
+  @media (max-width: 991px) {
+    .related-posts__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .post-pagination {
+      margin-block: 1.5625rem 2.5rem;
+      padding-top: 1.5625rem;
+    }
+
+    .post-pagination h2 {
+      font-size: 1rem;
+      line-height: 1.125;
+    }
+
+    .related-posts {
+      padding-block: 2.5rem 1.25rem;
+    }
+
+    .related-posts h2 {
+      font-size: 1.875rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .related-posts__list {
+      display: block;
+    }
+
+    .related-post {
+      margin-bottom: 1.25rem;
+    }
+  }
+</style>

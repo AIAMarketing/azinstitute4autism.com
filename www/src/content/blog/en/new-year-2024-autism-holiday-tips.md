@@ -26,25 +26,3 @@ The start of a new year is often associated with feelings of joy and optimism. I
 The New Year symbolizes growth and development, and that applies to children with autism as well. Take this time to reflect, plan, and prioritize the well-being of both the child receiving therapy and their caregivers.
 
 For more information about ABA therapy services offered by AIA or to book your free consultation, visit our Arizona Institute for Autism website at [www.azinstitute4autism.com](../index), call [(480) 687-7099](tel:+14806877099), or email [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com). If you are looking for more applied behavioral analysis and ASD diagnosis and treatment tips, check out more [blog posts](../library) from AIA’s clinical director, Rula Diab!
-
- Previous Post 
-
-###### [Guide: Simple ABA Techniques for Toilet Training Children with Autism](aba-toilet-training-child-autism)
-
- Next Post 
-
-###### [Understanding Sensory Processing in the Context of ABA Therapy](sensory-processing)
-
-### Similar Blog Posts
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
-![potty train children with autism using simple aba techniques - hero image](/assets/images/hero-aba-toilet-training-child-autism.webp)
-
-#### [Guide: Simple ABA Techniques for Toilet Training Children with Autism](aba-toilet-training-child-autism)
-
-![enhancing generalization skills in children with autism - hero image](/assets/images/hero-enhancing-generalization-skills_800x.jpg)
-
-#### [Enhancing Generalization for Broader Impact in Autism](enhancing-generalization-skills)

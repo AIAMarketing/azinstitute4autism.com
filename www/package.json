@@ -12,6 +12,7 @@
     "preview": "astro preview",
     "extract": "node tools/extract-fallback.mjs",
     "extract:full": "node tools/extract-site.mjs",
+    "extract:blog-footers": "node tools/extract-blog-footers.mjs",
     "crawl:live": "node tools/crawl-live-site.mjs",
     "audit:links": "node tools/audit-links.mjs",
     "audit:images": "node tools/audit-page-imagery.mjs",

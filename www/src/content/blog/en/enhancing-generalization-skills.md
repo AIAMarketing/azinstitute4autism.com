@@ -42,25 +42,3 @@ Understanding the three primary types of generalization—stimulus, response, an
 For more information on services offered by AIA, or to book your free consultation, visit us at [https://www.azinstitute4autism.com](../index), contact us at [(480) 687-7099](tel:+14806877099), or email [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com).
 
 If you are looking for more tips, check our [monthly blog posts](../library) from AIA’s clinical director, Rula Diab!
-
- Previous Post 
-
-###### [Navigating the Autism Journey: Understanding and Supporting Our Children with Autism](understanding-autism-support)
-
- Next Post 
-
-###### [Arizona Institute for Autism Adopts an Integrated ABA Model](integrated-aba-model-announcement)
-
-### Similar Blog Posts
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
-
-#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
-
-#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)

@@ -44,25 +44,3 @@ Remember, each child with autism is unique. By educating yourself, seeking suppo
 For more information on services offered by AIA or to book your free consultation, visit us at [https://www.azinstitute4autism.com](../index), call us at [(480) 687-7099](tel:+14806877099), or email [hello@azinstitute4autism.com](mailto:hello@azinstitute4autism.com).
 
 If you are looking for more tips, check out [monthly blog posts](../library) from AIA’s clinical director, Rula Diab!
-
- Previous Post 
-
-###### [The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory](behavior-modification-techniques-reinforcement-theory)
-
- Next Post 
-
-###### [Enhancing Generalization for Broader Impact in Autism](enhancing-generalization-skills)
-
-### Similar Blog Posts
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
-
-#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
-
-#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)

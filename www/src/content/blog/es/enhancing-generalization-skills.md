@@ -42,21 +42,3 @@ Comprender los tres tipos principales de generalización (estímulo, respuesta y
 Para más información sobre los servicios ofrecidos por AIA, o para reservar su consulta gratuita, visítenos en [https://www.azinstitute4autism.com](../../index), contáctenos en [(480) 687-7099](tel:+14806877099), o correo electrónico [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com).
 
 Si buscas más consejos, ¡consulta las [publicaciones mensuales de nuestro blog](../../library) de la directora clínica de AIA, Rula Diab!
-
- Previous Post 
-
-###### [Qué esperar en la primera evaluación de autismo de su hijo](autism-evaluation-what-to-expect)
-
-### Similar Blog Posts
-
-![Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.](/assets/images/autism-evaluation-expectations_hero.png)
-
-#### [Qué esperar en la primera evaluación de autismo de su hijo](autism-evaluation-what-to-expect)
-
-![Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona](/assets/images/autism_evaluation_arizona_hero.jpg)
-
-#### [Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres](autism-evaluation-diagnosis-arizona-parent-guide)
-
-![niño que habla tiene problemas para socializar - imagen principal](/assets/images/talk-not-social.jpg)
-
-#### [Por qué mi hijo puede hablar pero aún tiene dificultades sociales](social-pragmatic-communication-autism)

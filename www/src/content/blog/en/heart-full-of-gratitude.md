@@ -54,25 +54,3 @@ AIA isn't just a workplace, it's a growing community built on love, patience, an
 Thank you, Rula Diab
 
 ![clinical director rula diab signature](/assets/images/clinical-director-rula-diab.png)
-
- Previous Post 
-
-###### [Why Emotional Regulation Should Be the Heart of Every ABA Program](emotional-regulation-aba)
-
- Next Post 
-
-###### [Why My Child Can Talk but Still Struggles Socially](social-pragmatic-communication-autism)
-
-### Similar Blog Posts
-
-![Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image](/assets/images/hero-integrity-empowerment-excellence_800x.jpg)
-
-#### [Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office](new-aia-scottsdale-office)
-
-![Meet Rula Diab | Board Certified Behavior Analyst (BCBA) - hero image](/assets/images/hero-meet-rula-diab-shoutout-az_800x.jpg)
-
-#### [Meet Rula Diab | Board Certified Behavior Analyst (BCBA)](meet-rula-diab-bcba)
-
-![Benefits of ABA Therapy for Children with Autism - hero image](/assets/images/hero-aba-therapy-benefits_800x.jpg)
-
-#### [The Benefits of ABA Therapy for Children with Autism](aba-therapy-benefits)

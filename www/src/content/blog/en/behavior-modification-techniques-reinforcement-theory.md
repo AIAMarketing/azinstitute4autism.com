@@ -38,25 +38,3 @@ BCBA clinicians use [consequence interventions](https://specialconnections.ku.ed
 For more information on services offered by AIA, or to book your free consultation, visit us at [https://www.azinstitute4autism.com](../index), contact us at [(480) 687-7099](tel:+14806877099), or email [hello@azinstitute4autism.com](mailto:hello@azinstitute4autism.com).
 
 If you are looking for tips, check out more monthly [blog posts](../library) from AIA's clinical director, Rula Diab!
-
- Previous Post 
-
-###### [AIA’s World Autism Community Day of Celebration](aia-world-autism-community-day-celebration)
-
- Next Post 
-
-###### [Navigating the Autism Journey: Understanding and Supporting Our Children with Autism](understanding-autism-support)
-
-### Similar Blog Posts
-
-![enhancing generalization skills in children with autism - hero image](/assets/images/hero-enhancing-generalization-skills_800x.jpg)
-
-#### [Enhancing Generalization for Broader Impact in Autism](enhancing-generalization-skills)
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
-
-#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
-![integrated aba model announcement - hero image](/assets/images/hero-integrated-aba-model-announcement_800x.jpg)
-
-#### [Arizona Institute for Autism Adopts an Integrated ABA Model](integrated-aba-model-announcement)

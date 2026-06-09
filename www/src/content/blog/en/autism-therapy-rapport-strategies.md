@@ -32,25 +32,3 @@ Clinicians should keep in mind the importance of fostering strong relationships 
 By investing effort in establishing this rapport, therapists can observe significant progress and growth in each child.
 
 Recognizing and accommodating a child's [sensory](https://www.autismspeaks.org/sensory-issues) needs within ABA sessions is crucial for enhancing engagement, reducing anxiety, and creating a more effective and enjoyable learning atmosphere. Building a strong rapport with a child in ABA therapy is essential for facilitating a positive, engaging, and successful therapeutic journey. Through trust-building, increased engagement, reinforcement of positive behavior, and promotion of enjoyable experiences, clinicians can greatly enhance the outcomes of ABA therapy.
-
- Previous Post 
-
-###### [Benefits of Prompting & Parenting in ABA Therapy](aba-therapy-prompting-parenting-benefits)
-
- Next Post 
-
-###### [Master Behavior Management: Discover the Four Functions of Behavior](behavior-management-functions-guide)
-
-### Similar Blog Posts
-
-![Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image](/assets/images/hero-integrity-empowerment-excellence_800x.jpg)
-
-#### [Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office](new-aia-scottsdale-office)
-
-![November AIA Update - hero image](/assets/images/hero-november-2022-aia-update_800x.jpg)
-
-#### [November AIA Update](november-2022-aia-update)
-
-![navigating the autism journey: understanding and supporting our children with autism - hero image](/assets/images/hero-understanding-autism-support_800x.jpg)
-
-#### [Navigating the Autism Journey: Understanding and Supporting Our Children with Autism](understanding-autism-support)

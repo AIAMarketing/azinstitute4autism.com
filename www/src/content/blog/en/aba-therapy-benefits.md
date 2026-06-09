@@ -22,25 +22,3 @@ Parental participation is a critical component of ABA Therapy. Parents and careg
 At the Arizona Institute for Autism, our focus is on the learner. Our services are designed to meet individual needs, working collaboratively with a team of clinicians and parents. This approach aims to improve the quality of life for children with autism and their families.
 
 For more information on ABA therapy services offered by AIA, or to book your free consultation, visit us at [https://www.azinstitute4autism.com](../index), contact us at [(480) 687-7099](tel:+14806877099), or email [info@azinstitute4autism.com](mailto:info@azinstitute4autism.com). If you are looking for more applied behavioral analysis and ASD diagnosis tips, check out [more articles](../library) from AIA’s clinical director, Rula Diab!
-
- Previous Post 
-
-###### [ASD Sensory-Friendly Recipes: Pancakes](asd-sensory-friendly-recipes-pancakes)
-
- Next Post 
-
-###### [Meet Rula Diab | Board Certified Behavior Analyst (BCBA)](meet-rula-diab-bcba)
-
-### Similar Blog Posts
-
-![Repetitive Behaviors with Children Diagnosed with Autism - hero image](/assets/images/hero-repetetive-behaviors.webp)
-
-#### [Repetitive Behaviors with Children Diagnosed with Autism](repetitive-behavior)
-
-![asd sensory-friendly pancake recipe - hero image](/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg)
-
-#### [ASD Sensory-Friendly Recipes: Pancakes](asd-sensory-friendly-recipes-pancakes)
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
-
-#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)

@@ -70,25 +70,3 @@ Parents play a critical role in reinforcing self-advocacy skills learned in ABA 
 - Model Advocacy : Demonstrate how you advocate for your own needs, providing a real-world example.
 
 Teaching self-advocacy through ABA empowers children to take charge of their needs, preferences, and choices. By fostering independence and enhancing communication skills, ABA helps children navigate their environments with confidence and dignity. Whether in therapy sessions or at home, self-advocacy is a gift that equips children for lifelong success.
-
- Previous Post 
-
-###### [Discover Self‑Care Hacks for Parents of Children with Autism](autism-family-self-care-tips)
-
- Next Post 
-
-###### [Executive Functioning Skills and Autism](executive-functioning-skills-autism)
-
-### Similar Blog Posts
-
-![individualized aba therapy - hero image](/assets/images/hero-aba-individual-care-plans.webp)
-
-#### [Individualized Care Plans in ABA Therapy](individualized-aba-therapy)
-
-![Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image](/assets/images/hero-integrity-empowerment-excellence_800x.jpg)
-
-#### [Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office](new-aia-scottsdale-office)
-
-![meet rula diab of aia - hero image](/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg)
-
-#### [Community Highlights: Meet Rula Diab of Arizona Institute for Autism](community-highlight-meet-rula-diab)

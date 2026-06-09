@@ -122,25 +122,3 @@ Estrategias de apoyo:
 - Práctica de resolución de problemas del mundo real (por ejemplo, gestionar proyectos grupales o conflictos)
 
 Desarrollar habilidades de funcionamiento ejecutivo en niños con autismo es un proceso gradual y de apoyo. Con estrategias específicas, apoyos visuales y rutinas consistentes, los niños pueden desarrollar mayor independencia, flexibilidad y resiliencia emocional.
-
- Previous Post 
-
-###### [Guía para enseñar la autodefensa en el ABA](autism-self-advocacy-skills-aba)
-
- Next Post 
-
-###### [Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades](positive-reinforcement-techniques)
-
-### Similar Blog Posts
-
-![terapia aba refuerzo positivo](/assets/images/hero-positive-reinforcement-techniques.webp)
-
-#### [Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades](positive-reinforcement-techniques)
-
-![Consejos de autocuidado para familias con autismo - imagen destacada](/assets/images/hero-self-care-priority.webp)
-
-#### [Descubre consejos para el autocuidado de padres de niños con autismo](autism-family-self-care-tips)
-
-![Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal](/assets/images/child-shopping-cart-tired-cranky.jpg)
-
-#### [Por qué la regulación emocional debería ser el corazón de cada programa de ABA](emotional-regulation-aba)

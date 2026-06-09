@@ -122,25 +122,3 @@ Support Strategies:
 - Real-world problem-solving practice (e.g., managing group projects or conflicts)
 
 Building executive functioning skills in children with autism is a gradual and supportive process. With targeted strategies, visual supports, and consistent routines, children can develop greater independence, flexibility, and emotional resilience.
-
- Previous Post 
-
-###### [Guide to Teaching Self‑Advocacy in ABA](autism-self-advocacy-skills-aba)
-
- Next Post 
-
-###### [First/Then Cards: Empowering Transitions for Autistic Children](first-then-cards-autism-transitions)
-
-### Similar Blog Posts
-
-![rapport strategies for effective aba therapy - hero image](/assets/images/hero-rapport-strategies.webp)
-
-#### [Learn the Secrets to Effective Rapport Building in ABA Therapy](autism-therapy-rapport-strategies)
-
-![2024 new year reflection and planning for autism support and awareness - hero image](/assets/images/hero-new-year-goals-2024.webp)
-
-#### [New Year 2024: Holiday Tips for Autism Support & Awareness](new-year-2024-autism-holiday-tips)
-
-![sensory processing challenges in aba therapy - hero image](/assets/images/hero-sensory-processing.webp)
-
-#### [Understanding Sensory Processing in the Context of ABA Therapy](sensory-processing)
