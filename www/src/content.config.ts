@@ -11,7 +11,8 @@ const shared = {
   alt: z.string().optional(),
   lang: language,
   translationKey: z.string().optional(),
-  draft: z.boolean().default(false)
+  draft: z.boolean().default(false),
+  sections: z.array(z.record(z.unknown())).optional()
 };
 
 const pages = defineCollection({

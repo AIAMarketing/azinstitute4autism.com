@@ -1,0 +1,16 @@
+---
+import type { InsuranceSection } from '../../types/home-sections';
+interface Props { section: InsuranceSection }
+const { section } = Astro.props;
+---
+<section class="section insurance-section">
+  <div class="container">
+    <h2>{section.heading}</h2>
+    <p>{section.body}</p>
+    <div class="logo-row">
+      {section.logos.map(({ file, alt }) => (
+        <img src={`/assets/images/${file}`} alt={alt} />
+      ))}
+    </div>
+  </div>
+</section>

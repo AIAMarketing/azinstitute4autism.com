@@ -1,0 +1,14 @@
+---
+import type { EsaSection } from '../../types/home-sections';
+interface Props { section: EsaSection }
+const { section } = Astro.props;
+---
+<section class="section cream-section">
+  <div class="container feature-grid esa-grid">
+    <div>
+      <h2>{section.heading}</h2>
+      <p>{section.body}</p>
+    </div>
+    <img src={`/assets/images/${section.image}`} alt={section.imageAlt} />
+  </div>
+</section>

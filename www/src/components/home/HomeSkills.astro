@@ -1,0 +1,18 @@
+---
+import type { SkillsSection } from '../../types/home-sections';
+interface Props { section: SkillsSection }
+const { section } = Astro.props;
+---
+<section class="skills-section">
+  <div class="container">
+    <h2>{section.heading}</h2>
+    <div class="skills-grid">
+      {section.skills.map(({ icon, label }) => (
+        <div>
+          <img src={`/assets/images/${icon}`} alt="" />
+          <span>{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

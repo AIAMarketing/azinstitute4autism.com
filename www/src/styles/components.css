@@ -94,7 +94,9 @@
 .home-hero-grid > div { align-self: center; padding-bottom: 4rem; }
 .home-hero-grid p:not(.script-label) { max-width: 570px; }
 .home-hero-grid img { align-self: end; justify-self: end; max-height: 500px; object-fit: contain; }
-.services-intro .feature-grid { grid-template-columns: .75fr 1.25fr; }
+.services-grid { display: grid; gap: clamp(2rem, 6vw, 5rem); }
+.feature-grid--intro { grid-template-columns: .75fr 1.25fr; }
+.feature-grid--reverse { grid-template-columns: 1.25fr .75fr; }
 .gear-photo { justify-self: center; max-width: 270px; }
 .gear-photo-right { outline-color: #dce0e5; }
 .source-list { margin-block: 0 1.5rem; padding-inline-start: 2.5rem; }
@@ -131,7 +133,8 @@
   .home-hero-grid { grid-template-columns: 1fr; padding-top: 3rem; text-align: center; }
   .home-hero-grid > div { padding-bottom: 1rem; }
   .home-hero-grid img { justify-self: center; max-height: 330px; }
-  .services-intro .feature-grid, .benefit-grid, .esa-grid { grid-template-columns: 1fr; }
+  .services-grid { gap: 2rem; }
+  .services-grid .feature-grid, .benefit-grid, .esa-grid { grid-template-columns: 1fr; }
   .feature-grid > .gear-photo-right { grid-row: 3; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: 1fr 1fr; }

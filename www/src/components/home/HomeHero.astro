@@ -1,0 +1,16 @@
+---
+import type { HeroSection } from '../../types/home-sections';
+interface Props { section: HeroSection }
+const { section } = Astro.props;
+---
+<section class="home-hero">
+  <div class="container home-hero-grid">
+    <div>
+      <p class="script-label">{section.eyebrow}</p>
+      <h1 set:html={section.heading} />
+      <p>{section.body}</p>
+      <a class="button" href={section.cta.href}>{section.cta.label}</a>
+    </div>
+    <img src={`/assets/images/${section.image}`} alt={section.imageAlt} loading="eager" />
+  </div>
+</section>

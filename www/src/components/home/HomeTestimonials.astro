@@ -1,0 +1,15 @@
+---
+import type { TestimonialsSection } from '../../types/home-sections';
+interface Props { section: TestimonialsSection }
+const { section } = Astro.props;
+---
+<section class="section cream-section testimonial-section">
+  <div class="container">
+    <h2>{section.heading}</h2>
+    <blockquote>
+      <strong>{section.featured.author}</strong>
+      {section.featured.paragraphs.map((p) => <p>{p}</p>)}
+    </blockquote>
+    <div class="testimonial-dots" aria-hidden="true">• • • • • • • • • • •</div>
+  </div>
+</section>

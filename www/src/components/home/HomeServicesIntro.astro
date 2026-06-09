@@ -1,0 +1,24 @@
+---
+import type { ServicesIntroSection } from '../../types/home-sections';
+interface Props { section: ServicesIntroSection }
+const { section } = Astro.props;
+---
+<section class="section services-intro">
+  <div class="container services-grid">
+    <div class="feature-grid feature-grid--intro">
+      <img class="gear-photo" src={`/assets/images/${section.servicesImage}`} alt={section.servicesImageAlt} />
+      <div>
+        <h2>{section.servicesHeading}</h2>
+        <ul class="source-list">{section.services.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+    <div class="feature-grid feature-grid--intro feature-grid--reverse">
+      <div>
+        <h2 class="no-balance">{section.commitmentsHeading}</h2>
+        <ul class="source-list two-column-list">{section.commitments.map((item) => <li>{item}</li>)}</ul>
+        <a class="button" href={section.commitmentsCta.href}>{section.commitmentsCta.label}</a>
+      </div>
+      <img class="gear-photo gear-photo-right" src={`/assets/images/${section.commitmentsImage}`} alt={section.commitmentsImageAlt} />
+    </div>
+  </div>
+</section>

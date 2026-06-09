@@ -1,0 +1,18 @@
+---
+import type { BenefitsSection } from '../../types/home-sections';
+interface Props { section: BenefitsSection }
+const { section } = Astro.props;
+---
+<section class="section cream-section">
+  <div class="container feature-grid benefit-grid">
+    <div>
+      <h2>{section.heading}</h2>
+      <h3>{section.subheading}</h3>
+      <ul class="source-list">{section.items.map((item) => <li>{item}</li>)}</ul>
+    </div>
+    <a class="video-card" href={section.videoHref}>
+      <img src={`/assets/images/${section.videoImage}`} alt={section.videoImageAlt} />
+      <span>▶</span>
+    </a>
+  </div>
+</section>
