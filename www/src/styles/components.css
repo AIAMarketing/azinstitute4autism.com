@@ -12,8 +12,8 @@
 .lang-switcher:focus-within .lang-switcher__menu { display: block; }
 .site-header { background: white; box-shadow: var(--shadow-sm); position: relative; z-index: 5; }
 .header-inner { align-items: center; display: flex; gap: 1.4rem; min-height: 110px; }
-.brand { margin-right: auto; }
 .brand img { width: 150px; }
+.main-nav { margin-left: auto; margin-right: auto; }
 .main-nav ul { display: flex; gap: 1.4rem; list-style: none; margin: 0; padding: 0; }
 .main-nav li { position: relative; }
 .main-nav a { color: var(--color-primary); font-size: .9rem; text-decoration: none; }
