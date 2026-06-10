@@ -22,7 +22,7 @@
 .main-nav .submenu a { display: block; padding: .45rem 1rem; }
 .main-nav li:hover > .submenu, .main-nav li:focus-within > .submenu { display: block; }
 .mobile-nav { display: none; }
-.button { background: var(--color-accent); border: 2px solid var(--color-accent); border-radius: 4px; color: var(--color-primary); display: inline-block; padding: .65rem 1.2rem; text-decoration: none; }
+.button { background: var(--color-accent); border: 2px solid var(--color-accent); border-radius: 4px; color: var(--color-primary); display: inline-block; padding: .65rem 1.2rem; text-decoration: none; transition: .3s linear all; }
 .button:hover { background: transparent; border-color: var(--color-accent-strong); color: var(--color-primary); }
 .button-small { font-size: .9rem; }
 .button-light { background: white; color: var(--color-primary-dark); }
