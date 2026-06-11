@@ -18,6 +18,8 @@
 - Rebuilt the homepage in the live section order and rebuilt shared service,
   library-index, and blog-post families against live public references.
 - Reused the same complete live-derived homepage layout for English and Spanish.
+- Reorganized the homepage source into named `home:` frontmatter blocks so the
+  content is easier to inspect and edit without changing the rendered layout.
 - Replaced the extracted linear team article with a dedicated live-derived team grid.
 - Repaired mirror-rewritten PDF, lightbox, CTA, and relative content links.
 - Limited language-switcher choices to translations that have generated routes.

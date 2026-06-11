@@ -215,6 +215,35 @@ The project includes `frontmatter.json` for the Front Matter CMS VS Code
 extension. Open the `www` folder as the editor workspace so its content folders
 and media paths resolve correctly.
 
+### Edit The Homepage
+
+The English and Spanish homepages are driven from the structured `home:`
+frontmatter block in:
+
+```txt
+src/content/pages/en/index.md
+src/content/pages/es/index.md
+```
+
+`HomePage.astro` renders those named sections in order. Use the section names
+as the editing surface:
+
+```txt
+hero
+servicesIntro
+benefits
+skills
+insurance
+esa
+financialHelp
+process
+director
+testimonials
+```
+
+Keep homepage copy in those named blocks so the page remains easy to scan in
+Front Matter CMS and VS Code. `src/content.config.ts` validates the structure.
+
 ### Images And Downloads
 
 Store content-referenced assets in:

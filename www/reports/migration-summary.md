@@ -35,6 +35,8 @@ Implemented fidelity work includes:
   utility links, footer columns, and contact information.
 - Rebuilt the complete English and Spanish homepages in their live section
   order using one reusable Astro component and self-hosted source assets.
+- Moved the English and Spanish homepage copy into section-oriented `home:`
+  frontmatter blocks so the page is easier to edit in Front Matter CMS.
 - Rebuilt service pages around the live compact title banner and editorial
   presentation, with current visible headings and working calls to action.
 - Recovered and restored the live decorative hero imagery for all mapped
