@@ -1,0 +1,18 @@
+---
+interface Props {
+  title: string;
+  image?: string;
+  eyebrow?: string;
+  constrain?: boolean;
+}
+const { title, image, eyebrow, constrain = false } = Astro.props;
+---
+
+<header class:list={['page-hero', { 'page-hero--image': image, 'page-hero--constrained': image && constrain }]} style={image ? `--hero-image: url("${image}")` : undefined}>
+  <div class="container">
+    {eyebrow
+      ? <div class="page-hero__copy"><p class="script-label">{eyebrow}</p><h1>{title}</h1></div>
+      : <h1>{title}</h1>
+    }
+  </div>
+</header>

@@ -1,11 +1,12 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 const { title, description, lang = 'en' } = Astro.props;
 const languagePrefix = lang === 'en' ? '' : `/${lang}`;
 const canonical = `https://www.azinstitute4autism.com${languagePrefix}/library`;
 ---
 <BaseLayout title={title} description={description} canonical={canonical} lang={lang}>
-  <header class="library-banner"><div class="container"><div class="library-banner-copy"><p class="script-label">Welcome to</p><h1>{title}</h1></div></div></header>
+  <PageHero title={title} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
   <section class="library-intro"><div class="container"><h2>Library</h2><p>{description}</p></div></section>
   <div class="container section library-layout"><slot /></div>
 </BaseLayout>

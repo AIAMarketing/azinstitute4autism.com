@@ -1,0 +1,78 @@
+---
+import Button from './Button.astro';
+---
+
+<style>
+  .services-intro { padding-block: 5rem 1.25rem; }
+  .services-intro-cta { margin-top: 2rem; text-align: center; }
+
+  .services-cards-section { background: var(--color-primary); padding-block: 3rem; }
+  .services-cards-section h2 { color: white; margin-top: 0; text-align: center; }
+  .services-cards-desc { color: white; margin-bottom: 2rem; }
+
+  .service-cards-grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+  .service-card-link { background-color: var(--color-accent); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 6px; display: block; padding: 20% 2rem 2rem; text-align: center; text-decoration: none; transition: all .3s ease-in-out; }
+  .service-card-link:hover { transform: scale(1.05); }
+  .service-card-link:hover .service-card-title { background: #fffc; border-color: var(--color-accent-strong); color: var(--color-primary) !important; }
+  .service-card-title { background: var(--color-accent); border: 2px solid var(--color-accent); border-radius: var(--radius-sm); color: var(--color-primary) !important; display: inline-block; font-family: var(--font-body); font-size: 1rem; font-weight: 600; line-height: 1.5; margin: 0; padding: .65rem 1.2rem; position: relative; top: .15rem; white-space: nowrap; }
+
+  .services-diagnosis-section { margin-block: 6rem; }
+  .services-diagnosis-card { background: var(--color-tint); border-radius: 6px; padding: 2rem 1.25rem; }
+  .services-diagnosis-inner { align-items: center; display: flex; flex-direction: column; gap: 2rem; justify-content: space-between; }
+  .services-diagnosis-text h2 { margin-top: 0; }
+  .services-diagnosis-text p { margin-bottom: 0; }
+  .services-diagnosis-btn { min-width: fit-content; }
+
+  @media (min-width: 768px) { .service-cards-grid { gap: 30px; grid-template-columns: repeat(2, 1fr); } .services-diagnosis-card { padding: 4.375rem; } .services-diagnosis-inner { flex-direction: row; } }
+  @media (min-width: 768px) and (max-width: 1023px) { .service-card-link:last-child { grid-column: 1 / -1; margin-inline: auto; padding-top: calc(10% - 3px); width: calc(50% - 15px); } }
+  @media (min-width: 1024px) { .service-cards-grid { grid-template-columns: repeat(3, 1fr); } .service-card-link { padding-top: 42%; } }
+</style>
+
+<section class="services-intro">
+  <div class="container">
+    <h2>Autism Spectrum Disorder Services</h2>
+    <p>Autism Spectrum Disorder (ASD) refers to a group of complex brain development disorders and is characterized by difficulties with social interaction, verbal and non-verbal communication, and emotional control.</p>
+    <p>The Arizona Institute for Autism helps with Autism Evaluations and Diagnostic Screenings, Applied Behavior Analysis (ABA) Therapy, and Educational Programming tailored to each learner's needs. To support meaningful skill development, we design integrative ABA programs for children diagnosed with autism. We offer both individualized and group ABA Therapy, along with educational services that reflect each child's unique strengths and goals.</p>
+    <h3>AIA ABA &amp; Educational Options</h3>
+    <ul>
+      <li>In-Center</li>
+      <li>In-School</li>
+      <li>In-Home</li>
+      <li>Early Intervention</li>
+      <li>Academic Readiness</li>
+      <li>Clinical Supervision</li>
+      <li>Parent Consultation</li>
+    </ul>
+    <h3>Does My Learner Have Autism?</h3>
+    <p>Approximately 1 in 36 children in the United States will receive an autism diagnosis each year. If your child exhibits any of the behaviors listed above, it is possible that he or she may be diagnosed on the autism spectrum. Diagnosing children with Autism Spectrum Disorder can be challenging and complex. The most important thing you can do is consult a professional if you think your child is displaying atypical behavior.</p>
+    <p class="services-intro-cta"><Button href="/client-consultation">Consult with a Client Advocate</Button></p>
+  </div>
+</section>
+
+<section class="services-cards-section">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="services-cards-desc">Arizona Institute for Autism (AIA) offers a comprehensive range of services tailored to individuals with Autism Spectrum Disorder (ASD). Our programs include early intervention for young children, Applied Behavior Analysis (ABA) therapy, social skills groups, and educational support services. AIA is committed to providing personalized care plans to enhance the quality of life for children with autism and their families.</p>
+    <div class="service-cards-grid">
+      <a href="/aba-therapy" class="service-card-link" style="background-image:url('/assets/images/services-card-behavioral.jpg')"><h3 class="service-card-title">Behavioral Services</h3></a>
+      <a href="/autism-evaluations" class="service-card-link" style="background-image:url('/assets/images/services-card-psychological.jpg')"><h3 class="service-card-title">Psychological Services</h3></a>
+      <a href="/learner-social-club" class="service-card-link" style="background-image:url('/assets/images/services-card-sociological.jpg')"><h3 class="service-card-title">Sociological Services</h3></a>
+    </div>
+  </div>
+</section>
+
+<section class="services-diagnosis-section">
+  <div class="container container-w">
+    <div class="services-diagnosis-card">
+      <div class="services-diagnosis-inner">
+        <div class="services-diagnosis-text">
+          <h2>Need Autism Diagnosis Support?</h2>
+          <p>To meet diagnostic criteria for ASD, a child must have persistent deficits in each of three areas of social communication and interaction plus at least two of four types of restricted repetitive behaviors. Consult with a Client Advocate today to receive individual and family support!</p>
+        </div>
+        <div class="services-diagnosis-btn">
+          <Button href="/client-consultation">Get a Free Consultation</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

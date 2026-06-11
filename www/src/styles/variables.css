@@ -24,4 +24,5 @@
   --shadow-sm: 0 2px 8px rgb(37 64 128 / 10%);
   --shadow-md: 0 8px 24px rgb(37 64 128 / 14%);
   --container: 1020px;
+  --container-w: 1208px;
 }

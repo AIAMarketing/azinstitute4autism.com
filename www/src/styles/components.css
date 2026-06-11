@@ -13,7 +13,7 @@
 .site-header { background: white; box-shadow: var(--shadow-sm); position: relative; z-index: 5; }
 .header-inner { align-items: center; display: flex; gap: 1.4rem; min-height: 110px; }
 .brand img { width: 150px; }
-.main-nav { margin-left: auto; margin-right: auto; }
+.main-nav { margin-inline: auto; }
 .main-nav ul { display: flex; gap: 1.4rem; list-style: none; margin: 0; padding: 0; }
 .main-nav li { position: relative; }
 .main-nav a { color: var(--color-primary); font-size: .9rem; text-decoration: none; }
@@ -64,13 +64,13 @@
 .like-view-counter button { background: white; border: 1px solid var(--color-border); border-radius: 999px; padding: .6rem 1rem; }
 .like-view-counter button.liked { background: var(--color-primary-dark); border-color: var(--color-primary-dark); color: white; }
 .like-view-counter button:disabled { cursor: wait; opacity: .65; }
-.source-page-banner { background: var(--color-tint); padding-block: 4rem; text-align: center; }
-.source-page-banner h1 { margin: 0; }
-.source-page-banner.has-source-image { background-color: var(--color-tint); background-position: center; background-repeat: no-repeat; background-size: cover; padding-block: 10rem; text-align: left; }
-.source-page-banner.has-source-image h1 { max-width: 600px; }
-.library-banner { background-color: var(--color-tint); background-image: url('/assets/images/hero-library-index.webp'); background-position: center; background-repeat: no-repeat; background-size: cover; padding-block: 10rem; text-align: left; }
-.library-banner-copy { max-width: 600px; }
-.library-banner h1 { margin: 0; }
+.page-hero { background: var(--color-tint); padding-block: 4rem; text-align: center; }
+.page-hero h1 { margin: 0; }
+.page-hero--image { background-image: var(--hero-image); background-position: center; background-repeat: no-repeat; background-size: cover; max-height: 420px; padding-block: 0; text-align: left; }
+.page-hero--image > .container { padding-block: 10rem; }
+.page-hero--image h1 { max-width: 600px; }
+.page-hero__copy { max-width: 600px; }
+.page-hero--constrained { background-image: var(--hero-image), linear-gradient(var(--color-tint), var(--color-tint)); background-clip: content-box, border-box; background-origin: content-box, border-box; background-position: center, center; background-repeat: no-repeat, repeat; background-size: cover, auto; padding-inline: max(0px, calc((100% - var(--container-w)) / 2)); }
 .library-intro { background: var(--color-primary); color: white; padding-block: 3rem; }
 .library-intro h2 { color: white; }
 .library-layout { align-items: start; display: grid; gap: 3rem; grid-template-columns: 1fr 240px; }
@@ -142,7 +142,8 @@
   .blog-list .blog-card { grid-template-columns: 1fr; }
   .article-featured { height: auto; }
   .team-grid { grid-template-columns: 1fr; }
-  .source-page-banner.has-source-image, .library-banner { padding-block: 6.25rem; text-align: center; }
-  .source-page-banner.has-source-image h1, .library-banner-copy { margin-inline: auto; }
+  .page-hero--image > .container { padding-block: 6.25rem; }
+  .page-hero--image { text-align: center; }
+  .page-hero--image h1, .page-hero__copy { margin-inline: auto; }
 }
 @media (min-width: 761px) and (max-width: 1050px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
