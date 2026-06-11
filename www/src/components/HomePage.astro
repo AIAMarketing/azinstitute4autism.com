@@ -38,34 +38,32 @@ function fromHomeContent(home: HomePageContent): HomeSection[] {
 const sections: HomeSection[] = entry.data.home
   ? fromHomeContent(entry.data.home)
   : ((entry.data.sections ?? []) as HomeSection[]);
-
-function renderSection(section: HomeSection) {
-  switch (section.type) {
-    case 'hero':
-      return <HomeHero section={section} />;
-    case 'services-intro':
-      return <HomeServicesIntro section={section} />;
-    case 'benefits':
-      return <HomeBenefits section={section} />;
-    case 'skills':
-      return <HomeSkills section={section} />;
-    case 'insurance':
-      return <HomeInsurance section={section} />;
-    case 'esa':
-      return <HomeEsa section={section} />;
-    case 'financial-help':
-      return <HomeFinancialHelp section={section} />;
-    case 'process':
-      return <HomeProcess section={section} />;
-    case 'director':
-      return <HomeDirector section={section} />;
-    case 'testimonials':
-      return <HomeTestimonials section={section} />;
-  }
-
-  return null;
-}
 ---
 <BaseLayout {title} {description} {canonical} {lang}>
-  {sections.map(renderSection)}
+  {sections.map((section) => {
+    switch (section.type) {
+      case 'hero':
+        return <HomeHero section={section} />;
+      case 'services-intro':
+        return <HomeServicesIntro section={section} />;
+      case 'benefits':
+        return <HomeBenefits section={section} />;
+      case 'skills':
+        return <HomeSkills section={section} />;
+      case 'insurance':
+        return <HomeInsurance section={section} />;
+      case 'esa':
+        return <HomeEsa section={section} />;
+      case 'financial-help':
+        return <HomeFinancialHelp section={section} />;
+      case 'process':
+        return <HomeProcess section={section} />;
+      case 'director':
+        return <HomeDirector section={section} />;
+      case 'testimonials':
+        return <HomeTestimonials section={section} />;
+      default:
+        return null;
+    }
+  })}
 </BaseLayout>
