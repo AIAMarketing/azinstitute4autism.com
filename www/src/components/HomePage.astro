@@ -11,26 +11,61 @@ import HomeProcess from './home/HomeProcess.astro';
 import HomeServicesIntro from './home/HomeServicesIntro.astro';
 import HomeSkills from './home/HomeSkills.astro';
 import HomeTestimonials from './home/HomeTestimonials.astro';
-import type { HomeSection } from '../types/home-sections';
+import type { HomePageContent, HomeSection } from '../types/home-sections';
 
 interface Props { lang?: string }
 const { lang = 'en' } = Astro.props;
 const es = lang === 'es';
 const entry = await getEntry('pages', es ? 'es/index' : 'en/index');
 if (!entry) throw new Error(`[HomePage] Content entry not found for lang="${lang}". If running in dev, restart the dev server to rebuild the content layer cache.`);
-const { title, description, canonical, sections = [] } = entry.data;
+const { title, description, canonical } = entry.data;
+
+function fromHomeContent(home: HomePageContent): HomeSection[] {
+  return [
+    { type: 'hero', ...home.hero },
+    { type: 'services-intro', ...home.servicesIntro },
+    { type: 'benefits', ...home.benefits },
+    { type: 'skills', ...home.skills },
+    { type: 'insurance', ...home.insurance },
+    { type: 'esa', ...home.esa },
+    { type: 'financial-help', ...home.financialHelp },
+    { type: 'process', ...home.process },
+    { type: 'director', ...home.director },
+    { type: 'testimonials', ...home.testimonials },
+  ];
+}
+
+const sections: HomeSection[] = entry.data.home
+  ? fromHomeContent(entry.data.home)
+  : ((entry.data.sections ?? []) as HomeSection[]);
+
+function renderSection(section: HomeSection) {
+  switch (section.type) {
+    case 'hero':
+      return <HomeHero section={section} />;
+    case 'services-intro':
+      return <HomeServicesIntro section={section} />;
+    case 'benefits':
+      return <HomeBenefits section={section} />;
+    case 'skills':
+      return <HomeSkills section={section} />;
+    case 'insurance':
+      return <HomeInsurance section={section} />;
+    case 'esa':
+      return <HomeEsa section={section} />;
+    case 'financial-help':
+      return <HomeFinancialHelp section={section} />;
+    case 'process':
+      return <HomeProcess section={section} />;
+    case 'director':
+      return <HomeDirector section={section} />;
+    case 'testimonials':
+      return <HomeTestimonials section={section} />;
+  }
+
+  return null;
+}
 ---
 <BaseLayout {title} {description} {canonical} {lang}>
-  {(sections as HomeSection[]).map((section) => {
-    if (section.type === 'hero')            return <HomeHero section={section} />;
-    if (section.type === 'services-intro') return <HomeServicesIntro section={section} />;
-    if (section.type === 'benefits')       return <HomeBenefits section={section} />;
-    if (section.type === 'skills')         return <HomeSkills section={section} />;
-    if (section.type === 'insurance')      return <HomeInsurance section={section} />;
-    if (section.type === 'esa')            return <HomeEsa section={section} />;
-    if (section.type === 'financial-help') return <HomeFinancialHelp section={section} />;
-    if (section.type === 'process')        return <HomeProcess section={section} />;
-    if (section.type === 'director')       return <HomeDirector section={section} />;
-    if (section.type === 'testimonials')   return <HomeTestimonials section={section} />;
-  })}
+  {sections.map(renderSection)}
 </BaseLayout>

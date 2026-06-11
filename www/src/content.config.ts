@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { homePageSchema, homeSectionsSchema } from './types/home-sections';
 
 const language = z.enum(['en', 'ar', 'es']);
 const shared = {
@@ -12,7 +13,8 @@ const shared = {
   lang: language,
   translationKey: z.string().optional(),
   draft: z.boolean().default(false),
-  sections: z.array(z.record(z.unknown())).optional()
+  home: homePageSchema.optional(),
+  sections: homeSectionsSchema.optional()
 };
 
 const pages = defineCollection({

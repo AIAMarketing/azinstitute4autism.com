@@ -6,8 +6,9 @@ canonical: "https://www.azinstitute4autism.com/"
 lang: "en"
 translationKey: "index"
 draft: false
-sections:
-  - type: hero
+home:
+  # Hero
+  hero:
     eyebrow: "Arizona's Leading Experts"
     heading: "Behavioral Health<br />&amp; Special<br />Education"
     body: "Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children and teens who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas."
@@ -17,7 +18,8 @@ sections:
     image: bcba-with-happy-toddler.webp
     imageAlt: BCBA therapist with happy toddler
 
-  - type: services-intro
+  # Services and commitments
+  servicesIntro:
     servicesHeading: ABA Therapy Services for Children and Teens Diagnosed with Autism Spectrum Disorder
     services:
       - Autism Advocacy Support
@@ -42,7 +44,8 @@ sections:
     commitmentsImage: playing-boy.webp
     commitmentsImageAlt: Boy playing while learning
 
-  - type: benefits
+  # Benefits
+  benefits:
     heading: Benefits that go Beyond a Typical Integrated Therapy Provider
     subheading: The AIA Difference
     items:
@@ -55,7 +58,8 @@ sections:
     videoImage: learner-journey.webp
     videoImageAlt: Learner journey for children with autism video
 
-  - type: skills
+  # Skills
+  skills:
     heading: Does Your Learner Struggle With These Skills?
     skills:
       - icon: icon-Social_Engagement.png
@@ -71,7 +75,8 @@ sections:
       - icon: icon-Speach.png
         label: Speech
 
-  - type: insurance
+  # Insurance
+  insurance:
     heading: "Yes, We Take Insurance"
     body: "An all-in-one integrated service for your kiddo's special education needs, the Arizona Institute for Autism (AIA) offers and accepts most insurance plans that cover ABA therapy. These include BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS, and UnitedHealth."
     logos:
@@ -88,7 +93,8 @@ sections:
       - file: united-healthcare-logo-1.webp
         alt: United Healthcare
 
-  - type: esa
+  # ESA
+  esa:
     heading: Arizona Scholarship Account (ESA)
     body: >-
       Thousands of Arizona learners are currently eligible for the state funded ESA,
@@ -100,14 +106,16 @@ sections:
     image: logo-az-dept-of-education.webp
     imageAlt: Arizona Department of Education
 
-  - type: financial-help
+  # Financial help
+  financialHelp:
     heading: Need Help Paying for Your Care?
     body: The Arizona Institute for Autism offers flexible financial assistance to the uninsured. Get the care you want or need and pay over time.
     cta:
       label: Request an Appointment
       href: /client-consultation
 
-  - type: process
+  # Process
+  process:
     heading: Our Process
     steps:
       - icon: learner-journey-step-1a.svg
@@ -123,7 +131,8 @@ sections:
       - icon: learner-journey-step-6.svg
         label: Collaborate on a Care Plan
 
-  - type: director
+  # Director
+  director:
     heading: An Extension of Your Family
     quote: '"At AIA, We strive to provide excellent and compassionate care to all communities we serve. We could not accomplish that without excellent, passionate, and committed staff and families. We look forward to our collaboration with you as we continue to grow, serve and support our Learners in the pursuit of their individual potential."'
     photo: rula-diab.webp
@@ -133,7 +142,8 @@ sections:
     signature: clinical-director-rula-diab.png
     signatureAlt: Clinical Director Rula Diab
 
-  - type: testimonials
+  # Testimonials
+  testimonials:
     heading: What Clients Are Saying
     items:
       - author: Claudia

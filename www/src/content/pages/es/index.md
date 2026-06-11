@@ -6,8 +6,9 @@ canonical: "https://www.azinstitute4autism.com/es"
 lang: "es"
 translationKey: "index"
 draft: false
-sections:
-  - type: hero
+home:
+  # Hero
+  hero:
     eyebrow: Los principales expertos de Arizona
     heading: "Salud Mental y<br />Educación Especial"
     body: "Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños y adolescentes con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix."
@@ -17,7 +18,8 @@ sections:
     image: bcba-with-happy-toddler.webp
     imageAlt: Terapeuta BCBA con niño feliz
 
-  - type: services-intro
+  # Servicios y compromisos
+  servicesIntro:
     servicesHeading: Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA
     services:
       - Apoyo a la defensa del autismo
@@ -42,7 +44,8 @@ sections:
     commitmentsImage: playing-boy.webp
     commitmentsImageAlt: Niño jugando mientras aprende
 
-  - type: benefits
+  # Beneficios
+  benefits:
     heading: Beneficios que van más allá de un proveedor de terapia integrada típico
     subheading: La Diferencia AIA
     items:
@@ -55,7 +58,8 @@ sections:
     videoImage: learner-journey.webp
     videoImageAlt: Video del recorrido del estudiante
 
-  - type: skills
+  # Habilidades
+  skills:
     heading: ¿Su alumno tiene dificultades con estas habilidades?
     skills:
       - icon: icon-Social_Engagement.png
@@ -71,7 +75,8 @@ sections:
       - icon: icon-Speach.png
         label: Discurso
 
-  - type: insurance
+  # Seguros
+  insurance:
     heading: "Sí, aceptamos seguros."
     body: "Un servicio integrado todo en uno para las necesidades de educación especial de su hijo, el Instituto de Autismo de Arizona (AIA) ofrece y acepta la mayoría de los planes de seguro que cubren la terapia ABA. Estos incluyen BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS y UnitedHealth."
     logos:
@@ -88,7 +93,8 @@ sections:
       - file: united-healthcare-logo-1.webp
         alt: United Healthcare
 
-  - type: esa
+  # ESA
+  esa:
     heading: Cuenta de Becas de Arizona (ESA)
     body: >-
       Miles de estudiantes de Arizona son actualmente elegibles para la ESA financiada
@@ -101,14 +107,16 @@ sections:
     image: logo-az-dept-of-education.webp
     imageAlt: Departamento de Educación de Arizona
 
-  - type: financial-help
+  # Ayuda financiera
+  financialHelp:
     heading: ¿Necesita ayuda para pagar su atención?
     body: El Instituto de Autismo de Arizona ofrece asistencia financiera flexible a las personas sin seguro. Obtén la atención que deseas o necesitas y paga a plazos.
     cta:
       label: Solicitar cita
       href: /es/client-consultation
 
-  - type: process
+  # Proceso
+  process:
     heading: Nuestro proceso
     steps:
       - icon: learner-journey-step-1a.svg
@@ -124,7 +132,8 @@ sections:
       - icon: learner-journey-step-6.svg
         label: Colaborar en un Plan de Cuidados
 
-  - type: director
+  # Directora
+  director:
     heading: Una extensión de tu familia
     quote: '"En AIA, nos esforzamos por brindar atención excelente y compasiva a todas las comunidades a las que servimos. No podríamos lograr eso sin un personal y familias excelentes, apasionados y comprometidos. Esperamos con ansias nuestra colaboración con usted a medida que continuamos creciendo, sirviendo y apoyando a nuestros estudiantes en la búsqueda de su potencial individual."'
     photo: rula-diab.webp
@@ -134,7 +143,8 @@ sections:
     signature: clinical-director-rula-diab.png
     signatureAlt: Directora Clínica Rula Diab
 
-  - type: testimonials
+  # Testimonios
+  testimonials:
     heading: Lo que dicen los clientes
     items:
       - author: Claudia
