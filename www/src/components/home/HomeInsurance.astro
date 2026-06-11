@@ -4,8 +4,47 @@ interface Props { section: InsuranceSection }
 const { section } = Astro.props;
 ---
 <style>
-  .insurance-section .logo-row { margin-top: 2rem; }
-  .logo-row img { filter: none; }
+  .insurance-section .logo-row {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .insurance-section .logo-row img {
+    flex: 0 1 auto;
+    max-width: 200px;
+  }
+
+  @media (min-width: 640px) {
+    .insurance-section .logo-row {
+      display: grid;
+      gap: var(--space-lg);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: center;
+      justify-items: center;
+    }
+
+    .insurance-section .logo-row img {
+      flex: 0 1 auto;
+      max-width: 25vw;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .insurance-section .logo-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    .insurance-section .logo-row img {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 120px;
+    }
+  }
 </style>
 
 <section class="section insurance-section">

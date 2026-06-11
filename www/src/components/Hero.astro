@@ -13,3 +13,12 @@ const { title, eyebrow, description, image, alt = '' } = Astro.props;
     {image && <img src={image} alt={alt} loading="eager" />}
   </div>
 </section>
+
+<style>
+  .hero { background: var(--color-tint); overflow: hidden; padding-block: clamp(3rem, 7vw, 5rem); }
+  .hero-grid { align-items: center; display: grid; gap: var(--space-xl); grid-template-columns: 1.05fr .95fr; }
+  .hero img { max-height: 430px; object-fit: contain; width: 100%; }
+  @media (max-width: 950px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  }
+</style>

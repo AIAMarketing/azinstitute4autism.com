@@ -24,3 +24,20 @@ const utility = lang === 'es'
     <a class="button button-small" href="/tour">Tour AIA</a>
   </div>
 </header>
+
+<style>
+  .utility-bar { background: var(--color-primary); color: white; font-size: .85rem; }
+  .utility-inner { align-items: center; display: flex; gap: var(--space-md); justify-content: flex-end; min-height: 38px; }
+  .utility-bar a { color: white; text-decoration: none; }
+  .site-header { background: white; box-shadow: var(--shadow-sm); position: relative; z-index: 5; }
+  .header-inner { align-items: center; display: flex; gap: 1.4rem; min-height: 110px; }
+  .brand img { width: 150px; }
+  @media (max-width: 950px) {
+    .header-inner > .button { display: none; }
+  }
+  @media (max-width: 760px) {
+    .utility-inner { justify-content: center; }
+    .header-inner { min-height: 88px; }
+    .header-inner .lang-switcher { margin-left: auto; }
+  }
+</style>

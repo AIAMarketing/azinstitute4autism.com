@@ -6,3 +6,10 @@ const { lang = 'en' } = Astro.props;
   <summary>Menu</summary>
   <MainNav lang={lang} />
 </details>
+
+<style>
+  .mobile-nav { display: none; }
+  @media (max-width: 950px) {
+    .mobile-nav { display: block; }
+  }
+</style>

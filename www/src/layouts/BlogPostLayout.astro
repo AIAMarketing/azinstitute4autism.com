@@ -19,3 +19,15 @@ const { entry } = Astro.props;
   </article>
   <BlogPostFooter entryId={entry.id} />
 </BaseLayout>
+
+<style>
+  .article-header { padding-block: 4.5rem 0; text-align: left; }
+  .article-header h1 { font-size: clamp(2.3rem, 5vw, 3rem); max-width: 900px; }
+  .article-byline { align-items: center; display: flex; font-size: .9rem; gap: 1rem; }
+  .article-byline img { margin-top: 0; height: 52px; width: 52px; }
+  .article-featured { height: 480px; margin: 3rem auto 0; max-width: 800px; overflow: hidden; }
+  .article-featured img { height: 100%; margin: 0; object-fit: cover; width: 100%; }
+  @media (max-width: 760px) {
+    .article-featured { height: auto; }
+  }
+</style>

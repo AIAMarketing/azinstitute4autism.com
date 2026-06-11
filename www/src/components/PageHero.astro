@@ -16,3 +16,18 @@ const { title, image, eyebrow, constrain = false } = Astro.props;
     }
   </div>
 </header>
+
+<style>
+  .page-hero { background: var(--color-tint); padding-block: 4rem; text-align: center; }
+  .page-hero h1 { margin: 0; }
+  .page-hero--image { background-image: var(--hero-image); background-position: center; background-repeat: no-repeat; background-size: cover; max-height: 420px; padding-block: 0; text-align: left; }
+  .page-hero--image > .container { padding-block: 10rem; }
+  .page-hero--image h1 { max-width: 600px; }
+  .page-hero__copy { max-width: 600px; }
+  .page-hero--constrained { background-image: var(--hero-image), linear-gradient(var(--color-tint), var(--color-tint)); background-clip: content-box, border-box; background-origin: content-box, border-box; background-position: center, center; background-repeat: no-repeat, repeat; background-size: cover, auto; padding-inline: max(0px, calc((100% - var(--container-w)) / 2)); }
+  @media (max-width: 760px) {
+    .page-hero--image > .container { padding-block: 6.25rem; }
+    .page-hero--image { text-align: center; }
+    .page-hero--image h1, .page-hero__copy { margin-inline: auto; }
+  }
+</style>

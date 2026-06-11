@@ -17,6 +17,17 @@ const { section } = Astro.props;
   </div>
 </section>
 
+<style>
+  .process-section h2 { text-align: center; }
+  .process-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
+  .process-grid div { background: white; min-height: 190px; padding: 3.2rem 1rem; position: relative; text-align: center; transition: transform .3s ease-in-out; }
+  .process-grid div:hover { transform: scale(1.05); z-index: 1; }
+  .process-grid img { margin: 0 auto 1rem; width: 42%; }
+  @media (max-width: 760px) {
+    .process-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
 <script>
   function equalizeProcessCards() {
     const cards = [...document.querySelectorAll('.process-grid > div')] as HTMLElement[];

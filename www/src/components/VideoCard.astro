@@ -49,3 +49,18 @@ const { image, alt, videoUrl, videoTitle } = Astro.props;
     });
   });
 </script>
+
+<style>
+  .video-card { background: none; border: none; cursor: pointer; display: block; padding: 0; position: relative; }
+  .video-card img { width: 100%; }
+  .video-card span { align-items: center; background: var(--color-accent); border-radius: 50%; color: white; display: flex; height: 64px; justify-content: center; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 64px; z-index: 1; }
+  .video-card::before, .video-card::after { animation-duration: 3s; animation-iteration-count: infinite; animation-name: video-ripple; animation-timing-function: cubic-bezier(.65, 0, .34, 1); border: 8px solid var(--color-accent); border-radius: 50%; content: ""; height: 64px; left: 50%; opacity: 0; position: absolute; top: 50%; width: 64px; }
+  .video-card::before { animation-delay: .5s; }
+  .video-dialog { background: none; border: none; box-sizing: border-box; max-width: min(90vw, 900px); padding: 1rem 1rem 0 0; width: 100%; }
+  .video-dialog::backdrop { background: rgba(0, 0, 0, .85); }
+  .video-dialog-inner { position: relative; }
+  .video-dialog-frame { aspect-ratio: 16 / 9; width: 100%; }
+  .video-dialog-frame iframe { border: none; height: 100%; width: 100%; }
+  .video-dialog-close { background: white; border: none; border-radius: 50%; cursor: pointer; font-size: 1rem; height: 2rem; line-height: 2rem; position: absolute; right: -1rem; top: -1rem; width: 2rem; }
+  @keyframes video-ripple { 0% { opacity: 1; transform: translate(-50%, -50%) scale3d(.75, .75, 1); } to { opacity: 0; transform: translate(-50%, -50%) scale3d(1.5, 1.5, 1); } }
+</style>
