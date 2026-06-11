@@ -1,33 +1,35 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-const { title, description, lang = 'en' } = Astro.props;
+const { title, description, intro = [], lang = 'en' } = Astro.props;
 const languagePrefix = lang === 'en' ? '' : `/${lang}`;
 const canonical = `https://www.azinstitute4autism.com${languagePrefix}/library`;
 ---
 <BaseLayout title={title} description={description} canonical={canonical} lang={lang}>
   <PageHero title={title} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
-  <section class="library-intro"><div class="container"><h2>Library</h2><p>{description}</p></div></section>
+  <section class="library-intro">
+    <div class="container">
+      <h2>Library</h2>
+      {intro.length ? intro.map((paragraph) => <p>{paragraph}</p>) : <p>{description}</p>}
+    </div>
+  </section>
   <div class="container section library-layout"><slot /></div>
 </BaseLayout>
 
 <style>
-  .library-intro { background: var(--color-primary); color: white; padding-block: 3rem; }
-  .library-intro h2 { color: white; }
-  .library-layout { align-items: start; display: grid; gap: 3rem; grid-template-columns: 1fr 240px; }
-  .library-sidebar { position: sticky; top: 1rem; }
-  .library-sidebar label { display: block; font-weight: 700; margin-bottom: .4rem; }
-  .library-sidebar input { border: 1px solid var(--color-border); border-radius: 4px; font: inherit; padding: .7rem; width: 100%; }
-  .library-sidebar h2 { font-size: 1.1rem; margin-top: 2rem; }
-  .library-sidebar ul { list-style: none; padding: 0; }
-  .library-sidebar li { border-bottom: 1px solid var(--color-border); padding-block: .65rem; }
-  .library-sidebar a { color: var(--color-primary); font-size: .9rem; }
-  .blog-list { display: grid; gap: 2rem; }
-  .blog-list .blog-card { box-shadow: none; display: grid; grid-template-columns: 240px 1fr; }
-  .blog-list .blog-card > a img { aspect-ratio: 4 / 3; height: 100%; }
+  :global(.library-intro) { background: var(--color-primary); color: white; padding-block: 3rem; }
+  :global(.library-intro h2) { color: white; }
+  :global(.library-layout) { align-items: start; display: grid; gap: 3rem; grid-template-columns: 1fr 240px; }
+  :global(.library-sidebar) { position: sticky; top: 1rem; }
+  :global(.library-sidebar label) { display: block; font-weight: 700; margin-bottom: .4rem; }
+  :global(.library-sidebar input) { border: 1px solid var(--color-border); border-radius: 4px; font: inherit; padding: .7rem; width: 100%; }
+  :global(.library-sidebar h2) { font-size: 1.1rem; margin-top: 2rem; }
+  :global(.library-sidebar ul) { list-style: none; padding: 0; }
+  :global(.library-sidebar li) { border-bottom: 1px solid var(--color-border); padding-block: .65rem; }
+  :global(.library-sidebar a) { color: var(--color-primary); font-size: .9rem; }
+  :global(.blog-list) { display: block; }
   @media (max-width: 760px) {
-    .library-layout { grid-template-columns: 1fr; }
-    .library-sidebar { position: static; }
-    .blog-list .blog-card { grid-template-columns: 1fr; }
+    :global(.library-layout) { grid-template-columns: 1fr; }
+    :global(.library-sidebar) { position: static; }
   }
 </style>

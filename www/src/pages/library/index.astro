@@ -5,7 +5,14 @@ import BlogCard from '../../components/BlogCard.astro';
 const posts = (await getCollection('blog', ({ data }) => data.lang === 'en' && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const popular = posts.slice(0, 5);
 ---
-<BlogIndexLayout title="The Library at AZ Institute for Autism" description="Welcome to the Library at AIA, where we share valuable insights, strategies, and resources to support individuals with autism, their families, and professionals in the field. Our articles explore key topics in Applied Behavior Analysis (ABA) therapy, community events, success stories, and expert guidance.">
+<BlogIndexLayout
+  title="The Library at AZ Institute for Autism"
+  description="Welcome to the Library at AIA, where we share valuable insights, strategies, and resources to support individuals with autism, their families, and professionals in the field. Our articles explore key topics in Applied Behavior Analysis (ABA) therapy, community events, success stories, and expert guidance."
+  intro={[
+    "Welcome to the Library at AIA, where we share valuable insights, strategies, and resources to support individuals with autism, their families, and professionals in the field. Our articles explore key topics in Applied Behavior Analysis (ABA) therapy, including teaching self-advocacy, proactive and reactive strategies, and innovative intervention techniques.",
+    "We also highlight community events, success stories, and expert guidance to foster understanding and empowerment. Whether you're a parent, caregiver, educator, or advocate, our goal is to provide meaningful content that helps children with autism reach their highest potential in a compassionate and supportive environment. Stay connected with us as we continue to share knowledge and celebrate progress!",
+  ]}
+>
   <div class="blog-list">{posts.map((post) => <BlogCard post={post} />)}</div>
   <aside class="library-sidebar">
     <label for="library-search">Search</label>
