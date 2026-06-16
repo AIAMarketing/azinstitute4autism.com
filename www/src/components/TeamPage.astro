@@ -26,6 +26,8 @@ const groups = [
   },
   {
     title: 'ABA Clinic Management',
+    tagline: 'Applied Behavior Analysis "(ABA) at your service"',
+    tinted: true,
     members: [
       ['team-mariah-marley.webp', 'Mariah Marley', 'Claims Billing'],
       ['team-eney-garcia.webp', 'Eney Garcia, BA', 'Accounts Billing'],
@@ -42,18 +44,21 @@ const groups = [
     <p>AIA's clinical team consists of experienced professionals and paraprofessionals as well as Board Certified Behavior Analysts (BCBA) and Psychologists who have diverse experience and expertise.</p>
   </section>
   {groups.map((group) => (
-    <section class="team-group container">
-      <h2>{group.title}</h2>
-      <div class="team-grid">
-        {group.members.map(([image, name, role]) => (
-          <article class="team-member">
-            <div class="team-thumb">
-              <img src={`/assets/images/${image}`} alt={name} loading="lazy" />
-            </div>
-            <h3>{name}</h3>
-            <p>{role}</p>
-          </article>
-        ))}
+    <section class:list={['team-group', { 'team-group--tinted': group.tinted }]}>
+      <div class="container">
+        <h2>{group.title}</h2>
+        {group.tagline && <p class="team-group__tagline"><em>{group.tagline}</em></p>}
+        <div class="team-grid">
+          {group.members.map(([image, name, role]) => (
+            <article class="team-member">
+              <div class="team-thumb">
+                <img src={`/assets/images/${image}`} alt={name} loading="lazy" />
+              </div>
+              <h3>{name}</h3>
+              <p>{role}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   ))}
@@ -72,7 +77,9 @@ const groups = [
   .team-intro { padding-block: 4rem; text-align: center; }
   .team-intro .script-label { font-size: 1.8rem; }
   .team-group { padding-block: 2rem 4rem; text-align: center; }
-  .team-group > h2 { margin: 0 auto 2.5rem; max-width: 760px; }
+  .team-group--tinted { background: var(--color-tint); }
+  .team-group h2 { margin: 0 auto 1rem; max-width: 760px; }
+  .team-group__tagline { font-size: 1.125rem; margin: 0 auto 2rem; }
   .team-grid { display: flex; flex-wrap: wrap; gap: 2rem 1.5rem; justify-content: center; }
   .team-member { flex: 0 0 227px; }
   .team-thumb { border-radius: 4px; overflow: hidden; }
@@ -80,7 +87,8 @@ const groups = [
   .team-thumb img:hover { transform: scale(1.05); }
   .team-member h3 { font-family: var(--font-body); font-size: .8rem; margin-bottom: 0; }
   .team-member p { font-size: .85rem; margin: 0; }
-  .team-careers { background: var(--color-tint); padding-block: 5rem; }
+  .team-careers { padding-block: 5rem; }
+  .team-careers .button { margin-left: 50%; margin-top: 4rem; translate: -50%; }
   @media (max-width: 950px) {
     .team-member { flex-basis: min(100%, 227px); }
   }
