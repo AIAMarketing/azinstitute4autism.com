@@ -11,7 +11,8 @@ h3 { font-size: 1.5rem; }
 a { color: var(--color-primary); }
 .eyebrow { color: var(--color-secondary); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .lede, .hero-copy { color: var(--color-muted); font-size: 1.25rem; }
-.script-label { color: var(--color-accent-strong); font-family: var(--font-accent); font-size: 1.5rem; margin: 0 0 .5rem; }
+.script-label { color: var(--color-accent-strong); font-family: var(--font-accent); font-size: 2rem; margin: 0; }
+.script-label + h2 { margin-top: 0; }
 
 .prose :where(ul, ol) {
   margin-block: 0 1.5rem;
