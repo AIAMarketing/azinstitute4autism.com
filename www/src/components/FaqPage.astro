@@ -40,7 +40,7 @@
     <div class="container-narrow">
       <p class="script-label">Still have questions?</p>
       <h2>Reach Out to Learn More</h2>
-      <p>We hope this FAQ gives you a clear picture of how Applied Behavior Analysis (ABA) therapy at the Arizona Institute for Autism can support your child's growth. If you have more questions or would like to <a href="/client-consultation">schedule an assessment</a>, please reach out. Our team is here to guide you and your learner every step of the way!</p>
+      <p>We hope this FAQ gives you a clear picture of how Applied Behavior Analysis (ABA) therapy at the Arizona Institute for Autism can support your child’s growth. If you have more questions or would like to <a href="/client-consultation">schedule an assessment</a>, please reach out. Our team is here to guide you and your learner every step of the way!</p>
     </div>
   </section>
 
@@ -48,7 +48,7 @@
     <div class="container-narrow">
       <h2>Need Support in Getting an Autism Diagnosis?</h2>
       <p>To meet diagnostic criteria for ASD, a child must have persistent deficits in each of three areas of social communication and interaction plus at least two of four types of restricted repetitive behaviors. Consult with a Client Advocate today to receive individual and family support!</p>
-      <a class="button" href="/client-consultation">Request an Appointment</a>
+      <a class="button button-center" href="/client-consultation">Request an Appointment</a>
     </div>
   </section>
 </article>
@@ -368,6 +368,11 @@
     opacity: 1;
   }
 
+  .hs-search-field__input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+  }
+
   .hs-search-field__button {
     align-items: center;
     background: #fff;
@@ -570,18 +575,12 @@
   .faq-cta-secondary {
     background: #fff;
     padding-block: 3.5rem 4rem;
-    text-align: center;
   }
 
   .faq-cta-secondary h2 {
     color: var(--color-primary);
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     margin-bottom: .75rem;
-  }
-
-  .faq-cta-secondary p {
-    margin-inline: auto;
-    max-width: 760px;
   }
 
   .faq-cta-secondary .button {
