@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/Hero.astro';
+import HomeHero from '../../components/home/HomeHero.astro';
 import BlogCard from '../../components/BlogCard.astro';
 const posts = (await getCollection('blog', ({ data }) => data.lang === 'ar' && !data.draft)).slice(0, 3);
 ---
 <BaseLayout title="معهد أريزونا للتوحد" description="موارد ودعم للأسر والأطفال المصابين بالتوحد." canonical="https://www.azinstitute4autism.com/ar" lang="ar">
-  <Hero eyebrow="Arizona Institute for Autism" title="الصحة السلوكية والتعليم الخاص" description="محتوى عربي متاح من مكتبة معهد أريزونا للتوحد." image="/assets/images/playing-boy.webp" alt="" />
+  <HomeHero section={{ type: 'hero', eyebrow: 'Arizona Institute for Autism', heading: 'الصحة السلوكية والتعليم الخاص', body: 'محتوى عربي متاح من مكتبة معهد أريزونا للتوحد.', cta: { label: 'ابدأ الآن', href: '/ar' }, image: 'playing-boy.webp', imageAlt: '' }} />
   <section class="section"><div class="container"><div class="section-heading"><h2>المكتبة</h2></div><div class="card-grid">{posts.map((post) => <BlogCard post={post} prefix="/ar" />)}</div></div></section>
 </BaseLayout>
