@@ -1,0 +1,245 @@
+---
+const indeedUrl = 'https://www.indeed.com/cmp/Arizona-Institute-For-Autism/jobs';
+
+const benefits = [
+  'Competitive Salary', 'Giveback Opportunity', 'Medical Insurance Plan',
+  'Dental Life Insurance Plan', 'Vision Insurance Plan', 'Life Insurance Plan',
+  '401 K', 'Vacation Time', 'Sick Time',
+];
+
+const culture = [
+  'Family-Oriented', 'Supportive', 'Educational',
+  'Motivating', 'Transparent', 'Inclusive',
+];
+
+const careerPath = [
+  'Behavioral Technician', 'Registered Behavioral Technician (RBT)', 'Senior Behavioral Technician, RBT',
+  'Clinical Case Supervisor', 'BCBA (Board Certified Behavioral Analyst)', 'Clinical Assistant Director, BCBA', 'Clinical Director, BCBA',
+];
+
+const benefitIcons = [
+  ['competitive-compensation_blue.svg', 'Competitive\nCompensation'],
+  ['flexible-scheduling_blue.svg', 'Flexible\nScheduling'],
+  ['caseload-teamwork_blue.svg', 'Caseload\nTeamwork'],
+  ['career-growth_blue.svg', 'Career\nGrowth'],
+  ['monthly-training_blue.svg', 'Monthly\nTraining'],
+  ['diversity-inclusion-opportunity_blue.svg', 'Diversity & Inclusive\nOpportunities'],
+];
+
+const careerCards = [
+  { image: 'clinical-careers.webp', title: 'Clinical', body: "Bring your specialized knowledge to the clinical team. You'll get the training tools you need to serve a community you'll love." },
+  { image: 'non-clinical-careers.webp', title: 'Non-Clinical', body: "Build a career you love as a member of our non-clinical team. In this role, you'll service team members, families, and the community while ensuring quality service." },
+  { image: 'corporate-center-team-support.webp', title: 'Center Support', body: 'Take a fresh and innovative approach as a member of the Corporate team. Take on new challenges and opportunities to help shape the future of Pediatric care.' },
+  { image: 'internships-practicum.webp', title: 'Internships', body: 'Our specialty interns help shape the future of our center carefully curated clinical, operations, advocacy, people, and other departments.' },
+];
+---
+
+<article class="careers-page">
+
+  <!-- Join the AIA Team -->
+  <section class="careers-intro container-narrow">
+    <h2>Join the AIA Team</h2>
+    <p>Apply to join the Arizona Institute for Autism (AIA) team today. We are on a mission to improve special education and strengthen communities throughout Arizona.</p>
+    <p>Our talented and passionate employees are a critical piece to the high-quality Autism services we provide along with our commitment to behavioral health, school solutions, and community outreach.</p>
+    <a class="button button-center" href={indeedUrl} target="_blank" rel="noopener noreferrer">View Open Positions</a>
+  </section>
+
+  <!-- Our Benefits -->
+  <section class="careers-section section-tint">
+    <div class="container careers-split">
+      <div class="careers-split__text">
+        <h3>Our Benefits</h3>
+        <ul>
+          {benefits.map((b) => <li>{b}</li>)}
+        </ul>
+      </div>
+      <div class="careers-split__images">
+        <img src="/assets/images/integrated-aba-model_400x300.webp" alt="Integrated ABA model" loading="lazy" />
+        <img src="/assets/images/proud-aia-staff.webp" alt="Compassionate AIA staff members" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Diverse Culture -->
+  <section class="careers-section">
+    <div class="container careers-split">
+      <div class="careers-split__text">
+        <h3>Our Diverse Culture</h3>
+        <ul>
+          {culture.map((c) => <li>{c}</li>)}
+        </ul>
+      </div>
+      <div class="careers-split__images">
+        <img src="/assets/images/toddler-bcba-support.webp" alt="Toddler with BCBA support" loading="lazy" />
+        <img src="/assets/images/aba-learn-play-skills.webp" alt="ABA learn and play skills" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- See Your Impact -->
+  <section class="careers-section section-tint">
+    <div class="container careers-two-col">
+      <div>
+        <h3>See Your Impact</h3>
+        <p>The work we do has a direct impact on our learners, families, our communities, our team members, and the healthcare industry.</p>
+        <p>Every day you'll work with others driven to make a difference through transforming primary autism and pediatric care.</p>
+      </div>
+      <img src="/assets/images/scottsdale-ribbon-cutting.webp" alt="Scottsdale location ribbon-cutting ceremony" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Expand & Explore -->
+  <section class="careers-section container-narrow">
+    <h3>Expand & Explore Your Potential</h3>
+    <p>We're growing fast, and that makes us a great place for you to grow. Focus on learning, discovering, and trying new areas that interest you. Advance in your chosen field. We'll help you get there.</p>
+  </section>
+
+  <!-- Scholarships GCU -->
+  <section class="careers-section section-tint">
+    <div class="container">
+      <div>
+        <h3>Scholarships Awarded in Partnership with GCU</h3>
+        <p>Through AIA's partnership with GCU, all AIA employees, along with their spouses and dependents, are eligible for a tuition discount when they enroll in one of GCU's programs.</p>
+        <img class="logo-img" src="/assets/images/logo-gcu.webp" alt="Grand Canyon University logo" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- BCBA Internships -->
+  <section class="careers-section container-narrow">
+    <h3>Build Your Resume with BCBA Internships &amp; Practicum</h3>
+    <p>At the Arizona Institute for Autism, we afford students at Arizona State University to gain practicum experience. Due to our partnership with the Arizona State University Department of Psychology, future Board Certified Behavior Analysts will meet the training requirements of the ASU Department of Psychology MS ABA Program and the BACB.</p>
+    <p>Students will be given the opportunity to obtain thorough behavior-analytic experience and training in a fashion that fulfills its service provision related functions as an organization, so long as those functions are analytic in nature and the goals of the practicum experience are in accordance with the Behavior Analyst Certification Board.</p>
+    <img class="logo-img" src="/assets/images/asu.webp" alt="Arizona State University" loading="lazy" />
+  </section>
+
+  <!-- Choose Your Clinical Career Path -->
+  <section class="careers-section section-tint">
+    <div class="container">
+      <h2>Choose Your Clinical Career Path</h2>
+      <p>Work someone you love. Begin your journey with Arizona's leading ABA Integrated Therapy provider today!</p>
+      <div class="careers-split">
+        <div class="careers-split__text">
+          <ul>
+            {careerPath.map((p) => <li>{p}</li>)}
+          </ul>
+        </div>
+        <div class="careers-split__images">
+          <img src="/assets/images/casp-member-logo.webp" alt="The Council of Autism Service Providers member logo" loading="lazy" />
+          <img src="/assets/images/logo-BACB.png" alt="BACB logo" loading="lazy" />
+        </div>
+      </div>
+      <a class="button button-center" href={indeedUrl} target="_blank" rel="noopener noreferrer">View Open Positions</a>
+    </div>
+  </section>
+
+  <!-- Benefits of Working at AIA -->
+  <section class="careers-section careers-center">
+    <div class="container">
+      <h3>Benefits of Working at Arizona Institute for Autism</h3>
+      <div class="benefits-grid">
+        {benefitIcons.map(([icon, label]) => (
+          <div class="benefit-item">
+            <img src={`/assets/images/${icon}`} alt={label.replace('\n', ' ')} width="80" height="80" loading="lazy" />
+            <p>{label.split('\n').map((line, i) => i > 0 ? [<br />, line] : line)}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Your Clinical Path to Success -->
+  <section class="careers-section section-tint">
+    <div class="container-narrow careers-path">
+      <h2>Your Clinical Path to Success</h2>
+      <p>Behavioral Technician &rarr; Registered Behavioral Technician &rarr; Senior Behavioral Technician</p>
+      <p>Clinical Case Supervisor &rarr; BCBA &rarr; Clinical Assistant Director &rarr; Clinical Director</p>
+    </div>
+  </section>
+
+  <!-- Find Your Path -->
+  <section class="careers-section">
+    <div class="container careers-center">
+      <h3>Find Your Path</h3>
+      <p>If you have an interest, we have a department for you to step into and teams to support you in your growth.</p>
+    </div>
+    <div class="container">
+      <div class="career-cards">
+        {careerCards.map(({ image, title, body }) => (
+          <div class="career-card">
+            <img src={`/assets/images/${image}`} alt={title} loading="lazy" />
+            <div class="career-card__body">
+              <h4>{title}</h4>
+              <p>{body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <a class="button button-center" href={indeedUrl} target="_blank" rel="noopener noreferrer">View Open Positions</a>
+    </div>
+  </section>
+
+</article>
+
+<style>
+  /* ── Shared ─────────────────────────────────────────── */
+  .careers-intro { padding-block: 3rem; }
+  .careers-section { padding-block: 3rem; }
+  .careers-section.container-narrow { max-width: 760px; margin-inline: auto; padding-inline: 1rem; }
+  .careers-center { text-align: center; }
+
+  /* ── Two-column split: 50% text + 25%+25% images ───── */
+  .careers-split { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; align-items: center; }
+  .careers-split__images { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .careers-split__images img { width: 100%; height: auto; border-radius: 4px; }
+  .careers-split__text h3 { margin-top: 0; }
+  .careers-split__text ul { padding-left: 1.25rem; }
+  .careers-split__text ul li { margin-bottom: .4rem; }
+
+  /* ── Two-column 50/50 ───────────────────────────────── */
+  .careers-two-col { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; align-items: center; }
+  .careers-two-col h3 { margin-top: 0; }
+  .careers-two-col img { width: 100%; height: auto; border-radius: 4px; }
+  .careers-two-col--logo { align-items: center; }
+  .logo-img { display: block; max-width: 100%; height: auto; margin-top: 2rem; margin-inline: auto; }
+
+  /* ── Benefits icon grid ─────────────────────────────── */
+  .benefits-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-top: 2rem; text-align: center; }
+  .benefit-item img { display: block; margin: 0 auto .75rem; }
+  .benefit-item p { font-size: .75rem; line-height: 1.4; margin: 0; }
+
+  /* ── Clinical path ──────────────────────────────────── */
+  .careers-path { text-align: center; }
+  .careers-path h2 { margin-bottom: 1rem; }
+  .careers-path p { font-size: 1rem; margin-bottom: .5rem; }
+
+  /* ── Find Your Path ─────────────────────────────────── */
+  .career-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-block: 1rem; }
+  .career-card { display: flex; flex-direction: column; isolation: isolate; text-align: center; }
+  .career-card img { display: block; margin-inline: auto; object-fit: cover; }
+  .career-card__body { flex: 1;
+    background: var(--color-tint);
+    border-radius: 0 0 4px 4px;
+    margin-top: -2.4rem;
+    padding: 2.4rem 1rem 1.25rem;
+    position: relative;
+    z-index: -1;
+  }
+  .career-card__body h4 { font-size: 1.25rem; margin: 0 0 .4rem; }
+  .career-card__body p { font-size: .8rem; margin: 0; }
+
+  /* ── CTA ────────────────────────────────────────────── */
+  .careers-cta { padding-block: 3rem; text-align: center; }
+
+  /* ── Responsive ─────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .careers-split, .careers-two-col { grid-template-columns: 1fr; }
+    .careers-split__images { grid-template-columns: 1fr; }
+    .career-cards { grid-template-columns: repeat(2, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .career-cards { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

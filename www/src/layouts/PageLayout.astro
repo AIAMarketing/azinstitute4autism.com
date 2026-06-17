@@ -4,6 +4,7 @@ import FormShell from '../components/FormShell.astro';
 import TeamPage from '../components/TeamPage.astro';
 import AboutPage from '../components/AboutPage.astro';
 import ServicesPage from '../components/ServicesPage.astro';
+import CareersPage from '../components/CareersPage.astro';
 import PageHero from '../components/PageHero.astro';
 import { pageHeroImages } from '../data/page-visuals';
 const { entry } = Astro.props;
@@ -58,6 +59,8 @@ const heroImage = pageHeroImages[entry.data.slug];
     ? <AboutPage />
     : entry.data.slug === 'services' && entry.data.lang === 'en'
     ? <ServicesPage />
+    : entry.data.slug === 'careers' && entry.data.lang === 'en'
+    ? <CareersPage />
     : <article class:list={['prose', 'source-page', 'container', { 'service-page': isService }]}><slot /></article>}
   {showForm && <FormShell title={bannerTitle} showBackground={entry.data.slug === 'client-consultation'} />}
 </BaseLayout>
