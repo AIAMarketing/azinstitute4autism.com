@@ -8,7 +8,9 @@ h1, h2, h3 { color: var(--color-primary); font-family: var(--font-heading); line
 h1 { font-size: clamp(2.5rem, 5vw, 3rem); line-height: 1.12; margin: 0 0 var(--space-md); }
 h2 { font-size: clamp(2rem, 4vw, 2.4rem); line-height: 1.25; }
 h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-a { color: var(--color-primary); }
+a, a:visited { color: var(--color-accent-strong); text-decoration: none; }
+a:hover, a:active { color: var(--color-accent); }
+a.button { color: var(--color-primary) }
 .eyebrow { color: var(--color-secondary); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .lede, .hero-copy { color: var(--color-muted); font-size: 1.25rem; }
 .script-label { color: var(--color-accent-strong); font-family: var(--font-accent); font-size: 2rem; margin: 0; }
