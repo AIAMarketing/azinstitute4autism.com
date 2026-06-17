@@ -9,11 +9,11 @@ img { display: block; height: auto; max-width: 100%; }
 .section-tint, .page-header { background: var(--color-tint); }
 .section-heading { margin-bottom: var(--space-lg); max-width: 700px; }
 .split { align-items: center; display: flex; gap: var(--space-lg); justify-content: space-between; }
+.button-center { margin-block: 2.5rem; margin-inline-start: 50%; translate: -50%; }
 .card-grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .skip-link { background: white; left: 1rem; padding: .75rem; position: fixed; top: -10rem; z-index: 100; }
 .skip-link:focus { top: 1rem; }
 .page-header { padding-block: var(--space-xl); text-align: center; }
 .feature-grid { align-items: center; display: grid; gap: clamp(2rem, 6vw, 5rem); grid-template-columns: 1fr 1fr; }
-.cream-section { background: var(--color-tint); }
 @media (max-width: 850px) { .card-grid { grid-template-columns: 1fr; } .split { align-items: flex-start; flex-direction: column; } }
 @media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; } }
