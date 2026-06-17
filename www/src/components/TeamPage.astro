@@ -44,7 +44,7 @@ const groups = [
     <p>AIA's clinical team consists of experienced professionals and paraprofessionals as well as Board Certified Behavior Analysts (BCBA) and Psychologists who have diverse experience and expertise.</p>
   </section>
   {groups.map((group) => (
-    <section class:list={['team-group', { 'team-group--tinted': group.tinted }]}>
+    <section class:list={['team-group', { 'section-tint': group.tinted }]}>
       <div class="container">
         <h2>{group.title}</h2>
         {group.tagline && <p class="team-group__tagline"><em>{group.tagline}</em></p>}
@@ -77,7 +77,6 @@ const groups = [
   .team-intro { padding-block: 4rem; text-align: center; }
   .team-intro .script-label { font-size: 1.8rem; }
   .team-group { padding-block: 2rem 4rem; text-align: center; }
-  .team-group--tinted { background: var(--color-tint); }
   .team-group h2 { margin: 0 auto 1rem; max-width: 760px; }
   .team-group__tagline { font-size: 1.125rem; margin: 0 auto 2rem; }
   .team-grid { display: flex; flex-wrap: wrap; gap: 2rem 1.5rem; justify-content: center; }
