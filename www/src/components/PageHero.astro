@@ -1,33 +1,40 @@
 ---
 interface Props {
   title: string;
+  subtitle?: string;
   image?: string;
   eyebrow?: string;
   constrain?: boolean;
 }
-const { title, image, eyebrow, constrain = false } = Astro.props;
+const { title, subtitle, image, eyebrow, constrain = false } = Astro.props;
 ---
 
 <header class:list={['page-hero', { 'page-hero--image': image, 'page-hero--constrained': image && constrain }]} style={image ? `--hero-image: url("${image}")` : undefined}>
   <div class="container">
+    <div class="page-hero__heading">
     {eyebrow
-      ? <div class="page-hero__copy"><p class="script-label">{eyebrow}</p><h1>{title}</h1></div>
-      : <h1>{title}</h1>
+      ? <div class="page-hero__copy"><p class="script-label">{eyebrow}</p><h1>{title}</h1>{subtitle && <h2>{subtitle}</h2>}</div>
+      : <><h1>{title}</h1>{subtitle && <h2>{subtitle}</h2>}</>
     }
+    </div>
   </div>
 </header>
 
 <style>
   .page-hero { background: var(--color-tint); padding-block: 4rem; text-align: center; }
+  .page-hero__heading { display: inline-block; }
   .page-hero h1 { margin: 0; }
+  .page-hero h2 { color: var(--color-primary); font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 400; line-height: 1.15; margin: .5rem 0 0; }
   .page-hero--image { background-image: var(--hero-image); background-position: center; background-repeat: no-repeat; background-size: cover; max-height: 420px; padding-block: 0; text-align: left; }
   .page-hero--image > .container { padding-block: 10rem; }
   .page-hero--image h1 { max-width: 600px; }
+  .page-hero--image h2 { max-width: 600px; }
   .page-hero__copy { max-width: 600px; }
   .page-hero--constrained { background-image: var(--hero-image), linear-gradient(var(--color-tint), var(--color-tint)); background-clip: content-box, border-box; background-origin: content-box, border-box; background-position: center, center; background-repeat: no-repeat, repeat; background-size: cover, auto; padding-inline: max(0px, calc((100% - var(--container-w)) / 2)); }
   @media (max-width: 760px) {
+    .page-hero__heading { background: #fffb; padding: 2rem; }
     .page-hero--image > .container { padding-block: 6.25rem; }
     .page-hero--image { text-align: center; }
-    .page-hero--image h1, .page-hero__copy { margin-inline: auto; }
+    .page-hero--image h1, .page-hero--image h2, .page-hero__copy { margin-inline: auto; }
   }
 </style>
