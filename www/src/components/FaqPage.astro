@@ -7,32 +7,24 @@
 
   <section class="faq-search container-narrow">
     <div class="hs-search-field hs-search-field--initialized">
-      <div class="hs-search-field__bar">
-        <form action="/search">
+      <div class="hs-search-field__bar hs-search-field__bar--button-inline">
+        <form class="hs-search-field__form" action="/search">
           <label class="sr-only" for="faq-search-input">Search FAQs</label>
           <input
             id="faq-search-input"
             type="search"
             class="hs-search-field__input"
-            name="term"
+            name="q"
             autocomplete="off"
-            placeholder="Type your search here"
+            placeholder="Search"
             data-faq-search
           />
+          <button class="hs-search-field__button" type="button" aria-label="Search">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" width="18" height="18">
+              <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" fill="#254080"/>
+            </svg>
+          </button>
         </form>
-      </div>
-      <div class="ac-btn-search--icon" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z" stroke="#254080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M16.4431 16.4438L20.9994 21.0002" stroke="#254080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </div>
-      <div class="ac-btn-search--close" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none"></rect>
-          <line x1="200" y1="56" x2="56" y2="200" stroke="#254080" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-          <line x1="200" y1="200" x2="56" y2="56" stroke="#254080" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-        </svg>
       </div>
     </div>
   </section>
@@ -324,9 +316,20 @@
     padding-block: 1rem 0.75rem;
   }
 
+  .sr-only {
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
   .hs-search-field {
     margin-inline: auto;
-    position: relative;
     width: min(780px, 100%);
   }
 
@@ -336,12 +339,11 @@
 
   .hs-search-field__bar {
     display: block;
-    position: relative;
     width: 100%;
   }
 
-  .hs-search-field__bar form {
-    display: block;
+  .hs-search-field__form {
+    display: flex;
     margin: 0;
     width: 100%;
   }
@@ -349,15 +351,15 @@
   .hs-search-field__input {
     appearance: none;
     background: #fff;
-    border: 1px solid rgba(37, 64, 128, .2);
-    border-radius: 999px;
+    border: 2px solid rgba(37, 64, 128, .2);
+    border-radius: 4px;
     color: var(--color-primary);
-    display: inline-block;
+    flex: 1;
     font: inherit;
     line-height: 1.5;
     min-height: 3.125rem;
-    padding: .9rem 3rem .9rem 1.5rem;
-    width: 100%;
+    min-width: 0;
+    padding: .9rem 1.25rem;
     box-shadow: 0 1px 2px rgba(37, 64, 128, .06);
   }
 
@@ -366,26 +368,24 @@
     opacity: 1;
   }
 
-  .ac-btn-search--icon,
-  .ac-btn-search--close {
+  .hs-search-field__button {
     align-items: center;
-    inset-inline-end: 1rem;
+    background: #fff;
+    border: 2px solid rgba(37, 64, 128, .2);
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(37, 64, 128, .06);
+    cursor: pointer;
     display: flex;
-    height: 24px;
+    flex: 0 0 auto;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 24px;
-    pointer-events: none;
-  }
-
-  .ac-btn-search--icon {
+    margin-left: 2px;
+    min-height: 3.125rem;
     opacity: .85;
+    padding-inline: 1rem;
   }
 
-  .ac-btn-search--close {
-    display: none;
+  .hs-search-field__button:hover {
+    opacity: 1;
   }
 
   .faq-accordion {
