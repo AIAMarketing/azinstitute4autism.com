@@ -6,7 +6,7 @@ const { section } = Astro.props;
 <section class="home-hero">
   <div class="container home-hero-grid">
     <div>
-      <p class="script-label">{section.eyebrow}</p>
+      <p class="eyebrow">{section.eyebrow}</p>
       <h1 set:html={section.heading} />
       <p>{section.body}</p>
       <a class="button" href={section.cta.href}>{section.cta.label}</a>
@@ -19,7 +19,7 @@ const { section } = Astro.props;
   .home-hero { background: var(--color-tint); overflow: hidden; }
   .home-hero-grid { align-items: end; display: grid; grid-template-columns: 1fr .9fr; min-height: 520px; padding-top: 4rem; }
   .home-hero-grid > div { align-self: center; padding-bottom: 4rem; }
-  .home-hero-grid p:not(.script-label) { max-width: 570px; }
+  .home-hero-grid p:not(.eyebrow) { max-width: 570px; }
   .home-hero-grid img { align-self: end; justify-self: end; max-height: 500px; object-fit: contain; }
   @media (max-width: 760px) {
     .home-hero-grid { grid-template-columns: 1fr; padding-top: 3rem; text-align: center; }

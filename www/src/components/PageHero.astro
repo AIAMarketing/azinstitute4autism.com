@@ -13,7 +13,7 @@ const { title, subtitle, image, eyebrow, constrain = false } = Astro.props;
   <div class="container">
     <div class="page-hero__heading">
     {eyebrow
-      ? <div class="page-hero__copy"><p class="script-label">{eyebrow}</p><h1>{title}</h1>{subtitle && <h2>{subtitle}</h2>}</div>
+      ? <div class="page-hero__copy"><p class="eyebrow">{eyebrow}</p><h1>{title}</h1>{subtitle && <h2>{subtitle}</h2>}</div>
       : <><h1>{title}</h1>{subtitle && <h2>{subtitle}</h2>}</>
     }
     </div>
