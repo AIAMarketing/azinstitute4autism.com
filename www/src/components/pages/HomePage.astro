@@ -1,17 +1,17 @@
 ---
 import { getEntry } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HomeBenefits from './home/HomeBenefits.astro';
-import HomeDirector from './home/HomeDirector.astro';
-import HomeEsa from './home/HomeEsa.astro';
-import HomeFinancialHelp from './home/HomeFinancialHelp.astro';
-import HomeHero from './home/HomeHero.astro';
-import HomeInsurance from './home/HomeInsurance.astro';
-import HomeProcess from './home/HomeProcess.astro';
-import HomeServicesIntro from './home/HomeServicesIntro.astro';
-import HomeSkills from './home/HomeSkills.astro';
-import HomeTestimonials from './home/HomeTestimonials.astro';
-import type { HomePageContent, HomeSection } from '../types/home-sections';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeBenefits from '../home/HomeBenefits.astro';
+import HomeDirector from '../home/HomeDirector.astro';
+import HomeEsa from '../home/HomeEsa.astro';
+import HomeFinancialHelp from '../home/HomeFinancialHelp.astro';
+import HomeHero from '../home/HomeHero.astro';
+import HomeInsurance from '../home/HomeInsurance.astro';
+import HomeProcess from '../home/HomeProcess.astro';
+import HomeServicesIntro from '../home/HomeServicesIntro.astro';
+import HomeSkills from '../home/HomeSkills.astro';
+import HomeTestimonials from '../home/HomeTestimonials.astro';
+import type { HomePageContent, HomeSection } from '../../types/home-sections';
 
 interface Props { lang?: string }
 const { lang = 'en' } = Astro.props;
