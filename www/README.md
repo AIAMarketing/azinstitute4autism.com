@@ -198,15 +198,6 @@ Available `Button` variants are `filled` (default), `outlined`, and `light`.
 Available sizes are `default` and `small`. A `_blank` target automatically adds
 `rel="noopener noreferrer"`.
 
-Use the optional `Link` component only when an inline link needs an explicit
-variant or target:
-
-```mdx
-import Link from '../../../components/Link.astro';
-
-<Link href="/library" variant="strong">Browse the library</Link>
-```
-
 Normal Markdown links remain preferred for ordinary page and article content.
 
 ### Front Matter CMS

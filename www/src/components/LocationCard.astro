@@ -1,8 +1,0 @@
----
-const { title = 'Scottsdale', address = '8901 E Raintree Dr Ste 160, Scottsdale, AZ 85260' } = Astro.props;
----
-<article class="card location-card"><h3>{title}</h3><p>{address}</p><a class="text-link" href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}>Get directions</a></article>
-
-<style>
-  .location-card { padding: var(--space-lg); }
-</style>
