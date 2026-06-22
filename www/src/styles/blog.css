@@ -9,14 +9,9 @@
 .blog-post-body blockquote p { color: var(--color-primary); margin: 0 0 1.55rem; }
 .source-page { max-width: 980px; }
 .source-page > h2:first-of-type { margin-top: 0; }
-.service-page > p > img, .service-page > img { float: right; margin: .5rem 0 1.5rem 2rem; max-height: 230px; max-width: 300px; object-fit: cover; }
-.service-page h3 { font-size: 2rem; }
 .blog-post-body { max-width: 960px; }
 .blog-post-body p { margin-bottom: 1.55rem; }
 .blog-post-body table { border: 1px solid #d7d9e3; border-collapse: collapse; display: table; margin: 0 0 1.4rem; width: 100%; }
 .blog-post-body td, .blog-post-body th { border: 1px solid #d7d9e3; padding: 10px; }
 .blog-post-body th { background: var(--color-primary); color: #fff; }
 .blog-post-body td { background: #fff; color: var(--color-primary); }
-@media (max-width: 700px) {
-  .service-page > p > img, .service-page > img { float: none; margin: 1.5rem 0; max-width: 100%; width: 100%; }
-}
