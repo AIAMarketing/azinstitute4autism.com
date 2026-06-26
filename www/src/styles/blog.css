@@ -1,5 +1,5 @@
 .prose { padding-block: var(--space-xl); }
-.prose h2, .prose h3 { margin-top: 2em; }
+.prose h2, .prose h3 { margin-top: 1.75em; }
 .prose img { border-radius: var(--radius-md); margin-block: var(--space-lg); }
 .prose a { overflow-wrap: anywhere; text-decoration: none; }
 .prose p a, .prose td a { color: var(--color-accent-strong); text-decoration: none; }
