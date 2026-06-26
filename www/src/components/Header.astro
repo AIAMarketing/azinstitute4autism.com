@@ -1,4 +1,5 @@
 ---
+import Button from './Button.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import MainNav from './MainNav.astro';
 import MobileNav from './MobileNav.astro';
@@ -21,7 +22,7 @@ const utility = lang === 'es'
     <MainNav lang={lang} />
     <MobileNav lang={lang} />
     <LanguageSwitcher />
-    <a class="button button-small" href="/tour">Tour AIA</a>
+    <Button href="/tour" size="small">Tour AIA</Button>
   </div>
 </header>
 
@@ -33,7 +34,7 @@ const utility = lang === 'es'
   .header-inner { align-items: center; display: flex; gap: 1.4rem; min-height: 110px; }
   .brand img { width: 150px; }
   @media (max-width: 950px) {
-    .header-inner > .button { display: none; }
+    .header-inner > :global(.content-button) { display: none; }
   }
   @media (max-width: 760px) {
     .utility-inner { justify-content: center; }

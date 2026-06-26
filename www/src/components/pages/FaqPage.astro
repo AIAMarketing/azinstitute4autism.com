@@ -1,4 +1,5 @@
 ---
+import Button from '../Button.astro';
 ---
 <article class="faq-page">
   <div class="faq-source container source-page">
@@ -48,7 +49,7 @@
     <div class="container-narrow">
       <h2>Need Support in Getting an Autism Diagnosis?</h2>
       <p>To meet diagnostic criteria for ASD, a child must have persistent deficits in each of three areas of social communication and interaction plus at least two of four types of restricted repetitive behaviors. Consult with a Client Advocate today to receive individual and family support!</p>
-      <a class="button button-center" href="/client-consultation">Request an Appointment</a>
+      <Button href="/client-consultation" center>Request an Appointment</Button>
     </div>
   </section>
 </article>
@@ -583,7 +584,7 @@
     margin-bottom: .75rem;
   }
 
-  .faq-cta-secondary .button {
+  .faq-cta-secondary :global(.content-button) {
     margin-top: 1.5rem;
   }
 

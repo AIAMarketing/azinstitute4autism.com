@@ -1,4 +1,5 @@
 ---
+import Button from './Button.astro';
 const { title = 'Schedule Your Free Consultation', showBackground = false } = Astro.props;
 ---
 <section class:list={['form-section', { 'form-section-background': showBackground }]} aria-labelledby="form-title">
@@ -12,7 +13,7 @@ const { title = 'Schedule Your Free Consultation', showBackground = false } = As
       <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
       <label>Service of interest<select name="service"><option>ABA Therapy</option><option>Autism Evaluation</option><option>Learner Social Club</option><option>Other</option></select></label>
       <label>How can we help?<textarea name="message" rows="5"></textarea></label>
-      <button class="button" type="submit" disabled aria-describedby="form-note">Submit</button>
+      <Button type="submit" disabled aria-describedby="form-note">Submit</Button>
       <p id="form-note" class="form-note">Online submission is not yet connected. Please call (480) 687-7099.</p>
     </form>
   </div>

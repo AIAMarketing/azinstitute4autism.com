@@ -1,4 +1,5 @@
 ---
+import Button from '../Button.astro';
 const groups = [
   {
     title: 'Board Certified Behavioral Analysts & Psychologists',
@@ -68,7 +69,7 @@ const groups = [
       <h2>Employment Opportunities</h2>
       <p>Apply online to join the AIA team! At the Arizona Institute for Autism (AIA) we are on a mission to improve special education and strengthen communities throughout Arizona.</p>
       <p>Our talented and passionate employees are a critical piece to the high-quality ABA therapy we provide along with our commitment to behavioral health, school solutions, and community outreach. For questions regarding open positions, please contact us at <a href="mailto:hr@azinstitute4autism.com">hr@azinstitute4autism.com</a>.</p>
-      <a class="button" href="/careers">View Open Positions</a>
+      <Button href="/careers">View Open Positions</Button>
     </div>
   </section>
 </article>
@@ -87,7 +88,7 @@ const groups = [
   .team-member h3 { font-family: var(--font-body); font-size: .8rem; margin-bottom: 0; }
   .team-member p { font-size: .85rem; margin: 0; }
   .team-careers { padding-block: 5rem; }
-  .team-careers .button { margin-left: 50%; margin-top: 4rem; translate: -50%; }
+  .team-careers :global(.content-button) { margin-left: 50%; margin-top: 4rem; translate: -50%; }
   @media (max-width: 950px) {
     .team-member { flex-basis: min(100%, 227px); }
   }

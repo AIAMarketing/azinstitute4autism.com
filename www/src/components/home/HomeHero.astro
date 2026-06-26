@@ -1,4 +1,5 @@
 ---
+import Button from '../Button.astro';
 import type { HeroSection } from '../../types/home-sections';
 interface Props { section: HeroSection }
 const { section } = Astro.props;
@@ -9,7 +10,7 @@ const { section } = Astro.props;
       <p class="eyebrow">{section.eyebrow}</p>
       <h1 set:html={section.heading} />
       <p>{section.body}</p>
-      <a class="button" href={section.cta.href}>{section.cta.label}</a>
+      <Button href={section.cta.href}>{section.cta.label}</Button>
     </div>
     <img src={`/assets/images/${section.image}`} alt={section.imageAlt} loading="eager" />
   </div>

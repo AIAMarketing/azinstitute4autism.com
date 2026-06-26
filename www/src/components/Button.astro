@@ -1,10 +1,14 @@
 ---
 interface Props {
-  href: string;
+  href?: string;
   variant?: 'filled' | 'outlined' | 'light';
   size?: 'default' | 'small';
+  center?: boolean;
   target?: '_blank' | '_self';
   rel?: string;
+  type?: 'submit' | 'button' | 'reset';
+  disabled?: boolean;
+  'aria-describedby'?: string;
   class?: string;
 }
 
@@ -12,20 +16,28 @@ const {
   href,
   variant = 'filled',
   size = 'default',
+  center = false,
   target,
   rel = target === '_blank' ? 'noopener noreferrer' : undefined,
+  type,
+  disabled,
+  'aria-describedby': ariaDescribedby,
   class: className
 } = Astro.props;
+
+const classes = [
+  'content-button',
+  `content-button--${variant}`,
+  { 'content-button--small': size === 'small', 'content-button--center': center },
+  className
+];
 ---
 
-<a
-  class:list={['content-button', `content-button--${variant}`, { 'content-button--small': size === 'small' }, className]}
-  href={href}
-  target={target}
-  rel={rel}
->
-  <slot />
-</a>
+{href ? (
+  <a class:list={classes} href={href} target={target} rel={rel}><slot /></a>
+) : (
+  <button class:list={classes} type={type} disabled={disabled} aria-describedby={ariaDescribedby}><slot /></button>
+)}
 
 <style>
   .content-button {
@@ -36,8 +48,9 @@ const {
     display: inline-block;
     font-weight: 400;
     line-height: 1.5;
-    padding: .8rem 1.2rem;
+    padding: .65rem 1.2rem;
     text-decoration: none;
+    transition: .3s linear all;
   }
 
   .content-button:hover,
@@ -65,6 +78,16 @@ const {
 
   .content-button--small {
     font-size: .9rem;
-    padding: .5rem 1rem;
+  }
+
+  .content-button--center {
+    margin-block: 2.5rem;
+    margin-inline-start: 50%;
+    translate: -50%;
+  }
+
+  button.content-button {
+    cursor: pointer;
+    font: inherit;
   }
 </style>
