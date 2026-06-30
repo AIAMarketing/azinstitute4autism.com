@@ -9,7 +9,7 @@ if [[ "${1:-}" == "exec" ]]; then
 fi
 
 exec codex \
-  --profile-v2 azi4a2-autonomous \
+  --profile azi4a2-autonomous \
   --strict-config \
   --config 'approval_policy="never"' \
   --config 'mcp_servers.playwright.default_tools_approval_mode="approve"' \
