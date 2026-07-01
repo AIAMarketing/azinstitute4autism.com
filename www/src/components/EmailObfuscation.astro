@@ -1,0 +1,58 @@
+---
+interface Props {
+  email?: string;
+  phone?: string;
+  hrefValue?: string;
+  linkText?: string;
+  obfuscatedText?: string;
+  class?: string;
+  id?: string;
+}
+
+const {
+  email,
+  phone,
+  hrefValue,
+  linkText,
+  obfuscatedText,
+  class: className,
+  id
+} = Astro.props;
+
+if ((email ? 1 : 0) + (phone ? 1 : 0) !== 1) {
+  throw new Error('EmailObfuscation requires exactly one of email or phone.');
+}
+
+const contactType = email ? 'email' : 'phone';
+const sourceValue = email ?? phone ?? '';
+const linkValue = linkText ?? sourceValue;
+const fallbackText = obfuscatedText ?? sourceValue;
+const protocol = email ? 'mailto' : 'tel';
+const telHrefValue = hrefValue ?? sourceValue.replace(/[^\d+]/g, '');
+const targetValue = email ? (hrefValue ?? sourceValue) : telHrefValue;
+const encode = (value: string) => Array.from(value, (character) => character.charCodeAt(0));
+const encodedTarget = encode(targetValue);
+const encodedText = encode(linkValue);
+const spanId = id ?? `${contactType}-obfuscation-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+<span id={spanId} class={className}>{fallbackText}</span><script type="text/javascript" define:vars={{ encodedTarget, encodedText, protocol, spanId }}>
+(() => {
+  const contactSpan = document.getElementById(spanId);
+
+  if (!contactSpan) return;
+
+  const decode = (encodedValue) => encodedValue
+    .map((characterCode) => String.fromCharCode(characterCode))
+    .join('');
+  const target = decode(encodedTarget);
+  const text = decode(encodedText);
+
+  const link = document.createElement('a');
+  link.href = `${protocol}:${target}`;
+  link.textContent = text;
+
+  contactSpan.textContent = '';
+  contactSpan.appendChild(link);
+})();
+</script>

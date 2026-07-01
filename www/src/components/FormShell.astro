@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro';
+import EmailObfuscation from './EmailObfuscation.astro';
 const { title = 'Schedule Your Free Consultation', showBackground = false } = Astro.props;
 ---
 <section class:list={['form-section', { 'form-section-background': showBackground }]} aria-labelledby="form-title">
@@ -14,7 +15,7 @@ const { title = 'Schedule Your Free Consultation', showBackground = false } = As
       <label>Service of interest<select name="service"><option>ABA Therapy</option><option>Autism Evaluation</option><option>Learner Social Club</option><option>Other</option></select></label>
       <label>How can we help?<textarea name="message" rows="5"></textarea></label>
       <Button type="submit" disabled aria-describedby="form-note">Submit</Button>
-      <p id="form-note" class="form-note">Online submission is not yet connected. Please call (480) 687-7099.</p>
+      <p id="form-note" class="form-note">Online submission is not yet connected. Please call <EmailObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
     </form>
   </div>
 </section>

@@ -7,6 +7,8 @@ lang: "en"
 translationKey: "schedule-consultation"
 draft: false
 ---
+import EmailObfuscation from '../../../components/EmailObfuscation.astro';
+
 We're here for you! 
 
 A Client Advocate from Arizona Institute for Autism will contact you within one business day upon submission of this form.
@@ -37,13 +39,13 @@ Along with ABA therapy for children and teens diagnosed with autism, our support
 
 ![stem sped tech kids](/assets/images/stem-sped-tech-kids_446x.jpg) ![call us to schedule a free consultation](/assets/images/phone-1.svg) Phone
 
-(480) 687-7099
+<EmailObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />
 
 ![email for more information](/assets/images/mail.svg)
 
 Email
 
-info@abaclinicaz.com
+<EmailObfuscation email="info@abaclinicaz.com" obfuscatedText="info [at] abaclinicaz [dot] com" />
 
 ![located in scottsdale](/assets/images/map-pin.svg)
 

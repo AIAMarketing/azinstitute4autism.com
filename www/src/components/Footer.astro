@@ -1,4 +1,5 @@
 ---
+import EmailObfuscation from './EmailObfuscation.astro';
 import site from '../data/site.json';
 const year = new Date().getFullYear();
 const { lang = 'en' } = Astro.props;
@@ -31,11 +32,11 @@ const labels = lang === 'es'
       <div class="footer-contact">
         <div class="footer-contact-item">
           <img src="/assets/images/phone-blue.svg" alt="" aria-hidden="true" width="24" height="24" />
-          <a href={`tel:${site.phone.replace(/\D/g, '')}`}>{site.phone}</a>
+          <EmailObfuscation phone={site.phone} hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />
         </div>
         <div class="footer-contact-item">
           <img src="/assets/images/envelope-blue.svg" alt="" aria-hidden="true" width="24" height="24" />
-          <a href={`mailto:${site.email}`}>{site.email}</a>
+          <EmailObfuscation email={site.email} obfuscatedText="moc.msitua4etutitsniza@ofni" />
         </div>
         <div class="footer-contact-item">
           <img src="/assets/images/location-blue.svg" alt="" aria-hidden="true" width="24" height="24" />

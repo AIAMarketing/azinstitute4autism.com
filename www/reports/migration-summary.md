@@ -105,6 +105,9 @@ unavailable.
 
 - Canonicals, Open Graph tags, Twitter card tags, semantic titles, and global
   organization JSON-LD are emitted by shared layouts.
+- Organization JSON-LD intentionally omits raw `telephone` and `email` fields;
+  visible contact details use the Astro obfuscation component to avoid exposing
+  plain email and phone targets in rendered HTML.
 - Library-index canonicals and current visible page H1s are explicitly set.
 - Extracted image alt text is retained where available.
 - Semantic landmarks, skip link, labeled forms, keyboard-operable navigation,
@@ -127,9 +130,8 @@ unavailable.
 - All migration `.mjs` tools and the sandbox DNS helper pass `node --check`.
 - The Astro compiler parsed all 33 `.astro` files successfully.
 - `npm run build`: blocked before compilation because this autonomous sandbox
-  denies `/etc/hosts`, causing `getaddrinfo EAI_AGAIN localhost`.
-- `npm run build:sandbox`: bypasses that DNS lookup and reaches Vite, then the
-  sandbox rejects esbuild's required child process with `spawn EPERM`.
+  cannot resolve `localhost`, causing `getaddrinfo EAI_AGAIN localhost`.
+- `npm run build:sandbox`: passed; generated 97 static pages.
 - Nix shell verification and `npm audit` retrieval were blocked by sandbox
   proxy/cache network resets.
 
