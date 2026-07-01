@@ -7,32 +7,20 @@ brief provides detailed implementation guidance. If any wording here appears
 to conflict with `AGENTS.md`, follow `AGENTS.md` and correct this brief before
 continuing.
 
-This is a fidelity-first migration, not a redesign. The raw mirror is a
-convenient local extraction and inspection aid, but the live public site is the
+This is a fidelity-first migration, not a redesign. The live public site is the
 single content and visual source of truth. The `migration-foundation` branch
 may be consulted for nonvisual tooling and recovered content, but it must not
 be used as the visual baseline.
 
 ## Task
 
-Migrate the public Arizona Institute for Autism website from a mirrored HubSpot-generated static copy into a clean, maintainable Astro + TypeScript site.
-
-Raw mirrored source:
-
-```txt
-./www.azinstitute4autism.com
-```
+Migrate the public Arizona Institute for Autism website into a clean,
+maintainable Astro + TypeScript site.
 
 New Astro project target:
 
 ```txt
 ./www
-```
-
-The raw mirror was created with:
-
-```sh
-wget --mirror --page-requisites --adjust-extension --convert-links --no-parent https://www.azinstitute4autism.com
 ```
 
 There is no HubSpot export, no HubSpot CLI access, and no HubSpot API access.
@@ -43,15 +31,9 @@ Use the live public website as the single source of truth:
 https://www.azinstitute4autism.com
 ```
 
-Use the local mirror as a convenient extraction and inspection aid. It may
-contain stale, missing, rewritten, or incorrectly downloaded content and
-assets. Verify content, design, URLs, metadata, assets, and responsive behavior
-against the live site. When the live site and mirror disagree, follow the live
-site and document material discrepancies.
-
-If the live site is temporarily unavailable, work that depends on its authority
-must remain explicitly unverified rather than silently treating the mirror as
-authoritative.
+Verify content, design, URLs, metadata, assets, and responsive behavior against
+the live site. If the live site is temporarily unavailable, work that depends
+on its authority must remain explicitly unverified.
 
 ## High-level goal
 
@@ -75,10 +57,6 @@ Create a new Astro site in `./www` that is:
 ## Important constraints
 
 Do not modify or delete:
-
-```txt
-./www.azinstitute4autism.com
-```
 
 Do not depend on:
 
@@ -283,13 +261,12 @@ Do not use Tailwind.
 For each page family or shared component:
 
 1. Inspect the live page, HTML, CSS, assets, and responsive behavior.
-2. Use the mirror to accelerate local extraction and inspection.
-3. Resolve discrepancies in favor of the live public site.
-4. Record important visual details and identify genuine shared patterns.
-5. Implement the page or component in maintainable Astro code.
-6. Compare the complete rendered page with the live public site at representative
+2. Resolve discrepancies in favor of the live public site.
+3. Record important visual details and identify genuine shared patterns.
+4. Implement the page or component in maintainable Astro code.
+5. Compare the complete rendered page with the live public site at representative
    desktop and mobile viewport widths.
-7. Fix material visual differences before marking it complete.
+6. Fix material visual differences before marking it complete.
 
 Document intentional visual deviations and their reasons in
 `reports/migration-summary.md`.
@@ -412,9 +389,6 @@ www/
     generate-redirects.mjs
     generate-sitemap.mjs
 
-  original/
-    README.md
-
   reports/
     url-inventory.csv
     asset-inventory.csv
@@ -427,17 +401,10 @@ www/
     migration-summary.md
 ```
 
-The `original/README.md` file should explain that the raw source mirror lives outside the Astro project at:
-
-```txt
-../www.azinstitute4autism.com
-```
-
-Do not duplicate the entire raw mirror inside `./www` unless there is a specific reason.
-
 ## Initial inspection
 
-Before creating or modifying files, inspect the mirror.
+Before creating or modifying files, inspect the live public site and current
+project sources.
 
 Look for:
 
@@ -687,9 +654,8 @@ src/styles/rtl.css
 src/styles/global.css
 ```
 
-Extract the current site's visual language from the live public site, using the
-mirrored CSS and HTML as a convenient local aid after checking for discrepancies.
-Tokens must encode source values; they must not introduce a replacement visual
+Extract the current site's visual language from the live public site. Tokens
+must encode source values; they must not introduce a replacement visual
 system.
 
 Use design tokens such as:
@@ -837,7 +803,7 @@ It should support:
 - hreflang links where translation relationships are known
 - JSON-LD/schema when extracted
 
-Preserve metadata from the mirror wherever possible.
+Preserve metadata from the live site wherever possible.
 
 Generate:
 
@@ -906,7 +872,7 @@ tools/generate-sitemap.mjs
 
 This script should:
 
-- scan the mirror
+- scan the available source and generated output
 - identify HTML files
 - infer URL paths
 - identify page type
@@ -929,7 +895,7 @@ This script should:
 
 - attempt to crawl the live site if internet is available
 - discover URLs from sitemap and internal links
-- compare discovered URLs against the mirror
+- compare discovered URLs against the current site source and generated output
 - document missing URLs/assets
 - avoid aggressive crawling
 - respect the scope of `www.azinstitute4autism.com`
@@ -1165,7 +1131,6 @@ www/README.md
 It should explain:
 
 - what the project is
-- where the raw mirror lives
 - how the migration was performed
 - how to install dependencies
 - how to run local dev
@@ -1241,7 +1206,7 @@ Proceed methodically:
 2. Read `CLAUDE.md`, if using Claude Code.
 3. Read this `MIGRATION_BRIEF.md`.
 4. Inspect the live public site.
-5. Inspect `./www.azinstitute4autism.com` and identify relevant discrepancies.
+5. Inspect the relevant live public site pages and identify discrepancies.
 6. Summarize a concise implementation plan.
 7. Scaffold Astro in `./www`.
 8. Build extraction/reporting scripts.

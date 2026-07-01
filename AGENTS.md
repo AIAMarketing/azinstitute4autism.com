@@ -13,29 +13,11 @@ content only after verifying it against the live public site.
 
 ## Project
 
-This repository contains a mirrored copy of the Arizona Institute for Autism website.
-
-Raw mirror source:
-
-```txt
-./www.azinstitute4autism.com
-```
-
 New Astro site target:
 
 ```txt
 ./www
 ```
-
-The mirror was created with:
-
-```sh
-wget --mirror --page-requisites --adjust-extension --convert-links --no-parent https://www.azinstitute4autism.com
-```
-
-Do not modify, move, rename, or delete `./www.azinstitute4autism.com`.
-
-Treat the mirror as read-only raw source material.
 
 The live public website is the single source of truth:
 
@@ -43,12 +25,8 @@ The live public website is the single source of truth:
 https://www.azinstitute4autism.com
 ```
 
-Use the mirror as a convenient local extraction and inspection aid only. The
-mirror may contain stale, missing, rewritten, or incorrectly downloaded
-content and assets. Verify content, design, URLs, metadata, assets, and
-responsive behavior against the live public site before treating them as
-authoritative. When the live site and mirror disagree, follow the live site and
-document material discrepancies.
+Verify content, design, URLs, metadata, assets, and responsive behavior against
+the live public site before treating them as authoritative.
 
 ## Primary goal
 
@@ -221,10 +199,9 @@ Favor:
 Before implementing a page family or shared component:
 
 1. Inspect the live page and its HTML, CSS, assets, and responsive behavior.
-2. Use the mirror to accelerate local extraction and inspection.
-3. Resolve any discrepancy in favor of the live public site.
-4. Record the source structure and important visual details.
-5. Identify which patterns are truly shared and which are page-specific.
+2. Resolve any discrepancy in favor of the live public site.
+3. Record the source structure and important visual details.
+4. Identify which patterns are truly shared and which are page-specific.
 
 After implementation, compare the Astro output with the live public site at
 representative desktop and mobile viewport widths. Check the full page, not
@@ -365,10 +342,9 @@ reports/migration-summary.md
 Before large filesystem changes:
 
 1. Inspect the live public site.
-2. Inspect the mirror and identify relevant discrepancies.
-3. Inspect the relevant source HTML, CSS, and assets in detail.
-4. Summarize the implementation and visual-validation plan.
-5. Proceed methodically.
+2. Inspect the relevant source HTML, CSS, and assets in detail.
+3. Summarize the implementation and visual-validation plan.
+4. Proceed methodically.
 
 At the end of a task, summarize:
 

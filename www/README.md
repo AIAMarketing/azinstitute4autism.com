@@ -1,8 +1,7 @@
 # Arizona Institute for Autism Astro Site
 
 Static Astro + TypeScript migration of the public Arizona Institute for Autism
-website. The read-only source mirror is located at
-`../www.azinstitute4autism.com`.
+website.
 
 ## Quick Start
 
@@ -22,9 +21,6 @@ http://localhost:4321
 
 The development server watches source files and refreshes the browser after
 edits. Stop it with `Ctrl+C`.
-
-Do **not** run `npm run extract` during normal editing. Extraction regenerates
-migrated Markdown from the raw mirror and can overwrite editorial changes.
 
 ## Environment Setup
 
@@ -321,51 +317,6 @@ Edit the component's `label`, `heading`, and `items` data in the post. Keep
 `answer` as plain text for JSON-LD and `answerHtml` as the matching visible
 answer. Shared FAQ markup, styling, interaction, and schema generation live in
 `src/components/FAQAccordion.astro`.
-
-## Mirror Extraction Workflow
-
-The mirror is read-only source material. Never modify:
-
-```txt
-../www.azinstitute4autism.com
-```
-
-Only rerun extraction when intentionally refreshing migrated content from the
-mirror. Commit or back up editorial changes first.
-
-Dependency-free extraction:
-
-```sh
-npm run extract
-```
-
-Full Cheerio/Turndown extraction:
-
-```sh
-npm run extract:full
-```
-
-After extraction:
-
-```sh
-npm run extract:blog-footers
-npm run generate:sitemap
-npm run generate:redirects
-npm run build
-npm run audit:links
-npm run audit:images
-npm run audit:blog
-```
-
-Extraction regenerates content files, copied assets, and inventories. Review
-the complete Git diff before accepting it. Extraction may recreate FAQ-bearing
-posts and CTA-bearing pages as Markdown; restore their `FAQAccordion` and
-`Button` MDX blocks before accepting the result. `npm run audit:blog` reports
-plain Markdown FAQ sections.
-
-`npm run extract:blog-footers` preserves the extracted previous/next and
-similar-post relationships in `src/data/blog-footers.json`, then removes those
-footer fragments from article prose so `BlogPostFooter.astro` can render them.
 
 ## Reports And Utilities
 
