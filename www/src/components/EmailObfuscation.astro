@@ -1,0 +1,32 @@
+---
+interface Props {
+  email: string;
+  obfuscatedText?: string;
+  class?: string;
+  id?: string;
+}
+
+const {
+  email,
+  obfuscatedText = email,
+  class: className,
+  id
+} = Astro.props;
+
+const spanId = id ?? `email-obfuscation-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+<span id={spanId} class={className}>{obfuscatedText}</span><script type="text/javascript" define:vars={{ email, spanId }}>
+(() => {
+  const emailSpan = document.getElementById(spanId);
+
+  if (!emailSpan) return;
+
+  const link = document.createElement('a');
+  link.href = `mailto:${email}`;
+  link.textContent = email;
+
+  emailSpan.textContent = '';
+  emailSpan.appendChild(link);
+})();
+</script>
