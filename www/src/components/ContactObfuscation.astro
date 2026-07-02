@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 
 if ((email ? 1 : 0) + (phone ? 1 : 0) !== 1) {
-  throw new Error('EmailObfuscation requires exactly one of email or phone.');
+  throw new Error('ContactObfuscation requires exactly one of email or phone.');
 }
 
 const contactType = email ? 'email' : 'phone';

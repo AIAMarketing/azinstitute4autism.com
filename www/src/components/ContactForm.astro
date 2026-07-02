@@ -1,6 +1,6 @@
 ---
 import Button from './Button.astro';
-import EmailObfuscation from './EmailObfuscation.astro';
+import ContactObfuscation from './ContactObfuscation.astro';
 
 interface Props {
   title?: string;
@@ -20,7 +20,7 @@ const { title = 'Contact AIA' } = Astro.props;
     <label>Service of interest<select name="service"><option>ABA Therapy</option><option>Autism Evaluation</option><option>Learner Social Club</option><option>Other</option></select></label>
     <label>How can we help?<textarea name="message" rows="5"></textarea></label>
     <Button type="submit" disabled aria-describedby="contact-form-note" class="contact-form-card__submit">Submit</Button>
-    <p id="contact-form-note" class="contact-form-card__note">Online submission is not yet connected. Please call <EmailObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
+    <p id="contact-form-note" class="contact-form-card__note">Online submission is not yet connected. Please call <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
   </div>
 </form>
 
