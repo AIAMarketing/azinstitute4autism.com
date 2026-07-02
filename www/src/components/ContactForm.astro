@@ -1,0 +1,84 @@
+---
+import Button from './Button.astro';
+import EmailObfuscation from './EmailObfuscation.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Contact AIA' } = Astro.props;
+---
+
+<form class="contact-form-card" method="post" action="">
+  <!-- TODO: Wire this form to Netlify Forms, a custom API endpoint, or another backend service. -->
+  <!-- TODO: Add spam protection before production launch. -->
+  <h3 class="contact-form-card__title">{title}</h3>
+  <div class="contact-form-card__fields">
+    <label>Parent or guardian name<input name="name" autocomplete="name" /></label>
+    <label>Email<input type="email" name="email" autocomplete="email" /></label>
+    <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+    <label>Service of interest<select name="service"><option>ABA Therapy</option><option>Autism Evaluation</option><option>Learner Social Club</option><option>Other</option></select></label>
+    <label>How can we help?<textarea name="message" rows="5"></textarea></label>
+    <Button type="submit" disabled aria-describedby="contact-form-note" class="contact-form-card__submit">Submit</Button>
+    <p id="contact-form-note" class="contact-form-card__note">Online submission is not yet connected. Please call <EmailObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
+  </div>
+</form>
+
+<style>
+  .contact-form-card {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgb(81 81 81 / 4%), 0 4px 16px 0 rgb(81 81 81 / 8%);
+    margin: 0 auto;
+    max-width: 600px;
+    overflow: hidden;
+  }
+
+  .contact-form-card__title {
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+  }
+
+  .contact-form-card__fields {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .contact-form-card label {
+    display: grid;
+    font-weight: 700;
+    gap: .4rem;
+  }
+
+  .contact-form-card input,
+  .contact-form-card select,
+  .contact-form-card textarea {
+    background: #fcf9f5;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-primary);
+    font: inherit;
+    padding: .8rem;
+    width: 100%;
+  }
+
+  .contact-form-card textarea {
+    resize: vertical;
+  }
+
+  .contact-form-card :global(.contact-form-card__submit) {
+    justify-self: center;
+    max-width: 375px;
+    width: 100%;
+  }
+
+  .contact-form-card__note {
+    color: var(--color-muted);
+    font-size: .9rem;
+    margin: 0;
+    text-align: center;
+  }
+</style>

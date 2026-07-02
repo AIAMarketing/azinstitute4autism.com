@@ -44,6 +44,9 @@ Implemented fidelity work includes:
 - Restored the consultation form section's injected background image.
 - Added a dedicated live-derived team card grid rather than presenting the
   extracted team content as a generic article.
+- Rebuilt the contact page around the live two-column content/form section and
+  full-width Leaflet map while retaining local clickable obfuscated phone
+  links.
 - Rebuilt library indexes and blog-post presentation around the live sidebar,
   article list, byline, featured-image, and counter patterns.
 - Converted FAQ-bearing posts to MDX and recreated their live-style accordions
@@ -76,6 +79,12 @@ Visible consultation/contact-style pages render styled static HTML forms with
 backend and spam-protection TODO comments. Submission is intentionally
 disabled. Appointment and enrollment calls to action route to the static
 consultation page rather than retaining the production Jotform backend.
+
+## External Dependencies
+
+- The contact page map intentionally matches the live Leaflet/OpenStreetMap
+  implementation and loads Leaflet from `unpkg.com` plus map tiles from
+  `tile.openstreetmap.org`.
 
 ## Multilingual
 
@@ -128,10 +137,15 @@ unavailable.
 - `npm run generate:sitemap`: passed; generated 97 URLs.
 - `npm run generate:redirects`: passed.
 - All migration `.mjs` tools and the sandbox DNS helper pass `node --check`.
-- The Astro compiler parsed all 33 `.astro` files successfully.
+- The Astro compiler parsed all 49 `.astro` files successfully.
 - `npm run build`: blocked before compilation because this autonomous sandbox
   cannot resolve `localhost`, causing `getaddrinfo EAI_AGAIN localhost`.
 - `npm run build:sandbox`: passed; generated 97 static pages.
+- Live contact-page structure was inspected in browser at a 1280px desktop
+  viewport; local generated HTML was checked for the contact layout, Leaflet
+  assets, map container, and obfuscated clickable phone script. Local browser
+  rendering was blocked because the Playwright browser cannot reach shell
+  loopback servers and blocks `file:` URLs in this environment.
 - Nix shell verification and `npm audit` retrieval were blocked by sandbox
   proxy/cache network resets.
 

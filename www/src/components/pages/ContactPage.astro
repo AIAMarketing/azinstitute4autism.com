@@ -1,0 +1,111 @@
+---
+import ContactForm from '../ContactForm.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="contact-page">
+  <div class="container contact-page__grid">
+    <div class="contact-page__copy">
+      <slot />
+    </div>
+    <ContactForm title={title} />
+  </div>
+</section>
+
+<section class="contact-map-section" aria-label="Map showing Arizona Institute for Autism in Scottsdale">
+  <div id="aia-contact-map" class="contact-map"></div>
+</section>
+
+<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script is:inline>
+(() => {
+  const mapElement = document.getElementById('aia-contact-map');
+
+  if (!mapElement || !window.L) return;
+
+  const map = window.L.map(mapElement).setView([33.63, -111.88756], 12);
+  const tiles = window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  });
+
+  tiles.on('tileload', (event) => {
+    if (event.tile && !event.tile.alt) {
+      event.tile.alt = 'OpenStreetMap tile showing area around Arizona Institute for Autism in Scottsdale, AZ';
+    }
+  });
+
+  tiles.addTo(map);
+
+  window.L.marker([33.617746, -111.88756]).addTo(map).bindPopup(`
+    <span style="display:block;text-align:center">
+      <b>Arizona Institute for Autism</b><br>
+      <img alt="Arizona Institute for Autism" src="/assets/images/aia-logo.svg" width="94">
+    </span>
+  `).openPopup();
+})();
+</script>
+
+<style>
+  .contact-page {
+    background: white;
+    padding-block: 100px;
+  }
+
+  .contact-page__grid {
+    align-items: start;
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-page__copy {
+    color: var(--color-primary);
+    text-align: left;
+  }
+
+  .contact-page__copy :global(h2) {
+    margin: 0 0 25px;
+  }
+
+  .contact-page__copy :global(p) {
+    margin: 0 0 25px;
+  }
+
+  .contact-page__copy :global(.content-button) {
+    margin-bottom: 40px;
+  }
+
+  .contact-map-section {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-map {
+    height: 360px;
+    width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    .contact-page {
+      padding-block: 50px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .contact-page__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-page__copy :global(.content-button) {
+      display: table;
+      margin-inline: auto;
+    }
+  }
+</style>

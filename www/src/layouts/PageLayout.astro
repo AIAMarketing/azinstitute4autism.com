@@ -5,11 +5,12 @@ import TeamPage from '../components/pages/TeamPage.astro';
 import AboutPage from '../components/pages/AboutPage.astro';
 import ServicesPage from '../components/pages/ServicesPage.astro';
 import CareersPage from '../components/pages/CareersPage.astro';
+import ContactPage from '../components/pages/ContactPage.astro';
 import FaqPage from '../components/pages/FaqPage.astro';
 import PageHero from '../components/PageHero.astro';
 import { pageHeroImages } from '../data/page-visuals';
 const { entry } = Astro.props;
-const showForm = ['client-consultation', 'contact', 'schedule-consultation', 'referrals'].includes(entry.data.slug);
+const showForm = ['client-consultation', 'schedule-consultation', 'referrals'].includes(entry.data.slug);
 const serviceTitles: Record<string, Record<string, string>> = {
   en: {
     'aba-therapy': 'Behavioral',
@@ -53,6 +54,7 @@ const isService = Boolean(serviceTitles[entry.data.lang]?.[entry.data.slug]);
 const heroImage = pageHeroImages[entry.data.slug];
 ---
 <BaseLayout title={entry.data.title} description={entry.data.description} canonical={entry.data.canonical} image={entry.data.featuredImage || heroImage} lang={entry.data.lang}>
+  {entry.data.slug === 'contact' && <Fragment slot="head"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /></Fragment>}
   <PageHero title={bannerTitle} subtitle={entry.data.slug === 'faqs' ? 'FAQs' : undefined} image={heroImage} constrain />
   {entry.data.slug === 'team' && entry.data.lang === 'en'
     ? <TeamPage />
@@ -64,6 +66,8 @@ const heroImage = pageHeroImages[entry.data.slug];
     ? <CareersPage />
     : entry.data.slug === 'faqs' && entry.data.lang === 'en'
     ? <FaqPage><slot /></FaqPage>
+    : entry.data.slug === 'contact'
+    ? <ContactPage title={bannerTitle}><slot /></ContactPage>
     : <article class:list={['prose', 'source-page', 'container', { 'service-page': isService }]}><slot /></article>}
   {showForm && <FormShell title={bannerTitle} showBackground={entry.data.slug === 'client-consultation'} />}
 </BaseLayout>
