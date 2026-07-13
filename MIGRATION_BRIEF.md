@@ -383,7 +383,6 @@ www/
       rtl.css
 
   tools/
-    extract-site.mjs
     crawl-live-site.mjs
     audit-links.mjs
     generate-redirects.mjs
@@ -856,38 +855,16 @@ src/pages/es/[...slug].astro
 
 Implement routing in a clean, maintainable way.
 
-## Extraction scripts
+## Migration utility scripts
 
 Create:
 
 ```txt
-tools/extract-site.mjs
 tools/crawl-live-site.mjs
 tools/audit-links.mjs
 tools/generate-redirects.mjs
 tools/generate-sitemap.mjs
 ```
-
-### `extract-site.mjs`
-
-This script should:
-
-- scan the available source and generated output
-- identify HTML files
-- infer URL paths
-- identify page type
-- identify blog posts
-- identify listing pages
-- extract title/meta/H1/body/main content
-- extract canonical and Open Graph metadata
-- extract schema/JSON-LD where present
-- convert blog posts to Markdown where feasible
-- create page Markdown where useful
-- copy/normalize assets
-- rewrite local asset references
-- create initial reports
-
-The script does not need to be perfect, but it should be useful and documented.
 
 ### `crawl-live-site.mjs`
 
@@ -898,7 +875,7 @@ This script should:
 - compare discovered URLs against the current site source and generated output
 - document missing URLs/assets
 - avoid aggressive crawling
-- respect the scope of `www.azinstitute4autism.com`
+- respect the live-site scope
 
 ### `audit-links.mjs`
 
@@ -1109,7 +1086,6 @@ Add scripts similar to:
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "extract": "node tools/extract-site.mjs",
     "crawl": "node tools/crawl-live-site.mjs",
     "audit:links": "node tools/audit-links.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",

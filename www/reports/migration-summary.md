@@ -3,9 +3,9 @@
 ## Status
 
 A maintainable Astro migration and substantial fidelity-first pass are
-implemented. The live public site, not the wget mirror, was used as the
-authority for the shared shell, English and Spanish homepages, service-page
-family, team page, library indexes, and blog-post family.
+implemented. The live public site was used as the authority for the shared
+shell, English and Spanish homepages, service-page family, team page, library
+indexes, and blog-post family.
 
 ## Migrated Content and Assets
 
@@ -15,9 +15,9 @@ family, team page, library indexes, and blog-post family.
 - 167 self-hosted images, 20 font files, and two PDF downloads.
 - Current June and May 2026 English library articles are included.
 
-The raw mirror remains untouched. HubSpot-generated wrappers, analytics,
-scripts, CSS, query-language duplicates, AMP variants, pagination, and author
-archive variants are not carried into the Astro implementation.
+HubSpot-generated wrappers, analytics, scripts, CSS, query-language duplicates,
+AMP variants, pagination, and author archive variants are not carried into the
+Astro implementation.
 
 ## Live-Source Fidelity Pass
 
@@ -55,7 +55,7 @@ Implemented fidelity work includes:
   links, fawn backgrounds, spacing, rounded presentation, and quote-mark SVG.
 - Replaced generic oversized cards, rounded controls, and marketing heroes
   with live-derived typography, palette, widths, spacing, and compact controls.
-- Corrected material live/mirror discrepancies found during the pass,
+- Corrected material live-source discrepancies found during the pass,
   including current homepage ESA copy, testimonial content, and ABA copy.
 
 ## URLs and Redirects
@@ -157,7 +157,7 @@ final production-build proof.
 - Perform full-page desktop and mobile visual comparisons for page-specific
   layouts beyond the completed homepage, team, service, library, and article
   families.
-- Editorially review extracted long-form content for remaining mirror artifacts,
+- Editorially review extracted long-form content for remaining extraction artifacts,
   stale phone/email references, and heading hierarchy.
 - Review all source alt text, keyboard behavior, screen-reader output, and
   contrast with accessibility tooling.

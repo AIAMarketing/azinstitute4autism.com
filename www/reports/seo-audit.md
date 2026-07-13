@@ -18,8 +18,8 @@
 
 ## Cleanup
 
-- HubSpot `?hsLang=...` mirror duplicates are excluded from generated routes.
-- AMP mirror variants are excluded because Astro pages are responsive and static.
+- HubSpot `?hsLang=...` duplicates are excluded from generated routes.
+- AMP variants are excluded because Astro pages are responsive and static.
 - Blog pagination and author archive variants are not preserved as separate generated pages.
 - Brief aliases `/aba`, `/autismevaluations`, and `/learnersocialclub` redirect to preserved source URLs.
 

@@ -1,14 +1,14 @@
 # Cleanup Log
 
 - Replaced HubSpot-generated wrappers, inline styles, scripts, analytics, and modules with reusable Astro components.
-- Preserved canonical clean URLs while excluding local mirror query-string and AMP duplicates.
+- Preserved canonical clean URLs while excluding HubSpot query-string and AMP duplicates.
 - Consolidated responsive `hs-fs` image variants to canonical `hubfs` assets where available.
-- Excluded mirrored HubSpot CSS and JavaScript from the new public asset package.
-- Self-hosted canonical images, SVGs, fonts, and PDFs from the mirror.
+- Excluded HubSpot CSS and JavaScript from the new public asset package.
+- Self-hosted canonical images, SVGs, fonts, and PDFs where practical.
 - Recreated navigation and footer from structured JSON.
 - Recreated visible contact and consultation forms as static accessible HTML.
 - Used the source palette: AIA blue `#254080`, dark blue, straw yellow, orange, and teal.
-- Used the live site's locally mirrored Playfair Display headings, Rubik body copy, and Caveat accent font.
+- Used self-hosted Playfair Display headings, Rubik body copy, and Caveat accent font.
 - Added multilingual collection and route structure with Arabic RTL support.
 - Kept all extracted source content editable as Markdown.
 - Replaced the initial generic rounded-card visual system with live-derived
@@ -21,18 +21,17 @@
 - Reorganized the homepage source into named `home:` frontmatter blocks so the
   content is easier to inspect and edit without changing the rendered layout.
 - Replaced the extracted linear team article with a dedicated live-derived team grid.
-- Repaired mirror-rewritten PDF, lightbox, CTA, and relative content links.
+- Repaired rewritten PDF, lightbox, CTA, and relative content links.
 - Limited language-switcher choices to translations that have generated routes.
 - Verified and implemented the current production likes/views API contract.
-- Recovered 18 live page-banner assets that the wget mirror missed because
-  HubSpot injected them through malformed inline `background-image` styles.
+- Recovered 18 live page-banner assets that HubSpot injected through malformed
+  inline `background-image` styles.
 - Restored the live library banner and consultation form section background.
 - Added a mapped-page-imagery audit to prevent missing visual assets from
   silently passing the source link audit.
 - Removed duplicated article titles, author/date blocks, and featured images
   from all 65 blog Markdown bodies; these elements are rendered by the shared
-  blog-post layout. Updated both extractors and added a blog-content audit to
-  prevent recurrence.
+  blog-post layout. Added a blog-content audit to prevent recurrence.
 - Converted 19 FAQ-bearing blog posts to MDX and restored a reusable
   `FAQAccordion.astro` component that owns the live-style accordion and
   matching `FAQPage` JSON-LD.

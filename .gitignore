@@ -58,6 +58,3 @@ temp/
 .DS_Store
 Thumbs.db
 Desktop.ini
-
-# Read-only wget mirror used as migration source material
-/www.azinstitute4autism.com/
