@@ -6,12 +6,23 @@ interface Props {
   image?: string;
   lang?: string;
   type?: 'website' | 'article';
+  robots?: string;
 }
-const { title, description = '', canonical, image, lang = 'en', type = 'website' } = Astro.props;
+const {
+  title,
+  description = '',
+  canonical,
+  image,
+  lang = 'en',
+  type = 'website',
+  robots
+} = Astro.props;
+const defaultRobots = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true' ? 'index,follow' : 'noindex,nofollow';
 const absoluteImage = image ? new URL(image, Astro.site ?? Astro.url).href : undefined;
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="robots" content={robots ?? defaultRobots} />
 {canonical && <link rel="canonical" href={canonical} />}
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />

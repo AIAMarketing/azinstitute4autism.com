@@ -38,19 +38,23 @@ cd www
 npm install
 ```
 
-Copy the example environment file when testing the like/view counter:
+Copy the example environment file when testing the like/view counter or staging
+SEO behavior:
 
 ```sh
 cp .env.example .env
 ```
 
-The default value is:
+The default values are:
 
 ```txt
 PUBLIC_AIA_API_BASE=https://api.azinstitute4autism.com
+PUBLIC_ALLOW_INDEXING=false
 ```
 
-The site still renders when that API is unavailable.
+The site still renders when the AIA API is unavailable. Migration and staging
+builds emit `noindex,nofollow` by default; set `PUBLIC_ALLOW_INDEXING=true`
+only for production builds on the canonical domain.
 
 ## View And Build
 
