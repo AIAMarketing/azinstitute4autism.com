@@ -1,5 +1,12 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import LikeViewCounter from './LikeViewCounter.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  prefix?: string;
+}
+
 const { post, prefix = '' } = Astro.props;
 const href = `${prefix}/library/${post.data.slug}`.replace('//', '/');
 const readMore = { en: 'Read More', es: 'Leer Más', ar: 'اقرأ المزيد' }[post.data.lang] || 'Read More';

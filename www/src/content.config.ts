@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 import { homePageSchema, homeSectionsSchema } from './types/home-sections';
 
 const language = z.enum(['en', 'ar', 'es']);
@@ -7,7 +8,7 @@ const shared = {
   title: z.string(),
   description: z.string().default(''),
   slug: z.string(),
-  canonical: z.string().url().optional(),
+  canonical: z.url().optional(),
   featuredImage: z.string().optional(),
   alt: z.string().optional(),
   lang: language,

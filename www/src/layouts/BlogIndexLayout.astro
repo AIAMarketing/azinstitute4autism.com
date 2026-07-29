@@ -1,6 +1,14 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  intro?: string[];
+  lang?: 'en' | 'ar' | 'es';
+}
+
 const { title, description, intro = [], lang = 'en' } = Astro.props;
 const languagePrefix = lang === 'en' ? '' : `/${lang}`;
 const canonical = `https://www.azinstitute4autism.com${languagePrefix}/library`;

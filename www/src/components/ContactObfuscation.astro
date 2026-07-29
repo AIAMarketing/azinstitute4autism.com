@@ -36,7 +36,7 @@ const encodedText = encode(linkValue);
 const spanId = id ?? `${contactType}-obfuscation-${Math.random().toString(36).slice(2, 10)}`;
 ---
 
-<span id={spanId} class={className}>{fallbackText}</span><script type="text/javascript" define:vars={{ encodedTarget, encodedText, protocol, spanId }}>
+<span id={spanId} class={className}>{fallbackText}</span><script type="text/javascript" is:inline define:vars={{ encodedTarget, encodedText, protocol, spanId }}>
 (() => {
   const contactSpan = document.getElementById(spanId);
 

@@ -66,7 +66,7 @@ import Button from '../Button.astro';
     }
 
     const nodes = [...source.childNodes];
-    const firstQuestionIndex = nodes.findIndex((node) => node.nodeType === Node.ELEMENT_NODE && node.tagName === 'H3');
+    const firstQuestionIndex = nodes.findIndex((node) => node instanceof HTMLElement && node.tagName === 'H3');
 
     if (firstQuestionIndex === -1) {
       return;
@@ -102,8 +102,12 @@ import Button from '../Button.astro';
       answerInner.className = 'faq-answer__inner';
 
       index += 1;
-      while (index < nodes.length && !(nodes[index] instanceof HTMLElement && nodes[index].tagName === 'H3')) {
+      while (index < nodes.length) {
         const answerNode = nodes[index];
+        if (answerNode instanceof HTMLElement && answerNode.tagName === 'H3') {
+          break;
+        }
+
         if (answerNode.nodeType === Node.TEXT_NODE) {
           const text = answerNode.textContent?.trim();
           if (text) {
@@ -128,21 +132,23 @@ import Button from '../Button.astro';
       nodes[i].remove();
     }
 
-    const faqItems = [...list.querySelectorAll('details.faq')];
+    const faqItems = [...list.querySelectorAll<HTMLDetailsElement>('details.faq')];
 
-    const closeTimers = new WeakMap();
-    const closeHandlers = new WeakMap();
+    const closeTimers = new WeakMap<HTMLDetailsElement, number>();
+    const closeHandlers = new WeakMap<HTMLDetailsElement, (event: TransitionEvent) => void>();
 
-    const getAnswer = (item) => item.querySelector('.interactive-faq-with-seo-schema-integration__list__answer');
-    const getAnswerInner = (item) => item.querySelector('.faq-answer__inner');
+    const getAnswer = (item: HTMLDetailsElement) =>
+      item.querySelector<HTMLDivElement>('.interactive-faq-with-seo-schema-integration__list__answer');
+    const getAnswerInner = (item: HTMLDetailsElement) =>
+      item.querySelector<HTMLDivElement>('.faq-answer__inner');
 
-    const setClosedStyles = (answer) => {
+    const setClosedStyles = (answer: HTMLDivElement) => {
       answer.style.height = '0px';
       answer.style.opacity = '0';
       answer.style.transform = 'translateY(-.35rem)';
     };
 
-    const setOpenStyles = (answer) => {
+    const setOpenStyles = (answer: HTMLDivElement) => {
       answer.style.opacity = '1';
       answer.style.transform = 'translateY(0)';
     };
@@ -164,7 +170,7 @@ import Button from '../Button.astro';
       }
     });
 
-    const closeItem = (item) => {
+    const closeItem = (item: HTMLDetailsElement) => {
       if (!item.open || item.dataset.state === 'closing') {
         return;
       }
@@ -183,7 +189,7 @@ import Button from '../Button.astro';
         answer.offsetHeight; // force reflow
         setClosedStyles(answer);
 
-        const onTransitionEnd = (event) => {
+        const onTransitionEnd = (event: TransitionEvent) => {
           if (event.target !== answer || event.propertyName !== 'height') {
             return;
           }
@@ -217,7 +223,7 @@ import Button from '../Button.astro';
       closeTimers.set(item, timer);
     };
 
-    const openItem = (item) => {
+    const openItem = (item: HTMLDetailsElement) => {
       if (item.open && item.dataset.state !== 'closing') {
         return;
       }
@@ -248,7 +254,7 @@ import Button from '../Button.astro';
           setOpenStyles(answer);
         });
 
-        const onTransitionEnd = (event) => {
+        const onTransitionEnd = (event: TransitionEvent) => {
           if (event.target !== answer || event.propertyName !== 'height') {
             return;
           }
