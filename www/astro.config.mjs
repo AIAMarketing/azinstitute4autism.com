@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://www.azinstitute4autism.com',
   trailingSlash: 'never',
+  compressHTML: true,
   integrations: [mdx()],
   markdown: {
     shikiConfig: { theme: 'github-light' }

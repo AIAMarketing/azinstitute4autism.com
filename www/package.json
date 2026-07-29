@@ -20,8 +20,8 @@
     "generate:redirects": "node tools/generate-redirects.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.6",
-    "astro": "^6.4.8",
+    "@astrojs/mdx": "^7.0.5",
+    "astro": "^7.1.5",
     "cheerio": "^1.1.0",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
