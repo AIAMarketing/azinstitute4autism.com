@@ -6,13 +6,15 @@ interface FAQItem {
 }
 
 interface Props {
-  label: string;
+  label?: string;
   heading: string;
   items: FAQItem[];
   canonical?: string;
+  variant?: 'blog' | 'source';
 }
 
-const { label, heading, items, canonical } = Astro.props;
+const { label, heading, items, canonical, variant = 'blog' } = Astro.props;
+const headingId = label ? 'blog-faq-heading' : 'source-faq-heading';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -27,14 +29,14 @@ const schema = {
   }))
 };
 ---
-<section class="blog-faq" aria-labelledby="blog-faq-heading">
+<section class:list={['blog-faq', { 'faq-accordion--source': variant === 'source' }]} aria-labelledby={headingId}>
   <header class="blog-faq-heading">
-    <h2 id="blog-faq-heading">{label}</h2>
-    <h3>{heading}</h3>
+    {label && <h2 id={headingId}>{label}</h2>}
+    <h3 id={!label ? headingId : undefined}>{heading}</h3>
   </header>
   <div class="blog-faq-list">
     {items.map((item, index) => (
-      <details class="faq" open={index === 0}>
+      <details class="faq" name={variant === 'source' ? 'source-page-faq' : undefined} open={index === 0}>
         <summary>
           <span>{item.question}</span>
           <span class="faq-icon" aria-hidden="true"></span>
@@ -142,6 +144,65 @@ const schema = {
     margin: 0 0 1rem;
   }
 
+  .faq-accordion--source {
+    margin: 0;
+  }
+
+  .faq-accordion--source .blog-faq-heading {
+    margin-bottom: 1.875rem;
+    text-align: center;
+  }
+
+  .faq-accordion--source .blog-faq-heading h3 {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    margin: 0;
+  }
+
+  .faq-accordion--source .blog-faq-list {
+    background: transparent;
+    padding: 0;
+  }
+
+  .faq-accordion--source .faq {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .faq-accordion--source summary span:first-child {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .faq-accordion--source .faq-icon::after {
+    border-color: var(--color-primary);
+  }
+
+  .faq-accordion--source .faq-answer :global(p) {
+    margin-bottom: 0;
+  }
+
+  .faq-accordion--source .faq-answer :global(a) {
+    color: var(--color-accent-strong);
+  }
+
+  .faq-accordion--source .faq-answer :global(a:hover),
+  .faq-accordion--source .faq-answer :global(a:focus-visible) {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 767px) {
+    .faq-accordion--source .blog-faq-heading h3 {
+      font-size: 1.875rem;
+      line-height: 2.375rem;
+    }
+
+    .faq-accordion--source summary span:first-child {
+      font-size: 1.375rem;
+      line-height: 1.5rem;
+    }
+  }
+
   @media (min-width: 768px) {
     .blog-faq {
       margin-bottom: 3.125rem;
@@ -149,6 +210,14 @@ const schema = {
 
     .blog-faq-list {
       padding: 2.5rem;
+    }
+
+    .faq-accordion--source {
+      margin-bottom: 0;
+    }
+
+    .faq-accordion--source .blog-faq-list {
+      padding: 0;
     }
   }
 </style>

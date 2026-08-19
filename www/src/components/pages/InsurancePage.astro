@@ -1,0 +1,194 @@
+---
+import FAQAccordion from '../FAQAccordion.astro';
+
+const logos = [
+  {
+    src: '/assets/images/bluecrossblueshield-logo-1.webp',
+    alt: 'bluecross blueshield logo',
+    width: 200,
+    height: 120
+  },
+  {
+    src: '/assets/images/aetna.png',
+    alt: 'aetna logo',
+    width: 300,
+    height: 169
+  },
+  {
+    src: '/assets/images/logo-optum.webp',
+    alt: 'optum logo',
+    width: 200,
+    height: 120
+  },
+  {
+    src: '/assets/images/logo-tricare-1.webp',
+    alt: 'tricare logo',
+    width: 200,
+    height: 120
+  },
+  {
+    src: '/assets/images/logo-ahcccs.webp',
+    alt: 'ahcccs logo',
+    width: 200,
+    height: 120
+  },
+  {
+    src: '/assets/images/united-healthcare-logo-1.webp',
+    alt: 'united healthcare logo',
+    width: 200,
+    height: 120
+  }
+];
+
+const faqItems = [
+  {
+    question: 'What is the Tricare ECHO Program, and how do I qualify?',
+    answer: 'The Extended Care Health Option (ECHO) offers financial assistance to eligible military families for services and supplies beyond standard coverage, including ABA therapy. Eligibility requires enrollment in the Exceptional Family Member Program (EFMP). For detailed information and application steps, visit the Tricare ECHO website.',
+    answerHtml: '<p>The Extended Care Health Option (ECHO) offers financial assistance to eligible military families for services and supplies beyond standard coverage, including ABA therapy. Eligibility requires enrollment in the Exceptional Family Member Program (EFMP). For detailed information and application steps, visit the <a href="https://tricare.mil/echo">Tricare ECHO website</a>.</p>'
+  },
+  {
+    question: 'What is the ESA Program, and how do I apply?',
+    answer: "Arizona's Empowerment Scholarship Account (ESA) program provides funds to eligible families for educational expenses, which can include therapies for children with autism. To learn more about eligibility criteria and the application process, visit the Arizona Department of Education's ESA page.",
+    answerHtml: '<p>Arizona\'s Empowerment Scholarship Account (ESA) program provides funds to eligible families for educational expenses, which can include therapies for children with autism. To learn more about eligibility criteria and the application process, visit the <a href="https://www.azed.gov">Arizona Department of Education\'s ESA page</a>.</p>'
+  }
+];
+---
+
+<article class="insurance-page">
+  <section class="insurance-section insurance-section--intro" aria-labelledby="insurance-coverage-heading">
+    <div class="container">
+      <h2 id="insurance-coverage-heading">Insurance Coverage for Autism Treatment in Arizona</h2>
+      <p>Navigating insurance coverage for autism therapy can be complex. At the Arizona Institute for Autism (AIA), we're committed to guiding you through your insurance options to ensure your child receives the necessary care.</p>
+    </div>
+  </section>
+
+  <section class="insurance-section insurance-section--tint" aria-labelledby="accepted-insurance-heading">
+    <div class="container">
+      <h2 id="accepted-insurance-heading">Accepted Insurance Carriers</h2>
+      <p>We proudly partner with most major insurance carriers providing autism treatment benefits in Arizona. Our team regularly works with insurance plans such as the following.</p>
+
+      <ul class="insurance-logos" aria-label="Accepted insurance carriers">
+        {logos.map((logo) => (
+          <li>
+            <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} loading="lazy" />
+          </li>
+        ))}
+      </ul>
+
+      <p>Our team continually strives to expand this list, increasing access to affordable Applied Behavior Analysis (ABA) therapy coverage. If you do not see your insurance provider listed here, please contact our office. Our staff is always happy to help determine your specific coverage and options.</p>
+    </div>
+  </section>
+
+  <section class="insurance-section" aria-labelledby="family-support-heading">
+    <div class="container">
+      <h2 id="family-support-heading">Support for Families</h2>
+      <p>We recognize the dedication and immense effort families devote to supporting their children. Our helpful team offers personalized consultations—both in person by appointment and over the phone—to explain the billing process thoroughly. Our goal is to ensure you feel informed and supported at every stage.</p>
+    </div>
+  </section>
+
+  <section class="insurance-section insurance-section--tint insurance-section--faq">
+    <div class="container">
+      <FAQAccordion
+        heading="Frequently Asked Insurance Questions"
+        items={faqItems}
+        canonical="https://www.azinstitute4autism.com/insurance"
+        variant="source"
+      />
+    </div>
+  </section>
+</article>
+
+<style>
+  .insurance-page {
+    color: var(--color-primary);
+  }
+
+  .insurance-section {
+    padding-block: 80px;
+  }
+
+  .insurance-section > .container {
+    width: min(100%, 988px);
+  }
+
+  .insurance-section--tint {
+    background: var(--color-tint);
+  }
+
+  .insurance-section :global(h2) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    margin: 0 0 15px;
+  }
+
+  .insurance-section :global(p) {
+    margin: 0 0 16px;
+  }
+
+  .insurance-section--intro :global(h2) {
+    margin-bottom: 20px;
+  }
+
+  .insurance-logos {
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    list-style: none;
+    margin: 30px 0;
+    padding: 0;
+  }
+
+  .insurance-logos li {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .insurance-logos img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    width: 106px;
+  }
+
+  @media (max-width: 767px) {
+    .insurance-section {
+      padding-block: 40px;
+    }
+
+    .insurance-section--intro {
+      padding-block: 50px;
+    }
+
+    .insurance-section :global(h2) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    .insurance-section :global(p) {
+      line-height: 1.25;
+    }
+
+    .insurance-logos {
+      gap: 5px;
+      grid-template-columns: 1fr;
+      margin-block: 20px;
+    }
+
+    .insurance-logos img {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .insurance-section :global(h2) {
+      margin-bottom: 25px;
+    }
+
+    .insurance-section--intro :global(h2) {
+      margin-bottom: 20px;
+    }
+  }
+</style>

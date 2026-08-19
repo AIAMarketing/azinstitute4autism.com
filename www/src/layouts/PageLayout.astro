@@ -7,6 +7,7 @@ import ServicesPage from '../components/pages/ServicesPage.astro';
 import CareersPage from '../components/pages/CareersPage.astro';
 import ContactPage from '../components/pages/ContactPage.astro';
 import FaqPage from '../components/pages/FaqPage.astro';
+import InsurancePage from '../components/pages/InsurancePage.astro';
 import PageHero from '../components/PageHero.astro';
 import ServiceInquiryDrawer from '../components/ServiceInquiryDrawer.astro';
 import { pageHeroImages } from '../data/page-visuals';
@@ -67,6 +68,8 @@ const heroImage = pageHeroImages[entry.data.slug];
     ? <CareersPage />
     : entry.data.slug === 'faqs' && entry.data.lang === 'en'
     ? <FaqPage><slot /></FaqPage>
+    : entry.data.slug === 'insurance' && entry.data.lang === 'en'
+    ? <InsurancePage />
     : entry.data.slug === 'contact'
     ? <ContactPage title={bannerTitle}><slot /></ContactPage>
     : <article class:list={['prose', 'source-page', 'container', { 'service-page': isService }]}><slot /></article>}
