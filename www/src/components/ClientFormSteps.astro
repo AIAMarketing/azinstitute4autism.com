@@ -1,0 +1,62 @@
+---
+import Button from './Button.astro';
+
+interface Action {
+  href: string;
+  label: string;
+}
+
+interface Step {
+  label: string;
+  description: string;
+  actions?: Action[];
+}
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+---
+
+<ol class="client-form-steps" role="list">
+  {steps.map(({ label, description, actions }) => (
+    <li class:list={{ 'client-form-step--with-actions': actions?.length }}>
+      <strong>{label}</strong> {description}
+      {actions?.length ? (
+        <span class="client-form-step__actions">
+          {actions.map((action) => (
+            <span class="client-form-step__action">
+              <Button href={action.href}>{action.label}</Button>
+            </span>
+          ))}
+        </span>
+      ) : null}
+    </li>
+  ))}
+</ol>
+
+<style>
+  .client-form-steps {
+    list-style: none;
+  }
+
+  .client-form-step--with-actions {
+    margin-bottom: 1rem;
+  }
+
+  .client-form-step__actions {
+    display: block;
+  }
+
+  .client-form-step__action {
+    display: inline-block;
+    margin-inline-end: 2rem;
+    margin-top: .5rem;
+  }
+
+  .client-form-step__action :global(.content-button) {
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+</style>
