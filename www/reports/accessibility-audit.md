@@ -7,6 +7,9 @@
 - Language and direction attributes for English, Spanish, and Arabic.
 - Native `details` elements for mobile navigation and FAQ accordions.
 - Form labels, autocomplete hints, disabled submission state, and explanatory text.
+- Service inquiry drawers use native modal dialogs with focus containment,
+  Escape, backdrop, and labeled close-button dismissal plus reduced-motion
+  support.
 - Reduced decorative image announcements through empty alt text where appropriate.
 - Responsive typography and layouts without fixed text sizing.
 - Language-switcher choices are limited to routes that actually exist.

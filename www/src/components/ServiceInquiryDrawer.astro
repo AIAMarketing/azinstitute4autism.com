@@ -1,0 +1,511 @@
+---
+import ContactObfuscation from './ContactObfuscation.astro';
+
+type ServiceKey = 'aba-therapy' | 'autism-evaluations' | 'learner-social-club';
+
+interface Props {
+  service: ServiceKey;
+}
+
+const serviceCopy: Record<ServiceKey, {
+  heading: string[];
+  serviceName: string;
+  statusLead: string;
+  status: string;
+  prompt: string;
+}> = {
+  'aba-therapy': {
+    heading: ['No WAITLIST!'],
+    serviceName: 'ABA Therapy',
+    statusLead: 'is',
+    status: 'currently accepting new patients',
+    prompt: "To help guarantee your child's admission to our program, please provide their information."
+  },
+  'autism-evaluations': {
+    heading: ['Enrollment', 'Now Open'],
+    serviceName: 'Autism Evaluations',
+    statusLead: 'are',
+    status: 'now open for enrollment',
+    prompt: "To help guarantee your child's admission into one of our upcoming programs, please provide their information."
+  },
+  'learner-social-club': {
+    heading: ['Enrollment', 'Now Open'],
+    serviceName: 'Learner Social Club',
+    statusLead: 'is',
+    status: 'now open for enrollment',
+    prompt: "To help guarantee your child's spot in one of our upcoming group enrichment programs, please provide their information."
+  }
+};
+
+const { service } = Astro.props;
+const copy = serviceCopy[service];
+const drawerId = `service-inquiry-${service}`;
+const titleId = `${drawerId}-title`;
+const noteId = `${drawerId}-note`;
+---
+
+<dialog
+  class="service-inquiry-drawer"
+  data-service-inquiry-drawer
+  data-dismiss-key={`aia-service-inquiry-dismissed:${service}`}
+  aria-labelledby={titleId}
+>
+  <button class="service-inquiry-drawer__close" type="button" data-service-inquiry-close aria-label="Close inquiry form">
+    <svg aria-hidden="true" viewBox="0 0 32 32" width="18" height="18">
+      <path d="M4 4 28 28M28 4 4 28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3" />
+    </svg>
+  </button>
+
+  <header class="service-inquiry-drawer__intro">
+    <h2 id={titleId} data-service-inquiry-title tabindex="-1">
+      {copy.heading.map((line, index) => <Fragment>{index > 0 && <br />}{line}</Fragment>)}
+    </h2>
+    <p>
+      Arizona Institute for Autism's<br />
+      <strong>{copy.serviceName}</strong><br />
+      {copy.statusLead} <em>{copy.status}</em>.
+    </p>
+    <p>{copy.prompt}</p>
+  </header>
+
+  <form class="service-inquiry-form" method="post" action="">
+    <!-- TODO: Wire this form to Netlify Forms, a custom API endpoint, or another backend service. -->
+    <!-- TODO: Add spam protection before production launch. -->
+    <div class="service-inquiry-form__grid">
+      <label>
+        <span>First Name<span class="required-mark" aria-hidden="true">*</span></span>
+        <input name="first_name" autocomplete="given-name" required />
+      </label>
+      <label>
+        <span>Last Name<span class="required-mark" aria-hidden="true">*</span></span>
+        <input name="last_name" autocomplete="family-name" required />
+      </label>
+      <label>
+        <span>Phone Number<span class="required-mark" aria-hidden="true">*</span></span>
+        <span class="service-inquiry-form__phone">
+          <span class="service-inquiry-form__country">
+            <span aria-hidden="true">🇺🇸</span>
+            <span class="service-inquiry-form__country-caret" aria-hidden="true"></span>
+            <span class="visually-hidden">United States country code</span>
+          </span>
+          <span class="service-inquiry-form__phone-number">
+            <span aria-hidden="true">+1</span>
+            <input type="tel" name="phone" autocomplete="tel-national" required />
+          </span>
+        </span>
+      </label>
+      <label>
+        <span>Email<span class="required-mark" aria-hidden="true">*</span></span>
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+      <label>
+        <span>Child First Name</span>
+        <input name="child_first_name" autocomplete="off" />
+      </label>
+      <label>
+        <span>Child Last Name</span>
+        <input name="child_last_name" autocomplete="off" />
+      </label>
+      <label class="service-inquiry-form__wide">
+        <span>Child Birth Date</span>
+        <input name="child_birth_date" inputmode="numeric" autocomplete="bday" placeholder="MM - DD - YYYY" />
+      </label>
+      <label>
+        <span>Location Interest</span>
+        <select name="location_interest">
+          <option value="" selected>Please Select</option>
+          <option value="aia_scottsdale">AIA Scottsdale</option>
+          <option value="aia_glendale">AIA Glendale</option>
+          <option value="other_none">Other/None</option>
+        </select>
+      </label>
+      <label>
+        <span>Service Interest</span>
+        <select name="service_interest">
+          <option value="" selected>Please Select</option>
+          <option value="behavioral">Behavioral - ABA Therapy Service</option>
+          <option value="psychological">Psychological - Autism Evaluation Service</option>
+          <option value="sociological">Sociological - Learners Social Club Service</option>
+          <option value="other_none">Other/None</option>
+        </select>
+      </label>
+      <label>
+        <span>Insurance &amp; Payment Options</span>
+        <select name="payment_options">
+          <option value="" selected>Please select</option>
+          <option>United Healthcare AHCCCS</option>
+          <option>BCBS AZ</option>
+          <option>United Healthcare</option>
+          <option>Optum</option>
+          <option>Tricare</option>
+          <option>Care Credit</option>
+          <option>Private Pay</option>
+          <option value="Other">Other (please describe in comment)</option>
+        </select>
+      </label>
+      <label>
+        <span>How did you hear about us?</span>
+        <select name="referred_by">
+          <option value="" selected>Please select</option>
+          <option>Facebook</option>
+          <option>Google</option>
+          <option>Primary Doctor</option>
+          <option value="Specialist">Specialist (e.g., Developmental Psychologist)</option>
+          <option>Client Referral</option>
+          <option>Community Event</option>
+          <option value="Other">Other (please describe in comment)</option>
+        </select>
+      </label>
+      <label class="service-inquiry-form__wide">
+        <span>Additional Information/Comments</span>
+        <textarea name="comment" rows="2"></textarea>
+      </label>
+    </div>
+
+    <div class="service-inquiry-form__footer">
+      <p id={noteId}>Online submission is not yet connected. Please call <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
+      <button type="submit" disabled aria-describedby={noteId}>Submit</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+  const initializeServiceInquiryDrawers = () => {
+    document.querySelectorAll('[data-service-inquiry-drawer]').forEach((element) => {
+      if (!(element instanceof HTMLDialogElement) || element.dataset.initialized === 'true') return;
+
+      element.dataset.initialized = 'true';
+      const closeButton = element.querySelector('[data-service-inquiry-close]');
+      const title = element.querySelector('[data-service-inquiry-title]');
+      const dismissKey = element.dataset.dismissKey;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let closeTimer: number | undefined;
+
+      const wasDismissed = () => {
+        try {
+          return dismissKey ? sessionStorage.getItem(dismissKey) === 'true' : false;
+        } catch {
+          return false;
+        }
+      };
+
+      const rememberDismissal = () => {
+        try {
+          if (dismissKey) sessionStorage.setItem(dismissKey, 'true');
+        } catch {
+          // Storage can be unavailable in privacy-focused browsing modes.
+        }
+      };
+
+      const finishClose = () => {
+        if (element.open) element.close();
+        document.documentElement.classList.remove('service-inquiry-open');
+      };
+
+      const closeDrawer = () => {
+        if (!element.open) return;
+        rememberDismissal();
+        element.classList.remove('is-open');
+        window.clearTimeout(closeTimer);
+
+        if (reduceMotion.matches) {
+          finishClose();
+          return;
+        }
+
+        closeTimer = window.setTimeout(finishClose, 500);
+      };
+
+      const openDrawer = () => {
+        if (element.open || wasDismissed()) return;
+        element.showModal();
+        document.documentElement.classList.add('service-inquiry-open');
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          element.classList.add('is-open');
+          if (title instanceof HTMLElement) title.focus({ preventScroll: true });
+        }));
+      };
+
+      closeButton?.addEventListener('click', closeDrawer);
+      element.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeDrawer();
+      });
+      element.addEventListener('click', (event) => {
+        if (event.target === element) closeDrawer();
+      });
+      element.addEventListener('close', () => {
+        element.classList.remove('is-open');
+        document.documentElement.classList.remove('service-inquiry-open');
+      });
+
+      window.setTimeout(openDrawer, 10_000);
+    });
+  };
+
+  initializeServiceInquiryDrawers();
+</script>
+
+<style>
+  :global(html.service-inquiry-open) {
+    overflow: hidden;
+  }
+
+  .service-inquiry-drawer {
+    background: white;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    inset: 10px 10px auto auto;
+    margin: 0;
+    max-height: calc(100dvh - 20px);
+    max-width: calc(100vw - 20px);
+    opacity: 0;
+    overflow-y: auto;
+    padding: 0;
+    transform: translateX(calc(100% + 20px));
+    transition: opacity 300ms ease, transform 500ms ease;
+    width: 608px;
+  }
+
+  .service-inquiry-drawer.is-open {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .service-inquiry-drawer::backdrop {
+    background: rgb(0 0 0 / 56%);
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  .service-inquiry-drawer.is-open::backdrop {
+    opacity: 1;
+  }
+
+  .service-inquiry-drawer__close {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+  }
+
+  .service-inquiry-drawer__close:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .service-inquiry-drawer__intro {
+    padding: 24px 60px 0;
+    text-align: center;
+  }
+
+  .service-inquiry-drawer__intro h2 {
+    font-family: var(--font-body);
+    font-size: 1.625rem;
+    line-height: 1.05;
+    margin: 10px 0 16px;
+    outline: none;
+  }
+
+  .service-inquiry-drawer__intro p {
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+
+  .service-inquiry-drawer__intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .service-inquiry-form {
+    padding: 48px 60px 60px;
+  }
+
+  .service-inquiry-form__grid {
+    display: grid;
+    gap: 18px 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-inquiry-form label {
+    display: grid;
+    font-weight: 400;
+    gap: 7px;
+    line-height: 1.2;
+    min-width: 0;
+  }
+
+  .required-mark {
+    color: #e51520;
+  }
+
+  .service-inquiry-form input,
+  .service-inquiry-form select,
+  .service-inquiry-form textarea {
+    background: #f5f8fa;
+    border: 1px solid #959494;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #21303d;
+    font: inherit;
+    min-height: 41px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .service-inquiry-form input::placeholder,
+  .service-inquiry-form textarea::placeholder {
+    color: rgb(81 99 131 / 64%);
+  }
+
+  .service-inquiry-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='%2321303d' d='M0 0h10L5 6z'/%3E%3C/svg%3E");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 10px 6px;
+    color: rgb(81 99 131 / 70%);
+    padding-right: 34px;
+  }
+
+  .service-inquiry-form textarea {
+    min-height: 58px;
+    resize: vertical;
+  }
+
+  .service-inquiry-form__wide {
+    grid-column: 1 / -1;
+  }
+
+  .service-inquiry-form__phone {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .service-inquiry-form__phone input {
+    background: transparent;
+    border: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    min-width: 0;
+    padding-left: 6px;
+  }
+
+  .service-inquiry-form__country {
+    align-items: center;
+    background: #f5f8fa;
+    border: 1px solid #959494;
+    border-radius: 3px 0 0 3px;
+    color: #21303d;
+    display: flex;
+    gap: 7px;
+    padding: 0 10px;
+  }
+
+  .service-inquiry-form__country-caret {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #21303d;
+    height: 0;
+    width: 0;
+  }
+
+  .service-inquiry-form__phone-number {
+    align-items: center;
+    background: #f5f8fa;
+    border: 1px solid #959494;
+    border-left: 0;
+    border-radius: 0 3px 3px 0;
+    color: #21303d;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding-left: 10px;
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .service-inquiry-form__footer {
+    align-items: end;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    margin-top: 40px;
+  }
+
+  .service-inquiry-form__footer p {
+    color: var(--color-primary);
+    font-size: .8rem;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .service-inquiry-form__footer button {
+    background: var(--color-accent-strong);
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    opacity: 1;
+    padding: 12px 24px;
+  }
+
+  .service-inquiry-form__footer button:disabled {
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 500px) {
+    .service-inquiry-drawer__intro {
+      padding-top: 20px;
+    }
+
+    .service-inquiry-form__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-inquiry-form__wide {
+      grid-column: auto;
+    }
+
+    .service-inquiry-form__footer {
+      align-items: stretch;
+      grid-template-columns: 1fr;
+    }
+
+    .service-inquiry-form__footer button {
+      justify-self: end;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .service-inquiry-drawer__intro,
+    .service-inquiry-form {
+      padding-inline: 32px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .service-inquiry-drawer,
+    .service-inquiry-drawer::backdrop {
+      transition: none;
+    }
+  }
+</style>

@@ -8,6 +8,7 @@ import CareersPage from '../components/pages/CareersPage.astro';
 import ContactPage from '../components/pages/ContactPage.astro';
 import FaqPage from '../components/pages/FaqPage.astro';
 import PageHero from '../components/PageHero.astro';
+import ServiceInquiryDrawer from '../components/ServiceInquiryDrawer.astro';
 import { pageHeroImages } from '../data/page-visuals';
 const { entry } = Astro.props;
 const showForm = ['client-consultation', 'schedule-consultation', 'referrals'].includes(entry.data.slug);
@@ -69,5 +70,6 @@ const heroImage = pageHeroImages[entry.data.slug];
     : entry.data.slug === 'contact'
     ? <ContactPage title={bannerTitle}><slot /></ContactPage>
     : <article class:list={['prose', 'source-page', 'container', { 'service-page': isService }]}><slot /></article>}
+  {isService && entry.data.lang === 'en' && <ServiceInquiryDrawer service={entry.data.slug} />}
   {showForm && <FormShell title={bannerTitle} showBackground={entry.data.slug === 'client-consultation'} />}
 </BaseLayout>

@@ -80,6 +80,13 @@ backend and spam-protection TODO comments. Submission is intentionally
 disabled. Appointment and enrollment calls to action route to the static
 consultation page rather than retaining the production Jotform backend.
 
+The three English service pages also reproduce the live site's delayed,
+right-edge inquiry drawers, including their page-specific enrollment copy,
+shared field set, modal overlay, and responsive layout. These drawer forms are
+static and their submit controls remain disabled until a production backend
+and spam protection are selected; this is an intentional functional and visual
+deviation from the live HubSpot form.
+
 ## External Dependencies
 
 - The contact page map intentionally matches the live Leaflet/OpenStreetMap
