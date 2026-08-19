@@ -58,6 +58,14 @@ Implemented fidelity work includes:
 - Corrected material live-source discrepancies found during the pass,
   including current homepage ESA copy, testimonial content, and ABA copy.
 
+### Intentional visual deviations
+
+- The homepage and `/insurance` carrier-logo rows intentionally share one
+  responsive layout. The first and last logos sit flush with the row edges,
+  and the Blue Cross Blue Shield mark is emphasized at 125% of the standard
+  desktop logo width, following its treatment on the live homepage rather
+  than preserving the live pages' differing row spacing.
+
 ## URLs and Redirects
 
 Clean public URLs are preserved, including:

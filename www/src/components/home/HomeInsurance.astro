@@ -1,49 +1,12 @@
 ---
+import InsuranceLogoRow from '../InsuranceLogoRow.astro';
 import type { InsuranceSection } from '../../types/home-sections';
 interface Props { section: InsuranceSection }
 const { section } = Astro.props;
 ---
 <style>
-  .insurance-section .logo-row {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .insurance-logo-row-wrap {
     margin-top: 2rem;
-  }
-
-  .insurance-section .logo-row img {
-    flex: 0 1 auto;
-    max-width: 200px;
-  }
-
-  @media (min-width: 640px) {
-    .insurance-section .logo-row {
-      display: grid;
-      gap: var(--space-lg);
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: center;
-      justify-items: center;
-    }
-
-    .insurance-section .logo-row img {
-      flex: 0 1 auto;
-      max-width: 25vw;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .insurance-section .logo-row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-    }
-
-    .insurance-section .logo-row img {
-      flex-basis: 0;
-      flex-grow: 1;
-      max-width: 120px;
-    }
   }
 </style>
 
@@ -51,10 +14,8 @@ const { section } = Astro.props;
   <div class="container">
     <h2>{section.heading}</h2>
     <p>{section.body}</p>
-    <div class="logo-row">
-      {section.logos.map(({ file, alt }) => (
-        <img src={`/assets/images/${file}`} alt={alt} />
-      ))}
+    <div class="insurance-logo-row-wrap">
+      <InsuranceLogoRow logos={section.logos} />
     </div>
   </div>
 </section>

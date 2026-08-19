@@ -1,42 +1,31 @@
 ---
 import FAQAccordion from '../FAQAccordion.astro';
+import InsuranceLogoRow from '../InsuranceLogoRow.astro';
 
 const logos = [
   {
-    src: '/assets/images/bluecrossblueshield-logo-1.webp',
-    alt: 'bluecross blueshield logo',
-    width: 200,
-    height: 120
+    file: 'bluecrossblueshield-logo-1.webp',
+    alt: 'bluecross blueshield logo'
   },
   {
-    src: '/assets/images/aetna.png',
-    alt: 'aetna logo',
-    width: 300,
-    height: 169
+    file: 'aetna.png',
+    alt: 'aetna logo'
   },
   {
-    src: '/assets/images/logo-optum.webp',
-    alt: 'optum logo',
-    width: 200,
-    height: 120
+    file: 'logo-optum.webp',
+    alt: 'optum logo'
   },
   {
-    src: '/assets/images/logo-tricare-1.webp',
-    alt: 'tricare logo',
-    width: 200,
-    height: 120
+    file: 'logo-tricare-1.webp',
+    alt: 'tricare logo'
   },
   {
-    src: '/assets/images/logo-ahcccs.webp',
-    alt: 'ahcccs logo',
-    width: 200,
-    height: 120
+    file: 'logo-ahcccs.webp',
+    alt: 'ahcccs logo'
   },
   {
-    src: '/assets/images/united-healthcare-logo-1.webp',
-    alt: 'united healthcare logo',
-    width: 200,
-    height: 120
+    file: 'united-healthcare-logo-1.webp',
+    alt: 'united healthcare logo'
   }
 ];
 
@@ -67,13 +56,9 @@ const faqItems = [
       <h2 id="accepted-insurance-heading">Accepted Insurance Carriers</h2>
       <p>We proudly partner with most major insurance carriers providing autism treatment benefits in Arizona. Our team regularly works with insurance plans such as the following.</p>
 
-      <ul class="insurance-logos" aria-label="Accepted insurance carriers">
-        {logos.map((logo) => (
-          <li>
-            <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} loading="lazy" />
-          </li>
-        ))}
-      </ul>
+      <div class="insurance-logo-row-wrap">
+        <InsuranceLogoRow logos={logos} />
+      </div>
 
       <p>Our team continually strives to expand this list, increasing access to affordable Applied Behavior Analysis (ABA) therapy coverage. If you do not see your insurance provider listed here, please contact our office. Our staff is always happy to help determine your specific coverage and options.</p>
     </div>
@@ -129,28 +114,8 @@ const faqItems = [
     margin-bottom: 20px;
   }
 
-  .insurance-logos {
-    align-items: center;
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    list-style: none;
+  .insurance-logo-row-wrap {
     margin: 30px 0;
-    padding: 0;
-  }
-
-  .insurance-logos li {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    min-width: 0;
-  }
-
-  .insurance-logos img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-    width: 106px;
   }
 
   @media (max-width: 767px) {
@@ -171,14 +136,8 @@ const faqItems = [
       line-height: 1.25;
     }
 
-    .insurance-logos {
-      gap: 5px;
-      grid-template-columns: 1fr;
+    .insurance-logo-row-wrap {
       margin-block: 20px;
-    }
-
-    .insurance-logos img {
-      width: auto;
     }
   }
 

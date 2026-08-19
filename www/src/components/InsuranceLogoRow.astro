@@ -1,0 +1,119 @@
+---
+interface InsuranceLogo {
+  file: string;
+  alt: string;
+}
+
+interface Props {
+  logos: InsuranceLogo[];
+}
+
+const { logos } = Astro.props;
+const dimensions: Record<string, { width: number; height: number }> = {
+  'bluecrossblueshield-logo-1.webp': { width: 200, height: 120 },
+  'aetna.png': { width: 300, height: 169 },
+  'logo-optum.webp': { width: 200, height: 120 },
+  'logo-tricare-1.webp': { width: 200, height: 120 },
+  'logo-ahcccs.webp': { width: 200, height: 120 },
+  'united-healthcare-logo-1.webp': { width: 200, height: 120 }
+};
+---
+
+<ul class="insurance-logo-row" aria-label="Accepted insurance carriers">
+  {logos.map(({ file, alt }) => {
+    const size = dimensions[file] || { width: 200, height: 120 };
+    return (
+      <li>
+        <img
+          src={`/assets/images/${file}`}
+          alt={alt}
+          width={size.width}
+          height={size.height}
+          loading="lazy"
+        />
+      </li>
+    );
+  })}
+</ul>
+
+<style>
+  .insurance-logo-row {
+    align-items: center;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .insurance-logo-row li {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .insurance-logo-row img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    width: 200px;
+  }
+
+  .insurance-logo-row li:first-child img {
+    width: 250px;
+  }
+
+  .insurance-logo-row li:nth-child(2) img {
+    width: 300px;
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .insurance-logo-row {
+      gap: 2rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .insurance-logo-row li:nth-child(3n + 1) {
+      justify-content: flex-start;
+    }
+
+    .insurance-logo-row li:nth-child(3n) {
+      justify-content: flex-end;
+    }
+
+    .insurance-logo-row img,
+    .insurance-logo-row li:nth-child(2) img {
+      width: 120px;
+    }
+
+    .insurance-logo-row li:first-child img {
+      width: 150px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .insurance-logo-row {
+      gap: 2rem;
+      grid-template-columns: minmax(0, 1.25fr) repeat(5, minmax(0, 1fr));
+    }
+
+    .insurance-logo-row li:first-child {
+      justify-content: flex-start;
+    }
+
+    .insurance-logo-row li:last-child {
+      justify-content: flex-end;
+    }
+
+    .insurance-logo-row img,
+    .insurance-logo-row li:nth-child(2) img {
+      width: 107px;
+    }
+
+    .insurance-logo-row li:first-child img {
+      width: 134px;
+    }
+  }
+</style>
