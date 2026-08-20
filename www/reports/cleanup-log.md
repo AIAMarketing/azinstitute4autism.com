@@ -35,6 +35,9 @@
 - Converted 19 FAQ-bearing blog posts to MDX and restored a reusable
   `FAQAccordion.astro` component that owns the live-style accordion and
   matching `FAQPage` JSON-LD.
+- Converted the insurance content entry to MDX so its prose, carrier data, and
+  FAQ data have one editable source; reduced `InsurancePage.astro` to a
+  presentation-only wrapper that renders the content slot.
 - Restored 32 blockquotes across 15 English and Spanish blog posts, including
   source emphasis, links, and the self-hosted quote-mark decoration; fixed
   fallback extraction to preserve them.

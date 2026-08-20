@@ -69,7 +69,7 @@ const heroImage = pageHeroImages[entry.data.slug];
     : entry.data.slug === 'faqs' && entry.data.lang === 'en'
     ? <FaqPage><slot /></FaqPage>
     : entry.data.slug === 'insurance' && entry.data.lang === 'en'
-    ? <InsurancePage />
+    ? <InsurancePage><slot /></InsurancePage>
     : entry.data.slug === 'contact'
     ? <ContactPage title={bannerTitle}><slot /></ContactPage>
     : <article class:list={['prose', 'source-page', 'container', { 'service-page': isService }]}><slot /></article>}
