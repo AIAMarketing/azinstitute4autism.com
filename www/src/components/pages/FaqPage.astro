@@ -1,8 +1,10 @@
 ---
 import Button from '../Button.astro';
+import FAQAccordion from '../FAQAccordion.astro';
 ---
+
 <article class="faq-page">
-  <div class="faq-source container source-page">
+  <div id="faq-page-source" class="faq-source container source-page">
     <slot />
   </div>
 
@@ -22,7 +24,7 @@ import Button from '../Button.astro';
           />
           <button class="hs-search-field__button" type="button" aria-label="Search">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" width="18" height="18">
-              <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" fill="#254080"/>
+              <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" fill="#254080" />
             </svg>
           </button>
         </form>
@@ -30,12 +32,12 @@ import Button from '../Button.astro';
     </div>
   </section>
 
-  <section class="faq-accordion" aria-labelledby="faq-questions-heading">
-    <div class="container-narrow faq-accordion__inner">
-      <h2 id="faq-questions-heading">Questions &amp; Answers</h2>
-      <div class="faq-list" data-faq-list></div>
-    </div>
-  </section>
+  <FAQAccordion
+    heading="Questions & Answers"
+    variant="page"
+    sourceSelector="#faq-page-source"
+    searchSelector="#faq-search-input"
+  />
 
   <section class="faq-cta faq-cta-primary">
     <div class="container-narrow">
@@ -54,261 +56,6 @@ import Button from '../Button.astro';
   </section>
 </article>
 
-<script>
-  const initFaqPage = () => {
-    const root = document.querySelector('.faq-page');
-    const source = root?.querySelector('.faq-source.source-page');
-    const list = root?.querySelector('[data-faq-list]');
-    const search = root?.querySelector('[data-faq-search]');
-
-    if (!(root instanceof HTMLElement) || !(source instanceof HTMLElement) || !(list instanceof HTMLElement) || !(search instanceof HTMLInputElement)) {
-      return;
-    }
-
-    const nodes = [...source.childNodes];
-    const firstQuestionIndex = nodes.findIndex((node) => node instanceof HTMLElement && node.tagName === 'H3');
-
-    if (firstQuestionIndex === -1) {
-      return;
-    }
-
-    let index = firstQuestionIndex;
-    let openedFirst = false;
-
-    while (index < nodes.length) {
-      const node = nodes[index];
-
-      if (!(node instanceof HTMLElement) || node.tagName !== 'H3') {
-        index += 1;
-        continue;
-      }
-
-      const details = document.createElement('details');
-      details.className = 'faq';
-      details.open = !openedFirst;
-
-      const summary = document.createElement('summary');
-      const title = document.createElement('h3');
-      title.textContent = node.textContent?.trim() || '';
-      const icon = document.createElement('span');
-      icon.className = 'faq-icon';
-      icon.setAttribute('aria-hidden', 'true');
-      summary.append(title, icon);
-      details.appendChild(summary);
-
-      const answer = document.createElement('div');
-      answer.className = 'faq-answer interactive-faq-with-seo-schema-integration__list__answer';
-      const answerInner = document.createElement('div');
-      answerInner.className = 'faq-answer__inner';
-
-      index += 1;
-      while (index < nodes.length) {
-        const answerNode = nodes[index];
-        if (answerNode instanceof HTMLElement && answerNode.tagName === 'H3') {
-          break;
-        }
-
-        if (answerNode.nodeType === Node.TEXT_NODE) {
-          const text = answerNode.textContent?.trim();
-          if (text) {
-            const paragraph = document.createElement('p');
-            paragraph.textContent = text;
-            answerInner.appendChild(paragraph);
-          }
-        } else {
-          answerInner.appendChild(answerNode.cloneNode(true));
-        }
-        answerNode.remove();
-        index += 1;
-      }
-
-      answer.appendChild(answerInner);
-      details.appendChild(answer);
-      list.appendChild(details);
-      openedFirst = true;
-    }
-
-    for (let i = firstQuestionIndex; i < nodes.length; i += 1) {
-      nodes[i].remove();
-    }
-
-    const faqItems = [...list.querySelectorAll<HTMLDetailsElement>('details.faq')];
-
-    const closeTimers = new WeakMap<HTMLDetailsElement, number>();
-    const closeHandlers = new WeakMap<HTMLDetailsElement, (event: TransitionEvent) => void>();
-
-    const getAnswer = (item: HTMLDetailsElement) =>
-      item.querySelector<HTMLDivElement>('.interactive-faq-with-seo-schema-integration__list__answer');
-    const getAnswerInner = (item: HTMLDetailsElement) =>
-      item.querySelector<HTMLDivElement>('.faq-answer__inner');
-
-    const setClosedStyles = (answer: HTMLDivElement) => {
-      answer.style.height = '0px';
-      answer.style.opacity = '0';
-      answer.style.transform = 'translateY(-.35rem)';
-    };
-
-    const setOpenStyles = (answer: HTMLDivElement) => {
-      answer.style.opacity = '1';
-      answer.style.transform = 'translateY(0)';
-    };
-
-    faqItems.forEach((item, index) => {
-      const answer = getAnswer(item);
-
-      if (!answer) {
-        return;
-      }
-
-      if (index === 0 && item.open) {
-        answer.style.height = 'auto';
-        setOpenStyles(answer);
-        delete item.dataset.state;
-      } else if (!item.open) {
-        answer.style.height = '0px';
-        setClosedStyles(answer);
-      }
-    });
-
-    const closeItem = (item: HTMLDetailsElement) => {
-      if (!item.open || item.dataset.state === 'closing') {
-        return;
-      }
-
-      item.dataset.state = 'closing';
-      const answer = getAnswer(item);
-      const answerInner = getAnswerInner(item);
-
-      if (answer && answerInner) {
-        const priorHandler = closeHandlers.get(item);
-        if (priorHandler) {
-          answer.removeEventListener('transitionend', priorHandler);
-        }
-
-        answer.style.height = `${answerInner.scrollHeight}px`;
-        answer.offsetHeight; // force reflow
-        setClosedStyles(answer);
-
-        const onTransitionEnd = (event: TransitionEvent) => {
-          if (event.target !== answer || event.propertyName !== 'height') {
-            return;
-          }
-
-          item.removeAttribute('open');
-          delete item.dataset.state;
-          answer.style.height = '0px';
-          answer.removeEventListener('transitionend', onTransitionEnd);
-          closeHandlers.delete(item);
-          closeTimers.delete(item);
-        };
-
-        closeHandlers.set(item, onTransitionEnd);
-        answer.addEventListener('transitionend', onTransitionEnd);
-      }
-
-      const timer = window.setTimeout(() => {
-        const answerStillOpen = answer && answer.offsetHeight > 0;
-        if (!answerStillOpen) {
-          return;
-        }
-
-        item.removeAttribute('open');
-        delete item.dataset.state;
-        if (answer) {
-          answer.style.height = '0px';
-        }
-        closeHandlers.delete(item);
-        closeTimers.delete(item);
-      }, 360);
-      closeTimers.set(item, timer);
-    };
-
-    const openItem = (item: HTMLDetailsElement) => {
-      if (item.open && item.dataset.state !== 'closing') {
-        return;
-      }
-
-      const timer = closeTimers.get(item);
-      if (timer) {
-        window.clearTimeout(timer);
-        closeTimers.delete(item);
-      }
-
-      const priorHandler = closeHandlers.get(item);
-      const answer = getAnswer(item);
-      if (priorHandler && answer) {
-        answer.removeEventListener('transitionend', priorHandler);
-        closeHandlers.delete(item);
-      }
-
-      item.setAttribute('open', '');
-      item.dataset.state = 'opening';
-
-      const answerInner = getAnswerInner(item);
-      if (answer && answerInner) {
-        answer.style.height = '0px';
-        setClosedStyles(answer);
-        answer.offsetHeight; // force reflow
-        window.requestAnimationFrame(() => {
-          answer.style.height = `${answerInner.scrollHeight}px`;
-          setOpenStyles(answer);
-        });
-
-        const onTransitionEnd = (event: TransitionEvent) => {
-          if (event.target !== answer || event.propertyName !== 'height') {
-            return;
-          }
-
-          if (item.dataset.state === 'opening') {
-            answer.style.height = 'auto';
-            delete item.dataset.state;
-          }
-
-          answer.removeEventListener('transitionend', onTransitionEnd);
-        };
-
-        answer.addEventListener('transitionend', onTransitionEnd);
-      }
-    };
-
-    faqItems.forEach((item) => {
-      const summary = item.querySelector('summary');
-      summary?.addEventListener('click', (event) => {
-        event.preventDefault();
-        const willOpen = !item.open;
-
-        faqItems.forEach((other) => {
-          if (other !== item) {
-            closeItem(other);
-          }
-        });
-
-        if (willOpen) {
-          openItem(item);
-        } else {
-          closeItem(item);
-        }
-      });
-    });
-
-    const applyFilter = () => {
-      const query = search.value.trim().toLowerCase();
-      faqItems.forEach((item) => {
-        const text = item.textContent?.toLowerCase() || '';
-        item.hidden = Boolean(query) && !text.includes(query);
-      });
-    };
-
-    search.addEventListener('input', applyFilter);
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFaqPage, { once: true });
-  } else {
-    initFaqPage();
-  }
-</script>
-
 <style>
   .faq-page {
     padding-bottom: 0;
@@ -320,7 +67,7 @@ import Button from '../Button.astro';
 
   .faq-search {
     margin-bottom: 1.5rem;
-    padding-block: 1rem 0.75rem;
+    padding-block: 1rem .75rem;
   }
 
   .sr-only {
@@ -360,6 +107,7 @@ import Button from '../Button.astro';
     background: #fff;
     border: 2px solid rgba(37, 64, 128, .2);
     border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(37, 64, 128, .06);
     color: var(--color-primary);
     flex: 1;
     font: inherit;
@@ -367,7 +115,6 @@ import Button from '../Button.astro';
     min-height: 3.125rem;
     min-width: 0;
     padding: .9rem 1.25rem;
-    box-shadow: 0 1px 2px rgba(37, 64, 128, .06);
   }
 
   .hs-search-field__input::placeholder {
@@ -398,165 +145,6 @@ import Button from '../Button.astro';
 
   .hs-search-field__button:hover {
     opacity: 1;
-  }
-
-  .faq-accordion {
-    background: var(--color-tint);
-    padding-block: 2rem 4rem;
-  }
-
-  .faq-accordion__inner {
-    margin-inline: auto;
-  }
-
-  .faq-accordion h2 {
-    color: var(--color-primary);
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin: 0 0 1.75rem;
-    text-align: center;
-  }
-
-  :global(.faq-list) {
-    padding: 1.5rem 1.25rem 1rem;
-  }
-
-  :global(.faq-list .faq) {
-    background: transparent;
-    border-bottom: 1px solid var(--color-accent-strong);
-    padding: 0;
-  }
-
-  :global(.faq-list .faq:last-child) {
-    border-bottom: 0;
-  }
-
-  :global(.faq-list .faq[hidden]) {
-    display: none;
-  }
-
-  :global(.faq-list summary) {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    gap: 1.5rem;
-    justify-content: space-between;
-    list-style: none;
-    padding: .875rem 0;
-  }
-
-  :global(.faq-list summary::-webkit-details-marker) {
-    display: none;
-  }
-
-  :global(.faq-list summary h3) {
-    color: var(--color-primary);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.625;
-    margin: 0;
-  }
-
-  :global(.faq-list .faq-icon) {
-    flex: 0 0 auto;
-    display: block;
-    height: 12px;
-    margin-inline-start: auto;
-    position: relative;
-    width: 12px;
-  }
-
-  :global(.faq-list .faq-icon::after) {
-    border-bottom: 1px solid var(--color-accent-strong);
-    border-right: 1px solid var(--color-accent-strong);
-    content: "";
-    display: block;
-    height: 12px;
-    transform: translateY(-50%) rotate(45deg);
-    transform-origin: center;
-    transition: transform 300ms ease;
-    width: 12px;
-  }
-
-  :global(.faq-list details[open] .faq-icon::after) {
-    transform: rotate(-135deg);
-  }
-
-  :global(.faq-list .interactive-faq-with-seo-schema-integration__list__answer) {
-    height: 0;
-    margin-bottom: 0;
-    opacity: 0;
-    transform: translateY(-.35rem);
-    overflow: hidden;
-    transition: height .3s ease, margin-bottom .3s ease, opacity .3s ease, transform .3s ease;
-  }
-
-  :global(.faq-list .faq[open] .interactive-faq-with-seo-schema-integration__list__answer) {
-    margin-bottom: .85rem;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  :global(.faq-list .faq-answer__inner) {
-    padding-bottom: .25rem;
-  }
-
-  :global(.faq-list .faq-answer p) {
-    margin: 0 0 1rem;
-    line-height: 1.7;
-  }
-
-  :global(.faq-list .faq-answer p:last-child) {
-    margin-bottom: 0;
-  }
-
-  :global(.faq-list .faq-answer__inner h4),
-  :global(.faq-list .faq-answer__inner h5) {
-    color: var(--color-primary);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    margin-top: 0;
-    text-wrap: balance;
-  }
-
-  :global(.faq-list .faq-answer__inner h4) {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  :global(.faq-list .faq-answer__inner h5) {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin-bottom: 1.25rem;
-  }
-
-  :global(.faq-list .faq-answer__inner :where(ul, ol)) {
-    margin-block: 0 1.5rem;
-    padding-inline-start: 2.5rem;
-  }
-
-  :global(.faq-list .faq-answer__inner :where(ul, ol) :where(ul, ol)) {
-    margin-block: .25rem 0;
-  }
-
-  :global(.faq-list .faq-answer__inner li) {
-    line-height: 1.625;
-    margin-block: 0;
-    padding-inline-start: .15rem;
-  }
-
-  :global(.faq-list .faq-answer__inner li > p) {
-    margin-block: 0;
-  }
-
-  :global(.faq-list .faq-answer__inner ul > li::marker) {
-    color: var(--color-accent-strong);
-  }
-
-  :global(.faq-list .faq-answer__inner ol > li::marker) {
-    color: var(--color-primary);
   }
 
   .faq-cta-primary {
@@ -602,14 +190,6 @@ import Button from '../Button.astro';
     .faq-search {
       margin-bottom: 2rem;
       padding-block-end: 1rem;
-    }
-
-    .faq-list {
-      padding: 2.5rem 2rem 1.5rem;
-    }
-
-    .faq-accordion h2 {
-      margin-bottom: 2rem;
     }
   }
 </style>

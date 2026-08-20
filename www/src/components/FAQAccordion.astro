@@ -8,13 +8,32 @@ interface FAQItem {
 interface Props {
   label?: string;
   heading: string;
-  items: FAQItem[];
+  items?: FAQItem[];
   canonical?: string;
-  variant?: 'blog' | 'source';
+  variant?: 'blog' | 'source' | 'page';
+  sourceSelector?: string;
+  searchSelector?: string;
+  faqIconColor?: string;
 }
 
-const { label, heading, items, canonical, variant = 'blog' } = Astro.props;
-const headingId = label ? 'blog-faq-heading' : 'source-faq-heading';
+const {
+  label,
+  heading,
+  items = [],
+  canonical,
+  variant = 'blog',
+  sourceSelector,
+  searchSelector,
+  faqIconColor = '--color-accent-strong'
+} = Astro.props;
+const resolvedFaqIconColor = faqIconColor.startsWith('--')
+  ? `var(${faqIconColor})`
+  : faqIconColor;
+const headingId = variant === 'page'
+  ? 'faq-questions-heading'
+  : label
+    ? 'blog-faq-heading'
+    : 'source-faq-heading';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -29,24 +48,361 @@ const schema = {
   }))
 };
 ---
-<section class:list={['blog-faq', { 'faq-accordion--source': variant === 'source' }]} aria-labelledby={headingId}>
-  <header class="blog-faq-heading">
-    {label && <h2 id={headingId}>{label}</h2>}
-    <h3 id={!label ? headingId : undefined}>{heading}</h3>
-  </header>
-  <div class="blog-faq-list">
-    {items.map((item, index) => (
-      <details class="faq" name={variant === 'source' ? 'source-page-faq' : undefined} open={index === 0}>
-        <summary>
-          <span>{item.question}</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="faq-answer" set:html={item.answerHtml || `<p>${item.answer}</p>`} />
-      </details>
-    ))}
+<section
+  class:list={[
+    'blog-faq',
+    { 'faq-accordion--source': variant === 'source' },
+    { 'faq-accordion--page': variant === 'page' }
+  ]}
+  aria-labelledby={headingId}
+  data-faq-accordion
+  data-faq-group={headingId}
+  data-source-selector={sourceSelector}
+  data-search-selector={searchSelector}
+  style={`--faq-icon-color: ${resolvedFaqIconColor}`}
+>
+  <div class="faq-accordion__inner">
+    <header class="blog-faq-heading">
+      {label && <h2 id={headingId}>{label}</h2>}
+      {variant === 'page'
+        ? <h2 id={headingId}>{heading}</h2>
+        : <h3 id={!label ? headingId : undefined}>{heading}</h3>}
+    </header>
+    <div class="blog-faq-list" data-faq-list>
+      {items.map((item, index) => (
+        <details class="faq" name={headingId} open={index === 0}>
+          <summary>
+            <span>{item.question}</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <div class="faq-answer__inner" set:html={item.answerHtml || `<p>${item.answer}</p>`} />
+          </div>
+        </details>
+      ))}
+    </div>
   </div>
 </section>
-<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+{items.length > 0 && <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />}
+
+<script>
+  const initFaqAccordions = () => {
+    document.querySelectorAll<HTMLElement>('[data-faq-accordion]').forEach((root) => {
+      if (root.dataset.faqReady === 'true') {
+        return;
+      }
+
+      const list = root.querySelector<HTMLElement>('[data-faq-list]');
+      if (!list) {
+        return;
+      }
+
+      const sourceSelector = root.dataset.sourceSelector;
+      const groupName = root.dataset.faqGroup || 'faq-accordion';
+
+      if (sourceSelector) {
+        const source = document.querySelector<HTMLElement>(sourceSelector);
+        if (!source) {
+          return;
+        }
+
+        const nodes = [...source.childNodes];
+        const firstQuestionIndex = nodes.findIndex(
+          (node) => node instanceof HTMLElement && node.tagName === 'H3'
+        );
+
+        if (firstQuestionIndex === -1) {
+          return;
+        }
+
+        let index = firstQuestionIndex;
+        let openedFirst = false;
+
+        while (index < nodes.length) {
+          const node = nodes[index];
+
+          if (!(node instanceof HTMLElement) || node.tagName !== 'H3') {
+            index += 1;
+            continue;
+          }
+
+          const details = document.createElement('details');
+          details.className = 'faq';
+          details.setAttribute('name', groupName);
+          details.open = !openedFirst;
+
+          const summary = document.createElement('summary');
+          const title = document.createElement('h3');
+          title.textContent = node.textContent?.trim() || '';
+          const icon = document.createElement('span');
+          icon.className = 'faq-icon';
+          icon.setAttribute('aria-hidden', 'true');
+          summary.append(title, icon);
+          details.appendChild(summary);
+
+          const answer = document.createElement('div');
+          answer.className = 'faq-answer interactive-faq-with-seo-schema-integration__list__answer';
+          const answerInner = document.createElement('div');
+          answerInner.className = 'faq-answer__inner';
+
+          index += 1;
+          while (index < nodes.length) {
+            const answerNode = nodes[index];
+            if (answerNode instanceof HTMLElement && answerNode.tagName === 'H3') {
+              break;
+            }
+
+            if (answerNode.nodeType === Node.TEXT_NODE) {
+              const text = answerNode.textContent?.trim();
+              if (text) {
+                const paragraph = document.createElement('p');
+                paragraph.textContent = text;
+                answerInner.appendChild(paragraph);
+              }
+            } else {
+              answerInner.appendChild(answerNode.cloneNode(true));
+            }
+
+            answerNode.remove();
+            index += 1;
+          }
+
+          answer.appendChild(answerInner);
+          details.appendChild(answer);
+          list.appendChild(details);
+          openedFirst = true;
+        }
+
+        for (let sourceIndex = firstQuestionIndex; sourceIndex < nodes.length; sourceIndex += 1) {
+          nodes[sourceIndex].remove();
+        }
+      }
+
+      const faqItems = [...list.querySelectorAll<HTMLDetailsElement>('details.faq')];
+      if (faqItems.length === 0) {
+        return;
+      }
+
+      interface FaqAnimation {
+        answer: HTMLDivElement;
+        frame?: number;
+        timer?: number;
+        transitionHandler?: (event: TransitionEvent) => void;
+      }
+
+      const animations = new WeakMap<HTMLDetailsElement, FaqAnimation>();
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const getAnswer = (item: HTMLDetailsElement) =>
+        item.querySelector<HTMLDivElement>('.faq-answer');
+      const clearAnimation = (item: HTMLDetailsElement) => {
+        const animation = animations.get(item);
+        if (!animation) {
+          return;
+        }
+
+        if (animation.frame !== undefined) {
+          window.cancelAnimationFrame(animation.frame);
+        }
+        if (animation.timer !== undefined) {
+          window.clearTimeout(animation.timer);
+        }
+        if (animation.transitionHandler) {
+          animation.answer.removeEventListener('transitionend', animation.transitionHandler);
+        }
+
+        animations.delete(item);
+      };
+
+      const awaitHeightTransition = (
+        item: HTMLDetailsElement,
+        animation: FaqAnimation,
+        onComplete: () => void
+      ) => {
+        const complete = () => {
+          if (animations.get(item) !== animation) {
+            return;
+          }
+
+          clearAnimation(item);
+          onComplete();
+        };
+
+        animation.transitionHandler = (event) => {
+          if (event.target === animation.answer && event.propertyName === 'height') {
+            complete();
+          }
+        };
+        animation.answer.addEventListener('transitionend', animation.transitionHandler);
+        animation.timer = window.setTimeout(complete, 360);
+      };
+
+      const finishClosing = (item: HTMLDetailsElement, answer: HTMLDivElement) => {
+        item.removeAttribute('open');
+        item.dataset.state = 'closed';
+        answer.style.height = '0px';
+      };
+
+      const finishOpening = (item: HTMLDetailsElement, answer: HTMLDivElement) => {
+        item.dataset.state = 'open';
+        answer.style.height = 'auto';
+      };
+
+      const closeItem = (item: HTMLDetailsElement, immediate = false) => {
+        if (item.dataset.state === 'closed' || item.dataset.state === 'closing') {
+          return;
+        }
+
+        const answer = getAnswer(item);
+        if (!answer) {
+          item.removeAttribute('open');
+          item.dataset.state = 'closed';
+          return;
+        }
+
+        clearAnimation(item);
+        const startHeight = answer.getBoundingClientRect().height;
+        answer.style.height = `${startHeight}px`;
+        answer.offsetHeight;
+        item.dataset.state = 'closing';
+
+        if (immediate || reduceMotion || startHeight === 0) {
+          finishClosing(item, answer);
+          return;
+        }
+
+        const animation: FaqAnimation = { answer };
+        animations.set(item, animation);
+        animation.frame = window.requestAnimationFrame(() => {
+          if (animations.get(item) !== animation) {
+            return;
+          }
+
+          animation.frame = undefined;
+          answer.style.height = '0px';
+          awaitHeightTransition(item, animation, () => finishClosing(item, answer));
+        });
+      };
+
+      const openItem = (item: HTMLDetailsElement) => {
+        if (item.dataset.state === 'open' || item.dataset.state === 'opening') {
+          return;
+        }
+
+        const answer = getAnswer(item);
+        if (!answer) {
+          item.setAttribute('open', '');
+          item.dataset.state = 'open';
+          return;
+        }
+
+        clearAnimation(item);
+        const startHeight = item.open ? answer.getBoundingClientRect().height : 0;
+        item.setAttribute('open', '');
+        answer.style.height = `${startHeight}px`;
+        answer.offsetHeight;
+        item.dataset.state = 'opening';
+
+        if (reduceMotion) {
+          finishOpening(item, answer);
+          return;
+        }
+
+        const animation: FaqAnimation = { answer };
+        animations.set(item, animation);
+        animation.frame = window.requestAnimationFrame(() => {
+          if (animations.get(item) !== animation) {
+            return;
+          }
+
+          animation.frame = undefined;
+          const targetHeight = answer.scrollHeight;
+          answer.style.height = `${targetHeight}px`;
+
+          if (targetHeight === startHeight) {
+            clearAnimation(item);
+            finishOpening(item, answer);
+            return;
+          }
+
+          awaitHeightTransition(item, animation, () => finishOpening(item, answer));
+        });
+      };
+
+      let activeItem: HTMLDetailsElement | null = null;
+      faqItems.forEach((item, index) => {
+        const answer = getAnswer(item);
+
+        // Keep native name grouping in the server HTML as a no-JavaScript fallback,
+        // then let the animation controller own exclusivity after enhancement.
+        item.removeAttribute('name');
+
+        if (index === 0 && item.open && answer) {
+          activeItem = item;
+          item.dataset.state = 'open';
+          answer.style.height = 'auto';
+        } else {
+          item.removeAttribute('open');
+          item.dataset.state = 'closed';
+          if (answer) {
+            answer.style.height = '0px';
+          }
+        }
+      });
+
+      faqItems.forEach((item) => {
+        item.querySelector('summary')?.addEventListener('click', (event) => {
+          event.preventDefault();
+          const isActive = activeItem === item
+            && (item.dataset.state === 'open' || item.dataset.state === 'opening');
+
+          if (isActive) {
+            activeItem = null;
+            closeItem(item);
+            return;
+          }
+
+          const previousItem = activeItem;
+          activeItem = item;
+          if (previousItem && previousItem !== item) {
+            closeItem(previousItem);
+          }
+          openItem(item);
+        });
+      });
+
+      const searchSelector = root.dataset.searchSelector;
+      const search = searchSelector
+        ? document.querySelector<HTMLInputElement>(searchSelector)
+        : null;
+
+      if (search) {
+        search.addEventListener('input', () => {
+          const query = search.value.trim().toLowerCase();
+          faqItems.forEach((item) => {
+            const text = item.textContent?.toLowerCase() || '';
+            item.hidden = Boolean(query) && !text.includes(query);
+
+            if (item.hidden && item.dataset.state !== 'closed') {
+              if (activeItem === item) {
+                activeItem = null;
+              }
+              closeItem(item, true);
+            }
+          });
+        });
+      }
+
+      root.dataset.faqReady = 'true';
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFaqAccordions, { once: true });
+  } else {
+    initFaqAccordions();
+  }
+</script>
 
 <style>
   .blog-faq {
@@ -120,8 +476,8 @@ const schema = {
   }
 
   .faq-icon::after {
-    border-bottom: 1px solid var(--color-accent-strong);
-    border-right: 1px solid var(--color-accent-strong);
+    border-bottom: 1px solid var(--faq-icon-color, var(--color-accent-strong));
+    border-right: 1px solid var(--faq-icon-color, var(--color-accent-strong));
     content: "";
     display: block;
     height: 14px;
@@ -135,12 +491,35 @@ const schema = {
     transform: rotate(-135deg);
   }
 
-  .faq-answer {
-    margin-bottom: 1.25rem;
-    overflow: hidden;
+  .faq[data-state='closing'] .faq-icon::after,
+  .faq[data-state='closed'] .faq-icon::after {
+    transform: translateY(-50%) rotate(45deg);
   }
 
-  .faq-answer :global(p) {
+  .faq-answer {
+    height: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-.35rem);
+    transition: height .3s ease, margin-bottom .3s ease, opacity .3s ease, transform .3s ease;
+  }
+
+  .faq[open] .faq-answer {
+    height: auto;
+    margin-bottom: 1.25rem;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .faq[data-state='closing'] .faq-answer,
+  .faq[data-state='closed'] .faq-answer {
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(-.35rem);
+  }
+
+  .faq-answer__inner :global(p) {
     margin: 0 0 1rem;
   }
 
@@ -174,21 +553,206 @@ const schema = {
     line-height: 2.5rem;
   }
 
-  .faq-accordion--source .faq-icon::after {
-    border-color: var(--color-primary);
-  }
-
-  .faq-accordion--source .faq-answer :global(p) {
+  .faq-accordion--source .faq-answer__inner :global(p) {
     margin-bottom: 0;
   }
 
-  .faq-accordion--source .faq-answer :global(a) {
+  .faq-accordion--source .faq-answer__inner :global(a) {
     color: var(--color-accent-strong);
   }
 
-  .faq-accordion--source .faq-answer :global(a:hover),
-  .faq-accordion--source .faq-answer :global(a:focus-visible) {
+  .faq-accordion--source .faq-answer__inner :global(a:hover),
+  .faq-accordion--source .faq-answer__inner :global(a:focus-visible) {
     color: var(--color-accent);
+  }
+
+  .faq-accordion--page {
+    background: var(--color-tint);
+    margin: 0;
+    padding-block: 2rem 4rem;
+  }
+
+  .faq-accordion--page .faq-accordion__inner {
+    margin-inline: auto;
+    padding-inline: 20px;
+    width: min(100%, 820px);
+  }
+
+  .faq-accordion--page .blog-faq-heading {
+    margin-bottom: 1.75rem;
+  }
+
+  .faq-accordion--page .blog-faq-heading h2 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin: 0;
+    text-align: center;
+  }
+
+  .faq-accordion--page .blog-faq-list {
+    background: transparent;
+    padding: 1.5rem 1.25rem 1rem;
+  }
+
+  .faq-accordion--page :global(.faq) {
+    background: transparent;
+    border-bottom: 1px solid var(--color-accent-strong);
+    padding: 0;
+  }
+
+  .faq-accordion--page :global(.faq:last-child) {
+    border-bottom: 0;
+  }
+
+  .faq-accordion--page :global(.faq[hidden]) {
+    display: none;
+  }
+
+  .faq-accordion--page :global(summary) {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    list-style: none;
+    padding: .875rem 0;
+  }
+
+  .faq-accordion--page :global(summary::-webkit-details-marker) {
+    display: none;
+  }
+
+  .faq-accordion--page :global(summary h3) {
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.625;
+    margin: 0;
+  }
+
+  .faq-accordion--page :global(.faq-icon) {
+    display: block;
+    flex: 0 0 auto;
+    height: 12px;
+    margin-inline-start: auto;
+    position: relative;
+    width: 12px;
+  }
+
+  .faq-accordion--page :global(.faq-icon::after) {
+    border-bottom: 1px solid var(--faq-icon-color, var(--color-accent-strong));
+    border-right: 1px solid var(--faq-icon-color, var(--color-accent-strong));
+    content: "";
+    display: block;
+    height: 12px;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    transition: transform 300ms ease;
+    width: 12px;
+  }
+
+  .faq-accordion--page :global(details[open] .faq-icon::after) {
+    transform: rotate(-135deg);
+  }
+
+  .faq-accordion--page :global(.faq[data-state='closing'] .faq-icon::after),
+  .faq-accordion--page :global(.faq[data-state='closed'] .faq-icon::after) {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq-accordion--page :global(.interactive-faq-with-seo-schema-integration__list__answer) {
+    height: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-.35rem);
+    transition: height .3s ease, margin-bottom .3s ease, opacity .3s ease, transform .3s ease;
+  }
+
+  .faq-accordion--page :global(.faq[open] .interactive-faq-with-seo-schema-integration__list__answer) {
+    margin-bottom: .85rem;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .faq-accordion--page :global(.faq[data-state='closing'] .interactive-faq-with-seo-schema-integration__list__answer),
+  .faq-accordion--page :global(.faq[data-state='closed'] .interactive-faq-with-seo-schema-integration__list__answer) {
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(-.35rem);
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner) {
+    padding-bottom: .25rem;
+  }
+
+  .faq-accordion--page :global(.faq-answer p) {
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  .faq-accordion--page :global(.faq-answer p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner h4),
+  .faq-accordion--page :global(.faq-answer__inner h5) {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-top: 0;
+    text-wrap: balance;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner h4) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner h5) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner :where(ul, ol)) {
+    margin-block: 0 1.5rem;
+    padding-inline-start: 2.5rem;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner :where(ul, ol) :where(ul, ol)) {
+    margin-block: .25rem 0;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner li) {
+    line-height: 1.625;
+    margin-block: 0;
+    padding-inline-start: .15rem;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner li > p) {
+    margin-block: 0;
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner ul > li::marker) {
+    color: var(--color-accent-strong);
+  }
+
+  .faq-accordion--page :global(.faq-answer__inner ol > li::marker) {
+    color: var(--color-primary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-answer,
+    .faq-icon::after,
+    .faq-accordion--page :global(.interactive-faq-with-seo-schema-integration__list__answer),
+    .faq-accordion--page :global(.faq-icon::after) {
+      transition-duration: .01ms;
+    }
   }
 
   @media (max-width: 767px) {
@@ -218,6 +782,14 @@ const schema = {
 
     .faq-accordion--source .blog-faq-list {
       padding: 0;
+    }
+
+    .faq-accordion--page .blog-faq-heading {
+      margin-bottom: 2rem;
+    }
+
+    .faq-accordion--page .blog-faq-list {
+      padding: 2.5rem 2rem 1.5rem;
     }
   }
 </style>

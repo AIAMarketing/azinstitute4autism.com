@@ -49,8 +49,11 @@ Implemented fidelity work includes:
   links.
 - Rebuilt library indexes and blog-post presentation around the live sidebar,
   article list, byline, featured-image, and counter patterns.
-- Converted FAQ-bearing posts to MDX and recreated their live-style accordions
-  with a reusable component that emits matching `FAQPage` JSON-LD.
+- Converted FAQ-bearing posts to MDX and routed their accordions, the
+  standalone FAQ page, and the insurance FAQ through one reusable component.
+  Each accordion uses the same animated, single-open interaction and a
+  component-scoped caret color override; blog and insurance instances also
+  emit matching `FAQPage` JSON-LD.
 - Restored 32 live-source blog blockquotes with their original emphasis,
   links, fawn backgrounds, spacing, rounded presentation, and quote-mark SVG.
 - Replaced generic oversized cards, rounded controls, and marketing heroes
