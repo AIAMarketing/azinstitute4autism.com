@@ -73,6 +73,10 @@ Implemented fidelity work includes:
   than preserving the live pages' differing row spacing.
 - The Community 4 Autism logo on `/donate-autism-giveback` is horizontally
   centered on mobile instead of retaining the live page's left alignment.
+- The empty `<h6>` retained by the live `/schedule-consultation` page was
+  removed. It had no visible content and generated an empty heading ID in the
+  migrated Markdown, so omitting it improves heading semantics and fragment
+  integrity without removing page content.
 
 ## URLs and Redirects
 
@@ -144,12 +148,17 @@ unavailable.
 - Extracted image alt text is retained where available.
 - Semantic landmarks, skip link, labeled forms, keyboard-operable navigation,
   language/direction attributes, and responsive layouts are present.
+- Sätteri heading attributes are enabled for Markdown and MDX, allowing stable
+  explicit fragment IDs such as `{#accepted-insurance-heading}`. The built-site
+  audit found no duplicate or invalid IDs and no missing same-page fragments.
+- Sätteri directive parsing is enabled. No named directive transformations are
+  registered yet, so unhandled directives must not be added to published
+  content until their semantic HTML rendering is defined.
 
 ## Validation Results
 
-- `npm install --ignore-scripts`: completed; 323 packages audited with one
-  moderate advisory. The current shell uses Node `20.17.0`, below the declared
-  `>=20.19.0`; `flake.nix` now selects Node 22.
+- `npm audit --offline`: passed with zero known vulnerabilities under Node
+  `24.18.0`; `flake.nix` provides a compatible current Node release.
 - `npm run audit:links`: passed with zero broken internal source links. The
   audit now checks generated routes, root-relative references, relative
   Markdown links, and public assets when rendered output is unavailable.
@@ -161,8 +170,8 @@ unavailable.
 - `npm run generate:redirects`: passed.
 - All migration `.mjs` tools and the sandbox DNS helper pass `node --check`.
 - The Astro compiler parsed all 49 `.astro` files successfully.
-- `npm run build`: blocked before compilation because this autonomous sandbox
-  cannot resolve `localhost`, causing `getaddrinfo EAI_AGAIN localhost`.
+- `npm run build`: passed with zero Astro diagnostics and generated 97 static
+  pages.
 - `npm run build:sandbox`: passed; generated 97 static pages.
 - Live contact-page structure was inspected in browser at a 1280px desktop
   viewport; local generated HTML was checked for the contact layout, Leaflet
@@ -171,9 +180,6 @@ unavailable.
   loopback servers and blocks `file:` URLs in this environment.
 - Nix shell verification and `npm audit` retrieval were blocked by sandbox
   proxy/cache network resets.
-
-Run `npm run build` outside the Codex sandbox with Node 20.19+ or Node 22 for
-final production-build proof.
 
 ## Manual Review
 

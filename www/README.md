@@ -200,6 +200,35 @@ Available sizes are `default` and `small`. A `_blank` target automatically adds
 
 Normal Markdown links remain preferred for ordinary page and article content.
 
+### Stable Heading Links
+
+Astro automatically generates an ID for each Markdown heading. When a section
+needs a stable, editorially controlled fragment link, add an explicit ID with
+Sätteri heading-attribute syntax:
+
+```md
+## Accepted Insurance Carriers {#accepted-insurance-heading}
+```
+
+Link to it with the resulting fragment URL:
+
+```md
+[View accepted carriers](/insurance#accepted-insurance-heading)
+```
+
+Keep explicit IDs unique within the page, lowercase, and hyphenated. Treat a
+published ID as permanent so inbound links do not break when heading text is
+edited. This syntax is supported in both Markdown and MDX files.
+
+### Markdown Directives
+
+Sätteri directive parsing is enabled for container (`:::name`), leaf
+(`::name`), and text (`:name`) directives. Parsing creates directive nodes;
+rendering a named directive requires a corresponding Markdown transformation
+plugin. Until a directive and its semantic HTML treatment are registered, do
+not use it in published content because the default renderer omits unhandled
+directive nodes.
+
 ### Front Matter CMS
 
 The project includes `frontmatter.json` for the Front Matter CMS VS Code
