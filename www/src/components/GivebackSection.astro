@@ -1,0 +1,213 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  variant: 'intro' | 'wishlist' | 'fundraiser' | 'community';
+  heading: string;
+  headingId: string;
+  image?: string;
+  imageAlt?: string;
+  actionHref?: string;
+  actionLabel?: string;
+  actionRel?: string;
+}
+
+const {
+  variant,
+  heading,
+  headingId,
+  image,
+  imageAlt = '',
+  actionHref,
+  actionLabel,
+  actionRel
+} = Astro.props;
+
+const Heading = variant === 'intro' || variant === 'community' ? 'h2' : 'h3';
+const hasImage = Boolean(image);
+const actionIsCentered = variant === 'community';
+---
+
+<section
+  class:list={[
+    'giveback-section',
+    `giveback-section--${variant}`,
+    { 'giveback-section--split': hasImage }
+  ]}
+  aria-labelledby={headingId}
+>
+  <div class="container">
+    <div class="giveback-section__grid">
+      {image && variant === 'wishlist' && (
+        <img
+          class="giveback-section__image giveback-section__image--gift"
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+        />
+      )}
+
+      <div class="giveback-section__copy">
+        <Heading id={headingId}>{heading}</Heading>
+        <slot />
+
+        {actionHref && actionLabel && !actionIsCentered && (
+          <div class="giveback-section__action">
+            <Button href={actionHref} target="_blank" rel={actionRel}>{actionLabel}</Button>
+          </div>
+        )}
+      </div>
+
+      {image && variant === 'community' && (
+        <img
+          class="giveback-section__image giveback-section__image--community"
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+        />
+      )}
+    </div>
+
+    {actionHref && actionLabel && actionIsCentered && (
+      <div class="giveback-section__action giveback-section__action--center">
+        <Button href={actionHref} target="_blank" rel={actionRel}>{actionLabel}</Button>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .giveback-section {
+    color: var(--color-primary);
+    padding-block: 80px;
+  }
+
+  .giveback-section--wishlist {
+    background: var(--color-tint);
+  }
+
+  .giveback-section--fundraiser {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .giveback-section__grid {
+    align-items: center;
+  }
+
+  .giveback-section--split .giveback-section__grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .giveback-section--wishlist .giveback-section__grid {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .giveback-section--community .giveback-section__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .giveback-section__copy :global(h2),
+  .giveback-section__copy :global(h3) {
+    margin: 0 0 20px;
+  }
+
+  .giveback-section__copy :global(h2) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+
+  .giveback-section__copy :global(h3) {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+  }
+
+  .giveback-section__copy :global(p) {
+    margin: 0 0 20px;
+  }
+
+  .giveback-section--wishlist .giveback-section__copy :global(h3),
+  .giveback-section--wishlist .giveback-section__copy :global(p),
+  .giveback-section--fundraiser .giveback-section__copy :global(h3),
+  .giveback-section--fundraiser .giveback-section__copy :global(p),
+  .giveback-section--community .giveback-section__copy :global(h2),
+  .giveback-section--community .giveback-section__copy :global(p) {
+    margin-bottom: 25px;
+  }
+
+  .giveback-section--fundraiser .giveback-section__copy :global(h3),
+  .giveback-section--fundraiser .giveback-section__copy :global(p) {
+    color: white;
+  }
+
+  .giveback-section__image {
+    height: auto;
+    width: 100%;
+  }
+
+  .giveback-section__image--gift {
+    margin-inline: auto;
+    max-width: 360px;
+  }
+
+  .giveback-section__image--community {
+    justify-self: start;
+    max-width: 266px;
+  }
+
+  .giveback-section__action {
+    margin-top: 0;
+  }
+
+  .giveback-section__action--center {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .giveback-section__action :global(.content-button) {
+    padding: .8rem 1.2rem;
+  }
+
+  @media (max-width: 767px) {
+    .giveback-section {
+      padding-block: 40px;
+    }
+
+    .giveback-section--intro {
+      padding-block: 50px;
+    }
+
+    .giveback-section--split .giveback-section__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .giveback-section__copy :global(h2) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    .giveback-section__copy :global(h3) {
+      font-size: 1.875rem;
+      line-height: 2.375rem;
+    }
+
+    .giveback-section__copy :global(p) {
+      line-height: 1.25;
+    }
+
+    .giveback-section--wishlist .giveback-section__copy :global(h3),
+    .giveback-section--wishlist .giveback-section__copy :global(p),
+    .giveback-section--fundraiser .giveback-section__copy :global(h3),
+    .giveback-section--fundraiser .giveback-section__copy :global(p),
+    .giveback-section--community .giveback-section__copy :global(h2),
+    .giveback-section--community .giveback-section__copy :global(p) {
+      margin-bottom: 15px;
+    }
+
+    .giveback-section__image--community {
+      margin-bottom: 20px;
+      margin-inline: auto;
+    }
+  }
+</style>

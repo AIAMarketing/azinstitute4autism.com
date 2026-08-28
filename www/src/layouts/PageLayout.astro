@@ -70,6 +70,8 @@ const heroImage = pageHeroImages[entry.data.slug];
     ? <FaqPage><slot /></FaqPage>
     : entry.data.slug === 'insurance' && entry.data.lang === 'en'
     ? <InsurancePage><slot /></InsurancePage>
+    : entry.data.slug === 'donate-autism-giveback' && entry.data.lang === 'en'
+    ? <slot />
     : entry.data.slug === 'contact'
     ? <ContactPage title={bannerTitle}><slot /></ContactPage>
     : <article class:list={['prose', 'source-page', 'container', { 'service-page': isService }]}><slot /></article>}

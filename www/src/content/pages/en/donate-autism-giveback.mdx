@@ -8,27 +8,54 @@ translationKey: "donate-autism-giveback"
 draft: false
 ---
 import ContactObfuscation from '../../../components/ContactObfuscation.astro';
+import GivebackSection from '../../../components/GivebackSection.astro';
 
-## Ways to Giveback
+<GivebackSection
+  variant="intro"
+  heading="Ways to Giveback"
+  headingId="ways-to-giveback-heading"
+>
 
 Every act of generosity, no matter how big or small, makes a difference at the Arizona Institute for Autism. Whether you donate items directly, support our Amazon iGiveback Wishlist, or contribute to our 501(c)(3) public charity, your support helps improve the lives of children with autism, their families, and the communities around them.
 
-![giveback donation gift](/assets/images/giveback-donation-gift.webp)
+</GivebackSection>
 
-### Give the Gift of a Smile!
+<GivebackSection
+  variant="wishlist"
+  heading="Give the Gift of a Smile!"
+  headingId="give-the-gift-of-a-smile-heading"
+  image="/assets/images/giveback-donation-gift.webp"
+  imageAlt="giveback donation gift"
+  actionHref="https://www.amazon.com/hz/wishlist/ls/17A5XHRQJN3QT"
+  actionLabel="View our Amazon Wishlist"
+  actionRel="nofollow noopener"
+>
 
 Visit AIA’s Amazon iGiveback Wishlist today, pick an item (or two!), and help us turn everyday needs into moments of happiness and growth.
 
- View our Amazon Wishlist 
+</GivebackSection>
 
-### Host a Fundraiser
+<GivebackSection
+  variant="fundraiser"
+  heading="Host a Fundraiser"
+  headingId="host-a-fundraiser-heading"
+>
 
 Would you like to host a fundraiser to benefit the Arizona Institute for Autism? Please contact us at <ContactObfuscation email="info@azinstitute4autism.com" obfuscatedText="moc.msitua4etutitsniza@ofni" /> and a member of our team will be in touch to discuss next steps! All potential third party events will be evaluated in terms of their alignment with Arizona Institute for Autism's mission.
 
-## Community 4 Autism
+</GivebackSection>
 
-A 501(c)(3) nonprofit organization (EIN 92-2808564), Community 4 Autism was established in June 2023. Your tax-deductible donation directly supports families of children and individuals diagnosed with autism.
+<GivebackSection
+  variant="community"
+  heading="Community 4 Autism"
+  headingId="community-4-autism-heading"
+  image="/assets/images/community-4-autism-logo-blue-1.png"
+  imageAlt="Community 4 Autism - Nonprofit Giveback Solution"
+  actionHref="https://www.givingfountain.org/directory/dc917b98-89c6-4003-bf2d-a4ac8f848c7b"
+  actionLabel="Donate with GivingFountain"
+  actionRel="noopener"
+>
 
-![Community 4 Autism - Nonprofit Giveback Solution](/assets/images/community-4-autism-logo-blue-1.png)
+A 501(c)(3) nonprofit organization (EIN 92-2808564), **Community 4 Autism** was established in June 2023. Your tax-deductible donation directly supports families of children and individuals diagnosed with autism.
 
- Donate with GivingFountain
+</GivebackSection>

@@ -38,6 +38,9 @@
 - Converted the insurance content entry to MDX so its prose, carrier data, and
   FAQ data have one editable source; reduced `InsurancePage.astro` to a
   presentation-only wrapper that renders the content slot.
+- Reconstructed the giveback page's four live-derived content bands and
+  restored its Amazon wishlist and GivingFountain actions without carrying
+  over HubSpot layout wrappers.
 - Restored 32 blockquotes across 15 English and Spanish blog posts, including
   source emphasis, links, and the self-hosted quote-mark decoration; fixed
   fallback extraction to preserve them.

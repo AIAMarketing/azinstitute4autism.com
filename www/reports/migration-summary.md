@@ -25,7 +25,7 @@ Live pages inspected during the pass include:
 
 - English and Spanish homepages
 - ABA Therapy, Autism Evaluations, and Learner Social Club
-- About, Team, and Client Consultation
+- About, Team, Client Consultation, and Giveback & Donate
 - English and Arabic Library indexes
 - Representative current library articles
 
@@ -47,6 +47,9 @@ Implemented fidelity work includes:
 - Rebuilt the contact page around the live two-column content/form section and
   full-width Leaflet map while retaining local clickable obfuscated phone
   links.
+- Rebuilt the giveback page as four source-faithful full-width sections with
+  its original image/copy proportions, fundraiser color band, nonprofit logo,
+  emphasis, and external donation calls to action.
 - Rebuilt library indexes and blog-post presentation around the live sidebar,
   article list, byline, featured-image, and counter patterns.
 - Converted FAQ-bearing posts to MDX and routed their accordions, the
@@ -68,6 +71,8 @@ Implemented fidelity work includes:
   and the Blue Cross Blue Shield mark is emphasized at 125% of the standard
   desktop logo width, following its treatment on the live homepage rather
   than preserving the live pages' differing row spacing.
+- The Community 4 Autism logo on `/donate-autism-giveback` is horizontally
+  centered on mobile instead of retaining the live page's left alignment.
 
 ## URLs and Redirects
 
