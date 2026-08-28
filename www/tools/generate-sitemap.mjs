@@ -7,7 +7,7 @@ async function walk(dir) {
   for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
     const target = path.join(dir, entry.name);
     if (entry.isDirectory()) output.push(...await walk(target));
-    else if (entry.name.endsWith('.md')) output.push(target);
+    else if (/\.mdx?$/.test(entry.name)) output.push(target);
   }
   return output;
 }
