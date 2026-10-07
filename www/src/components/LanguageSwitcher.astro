@@ -1,23 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublicationManifest } from '../utils/publication';
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const bare = pathname.replace(/^\/(ar|es)(?=\/|$)/, '') || '/';
-const pages = await getCollection('pages', ({ data }) => !data.draft);
-const posts = await getCollection('blog', ({ data }) => !data.draft);
-const available = new Set<string>(['/', '/library', '/es', '/es/library', '/ar', '/ar/library']);
-for (const entry of pages) {
-  const prefix = entry.data.lang === 'en' ? '' : `/${entry.data.lang}`;
-  const route = entry.data.slug === 'index'
-    ? prefix || '/'
-    : entry.data.slug === 'library'
-      ? `${prefix}/library`
-      : `${prefix}/${entry.data.slug}`;
-  available.add(route);
-}
-for (const entry of posts) {
-  const prefix = entry.data.lang === 'en' ? '' : `/${entry.data.lang}`;
-  available.add(`${prefix}/library/${entry.data.slug}`);
-}
+const available = new Set((await getPublicationManifest()).filter((page) => page.eligible).map((page) => page.route));
 
 const langMeta: Record<string, { short: string; full: string }> = {
   en: { short: 'EN', full: 'English' },

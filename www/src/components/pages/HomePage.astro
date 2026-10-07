@@ -1,5 +1,5 @@
 ---
-import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HomeBenefits from '../home/HomeBenefits.astro';
 import HomeDirector from '../home/HomeDirector.astro';
@@ -13,12 +13,9 @@ import HomeSkills from '../home/HomeSkills.astro';
 import HomeTestimonials from '../home/HomeTestimonials.astro';
 import type { HomePageContent, HomeSection } from '../../types/home-sections';
 
-interface Props { lang?: string }
-const { lang = 'en' } = Astro.props;
-const es = lang === 'es';
-const entry = await getEntry('pages', es ? 'es/index' : 'en/index');
-if (!entry) throw new Error(`[HomePage] Content entry not found for lang="${lang}". If running in dev, restart the dev server to rebuild the content layer cache.`);
-const { title, description, canonical } = entry.data;
+interface Props { entry: CollectionEntry<'pages'> }
+const { entry } = Astro.props;
+const { title, description, lang } = entry.data;
 
 function fromHomeContent(home: HomePageContent): HomeSection[] {
   return [
@@ -39,7 +36,7 @@ const sections: HomeSection[] = entry.data.home
   ? fromHomeContent(entry.data.home)
   : ((entry.data.sections ?? []) as HomeSection[]);
 ---
-<BaseLayout {title} {description} {canonical} {lang}>
+<BaseLayout {title} {description} {lang}>
   {sections.map((section) => {
     switch (section.type) {
       case 'hero':

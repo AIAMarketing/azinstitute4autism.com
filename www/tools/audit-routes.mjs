@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { load } from 'cheerio';
 import fg from 'fast-glob';
 import matter from 'gray-matter';
+import { createPublicationManifest } from '../src/utils/publication-policy.ts';
 
 export const ORIGIN = 'https://www.azinstitute4autism.com';
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
@@ -171,16 +172,20 @@ function metadata(html) {
 
 async function localInventory() {
   const records = new Map();
+  const entries = [];
   for (const file of (await fg('src/content/{pages,blog}/**/*.{md,mdx}', { cwd: ROOT })).sort(compare)) {
     const source = await fs.readFile(path.join(ROOT, file), 'utf8');
     const { data } = matter(source);
-    const prefix = data.lang === 'en' ? '' : `/${data.lang}`;
-    const route = normalizeReference(prefix + (file.includes('/blog/') ? `/library/${data.slug}` : data.slug === 'index' ? '/' : `/${data.slug}`)).route;
-    if (records.has(route)) throw new Error(`Duplicate local content route: ${route}`);
+    const [, , collection, ...parts] = file.split('/');
+    entries.push({ id: parts.join('/').replace(/\.mdx?$/, ''), collection, data, file, source });
+  }
+  for (const { route, eligible, sitemapEligible, canonical, externalCanonical, entry } of createPublicationManifest(entries, ORIGIN)) {
+    const { data, file, source } = entry;
     records.set(route, {
       route, source: file, draft: data.draft === true,
       placeholder: /TODO: Replace this placeholder/i.test(source),
-      sourceCanonical: data.canonical ?? null, locale: data.lang, generated: false
+      sourceCanonical: data.canonical ?? null, locale: data.lang, generated: false,
+      eligible, noindex: data.noindex === true, policyCanonical: canonical, externalCanonical, sitemapEligible
     });
   }
   const htmlFiles = (await fg('dist/**/*.html', { cwd: ROOT })).sort(compare);

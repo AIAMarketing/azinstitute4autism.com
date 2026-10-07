@@ -1,10 +1,11 @@
-const allowIndexing = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true';
+import { allowIndexing } from '../utils/publication';
+import site from '../data/site.json';
 
 const body = allowIndexing
   ? [
       'User-agent: *',
       'Allow: /',
-      'Sitemap: https://www.azinstitute4autism.com/sitemap.xml',
+      `Sitemap: ${new URL('/sitemap.xml', site.url).href}`,
       ''
     ].join('\n')
   : [

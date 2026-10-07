@@ -2,7 +2,7 @@
 title: "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office"
 description: "Discover how Arizona Institute for Autism"
 slug: "new-aia-scottsdale-office"
-canonical: "https://www.azinstitute4autism.com/library/new-aia-scottsdale-office"
+canonical: "https://www.scottsdale.org/airpark/features/integrity-empowerment-and-excellence-arizona-institute-for-autism-expands-to-new-office/article_79c31a18-2f35-11ee-9459-6f29f5a08420.html"
 lang: "en"
 translationKey: "new-aia-scottsdale-office"
 featuredImage: "/assets/images/hero-integrity-empowerment-excellence_800x.jpg"
@@ -11,6 +11,7 @@ author: "rula-diab"
 category: "Library"
 tags: []
 draft: false
+noindex: true
 ---
 
 Check out this article about our new clinic location. Our Clinical Director Rula Diab met with Scottsdale Airpark to share the details of the expansion. You can find [the original article](https://www.scottsdale.org/airpark/features/integrity-empowerment-and-excellence-arizona-institute-for-autism-expands-to-new-office/article_79c31a18-2f35-11ee-9459-6f29f5a08420) on the Scottsdale Airpark News website.

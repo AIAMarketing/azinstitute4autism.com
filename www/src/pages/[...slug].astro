@@ -1,11 +1,26 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
+import { getPublicationManifest } from '../utils/publication';
 import PageLayout from '../layouts/PageLayout.astro';
+import BlogPostLayout from '../layouts/BlogPostLayout.astro';
+import HomePage from '../components/pages/HomePage.astro';
+import ArabicHome from '../components/pages/ArabicHome.astro';
+import LibraryEnglish from '../components/pages/LibraryEnglish.astro';
+import LibrarySpanish from '../components/pages/LibrarySpanish.astro';
+import LibraryArabic from '../components/pages/LibraryArabic.astro';
 export async function getStaticPaths() {
-  const pages = await getCollection('pages', ({ data }) => data.lang === 'en' && !['index', 'library'].includes(data.slug) && !data.draft);
-  return pages.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+  return (await getPublicationManifest()).filter((page) => page.eligible).map(({ route, entry }) => ({
+    params: { slug: route === '/' ? undefined : decodeURI(route.slice(1)) },
+    props: { entry }
+  }));
 }
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
-<PageLayout entry={entry}><Content /></PageLayout>
+{entry.collection === 'blog'
+  ? <BlogPostLayout entry={entry}><Content /></BlogPostLayout>
+  : entry.data.slug === 'index'
+    ? entry.data.lang === 'ar' ? <ArabicHome /> : <HomePage entry={entry} />
+    : entry.data.slug === 'library'
+      ? entry.data.lang === 'es' ? <LibrarySpanish /> : entry.data.lang === 'ar' ? <LibraryArabic /> : <LibraryEnglish />
+      : <PageLayout entry={entry}><Content /></PageLayout>}

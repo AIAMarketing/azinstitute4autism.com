@@ -6,4 +6,5 @@ canonical: "https://www.azinstitute4autism.com/employee-portal"
 lang: "en"
 translationKey: "employee-portal"
 draft: false
+noindex: true
 ---

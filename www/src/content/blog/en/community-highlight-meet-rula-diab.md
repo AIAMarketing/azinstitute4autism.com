@@ -2,7 +2,7 @@
 title: "Community Highlights: Meet Rula Diab of Arizona Institute for Autism"
 description: "Read about Rula Diab"
 slug: "community-highlight-meet-rula-diab"
-canonical: "https://www.azinstitute4autism.com/library/community-highlight-meet-rula-diab"
+canonical: "https://voyagephoenix.com/interview/community-highlights-meet-rula-diab-of-arizona-institute-for-autism/"
 lang: "en"
 translationKey: "community-highlight-meet-rula-diab"
 featuredImage: "/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg"
@@ -11,6 +11,7 @@ author: "rula-diab"
 category: "Library"
 tags: []
 draft: false
+noindex: true
 ---
 
 Check out the following article from **Voyage Phoenix** about our Clinical Director Rula Diab. Read how Rula's passion to provide accessible ABA therapy for children with Autism Spectrum Disorder drove her to create the Arizona Institute for Autism. You may also read the [original article](https://voyagephoenix.com/interview/community-highlights-meet-rula-diab-of-arizona-institute-for-autism/) on the Voyage Phoenix website.

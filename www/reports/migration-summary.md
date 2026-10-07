@@ -90,8 +90,10 @@ Clean public URLs are preserved, including:
 - `/library/post-slug`
 - available `/es/...` and `/ar/library/...` routes
 
-The generated sitemap contains 97 canonical URLs. Nginx rewrites exist only
-for the brief aliases `/aba`, `/autismevaluations`, and `/learnersocialclub`.
+Phase 3A replaces the earlier 97-canonical sitemap with publication-policy
+output: 92 local URLs in an indexing-enabled build and none in staging.
+Nginx rewrites remain limited to the brief aliases `/aba`, `/autismevaluations`,
+and `/learnersocialclub`.
 
 ## Forms
 
@@ -293,3 +295,151 @@ git diff --check
 - Diff whitespace check: passed.
 - No changes to application content, dependencies, lockfile, Phase 1 evidence,
   or `merge-plan.md`. No Phase 3 work was started.
+
+## Phase 3A: Route Eligibility, Canonicals, and Indexing — 2026-10-07 UTC
+
+This section records new implementation and verification. Earlier Phase 1
+evidence and the Phase 2 checkpoint are preserved. No deployment, form
+submission, backend activation, dependency change, content reconciliation,
+hreflang, translation-alternate graph, article schema, or FAQ schema work was
+performed.
+
+### Publication Architecture
+
+`src/utils/publication-policy.ts` is the shared, framework-independent
+TypeScript policy. It derives local routes from collection/language/slug,
+normalizes public paths, rejects route collisions (including drafts and utility
+paths), validates canonicals, and decides route and sitemap eligibility.
+`src/utils/publication.ts` adapts the Astro collections and reads the existing
+`PUBLIC_ALLOW_INDEXING` switch. The canonical site origin comes from `site.json`,
+also used by Astro configuration.
+
+All content routes now pass through `src/pages/[...slug].astro`. The former
+fixed home and Library routes could bypass `draft`; they now use the same
+manifest as other pages. The existing Arabic home and three Library index
+templates were moved to presentation components, retaining their visible
+content. The English/Spanish home component receives its selected entry.
+Shared layouts obtain canonical/indexing policy by the actual local route;
+individual templates no longer invent or pass canonical strings.
+
+The sitemap is an Astro endpoint generated alongside HTML. Its locations come
+from eligible local route URLs, never canonical strings. The old public
+sitemap copy was removed. `generate:sitemap` delegates to the Astro build
+instead of maintaining a separate frontmatter-regex generator. Route discovery
+and the source-link audit fallback reuse the shared publication policy; route
+evidence now records eligibility, noindex, policy canonical, external-canonical
+status, and production sitemap eligibility separately from rendered metadata.
+
+The sole new frontmatter/schema field is `noindex`, a boolean defaulting to
+false. Existing `draft` and `canonical` fields cover the remaining rules.
+
+### Verified Exceptions and Read-Only Production Evidence
+
+Six successful GET requests were made between **02:42:02 and 02:42:08 UTC**:
+`robots.txt` first, then the five routes below. Requests were sequential, at
+least one second apart, with redirects not followed. Robots allowed these
+paths. No publisher pages, forms, or production APIs were requested. The web
+tool could not retrieve robots.txt; the direct GET succeeded. All five route
+observations agree with the accepted saved production evidence; these are
+new checks, not silent revisions to historical findings.
+
+| Route | Fresh HTTP / robots evidence | Implemented exception | Production sitemap |
+| --- | --- | --- | --- |
+| `/ar` | 404 at 02:42:08 | Existing placeholder marked `draft: true`; no HTML route | Excluded |
+| `/schedule-consultation` | 200 / `noindex` at 02:42:04 | `noindex: true`; accessible, self-canonical | Excluded |
+| `/employee-portal` | 200 / `noindex` at 02:42:05 | `noindex: true`; accessible, self-canonical | Excluded |
+| `/library/community-highlight-meet-rula-diab` | 200 / `noindex` at 02:42:06 | `noindex: true`; external canonical retained | Excluded |
+| `/library/new-aia-scottsdale-office` | 200 / `noindex` at 02:42:07 | `noindex: true`; external canonical retained | Excluded |
+
+The exact verified external canonical targets are:
+
+- [VoyagePhoenix original](https://voyagephoenix.com/interview/community-highlights-meet-rula-diab-of-arizona-institute-for-autism/)
+- [Scottsdale.org original](https://www.scottsdale.org/airpark/features/integrity-empowerment-and-excellence-arizona-institute-for-autism-expands-to-new-office/article_79c31a18-2f35-11ee-9459-6f29f5a08420.html)
+
+Only five content files changed, all in frontmatter: the Arabic home draft
+flag, four noindex flags, and the two external canonical values. Portal access
+and replacement behavior remain unchanged and deferred to human decision.
+
+### Before / After and Output Verification
+
+| Behavior | Before Phase 3A | After Phase 3A |
+| --- | --- | --- |
+| Route publication | Collection routes filtered drafts; fixed indexes bypassed them | Every content route uses the same eligibility manifest |
+| Generated HTML | 97 pages, including `/ar` placeholder | 96 pages; only `/ar` removed |
+| Canonical handling | Optional unchecked values passed by templates; syndicated posts self-canonicalized | Exactly one normalized self canonical, or the verified external exception; missing ordinary values derive from the route |
+| Indexing-enabled robots | All pages defaulted to indexable | 92 `index,follow`; four verified `noindex,follow` exceptions |
+| Staging robots | Global `noindex,nofollow` | Global protection retained on all 96 pages; no page override |
+| Sitemap | Static list of 97 frontmatter canonicals | 92 eligible local URLs when indexing is enabled; empty in staging |
+| Robots sitemap advertisement | Environment dependent | Still advertised only in the indexing-enabled build |
+
+Published noindex pages remain accessible. An external canonical independently
+excludes a page from the sitemap; it does not automatically invent a noindex
+directive. The two real syndicated articles explicitly retain their verified
+noindex status. Invalid/relative/unsafe canonicals, local targets that disagree
+with the route or public origin, duplicate published canonical targets, and
+route collisions fail validation. Duplicate frontmatter keys also fail parsing.
+
+The language menu now uses eligible routes without a hardcoded `/ar` entry.
+The Arabic header logo falls back to the existing English homepage while its
+localized homepage is unpublished. No hreflang or new translation relationships
+were introduced. Main content text, titles, and H1s are unchanged on all 96
+retained routes. There are no stylesheet or asset changes.
+
+The indexing-enabled local artifact was checked at **02:54:56 UTC**: all 96
+heads matched their manifest canonicals/robots; 92 local sitemap URLs; no `/ar`.
+The final ordinary build restores staging output with 96 noindex pages and
+zero sitemap locations. No environment files or deployment configuration changed.
+
+### Regression Coverage and Reproduction
+
+`npm run test:publication` passes **19 tests** covering normal publication,
+draft exclusion, accessible noindex pages, external canonicals independently
+of noindex, normalized/missing/malformed/duplicate canonicals, cross-collection
+and cross-locale collisions, reserved routes, staging protection, and all five
+verified exceptions. Generated-head checks reject absent, duplicate, and invalid
+canonical tags. It builds the actual application in temporary directories in
+both environment modes, then additionally marks a home and Library index as
+drafts and confirms their routes disappear. The tests never change real source,
+environment configuration, or `dist`.
+
+Validation from `www/`, in the requested order (with evidence refresh steps):
+
+```sh
+npm run test:publication
+npm run build
+PUBLIC_ALLOW_INDEXING=true npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+npm run audit:links
+npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+git diff --check
+```
+
+All required commands passed. Each build checked 71 files with zero errors,
+warnings, or hints, and generated 96 HTML pages. The link audit found zero
+broken internal links. Existing regression suites also passed: 20 Markdown
+tests and nine route-audit tests. Dependencies and the lockfile are unchanged.
+The source-only link fallback also passed in an isolated directory with zero
+broken links. The `generate:sitemap` compatibility command was verified using
+Astro's public build API, followed by another normal staging build.
+
+The final durable local reconciliation is
+[`route-reconciliation-2026-10-07-offline-04-11-25-151Z.json`](route-reconciliation-2026-10-07-offline-04-11-25-151Z.json).
+It reuses the earlier 70 production request records with their original
+observation dates; neither offline reconciliation made new production requests.
+Only the final staging reconciliation is retained in the repository; the
+intermediate indexing reconciliation was moved to temporary storage after its
+checks. The six targeted requests described above are separate fresh evidence.
+
+The normalized discovery inventory remains 129 routes, with 102 URLs in the
+saved production sitemap. Local generated routes decrease from 97 to 96;
+sitemap/local overlap stays 92, and the ten sitemap-listed live-only routes
+remain outstanding. `/ar` remains visible in the inventory as draft,
+ineligible, not generated, and verified absent on production. Earlier audit
+files retain their historical facts.
+
+No new human publication-policy decision is needed for Phase 3A. Human gates
+for portal access, forms/backends, analytics/consent, landing-page ownership,
+and conflicting service facts remain deferred. Phase 3B was not started.

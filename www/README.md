@@ -53,8 +53,12 @@ PUBLIC_ALLOW_INDEXING=false
 ```
 
 The site still renders when the AIA API is unavailable. Migration and staging
-builds emit `noindex,nofollow` by default; set `PUBLIC_ALLOW_INDEXING=true`
-only for production builds on the canonical domain.
+builds emit `noindex,nofollow` by default. `PUBLIC_ALLOW_INDEXING=true` enables
+production publication policy, including per-page noindex exceptions. Exercise
+that mode locally with `PUBLIC_ALLOW_INDEXING=true npm run build`; this does
+not deploy anything or change environment files. Run `npm run build` afterward
+to restore staging output. Only explicitly authorized production deployments
+should publish indexing-enabled artifacts.
 
 ## View And Build
 
@@ -77,13 +81,12 @@ Useful development URLs include:
 /library
 /es
 /es/library
-/ar
 /ar/library
 ```
 
-### Production Build
+### Static Build
 
-Generate the static production site:
+Generate the static site with staging indexing protection:
 
 ```sh
 npm run build
@@ -172,6 +175,54 @@ Article content goes here.
 ```
 
 Set `draft: true` while preparing unpublished content.
+
+### Publication, Canonicals, and Sitemap
+
+`src/utils/publication-policy.ts` owns route eligibility, normalized public
+URLs, canonical validation, robots values, and sitemap eligibility.
+`src/utils/publication.ts` loads the Astro collections into that manifest.
+`src/pages/[...slug].astro` generates every content route from eligible entries,
+including home and Library indexes; their existing presentation components are
+under `src/components/pages/`. Shared SEO and the generated sitemap use that
+same manifest. The route and source-link audits also reuse the policy.
+
+- `draft: true` means unpublished: no generated HTML route in either build mode.
+  The Arabic homepage `/ar` remains a draft; published Arabic Library routes
+  remain available. Navigation does not link to the unpublished homepage.
+- `noindex: true` keeps a published route accessible, emits `noindex,follow`
+  in indexing-enabled builds, and excludes it from the sitemap. It defaults
+  to `false`. Staging always overrides this with `noindex,nofollow`.
+- An omitted `canonical` gets the normalized public URL from `site.json` and
+  its local route. A supplied local canonical must match that route. Invalid
+  canonicals, duplicate canonical targets, and route collisions fail validation.
+- Verified syndicated articles use their existing `canonical` field for the
+  external publisher URL. External-canonical routes are excluded from the
+  sitemap even when they are not marked noindex. Do not use canonical values
+  to create local routes or sitemap locations.
+- `src/pages/sitemap.xml.ts` generates `dist/sitemap.xml` on every build.
+  Staging emits an empty sitemap and does not advertise it in `robots.txt`.
+  Indexing-enabled builds include only eligible, indexable, self-canonical
+  local routes. There is no hand-maintained `public/sitemap.xml`.
+- `npm run generate:sitemap` is a compatibility command that runs the Astro
+  build; it no longer writes a separate public sitemap from frontmatter strings.
+
+The verified noindex exceptions are `/schedule-consultation`, `/employee-portal`,
+`/library/community-highlight-meet-rula-diab`, and
+`/library/new-aia-scottsdale-office`. The last two also retain their verified
+external canonicals. The dated evidence is in `reports/migration-summary.md`.
+
+Run `npm run test:publication` for policy tests and isolated builds of the
+actual application in staging and indexing-enabled modes. Fixtures test draft
+content, draft home/Library indexes, missing and external canonicals, and
+generated head/sitemap consistency without modifying the working site's output.
+The policy is TypeScript; Node audit/test commands use `--experimental-strip-types`
+for compatibility with the declared Node 22.12 minimum. Dependencies are unchanged.
+
+After publication changes, build and run `npm run audit:routes -- --offline`
+before `npm run audit:routes -- --check`. This creates a newly dated local
+reconciliation using saved production observations, preserving earlier evidence.
+Saved rendered metadata is specific to its build mode: after restoring the
+normal staging build, reconcile that output again before checking it.
 
 ### Links And Buttons
 

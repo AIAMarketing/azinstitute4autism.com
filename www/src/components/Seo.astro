@@ -1,33 +1,33 @@
 ---
+import { allowIndexing } from '../utils/publication';
+import { robotsFor, type Publication } from '../utils/publication-policy';
 interface Props {
   title: string;
   description?: string;
-  canonical?: string;
+  publication: Publication;
   image?: string;
   lang?: string;
   type?: 'website' | 'article';
-  robots?: string;
 }
 const {
   title,
   description = '',
-  canonical,
+  publication,
   image,
   lang = 'en',
-  type = 'website',
-  robots
+  type = 'website'
 } = Astro.props;
-const defaultRobots = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true' ? 'index,follow' : 'noindex,nofollow';
+const { canonical } = publication;
 const absoluteImage = image ? new URL(image, Astro.site ?? Astro.url).href : undefined;
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="robots" content={robots ?? defaultRobots} />
-{canonical && <link rel="canonical" href={canonical} />}
+<meta name="robots" content={robotsFor(publication, allowIndexing)} />
+<link rel="canonical" href={canonical} />
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-{canonical && <meta property="og:url" content={canonical} />}
+<meta property="og:url" content={canonical} />
 {absoluteImage && <meta property="og:image" content={absoluteImage} />}
 <meta name="twitter:card" content={absoluteImage ? 'summary_large_image' : 'summary'} />
 <meta name="twitter:title" content={title} />

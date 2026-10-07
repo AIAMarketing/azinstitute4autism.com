@@ -1,9 +1,10 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import { satteri } from '@astrojs/markdown-satteri';
+import site from './src/data/site.json' with { type: 'json' };
 
 export default defineConfig({
-  site: 'https://www.azinstitute4autism.com',
+  site: site.url,
   trailingSlash: 'never',
   compressHTML: true,
   integrations: [mdx()],

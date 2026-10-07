@@ -5,7 +5,7 @@ slug: "index"
 canonical: "https://www.azinstitute4autism.com/ar"
 lang: "ar"
 translationKey: "home"
-draft: false
+draft: true
 ---
 
 <!-- TODO: Replace this placeholder with reviewed Arabic content. -->

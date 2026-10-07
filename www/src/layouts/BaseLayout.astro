@@ -3,9 +3,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Seo from '../components/Seo.astro';
 import site from '../data/site.json';
+import { getPublication } from '../utils/publication';
 import '../styles/global.css';
 import '../styles/rtl.css';
-const { title, description, canonical, image, lang = 'en', type = 'website' } = Astro.props;
+const { title, description, image, lang = 'en', type = 'website' } = Astro.props;
+const publication = await getPublication(Astro.url.pathname);
 const dir = lang === 'ar' ? 'rtl' : 'ltr';
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -30,7 +32,7 @@ const organizationSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/assets/images/favicon.svg" />
-    <Seo title={title} description={description} canonical={canonical} image={image} lang={lang} type={type} />
+    <Seo title={title} description={description} publication={publication} image={image} lang={lang} type={type} />
     <slot name="head" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
   </head>

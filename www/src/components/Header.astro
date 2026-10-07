@@ -3,7 +3,10 @@ import Button from './Button.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import MainNav from './MainNav.astro';
 import MobileNav from './MobileNav.astro';
+import { getPublicationManifest } from '../utils/publication';
 const { lang = 'en' } = Astro.props;
+const localizedHome = lang === 'en' ? '/' : `/${lang}`;
+const homeHref = (await getPublicationManifest()).some((page) => page.eligible && page.route === localizedHome) ? localizedHome : '/';
 const utility = lang === 'es'
   ? { credit: 'Solicitar CareCredit', bill: 'Pagar mi factura' }
   : { credit: 'Apply Care Credit', bill: 'Pay My Bill' };
@@ -16,7 +19,7 @@ const utility = lang === 'es'
     </div>
   </div>
   <div class="container header-inner">
-    <a class="brand" href={lang === 'en' ? '/' : `/${lang}`}>
+    <a class="brand" href={homeHref}>
       <img src="/assets/images/aia-logo.svg" alt="Arizona Institute for Autism" width="150" height="70" />
     </a>
     <MainNav lang={lang} />

@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-import BlogIndexLayout from '../../../layouts/BlogIndexLayout.astro';
-import BlogCard from '../../../components/BlogCard.astro';
-const posts = (await getCollection('blog', ({ data }) => data.lang === 'es' && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+import { getPublicationManifest } from '../../utils/publication';
+import BlogIndexLayout from '../../layouts/BlogIndexLayout.astro';
+import BlogCard from '../BlogCard.astro';
+const posts = (await getPublicationManifest()).flatMap(({ eligible, entry }) => eligible && entry.collection === 'blog' && entry.data.lang === 'es' ? [entry] : []).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const popular = posts.slice(0, 5);
 ---
 <BlogIndexLayout title="La Biblioteca en AZ Institute for Autism" description="Noticias sobre terapia ABA y educación especial, casos de estudio, recetas, editoriales y tutoriales para y sobre nuestros estudiantes con autismo." lang="es">

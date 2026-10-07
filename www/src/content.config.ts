@@ -14,6 +14,7 @@ const shared = {
   lang: language,
   translationKey: z.string().optional(),
   draft: z.boolean().default(false),
+  noindex: z.boolean().default(false),
   home: homePageSchema.optional(),
   sections: homeSectionsSchema.optional()
 };

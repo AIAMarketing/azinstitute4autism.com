@@ -2,20 +2,13 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import fg from 'fast-glob';
 import matter from 'gray-matter';
+import { createPublicationManifest } from '../src/utils/publication-policy.ts';
 
 const root = path.resolve(new URL('..', import.meta.url).pathname);
 const dist = path.join(root, 'dist');
 const normalizePath = (value) => {
   const decoded = decodeURIComponent(value).replace(/\/index(?:\.html)?$/, '/').replace(/\.html$/, '');
   return decoded !== '/' ? decoded.replace(/\/$/, '') : decoded;
-};
-const contentRoute = (file, data) => {
-  if (!data.slug || data.draft) return null;
-  const languagePrefix = data.lang === 'en' ? '' : `/${data.lang}`;
-  if (file.includes('/blog/')) return `${languagePrefix}/library/${data.slug}`;
-  if (data.slug === 'index') return languagePrefix || '/';
-  if (data.slug === 'library') return `${languagePrefix}/library`;
-  return `${languagePrefix}/${data.slug}`;
 };
 const resolveInternalReference = (reference, route) => {
   const cleaned = reference.trim().replace(/^<|>$/g, '');
@@ -39,15 +32,20 @@ async function walk(dir) {
 }
 const distExists = await fs.access(dist).then(() => true).catch(() => false);
 if (!distExists) {
-  const routes = new Set(['/', '/library', '/es', '/es/library', '/ar', '/ar/library']);
-  const contentFiles = await fg('src/content/**/*.{md,mdx}', { cwd: root, absolute: true });
+  const routes = new Set();
+  const contentFiles = await fg('src/content/{pages,blog}/**/*.{md,mdx}', { cwd: root });
   const contentRecords = [];
+  const entries = [];
   for (const file of contentFiles) {
-    const parsed = matter(await fs.readFile(file, 'utf8'));
-    const route = contentRoute(file, parsed.data);
-    if (!route) continue;
+    const parsed = matter(await fs.readFile(path.join(root, file), 'utf8'));
+    const [, , collection, ...parts] = file.split('/');
+    entries.push({ id: parts.join('/').replace(/\.mdx?$/, ''), collection, data: parsed.data, file: path.join(root, file), text: parsed.content });
+  }
+  const site = JSON.parse(await fs.readFile(path.join(root, 'src/data/site.json'), 'utf8'));
+  for (const { route, eligible, entry } of createPublicationManifest(entries, site.url)) {
+    if (!eligible) continue;
     routes.add(normalizePath(route));
-    contentRecords.push({ file, route: normalizePath(route), text: parsed.content });
+    contentRecords.push({ file: entry.file, route: normalizePath(route), text: entry.text });
   }
   const publicFiles = new Set((await fg('public/**/*', { cwd: root, onlyFiles: true })).map((file) => `/${file.replace(/^public\//, '')}`));
   const broken = [];

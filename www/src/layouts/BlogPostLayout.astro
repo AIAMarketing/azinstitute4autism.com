@@ -4,7 +4,7 @@ import BlogPostFooter from '../components/BlogPostFooter.astro';
 import LikeViewCounter from '../components/LikeViewCounter.astro';
 const { entry } = Astro.props;
 ---
-<BaseLayout title={entry.data.title} description={entry.data.description} canonical={entry.data.canonical} image={entry.data.featuredImage} lang={entry.data.lang} type="article">
+<BaseLayout title={entry.data.title} description={entry.data.description} image={entry.data.featuredImage} lang={entry.data.lang} type="article">
   <article class="blog-post">
     <header class="article-header container">
       <h1>{entry.data.title}</h1>
