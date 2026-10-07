@@ -1,0 +1,2044 @@
+ARIZONA INSTITUTE FOR AUTISM — MIGRATION CONVERSATION
+Export date: 2026-10-07
+
+User task prompts and final assistant responses, in conversation order.
+Message text is preserved, including its original Markdown formatting.
+Excluded: progress updates, analysis, tool calls/results, system/developer
+instructions, and automatically supplied project/environment context.
+Coverage: the initial migration-audit request through the request for this
+export. The confirmation that this file was created is not included.
+Historical statements are preserved as written; this is a transcript, not
+an updated migration status report.
+
+==============================================================================
+01. USER
+==============================================================================
+
+You are auditing an existing Astro project that is intended to replace the current Arizona Institute for Autism website:
+
+https://www.azinstitute4autism.com/
+
+This migration project has not been actively worked on for some time. The live site has continued to change substantially since work on this repository paused.
+
+Your task is to determine, as efficiently and accurately as possible:
+
+1. what has already been migrated,
+2. what work was in progress when development stopped,
+3. how the repository differs from the current live site,
+4. what is stale or obsolete,
+5. what remains to be migrated, and
+6. the best sequence of next steps for resuming the migration.
+
+This is an AUDIT AND PLANNING task, not an implementation task.
+
+## Ground rules
+
+- Do not modify application code.
+- Do not rewrite content.
+- Do not update dependencies.
+- Do not run deployment commands.
+- Do not submit any forms or send POST requests to production endpoints.
+- Do not alter production systems.
+- Do not assume repository content is current merely because it already exists.
+- Treat the current live website as the authoritative source for current public-facing site content unless repository documentation clearly describes a newer unpublished decision.
+- Distinguish verified findings from assumptions.
+- Prefer evidence from the repository, Git history, and the current live site.
+- Avoid exhaustive file-by-file reading when targeted inspection will answer the question.
+- Respect robots.txt and use reasonable request rates while inspecting the live site.
+
+You may create ONE audit document under `docs/` if useful, but make no other repository changes. If an appropriate migration-status/audit document already exists, prefer updating that rather than creating a duplicate.
+
+## Known project context
+
+This repository is the full-site migration project, not merely the separate Google Ads landing-page project.
+
+The migration direction has been:
+
+- HubSpot-hosted site -> Astro
+- Markdown/content-file-first architecture where appropriate
+- TypeScript
+- preservation or improvement of SEO
+- preservation of existing useful URLs where practical
+- redirects where URLs must change
+- migration of images/assets away from HubSpot where appropriate
+- self-hosted fonts/media where appropriate
+- support for multilingual content
+- maintainability without unnecessary HubSpot dependencies
+
+Some requirements, content, navigation, SEO decisions, service details, analytics behavior, forms, and other parts of the live site have changed since this repository was last actively developed.
+
+Do NOT treat the known context above as proof of the current implementation. Verify what actually exists.
+
+# Phase 1 — Establish repository state
+
+First identify the repository root and inspect only the files needed to understand the project.
+
+Look for and review as applicable:
+
+- `AGENTS.md` / `AGENTS.override.md`
+- README files
+- project/migration documentation
+- TODO or status documents
+- Astro configuration
+- `package.json` and lockfile
+- `src/pages`
+- `src/content`
+- layouts/components relevant to site-wide migration
+- locale/i18n structure
+- redirects
+- scripts related to migration/import/scraping/content conversion
+- public/static asset structure
+- any retained HubSpot exports or mirrors
+- SEO/schema/sitemap infrastructure
+- forms and analytics integrations
+- deployment configuration
+
+Also inspect Git:
+
+- current branch
+- `git status`
+- recent useful commit history
+- commits around the last meaningful migration work
+- uncommitted or abandoned work
+- TODO/FIXME markers where they appear relevant
+
+Do not infer migration completion merely from a file existing.
+
+Determine approximately when substantive migration work stopped and summarize what the project appears to have been doing at that point.
+
+# Phase 2 — Build the current Astro inventory
+
+Create an inventory of what the repository currently implements.
+
+At minimum determine:
+
+- routes/pages
+- content collections
+- Library/blog content
+- service pages
+- location pages, if any
+- team/about/careers/etc.
+- multilingual routes/content
+- layouts/templates
+- navigation/footer structures
+- forms
+- metadata and canonical handling
+- Open Graph/social metadata
+- structured data/schema
+- sitemap/robots handling
+- redirects
+- image/media handling
+- fonts
+- analytics/tracking
+- external integrations
+- reusable content/components
+- migration/import tooling
+
+Classify each major area as:
+
+- apparently complete
+- partially implemented
+- scaffolded only
+- stale/needs comparison
+- absent
+- unclear
+
+# Phase 3 — Inventory the CURRENT live site
+
+Inspect the current production site at:
+
+https://www.azinstitute4autism.com/
+
+Start with efficient discovery sources rather than crawling blindly:
+
+1. `robots.txt`
+2. sitemap(s)
+3. primary navigation
+4. footer navigation
+5. major content indexes such as the Library
+6. language/locale navigation if present
+
+Construct a normalized inventory of current public URLs.
+
+For each relevant live URL, gather enough evidence to compare migration status, including where useful:
+
+- HTTP status
+- canonical URL
+- page title
+- meta description
+- H1
+- major section headings
+- content type/template
+- navigation relationships
+- structured data types
+- locale/language
+- major CTA/form destination
+- important linked assets
+- obvious HubSpot-specific dependencies
+
+Do NOT attempt to reproduce every word of every live page during this audit.
+
+The goal is to identify meaningful migration drift and missing work.
+
+# Phase 4 — Compare live site vs Astro
+
+Normalize routes before comparing them so trivial slash/query differences do not produce noise.
+
+Produce a route/content reconciliation with categories such as:
+
+### Live and Astro appear aligned
+Pages whose route and substantive content/function appear reasonably current.
+
+### Astro exists but is stale
+Pages already migrated but materially behind the current live version.
+
+Identify the nature of the drift where possible:
+
+- substantive content
+- service details
+- headings
+- CTA
+- metadata
+- internal links
+- imagery
+- navigation
+- schema
+- language versions
+- form behavior
+- compliance/tracking behavior
+- URL/redirect behavior
+
+### Live-only
+Current production pages/content that are absent from Astro.
+
+### Astro-only
+Pages/routes/content present in Astro but not on the current live site.
+
+Determine whether each appears to be:
+
+- planned future content
+- obsolete migration work
+- renamed/replaced content
+- a legitimate Astro-only utility route
+- unclear
+
+### Route changed
+Identify apparent renames, replacements, consolidations, or splits that will require decisions or redirects.
+
+### Needs human review
+Use this category where intent cannot safely be inferred.
+
+# Phase 5 — Check migration infrastructure
+
+Evaluate whether the current architecture still makes sense before additional content is migrated.
+
+Pay particular attention to:
+
+- Astro version and project structure
+- dependency age only where it materially affects resuming work
+- content collection design
+- frontmatter/schema consistency
+- reusable page templates
+- URL generation
+- canonical handling
+- redirects
+- sitemap generation
+- multilingual architecture
+- alternate-language/hreflang handling
+- images and remote asset dependencies
+- residual HubSpot URLs/assets/scripts
+- fonts
+- analytics/tracking architecture
+- forms
+- environment configuration
+- build/deployment assumptions
+
+Do not upgrade anything.
+
+Instead classify architecture findings as:
+
+- keep
+- verify
+- refactor before continuing migration
+- defer until later
+
+Run safe local checks that materially help the audit, such as the existing build/typecheck/lint commands, if dependencies are already available and doing so does not change the project state materially.
+
+Do not spend substantial time repairing failures. Record them as findings.
+
+# Phase 6 — Look for stale migration assumptions
+
+Specifically identify evidence that the migration was based on an older snapshot of the HubSpot site.
+
+Examples include:
+
+- pages whose live titles or content have substantially changed
+- old navigation
+- removed pages
+- new pages
+- old service descriptions
+- outdated age ranges or eligibility information
+- obsolete calls to action
+- old program/service naming
+- changed Library articles
+- new Library articles
+- missing translations
+- changed forms
+- outdated HubSpot embeds
+- outdated analytics/tracking assumptions
+- old SEO metadata
+- old internal-link structures
+- changed images/assets
+
+Do not silently fix these.
+
+Document them.
+
+# Phase 7 — Determine the actual migration state
+
+Based on evidence, give me a concise assessment such as:
+
+- approximately how much structural migration is complete
+- approximately how much content migration is complete
+- how much existing migrated content now requires reconciliation with production
+- whether the project is ready to resume page-by-page migration
+- whether any architectural work should happen first
+
+Do not invent false precision.
+
+Use qualitative estimates or broad ranges when exact percentages would be misleading.
+
+# Phase 8 — Recommend the resumption plan
+
+Produce a prioritized migration plan.
+
+Group work into practical phases, for example:
+
+1. architecture/infrastructure corrections
+2. live-site inventory reconciliation
+3. global layout/navigation/footer
+4. core service/conversion pages
+5. Library/content migration
+6. multilingual content
+7. redirects and SEO validation
+8. analytics/forms/integrations
+9. final QA and cutover
+
+Change this ordering if the evidence suggests a better sequence.
+
+For every recommended phase include:
+
+- objective
+- why it comes at that point
+- major work involved
+- prerequisites
+- meaningful risks
+- completion criteria
+
+Then identify the **next 3–7 concrete Codex-sized tasks** I should work on.
+
+These should be scoped tasks that can reasonably be completed and reviewed individually, not vague goals such as "finish migration."
+
+# Required final report
+
+At the end, present the audit in this structure:
+
+## Executive summary
+
+A short explanation of where the migration currently stands.
+
+## Last known project state
+
+What Git and repository evidence indicate was happening when work stopped.
+
+## Current architecture
+
+What exists and whether it remains suitable.
+
+## Migration coverage
+
+A compact breakdown of major site areas and their status.
+
+Prefer a table such as:
+
+| Area | Astro status | Live-site drift | Recommended action |
+|---|---|---|---|
+
+## Route reconciliation
+
+Summarize:
+
+- aligned routes
+- stale Astro routes
+- live-only routes
+- Astro-only routes
+- renamed/replaced routes
+- uncertain mappings
+
+If the inventory is large, write the detailed reconciliation to the audit document and summarize it in the terminal response.
+
+## Significant live-site changes since migration work stopped
+
+Rank by migration impact.
+
+## SEO / URL risks
+
+Include redirects, canonicals, sitemap, metadata, schema, internal links, language alternates, and other material findings.
+
+## Forms / analytics / external integrations
+
+Summarize current migration implications without interacting with production forms.
+
+## Technical debt or blockers
+
+Separate:
+
+- blockers before migration resumes
+- things worth fixing during migration
+- things safe to defer
+
+## Recommended migration sequence
+
+Ordered phases with reasoning.
+
+## Next Codex tasks
+
+Give me the next 3–7 concrete tasks in recommended order.
+
+For each, include a short Codex-ready task description.
+
+## Questions requiring human decisions
+
+Include only decisions that genuinely cannot be resolved from repository/live-site evidence.
+
+## Evidence and uncertainty
+
+List important assumptions, incomplete comparisons, inaccessible resources, or areas requiring verification.
+
+# Efficiency requirements
+
+This is intended to restore project context after a long pause.
+
+Optimize for decision usefulness, not maximum data collection.
+
+Do not:
+
+- crawl duplicate URLs unnecessarily,
+- download the entire production site unless clearly necessary,
+- read every repository file,
+- diff every sentence of every page,
+- spend time polishing code that is not being changed.
+
+Do:
+
+- use sitemaps and repository structure to reduce search space,
+- use scripts for URL/inventory comparison where that is faster and safer,
+- inspect representative templates before inspecting every generated page,
+- investigate individual pages more deeply when route/content drift is detected,
+- preserve enough evidence that findings can be checked later.
+
+Before finishing, verify that your recommendations follow from the evidence gathered rather than from assumptions about what this migration used to contain.
+
+Do not begin implementing the recommendations. Stop after the audit and proposed next steps.
+
+==============================================================================
+02. ASSISTANT
+==============================================================================
+
+<proposed_plan>
+# AIA migration audit and resumption plan
+
+## Executive summary
+
+**This is a substantial, buildable migration that needs reconciliation—not a restart.** Most core page families exist, but route coverage overstates readiness: content, rendered output, SEO, and conversion behavior have significant gaps.
+
+Verified during this audit:
+
+- Astro builds **97 pages**, with zero errors, warnings, or hints.
+- Production’s sitemap contains **102 URLs**; **92 overlap** with Astro.
+- Four additional Astro routes remain live despite being absent from production’s sitemap.
+- **Nine English articles and one Spanish page are missing locally.**
+- Existing content includes material changes to eligibility, school-readiness messaging, team listings, and homepage sections.
+- A **confirmed Markdown rendering defect removes `:1` and `:2` from therapy ratios** despite a successful build.
+
+Structural migration is largely complete. Content has broad coverage, but current fidelity is mixed. Fix the renderer and establish reliable route/SEO validation before resuming bulk content migration.
+
+No repository files were changed. The existing untracked `merge-plan.md` was left untouched.
+
+## Last known project state
+
+Repository root: `/home/alice/projects/wrk/aia/www/_astro-site`; application root: `www/`.
+
+| Evidence | Finding |
+|---|---|
+| Current branch | `faithful-astro-migration` |
+| HEAD | `147b55c`, August 28, 2026: include MDX routes in sitemap generation |
+| Previous work | Sätteri authoring features, Giveback fidelity, insurance layout/content, FAQ consolidation, service inquiry drawers |
+| Initial migration | June 8, 2026 |
+| Framework upgrades | Astro 6 and then 7.1 in July |
+| Tracked working tree | Clean |
+| Untracked work | `merge-plan.md`, a proposal concerning the separate landing-page project |
+| Stash | June 8 Front Matter taxonomy database change; no substantive unfinished application work shown |
+| Branch divergence | Current branch is 14 commits ahead of its locally recorded `origin` tracking ref; no remote fetch performed |
+
+**Substantive work stopped around August 28**, approximately five weeks before this audit. Development had been refining fidelity and authoring infrastructure rather than building the initial foundation.
+
+Content freshness varies independently of commit dates: the newest English article publication date in the local collection is **June 1, 2026**. Some missing production articles therefore predate the development pause.
+
+The existing [migration summary](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-summary.md) is useful historical evidence, not current acceptance evidence. Its asset count is stale, and its prior browser-access limitation no longer applied during this audit.
+
+## Current architecture
+
+| Area | Assessment | Recommendation |
+|---|---|---|
+| Astro 7.1.5, TypeScript, npm, static output | Working; installed Node 24.18.0 builds successfully | **Keep**; no upgrade prerequisite established |
+| Markdown/MDX collections | Pages, blog, authors; locale folders; Zod validation | **Keep** |
+| Markdown processor | Directive parsing silently corrupts ordinary ratio text | **Refactor before continuing** |
+| Templates and CSS | Shared layouts, page-specific components, plain CSS, local fonts | **Keep**, then verify current fidelity |
+| Content ownership | Homepage structured in frontmatter; some team/about/services/careers copy lives in components | **Verify** editing boundaries; avoid editing unused Markdown |
+| URL generation | Locale catchalls and explicit Library routes work | **Keep**, centralize route-policy validation |
+| SEO | Canonicals/social tags exist; significant missing capabilities | **Refactor before bulk migration** |
+| Sitemap | Checked-in XML generated separately from build | **Refactor** to prevent drift |
+| Multilingual foundation | English/Spanish/Arabic routes and RTL exist | **Keep**; improve translation relationships and publication controls |
+| Front Matter CMS | Config exists, but README says open `www` while paths include `[[workspace]]/www/...` | **Verify/fix** workspace-path convention |
+| Assets | 172 images, 20 fonts, two PDFs; no media files | **Keep**; acquire assets for new content |
+| Image optimization | No `astro:assets` usage found | **Defer** broad optimization until fidelity is stable |
+| Hosting | Static output; no host-specific deployment setup found | **Defer** host configuration |
+
+The rendering defect is directly reproducible using the installed processor:
+
+```text
+Input:                  ABA Therapy 1:1 and ABA Therapy 1:2.
+With directive parsing: ABA Therapy 1 and ABA Therapy 1.
+Without it:             ABA Therapy 1:1 and ABA Therapy 1:2.
+```
+
+Explicit heading IDs still work with directive parsing disabled. No registered directive transformations were found.
+
+## Migration coverage
+
+“Apparently aligned” below refers to sampled content and structure, not full visual acceptance.
+
+| Area | Astro status | Live-site drift | Recommended action |
+|---|---|---|---|
+| English pages | 21 records; broadly implemented | Several important pages stale | Reconcile conversion pages first |
+| Spanish pages | Nine records; partial coverage | Missing privacy page; changed service/consultation copy | Use available live translations |
+| Arabic pages | Library plus placeholder homepage | Live `/ar` returns 404 | Keep placeholder unpublished |
+| English Library | 46 posts | Nine missing; existing articles rewritten | Reconcile existing articles, then import additions |
+| Spanish Library | 12 posts | Route coverage matches sitemap; school-readiness article rewritten | Refresh verified translations |
+| Arabic Library | Seven posts | Route coverage matches sitemap; detailed content comparison incomplete | Review content and RTL |
+| About, careers, intake, insurance | Apparently aligned in sampled substantive copy | Mostly validation work remaining | Preserve; perform targeted visual QA |
+| Team | Implemented but stale | Local roster includes names absent from live listing | Reconcile roster and imagery |
+| Employee portal | Scaffold only | Local page is effectively empty; live page has access-code UI | Establish intended replacement |
+| Header/footer | Substantially implemented | Main navigation hierarchy still broadly matches | Targeted reconciliation, not redesign |
+| Library indexes | Partial | No working local search; pagination/author routes omitted | Restore required behavior and URLs |
+| Forms | Styled static approximations | Production has working Jotform/HubSpot/API flows | Preserve static policy; document launch gap |
+| SEO/schema | Partial | Missing alternates, article schema, indexing exceptions | Correct shared infrastructure |
+| Assets/fonts | Substantial migration | New content assets missing; external map/video dependencies remain | Incremental acquisition and inventory |
+
+No dedicated location-page family was found in either Astro or the discovered production inventory. City names in service-area copy are not evidence of missing location routes.
+
+## Route reconciliation
+
+**Normalize trailing slashes and tracking queries for comparison, while retaining meaningful search queries and fragment targets.**
+
+### Apparently aligned routes
+
+Representative pages with matching titles, headings, and substantial sampled prose include:
+
+- `/about`
+- `/careers`
+- `/aba-therapy-intake-process`
+- `/insurance`
+- `/client-forms`
+- `/donate-autism-giveback`
+
+The existing privacy-policy body also largely matches. Service and form behavior still require separate validation.
+
+### Stale or partial Astro routes
+
+| Routes | Verified difference |
+|---|---|
+| `/` | Changed title/description and service heading; missing HSA/FSA section; responsive layout differences |
+| `/es` | Changed wording; production itself differs between responsive content variants |
+| `/aba-therapy`, `/es/aba-therapy` | Eligibility changes, ratio rendering defect, CTA differences |
+| `/referrals` | Local ages 2–17 versus live 18 months–8 years |
+| `/client-consultation`, Spanish equivalent | Local references to teens differ from current production; static form replaces Jotform |
+| `/team` | Local roster differs from live listing |
+| `/employee-portal` | Empty local body versus live access-code interface |
+| All Library indexes | Metadata, search, pagination, localized labels, and listing behavior |
+| English/Spanish `aba-school-readiness-arizona` | Major article and metadata rewrite |
+| `autism-fall-break-routine-tips-halloween-thanksgiving` | Changed title, focus, FAQs, and related-content context |
+
+Other overlapping articles remain **unverified**, not presumed current.
+
+### Live-only content
+
+All ten sitemap-listed missing pages were requested successfully:
+
+```text
+/es/privacy-policy
+/library/does-aba-therapy-replace-school
+/library/autism-daily-living-skills-challenges
+/library/how-many-hours-aba-child-need
+/library/autism-after-school-meltdowns
+/library/autism-back-to-school-transition
+/library/autism-social-skills-by-age
+/library/sleep-issues-autistic-children
+/library/halloween-and-autism
+/library/picky-eating-autism-parent-guide
+```
+
+Additional production routes discovered outside the sitemap:
+
+- `/search` — verified 200.
+- `/lp/early-intervention` — verified 200; campaign page with API-backed form.
+- `/library/author/rula-diab` and Spanish/Arabic equivalents — verified 200.
+- `/library/page/2` and `/es/library/page/2` — verified 200.
+- English pagination pages 3–6 — linked from production; not individually requested.
+
+These are real migration considerations, even though the historical report deliberately excluded archives and pagination. [Live Library](https://www.azinstitute4autism.com/library)
+
+### Astro-only and sitemap-absent routes
+
+| Route | Actual finding |
+|---|---|
+| `/ar` | Genuine Astro-only placeholder; production returns 404 |
+| `/employee-portal` | Live 200, absent from sitemap |
+| `/schedule-consultation` | Live 200 with `noindex`, absent from sitemap |
+| `/library/community-highlight-meet-rula-diab` | Live 200 with external canonical |
+| `/library/new-aia-scottsdale-office` | Live 200 with external canonical |
+
+**Do not delete the latter four as obsolete.**
+
+### Renamed/replaced routes
+
+Production confirms these existing 301 mappings:
+
+- `/aba` → `/aba-therapy`
+- `/autismevaluations` → `/autism-evaluations`
+- `/learnersocialclub` → `/learner-social-club`
+
+No additional core-page rename was established. New Library subjects should not automatically replace or redirect older articles.
+
+## Significant live-site changes since migration work stopped
+
+Some differences are demonstrably current but cannot be dated precisely to after the pause.
+
+1. **Service eligibility and conversion copy changed.** English/Spanish ABA pages now describe the individual program as serving 18 months–8 years. Referrals changed similarly. Local Spanish copy retains a broader 2–17 statement. [ABA](https://www.azinstitute4autism.com/aba-therapy), [referrals](https://www.azinstitute4autism.com/referrals)
+2. **School-readiness content was substantially rewritten in both languages.** The local academy-promotion article differs from the current broader parent guide, including its distinction between therapy and schooling. [Current article](https://www.azinstitute4autism.com/library/aba-school-readiness-arizona)
+3. **Library coverage expanded.** Nine current English articles are absent locally; this backlog began before the final August commits.
+4. **The English homepage gained HSA/FSA content and changed metadata.** The Spanish homepage does not currently contain the equivalent section; do not invent it. [Homepage](https://www.azinstitute4autism.com/)
+5. **Team listings differ.** Timirah Clay, Carol Harrington, and Rachel Crosby appear locally but not in the inspected live listing. This establishes website drift, not employment status. [Team](https://www.azinstitute4autism.com/team)
+6. **Spanish privacy content is now available but missing locally.** [Spanish privacy policy](https://www.azinstitute4autism.com/es/privacy-policy)
+7. **A live campaign route uses the AIA forms API.** Its existence does not authorize importing the separate landing-page repository wholesale. [Early intervention](https://www.azinstitute4autism.com/lp/early-intervention)
+
+Homepage browser inspection at 1440px and 390px confirmed material layout differences. For example, at 390px the insurance heading appeared roughly 616px farther down locally. This supports renewed full-page visual validation rather than relying on historical fidelity claims.
+
+## SEO / URL risks
+
+- **Incorrect syndicated canonicals:** both republished news articles self-canonicalize locally, while production points to the original publishers. Preserve those external canonicals unless an explicitly approved newer decision supersedes them. [Community article](https://www.azinstitute4autism.com/library/community-highlight-meet-rula-diab), [office article](https://www.azinstitute4autism.com/library/new-aia-scottsdale-office)
+- **Missing `hreflang`:** production emits language alternates; Astro’s switcher provides navigation only. `translationKey` exists but is not used to generate alternate metadata.
+- **Missing article schema:** sampled production articles emit `BlogPosting`; local posts emit the global organization schema plus FAQ schema where implemented.
+- **Missing standalone FAQ schema:** production `/faqs` emits `FAQPage`; the local build does not.
+- **Title/H1 conflation:** blog layout uses the SEO title as H1. Production sometimes intentionally uses different text.
+- **Indexing exceptions are missing:** all 97 pages currently receive staging `noindex,nofollow`, which is appropriate now. Enabling indexing globally would also expose the Arabic placeholder and `/schedule-consultation` unless per-page rules are added.
+- **Sitemap policy is too simple:** it extracts canonical values from content files, runs separately from build, and lacks page-specific indexing/external-canonical exclusions. Current XML does match the 97 local routes.
+- **Archives/search lack preservation plans:** omitted production routes have neither implementations nor explicit mappings.
+- **Redirects are reports, not active hosting behavior:** the nginx file will need deployment integration later.
+- **Social metadata is incomplete:** shared OG/Twitter fields exist, but `twitter:image` is absent and some pages lack an image.
+- **Local link checks are narrow:** they do not establish external-link health, absolute production-link correctness, or SEO equivalence.
+
+## Forms / analytics / external integrations
+
+Production currently exposes:
+
+- Jotform consultation embeds and appointment/referral destinations.
+- HubSpot contact and standalone consultation forms.
+- A campaign form posting to the AIA API.
+- Google Analytics with HubSpot-linked consent-mode setup.
+- Ahrefs analytics.
+- Payment/CareCredit links, video, and map integrations.
+
+Astro has disabled static forms, configurable like/view behavior, payment links, video, and Leaflet/OpenStreetMap dependencies. No comparable analytics/consent integration was found.
+
+Consequences:
+
+- Static forms are **intentional under current policy**, but prevent functional cutover.
+- Service inquiry drawers require renewed rendered comparison; source HTML alone cannot establish whether injected production drawers changed.
+- Like/view API behavior remains a **verification item**. No stats, like, unlike, or form requests were sent.
+- Campaign ownership and eventual form activation require decisions; this audit does not authorize backend implementation.
+- Privacy wording and actual analytics behavior need owner review together. This was not a legal compliance assessment.
+
+Browser inspection blocked non-GET/HEAD requests before visiting production.
+
+## Technical debt or blockers
+
+**Before broad migration resumes**
+
+1. Fix ratio corruption caused by directive parsing.
+2. Establish route, canonical, indexing, and translation validation.
+3. Separate verified-current findings from historical reports.
+
+**Worth fixing during migration**
+
+- Homepage schema support for the new section.
+- Separate article display headings from SEO titles.
+- Article/FAQ schema and language alternates.
+- Search, pagination, author archives, and stale related-post data.
+- Hardcoded author rendering despite an authors collection.
+- Front Matter workspace-path mismatch.
+- Empty employee-portal route.
+- Inconsistent editorial ownership between Markdown and component content.
+
+**Safe to defer**
+
+- Dependency upgrades without a demonstrated need.
+- Broad image optimization.
+- Hosting-specific configuration.
+- Landing-page repository consolidation.
+- Actual backend activation, subject to changed authorization.
+
+Validation performed:
+
+| Check | Result |
+|---|---|
+| `npm run build` | Passed; 97 pages; zero diagnostics |
+| Existing link-audit logic | Zero broken internal links |
+| Existing imagery-audit logic | Zero missing mapped images |
+| Existing blog-audit logic | Zero failures |
+| Additional internal fragment check | Zero missing referenced fragments |
+| Markdown ratio reproduction | Failed with current configuration; cause isolated |
+| Final Git check | No tracked changes; original untracked file unchanged |
+
+The three audit scripts normally overwrite reports. Their checking logic was run with report writes suppressed in memory.
+
+## Recommended migration sequence
+
+| Phase | Objective and ordering | Prerequisites and principal risk | Completion criteria |
+|---|---|---|---|
+| **1. Rendering and validation foundation** | Fix text corruption; add route/indexing/metadata checks before importing more content | Existing green build; risk of treating compilation as content correctness | Ratios and heading IDs render correctly; regression checks pass |
+| **2. Reconciliation baseline and SEO policy** | Record sitemap, linked routes, canonicals, publication rules, and content status | Phase 1; risk of deleting sitemap-absent live pages or indexing placeholders | Every discovered route has a disposition; external canonicals and noindex exceptions represented |
+| **3. Shared presentation and homepage** | Reconcile navigation/footer details and homepage sections/responsive behavior | Current live captures; risk of forcing English changes into Spanish | Full-page desktop/mobile comparison accepted; deviations documented |
+| **4. Services, conversion pages, team** | Correct eligibility, service naming, roster, CTA destinations, and static form presentation | Phase 2 route baseline; risk of copying contradictory source claims without flagging them | English/Spanish copy matches verified sources; forms remain safely disabled |
+| **5. Library behavior and content** | Restore search/archive/pagination behavior; refresh rewritten articles; import nine missing posts and assets | Renderer and SEO foundation; risk of preserving stale titles, FAQs, or related links | Required routes work; article metadata/schema/headings validated; content batches reviewed |
+| **6. Multilingual completion** | Add Spanish privacy page, updated translations, alternate links, and RTL review | English/source reconciliation; risk of publishing invented or unreviewed translations | Existing translations linked correctly; placeholder excluded; fluent review completed |
+| **7. Integration and launch decisions** | Resolve portal, campaign ownership, forms, counters, analytics, and consent behavior | Owner decisions; risk of silently dropping conversion functionality | Approved integration specification and nonproduction validation; activation separately authorized |
+| **8. Final QA and cutover preparation** | Validate redirects, metadata, assets, accessibility, responsiveness, and indexing on chosen host | Prior phases complete; risk of staging noindex or missing route behavior reaching production | Route matrix and full QA pass; deployment/rollback checklist approved |
+
+## Next Codex tasks
+
+1. **Fix Markdown ratio corruption.**  
+   “Disable unhandled directive parsing while retaining explicit heading IDs. Add focused regression coverage for `1:1`, `1:2`, Markdown, and MDX. Rebuild and verify service-page output. Do not upgrade dependencies.”
+
+2. **Create the durable reconciliation baseline.**  
+   “Record normalized production sitemap and navigation-discovered routes against generated Astro routes. Include canonical, indexing, locale, status, evidence date, and migration disposition. Preserve sitemap-absent live pages; mark `/ar` as unpublished.”
+
+3. **Correct shared SEO and publication rules.**  
+   “Add separate article H1 support, translation-key alternates, BlogPosting schema, and per-page indexing rules. Preserve external syndicated canonicals and `/schedule-consultation` noindex. Generate sitemap entries from eligible local routes, not canonical strings alone.”
+
+4. **Reconcile the English homepage and check Spanish separately.**  
+   “Add the verified HSA/FSA section to the homepage content model and renderer. Refresh English metadata/copy. Compare full pages at 390px and 1440px; reproduce only source-supported Spanish changes.”
+
+5. **Refresh service and consultation copy.**  
+   “Reconcile English/Spanish ABA pages, referrals, and consultation pages against current production. Correct ages and program labels; inventory CTA destinations. Keep forms static and disabled.”
+
+6. **Refresh the team page.**  
+   “Reconcile visible names, roles, images, and ordering against production. Update the component that actually renders the page. Verify desktop/mobile layout and record unresolved roster discrepancies.”
+
+7. **Reconcile the rewritten Library articles.**  
+   “Refresh English/Spanish school-readiness articles and the English fall-break article, including display headings, SEO metadata, FAQs, images, and related links. Preserve URLs and document source discrepancies.”
+
+## Questions requiring human decisions
+
+- What should replace the employee portal’s access-controlled experience?
+- Is `/lp/early-intervention` maintained within this migration or through the separate campaign project? The untracked merge proposal is not evidence of approval.
+- Which form destinations/backend and analytics/consent behavior are intended for eventual launch?
+- Who approves conflicting public claims? Production still mixes broader children/teens wording with narrower program eligibility.
+
+Until resolved: preserve current URLs, keep forms disabled, exclude placeholders from indexing, and avoid importing the separate campaign project.
+
+## Evidence and uncertainty
+
+- Primary evidence: current source/configuration, generated HTML, Git history/status/stash, production [robots.txt](https://www.azinstitute4autism.com/robots.txt), [sitemap](https://www.azinstitute4autism.com/sitemap.xml), navigation, and targeted page requests.
+- Temporary detailed evidence: [route inventory](/tmp/aia-inventory.json), [live page findings](/tmp/aia-live-pages.json), and [generated-page findings](/tmp/aia-local-pages.json). These are temporary audit artifacts, not repository documentation.
+- Production robots permitted the inspected paths. Requests were sequential and rate-spaced.
+- Sitemap `lastmod` values informed prioritization; they were not treated as proof of substantive changes.
+- Every missing sitemap-listed page was requested, but every overlapping article was not sentence-diffed.
+- Browser comparison covered the homepage at representative desktop/mobile widths, not exhaustive sitewide visual or accessibility acceptance.
+- Four linked English pagination pages were discovered but not individually fetched.
+- No authenticated portal content, form submissions, production API mutations, deployments, or dependency updates were attempted.
+- No completion percentage is assigned to fidelity. Approximately nine-tenths of discovered primary content URLs have local counterparts, but that measures **route representation**, not correctness or launch readiness.
+</proposed_plan>
+
+==============================================================================
+03. USER
+==============================================================================
+
+The audit is accepted as the working baseline, but revise the implementation plan before making any changes.
+
+Make the following changes:
+
+1. Add a Phase 0 repository-synchronization check.
+   - Fetch the configured remote(s) without merging, rebasing, resetting, or pushing.
+   - Re-check the current branch, upstream, working tree, and local/remote divergence.
+   - Preserve the existing untracked `merge-plan.md`.
+   - If the remote contains commits not present locally, stop and report the divergence before implementation.
+
+2. Preserve the audit evidence durably.
+   - The useful detailed inventories currently exist only under `/tmp`.
+   - Plan for a dated human-readable migration audit in `www/reports/` plus a reproducible machine-readable route reconciliation generated from the project and production discovery.
+   - Prefer a small repeatable audit script/process over committing a large opaque production scrape.
+   - Record evidence/check dates so later live-site changes can be distinguished from this baseline.
+
+3. Strengthen the Markdown-ratio fix.
+   - Before disabling/removing directive parsing, search the full Markdown/MDX corpus and relevant configuration for intentional directive syntax or consumers.
+   - If it is genuinely unused, disable/remove only the unnecessary directive parsing while preserving explicit heading IDs.
+   - Add focused regression coverage for literal colon-containing content including `1:1` and `1:2`, using representative Markdown and MDX content.
+   - Verify rendered affected service pages after the change.
+   - Do not upgrade dependencies as part of this task.
+
+4. Split the current SEO/publication task into smaller independently testable milestones.
+
+   First establish route/publication policy:
+   - local route eligibility,
+   - canonical behavior,
+   - external canonical exceptions,
+   - per-page index/noindex behavior,
+   - sitemap inclusion/exclusion,
+   - unpublished placeholder handling,
+   - translation relationships and hreflang only between genuine published equivalents.
+
+   Then address article/page presentation:
+   - separate display H1 from SEO title where required,
+   - BlogPosting schema,
+   - FAQPage schema where applicable,
+   - social metadata gaps.
+
+   Add explicit regression/acceptance checks so external-canonical pages, noindex pages, and `/ar` cannot accidentally enter the production sitemap or language-alternate graph.
+
+5. Treat Library search, pagination, and author archives as required user-facing capabilities/routes, but do not assume the HubSpot implementation should be duplicated.
+   - At the beginning of that phase, inspect the existing Astro architecture and recommend the simplest appropriate static-site implementation.
+   - Preserve production URL behavior or define explicit redirects where appropriate.
+   - Do not commit to a search technology until that architectural choice is made.
+
+6. Prioritize factual/current content correctness over detailed visual fidelity.
+   - After the rendering and route/SEO foundations, reconcile high-impact service/conversion facts such as ages, eligibility, program naming, CTA destinations, referrals, and consultation content before extensive pixel-level visual matching.
+   - Global header/footer/navigation reconciliation may happen first where it is a dependency.
+   - Homepage content reconciliation should remain high priority, but responsive fidelity work should not delay correcting materially outdated service information.
+
+7. Change multilingual completion criteria.
+   - Codex may reconcile source-supported translations, locale relationships, metadata, routes, and RTL behavior.
+   - Do not invent translations to fill gaps.
+   - Do not consider linguistic fluency self-approved; finish with content ready for human language review where substantive translation changes were required.
+   - Emit hreflang only for real, published equivalent translations.
+
+8. Keep these as explicit human-decision gates rather than implementation tasks:
+   - employee portal replacement/access behavior,
+   - ownership of `/lp/early-intervention` relative to the separate landing-page project,
+   - production form/backend activation,
+   - analytics/consent architecture,
+   - resolution of conflicting public eligibility claims.
+
+9. Clarify or remove the item “Homepage schema support for the new section.” Do not add schema merely because the HSA/FSA section exists. Identify the specific structured-data requirement and supporting evidence before including it as work.
+
+10. Reframe execution as reviewable milestones rather than one uninterrupted migration run.
+    - Give every milestone observable acceptance criteria and validation commands.
+    - Run the relevant build/tests/audits after each milestone.
+    - Stop and fix failed validation before continuing.
+    - Keep unrelated diffs out of each milestone.
+
+After revising, show me the complete implementation sequence and the first milestone you recommend executing.
+
+Remain in Plan mode. Do not modify repository files yet.
+
+==============================================================================
+04. ASSISTANT
+==============================================================================
+
+<proposed_plan>
+# Revised migration implementation sequence
+
+## Execution rules
+
+Work proceeds as separate, reviewable milestones. Each milestone ends with its scoped diff, evidence, validation results, and unresolved issues. Do not automatically continue through the entire migration.
+
+- Preserve `merge-plan.md` and unrelated work.
+- Do not upgrade dependencies.
+- Keep production inspection read-only and rate-limited; respect robots.txt.
+- Fix failed validation before advancing. If a fix requires unrelated work or a human decision, stop and report it.
+- Keep forms disabled unless production activation is separately authorized.
+- Preserve the accepted audit as historical evidence; record subsequent observations separately.
+
+**Current read-only recheck:** branch remains `faithful-astro-migration` at `147b55c`; `merge-plan.md` remains the only untracked item; both configured remotes and the temporary inventories exist. No fetch or repository modification has occurred.
+
+## Phase 0 — Repository synchronization
+
+**Objective:** establish whether the accepted local baseline is still safe to implement against.
+
+**Actions**
+
+1. Record HEAD, branch, upstream, status, configured remotes, and a checksum of `merge-plan.md`.
+2. Fetch each configured remote without pruning, merging, rebasing, resetting, or pushing.
+3. Recalculate upstream divergence and compare corresponding branch tips across both remotes. Identify remote commits absent from local branch history.
+4. Recheck HEAD, tracked/untracked state, and the preserved file checksum.
+
+**Validation commands**
+
+```sh
+git status --short
+git branch -vv
+git remote -v
+git rev-parse HEAD
+git rev-parse --abbrev-ref --symbolic-full-name '@{upstream}'
+sha256sum merge-plan.md
+git fetch origin
+git fetch github
+git rev-list --left-right --count 'HEAD...@{upstream}'
+git log --oneline --left-right 'HEAD...@{upstream}'
+```
+
+Inspect other fetched branch tips as well; upstream comparison alone is insufficient with two remotes.
+
+**Acceptance and stop conditions**
+
+- Both fetches succeed.
+- Working files and HEAD remain unchanged.
+- Remote divergence is explicitly reported.
+- **If fetched remotes contain commits not present locally, stop before implementation.** Report affected refs and commits; do not reconcile histories automatically.
+- Fetch/access failures also block claiming synchronization complete.
+
+**Review boundary:** report synchronization results before proceeding.
+
+## Phase 1 — Durable audit evidence and repeatable discovery
+
+**Objective:** preserve the accepted baseline before temporary evidence disappears, then make future comparisons reproducible.
+
+**Deliverables**
+
+- A dated human-readable report: `www/reports/migration-audit-2026-10-06.md`.
+- A compact, dated machine-readable route reconciliation alongside it.
+- A small repeatable audit tool, exposed as `npm run audit:routes`.
+
+The report will distinguish the accepted prior-session observations from fresh checks. Use actual recorded timestamps where available; explicitly label unavailable historical timestamps rather than inventing them.
+
+**Audit process**
+
+- Read project content, routing rules, and generated routes.
+- Discover production through robots.txt, sitemap, navigation, indexes, and targeted requests.
+- Normalize slash/tracking-query differences without discarding meaningful query or fragment behavior.
+- Record route, discovery source, observation time, HTTP verification status, canonical, locale, local counterpart, and reconciliation disposition.
+- Distinguish “absent from sitemap” from “verified absent from production.”
+- Save compact evidence and URLs, not a large production HTML scrape.
+- Support offline checks against saved discovery records.
+- Treat new production drift as a new observation, not an overwrite of the accepted baseline.
+
+**Acceptance**
+
+- Another developer can regenerate the reconciliation using documented commands.
+- Unverified routes remain visibly unverified.
+- The known ten missing sitemap-listed pages, four live sitemap-absent routes, and `/ar` placeholder are represented correctly unless newly dated evidence establishes a change.
+- No application behavior changes.
+
+**Validation**
+
+```sh
+npm run audit:routes
+npm run audit:routes -- --check
+npm run build
+```
+
+The new commands will be implemented in this milestone. Offline tests will cover normalization, deduplication, and classification.
+
+## Phase 2 — Markdown rendering repair
+
+**Objective:** eliminate silent content corruption before further content migration.
+
+**Actions**
+
+1. Search the entire Markdown/MDX corpus, parser configuration, plugins, and relevant components for intentional container, leaf, and inline directives.
+2. Inspect matches in context, distinguishing literal colons, code examples, and intended directives.
+3. If no intentional consumers exist, disable only unnecessary directive parsing; preserve explicit heading IDs.
+4. If intentional consumers exist, stop the blanket-removal approach and document the smallest compatible correction.
+5. Add focused Markdown and MDX regression fixtures using the project’s actual rendering pipeline.
+6. Verify generated English and Spanish service pages.
+
+**Acceptance**
+
+- `1:1`, `1:2`, ordinary colon punctuation, times, and URL-containing prose survive rendering.
+- Explicit heading IDs and links to them remain correct.
+- Relevant Markdown and MDX both pass.
+- Generated service headings and paragraphs preserve therapy ratios.
+- No dependency or unrelated content changes.
+
+**Validation**
+
+```sh
+npm run test:markdown
+npm run build
+npm run audit:links
+npm run audit:blog
+```
+
+`test:markdown` is a new focused test command, including rendered-output checks rather than parser-only assertions.
+
+## Phase 3 — Route and publication foundations
+
+Split this phase into two independently reviewable milestones.
+
+### 3A — Route eligibility, canonical, and indexing policy
+
+**Objective:** establish one consistent publication policy before adding SEO features or more routes.
+
+**Policy**
+
+- Draft/unpublished content is excluded from production route generation.
+- `/ar` remains unpublished; its explicit route must obey publication eligibility.
+- Published `noindex` pages may remain accessible but are excluded from the production sitemap.
+- `/schedule-consultation` retains its source-supported `noindex` behavior.
+- Ordinary pages self-canonicalize to their normalized public URL.
+- Verified syndicated articles retain their external canonical URLs.
+- External-canonical pages are excluded from the production sitemap.
+- Sitemap entries represent eligible local routes; do not use canonical strings as route definitions.
+- Staging retains its global noindex protection. Production-policy tests explicitly exercise the indexing-enabled build.
+
+Extend collection validation only as needed for publication/indexing exceptions; retain existing canonical and draft fields.
+
+**Acceptance**
+
+- Sitemap generation uses the same eligibility rules as routing.
+- Missing/duplicate canonicals and route collisions fail validation.
+- External-canonical articles, noindex pages, and `/ar` cannot enter the production sitemap.
+- A normal published self-canonical page does enter it.
+- An indexing-enabled local build remains a local artifact, not a deployment.
+
+**Validation**
+
+```sh
+npm run test:publication
+npm run build
+PUBLIC_ALLOW_INDEXING=true npm run build
+npm run audit:routes -- --check
+npm run audit:links
+npm run build
+```
+
+The final build restores the default staging artifact.
+
+### 3B — Translation relationships and hreflang
+
+**Objective:** publish alternates only between genuine published equivalents.
+
+**Policy**
+
+- Use explicit translation relationships, including existing `translationKey`, rather than matching URL suffixes alone.
+- Validate relationships within the appropriate content collection.
+- Exclude unpublished, noindex, external-canonical, missing, and placeholder entries from the alternate graph.
+- Emit reciprocal language alternates only for verified equivalents.
+- Emit `x-default` only where a real eligible default equivalent exists.
+- Language navigation must not advertise unpublished equivalents.
+
+**Acceptance**
+
+- Known English/Spanish article equivalents link reciprocally.
+- Missing translations produce no invented alternate.
+- `/ar`, `/schedule-consultation`, and external-canonical articles are absent from the production alternate graph.
+- Different-language pages with similar slugs are not automatically paired.
+
+**Validation:** extend `test:publication`; run both staging and indexing-enabled builds, route checks, and link audit as in 3A.
+
+## Phase 4 — Presentation metadata
+
+Use two small milestones, independent of content rewrites.
+
+### 4A — Display headings and social metadata
+
+- Add an optional display H1 separate from SEO title, retaining the title fallback.
+- Apply source-supported differences to representative articles.
+- Fill verified social metadata gaps, including Twitter image output when an appropriate image exists.
+- Do not invent images or descriptions.
+
+**Acceptance:** title, H1, OG, and Twitter output are independently testable; existing entries retain their behavior unless explicitly changed.
+
+### 4B — Article and FAQ structured data
+
+- Add `BlogPosting` using verified article fields and canonical behavior.
+- Add `FAQPage` where supported by the actual visible FAQ content.
+- Avoid duplicate or contradictory schema blocks.
+- Do not add service or financial structured data without a specific requirement and supporting evidence.
+
+**Acceptance:** structured data parses, matches visible content, references correct canonicals, and does not claim missing authorship or dates.
+
+**Validation for each milestone**
+
+```sh
+npm run test:seo
+npm run build
+npm run audit:links
+npm run audit:blog
+```
+
+`test:seo` will cover rendered fixtures, including external canonical cases.
+
+## Phase 5 — High-impact factual reconciliation
+
+**Priority:** current facts before extensive visual matching.
+
+A narrowly scoped header/footer/navigation correction may precede these batches if required for their links or locale behavior.
+
+### 5A — Services, referrals, and consultation
+
+Reconcile English/Spanish ages, eligibility, program names, ratios, CTA destinations, referral copy, and consultation content.
+
+- Preserve page-specific source claims.
+- Flag genuinely conflicting eligibility statements for human resolution.
+- Do not silently invent a single sitewide eligibility rule.
+- Keep forms static and disabled.
+
+**Acceptance:** every changed factual claim has dated source evidence; conflicts are documented and held; CTA destinations are intentional and resolve without submitting forms.
+
+### 5B — Homepage content
+
+Refresh source-supported metadata, copy, section order, and the English HSA/FSA section.
+
+**Clarification:** the previous “homepage schema” item meant the **Zod-validated content model**, not JSON-LD. Extend that model and renderer only as necessary to represent the section. There is no proposed HSA/FSA structured-data addition.
+
+Do not add the section to Spanish unless supported by production content.
+
+**Acceptance:** current sections and facts are represented with usable responsive rendering. Pixel-level matching is deferred.
+
+### 5C — Team content
+
+Reconcile visible names, roles, ordering, and images against production without inferring employment status beyond the website evidence.
+
+**Validation after each batch**
+
+```sh
+npm run build
+npm run audit:links
+npm run audit:images
+npm run test:publication
+```
+
+Run `test:markdown` where Markdown/MDX formatting changes. Review each batch separately.
+
+## Phase 6 — Library capabilities and content
+
+### 6A — Architecture decision milestone
+
+**Required capabilities:** search, pagination, and author archives.
+
+Inspect the existing Astro architecture and production URL behavior, then recommend the simplest appropriate static-site implementation.
+
+Evaluate content volume, locale requirements, JavaScript needs, accessibility, deployment constraints, and maintenance cost. **Do not select a search technology in this plan.**
+
+**Acceptance**
+
+- A reviewable implementation proposal names the selected approach.
+- Every existing search/archive/pagination route has a preservation or explicit redirect disposition.
+- The proposal includes empty-search, no-result, keyboard, pagination-boundary, and locale test cases.
+- No implementation proceeds until this architecture milestone is resolved.
+
+**Validation:** inspect current build and route inventory; run `npm run build` and `npm run audit:routes -- --check`.
+
+### 6B — Implement Library capabilities
+
+Implement the selected approach in separate search and archive/pagination milestones.
+
+**Acceptance**
+
+- Required routes and navigation work.
+- Search produces useful results with accessible interaction.
+- Pagination and author listings expose the intended content.
+- Redirects are explicit where URL behavior changes.
+
+**Validation:** new focused Library tests, build, route reconciliation, and link audit after each milestone.
+
+### 6C — Reconcile and add Library content
+
+Reviewable batches:
+
+1. English/Spanish school-readiness articles.
+2. Fall-break and other confirmed rewritten articles.
+3. Missing English articles in small topical batches, including local assets.
+4. Related links, author details, metadata, and publication dates.
+
+**Acceptance:** source-supported content, correct URLs/H1/schema, working related links, and no extraction artifacts.
+
+**Validation:** build, Markdown/SEO tests, link, image, and blog audits for every batch.
+
+## Phase 7 — Multilingual reconciliation
+
+This work can accompany earlier page batches; it is not permission to fabricate missing translations.
+
+- Reconcile available Spanish/Arabic source content, including Spanish privacy content.
+- Validate locale metadata, route relationships, and RTL behavior.
+- Retain only real published equivalents in hreflang.
+- Identify substantive translation changes requiring human language review.
+
+**Acceptance**
+
+- Technical checks pass.
+- No invented translations fill gaps.
+- Substantive changes are delivered **ready for human language review**, not self-certified as fluent.
+- Unapproved new translations remain unpublished.
+
+**Validation:** publication/SEO tests, build, route/link audits, and representative RTL browser checks.
+
+## Phase 8 — Detailed visual and accessibility reconciliation
+
+Begin extensive fidelity work after material service facts are corrected.
+
+Work by page family: shared shell, homepage, services, informational pages, Library, and forms.
+
+**Acceptance**
+
+- Full-page desktop/mobile comparisons are reviewed.
+- Keyboard navigation, focus, forms, contrast, overflow, and RTL are checked.
+- Intentional deviations are recorded.
+- Visual work does not reintroduce stale content.
+
+**Validation:** build, relevant regression tests and audits, plus documented browser checks at 390px and 1440px and any source-specific breakpoints.
+
+## Phase 9 — Human-decision gates
+
+These are explicit decisions, not automatically authorized implementation work:
+
+| Gate | Required decision | Default pending resolution |
+|---|---|---|
+| Employee portal | Replacement and access behavior | Do not implement access controls or expose protected content |
+| `/lp/early-intervention` | Ownership relative to the separate campaign project | Inventory it; do not merge projects |
+| Forms | Production backend/destinations and activation | Keep submissions disabled |
+| Analytics/consent | Approved architecture and measurement behavior | Do not install tracking |
+| Eligibility conflicts | Approved interpretation of inconsistent public claims | Hold disputed edits; preserve evidence |
+
+Each resolved gate produces its own scoped implementation plan and acceptance checks before execution.
+
+## Phase 10 — Final QA and cutover readiness
+
+Hosting and deployment remain separately authorized work.
+
+**Acceptance**
+
+- Every discovered route has an implemented, redirected, or explicitly approved disposition.
+- Production sitemap and alternate graph exclude all ineligible pages.
+- No outstanding material factual conflicts or unreviewed published translations.
+- Required integrations have approved, tested behavior.
+- Full QA, redirect verification, indexing checks, and rollback preparation are complete.
+
+**Validation:** all introduced regression suites; build; route, link, image, and blog audits; indexing-enabled local build; host-specific checks once hosting is selected.
+
+## First milestone to execute
+
+**Execute Phase 0 only: fetch and report repository synchronization.**
+
+It has no application diff and determines whether the accepted baseline still matches remote history. Stop if remote-only commits are discovered.
+
+If synchronization is clear, the next milestone is **Phase 1: preserve the audit evidence and create repeatable reconciliation**, followed by the focused Markdown repair.
+</proposed_plan>
+
+==============================================================================
+05. USER
+==============================================================================
+
+Execute **Phase 0 only** from the revised plan.
+
+Do not proceed automatically to Phase 1.
+
+Complete the repository synchronization checks exactly as planned, then stop and report:
+
+- fetched remote refs,
+- current HEAD and branch,
+- upstream relationship,
+- local/remote divergence for each relevant branch,
+- any remote-only commits,
+- final working-tree status,
+- confirmation that `merge-plan.md` is unchanged.
+
+Do not merge, rebase, reset, checkout another branch, push, or modify application/repository files.
+
+If any remote contains commits not present locally, or either fetch fails, stop and explain the situation rather than attempting to reconcile it.
+
+If Phase 0 passes cleanly, recommend whether Phase 1 is safe to begin, but wait for my approval before starting it.
+
+==============================================================================
+06. ASSISTANT
+==============================================================================
+
+**Phase 0 passed.** Both fetches succeeded; all fetched branch refs were already up to date.
+
+| Fetched remote ref | Tip | Local ahead / behind |
+|---|---|---|
+| `origin/faithful-astro-migration` | `96d3c13` | 14 / 0 |
+| `origin/main` | `dff773c` | 0 / 0 |
+| `github/faithful-astro-migration` | `9c391c8` | 16 / 0 |
+| `github/main` | `dff773c` | 0 / 0 |
+| `github/migration-foundation` | `751c653` | 0 / 0 |
+
+Divergence compares each remote branch with its corresponding local branch.
+
+- **Current branch:** `faithful-astro-migration`
+- **HEAD:** `147b55c586f1a176050551003af98903901833eb` — unchanged
+- **Upstream:** `origin/faithful-astro-migration`
+- **Remote-only commits:** none across fetched remote branch histories.
+- **Final working tree:** no staged or tracked changes; only the pre-existing untracked `merge-plan.md`.
+- **`merge-plan.md`:** unchanged; its before/after SHA-256 matches:
+  ```text
+  015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c
+  ```
+
+No merge, rebase, reset, checkout, push, or application/repository-file edits occurred. Only Git fetch metadata was updated.
+
+**Phase 1 is safe to begin from the synchronization standpoint.** It has not started; I’ll wait for your approval.
+
+==============================================================================
+07. USER
+==============================================================================
+
+Execute **Phase 1 only: Durable audit evidence and repeatable discovery** from the revised migration plan.
+
+Do not proceed automatically to Phase 2.
+
+Implement the Phase 1 deliverables:
+
+- `www/reports/migration-audit-2026-10-06.md`
+- a compact, dated machine-readable route reconciliation alongside it
+- a small repeatable route-audit tool exposed as `npm run audit:routes`
+
+Preserve the accepted audit findings as historical evidence. Where fresh production checks differ from the accepted audit, record them as newly dated observations rather than silently rewriting the earlier findings.
+
+Keep production discovery read-only, rate-limited, and efficient. Use robots.txt, sitemap(s), navigation, indexes, and targeted requests rather than broad crawling.
+
+The route audit should:
+
+- inventory generated/local Astro routes;
+- discover relevant production routes;
+- normalize trailing-slash and tracking-query differences appropriately;
+- preserve meaningful query and fragment behavior;
+- distinguish sitemap absence from verified production absence;
+- record discovery source, observation time, HTTP verification status, canonical, locale, local counterpart, and reconciliation disposition where available;
+- preserve sitemap-absent but verified-live routes;
+- represent unpublished/local-only routes such as `/ar` correctly;
+- support useful offline checks against saved discovery evidence;
+- avoid committing large production HTML captures.
+
+Add focused offline tests for route normalization, deduplication, and classification.
+
+Run the planned validation:
+
+```bash
+npm run audit:routes
+npm run audit:routes -- --check
+npm run build
+```
+
+Also review the resulting Git diff and verify that:
+
+- no application behavior changed;
+- `merge-plan.md` remains untouched;
+- no unrelated files changed;
+- the report clearly distinguishes verified observations, inherited audit findings, and uncertainty;
+- another developer could reproduce the reconciliation from the documented commands.
+
+When Phase 1 is complete, stop and report:
+
+1. files added or changed;
+2. what `audit:routes` does;
+3. production requests/discovery performed;
+4. route totals and any differences from the accepted audit;
+5. test/build results;
+6. any new findings or uncertainties;
+7. final `git status --short`;
+8. whether you recommend proceeding to Phase 2.
+
+Do not begin the Markdown rendering repair until I approve Phase 2.
+
+==============================================================================
+08. ASSISTANT
+==============================================================================
+
+Phase 1 is fully specified, but **Plan mode is still active**, which prohibits repository edits. Please switch to execution mode so I can implement it.
+
+Once switched, I’ll complete only Phase 1, run the requested tests/build, verify the diff and `merge-plan.md`, then stop for your review. No files have been changed, and Phase 2 will remain untouched.
+
+==============================================================================
+09. USER
+==============================================================================
+
+Proceed with the already-approved **Phase 1 only**.
+
+Stop after Phase 1 and report the requested diff, validation results, route findings, `git status --short`, and whether Phase 2 is recommended. Do not begin Phase 2.
+
+==============================================================================
+10. ASSISTANT
+==============================================================================
+
+**Phase 1 is complete. Phase 2 has not started.**
+
+Added:
+
+- [Dated audit report](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-audit-2026-10-06.md)
+- [Preserved historical baseline](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/route-baseline-2026-10-06.json)
+- [Current reconciliation](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/route-reconciliation-2026-10-07-offline.json)
+- [Route-audit tool](/home/alice/projects/wrk/aia/www/_astro-site/www/tools/audit-routes.mjs)
+- [Offline tests](/home/alice/projects/wrk/aia/www/_astro-site/www/tools/audit-routes.test.mjs)
+
+`www/package.json` adds only `audit:routes` and `test:routes`.
+
+The tool inventories source/generated routes, performs bounded production discovery, preserves meaningful queries/fragments, and distinguishes sitemap omission from verified absence. `--check` validates saved evidence without network requests or writes; `--offline` creates a new reconciliation using saved production observations. Reproduction commands are documented in the report.
+
+Production discovery used **70 sequential GET requests**, plus one preliminary robots.txt request. No forms, APIs, or production mutations were invoked. Actual UTC observation timestamps are October 7; the requested report filename retains October 6.
+
+| Finding | Result |
+|---|---:|
+| Generated pages | 97 |
+| Production sitemap URLs | 102 |
+| Overlapping routes | 92 |
+| Sitemap-listed pages missing locally | 10 |
+| Local routes absent from sitemap | 5 |
+| Total inventoried route keys, including utilities/aliases | 129 |
+
+Core counts are unchanged. Additional findings:
+
+- Six author-pagination links recovered from historical evidence now verify as live.
+- Two newly inventoried `/page/1` links remain HTTP-unverified.
+- `/es` returns a slash redirect; the earlier audit recorded its final response. This is documented as a checking-method difference.
+- `/ar` remains a generated local placeholder and production 404.
+
+Validation passed:
+
+- **9/9 offline tests**
+- Fresh route audit, offline reconciliation, and `--check`
+- Build: **97 pages; zero diagnostics**
+- Link audit: **zero broken internal links**
+- `git diff --check`
+
+Application source, configuration, dependencies, assets, and existing reports are unchanged. Generated content/metadata comparisons match after normalizing existing random contact-obfuscation IDs. `merge-plan.md`’s checksum is unchanged.
+
+Final status:
+
+```text
+ M www/package.json
+?? merge-plan.md
+?? www/reports/migration-audit-2026-10-06.md
+?? www/reports/route-baseline-2026-10-06.json
+?? www/reports/route-reconciliation-2026-10-07-offline.json
+?? www/tools/audit-routes.mjs
+?? www/tools/audit-routes.test.mjs
+```
+
+**Phase 2 is recommended next**, beginning with the directive-usage inspection. I’ll wait for your approval.
+
+==============================================================================
+11. USER
+==============================================================================
+
+Phase 1 is accepted.
+
+Create a Git checkpoint commit containing **only the Phase 1 changes**:
+
+- `www/package.json`
+- `www/reports/migration-audit-2026-10-06.md`
+- `www/reports/route-baseline-2026-10-06.json`
+- `www/reports/route-reconciliation-2026-10-07-offline.json`
+- `www/tools/audit-routes.mjs`
+- `www/tools/audit-routes.test.mjs`
+
+Do not add or modify `merge-plan.md` or any unrelated file.
+
+Before committing, verify the staged diff contains only those Phase 1 files. Use an appropriate concise commit message describing the repeatable migration-route audit/reconciliation work.
+
+After committing, report the commit hash and final `git status --short`, then stop. Do not begin Phase 2.
+
+==============================================================================
+12. ASSISTANT
+==============================================================================
+
+Committed only the six approved Phase 1 files, verified before committing.
+
+**Commit:** `60c534d4a2d19e806f486631ebfa0224e7c7161e`  
+**Message:** `feat(audit): add repeatable migration route reconciliation`
+
+Final `git status --short`:
+
+```text
+?? merge-plan.md
+```
+
+`merge-plan.md` is unchanged. Phase 2 has not started.
+
+==============================================================================
+13. USER
+==============================================================================
+
+Proceed with **Phase 2 only: Markdown rendering repair** from the approved migration plan.
+
+Begin with the directive-usage inspection before changing configuration.
+
+Search the complete Markdown/MDX corpus, parser configuration, plugins, scripts, and relevant rendering components for intentional container, leaf, or inline directive syntax or consumers.
+
+Distinguish intentional directives from:
+
+- literal ratios such as `1:1` and `1:2`,
+- ordinary colon punctuation,
+- times,
+- URLs,
+- code/examples,
+- explicit heading IDs.
+
+If intentional directive usage exists, do **not** disable directive parsing globally. Stop, document the usage, and recommend the smallest compatible correction.
+
+If no intentional consumers exist:
+
+- disable only the unnecessary directive parsing;
+- preserve explicit heading-ID behavior;
+- add focused Markdown and MDX regression coverage using the project's actual rendering pipeline;
+- test literal `1:1`, `1:2`, ordinary colon punctuation, times, URLs, and explicit heading IDs;
+- verify generated English and Spanish service-page output;
+- do not upgrade dependencies;
+- do not make unrelated content changes.
+
+Run the planned validation:
+
+`npm run test:markdown`
+`npm run build`
+`npm run audit:links`
+`npm run audit:blog`
+
+Also run `git diff --check`.
+
+When complete, stop and report:
+
+- directive usage found during inspection;
+- exact cause of the corruption;
+- files changed;
+- regression coverage added;
+- rendered-output verification;
+- all validation results;
+- final `git status --short`;
+- whether any existing content beyond the known therapy ratios was found to have been silently corrupted by the same parser behavior.
+
+Do not begin Phase 3.
+
+==============================================================================
+14. ASSISTANT
+==============================================================================
+
+Phase 2 is complete. Phase 3 was not started.
+
+Inspection found **no intentional directives or consumers**. Across 100 content files, enabled directive parsing created **24 unintended inline-directive nodes in seven files**. The renderer discarded these unhandled nodes, deleting literal suffixes such as `:1`, `:00`, and `:Plan`.
+
+Only directive parsing was disabled; heading attributes remain enabled. Added 20 tests using the actual Astro configuration and content-rendering pipeline, covering Markdown/MDX ratios, punctuation, times, URLs, code examples, explicit IDs, and all affected content. Fourteen tests failed before the fix; all now pass.
+
+Generated English and Spanish service pages correctly retain `1:1` and `1:2`. Additional corruption was confirmed and repaired in:
+
+- English/Spanish school-readiness article ratios, including `1:10`.
+- English/Spanish social-club times.
+- English FAQ text containing `Opportunities:Plan`.
+
+Comparing all 97 generated pages found changes only in those seven affected pages, after normalizing existing random contact IDs.
+
+Existing explicit IDs are preserved. Four automatic service-heading IDs changed with the restored text; no source references to their former IDs were found. The pre-existing MDX limitation with `{#id}` shorthand is documented; supported HTML IDs are tested.
+
+Validation:
+
+| Command | Result |
+|---|---|
+| `npm run test:markdown` | 20 passed |
+| `npm run build` | 97 pages; zero diagnostics |
+| `npm run audit:links` | Zero broken internal links |
+| `npm run audit:blog` | Zero failures |
+| `git diff --check` | Passed |
+
+Changes comprise the configuration fix, test command and suite, and updated documentation. Detailed findings are in [migration-summary.md](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-summary.md). No dependencies or content files changed. `merge-plan.md` remains unchanged, verified by SHA-256.
+
+Final `git status --short`:
+
+```text
+ M www/README.md
+ M www/astro.config.mjs
+ M www/package.json
+ M www/reports/migration-summary.md
+?? merge-plan.md
+?? www/tools/markdown.test.mjs
+```
+
+==============================================================================
+15. USER
+==============================================================================
+
+Phase 2 is accepted.
+
+Create a Git checkpoint commit containing **only the Phase 2 changes**:
+
+- `www/README.md`
+- `www/astro.config.mjs`
+- `www/package.json`
+- `www/reports/migration-summary.md`
+- `www/tools/markdown.test.mjs`
+
+Do not add or modify `merge-plan.md` or any unrelated files.
+
+Before committing:
+
+- verify the staged diff contains only the Phase 2 changes;
+- run `git diff --cached --check`;
+- confirm `merge-plan.md` remains untracked and unchanged.
+
+Use a concise commit message describing the Markdown directive-rendering repair and regression coverage.
+
+After committing, report:
+
+- commit hash;
+- final `git status --short`;
+- confirmation that the Phase 1 checkpoint and this Phase 2 checkpoint remain separate commits.
+
+Then stop. Do not begin Phase 3.
+
+==============================================================================
+16. ASSISTANT
+==============================================================================
+
+Committed Phase 2 as `ea2f1eaa0576f08679dd469e7061ad7230ca88d8`:
+
+`fix(markdown): disable directive parsing and add regression coverage`
+
+Verified only the five approved files were staged; `git diff --cached --check` passed. `merge-plan.md` remains unchanged and untracked.
+
+Final `git status --short`:
+
+```text
+?? merge-plan.md
+```
+
+Phase 1 (`60c534d4`) and Phase 2 (`ea2f1eaa`) remain separate, consecutive commits. Phase 3 was not started.
+
+==============================================================================
+17. USER
+==============================================================================
+
+Proceed with **Phase 3A only: Route eligibility, canonical, and indexing policy** from the approved migration plan.
+
+Do not begin Phase 3B.
+
+Implement one consistent publication policy covering:
+
+- route eligibility;
+- draft/unpublished content;
+- page-level index/noindex behavior;
+- canonical behavior;
+- external-canonical exceptions;
+- sitemap inclusion/exclusion;
+- the unpublished `/ar` placeholder;
+- `/schedule-consultation` and other verified noindex exceptions.
+
+Preserve these approved rules:
+
+- Draft/unpublished content must not become eligible production routes.
+- `/ar` remains unpublished and must not enter the production sitemap.
+- Published `noindex` pages may remain accessible but must not enter the production sitemap.
+- `/schedule-consultation` must preserve its verified `noindex` behavior.
+- Ordinary eligible pages should self-canonicalize to their normalized public URL.
+- Verified syndicated articles must preserve their external canonical URLs.
+- External-canonical pages must not enter the production sitemap.
+- Sitemap entries must be derived from eligible local routes, not from canonical strings.
+- Staging must retain its global `noindex` protection.
+- Production-policy behavior must be exercised only through a local indexing-enabled build; do not deploy anything.
+
+Before changing architecture, identify the existing route, canonical, sitemap, draft, and indexing logic and minimize duplication. Prefer a single reusable publication-policy implementation over adding unrelated conditionals in multiple templates/scripts.
+
+Extend content/frontmatter schemas only where needed to represent verified publication exceptions. Do not invent new SEO policy fields without a demonstrated requirement.
+
+Add focused regression coverage proving at minimum that:
+
+1. a normal published self-canonical page is eligible and appears in the production sitemap;
+2. an unpublished/draft page is not eligible;
+3. `/ar` cannot appear in the production sitemap;
+4. `/schedule-consultation` remains accessible but noindex and excluded from the sitemap;
+5. each verified external-canonical article preserves its external canonical and is excluded from the sitemap;
+6. duplicate/missing invalid canonical conditions are caught where applicable;
+7. route collisions are detected;
+8. staging remains globally noindex;
+9. an indexing-enabled local build applies production publication policy without affecting deployment configuration.
+
+Run:
+
+`npm run test:publication`
+`npm run build`
+`PUBLIC_ALLOW_INDEXING=true npm run build`
+`npm run audit:routes -- --check`
+`npm run audit:links`
+`npm run build`
+`git diff --check`
+
+The final normal build should restore the staging artifact after the indexing-enabled test build.
+
+When complete, stop and report:
+
+- the publication-policy architecture chosen;
+- files changed;
+- schema/frontmatter changes, if any;
+- every route/page requiring an exception;
+- sitemap changes;
+- canonical/indexing behavior before and after;
+- all regression test results;
+- normal and indexing-enabled build results;
+- whether the generated route inventory changed;
+- final `git status --short`;
+- any policy questions that require human judgment.
+
+Do not implement hreflang, translation alternates, article schema, FAQ schema, or content reconciliation yet.
+
+==============================================================================
+18. USER
+==============================================================================
+
+continue
+
+==============================================================================
+19. ASSISTANT
+==============================================================================
+
+Phase 3A is complete. **The final build is back in staging mode. Phase 3B was not started.**
+
+A shared TypeScript [publication policy](/home/alice/projects/wrk/aia/www/_astro-site/www/src/utils/publication-policy.ts) now drives route eligibility, canonical validation, indexing, and sitemap inclusion. One collection-backed manifest feeds all content routes, shared SEO, sitemap generation, and audit tools.
+
+Former fixed home/Library routes now obey draft status. Their presentation templates were moved into components; retained pages have unchanged main text, titles, and H1s.
+
+The only new schema field is `noindex: boolean`, defaulting to `false`. Five content files received frontmatter changes:
+
+| Route | Publication exception |
+|---|---|
+| `/ar` | `draft: true`; no generated route |
+| `/schedule-consultation` | Accessible, self-canonical, noindex |
+| `/employee-portal` | Accessible, self-canonical, noindex |
+| `/library/community-highlight-meet-rula-diab` | Accessible, noindex; verified VoyagePhoenix canonical |
+| `/library/new-aia-scottsdale-office` | Accessible, noindex; verified Scottsdale.org canonical |
+
+All five are excluded from the indexing-enabled sitemap. Fresh, rate-limited GET checks confirmed these exceptions.
+
+Ordinary pages now self-canonicalize to normalized public URLs. Invalid or conflicting canonicals, duplicate canonical targets, and route collisions are rejected. Missing ordinary frontmatter canonicals receive a derived self-canonical.
+
+The static sitemap was replaced with a build-generated endpoint:
+
+- **Indexing-enabled local build:** 96 pages, 92 sitemap entries, four noindex pages.
+- **Final staging build:** 96 pages, all `noindex,nofollow`, empty sitemap.
+- Generated routes decreased **97 → 96**, solely by removing `/ar`. The discovery inventory remains 129 routes.
+
+Validation passed:
+
+| Check | Result |
+|---|---|
+| `test:publication` | 19 passed, including isolated builds and draft-index checks |
+| Normal, indexing-enabled, final normal builds | 96 pages each; zero errors/warnings/hints |
+| `audit:routes -- --check` | Passed |
+| `audit:links` | Zero broken links |
+| `git diff --check` | Passed |
+| Existing Markdown / route tests | 20 / 9 passed |
+| Sitemap compatibility command / source-link fallback | Passed |
+
+Detailed evidence and reproduction commands are in [migration-summary.md](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-summary.md:299). A new dated offline reconciliation preserves the final staging inventory. Historical audit evidence, dependencies, lockfile, environment configuration, and `merge-plan.md` are unchanged.
+
+No new human policy decisions are needed for Phase 3A.
+
+Final `git status --short`:
+
+```text
+ M www/README.md
+ M www/astro.config.mjs
+ M www/package.json
+ D www/public/sitemap.xml
+ M www/reports/migration-summary.md
+ M www/src/components/Header.astro
+ M www/src/components/LanguageSwitcher.astro
+ M www/src/components/Seo.astro
+ M www/src/components/pages/HomePage.astro
+ M www/src/content.config.ts
+ M www/src/content/blog/en/community-highlight-meet-rula-diab.md
+ M www/src/content/blog/en/new-aia-scottsdale-office.md
+ M www/src/content/pages/ar/index.md
+ M www/src/content/pages/en/employee-portal.md
+ M www/src/content/pages/en/schedule-consultation.mdx
+ M www/src/layouts/BaseLayout.astro
+ M www/src/layouts/BlogIndexLayout.astro
+ M www/src/layouts/BlogPostLayout.astro
+ M www/src/layouts/PageLayout.astro
+ M www/src/pages/[...slug].astro
+ D www/src/pages/ar/[...slug].astro
+ D www/src/pages/ar/index.astro
+ D www/src/pages/ar/library/[slug].astro
+ D www/src/pages/ar/library/index.astro
+ D www/src/pages/es/[...slug].astro
+ D www/src/pages/es/index.astro
+ D www/src/pages/es/library/[slug].astro
+ D www/src/pages/es/library/index.astro
+ D www/src/pages/index.astro
+ D www/src/pages/library/[slug].astro
+ D www/src/pages/library/index.astro
+ M www/src/pages/robots.txt.ts
+ M www/tools/audit-links.mjs
+ M www/tools/audit-routes.mjs
+ M www/tools/generate-sitemap.mjs
+?? merge-plan.md
+?? www/reports/route-reconciliation-2026-10-07-offline-04-11-25-151Z.json
+?? www/src/components/pages/ArabicHome.astro
+?? www/src/components/pages/LibraryArabic.astro
+?? www/src/components/pages/LibraryEnglish.astro
+?? www/src/components/pages/LibrarySpanish.astro
+?? www/src/pages/sitemap.xml.ts
+?? www/src/utils/
+?? www/tools/publication.test.mjs
+```
+
+The new `utils/` files are `publication-policy.ts` and `publication.ts`. Nothing is staged or committed.
+
+==============================================================================
+20. USER
+==============================================================================
+
+Phase 3A validation is accepted provisionally, but before committing, perform a **read-only structural diff review** of the Phase 3A changes.
+
+Do not modify files unless you discover an actual Phase 3A defect. Do not begin Phase 3B.
+
+Focus especially on the route consolidation that removed the dedicated English, Spanish, and Arabic page/Library route files and moved routing through the shared collection-backed manifest.
+
+Report:
+
+1. Why each deleted route file is no longer necessary and which replacement code now owns that behavior.
+2. Confirmation that every previously generated eligible English, Spanish, and Arabic route still resolves to the same public URL, except intentionally removed `/ar`.
+3. Confirmation that locale-specific presentation behavior survives the consolidation, including:
+   - Spanish routes,
+   - Arabic Library routes,
+   - RTL behavior,
+   - locale-aware Header/LanguageSwitcher behavior,
+   - locale-specific Library indexes.
+4. Whether any route precedence or catchall ambiguity was introduced by `src/pages/[...slug].astro`.
+5. Whether moving the former home/Library page templates into components changes rendered HTML, metadata, IDs, navigation, or client behavior beyond the intended publication-policy effects.
+6. Why `Header.astro` and `LanguageSwitcher.astro` needed changes in Phase 3A, and whether those changes are strictly publication-eligibility related.
+7. Why `/employee-portal` is now `noindex`, citing the fresh production evidence used to establish that behavior.
+8. Why the two externally canonicalized syndicated articles are also `noindex`, and whether that matches current production rather than being inferred merely from their external canonicals.
+9. Confirmation that the production-policy sitemap count of 92 equals exactly:
+   eligible generated local routes
+   minus all four noindex/external-canonical exceptions,
+   with no other accidental omissions.
+10. A concise `git diff --stat` and a classification of changed files as:
+    - publication-policy core,
+    - necessary routing/template consolidation,
+    - tests/audit tooling,
+    - documentation/content metadata.
+
+If any change cannot be justified as necessary for Phase 3A, identify it before committing.
+
+Re-run no tests unless the review finds something requiring a correction. Stop after reporting.
+
+==============================================================================
+21. ASSISTANT
+==============================================================================
+
+The review found **no confirmed routing or publication-policy defect**. All retained URLs and locale templates are preserved. Asset-loading parity has one qualification below.
+
+No files were changed, tests rerun, or commits created.
+
+**1. Deleted route files and their replacements**
+
+All paths below are relative to `www/src/pages/`. The shared [catchall route](/home/alice/projects/wrk/aia/www/_astro-site/www/src/pages/[...slug].astro) now selects eligible manifest entries and dispatches them to their existing presentation templates.
+
+| Deleted file | Replacement behavior |
+|---|---|
+| `index.astro` | English index entry → `HomePage` |
+| `es/index.astro` | Spanish index entry → `HomePage` |
+| `ar/index.astro` | Arabic index entry → retained `ArabicHome` component, but excluded while draft |
+| `es/[...slug].astro` | Spanish page entries → `PageLayout` |
+| `ar/[...slug].astro` | Arabic page entries → `PageLayout`; this wrapper previously had no additional ordinary pages to generate |
+| `library/[slug].astro` | English blog entries → `BlogPostLayout` |
+| `es/library/[slug].astro` | Spanish blog entries → `BlogPostLayout` |
+| `ar/library/[slug].astro` | Arabic blog entries → `BlogPostLayout` |
+| `library/index.astro` | English Library entry → `LibraryEnglish` |
+| `es/library/index.astro` | Spanish Library entry → `LibrarySpanish` |
+| `ar/library/index.astro` | Arabic Library entry → `LibraryArabic` |
+
+The wrappers are redundant under this implementation. Removing the fixed index routes also closes their previous ability to bypass `draft`. Consolidation is a reasonable way to enforce that policy, although separate manifest-backed route adapters could also enforce it.
+
+**2. Public URL preservation**
+
+The saved pre-change inventory and current generated output agree:
+
+| Locale | Before | After | Difference |
+|---|---:|---:|---|
+| English | 67 | 67 | None |
+| Spanish | 21 | 21 | None |
+| Arabic | 9 | 8 | `/ar` removed intentionally |
+| **Total** | **97** | **96** | **Only `/ar`** |
+
+Every retained route resolves at its previous public path. There are no added or renamed content routes.
+
+**3. Locale presentation**
+
+Confirmed in source and existing generated output:
+
+- Spanish routes retain Spanish content, `/es` prefixes, and `lang="es" dir="ltr"`.
+- All eight Arabic Library routes retain their URLs and `lang="ar" dir="rtl"`.
+- Existing RTL stylesheet loading is unchanged.
+- Each Library index still filters its own language, preserves descending publication-date ordering, and links through its locale prefix.
+- English and Spanish homepage branding links remain `/` and `/es`.
+- Language choices remain available for published matching routes, including all three Library indexes.
+
+Existing limitations remain: Arabic main navigation still uses its previous English fallback, and some Library presentation strings were already shared English text. Consolidation did not complete or alter those translations.
+
+**4. Catchall precedence**
+
+No current ambiguity was introduced.
+
+The catchall generates only manifest-provided static paths; it does not create arbitrary runtime routes. `/` uses Astro’s undefined rest parameter. Explicit `robots.txt` and `sitemap.xml` endpoints take precedence under the installed Astro routing rules, and the policy also rejects content collisions with those endpoints and reserved asset paths.
+
+Duplicate content routes are rejected across collections and locales, including drafts.
+
+**5. Template movement and rendered behavior**
+
+For all 96 retained pages, saved main-content HTML matches after normalizing whitespace and existing randomly generated contact-obfuscation IDs. Titles, H1s, substantive markup, stable IDs, and main-content links are unchanged.
+
+The three Library templates retain their original body markup. `HomePage` now receives the already-selected collection entry instead of fetching it independently.
+
+Intentional differences are:
+
+- publication-controlled canonicals and robots metadata;
+- corresponding `og:url` changes for the two external-canonical articles;
+- removal of unpublished `/ar` navigation targets.
+
+Client-script source and component placement are unchanged. Browser interaction tests were not repeated.
+
+**Qualification:** the shared catchall statically imports all page families. Current output loads a common stylesheet containing Home/Swiper, Library, and article styles on ordinary pages too. The saved pre-change evidence lacks stylesheet references, so I cannot establish whether this newly increased loading or quantify a regression. That asset coupling is not required by publication policy; **asset-loading parity remains unverified**, despite unchanged CSS source and retained markup.
+
+**6. Header and LanguageSwitcher scope**
+
+Both changes are publication-eligibility related:
+
+- `Header.astro` avoids linking its Arabic logo to unpublished `/ar`, falling back to `/`.
+- `LanguageSwitcher.astro` replaces independently constructed routes and hardcoded availability—including `/ar`—with eligible manifest routes.
+
+Labels and existing route-matching behavior remain unchanged. Neither change implements hreflang or new translation relationships.
+
+**7–8. Verified noindex exceptions**
+
+The fresh checks were sequential production GETs on **2026-10-07 UTC**, following robots inspection:
+
+| Route | Observation | Evidence |
+|---|---|---|
+| `/employee-portal` | 02:42:05 — HTTP 200, explicit `noindex`, self-canonical | [Recorded observation](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-summary.md:350) |
+| `/library/community-highlight-meet-rula-diab` | 02:42:06 — HTTP 200, explicit `noindex`, VoyagePhoenix canonical | [Recorded observation](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-summary.md:351) |
+| `/library/new-aia-scottsdale-office` | 02:42:07 — HTTP 200, explicit `noindex`, Scottsdale.org canonical | [Recorded observation](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-summary.md:352) |
+
+Thus, the syndicated articles’ `noindex` flags reproduce observed production directives; they were **not inferred from external canonicals**. The policy treats external canonicalization and noindex independently.
+
+Portal accessibility/replacement behavior remains unchanged.
+
+**9. Sitemap accounting**
+
+The saved indexing-enabled build verifies exactly:
+
+```text
+96 eligible generated local routes
+− /employee-portal
+− /schedule-consultation
+− /library/community-highlight-meet-rula-diab
+− /library/new-aia-scottsdale-office
+= 92 sitemap URLs
+```
+
+The two external-canonical routes are also among the four noindex routes; they are not subtracted twice. `/ar` is already excluded from the 96 eligible routes. No other eligible route is omitted.
+
+The current artifact remains the restored staging build: 96 globally noindex pages and an empty sitemap.
+
+**10. Diff size and classification**
+
+Actual tracked-file `git diff --stat`:
+
+```text
+35 files changed, 299 insertions(+), 322 deletions(-)
+```
+
+Additionally, nine new Phase 3A files remain untracked, making **44 Phase 3A files total**. The pre-existing `merge-plan.md` is excluded.
+
+| Classification | Files/groups |
+|---|---|
+| Publication-policy core | Two publication utilities; content schema; Astro site configuration; `Seo`/`BaseLayout`; robots and sitemap endpoints; removal of static sitemap |
+| Necessary routing/template consolidation | Shared catchall; 11 deleted wrappers; four extracted templates; `HomePage`; three layout canonical-prop removals; Header/LanguageSwitcher eligibility handling |
+| Tests/audit tooling | Publication tests; package scripts; route/link audits; sitemap compatibility tool; dated reconciliation JSON |
+| Documentation/content metadata | README; migration summary; five frontmatter-only content changes |
+
+No unrelated source edit was found. The consolidation’s asset-loading qualification is the only unresolved structural concern; it is not evidence of a confirmed functional defect.
+
+Nothing is staged or committed. `merge-plan.md` remains untracked with its original SHA-256 unchanged. Phase 3B was not started.
+
+==============================================================================
+22. USER
+==============================================================================
+
+In what file is the current migration audit being performed saved to?
+
+==============================================================================
+23. ASSISTANT
+==============================================================================
+
+The saved migration audit is [www/reports/migration-audit-2026-10-06.md](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-audit-2026-10-06.md).
+
+Subsequent implementation and validation notes, including Phase 3A, are in [www/reports/migration-summary.md](/home/alice/projects/wrk/aia/www/_astro-site/www/reports/migration-summary.md:299).
+
+The latest **read-only structural diff review** exists only in this conversation; it was not saved to a file.
+
+==============================================================================
+24. USER
+==============================================================================
+
+The Phase 3A structural review is accepted.
+
+Create a Git checkpoint commit containing only the Phase 3A changes.
+
+Do not add or modify `merge-plan.md` or unrelated work.
+
+Before committing:
+
+- stage only the Phase 3A files;
+- verify the staged diff represents the reviewed 44-file Phase 3A change set;
+- run `git diff --cached --check`;
+- confirm the final generated route count remains 96;
+- confirm the final artifact remains the normal staging build, with global `noindex,nofollow` and an empty sitemap;
+- confirm `merge-plan.md` remains untracked and unchanged.
+
+Use a concise commit message describing the shared publication policy, manifest-driven routing, canonical/indexing rules, and generated sitemap.
+
+After committing, report:
+
+- commit hash;
+- final `git status --short`;
+- confirmation that the Phase 1, Phase 2, and Phase 3A checkpoints remain separate commits.
+
+Do not begin Phase 3B.
+
+==============================================================================
+25. ASSISTANT
+==============================================================================
+
+Committed Phase 3A as `cd097d0e76a7232e17f25fc092de9bbed9a20aed`.
+
+Verified the exact reviewed 44-path change set and passed `git diff --cached --check`. The staging artifact retains **96 routes**, all `noindex,nofollow`, with an empty sitemap.
+
+Checkpoints remain separate:
+
+- Phase 1: `60c534d`
+- Phase 2: `ea2f1ea`
+- Phase 3A: `cd097d0`
+
+Final `git status --short`:
+
+```text
+?? merge-plan.md
+```
+
+`merge-plan.md` remains unchanged and untracked. Phase 3B was not started.
+
+==============================================================================
+26. USER
+==============================================================================
+
+Can you place this conversation (prompts and reponses) into a text file without including all the work and analysis leading up to each response?
