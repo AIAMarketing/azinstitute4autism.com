@@ -11,7 +11,8 @@ export default defineConfig({
     processor: satteri({
       features: {
         headingAttributes: true,
-        directive: true
+        // No directive consumers: parsing them drops literal ratios and times.
+        directive: false
       }
     }),
     shikiConfig: { theme: 'github-light' }

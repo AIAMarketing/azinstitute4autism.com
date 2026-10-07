@@ -202,9 +202,9 @@ Normal Markdown links remain preferred for ordinary page and article content.
 
 ### Stable Heading Links
 
-Astro automatically generates an ID for each Markdown heading. When a section
-needs a stable, editorially controlled fragment link, add an explicit ID with
-Sätteri heading-attribute syntax:
+Astro automatically generates an ID for each Markdown heading. In `.md` files,
+when a section needs a stable, editorially controlled fragment link, add an
+explicit ID with Sätteri heading-attribute syntax:
 
 ```md
 ## Accepted Insurance Carriers {#accepted-insurance-heading}
@@ -218,16 +218,27 @@ Link to it with the resulting fragment URL:
 
 Keep explicit IDs unique within the page, lowercase, and hyphenated. Treat a
 published ID as permanent so inbound links do not break when heading text is
-edited. This syntax is supported in both Markdown and MDX files.
+edited. The installed MDX parser rejects this shorthand, independently of
+directive parsing. In `.mdx` files, use an explicit HTML heading instead:
+
+```mdx
+<h2 id="accepted-insurance-heading">Accepted Insurance Carriers</h2>
+```
 
 ### Markdown Directives
 
-Sätteri directive parsing is enabled for container (`:::name`), leaf
-(`::name`), and text (`:name`) directives. Parsing creates directive nodes;
-rendering a named directive requires a corresponding Markdown transformation
-plugin. Until a directive and its semantic HTML treatment are registered, do
-not use it in published content because the default renderer omits unhandled
-directive nodes.
+Sätteri directive parsing is disabled. The content corpus has no intentional
+container (`:::name`), leaf (`::name`), or text (`:name`) directives, and no
+directive transformation plugins are registered. Enabling parsing silently
+removed literal text such as `:1` in `1:1`, `:00` in times, and `:Plan` after
+an adjacent colon. Heading attributes remain enabled.
+
+Run `npm run test:markdown` after changing the Markdown/MDX configuration. It
+builds temporary fixtures and the affected content through the actual Astro
+configuration, checking ratios, punctuation, times, URLs, code, and explicit
+heading IDs. It makes no production requests and leaves no fixture routes in
+the site. Any future directive feature needs compatible rendering and must
+preserve these literal-content checks.
 
 ### Front Matter CMS
 

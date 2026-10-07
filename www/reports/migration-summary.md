@@ -148,12 +148,13 @@ unavailable.
 - Extracted image alt text is retained where available.
 - Semantic landmarks, skip link, labeled forms, keyboard-operable navigation,
   language/direction attributes, and responsive layouts are present.
-- Sätteri heading attributes are enabled for Markdown and MDX, allowing stable
-  explicit fragment IDs such as `{#accepted-insurance-heading}`. The built-site
-  audit found no duplicate or invalid IDs and no missing same-page fragments.
-- Sätteri directive parsing is enabled. No named directive transformations are
-  registered yet, so unhandled directives must not be added to published
-  content until their semantic HTML rendering is defined.
+- Sätteri heading attributes remain enabled. Markdown supports explicit
+  fragment IDs such as `{#accepted-insurance-heading}`; the installed MDX
+  parser requires HTML heading IDs instead. The earlier claim that MDX also
+  supports the shorthand was corrected during Phase 2 (see below).
+- Sätteri directive parsing was disabled during Phase 2 after confirming that
+  there are no intentional consumers and that it silently removes literal
+  colon-containing text. No content or dependency versions were changed.
 
 ## Validation Results
 
@@ -193,3 +194,102 @@ unavailable.
 - Have fluent reviewers approve Spanish content and Arabic RTL presentation.
 - Select and connect a form backend with spam protection before launch.
 - Validate like/view CORS, credentials, and production behavior after deployment.
+
+## Phase 2: Markdown Rendering Repair — 2026-10-07 UTC
+
+These are newly verified local rendering findings. The accepted Phase 1 audit
+and route evidence remain unchanged. No production requests were made, no
+source content was rewritten, and no dependencies were upgraded.
+
+### Inspection and Cause
+
+Before changing configuration, searched the Markdown/MDX corpus, documentation,
+parser configuration, scripts, plugins, layouts, and rendering components for
+container, leaf, and inline directives and their consumers. There are no
+intentional directives or registered directive transformations. Documentation
+examples in code fences, ordinary punctuation, URLs, times, ratios, frontmatter
+fields, CSS selectors, and explicit heading IDs are not directive consumers.
+
+For all 100 content files, stripped frontmatter and inspected the installed
+Sätteri `markdownToMdast` / `mdxToMdast` output with the original
+`headingAttributes: true, directive: true` features. This found 24 unintended
+`textDirective` nodes in seven files, with zero container or leaf directives.
+Sätteri treats colon suffixes such as `:1`, `:00`, and `:Plan` as inline
+directives; without a transformation, the renderer drops those nodes. Astro's
+MDX integration inherits the same processor features, so both formats were
+affected. The original full build and the failing regression build confirmed
+the resulting text loss.
+
+Only `directive` was changed to `false`; `headingAttributes: true` is retained.
+
+| Source under `src/content/` | Restored literal text | Unintended nodes |
+| --- | --- | ---: |
+| `pages/en/aba-therapy.mdx` | `1:1`, `1:2` in headings and prose | 4 |
+| `pages/es/aba-therapy.md` | `1:1`, `1:2` in headings and prose | 4 |
+| `blog/en/aba-school-readiness-arizona.mdx` | `1:1`, `1:10` in prose and tables | 4 |
+| `blog/es/aba-school-readiness-arizona.mdx` | `1:1`, `1:10` in prose and tables | 3 |
+| `pages/en/learner-social-club.mdx` | `4:00 PM – 6:00 PM`, twice | 4 |
+| `pages/es/learner-social-club.mdx` | `4:00 p. m. – 6:00 p. m.`, twice | 4 |
+| `pages/en/faqs.mdx` | `Opportunities:Plan breaks` | 1 |
+
+### Regression and Generated-Output Verification
+
+`npm run test:markdown` creates a temporary Astro project, loads the real
+`astro.config.mjs`, and uses the existing dependencies and copied source
+components/content. It builds representative `.md` and `.mdx` fixtures plus
+all seven affected collection entries through `astro:content`'s `getEntry` and
+`render`. The fixtures never enter the production route tree, and all temporary
+files are removed after the run.
+
+The 20 tests cover `1:1`, `1:2`, `1:10`, ordinary spaced and adjacent colon
+punctuation, English/Spanish times, plain URLs and link destinations (including
+port/query/fragment), inline/fenced code examples, MDX embedded markup, explicit
+heading IDs and fragment links, and the affected real content. Before the
+configuration change, 14 tests failed and six passed. Afterward, all 20 passed.
+
+The full build still generates 97 pages. Comparing the before/after `<main>`
+HTML on all 97 pages found changes only in the seven routes corresponding to
+the table above. This comparison normalizes the existing random
+`ContactObfuscation` IDs in span attributes and script variables; that component
+was not changed. Generated `/aba-therapy` and `/es/aba-therapy` each now contain
+both ratios in their headings and prose (two occurrences of each ratio).
+
+All existing explicit IDs remain intact. Four automatically generated service
+heading IDs now reflect the restored text:
+
+| Route | Previous generated ID | Corrected generated ID |
+| --- | --- | --- |
+| `/aba-therapy` | `aba-therapy-1-program` | `aba-therapy-11-program` |
+| `/aba-therapy` | `aba-therapy-1-academic-readiness-program` | `aba-therapy-12-academic-readiness-program` |
+| `/es/aba-therapy` | `programa-de-terapia-aba-1` | `programa-de-terapia-aba-11` |
+| `/es/aba-therapy` | `terapia-aba-1-programa-de-preparación-académica` | `terapia-aba-12-programa-de-preparación-académica` |
+
+No source references to the old IDs were found. Compatibility with production
+fragment links remains part of the later URL reconciliation; this repair does
+not introduce redirects or edit service content.
+
+The installed MDX parser rejects Markdown's `{#id}` shorthand with directive
+parsing either enabled or disabled. This is a pre-existing limitation, not a
+regression from the repair. No current content uses that shorthand. Tests
+verify Markdown shorthand and MDX's supported `<h2 id="...">` syntax. README
+guidance was corrected; a broader parser change is outside this phase.
+
+### Validation
+
+Run from `www/`:
+
+```sh
+npm run test:markdown
+npm run build
+npm run audit:links
+npm run audit:blog
+git diff --check
+```
+
+- Markdown regression tests: 20 passed, zero failures.
+- Build: passed; 74 checked files, zero errors/warnings/hints, 97 static pages.
+- Link audit: zero broken internal links.
+- Blog audit: zero content audit failures.
+- Diff whitespace check: passed.
+- No changes to application content, dependencies, lockfile, Phase 1 evidence,
+  or `merge-plan.md`. No Phase 3 work was started.
