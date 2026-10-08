@@ -465,6 +465,16 @@ Forms are intentionally static and do not submit anywhere. Before production:
 3. Add spam protection.
 4. Test validation, confirmation, and failure states.
 
+### Google Ads consultation-form conversion handoff
+
+The Google Ads conversion ID, label, and privacy-gated Astro integration
+instructions are in
+[`reports/google-ads-consultation-conversion.md`](reports/google-ads-consultation-conversion.md).
+This is documentation only: **do not install Google tags or conversion snippets**
+on health-service pages or turn on enhanced conversions until AIA's
+privacy/HIPAA and advertising-policy review explicitly approves the complete
+data flow. Count conversions only after the form API confirms success.
+
 ## Troubleshooting
 
 ### `astro: command not found`
