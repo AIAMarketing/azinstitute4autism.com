@@ -380,7 +380,10 @@ src/data
 
 ### Add A Translation
 
-Use the same `translationKey` across translated entries:
+Use the same nonempty `translationKey` across genuine translated entries in
+the **same collection**. The key is an explicit equivalence declaration, not a
+URL or an entry reference. Slugs may differ; similar slugs alone never create a
+relationship. Do not change keys to manufacture translation pairs.
 
 ```txt
 src/content/blog/en/post-slug.md
@@ -398,7 +401,32 @@ The URLs become:
 
 Arabic routes automatically render with `lang="ar"` and `dir="rtl"`.
 
-Do not publish unreviewed machine translations. Clearly mark placeholders.
+The shared publication manifest supplies both the language switcher and SEO
+alternates. A translation set needs at least two eligible members. Drafts,
+unpublished placeholders, noindex pages, and external-canonical pages do not
+participate. Mark placeholders `draft: true`; `/ar` remains unpublished.
+Author records have no generated routes yet and cannot participate.
+
+One member per language per collection/key is allowed, including draft members;
+duplicates and blank/whitespace-padded keys fail validation. A lone key is valid
+and emits no alternate: it does not assert that a particular missing language
+exists. Dangling graph references, wrong-family targets, ineligible targets,
+and nonreciprocal links fail validation. The rendered-output regression checks
+also fail if an alternate target has no generated HTML file.
+
+Indexing-enabled builds emit the same absolute hreflang links on every member,
+including its own language. `x-default` points to the eligible English member
+only; sets without one omit it. Staging suppresses hreflang while retaining the
+eligible language menu and global `noindex,nofollow`. Unpaired/excluded pages
+retain their current-language label without an empty interactive menu.
+
+Run `npm run test:publication`, `npm run build`, and
+`PUBLIC_ALLOW_INDEXING=true npm run build` to validate both modes. Finish with
+`npm run build` to restore staging. See `reports/migration-summary.md` for
+Phase 3B's exact route sets, evidence, and route-audit refresh commands.
+
+Do not publish unreviewed machine translations. Do not invent translations;
+substantive translation changes require human language review.
 
 ### Edit A Blog FAQ
 

@@ -4,6 +4,9 @@ import { z } from 'astro/zod';
 import { homePageSchema, homeSectionsSchema } from './types/home-sections';
 
 const language = z.enum(['en', 'ar', 'es']);
+const translationKey = z.string().min(1).refine((value) => value === value.trim(), {
+  message: 'translationKey must not have surrounding whitespace'
+}).optional();
 const shared = {
   title: z.string(),
   description: z.string().default(''),
@@ -12,7 +15,7 @@ const shared = {
   featuredImage: z.string().optional(),
   alt: z.string().optional(),
   lang: language,
-  translationKey: z.string().optional(),
+  translationKey,
   draft: z.boolean().default(false),
   noindex: z.boolean().default(false),
   home: homePageSchema.optional(),
@@ -56,7 +59,7 @@ const authors = defineCollection({
     description: z.string().optional(),
     avatar: z.string().optional(),
     lang: language,
-    translationKey: z.string().optional()
+    translationKey
   })
 });
 

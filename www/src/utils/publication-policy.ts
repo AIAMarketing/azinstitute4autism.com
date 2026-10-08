@@ -7,6 +7,7 @@ export interface PublicationEntry {
     draft?: boolean;
     noindex?: boolean;
     canonical?: string;
+    translationKey?: string;
   };
 }
 
@@ -19,6 +20,18 @@ export interface Publication {
   externalCanonical: boolean;
   sitemapEligible: boolean;
 }
+
+export interface TranslationEquivalent {
+  lang: string;
+  route: string;
+  url: string;
+}
+
+export interface TranslatedPublication extends Publication {
+  translations: TranslationEquivalent[];
+}
+
+type TranslationMember = TranslatedPublication & { entry: PublicationEntry };
 
 /** Public document paths have no query/fragment and no trailing slash except /. */
 export function normalizeRoute(value: string): string {
@@ -82,7 +95,7 @@ export function publicationFor(entry: PublicationEntry, site: string): Publicati
 export function createPublicationManifest<T extends PublicationEntry>(entries: T[], site: string) {
   const routes = new Map<string, string>();
   const canonicals = new Map<string, string>();
-  return entries.map((entry) => {
+  const manifest = entries.map((entry) => {
     const publication = publicationFor(entry, site);
     const source = `${entry.collection}/${entry.id}`;
     const previous = routes.get(publication.route);
@@ -93,8 +106,75 @@ export function createPublicationManifest<T extends PublicationEntry>(entries: T
       if (duplicate) throw new Error(`Duplicate canonical: ${publication.canonical} (${duplicate}, ${source})`);
       canonicals.set(publication.canonical, source);
     }
-    return { ...publication, entry };
+    return { ...publication, entry, translations: [] as TranslationEquivalent[] };
   }).sort((a, b) => a.route.localeCompare(b.route, 'en'));
+
+  // Keys declare equivalence within a collection, never across URL suffixes.
+  // Validate even unpublished members so drafts cannot conceal ambiguity.
+  const groups = new Map<string, Map<string, typeof manifest[number]>>();
+  for (const page of manifest) {
+    const { translationKey, lang } = page.entry.data;
+    if (translationKey === undefined) continue;
+    if (typeof translationKey !== 'string' || !translationKey || translationKey !== translationKey.trim()) {
+      throw new Error(`Invalid translationKey: ${page.entry.collection}/${page.entry.id}`);
+    }
+    const key = `${page.entry.collection}:${translationKey}`;
+    const group = groups.get(key) ?? new Map();
+    const duplicate = group.get(lang);
+    if (duplicate) throw new Error(`Ambiguous translation: ${key} (${lang}: ${duplicate.entry.id}, ${page.entry.id})`);
+    group.set(lang, page);
+    groups.set(key, group);
+  }
+  for (const group of groups.values()) {
+    // Reuse the production publication gate: generated, indexable, self-canonical.
+    const members = [...group.values()].filter((page) => page.sitemapEligible);
+    if (members.length < 2) continue;
+    const translations = members.map(({ entry, route, url }) => ({ lang: entry.data.lang, route, url }))
+      .sort((a, b) => ['en', 'es', 'ar'].indexOf(a.lang) - ['en', 'es', 'ar'].indexOf(b.lang));
+    for (const page of members) page.translations = translations;
+  }
+  validateTranslationGraph(manifest);
+  return manifest;
+}
+
+/** Fail on dangling, ineligible, cross-family or nonreciprocal references. */
+export function validateTranslationGraph(manifest: TranslationMember[]): void {
+  const routes = new Map(manifest.map((page) => [page.route, page]));
+  for (const page of manifest) {
+    if (!page.translations.length) continue;
+    if (!page.sitemapEligible || !page.entry.data.translationKey) {
+      throw new Error(`Ineligible translation source: ${page.route}`);
+    }
+    const languages = new Set<string>();
+    for (const translation of page.translations) {
+      const target = routes.get(translation.route);
+      if (!target) throw new Error(`Missing translation target: ${page.route} -> ${translation.route}`);
+      if (!target.sitemapEligible) throw new Error(`Ineligible translation target: ${translation.route}`);
+      if (target.entry.collection !== page.entry.collection || target.entry.data.translationKey !== page.entry.data.translationKey) {
+        throw new Error(`Translation family/key mismatch: ${page.route} -> ${translation.route}`);
+      }
+      if (translation.lang !== target.entry.data.lang || translation.url !== target.url || languages.has(translation.lang)) {
+        throw new Error(`Invalid or duplicate translation reference: ${page.route} -> ${translation.route}`);
+      }
+      languages.add(translation.lang);
+      if (JSON.stringify(target.translations) !== JSON.stringify(page.translations)) {
+        throw new Error(`Nonreciprocal translations: ${page.route} -> ${translation.route}`);
+      }
+    }
+    if (languages.size < 2 || !page.translations.some((translation) => translation.route === page.route)) {
+      throw new Error(`Translation set must include itself and an equivalent: ${page.route}`);
+    }
+  }
+}
+
+export function hreflangLinksFor(page: TranslatedPublication, allowIndexing: boolean) {
+  // Staging keeps language navigation but emits no indexing-oriented alternates.
+  if (!allowIndexing || !page.sitemapEligible || page.translations.length < 2) return [];
+  const links = page.translations.map(({ lang, url }) => ({ lang, href: url }));
+  // English is the project's default language; never substitute another route.
+  const fallback = page.translations.find(({ lang }) => lang === 'en');
+  if (fallback) links.push({ lang: 'x-default', href: fallback.url });
+  return links;
 }
 
 export function robotsFor(publication: Publication, allowIndexing: boolean): string {

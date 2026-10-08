@@ -443,3 +443,207 @@ files retain their historical facts.
 No new human publication-policy decision is needed for Phase 3A. Human gates
 for portal access, forms/backends, analytics/consent, landing-page ownership,
 and conflicting service facts remain deferred. Phase 3B was not started.
+
+## Phase 3B: Explicit Translation Relationships and Hreflang — 2026-10-07 UTC
+
+This section records new work after the accepted Phase 3A structural review.
+Earlier audit findings and implementation history above remain historical.
+Starting branch: `faithful-astro-migration`; HEAD: `1e1aafa`. The only commit
+after Phase 3A (`cd097d0`) added the conversation transcript. The Phase 1 and
+Phase 2 checkpoints remain `60c534d` and `ea2f1ea`. This work is not committed.
+
+### Inspection and Policy
+
+The existing manifest owns every generated content route and already supplies
+eligibility, normalized local URL, canonical, noindex, external-canonical and
+sitemap eligibility. Inspection found 32 page records, 65 blog records and
+three author records, all declaring `translationKey`. No hreflang was emitted.
+The language switcher was the only equivalent-route guesser: it removed a
+language prefix and tried the same URL suffix in all languages. The Header's
+locale-home fallback is navigation, not a translation relationship, and remains
+unchanged.
+
+`createPublicationManifest` in `src/utils/publication-policy.ts` now groups
+explicit keys within each collection. It attaches one validated `translations`
+array to every eligible member of a multilingual set. Each reference contains
+the declared language and the target's actual manifest route and absolute URL.
+It never derives an equivalent from a slug, filename or URL suffix.
+
+Participation reuses `sitemapEligible`: a generated/published entry that is
+indexable and self-canonical under the production policy. At least two eligible
+languages are required. All members, including drafts, are checked for duplicate
+language declarations before filtering; two entries for the same collection,
+key and language fail validation. The graph validator rejects dangling targets,
+wrong collection/key/language/URL, ineligible endpoints, duplicate languages,
+missing self references and nonreciprocity. All members share the same complete,
+ordered set, so reciprocity is generated rather than manually maintained.
+
+**Grouping versus missing references:** `translationKey` is an optional grouping
+label, not a pointer or a list of required locales. A singleton remains valid
+and emits no alternates; it does not assert that a Spanish/Arabic record exists.
+An absent referenced graph node fails policy validation; an absent referenced
+HTML file fails rendered-output validation. A typo that creates a new singleton
+or deletion of the last counterpart cannot be distinguished from intentionally
+standalone content by this schema. No new required-target field or guessed
+language requirement was introduced.
+
+The existing optional `translationKey` schema now rejects empty and
+whitespace-padded values in pages, blog and authors. There are no new frontmatter
+fields and **no content/frontmatter edits**. Placeholders must remain drafts;
+the only marked content placeholder is `/ar`, already `draft: true`.
+
+### Current Explicit Sets
+
+The existing declarations produce **24 sets / 53 participating routes**:
+nine page sets (19 routes) and 15 blog sets (34 routes). English contributes
+24 members, Spanish 21, Arabic eight. There are 19 two-language sets and five
+three-language sets. The following inventory lists actual local routes, not
+inferred URLs. A dash means there is no eligible declared counterpart.
+
+| Collection / key | English | Spanish | Arabic |
+| --- | --- | --- | --- |
+| pages / index | `/` | `/es` | — |
+| pages / library | `/library` | `/es/library` | `/ar/library` |
+| pages / aba-therapy | `/aba-therapy` | `/es/aba-therapy` | — |
+| pages / aba-therapy-intake-process | `/aba-therapy-intake-process` | `/es/aba-therapy-intake-process` | — |
+| pages / autism-evaluations | `/autism-evaluations` | `/es/autism-evaluations` | — |
+| pages / client-consultation | `/client-consultation` | `/es/client-consultation` | — |
+| pages / contact | `/contact` | `/es/contact` | — |
+| pages / learner-social-club | `/learner-social-club` | `/es/learner-social-club` | — |
+| pages / services | `/services` | `/es/services` | — |
+| blog / aba-school-readiness-arizona | `/library/aba-school-readiness-arizona` | `/es/library/aba-school-readiness-arizona` | — |
+| blog / aba-school-readiness-guide | `/library/aba-school-readiness-guide` | — | `/ar/library/aba-school-readiness-guide` |
+| blog / autism-evaluation-diagnosis-arizona-parent-guide | `/library/autism-evaluation-diagnosis-arizona-parent-guide` | `/es/library/autism-evaluation-diagnosis-arizona-parent-guide` | — |
+| blog / autism-evaluation-what-to-expect | `/library/autism-evaluation-what-to-expect` | `/es/library/autism-evaluation-what-to-expect` | — |
+| blog / autism-family-self-care-tips | `/library/autism-family-self-care-tips` | `/es/library/autism-family-self-care-tips` | — |
+| blog / autism-self-advocacy-skills-aba | `/library/autism-self-advocacy-skills-aba` | `/es/library/autism-self-advocacy-skills-aba` | `/ar/library/autism-self-advocacy-skills-aba` |
+| blog / behavior-management-functions-guide | `/library/behavior-management-functions-guide` | — | `/ar/library/behavior-management-functions-guide` |
+| blog / emotional-regulation-aba | `/library/emotional-regulation-aba` | `/es/library/emotional-regulation-aba` | — |
+| blog / enhancing-generalization-skills | `/library/enhancing-generalization-skills` | `/es/library/enhancing-generalization-skills` | — |
+| blog / executive-functioning-skills-autism | `/library/executive-functioning-skills-autism` | `/es/library/executive-functioning-skills-autism` | `/ar/library/executive-functioning-skills-autism` |
+| blog / first-then-cards-autism-transitions | `/library/first-then-cards-autism-transitions` | `/es/library/first-then-cards-autism-transitions` | `/ar/library/first-then-cards-autism-transitions` |
+| blog / parents-guide-to-autism-and-aba | `/library/parents-guide-to-autism-and-aba` | `/es/library/parents-guide-to-autism-and-aba` | — |
+| blog / positive-reinforcement-techniques | `/library/positive-reinforcement-techniques` | `/es/library/positive-reinforcement-techniques` | `/ar/library/positive-reinforcement-techniques` |
+| blog / proactive-reactive-aba-strategies-guide | `/library/proactive-reactive-aba-strategies-guide` | — | `/ar/library/proactive-reactive-aba-strategies-guide` |
+| blog / social-pragmatic-communication-autism | `/library/social-pragmatic-communication-autism` | `/es/library/social-pragmatic-communication-autism` | — |
+
+Excluded: `/ar` is draft and uses `home`, not the published home set's `index`
+key; its key was not changed. `/schedule-consultation`, `/employee-portal`,
+`/library/community-highlight-meet-rula-diab`, and
+`/library/new-aia-scottsdale-office` remain noindex; the latter two also retain
+external canonicals. None can be a source or target. Three `authors:rula-diab`
+records share a key but have no generated author routes and do not enter the
+graph. The other 39 indexable routes have no eligible translated counterpart.
+Live-only Spanish privacy, author/archive/search routes and missing languages
+are not manufactured. There are no additional current URL-matched published
+pairs lacking explicit keys; different-slug and unkeyed same-slug fixtures test
+that future content will not be guessed.
+
+### SEO, Navigation and Default Language
+
+`Seo.astro` calls the shared `hreflangLinksFor` helper. An indexing-enabled build
+emits absolute alternate URLs, including the page itself, on each set member.
+English is the project's established default; `x-default` points to that set's
+eligible English member, never an unrelated homepage. A set without eligible
+English omits `x-default` (covered with Spanish/Arabic fixtures and excluded
+English fixtures). All 24 current sets have an eligible English member.
+
+This follows [Google's localized-page guidance](https://developers.google.com/search/docs/specialty/international/localized-versions)
+on fully qualified, reciprocal, self-referencing alternates and an appropriate
+default. Staging emits no hreflang; its global `noindex,nofollow` and empty
+sitemap remain intact. The graph still supplies local language navigation.
+
+`LanguageSwitcher.astro` uses those same manifest equivalents and the entry's
+declared language for its active label. It constructs no counterpart URLs.
+Labels, SVG and CSS are unchanged. Without a translation set, it retains the
+current-language label but emits no empty menu, focusable trigger or listbox
+promise. Existing translated sets keep self and equivalent links. Header and
+route/template dispatch code are unchanged.
+
+### Fresh Production Observations
+
+Six read-only GETs on **2026-10-07 23:00:32–23:00:38 UTC**, at least one second
+apart, checked robots first and then these five pages. Robots permitted the
+paths; all six responses were HTTP 200, with no redirects followed. No forms,
+APIs, broad crawl or production writes were used; no production HTML is added
+to the repository. These checks supplement, rather than rewrite, earlier audit
+evidence.
+
+| Observed page | Check time UTC | Declared production alternates |
+| --- | --- | --- |
+| `/` | 23:00:33 | en `/`, es `/es/`, x-default `/` |
+| `/library` | 23:00:35 | en-us `/library`, es `/es/library`, ar `/ar/library` |
+| `/library/autism-self-advocacy-skills-aba` | 23:00:36 | en-us, es, ar, x-default English |
+| `/es/library/autism-self-advocacy-skills-aba` | 23:00:37 | en-us, es, ar, x-default English |
+| `/ar/library/autism-self-advocacy-skills-aba` | 23:00:38 | en-us, es, ar, x-default English |
+
+The article's three observations reference the same three full article paths
+listed in the set inventory. The homepage and article use English defaults.
+Production's Library index has no x-default; the local policy adds its real
+English index as the default, consistent with the approved rule. Library
+production labels English `en-us`; local output uses the existing content
+language `en`, without inventing regional variants. Relationships are based on
+explicit existing content declarations, supported by these targeted checks;
+this is not a new full content reconciliation or linguistic-fluency approval.
+
+### Validation and Structural Review
+
+`npm run test:publication`: **33 passed**, including the original 19 Phase 3A
+tests and 14 translation tests. Coverage includes different-slug equivalence,
+unrelated matching slugs, collection boundaries, all publication exclusions,
+malformed/duplicate keys, dangling graph/generated references, reciprocity,
+self references, default eligibility and identical switcher/SEO membership.
+Isolated real-Astro builds exercise staging, indexing and draft home/Library
+indexes without changing the real content or deploying anything.
+
+The requested validation sequence passed (offline refreshes keep source
+fingerprints current without making discovery requests):
+
+```sh
+cd www
+npm run test:publication
+npm run build
+PUBLIC_ALLOW_INDEXING=true npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+npm run audit:links
+npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+git diff --check
+```
+
+All three regular build invocations checked 71 files with zero errors, warnings
+or hints, and generated 96 HTML routes. The link audit found zero broken links.
+At 23:02:40 UTC, the indexing artifact had 92 sitemap entries, 92 indexable
+pages and four noindex exceptions, with 174 hreflang links on 53 routes across
+24 sets. Canonicals matched the pre-change artifact on every retained route.
+At 23:03:49 UTC, the final staging artifact had 96 `noindex,nofollow` pages,
+zero sitemap entries and zero hreflang links. Every language menu matched the
+graph. Route set, titles, canonical URLs, language/direction and main content
+matched the pre-change artifact; the main-content comparison excludes script
+nodes and normalizes whitespace and existing random contact-obfuscation IDs.
+
+The final durable route evidence is
+[`route-reconciliation-2026-10-07-offline-23-03-24-581Z.json`](route-reconciliation-2026-10-07-offline-23-03-24-581Z.json).
+It preserves the original 70 production request records and observation times.
+The discovery inventory remains 129 routes, production sitemap inventory 102,
+local generated 96, local/sitemap overlap 92 and live-sitemap local omissions
+10. Those production counts are historical discovery evidence, not the local
+92-entry production-policy sitemap. The intermediate indexing reconciliation
+is retained only in temporary storage; both modes are reproducible above.
+
+The diff is confined to the shared publication policy, translation-key schema
+validation, switcher, SEO component, existing publication tests, README, this
+report and the final dated route reconciliation. No content/frontmatter, route
+templates, styles, dependencies, environment files or deployment settings were
+changed. No Phase 3A blocker or accounting defect was found. The original
+`merge-plan.md` remains untracked with SHA-256
+`015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
+
+No new human publication-policy decision is required. Existing decisions about
+employee access, campaign ownership, forms, analytics/consent and conflicting
+eligibility claims remain deferred. Substantive future translations require
+human language review. Phase 4A, article/FAQ schema, content reconciliation,
+visual fidelity and deployment work were not started. Stop for review before
+any Phase 3B checkpoint commit.

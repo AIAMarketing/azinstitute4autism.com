@@ -8,7 +8,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import fg from 'fast-glob';
 import matter from 'gray-matter';
 import { load } from 'cheerio';
-import { createPublicationManifest, normalizeRoute, publicationFor, renderSitemap, robotsFor, sitemapUrls } from '../src/utils/publication-policy.ts';
+import { createPublicationManifest, hreflangLinksFor, normalizeRoute, publicationFor, renderSitemap, robotsFor, sitemapUrls, validateTranslationGraph } from '../src/utils/publication-policy.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -120,6 +120,133 @@ test('generated-head acceptance checks reject missing, duplicate and invalid can
 const sourceEntries = await readEntries(project);
 const actualManifest = createPublicationManifest(sourceEntries, site);
 
+function translationPair() {
+  return createPublicationManifest([
+    entry({ slug: 'original', translationKey: 'explicit-pair' }),
+    entry({ slug: 'traduccion', lang: 'es', translationKey: 'explicit-pair' }, 'pages', 'es/traduccion')
+  ], site);
+}
+
+test('explicit English/Spanish equivalents with different slugs are reciprocal and self-referencing', () => {
+  const pair = translationPair();
+  for (const page of pair) {
+    assert.deepEqual(hreflangLinksFor(page, true), [
+      { lang: 'en', href: `${site}/original` },
+      { lang: 'es', href: `${site}/es/traduccion` },
+      { lang: 'x-default', href: `${site}/original` }
+    ]);
+    assert.deepEqual(page.translations.map(({ route }) => route), ['/original', '/es/traduccion']);
+  }
+});
+
+test('singletons, absent keys and different keys never invent translations from matching slugs', () => {
+  for (const keys of [[undefined, undefined], ['english-only', 'spanish-only'], ['declared', undefined]]) {
+    const pages = createPublicationManifest([
+      entry({ translationKey: keys[0] }),
+      entry({ lang: 'es', translationKey: keys[1] }, 'pages', 'es/example')
+    ], site);
+    for (const page of pages) {
+      assert.deepEqual(page.translations, []);
+      assert.deepEqual(hreflangLinksFor(page, true), []);
+    }
+  }
+});
+
+test('translation keys are scoped to collections; pages cannot pair with blog posts', () => {
+  const pages = createPublicationManifest([
+    entry({ translationKey: 'shared-key' }),
+    entry({ lang: 'es', translationKey: 'shared-key' }, 'blog', 'es/example')
+  ], site);
+  assert.ok(pages.every((page) => page.translations.length === 0));
+});
+
+test('draft placeholders, noindex and external-canonical equivalents are excluded independently', () => {
+  for (const flags of [{ draft: true }, { noindex: true }, { canonical: 'https://publisher.example/original' }]) {
+    const pages = createPublicationManifest([
+      entry({ ...flags, translationKey: 'pair' }),
+      entry({ lang: 'es', translationKey: 'pair' }, 'pages', 'es/example'),
+      entry({ lang: 'ar', translationKey: 'pair' }, 'pages', 'ar/example')
+    ], site);
+    assert.deepEqual(pages.find((page) => page.route === '/example').translations, []);
+    for (const page of pages.filter((page) => page.route !== '/example')) {
+      assert.deepEqual(hreflangLinksFor(page, true), [
+        { lang: 'es', href: `${site}/es/example` },
+        { lang: 'ar', href: `${site}/ar/example` }
+      ], 'No x-default may point to an excluded English member');
+    }
+  }
+});
+
+test('x-default is omitted when a genuine Spanish/Arabic set has no English member', () => {
+  const pages = createPublicationManifest([
+    entry({ lang: 'es', translationKey: 'pair' }, 'pages', 'es/example'),
+    entry({ lang: 'ar', translationKey: 'pair' }, 'pages', 'ar/example')
+  ], site);
+  for (const page of pages) {
+    assert.equal(hreflangLinksFor(page, true).length, 2);
+    assert.ok(!hreflangLinksFor(page, true).some(({ lang }) => lang === 'x-default'));
+    assert.deepEqual(hreflangLinksFor(page, false), [], 'Staging suppresses metadata, not the navigation graph');
+    assert.equal(page.translations.length, 2);
+  }
+});
+
+test('ambiguous same-language declarations fail even if the duplicate is a draft', () => {
+  for (const draft of [false, true]) {
+    assert.throws(() => createPublicationManifest([
+      entry({ translationKey: 'pair' }),
+      entry({ slug: 'second', translationKey: 'pair', draft }, 'pages', 'en/second')
+    ], site), /Ambiguous translation: pages:pair/);
+  }
+  for (const translationKey of ['', ' ', ' key', 'key ', null, 123]) {
+    assert.throws(() => createPublicationManifest([entry({ translationKey })], site), /Invalid translationKey/);
+  }
+});
+
+test('missing referenced translations fail graph validation instead of being silently dropped', () => {
+  const pair = translationPair();
+  assert.throws(() => validateTranslationGraph(pair.filter((page) => page.entry.data.lang === 'en')), /Missing translation target/);
+});
+
+test('graph validation rejects cross-family, wrong-key and publication-ineligible targets', () => {
+  for (const mutate of [
+    (page) => { page.entry.collection = 'blog'; },
+    (page) => { page.entry.data.translationKey = 'different-family'; },
+    (page) => { page.sitemapEligible = false; }
+  ]) {
+    const pair = translationPair();
+    mutate(pair.find((page) => page.entry.data.lang === 'es'));
+    assert.throws(() => validateTranslationGraph(pair), /family\/key mismatch|Ineligible translation/);
+  }
+});
+
+test('graph validation rejects duplicate languages, nonreciprocity and missing self references', () => {
+  const duplicate = translationPair();
+  duplicate[0].translations.push(duplicate[0].translations[0]);
+  assert.throws(() => validateTranslationGraph(duplicate), /duplicate translation/);
+  const nonreciprocal = translationPair();
+  nonreciprocal[0].translations = [];
+  assert.throws(() => validateTranslationGraph(nonreciprocal), /Nonreciprocal/);
+  const selfMissing = translationPair();
+  for (const page of selfMissing) page.translations = page.translations.filter(({ lang }) => lang === 'en');
+  assert.throws(() => validateTranslationGraph(selfMissing), /include itself and an equivalent/);
+});
+
+test('real content declares 24 translation sets and all five exceptions are absent', () => {
+  const members = actualManifest.filter((page) => page.translations.length);
+  const groups = new Set(members.map((page) => `${page.entry.collection}:${page.entry.data.translationKey}`));
+  assert.equal(groups.size, 24);
+  assert.equal(members.length, 53);
+  assert.deepEqual(members.reduce((counts, page) => {
+    const lang = page.entry.data.lang; counts[lang] = (counts[lang] ?? 0) + 1; return counts;
+  }, {}), { en: 24, ar: 8, es: 21 });
+  const excluded = ['/ar', ...verifiedExceptions.map(({ route }) => route)];
+  for (const route of excluded) {
+    assert.deepEqual(actualManifest.find((page) => page.route === route).translations, []);
+    assert.ok(members.every((page) => page.translations.every((target) => target.route !== route)));
+  }
+  assert.ok(actualManifest.every((page) => page.entry.collection !== 'authors'));
+});
+
 test('the actual Arabic homepage placeholder remains unpublished', () => {
   const arabic = actualManifest.find((page) => page.route === '/ar');
   assert.equal(arabic.entry.data.draft, true);
@@ -160,6 +287,20 @@ before(async () => {
   ]) {
     await writeFile(path.join(temporary, 'src/content', collection, 'en', `${name}.md`),
       `---\ntitle: Publication regression fixture\nslug: ${name}\nlang: en\n${flags}\n---\nFixture content.\n`);
+  }
+  // Different slugs prove that the rendered switcher cannot use URL guessing.
+  // Same-slug unkeyed fixtures prove that it cannot invent a relationship.
+  for (const [lang, slug, flags] of [
+    ['en', 'translation-original', 'translationKey: publication-translated'],
+    ['es', 'traduccion-distinta', 'translationKey: publication-translated'],
+    ['ar', 'translation-draft', 'translationKey: publication-translated\ndraft: true'],
+    ['en', 'translation-unrelated', ''],
+    ['es', 'translation-unrelated', ''],
+    ['es', 'translation-without-english', 'translationKey: publication-no-default'],
+    ['ar', 'translation-without-english', 'translationKey: publication-no-default']
+  ]) {
+    await writeFile(path.join(temporary, 'src/content/pages', lang, `${slug}.md`),
+      `---\ntitle: Translation regression fixture\nslug: ${slug}\nlang: ${lang}\n${flags}\n---\nFixture content.\n`);
   }
   fixtureManifest = createPublicationManifest(await readEntries(temporary), site);
   const runner = `import {build} from ${JSON.stringify(pathToFileURL(path.join(project, 'node_modules/astro/dist/index.js')).href)};
@@ -203,7 +344,6 @@ for (const mode of ['staging', 'indexing']) {
       assert.equal($('meta[name="robots"]').length, 1, page.route);
       assert.equal($('meta[name="robots"]').attr('content'), robotsFor(page, mode === 'indexing'), page.route);
       assert.equal($('a[href="/ar"]').length, 0, 'No navigation links to the unpublished placeholder');
-      assert.equal($('link[hreflang]').length, 0, 'Language-alternate policy is outside Phase 3A');
     }
   });
 
@@ -224,6 +364,63 @@ for (const mode of ['staging', 'indexing']) {
     if (mode === 'indexing') assert.ok(urls.includes(`${site}/publication-normal`));
   });
 }
+
+function assertRenderedTranslations({ html }, manifest, allowIndexing) {
+  const pages = new Map(manifest.map((page) => [page.route, page]));
+  for (const [route, content] of html) {
+    const page = pages.get(route);
+    assert.ok(page, `Unknown generated route: ${route}`);
+    const $ = load(content);
+    const links = $('head link[rel="alternate"][hreflang]').map((_, tag) => ({
+      lang: $(tag).attr('hreflang'), href: $(tag).attr('href')
+    })).get();
+    assert.deepEqual(links, hreflangLinksFor(page, allowIndexing), route);
+    assert.equal($('link[hreflang]').length, links.length, 'Alternates belong in head');
+    const choices = $('.lang-switcher__menu a').map((_, tag) => ({
+      lang: $(tag).attr('lang'), route: $(tag).attr('href')
+    })).get();
+    assert.deepEqual(choices, page.translations.map(({ lang, route }) => ({ lang, route })), route);
+    assert.equal($('.lang-switcher__trigger').attr('aria-haspopup'), choices.length ? 'listbox' : undefined);
+    for (const translation of page.translations) {
+      assert.ok(html.has(translation.route), `Missing generated translation target: ${route} -> ${translation.route}`);
+    }
+    for (const link of links) {
+      assert.equal(new URL(link.href).origin, site);
+      const targetRoute = new URL(link.href).pathname;
+      assert.ok(html.has(targetRoute), `Missing generated translation target: ${link.href}`);
+      const target = pages.get(targetRoute);
+      assert.ok(target?.sitemapEligible, `Ineligible hreflang target: ${targetRoute}`);
+      assert.equal(target.entry.collection, page.entry.collection);
+      assert.equal(target.entry.data.translationKey, page.entry.data.translationKey);
+      assert.equal(target.entry.data.lang, link.lang === 'x-default' ? 'en' : link.lang);
+      const other = load(html.get(targetRoute));
+      assert.deepEqual(other('head link[rel="alternate"][hreflang]').map((_, tag) => ({
+        lang: other(tag).attr('hreflang'), href: other(tag).attr('href')
+      })).get(), links, `Reciprocity: ${route} -> ${targetRoute}`);
+    }
+  }
+}
+
+for (const mode of ['staging', 'indexing', 'draft-indexes']) {
+  test(`${mode} build: hreflang and LanguageSwitcher share only real eligible equivalents`, () => {
+    const manifest = mode === 'draft-indexes'
+      ? createPublicationManifest(fixtureManifest.map(({ entry: source }) => ({ ...source, data: {
+        ...source.data, draft: source.data.draft || (source.collection === 'pages' && ['en/index', 'es/library'].includes(source.id))
+      } })), site)
+      : fixtureManifest;
+    assertRenderedTranslations(artifacts.get(mode), manifest, mode !== 'staging');
+    const $ = load(artifacts.get(mode).html.get('/translation-original'));
+    assert.equal($('.lang-switcher__menu a[lang="es"]').attr('href'), '/es/traduccion-distinta');
+    const unpaired = load(artifacts.get(mode).html.get('/translation-unrelated'));
+    assert.equal(unpaired('.lang-switcher__menu a').length, 0);
+  });
+}
+
+test('rendered-output validation fails for a missing referenced translation file', () => {
+  const artifact = { ...artifacts.get('indexing'), html: new Map(artifacts.get('indexing').html) };
+  artifact.html.delete('/es/traduccion-distinta');
+  assert.throws(() => assertRenderedTranslations(artifact, fixtureManifest, true), /Missing generated translation target/);
+});
 
 test('formerly fixed home and Library routes disappear when their entries become drafts', () => {
   const { html, sitemap } = artifacts.get('draft-indexes');

@@ -1,10 +1,10 @@
 ---
 import { allowIndexing } from '../utils/publication';
-import { robotsFor, type Publication } from '../utils/publication-policy';
+import { hreflangLinksFor, robotsFor, type TranslatedPublication } from '../utils/publication-policy';
 interface Props {
   title: string;
   description?: string;
-  publication: Publication;
+  publication: TranslatedPublication;
   image?: string;
   lang?: string;
   type?: 'website' | 'article';
@@ -24,6 +24,7 @@ const absoluteImage = image ? new URL(image, Astro.site ?? Astro.url).href : und
 <meta name="description" content={description} />
 <meta name="robots" content={robotsFor(publication, allowIndexing)} />
 <link rel="canonical" href={canonical} />
+{hreflangLinksFor(publication, allowIndexing).map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={href} />)}
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
