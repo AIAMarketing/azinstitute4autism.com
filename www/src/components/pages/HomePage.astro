@@ -40,7 +40,7 @@ const sections: HomeSection[] = entry.data.home
   {sections.map((section) => {
     switch (section.type) {
       case 'hero':
-        return <HomeHero section={section} />;
+        return <HomeHero section={section} displayH1={entry.data.displayH1} />;
       case 'services-intro':
         return <HomeServicesIntro section={section} />;
       case 'benefits':

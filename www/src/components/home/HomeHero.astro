@@ -1,14 +1,14 @@
 ---
 import Button from '../Button.astro';
 import type { HeroSection } from '../../types/home-sections';
-interface Props { section: HeroSection }
-const { section } = Astro.props;
+interface Props { section: HeroSection; displayH1?: string }
+const { section, displayH1 } = Astro.props;
 ---
 <section class="home-hero">
   <div class="container home-hero-grid">
     <div>
       <p class="eyebrow">{section.eyebrow}</p>
-      <h1 set:html={section.heading} />
+      {displayH1 === undefined ? <h1 set:html={section.heading} /> : <h1>{displayH1}</h1>}
       <p>{section.body}</p>
       <Button href={section.cta.href}>{section.cta.label}</Button>
     </div>

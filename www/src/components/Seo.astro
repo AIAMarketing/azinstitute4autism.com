@@ -1,12 +1,14 @@
 ---
 import { allowIndexing } from '../utils/publication';
 import { hreflangLinksFor, robotsFor, type TranslatedPublication } from '../utils/publication-policy';
+import { socialImageUrl } from '../utils/seo';
+import site from '../data/site.json';
 interface Props {
   title: string;
   description?: string;
   publication: TranslatedPublication;
   image?: string;
-  lang?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
 }
 const {
@@ -14,11 +16,12 @@ const {
   description = '',
   publication,
   image,
-  lang = 'en',
+  imageAlt,
   type = 'website'
 } = Astro.props;
 const { canonical } = publication;
-const absoluteImage = image ? new URL(image, Astro.site ?? Astro.url).href : undefined;
+const absoluteImage = socialImageUrl(image, site.url);
+const imageDescription = absoluteImage && imageAlt?.trim() ? imageAlt : undefined;
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
@@ -30,7 +33,9 @@ const absoluteImage = image ? new URL(image, Astro.site ?? Astro.url).href : und
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 {absoluteImage && <meta property="og:image" content={absoluteImage} />}
+{imageDescription && <meta property="og:image:alt" content={imageDescription} />}
 <meta name="twitter:card" content={absoluteImage ? 'summary_large_image' : 'summary'} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta property="og:locale" content={lang} />
+{absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
+{imageDescription && <meta name="twitter:image:alt" content={imageDescription} />}

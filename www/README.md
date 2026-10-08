@@ -176,6 +176,43 @@ Article content goes here.
 
 Set `draft: true` while preparing unpublished content.
 
+### Display Headings and Social Metadata
+
+Pages and articles may supply an optional plain-text `displayH1` in frontmatter:
+
+```yaml
+title: "The existing SEO title"
+displayH1: "The source-supported visible heading"
+```
+
+The override changes only the visible H1. It does not change the document or
+social title, article cards, navigation labels, or related-post text. Empty,
+whitespace-only and non-string overrides fail content validation. Without an
+override, articles keep `title`, regular pages keep their existing service/page
+heading mappings and title-derived fallback, and homepage/Library components
+keep their existing headings. Homepage heading markup stays intact unless a
+plain-text override is explicitly supplied. Library template SEO titles remain
+unchanged. Front Matter CMS exposes the optional field for pages and blog posts.
+
+Existing featured images and page banner fallbacks supply `og:image` and
+`twitter:image`. Relative paths resolve against the public origin in
+`src/data/site.json`, never a preview host or an external canonical. Existing
+`alt` text supplies both image-alt metadata tags only when it describes the
+selected featured image; no descriptions are invented for banner fallbacks.
+Pages without a selected image omit image tags and retain the `summary` card;
+image pages retain `summary_large_image`.
+
+`og:locale` is omitted: the content languages `en`, `es` and `ar` do not establish
+the regional `language_TERRITORY` values required by the
+[Open Graph protocol](https://ogp.me/). Regional targeting remains a human
+localization decision. HTML language/direction and hreflang are unchanged.
+
+Run `npm run test:seo` for isolated real-Astro builds covering heading defaults,
+overrides, schema rejection, image metadata and shared publication invariants
+in staging and indexing modes. Fixtures never modify the working content or
+the project's `dist/`. See the dated Phase 4A section of
+[`reports/migration-summary.md`](reports/migration-summary.md) for source evidence.
+
 ### Publication, Canonicals, and Sitemap
 
 `src/utils/publication-policy.ts` owns route eligibility, normalized public

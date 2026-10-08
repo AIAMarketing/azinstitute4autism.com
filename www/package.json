@@ -20,6 +20,7 @@
     "test:routes": "node --experimental-strip-types --test tools/audit-routes.test.mjs",
     "test:markdown": "node --test tools/markdown.test.mjs",
     "test:publication": "node --experimental-strip-types --test tools/publication.test.mjs",
+    "test:seo": "node --experimental-strip-types --test tools/seo.test.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",
     "generate:redirects": "node tools/generate-redirects.mjs"
   },

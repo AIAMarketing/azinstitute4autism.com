@@ -9,6 +9,9 @@ const translationKey = z.string().min(1).refine((value) => value === value.trim(
 }).optional();
 const shared = {
   title: z.string(),
+  displayH1: z.string().refine((value) => value.trim().length > 0, {
+    message: 'displayH1 must not be empty or whitespace-only'
+  }).optional(),
   description: z.string().default(''),
   slug: z.string(),
   canonical: z.url().optional(),

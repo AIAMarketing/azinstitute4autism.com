@@ -647,3 +647,221 @@ eligibility claims remain deferred. Substantive future translations require
 human language review. Phase 4A, article/FAQ schema, content reconciliation,
 visual fidelity and deployment work were not started. Stop for review before
 any Phase 3B checkpoint commit.
+
+## Phase 4A — Display Headings and Social Metadata (2026-10-08)
+
+This section records new implementation and observations after checkpoint
+`32112edbde7f90d01becf5d420ff189bf8b7e6ec` on `faithful-astro-migration`.
+Earlier audit and phase sections remain historical evidence. Phase 4B,
+substantive content reconciliation, Library features and deployment are outside
+this milestone. No changes have been staged or committed; stop for acceptance
+of the implementation and structural review.
+
+### Inspection and Architecture
+
+Before changes, articles used `title` for both document title and H1. Regular
+pages used `serviceTitles`, `pageTitles`, then the part of `title` preceding
+`|`. Home and Library components owned their headings. `Seo.astro` already
+handled OG metadata and Twitter title/description/card, but lacked
+`twitter:image`; it emitted content language codes as `og:locale`. Publication,
+robots, canonical, sitemap, hreflang and LanguageSwitcher membership were
+already governed by the Phase 3A/3B manifest and remain so.
+
+The shared pages/blog Zod schema now accepts optional `displayH1`. It must be a
+string containing non-whitespace text. Omission preserves existing behavior;
+empty, whitespace-only and non-string explicit values fail validation. Both
+Front Matter CMS content types expose the field. No author or social-specific
+schema fields were added.
+
+- BlogPostLayout selects `displayH1 ?? title` for its existing H1 only.
+- PageLayout selects `displayH1 ?? bannerTitle` only at PageHero. All existing
+  heading maps and fallbacks remain intact. Form and contact heading props
+  continue to receive the original banner title, avoiding collateral changes.
+- HomePage passes the optional override to HomeHero. Without one, existing
+  source heading HTML, including line breaks, is preserved. An override is
+  escaped plain text and replaces the single H1, never adds another one.
+- BlogIndexLayout reads the current manifest entry for an explicit H1 override.
+  Its existing title prop continues to control the document/social titles and
+  default H1. Existing locale-specific Library template titles are unchanged.
+
+Cards, navigation labels, related-post text, article bodies, styles and client
+code are unchanged. No content routes, policy fields or translation pairs were
+added. The unpublished Arabic homepage remains unpublished.
+
+### Newly Verified Heading Evidence
+
+Two batches of read-only production requests on 2026-10-08 respected robots
+and spaced page requests by at least one second. Nine GETs total comprised two
+robots checks and seven article checks across four unique article URLs. All
+returned HTTP 200; no redirects were followed, forms submitted, APIs called or
+production assets downloaded. Three article checks were repeated with the
+document-title selector restricted to `head title`, excluding inline SVG title
+elements from the initial extraction. Only the corrected document titles below
+are used as heading evidence. No production HTML captures are committed.
+
+| Production URL | Observation UTC | Document title | Visible H1 | Local action |
+| --- | --- | --- | --- | --- |
+| [English self-advocacy](https://www.azinstitute4autism.com/library/autism-self-advocacy-skills-aba) | 2026-10-08 21:11:28 | Unlock Independence for Children with Autism Through ABA Self‑Advocacy | Guide to Teaching Self‑Advocacy in ABA | Add this `displayH1` only to `src/content/blog/en/autism-self-advocacy-skills-aba.md` |
+| [Spanish self-advocacy](https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba) | 2026-10-08 21:11:29 | Desbloqueando la independencia para niños con autismo a través de la autodefensa ABA | Guía para enseñar la autodefensa en el ABA | Add this `displayH1` only to `src/content/blog/es/autism-self-advocacy-skills-aba.md` |
+| [Arabic self-advocacy](https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-skills-aba) | 2026-10-08 21:11:30 | دليل تعليم مهارات الدفاع عن النفس في ABA | دليل تعليم مهارات الدفاع عن النفس في ABA | No change; existing title-to-H1 fallback is correct |
+
+The English nonbreaking hyphen and Spanish heading are copied from the current
+source, not newly translated. These are the only two content-record edits;
+each adds one frontmatter line. Titles, descriptions, images, bodies and
+translation declarations are untouched. This is not a linguistic review of
+the translations or a broader certification of content currency.
+
+A separate targeted check of
+[`/library/aba-school-readiness-arizona`](https://www.azinstitute4autism.com/library/aba-school-readiness-arizona)
+at **2026-10-08 21:07:17 UTC** found current OG title
+“ABA School Readiness in Arizona: A Parent Guide” and H1
+“ABA School Readiness for Autistic Children in Arizona.” The existing local
+title is “ABA School Readiness in Arizona | AIA Preparatory Academy (Ages 2–6).”
+The current live description also discusses classroom participation and
+individualized ABA. This is fresh evidence of broader drift requiring later
+content reconciliation; that record is intentionally unchanged in Phase 4A.
+
+### Social Metadata and Locale
+
+`Seo.astro` uses a small `socialImageUrl` helper to resolve existing image paths
+against the configured public origin in `src/data/site.json`. It never uses a
+preview request host or an article's external canonical as the asset base.
+Absolute HTTP(S) image URLs are supported; blank selections produce no image,
+and invalid URLs, non-HTTP(S) schemes or embedded credentials fail validation.
+
+Image pages now emit matching absolute `og:image` and `twitter:image` once
+each, retaining `summary_large_image`. Non-image pages emit neither image nor
+image-alt metadata and retain `summary`. Existing image selection is unchanged:
+article featured images and regular-page featured images/banner fallbacks are
+preserved. No homepage image is invented merely because a hero image exists.
+The real artifact has **90 image cards and six summary cards** in each mode.
+Every emitted local social image resolves to an existing public asset.
+
+BaseLayout forwards existing `alt` only when the selected image is the entry's
+`featuredImage`. Seo emits both `og:image:alt` and `twitter:image:alt` only for a
+nonblank description with a selected image. An unrelated banner fallback never
+inherits that description. The current local pages/blog corpus has no
+nonempty featured-image `alt` values, so no real image-alt tags are fabricated;
+isolated fixtures prove the supported path in all three languages. Production
+self-advocacy pages do have social alt descriptions. Importing those into local
+content and reviewing visible image descriptions remain later content work.
+
+`og:title`, `og:description`, `og:url`, `og:type`, Twitter title/description and
+card selection otherwise retain their behavior. Articles remain `article` and
+other pages `website`. No structured-data types were added.
+
+The [Open Graph protocol](https://ogp.me/) defines the optional `og:locale` as
+`language_TERRITORY`. Existing generic `en`, `es` and `ar` values were removed;
+neither the frontmatter nor inspected production articles establish regional
+assignments, and those production articles emit no `og:locale`. Omission avoids
+inventing regions. Open Graph documents `en_US` as its default when omitted,
+so intentional Spanish/Arabic social-region targeting remains an unresolved
+human localization choice, not a claim that omission supplies it. HTML `lang`,
+RTL/LTR direction, hreflang and `x-default` are unchanged.
+
+### Validation
+
+`npm run test:seo`: **12 passed**. Tests use the actual content schema, layouts,
+SEO component and Astro configuration in temporary copies, covering:
+
+- Original article H1 fallback and explicit override in en/es/ar; independent
+  document/social/card titles; both production-supported records.
+- Existing service, regular-page and derived headings; single H1; homepage
+  inline heading markup and explicit home/Library overrides.
+- Absolute root/path-relative and external image URLs, invalid/blank URLs,
+  preview-host isolation, paired image metadata, existing alt and absent alt,
+  no-image fallback, article type and language/direction.
+- Shared publication-policy results on every generated fixture route in
+  staging/indexing: canonical, robots, sitemap, hreflang and switcher targets,
+  including all noindex/external-canonical exceptions and absent `/ar`.
+- Actual failed content builds for `displayH1` values `""`, spaces, newline/tab
+  and a number. Markdown records and an MDX service record exercise rendering.
+
+The first test run exposed a fixture path using `.md` for the existing MDX ABA
+service record; that test-only path was corrected before continuing. There
+were no remaining test failures. `npm run test:publication`: **33 passed**,
+unchanged from Phase 3B.
+
+Completed commands, from `www/`:
+
+```sh
+npm run test:seo
+npm run test:publication
+npm run build
+PUBLIC_ALLOW_INDEXING=true npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+npm run audit:links
+npm run audit:blog
+npm run audit:images
+npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+git diff --check
+```
+
+Each normal/indexing build checked 73 files with **zero errors, warnings or
+hints**, and generated **96 HTML routes**: 67 English, 21 Spanish, eight Arabic.
+Link audit: **zero broken internal links**. Blog audit: **zero failures**.
+Image audit: **zero missing mapped page images**; the generated social-image
+check additionally verified all selected local image files. These are local
+artifact checks, not verification of every external URL or social-platform
+preview/cache behavior.
+
+| Artifact | Checked UTC, 2026-10-08 | HTML routes | Sitemap URLs | Robots | Hreflang |
+| --- | --- | ---: | ---: | --- | --- |
+| Indexing-enabled local build | 21:16:30 | 96 | 92 | 92 `index,follow`; four `noindex,follow` | 174 links on 53 routes, same 24 explicit sets |
+| Final normal staging build | 21:17:16 | 96 | 0 | All 96 `noindex,nofollow` | Zero links |
+
+All 96 canonicals match the pre-change artifact and the shared policy. The
+four exceptions remain `/schedule-consultation`, `/employee-portal`,
+`/library/community-highlight-meet-rula-diab` and
+`/library/new-aia-scottsdale-office`. Neither they nor unpublished `/ar` enter
+the alternate graph or production-policy sitemap. Social URLs do not affect
+route eligibility or canonical selection.
+
+An all-route semantic comparison against the pre-change staging artifact found
+exactly the two supported H1 changes. Remaining body markup, navigation and
+scripts match after normalizing whitespace and existing random contact IDs;
+H1 text is compared separately. Remaining head markup also matches after
+excluding the intended social-tag differences and mode-dependent robots and
+hreflang. No title, description, existing OG image, URL, direction, client
+behavior or JSON-LD changes were introduced.
+
+The final durable reconciliation is
+[`route-reconciliation-2026-10-08-offline.json`](route-reconciliation-2026-10-08-offline.json).
+It refreshes the application fingerprint and final staging output using the
+same 70 saved production requests and their original observation dates. No
+route-discovery network requests were made. The new targeted heading checks
+above supplement that historical discovery evidence rather than overwrite it.
+Counts remain 129 discovered routes, 102 historical production sitemap routes,
+96 local routes, 92 overlapping routes and 10 production-sitemap routes absent
+locally. The historical 102 is distinct from the local policy's 92. The
+intermediate indexing reconciliation was moved to temporary storage before
+the final staging reconciliation; prior committed evidence files are intact.
+
+### Read-only Structural Review and Scope
+
+The complete Phase 4A change set contains 17 files:
+
+| Classification | Files relative to `www/` | Reason |
+| --- | --- | --- |
+| Schema/editor configuration | `src/content.config.ts`, `frontmatter.json` | Optional validated heading field on pages/blog and CMS exposure |
+| Presentation | `src/layouts/BlogPostLayout.astro`, `src/layouts/PageLayout.astro`, `src/layouts/BlogIndexLayout.astro`, `src/components/pages/HomePage.astro`, `src/components/home/HomeHero.astro` | Explicit single-H1 override, preserving each template's default |
+| SEO | `src/components/Seo.astro`, `src/layouts/BaseLayout.astro`, **new** `src/utils/seo.ts` | Paired absolute social images, conditional existing alt, removal of unsupported generic OG locales |
+| Tests | **new** `tools/seo.test.mjs`, `package.json` | Actual Astro/schema regression coverage and `test:seo`; no dependency changes |
+| Content metadata | `src/content/blog/en/autism-self-advocacy-skills-aba.md`, `src/content/blog/es/autism-self-advocacy-skills-aba.md` | One source-supported frontmatter line per record |
+| Documentation/evidence | `README.md`, this report, **new** `reports/route-reconciliation-2026-10-08-offline.json` | Editing rules, dated evidence/results, current offline fingerprint |
+
+No changes to publication-policy code, route dispatch, LanguageSwitcher,
+Header, styling, dependency versions/lockfile, environment or deployment
+configuration are required. Existing audit-generated link/blog/image reports
+are unchanged. Employee-portal implementation, the separate Ads project and
+all unrelated files remain untouched. The pre-existing untracked
+`merge-plan.md` retains SHA-256
+`015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
+
+No blocking Phase 3A/3B defect was found. Deferred work includes broader title,
+content and image-alt reconciliation, regional social locale decisions,
+article/FAQ schema, and human language review where substantive translations
+change. No Phase 4B work or commit is authorized by this implementation review.

@@ -1,5 +1,6 @@
 ---
 title: "Unlock Independence for Children with Autism Through ABA Self‑Advocacy"
+displayH1: "Guide to Teaching Self‑Advocacy in ABA"
 description: "Empower your child with individualized ABA therapy at Arizona Institute for Autism. Book a free consultation and kickstart personalized autism care today!"
 slug: "autism-self-advocacy-skills-aba"
 canonical: "https://www.azinstitute4autism.com/library/autism-self-advocacy-skills-aba"

@@ -1,5 +1,6 @@
 ---
 title: "Desbloqueando la independencia para niños con autismo a través de la autodefensa ABA"
+displayH1: "Guía para enseñar la autodefensa en el ABA"
 description: "Empodere a su hijo con terapia ABA individualizada en el Instituto de Autismo de Arizona. ¡Reserva una consulta gratuita y comienza hoy mismo la atención personalizada para el autismo!"
 slug: "autism-self-advocacy-skills-aba"
 canonical: "https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba"

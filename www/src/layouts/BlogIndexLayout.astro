@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import { getPublication } from '../utils/publication';
 
 interface Props {
   title: string;
@@ -10,9 +11,10 @@ interface Props {
 }
 
 const { title, description, intro = [], lang = 'en' } = Astro.props;
+const { entry } = await getPublication(Astro.url.pathname);
 ---
 <BaseLayout title={title} description={description} lang={lang}>
-  <PageHero title={title} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
+  <PageHero title={entry.data.displayH1 ?? title} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
   <section class="library-intro">
     <div class="container">
       <h2>Library</h2>
