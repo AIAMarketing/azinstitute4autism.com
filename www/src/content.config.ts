@@ -2,6 +2,7 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { homePageSchema, homeSectionsSchema } from './types/home-sections';
+import { teamPageSchema } from './types/team-page';
 
 const language = z.enum(['en', 'ar', 'es']);
 const translationKey = z.string().min(1).refine((value) => value === value.trim(), {
@@ -22,7 +23,8 @@ const shared = {
   draft: z.boolean().default(false),
   noindex: z.boolean().default(false),
   home: homePageSchema.optional(),
-  sections: homeSectionsSchema.optional()
+  sections: homeSectionsSchema.optional(),
+  team: teamPageSchema.optional()
 };
 
 const pages = defineCollection({

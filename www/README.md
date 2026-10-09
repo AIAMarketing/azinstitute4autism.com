@@ -370,6 +370,15 @@ where no section is published. It renders between ESA and financial help.
 an optional `href`; use an existing intake route and section ID in the same
 language. Steps without a destination remain plain content.
 
+### Edit The Team Page
+
+The English Team page uses the validated `team:` frontmatter block in
+`src/content/pages/en/team.md`. That block is the single source for the intro,
+ordered clinical groups, ABA care team, member names/roles/images, and careers
+content. The Markdown body contains no second roster. Update the structured
+frontmatter rather than hardcoding people in `TeamPage.astro`; image filenames
+refer to `public/assets/images`.
+
 ### Images And Downloads
 
 Store content-referenced assets in:

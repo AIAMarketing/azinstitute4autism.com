@@ -1,0 +1,343 @@
+{
+  "phase": "5C",
+  "recordedAt": "2026-10-09T17:13:35Z",
+  "startingCheckpoint": "bc399b43b65fd865526fd68fa4252c99587f59dd",
+  "scope": "Published English Team page roster, supporting copy, careers contact and CTA, Team photographs, and page metadata",
+  "method": "robots.txt followed by two bounded, sequential read-only Team-page GETs with no-cache request headers and one query recheck; ten published Team/hero image GETs and one social-image GET; no authentication, form submission, API call, script execution through direct requests, or production write. An independent web rendering matched the direct response. Playwright browser validation was attempted but failed because the browser transport closed.",
+  "robots": {
+    "url": "https://www.azinstitute4autism.com/robots.txt",
+    "observedAt": "2026-10-09T17:11:37Z",
+    "status": 200,
+    "cacheControl": "s-maxage=36000, max-age=5",
+    "etag": "\"dffaeb51ed776c4737cfc1b108c56515\"",
+    "lastModified": "Sat, 12 Sep 2026 03:33:09 GMT",
+    "hubspotCacheStatus": "HIT",
+    "prerendered": "Sat, 12 Sep 2026 03:33:09 GMT",
+    "relevantPolicy": "User-agent * allows /; HubSpot preview and hsCacheBuster query patterns are disallowed."
+  },
+  "requests": [
+    {
+      "url": "https://www.azinstitute4autism.com/team",
+      "observedAt": "2026-10-09T17:11:39Z",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "responseHeaders": {
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:20 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47f01762f826e62-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "bodySha256": "246f1afc7ebee26cf855f79fd82b3b734c717969bcd8e00361108d68af867adf"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/team?migration_review=20261009T_phase5c",
+      "observedAt": "2026-10-09T17:11:40Z",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "responseHeaders": {
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:20 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47f017f2e02f7bd-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "bodySha256": "246f1afc7ebee26cf855f79fd82b3b734c717969bcd8e00361108d68af867adf"
+    }
+  ],
+  "sourceFreshness": {
+    "classification": "potentially cached but consistently publicly presented",
+    "reason": "Both direct responses are byte-identical HubSpot/Cloudflare HITs and identify an October 3 prerender. An independent current web rendering shows the same ordered roster, copy, links, and image assignments. No contradictory public response was found. The reconciliation describes only the current published page and makes no inference about personnel history or underlying employment records."
+  },
+  "metadata": {
+    "title": "Meet Our Dedicated Autism Support Team | Arizona Institute for Autism",
+    "description": "Meet the all-star team of compassionate, experienced professionals transforming personalized autism therapy and education at Arizona Institute for Autism.",
+    "canonical": "https://www.azinstitute4autism.com/team",
+    "h1": "Meet the Team",
+    "openGraphType": "website",
+    "socialImage": "https://www.azinstitute4autism.com/hubfs/AIALanding_BG_V2.jpg",
+    "socialImageAlt": "learn more about arizona institute for autism"
+  },
+  "content": {
+    "intro": {
+      "heading": "Our Clinical Team",
+      "organization": "Arizona Institute for Autism",
+      "location": "Scottsdale, Arizona",
+      "body": "AIA's clinical team consists of experienced professionals and paraprofessionals as well as Board Certified Behavior Analysts (BCBA) and Psychologists who have diverse experience and expertise."
+    },
+    "groups": [
+      {
+        "heading": "Board Certified Behavioral Analysts & Psychologists",
+        "members": [
+          {
+            "name": "Rula Diab, BCBA, LBA, M.Ed",
+            "role": "Clinical Director",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-rula-diab.webp",
+            "sourceAlt": "chief clinical director rula diab"
+          },
+          {
+            "name": "Jennifer Espinoza, MAOL/ABA",
+            "role": "Clinical BCBA",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-jennifer-espinoza.webp",
+            "sourceAlt": "team jennifer espinoza"
+          }
+        ]
+      },
+      {
+        "heading": "Clinical Support",
+        "members": [
+          {
+            "name": "Jennifer Bonefont, B.A. Psy",
+            "role": "Clinical Client Advocate Supervisor",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-jennifer-bonefont.webp",
+            "sourceAlt": "team jennifer bonefont"
+          }
+        ]
+      },
+      {
+        "heading": "Clinical Case Supervisors",
+        "members": [
+          {
+            "name": "Rachael Sanchez, BS, M Psy/ABA",
+            "role": "Clinical Supervisor",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-rachael-sanchez.webp",
+            "sourceAlt": "team rachael sanchez"
+          }
+        ]
+      },
+      {
+        "heading": "Clinical Education Specialists",
+        "members": [
+          {
+            "name": "Mahima Bedi",
+            "role": "Clinical Instructor",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-mahima-bedi.webp",
+            "sourceAlt": "team mahima bedi"
+          }
+        ]
+      },
+      {
+        "sectionHeading": "Our ABA Care Team",
+        "heading": "ABA Clinic Management",
+        "tagline": "Applied Behavior Analysis \"(ABA) at your service\"",
+        "members": [
+          {
+            "name": "Mariah Marley",
+            "role": "Claims Billing",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-mariah-marley.webp",
+            "sourceAlt": "team mariah marley"
+          },
+          {
+            "name": "Eney Garcia, BA",
+            "role": "Accounts Billing",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-eney-garcia.webp",
+            "sourceAlt": "team eney garcia"
+          },
+          {
+            "name": "Ayah Shahbander",
+            "role": "Human Resources",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-ayah-shahbander.webp",
+            "sourceAlt": "team ayah shahbander"
+          },
+          {
+            "name": "Barbara Samanich, BFA",
+            "role": "Creative Marketing Developer",
+            "image": "https://www.azinstitute4autism.com/hubfs/team-barbara-samanich.webp",
+            "sourceAlt": "team barbara samanich"
+          }
+        ],
+        "closingStatement": "ABA's leading experts in special education and clinical care."
+      }
+    ],
+    "careers": {
+      "eyebrow": "Join the AIA Team!",
+      "heading": "Employment Opportunities",
+      "intro": "Apply online to join the AIA team! At the Arizona Institute for Autism (AIA) we are on a mission to improve special education and strengthen communities throughout Arizona.",
+      "contactText": "Our talented and passionate employees are a critical piece to the high-quality ABA therapy we provide along with our commitment to behavioral health, school solutions, and community outreach. For questions regarding open positions, please contact us at",
+      "ctaLabel": "View Open Positions",
+      "ctaUrl": "https://www.azinstitute4autism.com/careers?hsLang=en",
+      "hrFallbackInSource": "hr [at] abaclinicaz [dot] com",
+      "hrScriptText": "hr@azinstitute4autism.com",
+      "hrScriptDestination": "mailto:hr@azinstitute4autism.com",
+      "contactResolution": "Use hr@azinstitute4autism.com as the single active value and generate the no-JavaScript fallback from it; this matches production's executable text and destination while removing its internal fallback mismatch."
+    },
+    "footerContact": {
+      "phone": "(480) 687-7099",
+      "email": "info@azinstitute4autism.com",
+      "address": "8901 E Raintree Dr Ste 160, Scottsdale, AZ 85260",
+      "resolution": "Existing shared site data matches production; unchanged in Phase 5C."
+    }
+  },
+  "reconciliation": [
+    {
+      "group": "Board Certified Behavioral Analysts & Psychologists",
+      "existingAstro": "Rula Diab; Jennifer Espinoza; Timirah Clay",
+      "production": "Rula Diab; Jennifer Espinoza",
+      "resolution": "Retain the first two in published order; remove the Timirah Clay entry from the migrated public roster. This is not an employment-status finding."
+    },
+    {
+      "group": "Clinical Support",
+      "existingAstro": "Carol Harrington; Rachel Crosby; Jennifer Bonefont",
+      "production": "Jennifer Bonefont",
+      "resolution": "Retain Jennifer Bonefont; remove the Carol Harrington and Rachel Crosby entries from the migrated public roster. This is not an employment-status finding."
+    },
+    {
+      "group": "Clinical Case Supervisors",
+      "existingAstro": "Rachael Sanchez",
+      "production": "Rachael Sanchez",
+      "resolution": "Retain name, credentials, role, image, and order."
+    },
+    {
+      "group": "Clinical Education Specialists",
+      "existingAstro": "Mahima Bedi",
+      "production": "Mahima Bedi",
+      "resolution": "Retain name, role, image, and order."
+    },
+    {
+      "group": "ABA Clinic Management",
+      "existingAstro": "Mariah Marley; Eney Garcia; Ayah Shahbander; Barbara Samanich",
+      "production": "Mariah Marley; Eney Garcia; Ayah Shahbander; Barbara Samanich",
+      "resolution": "Retain all names, credentials, roles, images, and order; restore the published Our ABA Care Team heading and closing statement to rendered output."
+    }
+  ],
+  "assets": [
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/hero-meet-the-aia-team.webp",
+      "local": "/assets/images/hero-meet-the-aia-team.webp",
+      "status": 200,
+      "dimensions": "1200x428",
+      "sha256": "86e8ff93f42c93e84cd50bf0edbff2f93422decc630234f79d5f147bc5f560ac",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/AIALanding_BG_V2.jpg",
+      "local": "/assets/images/AIALanding_BG_V2.jpg",
+      "status": 200,
+      "dimensions": "2200x1146",
+      "sha256": "3036a9dc996b8ccd4672451fcc83b31b0421db4413f20d891f64f47d7707d6a8",
+      "localMatch": "new exact self-hosted copy",
+      "response": {
+        "observedAt": "2026-10-09T17:13:35Z",
+        "cf-cache-status": "HIT",
+        "age": "1945333",
+        "etag": "\"228eba211291cab48d2e9edc3c811118\"",
+        "last-modified": "Tue, 04 Feb 2025 22:36:06 GMT"
+      }
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-rula-diab.webp",
+      "local": "/assets/images/team-rula-diab.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "6382277beb23ff9bc98edda79d62636a01a63504ceb6d0fa2af5d9d30fa12bc0",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-jennifer-espinoza.webp",
+      "local": "/assets/images/team-jennifer-espinoza.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "28d3512fc70def1604320eba3336745d5c671651a2994f31eaedcce3b477dd38",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-jennifer-bonefont.webp",
+      "local": "/assets/images/team-jennifer-bonefont.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "f3aac4faaff9ef45c03c613c00ec41e5711de023b53c156a8f70a5225c0cc2e4",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-rachael-sanchez.webp",
+      "local": "/assets/images/team-rachael-sanchez.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "93f573767cef7eb5768aecbc99dee49da7cb0d5935812a3933fedd72d4771407",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-mahima-bedi.webp",
+      "local": "/assets/images/team-mahima-bedi.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "4253c63f9b37d00feb7dd74da19cd0a99c32c1143477fb33979932f982e10487",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-mariah-marley.webp",
+      "local": "/assets/images/team-mariah-marley.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "1269d1e32d8aa75c758aa68aad91866e171bce01a19be7034c6763d373e3a196",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-eney-garcia.webp",
+      "local": "/assets/images/team-eney-garcia.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "dac8113ad3d2424bf435ce740320d65692fd8aca1c155e62398077c578047533",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-ayah-shahbander.webp",
+      "local": "/assets/images/team-ayah-shahbander.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "bcece062e538264af4a250379b7e4142f369179a22b8884abbb614a28ce40c23",
+      "localMatch": true
+    },
+    {
+      "source": "https://www.azinstitute4autism.com/hubfs/team-barbara-samanich.webp",
+      "local": "/assets/images/team-barbara-samanich.webp",
+      "status": 200,
+      "dimensions": "342x456",
+      "sha256": "96b28fe1dca89cb365c7dad5710853d39406deec3ee74d8b1ad3b0c17f245a86",
+      "localMatch": true
+    }
+  ],
+  "assetSafety": "All retrieved roster/hero assets identify as WebP with expected dimensions; the social image identifies as a progressive JPEG. The nine rendered portraits and hero are byte-for-byte matches to existing local files. No executable or unexpected embedded content was identified by file-type inspection.",
+  "validation": {
+    "completedAt": "2026-10-09T17:20:21Z",
+    "seoTests": "34 passed, including four Phase 5C Team tests",
+    "publicationTests": "33 passed",
+    "markdownTests": "20 passed",
+    "normalBuilds": "initial and final builds passed; Astro check reported 0 errors, 0 warnings, and 0 hints; 96 routes",
+    "indexingBuild": "passed; 96 routes, 92 sitemap URLs, and 174 hreflang links across 53 pages",
+    "routeAudit": "offline reconciliation and --check passed using 70 inherited production observations; no new production requests",
+    "linkAudit": "0 broken internal links",
+    "imageAudit": "0 missing mapped page images",
+    "blogAudit": "0 failures",
+    "finalStaging": "96 routes; all noindex,nofollow; empty sitemap; no hreflang",
+    "routeSet": "unchanged from the pre-Phase 5C staging artifact"
+  },
+  "browserValidation": {
+    "status": "unavailable",
+    "reason": "Playwright browser transport closed before navigation completed.",
+    "claim": "No browser-level desktop/mobile fidelity claim is made."
+  },
+  "limitations": [
+    "Current public presentation is evidence for migration output, not evidence of hiring, departure, promotion, dates, or underlying employment status.",
+    "Professional credentials and group membership are reproduced only as published and are not independently verified.",
+    "The October 3 HubSpot prerender may be cached; no conflicting public version was found, and repeated/current independent views agree.",
+    "Production's HR fallback domain conflicts with its executable link text and destination; Astro resolves that internal mismatch in favor of the active azinstitute4autism.com destination.",
+    "Raw production HTML, cookies, and removed nonpublic personnel information are not committed. Historical migration observations remain unchanged."
+  ]
+}

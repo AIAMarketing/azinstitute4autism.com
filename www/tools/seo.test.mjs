@@ -12,6 +12,7 @@ import { createPublicationManifest, hreflangLinksFor, renderSitemap, robotsFor }
 import { socialImageUrl } from '../src/utils/seo.ts';
 import { blogPostingSchema, faqItemsFromSourceHtml, faqPageSchema, serializeJsonLd } from '../src/utils/structured-data.ts';
 import { homePageSchema, homeSectionsSchema } from '../src/types/home-sections.ts';
+import { teamPageSchema } from '../src/types/team-page.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -639,6 +640,111 @@ test('Phase 5B consultation and six intake-step CTAs resolve in each homepage la
       assert.ok((await readFile(path.join(project, 'public', src))).length, src);
     }
   }
+});
+
+test('Phase 5C validates one structured Team source and rejects duplicate members or external CTAs', async () => {
+  const source = matter(await readFile(path.join(project, 'src/content/pages/en/team.md'), 'utf8'));
+  const team = source.data.team;
+  assert.deepEqual(teamPageSchema.parse(team), team);
+  assert.match(source.content, /maintained in the validated `team:` frontmatter/);
+  for (const member of [...team.clinicalGroups.flatMap((group) => group.members), ...team.careTeam.members]) {
+    assert.ok(!source.content.includes(member.name), `Rendered roster must not be duplicated in Markdown: ${member.name}`);
+  }
+  const duplicate = structuredClone(team);
+  duplicate.careTeam.members.push(structuredClone(duplicate.clinicalGroups[0].members[0]));
+  assert.equal(teamPageSchema.safeParse(duplicate).success, false);
+  assert.equal(teamPageSchema.safeParse({
+    ...team,
+    careers: { ...team.careers, cta: { ...team.careers.cta, href: 'https://jobs.example/' } }
+  }).success, false);
+});
+
+test('Phase 5C renders the published Team groups, member order, roles and exact local portraits', async () => {
+  const team = manifest.find((item) => item.route === '/team').entry.data.team;
+  const expectedGroups = [...team.clinicalGroups, {
+    heading: team.careTeam.groupHeading,
+    members: team.careTeam.members
+  }];
+  for (const mode of ['staging', 'indexing']) {
+    const $ = page('/team', mode);
+    const renderedGroups = [...$('.team-clinical .team-group'), ...$('.team-care')];
+    assert.equal(renderedGroups.length, expectedGroups.length);
+    for (const [index, node] of renderedGroups.entries()) {
+      const group = expectedGroups[index];
+      const element = $(node);
+      assert.equal(text(element.children('.container').children('h3').first().text()), group.heading);
+      assert.deepEqual(element.find('.team-member').map((_, member) => ({
+        name: text($(member).find('h4').text()),
+        role: text($(member).find('p').text()),
+        image: $(member).find('img').attr('src'),
+        alt: $(member).find('img').attr('alt')
+      })).get(), group.members.map((member) => ({
+        name: member.name,
+        role: member.role,
+        image: `/assets/images/${member.image}`,
+        alt: member.imageAlt
+      })));
+    }
+    const names = $('.team-member h4').map((_, member) => text($(member).text())).get();
+    assert.equal(names.length, 9);
+    assert.equal(new Set(names).size, names.length, 'No duplicate Team entries');
+    for (const unpublished of ['Timirah Clay', 'Carol Harrington', 'Rachel Crosby']) {
+      assert.ok(!names.some((name) => name.includes(unpublished)), `${unpublished} is not on the current published roster`);
+    }
+    for (const member of [...team.clinicalGroups.flatMap((group) => group.members), ...team.careTeam.members]) {
+      const bytes = await readFile(path.join(project, 'public/assets/images', member.image));
+      assert.equal(bytes.subarray(0, 4).toString(), 'RIFF', member.image);
+      assert.equal(bytes.subarray(8, 12).toString(), 'WEBP', member.image);
+    }
+  }
+});
+
+test('Phase 5C preserves Team hierarchy, supporting copy, careers destination and matching contact values', () => {
+  const team = manifest.find((item) => item.route === '/team').entry.data.team;
+  const $ = page('/team');
+  assert.equal($('main h1').length, 1);
+  assert.equal($('main h1').text(), 'Meet the Team');
+  assert.equal($('.team-clinical > .team-intro > h2').text(), team.intro.heading);
+  assert.equal($('.team-clinical .team-group h3').length, team.clinicalGroups.length);
+  assert.equal($('.team-care > .container > h2').text(), team.careTeam.heading);
+  assert.equal($('.team-member').find('h1,h2,h3').length, 0);
+  assert.equal($('.team-member h4').length, 9);
+  assert.equal(text($('.team-closing').text()), team.careTeam.closingStatement);
+  assert.equal(text($('.team-careers > .container-narrow > p').eq(1).text()), team.careers.intro);
+
+  const careers = $('.team-careers a.content-button');
+  assert.equal(careers.length, 1);
+  assert.equal(text(careers.text()), team.careers.cta.label);
+  assert.equal(careers.attr('href'), '/careers');
+  assert.ok(artifacts.get('staging').html.has('/careers'));
+
+  const contact = $('#team-careers-email');
+  assert.equal(contact.text(), 'hr [at] azinstitute4autism [dot] com');
+  const script = contact.next('script').text();
+  const decode = (variable) => {
+    const match = script.match(new RegExp(`const ${variable} = (\\[[^\\]]+\\])`));
+    assert.ok(match, `Missing ${variable}`);
+    return JSON.parse(match[1]).map((code) => String.fromCharCode(code)).join('');
+  };
+  assert.equal(decode('encodedTarget'), team.careers.email);
+  assert.equal(decode('encodedText'), team.careers.email);
+});
+
+test('Phase 5C retains Team publication metadata and creates no translation route', () => {
+  for (const mode of ['staging', 'indexing']) {
+    const $ = page('/team', mode);
+    assert.equal($('head title').text(), 'Meet Our Dedicated Autism Support Team | Arizona Institute for Autism');
+    assert.equal(meta($, 'description').attr('content'), 'Meet the all-star team of compassionate, experienced professionals transforming personalized autism therapy and education at Arizona Institute for Autism.');
+    assert.equal($('link[rel="canonical"]').attr('href'), `${site}/team`);
+    assert.equal(meta($, 'og:image').attr('content'), `${site}/assets/images/AIALanding_BG_V2.jpg`);
+    assert.equal(meta($, 'twitter:image').attr('content'), `${site}/assets/images/AIALanding_BG_V2.jpg`);
+    assert.equal(meta($, 'og:image:alt').attr('content'), 'learn more about arizona institute for autism');
+    assert.equal(meta($, 'twitter:image:alt').attr('content'), 'learn more about arizona institute for autism');
+    assert.equal($('link[hreflang]').length, 0);
+    assert.equal($('.lang-switcher__menu a').length, 0);
+  }
+  for (const { html } of artifacts.values()) assert.equal(html.has('/es/team'), false);
+  assert.equal(manifest.some((item) => item.route === '/es/team'), false);
 });
 
 test('actual content-schema builds reject empty, whitespace-only and non-string displayH1', async () => {

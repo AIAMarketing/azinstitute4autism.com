@@ -1763,5 +1763,248 @@ and are not included by Git until staged):
  www/src/content/pages/es/index.md         |  18 +-
  www/src/types/home-sections.ts            |  14 ++
  www/tools/seo.test.mjs                    | 114 +++++++++++
- 8 files changed, 526 insertions(+), 13 deletions(-)
+8 files changed, 526 insertions(+), 13 deletions(-)
 ```
+
+## Phase 5C — Team Content Reconciliation (2026-10-09 UTC)
+
+Phase 5C reconciles the English `/team` route with the roster and supporting
+content currently presented by the public Team page. It does not infer hiring,
+departure, promotion, employment status, or dates from differences between the
+two sites. No Spanish Team record exists, and none was created.
+
+### Sources, Retrieval, and Freshness
+
+The source page was `https://www.azinstitute4autism.com/team`. `robots.txt` was
+retrieved first at **2026-10-09 17:11:37 UTC** and allows `/` while disallowing
+HubSpot preview and `hsCacheBuster` patterns. Two bounded, sequential Team-page
+GETs were made at **17:11:39** and **17:11:40 UTC** using `Cache-Control:
+no-cache, max-age=0` and `Pragma: no-cache`; the second used a unique audit query.
+Both returned HTTP 200 and byte-identical bodies (SHA-256
+`246f1afc7ebee26cf855f79fd82b3b734c717969bcd8e00361108d68af867adf`).
+
+Both responses reported `x-hs-cf-cache-status: HIT`, `cache-control:
+s-maxage=36000, max-age=5`, `x-hs-cache-control: s-maxage=36000, max-age=0`,
+`Last-Modified: Sat, 03 Oct 2026 23:13:20 GMT`, and the same
+`x-hs-prerendered` timestamp. Neither supplied `Age`, `ETag`, or
+`CF-Cache-Status`. A separate current web rendering agreed on the ordered
+roster, copy, links, and image assignments. The evidence is therefore
+classified **potentially cached but consistently publicly presented**. No
+contradictory public version was found; cache-bypass headers and the query are
+not treated as proof of an origin-fresh response.
+
+Ten roster/hero image requests and one social-image request were read-only and
+sequential. No authentication, form submission, production API call, or write
+occurred. Raw production HTML, cookies, and removed public entries are not
+committed. Detailed headers, hashes, source strings, asset mappings, and
+limitations are preserved in
+[`phase-5c-source-evidence-2026-10-09.json`](phase-5c-source-evidence-2026-10-09.json).
+
+Repository inspection covered `PageLayout.astro`, `PageHero.astro`,
+`BaseLayout.astro`, `Seo.astro`, `TeamPage.astro`, `ContactObfuscation.astro`,
+`Button.astro`, `content.config.ts`, `team.md`, `page-visuals.ts`, shared site
+data, the publication manifest/policy, the route manifest, and the existing SEO
+tests. The Phase 5A/5B reports, project instructions, migration brief, README,
+and accepted migration history were also reviewed.
+
+### Roster Reconciliation
+
+Names, credentials, capitalization, roles, group order, member order, and image
+assignments below reproduce the public presentation. “Removed” means only that
+the entry is removed from the migrated public roster because the current
+published page does not display it.
+
+| Group / order | Previous rendered Astro roster | Public roster at 17:11 UTC | Resolution |
+| --- | --- | --- | --- |
+| 1. Board Certified Behavioral Analysts & Psychologists | Rula Diab, BCBA, LBA, M.Ed — Clinical Director; Jennifer Espinoza, MAOL/ABA — Clinical BCBA; Timirah Clay, M.Psy/ABA — Clinical BCBA | Rula Diab, BCBA, LBA, M.Ed — Clinical Director; Jennifer Espinoza, MAOL/ABA — Clinical BCBA | Retain first two in published order; remove Timirah Clay entry from migrated public roster |
+| 2. Clinical Support | Carol Harrington, A.A. Spec. Ed. — Clinical Manager; Rachel Crosby — Clinical Administrator; Jennifer Bonefont, B.A. Psy — Clinical Client Advocate Supervisor | Jennifer Bonefont, B.A. Psy — Clinical Client Advocate Supervisor | Retain Jennifer Bonefont; remove Carol Harrington and Rachel Crosby entries from migrated public roster |
+| 3. Clinical Case Supervisors | Rachael Sanchez, BS, M Psy/ABA — Clinical Supervisor | Same | Retain exactly |
+| 4. Clinical Education Specialists | Mahima Bedi — Clinical Instructor | Same | Retain exactly |
+| 5. ABA Clinic Management | Mariah Marley — Claims Billing; Eney Garcia, BA — Accounts Billing; Ayah Shahbander — Human Resources; Barbara Samanich, BFA — Creative Marketing Developer | Same names, credentials, roles, and order | Retain exactly; restore its missing parent heading and closing statement |
+
+The page now renders **nine unique member cards**. No credentials were added or
+normalized from outside sources, and no blog author record was changed.
+
+### Photographs and Metadata
+
+The hero and all nine rendered portraits are byte-for-byte matches to the
+current source images. The hero is 1200×428; each portrait is 342×456. Existing
+local filenames remain assigned to the same published person:
+
+| Person / use | Local asset | Result |
+| --- | --- | --- |
+| Team hero | `hero-meet-the-aia-team.webp` | Existing exact match retained |
+| Rula Diab | `team-rula-diab.webp` | Existing exact match retained |
+| Jennifer Espinoza | `team-jennifer-espinoza.webp` | Existing exact match retained |
+| Jennifer Bonefont | `team-jennifer-bonefont.webp` | Existing exact match retained |
+| Rachael Sanchez | `team-rachael-sanchez.webp` | Existing exact match retained |
+| Mahima Bedi | `team-mahima-bedi.webp` | Existing exact match retained |
+| Mariah Marley | `team-mariah-marley.webp` | Existing exact match retained |
+| Eney Garcia | `team-eney-garcia.webp` | Existing exact match retained |
+| Ayah Shahbander | `team-ayah-shahbander.webp` | Existing exact match retained |
+| Barbara Samanich | `team-barbara-samanich.webp` | Existing exact match retained |
+
+Every card uses the pictured person's name as concise alt text and explicit
+342×456 intrinsic dimensions. The three now-unreferenced historical portrait
+files were not deleted; destructive asset cleanup is outside this milestone.
+
+The title, description, canonical, H1, and `og:type=website` already matched and
+remain unchanged. Production supplies `AIALanding_BG_V2.jpg` as the Team social
+image with alt `learn more about arizona institute for autism`. An exact 2200×1146
+JPEG copy is now self-hosted at `public/assets/images/AIALanding_BG_V2.jpg`
+(SHA-256 `3036a9dc996b8ccd4672451fcc83b31b0421db4413f20d891f64f47d7707d6a8`)
+and referenced through existing `featuredImage`/`alt` fields. It contains no
+executable or unexpected embedded content by file-type inspection.
+
+### Headings, Supporting Copy, Careers, and Contact
+
+The intro heading, organization/location line, and paragraph already matched
+production and were moved unchanged into the structured source. The component
+now restores the published **Our ABA Care Team** section heading above **ABA
+Clinic Management** and its closing statement, **ABA's leading experts in
+special education and clinical care.** Repeated production module labels named
+“Our Creative Team” are hidden by production CSS and were not presented as
+visible headings or migrated.
+
+Heading structure is now one page H1 from `PageHero`, H2s for major Team and
+careers sections, H3s for roster groups, and H4s for member names. The existing
+card appearance and responsive wrapping are retained; this is a semantic and
+content correction rather than a Phase 8 visual redesign.
+
+Production labels the careers CTA **View Open Positions** and links to
+`/careers?hsLang=en`. Astro retains the equivalent safe local `/careers` route;
+the route exists and the link audit passes. No recruiting form or integration
+was activated.
+
+Production has an internal HR-email inconsistency: the no-script fallback says
+`hr [at] abaclinicaz [dot] com`, while its executable script makes both the
+visible text and `mailto:` destination `hr@azinstitute4autism.com`. Astro
+retains that active destination and now derives its obfuscated fallback from
+the same value: `hr [at] azinstitute4autism [dot] com`. Regression coverage
+decodes `ContactObfuscation` data and proves displayed/underlying values agree.
+The shared public phone, info email, and Scottsdale address match production
+and were not changed.
+
+### Content Architecture Decision
+
+Before this phase, `TeamPage.astro` hardcoded the rendered roster while
+`team.md` contained a separate extracted roster that `PageLayout.astro` bypassed.
+The two sources could drift without any validation. The smallest durable fix is
+a validated `team:` object in the existing English Team record:
+
+- `team-page.ts` defines required intro, groups, members, careers/contact, local
+  CTA, and nonempty strings, and rejects duplicate member names.
+- `content.config.ts` exposes that optional page field through the existing Zod
+  content collection.
+- `PageLayout.astro` requires the object for the dedicated English Team route
+  and passes it to `TeamPage.astro`.
+- `TeamPage.astro` is presentation-only and maps the structured data into the
+  existing cards and sections.
+- the bypassed Markdown body contains only a maintenance comment; it no longer
+  presents a competing roster.
+
+This keeps the route and metadata in the established Front Matter CMS-compatible
+record without a general component refactor. Future editors maintain one roster.
+No Spanish record or translation relationship was manufactured.
+
+### Human-decision Register and Deliberate Deferrals
+
+| Topic | Evidence / resolution | Remaining action |
+| --- | --- | --- |
+| Source freshness | Direct recheck and independent current rendering agree; both direct bodies are an October 3 HubSpot cache HIT | Confirm roster operationally before launch if the cache date is material; no conflicting entry was guessed |
+| Credentials and group membership | Reproduced verbatim from the current public page | AIA remains responsible for factual credential/role review; no outside directory was used |
+| HR contact | Active production script consistently uses `hr@azinstitute4autism.com`; stale fallback uses another domain | Current active value is implemented. AIA may confirm the legacy fallback domain can be retired before launch |
+| Unused portraits | Three prior entries are absent from current public presentation | Files remain unreferenced; later asset cleanup may remove them after a repository-wide usage review |
+| Visual fidelity | Static HTML, CSS, dimensions, semantic structure, links, and assets validated | Full desktop/mobile comparison, crops, spacing, keyboard interaction, and hover fidelity remain Phase 8 work |
+
+There are no unresolved image assignments in the implemented nine-member
+roster. No roster difference is characterized as a personnel event.
+
+### Validation and Generated-output Invariants
+
+Run from `www/`:
+
+```sh
+npm run test:seo
+npm run test:publication
+npm run test:markdown
+npm run build
+PUBLIC_ALLOW_INDEXING=true npm run build
+npm run audit:routes -- --offline --evidence reports/route-reconciliation-2026-10-09-offline-03-57-29-199Z.json
+npm run audit:routes -- --check
+npm run audit:links
+npm run audit:images
+npm run audit:blog
+npm run build
+npm run audit:routes -- --offline --evidence reports/route-reconciliation-2026-10-09-offline-03-57-29-199Z.json
+npm run audit:routes -- --check
+git diff --check
+```
+
+The final offline reconciliation is
+[`route-reconciliation-2026-10-09-offline-17-20-21-008Z.json`](route-reconciliation-2026-10-09-offline-17-20-21-008Z.json).
+It reuses all **70** saved production observations and makes no production
+requests. Historical discovery remains 129 normalized routes and 102 source
+sitemap URLs. The local generated count stays 96; the production-policy overlap
+stays 92. An intermediate indexing-mode reconciliation was moved to `/tmp`.
+
+| Check | Result |
+| --- | --- |
+| `test:seo` | **34 passed**, including four Phase 5C Team tests |
+| `test:publication` | **33 passed** |
+| `test:markdown` | **20 passed** |
+| Initial normal, indexing-enabled, final normal builds | All passed; each generated **96 routes**; Astro check **0 errors / 0 warnings / 0 hints** |
+| `audit:routes -- --check` | Passed in indexing and final staging modes using offline evidence |
+| `audit:links` | **0 broken internal links** |
+| `audit:images` | **0 missing mapped page images** |
+| `audit:blog` | **0 failures** |
+| `git diff --check` | Passed |
+| Browser validation | Attempted, but Playwright returned `Transport closed`; no browser-level desktop/mobile claim is made |
+
+The four focused Team tests validate the structured source and reject duplicate
+names, blank text, and external careers destinations; validate every group,
+member, role, order, local image, WebP signature, intrinsic dimensions, and alt;
+validate one H1, heading hierarchy, restored copy, careers CTA, and decoded
+contact agreement; and preserve title, description, canonical, robots, social
+image, language/direction, hreflang behavior, and absence of `/es/team` in both
+build modes.
+
+| Generated-output invariant | Indexing-enabled | Final staging |
+| --- | --- | --- |
+| HTML routes | **96**, route set unchanged | **96**, route set unchanged |
+| Sitemap URLs | **92** | **0**, empty XML urlset |
+| Hreflang | **174 links across 53 pages** | **0 links** |
+| Robots | Existing publication policy; Team `index,follow` | Every route `noindex,nofollow` |
+| Team canonical | `https://www.azinstitute4autism.com/team` | Same |
+| Team language/direction | `en` / `ltr` | Same |
+| Team H1 | Exactly one | Exactly one |
+
+No route, canonical, robots, sitemap, translation, hreflang, display-H1,
+BlogPosting, FAQPage, organization-schema, analytics, form, advertising, or
+deployment policy implementation changed. The only new metadata projection is
+the source-supported Team social image through Phase 4A's existing machinery.
+
+### Read-only Structural Diff Review and File Inventory
+
+Phase 5C has **11 files: seven modified and four new**, all under `www/`:
+
+| Classification | File | Purpose |
+| --- | --- | --- |
+| Editing documentation | `README.md` | Documents the single structured Team source |
+| Presentation | `src/components/pages/TeamPage.astro` | Renders validated roster/copy, semantic hierarchy, matching contact, and existing card styles |
+| Content schema | `src/content.config.ts` | Registers optional Team page data in the existing page schema |
+| Content metadata/data | `src/content/pages/en/team.md` | Current nine-member roster, supporting copy, careers data, and social image; removes competing body roster |
+| Route presentation | `src/layouts/PageLayout.astro` | Requires and passes Team data only for the established English Team route |
+| Regression tests | `tools/seo.test.mjs` | Four focused generated-output/schema tests in the existing suite |
+| Milestone documentation | `reports/migration-summary.md` | This dated review; prior evidence retained |
+| Content schema, **new** | `src/types/team-page.ts` | Zod model and duplicate-member validation |
+| Source asset, **new** | `public/assets/images/AIALanding_BG_V2.jpg` | Exact published Team social image |
+| Source evidence, **new** | `reports/phase-5c-source-evidence-2026-10-09.json` | Cache-aware observations, roster, assets, corrections, and validation |
+| Offline audit, **new** | `reports/route-reconciliation-2026-10-09-offline-17-20-21-008Z.json` | Updated local fingerprint with inherited production evidence |
+
+Scope review found no homepage, service, consultation, Library, author,
+employee-portal, Ads, navigation/footer, dependency/lockfile, deployment,
+analytics, tracking, form/backend, or future-phase changes. No file is staged.
+
+`merge-plan.md` remains untracked and unchanged. Its verified SHA-256 is
+`015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
