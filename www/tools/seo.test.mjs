@@ -441,6 +441,92 @@ test('authors resolve by exact locale and slug; missing/ambiguous records and re
   }
 }, { timeout: 60_000 });
 
+test('Phase 5A applies approved ABA eligibility without retaining superseded audiences', () => {
+  assert.equal(page('/aba-therapy')('#behavioral-services-we-offer').text(), 'Services We Offer');
+  const cases = [
+    ['/aba-therapy', '18 months through 8 years'],
+    ['/es/aba-therapy', '18 meses a 8 años'],
+    ['/referrals', '18 months through 8 years'],
+    ['/client-consultation', '18 months through 8 years'],
+    ['/es/client-consultation', '18 meses a 8 años'],
+    ['/schedule-consultation', '18 months through 8 years']
+  ];
+  for (const mode of ['staging', 'indexing']) {
+    for (const [route, approved] of cases) {
+      const $ = page(route, mode);
+      const copy = text($('main').text());
+      assert.ok(copy.includes(approved), route);
+      assert.doesNotMatch(copy, /children (?:and|&) teens|niños y adolescentes|\b2\s*(?:[–-]|to|a)\s*(?:8|17)\b/i, route);
+    }
+  }
+});
+
+test('Phase 5A retains independently supported program ages, ratios and payment distinctions', () => {
+  for (const lang of ['en', 'es']) {
+    const aba = page(`${prefix(lang)}/aba-therapy`);
+    assert.match(aba('main').text(), /1:1/);
+    assert.match(aba('main').text(), /1:2/);
+    assert.match(aba('main').text(), lang === 'en' ? /2 to 6 years/ : /2 a 6 años/);
+    assert.match(aba('main').text(), /AIA Preparatory Academy©/);
+    const club = page(`${prefix(lang)}/learner-social-club`);
+    assert.match(club('main').text(), lang === 'en' ? /8–17 years/ : /8 a 17 años/);
+    assert.match(club('main').text(), lang === 'en' ? /Private Pay/ : /Pago particular/);
+    assert.match(club('main').text(), lang === 'en' ? /4:00 PM – 6:00 PM/ : /4:00 p\. m\. – 6:00 p\. m\./);
+    assert.doesNotMatch(club('main').text(), /18 (?:months|meses)/);
+    const evaluation = page(`${prefix(lang)}/autism-evaluations`);
+    assert.match(evaluation('main').text(), lang === 'en' ? /children of all ages/ : /niños de todas las edades/);
+    assert.doesNotMatch(evaluation('main').text(), /18 (?:months|meses)/);
+  }
+});
+
+test('Phase 5A conversion CTAs resolve to the intended published local route or form anchor', () => {
+  const cases = [
+    ['/aba-therapy', 'Make an Appointment', '/client-consultation'],
+    ['/autism-evaluations', 'Make an Appointment', '/client-consultation'],
+    ['/learner-social-club', 'Enroll Now', '/client-consultation'],
+    ['/es/aba-therapy', 'Hacer una cita', '/es/client-consultation'],
+    ['/es/autism-evaluations', 'Programar una cita', '/es/client-consultation'],
+    ['/es/learner-social-club', 'Enroll Now', '/es/client-consultation'],
+    ['/referrals', 'Refer a Client', '#form-title'],
+    ['/aba-therapy-intake-process', 'Take the First Step', '/client-consultation'],
+    ['/es/aba-therapy-intake-process', 'Take the First Step', '/es/client-consultation'],
+    ['/services', 'Consult with a Client Advocate', '/client-consultation'],
+    ['/services', 'Get a Free Consultation', '/client-consultation'],
+    ['/es/services', 'Consulte con un Defensor del Cliente', '/es/client-consultation'],
+    ['/es/services', 'Programe una consulta gratuita', '/es/client-consultation'],
+    ['/es/services', 'Inicio', '/es']
+  ];
+  for (const [route, label, href] of cases) {
+    const $ = page(route);
+    const link = $('main a').filter((_, el) => text($(el).text()) === label);
+    assert.equal(link.length, 1, `${route}: ${label}`);
+    assert.equal(link.attr('href'), href, route);
+    const target = new URL(href, site + route);
+    const destination = page(target.pathname);
+    if (target.hash) assert.equal(destination(`[id="${target.hash.slice(1)}"]`).length, 1, href);
+  }
+});
+
+test('Phase 5A preserves disabled forms and one localized H1 on every targeted page', () => {
+  const slugs = ['aba-therapy', 'autism-evaluations', 'learner-social-club', 'services', 'client-consultation', 'aba-therapy-intake-process'];
+  const routes = ['/referrals', '/schedule-consultation', '/insurance', ...['en', 'es'].flatMap((lang) => slugs.map((slug) => `${prefix(lang)}/${slug}`))];
+  for (const route of routes) {
+    const $ = page(route);
+    assert.equal($('main h1').length, 1, route);
+    assert.equal($('html').attr('lang'), route.startsWith('/es/') ? 'es' : 'en', route);
+    assert.equal($('html').attr('dir'), 'ltr', route);
+    assert.equal($('iframe[src*="jotform"], script[src*="jotform"]').length, 0, route);
+    $('main form').each((_, el) => {
+      const form = $(el);
+      assert.equal(form.attr('action'), '', route);
+      assert.equal(form.find('[type="submit"]:not([disabled])').length, 0, route);
+      assert.ok(form.find('[type="submit"][disabled]').length, route);
+      assert.match(form.text(), /Online submission is not yet connected/, route);
+    });
+  }
+  assert.equal(meta(page('/autism-evaluations'), 'description').attr('content'), "Get comprehensive childhood autism evaluations in Scottsdale, AZ. Our expert team provides accurate assessments to support your child's unique development.");
+});
+
 test('actual content-schema builds reject empty, whitespace-only and non-string displayH1', async () => {
   for (const value of ['', '   ', '\n\t', 123]) {
     await writeEntry('pages', 'en', 'seo-invalid', { displayH1: value });

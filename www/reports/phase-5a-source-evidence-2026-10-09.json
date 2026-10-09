@@ -1,0 +1,919 @@
+{
+  "phase": "5A",
+  "recordedAt": "2026-10-09",
+  "editorialAuthority": {
+    "source": "User-provided AIA confirmation",
+    "confirmedOn": "2026-10-08",
+    "english": "18 months through 8 years",
+    "spanish": "18 meses a 8 años",
+    "scope": "General ABA eligibility, not all programs"
+  },
+  "method": "Sequential read-only GETs, at least 1.1 seconds between page requests; redirects not followed; no scripts, authenticated requests, submissions or APIs. Four query rechecks returned identical text/metadata. Browser attempt failed Transport closed. HTML kept only in temporary storage.",
+  "robots": [
+    {
+      "url": "https://www.azinstitute4autism.com/robots.txt",
+      "observedAt": "2026-10-09T01:26:02Z",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:02 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "etag": "\"dffaeb51ed776c4737cfc1b108c56515\"",
+        "last-modified": "Sat, 12 Sep 2026 03:33:09 GMT",
+        "x-hs-cf-cache-status": "REVALIDATED"
+      }
+    },
+    {
+      "url": "https://form.jotform.com/robots.txt",
+      "observedAt": "2026-10-09T01:28:57Z",
+      "status": 200,
+      "headers": {
+        "cache-control": "no-cache",
+        "date": "Fri, 09 Oct 2026 01:28:57 GMT"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "url": "https://www.azinstitute4autism.com/aba-therapy",
+      "observedAt": "2026-10-09T01:26:21.235860+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:21 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:27:01 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:27:01 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998bf797c7ab3-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "3e4835ea8562169812c61b0d98603daf7124ce4006f8b37a0539beb3d837d0be",
+      "title": "Integrated ABA Therapy for Autism | Arizona Institute for Autism",
+      "description": "Empower your child for life with one-on-one integrated ABA therapy. Book a free consultation and join our supportive autism community!",
+      "h1": [
+        "Behavioral"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/aba-therapy",
+      "links": [
+        {
+          "label": "Make an Appointment",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "The ABA Therapy 1:1 program, designed for children aged 18 months to 8 years, adopts an integrative approach aimed at fostering independent learning. The Arizona Institute for Autism employs a naturalistic, neurodiversity-affirming model within its applied behavior analysis (ABA) program, incorporating essential insights from neuroscientific research.",
+        "The ABA Therapy 1:2 Academic Readiness Program is specifically designed for children aged 2 to 6 years and utilizes a tailored group therapy approach to prepare learners for successful integration into the mainstream classroom.This program incorporates the AIA Preparatory Academy© curriculum, combining the esteemed Montessori method with Applied Behavior Analysis (ABA). This integrated approach fosters a supportive environment tailored to the individual learning styles and strengths of our learners, facilitating the development of essential social, communication, cognitive, and motor skills necessary for success in mainstream classrooms."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/autism-evaluations",
+      "observedAt": "2026-10-09T01:26:22.580258+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:22 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998c7baea1fab-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "d1da50ec570839f9ffb014a5309978d62895a286273a9b58e626843ebf53b15f",
+      "title": "Accurate Autism Assessment for Children | Arizona Institute for Autism",
+      "description": "Get comprehensive childhood autism evaluations in Scottsdale, AZ. Our expert team provides accurate assessments to support your child's unique development.",
+      "h1": [
+        "Psychological"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/autism-evaluations",
+      "links": [
+        {
+          "label": "Autism Spectrum Disorder (ASD)",
+          "href": "https://www.childrens.com/specialties-services/conditions/autism-spectrum-disorder"
+        },
+        {
+          "label": "Make an Appointment",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "At the Arizona Institute for Autism, there is no single lab test to diagnose autism. Instead, our team conducts comprehensive evaluations through a series of observations and assessments to understand the underlying causes of your child's symptoms.",
+        "Autism Diagnostic Observation Schedule (ADOS)",
+        "ADOS is a structured evaluation tool used by our specialists to assess behaviors related to autism spectrum disorders. Appropriate for children of all ages, ADOS helps us understand your child's social and language skills and overall developmental level."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/learner-social-club",
+      "observedAt": "2026-10-09T01:26:23.923870+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:24 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:14 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:14 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998d04d5b19b7-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "74a812f5a6a4841bc234a8058098cbf5c37630915fde608e146b04e1a091307d",
+      "title": "Boost Emotional and Social Functioning with Learner Social Club at AIA",
+      "description": "Contact AIA for a free 1-day trial pass to see how your child's social and emotional development can benefit from our Learner Social Club for ages 8-17.",
+      "h1": [
+        "Sociological"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/learner-social-club",
+      "links": [
+        {
+          "label": "Enroll Now",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "The Learner Social Club currently serves youth learners aged 8–17 years. Our flexible scheduling options currently include:",
+        "Payment Type: Private Pay"
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/services",
+      "observedAt": "2026-10-09T01:26:25.299584+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:25 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998d8ce0ee9df-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "dca03ba7b2e1bd543d024fea4e0a948461eff05b7c0f09cb25134eb84aaa7796",
+      "title": "Behavioral, Psychological, and Sociological Pediatric Autism Services",
+      "description": "Discover comprehensive autism services for children, from integrative ABA therapy to educational and family support, at the Arizona Institute for Autism.",
+      "h1": [
+        "ABA & Educational Services"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/services",
+      "links": [
+        {
+          "label": "Discover More",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "label": "Get Started",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "label": "Home",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "label": "Consult with a Client Advocate",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "label": "Behavioral Services",
+          "href": "https://www.azinstitute4autism.com/aba-therapy?hsLang=en"
+        },
+        {
+          "label": "Psychological Services",
+          "href": "https://www.azinstitute4autism.com/autism-evaluations?hsLang=en"
+        },
+        {
+          "label": "Sociological Services",
+          "href": "https://www.azinstitute4autism.com/learner-social-club?hsLang=en"
+        },
+        {
+          "label": "Get a Free Consultation",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "Approximately 1 in 36 children in the United States will receive an autism diagnosis each year. If your child exhibits any of the behaviors listed above, it is possible that he or she may be diagnosed on the autism spectrum. Diagnosing children with Autism Spectrum Disorder can be challenging and complex. The most important thing you can do is consult a professional if you think your child is displaying atypical behavior.",
+        "To meet diagnostic criteria for ASD, a child must have persistent deficits in each of three areas of social communication and interaction plus at least two of four types of restricted repetitive behaviors. Consult with a Client Advocate today to receive individual and family support!"
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/referrals",
+      "observedAt": "2026-10-09T01:26:26.659817+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:26 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:45:35 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:45:35 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998e12d16cbab-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "f26dbdbe53569db5ab4960cca51c2f78a441306f37311616e3d0816114fcb4c4",
+      "title": "Submit Your Autism Referral Online | Arizona Institute for Autism",
+      "description": "Arizona Institute for Autism simplifies autism referrals. Submit online now to connect families with the compassionate autism care specialists of AIA.",
+      "h1": [
+        "Physician & Insurer Referrals"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/referrals",
+      "links": [
+        {
+          "label": "Refer a Client",
+          "href": "https://form.jotform.com/231638510219149?hsCtaAttrib=203953990377"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "At the Arizona Institute for Autism, we are here to support your clients reach new milestones in a diverse integrated learning environment. Our mission is to improve special education and to strengthen neurodivergent communities. We offer dependable educational and therapeutic programs for children ages 18 months to 8 years that have been diagnosed with autism.",
+        "To provide the highest level of optimal care, we know that it is essential to provide a working partnership with the client’s diagnostic provider, physician, and their insurance company. To facilitate this collaboration, we have built a system of reporting metrics on the child’s treatment plan with supporting progress charts we share with our partners. This information keeps everyone involved up to date on the client’s progress and future needs. If you are an insurance company or diagnostic provider interested in working with us, contact us to learn more about our referral process."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/client-consultation",
+      "observedAt": "2026-10-09T01:26:28.019578+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:28 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998e9bd89a69a-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "df31e8f2bc82d47e0cc1c2144177047d7f37fdfc39a0d18c26fca3a8db4cdf9b",
+      "title": "Client Consultation Form | Arizona Institute for Autism | Scottsdale",
+      "description": "Schedule your free consultation with a Client Advocate at Arizona Institute for Autism to find out what we can do for your child diagnosed with autism.",
+      "h1": [
+        "Schedule Your Free Consultation"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/client-consultation",
+      "links": [],
+      "iframes": [
+        "https://form.jotform.com/250727122848156"
+      ],
+      "excerpts": [
+        "At the Arizona Institute for Autism (AIA), we have a no wait list policy and provide expert clinical care for children diagnosed with autism. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/aba-therapy-intake-process",
+      "observedAt": "2026-10-09T01:26:29.339474+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:29 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:15 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:15 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998f20f6753ca-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "f8cc3b24c506fac722aa6a20b558708e53c6ae2abf8770d09421d961f5dba2e5",
+      "title": "Starting ABA Therapy Step-by-Step Guide | Arizona Institute for Autism",
+      "description": "Discover how to begin ABA therapy at Arizona Institute for Autism. Our simple, supportive intake process guides your child toward growth and success.",
+      "h1": [
+        "Learner Intake Process"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/aba-therapy-intake-process",
+      "links": [
+        {
+          "label": "Take the First Step",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "After submitting the packet, our Client Advocate will promptly reach out to discuss the next steps, answer your questions, and guide you through the intake process. We are here to support you every step of the way, ensuring you feel comfortable and informed from the start.",
+        "2. Speak with an AIA Client Advocate",
+        "Our dedicated Client Advocate team is passionate about assisting families through every aspect of starting ABA therapy. During this initial conversation, your Advocate will:",
+        "4. Verify Insurance and Billing Information",
+        "To ensure a smooth start to therapy, our billing manager will verify your insurance coverage and benefits once your intake packet is complete. Our billing team will:",
+        "Review your insurance plan details, including ABA therapy coverage.",
+        "Answer your billing-related questions, maintaining transparency and clarity.",
+        "With your intake and billing details finalized, our Client Advocate will assist you in scheduling a comprehensive assessment with our clinical team."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/aba-therapy",
+      "observedAt": "2026-10-09T01:26:30.699872+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:30 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:14 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:14 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998fa8d5a2f0f-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "bf5c84fae42bbb11b6bd3e73cd28487bfee895769129f442b7ee92fe01e773e9",
+      "title": "Terapia ABA Integrada para el Autismo | Arizona Institute for Autism",
+      "description": "Empodere a su hijo para la vida con terapia ABA integrada individualizada. ¡Reserva una consulta gratuita y únete a nuestra comunidad de apoyo para el autismo!",
+      "h1": [
+        "Conductual"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/aba-therapy",
+      "links": [
+        {
+          "label": "Hacer una cita",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "El programa de Terapia ABA 1:1, diseñado para niños de 18 meses a 8 años, adopta un enfoque integrador destinado a fomentar el aprendizaje independiente. El Arizona Institute for Autism emplea un modelo naturalista y que afirma la neurodiversidad dentro de su programa de análisis de comportamiento aplicado (ABA), incorporando conocimientos esenciales de la investigación neurocientífica.",
+        "El programa de preparación académica 1:2 de terapia ABA está diseñado específicamente para niños de 2 a 6 años y utiliza un enfoque de terapia grupal personalizado para preparar a los estudiantes para una integración exitosa en el aula regular. Este programa incorpora el currículo de la AIA Preparatory Academy©, combinando el estimado método Montessori con el Análisis de Comportamiento Aplicado (ABA). Este enfoque integrado fomenta un entorno de apoyo adaptado a los estilos de aprendizaje y fortalezas individuales de nuestros estudiantes, facilitando el desarrollo de habilidades sociales, comunicativas, cognitivas y motoras esenciales necesarias para el éxito en las aulas regulares."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/autism-evaluations",
+      "observedAt": "2026-10-09T01:26:32.021705+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:32 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:12 GMT",
+        "x-hs-cf-cache-status": "MISS",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:12 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799902b84d710a-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "2f41ce71e8108b8076f90320758ec2b8b6a2231d7f0fffeca6fd2a90ecf363c6",
+      "title": "Evaluación precisa del autismo para niños | Arizona Institute for Autism",
+      "description": "Obtenga evaluaciones integrales de autismo infantil en Scottsdale, AZ.  Nuestro equipo de expertos proporciona evaluaciones precisas para apoyar el desarrollo único de su hijo.",
+      "h1": [
+        "Psicológicos"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/autism-evaluations",
+      "links": [
+        {
+          "label": "trastorno del espectro autista (TEA)",
+          "href": "https://www.childrens.com/specialties-services/conditions/autism-spectrum-disorder"
+        },
+        {
+          "label": "Programar una cita",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "Escala de Observación para el Diagnóstico del Autismo (ADOS)",
+        "ADOS es una herramienta de evaluación estructurada que utilizan nuestros especialistas para evaluar comportamientos relacionados con los trastornos del espectro autista. Apropiada para niños de todas las edades, ADOS nos ayuda a comprender las habilidades sociales y del lenguaje de su hijo/a, así como su nivel general de desarrollo."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/learner-social-club",
+      "observedAt": "2026-10-09T01:26:33.733723+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:34 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:22 GMT",
+        "x-hs-cf-cache-status": "MISS",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:22 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a479990d5f713c7e-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "2740d0ffc65bed908841c756f68ab911c3213634391d892edc127980aca80f46",
+      "title": "Impulsa el funcionamiento emocional y social con Learner Social Club en AIA",
+      "description": "Póngase en contacto con AIA para obtener un pase de prueba gratuito de 1 día y ver cómo el desarrollo social y emocional de su hijo puede beneficiarse de nuestro Learner Social Club de 8 a 17 años.",
+      "h1": [
+        "Sociológico"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/learner-social-club",
+      "links": [
+        {
+          "label": "Enroll Now",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "Learner Social Club actualmente atiende a jóvenes de 8 a 17 años. Nuestras opciones de horario flexible actualmente incluyen:",
+        "Tipo de pago: Pago particular"
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/services",
+      "observedAt": "2026-10-09T01:26:35.259757+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:35 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:22 GMT",
+        "x-hs-cf-cache-status": "REVALIDATED",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:22 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799916dd444896-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "de5dca3a3265e12d894a34f5dcddd8b3730df70829bebd3e93482367f3d60098",
+      "title": "Servicios pediátricos de autismo conductuales, psicológicos y sociológicos",
+      "description": "Descubra servicios integrales para el autismo para niños, desde terapia ABA integrativa hasta apoyo educativo y familiar, en el Instituto de Autismo de Arizona.",
+      "h1": [
+        "Servicios ABA y Educativos"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/services",
+      "links": [
+        {
+          "label": "Discover More",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "label": "Get Started",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "label": "Inicio",
+          "href": "https://www.azinstitute4autism.com/es/?hsLang=es"
+        },
+        {
+          "label": "Consulte con un Defensor del Cliente",
+          "href": "https://www.azinstitute4autism.com/es/client-consultation?hsLang=es"
+        },
+        {
+          "label": "Servicios Conductuales",
+          "href": "https://www.azinstitute4autism.com/aba-therapy?hsLang=es"
+        },
+        {
+          "label": "Servicios Psicológicos",
+          "href": "https://www.azinstitute4autism.com/autism-evaluations?hsLang=es"
+        },
+        {
+          "label": "Servicios Sociológicos",
+          "href": "https://www.azinstitute4autism.com/learner-social-club?hsLang=es"
+        },
+        {
+          "label": "Programe una consulta gratuita",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "Aproximadamente 1 de cada 36 niños en los Estados Unidos recibirá un diagnóstico de autismo cada año. Si su hijo presenta alguno de los comportamientos enumerados anteriormente, es posible que le diagnostiquen un trastorno del espectro autista. Diagnosticar a niños con Trastorno del Espectro Autista puede ser desafiante y complejo. Lo más importante que puedes hacer es consultar a un profesional si crees que tu hijo muestra un comportamiento atípico.",
+        "Para cumplir los criterios diagnósticos de TEA, un niño debe tener déficits persistentes en cada una de las tres áreas de comunicación e interacción social, además de al menos dos de los cuatro tipos de comportamientos repetitivos restringidos. ¡Consulte hoy mismo a un Defensor del Cliente para recibir apoyo individual y familiar!"
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/client-consultation",
+      "observedAt": "2026-10-09T01:26:36.736417+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:37 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sun, 04 Oct 2026 00:00:44 GMT",
+        "x-hs-cf-cache-status": "REVALIDATED",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:00:44 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47999201ee950a9-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "3801f2baa73936af70c5298be91db629e0257fc5fb6e80c9ce22b79b74e3c95e",
+      "title": "Formulario de Consulta del Cliente | Arizona Institute for Autism | Scottsdale",
+      "description": "Programa tu consulta gratuita con un Defensor del Cliente en el Instituto de Autismo de Arizona para descubrir qué podemos hacer por tu hijo diagnosticado con autismo.",
+      "h1": [
+        "Programa tu consulta gratuita"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/client-consultation",
+      "links": [],
+      "iframes": [
+        "https://form.jotform.com/250727122848156"
+      ],
+      "excerpts": [
+        "Aquí en el Instituto de Autismo de Arizona (AIA), tenemos una política de lista de espera cero y brindamos atención clínica experta para niños diagnosticados con autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/aba-therapy-intake-process",
+      "observedAt": "2026-10-09T01:26:38.213768+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:38 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "x-hs-cf-cache-status": "MISS",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799929590eaebe-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "7ac84bd729ad4f07db606c01e14422fde0aad46b880bf1a10251acbf5512f97c",
+      "title": "Guía paso a paso para comenzar la terapia ABA | Arizona Institute for Autism",
+      "description": "Descubra cómo comenzar la terapia ABA en el Instituto de Autismo de Arizona.  Nuestro proceso de admisión simple y de apoyo guía a su hijo hacia el crecimiento y el éxito.",
+      "h1": [
+        "Proceso de admisión de estudiantes"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/aba-therapy-intake-process",
+      "links": [
+        {
+          "label": "Take the First Step",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "Comience completando nuestro Paquete de Información para Estudiantes, que recopila información esencial sobre su hijo. Este paquete proporciona a nuestro equipo información inicial para comprender las necesidades únicas de su hijo.Después de enviar el paquete, nuestro Defensor del Cliente se pondrá en contacto con usted de inmediato para discutir los próximos pasos, responder a sus preguntas y guiarlo a través del proceso de admisión. Estamos aquí para apoyarte en cada paso del camino, asegurándonos de que te sientas cómodo e informado desde el principio.",
+        "2. Hable con un Defensor del Cliente de AIA",
+        "Nuestro equipo dedicado de Defensores del Cliente es apasionado por ayudar a las familias en cada aspecto de comenzar la terapia ABA. Durante esta conversación inicial, su Defensor/a:",
+        "4. Verificar la información del seguro y la facturación",
+        "Para asegurar un inicio fluido de la terapia, nuestro gerente de facturación verificará su cobertura y beneficios de seguro una vez que su paquete de admisión esté completo. Nuestro equipo de facturación:",
+        "Revisa los detalles de tu plan de seguro, incluida la cobertura de terapia ABA.",
+        "Responda a sus preguntas relacionadas con la facturación, manteniendo la transparencia y la claridad.",
+        "Con sus detalles de admisión y facturación finalizados, nuestro Defensor del Cliente le ayudará a programar una evaluación exhaustiva con nuestro equipo clínico.Trabajaremos estrechamente con usted para encontrar un horario de cita que se adapte a la agenda de su familia y a la comodidad de su hijo. Esta evaluación es un paso vital para comprender las fortalezas de su hijo e identificar áreas donde necesita apoyo específico.La información recopilada durante la evaluación guiará la creación de un plan de tratamiento personalizado diseñado específicamente para apoyar el crecimiento y los hitos de desarrollo de su hijo."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/schedule-consultation",
+      "observedAt": "2026-10-09T01:26:39.574860+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:39 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "x-hs-cf-cache-status": "REVALIDATED",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799931d96e2bbd-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "7254085c5296eaa0339404e05a318e4b90c69d185b4e9bf059e44cb8e8ea2ab2",
+      "title": "Contact Arizona Institute for Autism for Your Free ASD Consultation",
+      "description": "Reach out to discuss autism treatment for your child with AZ Institute for Autism. Early intervention makes a difference; schedule your consultation today!",
+      "h1": [
+        "Reach Out for Your Free Consultation"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/schedule-consultation",
+      "links": [],
+      "iframes": [],
+      "excerpts": [
+        "A Client Advocate from Arizona Institute for Autism will contact you within one business day upon submission of this form.",
+        "Arizona Institute for Autism (AIA) is home to leading experts in behavioral health and special education. We provide clinical care for children and teens diagnosed with autism and have a no wait list policy.",
+        "AIA currently serves families in the Greater Phoenix Metropolitan area including Scottsdale, Gilbert, Mesa, and Tempe. We also provide in-home ABA therapy services for families of children diagnosed with autism in Tucson.",
+        "Along with ABA therapy for children and teens diagnosed with autism, our supportive services include autism advocacy, family training, and community outreach."
+      ],
+      "freshness": "potentially stale: children and teens contradicts AIA editorial confirmation on 2026-10-08",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/insurance",
+      "observedAt": "2026-10-09T01:26:41.054992+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:41 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a479993b4afc2abb-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "76445f34f71556c6f738ad80458cc658ac30f19f2fa595b120ce19743a404903",
+      "title": "Arizona Autism Therapy Insurance Guide | AZ Institute for Autism",
+      "description": "Take the first step to affordable autism care for your child. Verify insurance benefits and coverage quickly and easily with Arizona Institute for Autism.",
+      "h1": [
+        "Insurance Guide"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/insurance",
+      "links": [
+        {
+          "label": "Tricare ECHO website",
+          "href": "https://tricare.mil/echo"
+        },
+        {
+          "label": "Arizona Department of Education's ESA page",
+          "href": "https://www.azed.gov"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "Insurance Guide",
+        "Insurance Coverage for Autism Treatment in Arizona",
+        "Navigating insurance coverage for autism therapy can be complex. At the Arizona Institute for Autism (AIA), we're committed to guiding you through your insurance options to ensure your child receives the necessary care.",
+        "Accepted Insurance Carriers",
+        "We proudly partner with most major insurance carriers providing autism treatment benefits in Arizona. Our team regularly works with insurance plans such as the following.",
+        "We recognize the dedication and immense effort families devote to supporting their children. Our helpful team offers personalized consultations—both in person by appointment and over the phone—to explain the billing process thoroughly. Our goal is to ensure you feel informed and supported at every stage.",
+        "Frequently Asked Insurance Questions"
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/aba-therapy?migration_review=20261009T0130",
+      "observedAt": "2026-10-09T01:28:06.181582+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:28:06 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:27:01 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:27:01 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799b4f181ccb9a-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "3e4835ea8562169812c61b0d98603daf7124ce4006f8b37a0539beb3d837d0be",
+      "title": "Integrated ABA Therapy for Autism | Arizona Institute for Autism",
+      "description": "Empower your child for life with one-on-one integrated ABA therapy. Book a free consultation and join our supportive autism community!",
+      "h1": [
+        "Behavioral"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/aba-therapy",
+      "links": [
+        {
+          "label": "Make an Appointment",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "The ABA Therapy 1:1 program, designed for children aged 18 months to 8 years, adopts an integrative approach aimed at fostering independent learning. The Arizona Institute for Autism employs a naturalistic, neurodiversity-affirming model within its applied behavior analysis (ABA) program, incorporating essential insights from neuroscientific research.",
+        "The ABA Therapy 1:2 Academic Readiness Program is specifically designed for children aged 2 to 6 years and utilizes a tailored group therapy approach to prepare learners for successful integration into the mainstream classroom.This program incorporates the AIA Preparatory Academy© curriculum, combining the esteemed Montessori method with Applied Behavior Analysis (ABA). This integrated approach fosters a supportive environment tailored to the individual learning styles and strengths of our learners, facilitating the development of essential social, communication, cognitive, and motor skills necessary for success in mainstream classrooms."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/aba-therapy?migration_review=20261009T0130",
+      "observedAt": "2026-10-09T01:28:07.479861+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:28:07 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:14 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:14 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799b575d3e2f3d-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "bf5c84fae42bbb11b6bd3e73cd28487bfee895769129f442b7ee92fe01e773e9",
+      "title": "Terapia ABA Integrada para el Autismo | Arizona Institute for Autism",
+      "description": "Empodere a su hijo para la vida con terapia ABA integrada individualizada. ¡Reserva una consulta gratuita y únete a nuestra comunidad de apoyo para el autismo!",
+      "h1": [
+        "Conductual"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/aba-therapy",
+      "links": [
+        {
+          "label": "Hacer una cita",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ],
+      "iframes": [],
+      "excerpts": [
+        "El programa de Terapia ABA 1:1, diseñado para niños de 18 meses a 8 años, adopta un enfoque integrador destinado a fomentar el aprendizaje independiente. El Arizona Institute for Autism emplea un modelo naturalista y que afirma la neurodiversidad dentro de su programa de análisis de comportamiento aplicado (ABA), incorporando conocimientos esenciales de la investigación neurocientífica.",
+        "El programa de preparación académica 1:2 de terapia ABA está diseñado específicamente para niños de 2 a 6 años y utiliza un enfoque de terapia grupal personalizado para preparar a los estudiantes para una integración exitosa en el aula regular. Este programa incorpora el currículo de la AIA Preparatory Academy©, combinando el estimado método Montessori con el Análisis de Comportamiento Aplicado (ABA). Este enfoque integrado fomenta un entorno de apoyo adaptado a los estilos de aprendizaje y fortalezas individuales de nuestros estudiantes, facilitando el desarrollo de habilidades sociales, comunicativas, cognitivas y motoras esenciales necesarias para el éxito en las aulas regulares."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/client-consultation?migration_review=20261009T0130",
+      "observedAt": "2026-10-09T01:28:08.800682+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:28:08 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799b5fb92b23fc-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "df31e8f2bc82d47e0cc1c2144177047d7f37fdfc39a0d18c26fca3a8db4cdf9b",
+      "title": "Client Consultation Form | Arizona Institute for Autism | Scottsdale",
+      "description": "Schedule your free consultation with a Client Advocate at Arizona Institute for Autism to find out what we can do for your child diagnosed with autism.",
+      "h1": [
+        "Schedule Your Free Consultation"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/client-consultation",
+      "links": [],
+      "iframes": [
+        "https://form.jotform.com/250727122848156"
+      ],
+      "excerpts": [
+        "At the Arizona Institute for Autism (AIA), we have a no wait list policy and provide expert clinical care for children diagnosed with autism. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas."
+      ],
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/schedule-consultation?migration_review=20261009T0130",
+      "observedAt": "2026-10-09T01:28:10.140915+00:00",
+      "status": 200,
+      "requestHeaders": {
+        "Cache-Control": "no-cache, max-age=0",
+        "Pragma": "no-cache"
+      },
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:28:10 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799b681e092abd-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "sha256": "7254085c5296eaa0339404e05a318e4b90c69d185b4e9bf059e44cb8e8ea2ab2",
+      "title": "Contact Arizona Institute for Autism for Your Free ASD Consultation",
+      "description": "Reach out to discuss autism treatment for your child with AZ Institute for Autism. Early intervention makes a difference; schedule your consultation today!",
+      "h1": [
+        "Reach Out for Your Free Consultation"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/schedule-consultation",
+      "links": [],
+      "iframes": [],
+      "excerpts": [
+        "A Client Advocate from Arizona Institute for Autism will contact you within one business day upon submission of this form.",
+        "Arizona Institute for Autism (AIA) is home to leading experts in behavioral health and special education. We provide clinical care for children and teens diagnosed with autism and have a no wait list policy.",
+        "AIA currently serves families in the Greater Phoenix Metropolitan area including Scottsdale, Gilbert, Mesa, and Tempe. We also provide in-home ABA therapy services for families of children diagnosed with autism in Tucson.",
+        "Along with ABA therapy for children and teens diagnosed with autism, our supportive services include autism advocacy, family training, and community outreach."
+      ],
+      "freshness": "potentially stale: children and teens contradicts AIA editorial confirmation on 2026-10-08",
+      "method": "GET"
+    }
+  ],
+  "externalDestinationChecks": [
+    {
+      "url": "https://form.jotform.com/231638510219149",
+      "observedAt": "2026-10-09T01:30:34.576858+00:00",
+      "status": 200,
+      "location": null,
+      "note": "GET status check only; no scripts or form submission"
+    },
+    {
+      "url": "https://form.jotform.com/250727122848156",
+      "observedAt": "2026-10-09T01:30:35.880703+00:00",
+      "status": 200,
+      "location": null,
+      "note": "GET status check only; no scripts or form submission"
+    }
+  ]
+}

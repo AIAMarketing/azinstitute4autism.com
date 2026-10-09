@@ -1112,3 +1112,332 @@ SHA-256 `015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
 There is no new blocking policy question; Phase 6C must resolve the documented
 content/date drift. Stop for implementation/diff acceptance before any checkpoint
 commit. Phase 5A has not started.
+
+## Phase 5A — Services, Referrals, and Consultation (2026-10-09 UTC)
+
+Implemented from Phase 4B checkpoint
+`4079156776dd6b5a1b4e42b02dd9f680944484dd` on
+`faithful-astro-migration`. This section records the implementation and read-only
+review; nothing is staged or committed. The shell's actual UTC retrieval date
+was October 9. AIA's governing editorial confirmation is dated **October 8,
+2026**, as supplied by the user. Earlier reports and production observations
+remain historical evidence, not competing authority for the confirmed correction.
+
+### Scope, Authority, and Source Freshness
+
+Inspected all seven English primary pages and all six existing Spanish
+counterparts: ABA therapy, autism evaluations, Learner Social Club, services,
+client consultation, intake, and English referrals. No Spanish referrals record
+exists; none was created. Also inspected English schedule consultation and
+insurance; FormShell, ServiceInquiryDrawer, ServicesPage, PageLayout, Button,
+shared service data and relevant navigation/CTA code. Publication, translation,
+heading, social and structured-data infrastructure was inspected and retained.
+
+AIA explicitly confirmed general ABA eligibility as **18 months through 8
+years / 18 meses a 8 años** and superseded broader children/teens descriptions.
+This decision governs the in-scope edits even when cached production content
+conflicts. It is resolved, not a human-decision blocker. It does not establish
+ages for the Academy, Social Club or diagnostic evaluations.
+
+Durable new source evidence:
+[`phase-5a-source-evidence-2026-10-09.json`](phase-5a-source-evidence-2026-10-09.json).
+It records exact URLs, request times, HTTP status, request/response cache
+indicators, body hashes, titles, descriptions, H1s, canonicals, selected source
+excerpts and CTA destinations. It contains no complete HTML captures or cookies.
+
+There were **23 successful read-only GETs**: AIA robots, 15 targeted AIA pages,
+four cache rechecks, Jotform robots and two bare Jotform destination status
+checks. Page requests were sequential with at least 1.1 seconds between them;
+redirects were not followed. AIA robots allowed the selected paths. Jotform
+robots permits the bare numeric paths; its disallowed tracking-query form
+variant was not fetched. No scripts, forms, APIs, authenticated operations,
+tracking endpoints or production writes were executed. A web-tool robots
+attempt failed before the successful direct retrieval. The independent browser
+attempt failed with `Transport closed`; no browser response was obtained.
+
+Every AIA page request sent `Cache-Control: no-cache, max-age=0` and
+`Pragma: no-cache`. Responses still carried Cloudflare/HubSpot cache indicators:
+`Cache-Control: s-maxage=36000, max-age=5` and
+`X-HS-Cache-Control: s-maxage=36000, max-age=0`. `Age`, page `ETag` and
+`CF-Cache-Status` were absent; `X-HS-CF-Cache-Status`, `Last-Modified`,
+`X-HS-Prerendered`, response Date and CF-Ray are saved where available.
+Prerender dates matched Last-Modified. **HTTP 200, MISS and REVALIDATED do not
+prove that the underlying prerendered content contains the newest edits.**
+
+Initial source observations (all times UTC, October 9, 2026):
+
+| Source URL | Request time | HTTP | X-HS-CF-Cache-Status | Last-Modified (GMT) |
+| --- | --- | ---: | --- | --- |
+| [/aba-therapy](https://www.azinstitute4autism.com/aba-therapy) | 01:26:21 | 200 | HIT | Sat, 03 Oct 2026 23:27:01 GMT |
+| [/autism-evaluations](https://www.azinstitute4autism.com/autism-evaluations) | 01:26:22 | 200 | HIT | Sat, 03 Oct 2026 23:13:18 GMT |
+| [/learner-social-club](https://www.azinstitute4autism.com/learner-social-club) | 01:26:23 | 200 | HIT | Sat, 03 Oct 2026 23:13:14 GMT |
+| [/services](https://www.azinstitute4autism.com/services) | 01:26:25 | 200 | HIT | Sat, 03 Oct 2026 23:13:23 GMT |
+| [/referrals](https://www.azinstitute4autism.com/referrals) | 01:26:26 | 200 | HIT | Sat, 03 Oct 2026 23:45:35 GMT |
+| [/client-consultation](https://www.azinstitute4autism.com/client-consultation) | 01:26:28 | 200 | HIT | Sun, 04 Oct 2026 00:00:00 GMT |
+| [/aba-therapy-intake-process](https://www.azinstitute4autism.com/aba-therapy-intake-process) | 01:26:29 | 200 | HIT | Sat, 03 Oct 2026 23:13:15 GMT |
+| [/es/aba-therapy](https://www.azinstitute4autism.com/es/aba-therapy) | 01:26:30 | 200 | HIT | Sat, 03 Oct 2026 23:13:14 GMT |
+| [/es/autism-evaluations](https://www.azinstitute4autism.com/es/autism-evaluations) | 01:26:32 | 200 | MISS | Sat, 03 Oct 2026 23:13:12 GMT |
+| [/es/learner-social-club](https://www.azinstitute4autism.com/es/learner-social-club) | 01:26:33 | 200 | MISS | Sat, 03 Oct 2026 23:13:22 GMT |
+| [/es/services](https://www.azinstitute4autism.com/es/services) | 01:26:35 | 200 | REVALIDATED | Sat, 03 Oct 2026 23:13:22 GMT |
+| [/es/client-consultation](https://www.azinstitute4autism.com/es/client-consultation) | 01:26:36 | 200 | REVALIDATED | Sun, 04 Oct 2026 00:00:44 GMT |
+| [/es/aba-therapy-intake-process](https://www.azinstitute4autism.com/es/aba-therapy-intake-process) | 01:26:38 | 200 | MISS | Sat, 03 Oct 2026 23:13:18 GMT |
+| [/schedule-consultation](https://www.azinstitute4autism.com/schedule-consultation) | 01:26:39 | 200 | REVALIDATED | Sat, 03 Oct 2026 23:13:23 GMT |
+| [/insurance](https://www.azinstitute4autism.com/insurance) | 01:26:41 | 200 | HIT | Sat, 03 Oct 2026 23:13:18 GMT |
+
+Rechecks at 01:28:06–01:28:10 used the same headers and the permitted unique
+query `?migration_review=20261009T0130` on `/aba-therapy`, `/es/aba-therapy`,
+`/client-consultation` and `/schedule-consultation`. All four returned HIT with
+identical extracted text and metadata to their initial responses. This does
+not guarantee an origin refresh. In particular, schedule consultation still
+returned “children and teens,” contradicting the newer AIA instruction; it is
+classified as potentially stale. Other responses corroborate the approved ABA
+ages and removal of teens from both client-consultation pages. Origin freshness
+remains inconclusive overall. No production change is inferred from response
+status alone.
+
+### Page-by-page Reconciliation
+
+In this table, **P** means a newly retrieved production response with origin
+freshness inconclusive (see the exact request time above). **E** means AIA's
+confirmed October 8 editorial instruction. P/E records do not assert cache
+bypass success. CTA resolutions are detailed separately below.
+
+| Route / language | Claim or element | Previous Astro state | Retrieved production state | Editorial requirement | Source time / freshness | Resolution and notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| `/aba-therapy` en | Individual 1:1 age | “children aged 2 to 8 years” | “children aged 18 months to 8 years” | “18 months through 8 years” | P 01:26:21 + E; origin inconclusive, decision confirmed | Changed to “children aged 18 months through 8 years” |
+| `/aba-therapy` en | Section heading | “Behavioral Services We Offer” | “Services We Offer” | — | P 01:26:21; origin inconclusive | Changed label; explicitly retain `behavioral-services-we-offer` ID to preserve existing fragment URLs |
+| `/aba-therapy` en | Group program | 1:2 Academic Readiness, ages 2–6, AIA Preparatory Academy© | Same distinct program, ratios, range and branding | General age rule does not override this program | P 01:26:21 | Retained paragraphs, electives and 2–6 range; no clinical claims added |
+| `/es/aba-therapy` es | General/1:1 eligibility | “personas de 2 a 17 años de edad, que han sido diagnosticadas”; “niños de 2 a 8 años” | General introduction says children; 1:1 says “niños de 18 meses a 8 años” | “18 meses a 8 años” | P 01:26:30 + E | Changed introduction to “niños de 18 meses a 8 años de edad, que han sido diagnosticados” and 1:1 to approved age phrase; preserves paragraph structure |
+| `/es/aba-therapy` es | Academy branding | Link label “Academia Preparatoria AIA©” | Proper name “AIA Preparatory Academy©” | — | P 01:26:30; origin inconclusive | Use source-supported proper name; retain existing `https://aiaprep.org/` destination and 2–6 group-program range |
+| `/autism-evaluations` en | Meta description | Ends at “support your child” | Ends at “support your child's unique development.” | — | P 01:26:22; origin inconclusive | Restore the complete source description; title and H1 unchanged |
+| `/autism-evaluations` en; `/es/autism-evaluations` es | Diagnostic services | Separate ASD, ADHD and combined evaluation; ADOS discussion | Same offerings and clinical descriptions | Do not inherit ABA ages | P 01:26:22 / 01:26:32 | Body retained. “Children of all ages” describes the tool; it is not verified clinic eligibility. No clinic age limits, staffing or prerequisites invented |
+| `/learner-social-club` en; `/es/learner-social-club` es | Age, schedule, payment and enrollment | Ages 8–17; 4–6 PM Mon/Wed or Wed; private pay; potty training; 30-day pause notice; one-day trial by email | Matches retrieved page content and metadata in each language | Separate program | P 01:26:23 / 01:26:33 | All facts retained. Only enrollment CTA destination changes; availability still requires confirmation before activation |
+| `/services` en; `/es/services` es | Services, geography/options and clinical copy | In-center/school/home, early intervention, academic readiness, supervision, parent consultation; “1 in 36 … each year” | Matches retrieved content, including the prevalence wording | Do not manufacture service availability | P 01:26:25 / 01:26:35 | Retained. English body is owned by ServicesPage, not its MDX slot. No need to edit either English duplicate. Clinical statistic held for review rather than silently replacing it |
+| `/es/services` es | Home breadcrumb | `/` | `/es/?hsLang=es` | Keep published language routing | P 01:26:35 | Changed to `/es`; existing Spanish service/consultation links remain localized, rather than copying production English paths with `hsLang=es` |
+| `/referrals` en | Referral audience | “educational and therapeutic programs for children ages 2-17” | Same sentence with “18 months to 8 years” | Confirmed range is general ABA, not every program | P 01:26:26 + E | “ABA therapy programs for children ages 18 months through 8 years”; explicitly limits the claim to ABA. Existing provider/insurer collaboration and reporting descriptions retained |
+| `/client-consultation` en | Audience/introduction | “Here at”; two “children and teens” references | “At”; both references say “children” | Approved ABA age and audience | P 01:26:28 + E | Source intro “At”; remove teens; ABA services sentence specifies “children aged 18 months through 8 years.” No-wait-list and existing Phoenix-area geography retained pending operational confirmation |
+| `/es/client-consultation` es | Audience | Two “niños y adolescentes” references | Both say “niños” | Approved Spanish ABA age/audience | P 01:26:36 + E | Remove “y adolescentes”; ABA sentence specifies “niños de 18 meses a 8 años.” Remaining Spanish copy unchanged |
+| `/aba-therapy-intake-process` en; `/es/aba-therapy-intake-process` es | Intake steps and CTA | Six steps; verification of insurance, copays and required authorizations; final label is plain text | Same six-step process with final consultation link | No new universal prerequisites | P 01:26:29 / 01:26:38 | Steps and insurance wording retained; restore styled linked CTA using existing local consultation pages. No intake packet/submission functionality added |
+| `/schedule-consultation` en | Audience | Two “children and teens” references | Same superseded wording despite recheck | E overrides stale response | P 01:26:39 / recheck 01:28:10, potentially stale + E | Remove teens and explicitly state ABA age range in ABA services sentence. Retain noindex, existing geography/contact details and disabled form; do not treat response as fresh editorial authority |
+| `/insurance` en | Plans/payment and FAQ | Logo list and existing ECHO/ESA FAQ claims | Same visible carrier logos/FAQ text | No plan-to-plan generalization | P 01:26:41; origin inconclusive | Unchanged; independently compared this page rather than assuming service/form fields establish every plan's coverage. Participation/coverage details remain unverified |
+
+No article, FAQ answer, homepage, team or portal content was changed. No new
+Spanish records, translations or translation keys were introduced. All page
+titles and visible H1s remain unchanged. The evaluation description is the only
+frontmatter value changed. Changes to metadata values use the existing SEO
+pipeline; no schema-generation rule or organization data changed.
+
+### CTA Reconciliation and Disabled Forms
+
+Bare production Jotform destinations `231638510219149` and `250727122848156`
+returned HTTP 200 at 01:30:34 and 01:30:35 respectively. These were GET status
+checks only, with response bodies/scripts unused; availability does not approve
+collection or establish form field/backend equivalence. The referral query
+variant was not requested because of Jotform robots policy.
+
+| Route(s) | Production label / destination | Previous Astro label / destination | Implemented migration destination / verification | Integration dependency |
+| --- | --- | --- | --- | --- |
+| `/aba-therapy`, `/autism-evaluations` | “Make an Appointment” → `https://form.jotform.com/231638510219149` | Same label and external URL | Same label → `/client-consultation`; generated destination exists, live consultation 200 | Existing disabled consultation shell; this is an inquiry path, not a booked appointment |
+| `/es/aba-therapy` | “Hacer una cita” → same Jotform | Same label as unlinked text | Same label → `/es/client-consultation`; generated/live 200 | Same disabled shell; human Spanish form review still needed |
+| `/es/autism-evaluations` | “Programar una cita” → same Jotform | Same label as unlinked text | Same label → `/es/client-consultation`; generated/live 200 | Evaluation intake/backend not implemented |
+| Both Learner Social Club routes | “Enroll Now” → same Jotform (English label also on Spanish production) | Same label/external URL | Same label → corresponding English/Spanish consultation page; both resolve | Does not enroll or reserve a place; backend and service-specific process remain gated |
+| Both Social Club routes, trial inquiry | One-day trial via obfuscated `info@azinstitute4autism.com` | Same address/ContactObfuscation behavior | Retained; no email sent | Trial availability must be confirmed by AIA |
+| `/services` | “Consult with a Client Advocate” / “Get a Free Consultation” → `/client-consultation?hsLang=en` | Same labels → `/client-consultation` | Retained normalized local destination; resolves | Disabled consultation shell |
+| `/es/services` | “Consulte con un Defensor del Cliente” → `/es/client-consultation?hsLang=es`; “Programe una consulta gratuita” → English path with `hsLang=es` | Both labels → `/es/client-consultation` | Retain existing real Spanish destination; resolves | Do not guess language from a query parameter |
+| `/referrals` | “Refer a Client” → `https://form.jotform.com/231638510219149?hsCtaAttrib=203953990377` | Unlinked “Refer a Client”; existing disabled FormShell below | Same label → `#form-title`; exactly one matching element in generated page | Safe static referral placeholder; clinical referral workflow/required fields still need approval |
+| Both intake routes | “Take the First Step” → `/client-consultation?hsLang=en` or `?hsLang=es` | Same unlinked label | `/client-consultation` or `/es/client-consultation`; both resolve | Starts inquiry, does not submit the described learner packet |
+| Both client-consultation routes | Embedded Jotform `250727122848156` | Disabled local FormShell | Unchanged disabled shell; no embed, submit or success state added | Production form/backend/privacy approval outstanding |
+| `/schedule-consultation` and service drawers | Production HubSpot/runtime form behavior; not executed | Disabled forms and call fallback | Retained; submission buttons disabled, no action destination, existing preventDefault handlers | Field parity, availability, clinical routing and backend require separate scoped activation |
+
+The intentional temporary deviation is routing conversion links to existing
+local disabled inquiry pages instead of third-party lead collection. Existing
+form text explicitly states “Online submission is not yet connected” and offers
+the existing phone fallback. No functioning submission is implied by the target.
+Buttons retain source labels (including untranslated labels already present in
+Spanish production); no new marketing or translation wording was invented.
+
+Five `.md` records became `.mdx` because they now genuinely embed the existing
+Button component: English referrals and intake, Spanish ABA, evaluations and
+intake. Their collection IDs/slugs/public routes do not change. No routing or
+layout conditionals were added. Existing Button styling is reused. FormShell,
+ServiceInquiryDrawer, client scripts, fields, privacy behavior and form handlers
+are unchanged. Production promises about callbacks/availability are retained
+as source copy, not enabled functionality; they need review before activation.
+
+### Repository-wide Eligibility Language Audit
+
+Searched the full application source (pages/blog/authors, frontmatter, schema,
+components, shared data and navigation), plus CMS configuration, for hyphen/en
+and em-dash ranges, “to”/“a”/“hasta,” ages/years/months, Spanish niños/adolescentes,
+English children/teens and Arabic age/adolescent terms. A broad semantic pass
+produced 204 candidate lines, including non-eligibility words in code. Context
+review excludes biographies, testimonials, generic developmental examples,
+clinical research ages and historical reports from current AIA eligibility
+corrections. Prior reports and baseline JSON are preserved, not globally replaced.
+Locations below refer to the Phase 4B starting checkpoint unless marked current.
+
+| Classification | File / location (relative to `www/`) | Exact relevant wording | Meaning, resolution and assigned phase |
+| --- | --- | --- | --- |
+| Corrected within Phase 5A | `src/content/pages/en/aba-therapy.mdx:27` | “children aged 2 to 8 years” | ABA 1:1 → confirmed 18 months through 8 years |
+| Corrected within Phase 5A | `src/content/pages/es/aba-therapy.md:12,24` (now `.mdx`) | “personas de 2 a 17 años de edad”; “niños de 2 a 8 años” | General ABA/1:1 → approved Spanish range and agreement |
+| Corrected within Phase 5A | `src/content/pages/en/referrals.md:14` (now `.mdx`) | “programs for children ages 2-17” | Referral ABA eligibility → confirmed range, explicitly scoped to ABA |
+| Corrected within Phase 5A | `src/content/pages/en/client-consultation.md:10,14` | “children and teens”; “ABA therapy for children and teens” | Remove superseded audience; explicit ABA range |
+| Corrected within Phase 5A | `src/content/pages/es/client-consultation.md:10,14` | “niños y adolescentes”; “terapia ABA para niños y adolescentes” | Remove superseded audience; explicit approved Spanish range |
+| Corrected within Phase 5A | `src/content/pages/en/schedule-consultation.mdx:33,37` | “children and teens diagnosed with autism” | Correct despite potentially stale retrieval; noindex retained |
+| Legitimate program-specific requirement | Both ABA page records, group-program paragraph (en:37, es:34 before rename) | “children aged 2 to 6 years”; “niños de 2 a 6 años” | Academic Readiness 1:2, supported by separate live program sections; retained |
+| Legitimate program-specific requirement | Both Social Club records, descriptions and en:43 / es:50 | “8–17 years”; “jóvenes de 8 a 17 años” | Club ages, separate from ABA; retained, with private-pay distinction |
+| Legitimate program-specific requirement | `src/data/services.json:16` | “Social and emotional learning opportunities for children and teens.” | Sociological card links specifically to the 8–17 Club; not general ABA; retained |
+| Potentially outdated, deferred to another phase | `src/content/pages/en/index.md:14,23` | “clinical care for children and teens who have an autism diagnosis”; “ABA Therapy Services for Children and Teens Diagnosed with Autism Spectrum Disorder” | General ABA/homepage claims; **Phase 5B**, untouched |
+| Potentially outdated, deferred to another phase | `src/content/pages/es/index.md:14,23` | “atención clínica experta para niños y adolescentes con diagnóstico de autismo”; “Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA” | Spanish homepage general ABA claims; **Phase 5B**, source/language review in **Phase 7** as needed; untouched |
+| Potentially outdated, deferred to another phase | `src/content/blog/en/aba-therapy-summer-routine-tips.mdx:20,149` | “resources tailored for children ages 2–17”; “In-clinic ABA therapy for children ages 2–8” | General AIA/ABA claims; **Phase 6C**. Club-specific “In-clinic Social Learners Club for ages 8-17” at :151 is separate and retained |
+| Potentially outdated, deferred to another phase | `src/content/blog/en/community-highlight-meet-rula-diab.md:31,33,39` | “clinical care for children and teens diagnosed with Autism Spectrum Disorders”; “Our range of services for children and teens includes:”; “ABA Therapy Services for Children & teens” | Syndicated interview/ABA claims; **Phase 6C**, including original-source/editorial treatment; external canonical and noindex preserved |
+| Potentially outdated, deferred to another phase | `src/content/blog/en/aba-school-readiness-arizona.mdx:2,3,18,154,155` | “AIA Preparatory Academy (Ages 2–6)”; “We currently serve children ages 2 to 6 who are in their most critical years of early development.” | Academy-specific range is not automatically wrong, but article was rewritten live (Phase 4B evidence). **Phase 6C**, not globally changed to ABA range |
+| Potentially outdated, deferred to another phase | `src/content/blog/es/aba-school-readiness-arizona.mdx:2,3,18,72,154,155` | “Academia Preparatoria AIA (2 a 6 años)”; “Actualmente atendemos a niños de 2 a 6 años que se encuentran en sus años más críticos de desarrollo temprano.” | Same program/context distinction; **Phase 6C**, human language review/**Phase 7** where needed |
+| Potentially outdated, deferred to another phase | `src/data/blog-footers.json:352,551` and `src/content/pages/es/library.md:14` | “Ya se inscriben alumnos: Academia Preparatoria AIA para niños de 2 a 6 años” | Related/popular Library titles reflecting the older article; **Phase 6C**, untouched |
+| Potentially outdated, deferred to another phase | `src/data/blog-footers.json:629,749,948,959,1237,1657,1671,1724,1761` | “Now Enrolling: AIA Preparatory Academy for Children Ages 2–6” | Library links/title drift, not proof of wrong program eligibility; **Phase 6C** |
+| Unresolved and requiring additional factual verification | `src/content/pages/en/tour.md:88` | “Learner Teen Group Area” | Room description may relate to the Club; no inference that ABA serves teens. Later scoped tour review, unchanged |
+| Unresolved and requiring additional factual verification | `src/content/pages/en/client-forms.mdx:82,83` | “Step 4a: Print & Sign (Age 2 - 5)”; “Step 4b: Print & Sign (Ages 6+)” | Diagnostic paperwork bands, not general ABA eligibility; later forms/evaluation review, unchanged |
+
+Context exclusions, deliberately not labeled ABA eligibility errors:
+`en/faqs.mdx:34` discusses learners of any age and generic intervention evidence;
+`en/early-signs-autism-by-age.mdx` discusses 12–24 months / 2–4 years;
+en/es diagnostic-guide tables discuss 2–4 years;
+en/es/ar executive-functioning articles discuss developmental stages including
+adolescence (`en:82,96,110,112`; corresponding translated sections);
+homepage testimonials mention starting at 21 months. No Arabic AIA ABA
+eligibility claim matching the superseded range was identified. None of these
+files was edited, and this screening is not a clinical or linguistic certification.
+
+### Human-decision / Factual-verification Register
+
+These are held questions for later reconciliation or activation, not reasons
+to defer the already-confirmed ABA age correction:
+
+| Area | Evidence / limitation | Current safe disposition and decision needed |
+| --- | --- | --- |
+| Program availability | Both ABA pages retain 2–6 Academic Readiness/Academy; both Club pages retain 8–17 and schedules; drawer claims enrollment open | Preserve distinct source-supported ranges. Confirm present enrollment, electives and schedules operationally before activating inquiries; do not infer closure or new ages from unrelated Library rewrites |
+| Insurance participation | Insurance page shows BCBS, Aetna, Optum, Tricare, AHCCCS and United Healthcare logos. Local drawer specifically lists United Healthcare AHCCCS and additional payment choices; live runtime form fields were not executed/recovered | Logos do not prove all AHCCCS plans or all offered services are covered. Retain existing plan-specific wording; AIA billing must confirm exact networks, service coverage, authorizations, referrals and diagnostic prerequisites. No universal coverage rule added |
+| Service geography / waits | Client pages claim no wait list and Phoenix-area coverage; schedule page additionally claims Tucson in-home service; its audience copy demonstrably conflicts with E | No new locations, wait times or staffing claims. Existing geography/wait copy held pending operational confirmation; inquiry drawer's guarantee language is also unverified, not strengthened |
+| Clinical/evaluation claims | Services pages retain “1 in 36 … each year”; evaluations describe multidisciplinary teams and ADOS for children of all ages | Public page text is not independent clinical validation. Clinical owner should verify statistic/annual wording, actual evaluation staffing, accepted patient ages and referral/diagnosis requirements; no clinical replacement was invented |
+| Referrals / intake | Production referrals uses a general Jotform; local generic FormShell cannot establish clinician referral fields or delivery workflow. Intake describes packets but has no functioning packet collection | Referral CTA exposes the disabled existing local form; intake goes to the local consultation page. Approve routing, required fields and privacy before backend activation; no successful referral or completed intake is implied |
+| CTA/form backend | Production Jotform URLs resolve; local forms explicitly unavailable | Review the intentional local inquiry destinations as part of this milestone. Production collection, callback promises, backend choice and privacy approval remain separately gated; no Ads tags or analytics added |
+| Contact freshness | Potentially stale schedule page retains `info@abaclinicaz.com`, whereas Club inquiry uses `info@azinstitute4autism.com` | Different addresses alone do not prove an error. Keep existing source-backed addresses, confirm intended consultation contact with AIA in a scoped follow-up |
+
+### Multilingual Review Register
+
+- **Explicitly approved wording:** Spanish ABA 1:1 and consultation now use
+  `18 meses a 8 años`. The ABA introduction replaces `personas ... diagnosticadas`
+  with `niños ... diagnosticados`, preserving grammatical agreement. Both
+  consultation references remove `y adolescentes`. These implement AIA's
+  approved correction, not invented translations. Have a human Spanish editor
+  review the revised sentences before publication; fluency is not self-approved.
+- **Source-supported proper name:** `Academia Preparatoria AIA©` becomes
+  `AIA Preparatory Academy©`, matching Spanish production; no curriculum claim
+  or destination changed. Include this branding choice in language review.
+- **Existing labels retained:** `Hacer una cita`, `Programar una cita`, `Enroll Now`
+  and `Take the First Step` match the corresponding production labels. The last
+  two remain English on Spanish pages; do not fabricate translations here.
+- **Existing form limitation:** FormShell's explanatory copy/fields are English
+  even on the Spanish consultation route. No sourced Spanish form was available
+  from the unexecuted embed. Additional form localization belongs to a separately
+  supported review (Phase 7/form milestone), not speculative translation now.
+- Spanish evaluation body, Club rules, intake steps and existing translations
+  otherwise remain intact. The services breadcrumb now correctly links to `/es`.
+
+### Validation and Existing Test-harness Defect
+
+The first `test:markdown` invocation failed in suite setup with
+`Route is not published: /school-en`. Phase 4B's FAQ component resolves the
+publication manifest from Astro.url, but the older Markdown test rendered real
+FAQ-bearing content at synthetic aliases. An isolated copy of the **untouched
+4079156 checkpoint** reproduced exactly the same failure. This was not caused
+by the Phase 5A content changes.
+
+The bounded correction is in `tools/markdown.test.mjs`: keep test aliases as
+lookup keys but render each real record at its actual language/collection URL.
+All original 20 assertions remain. No parser, FAQ, publication rule, route file
+or application code was changed to make the test pass. No failure was ignored.
+
+`tools/seo.test.mjs` adds four actual-Astro regression tests covering approved
+general ABA ages/audiences, retained program ranges/ratios/payment distinctions,
+14 CTA/breadcrumb cases with real route/fragment targets, disabled forms,
+language/direction, one H1 and the repaired evaluation description. The existing
+22 SEO tests and 33 publication tests remain. The old ABA section fragment is
+also asserted. Tests use temporary copies; no fixture routes enter `dist`.
+
+| Check | Final result |
+| --- | --- |
+| `npm run test:seo` | 26 passed; zero failures/skips |
+| `npm run test:publication` | 33 passed; zero failures/skips |
+| `npm run test:markdown` | 20 passed after the verified baseline fixture correction; zero failures/skips |
+| `npm run build` (initial normal) | Passed; 96 HTML routes; zero Astro check errors/warnings/hints |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed; 96 routes, 92 sitemap URLs, 174 hreflang links across 53 pages |
+| `npm run audit:routes -- --check` | Passed against newly generated offline evidence in each build mode |
+| `npm run audit:links` | Zero broken internal links |
+| `npm run audit:blog` | Zero blog content audit failures |
+| `npm run audit:images` | Zero missing mapped page images |
+| `npm run build` (final normal) | Passed; 96 routes, all `noindex,nofollow`, empty sitemap, no hreflang |
+| `git diff --check` | Passed |
+
+Source fingerprint refreshes used `npm run audit:routes -- --offline`, never a
+new crawl. The final saved reconciliation is
+[`route-reconciliation-2026-10-09-offline.json`](route-reconciliation-2026-10-09-offline.json).
+All 70 historical discovery requests, original observation dates, baseline and
+summary totals are preserved by deep comparison. Changed local rows reflect
+five source-extension changes and the repaired description, not newly discovered
+production routes. Historical totals remain 129 discovered route keys, 102
+production-sitemap entries, 96 generated local routes, 92 overlaps and ten
+historical sitemap routes missing locally. Do not confuse that historical
+102-entry inventory with the current local 92-entry production-policy sitemap.
+The intermediate indexing reconciliation is retained only under `/tmp`.
+
+All-route generated HTML comparison against the starting staging artifact
+confirmed identical route sets, canonicals, document titles, visible H1s,
+HTML languages/directions, JSON-LD objects and header/language-switcher links.
+All stable pre-existing main-content IDs remain; random contact-obfuscation IDs
+are excluded. Visible prose differs only on the six eligibility/heading pages;
+other edits change links or the one description without changing their labels.
+There are no new images, styles, layout components or client scripts. MD-to-MDX
+conversion preserves headings, paragraphs and lists apart from the documented
+CTA conversion; existing styled Button markup is reused.
+
+The indexing artifact was checked at **01:34:18 UTC**; the restored staging
+artifact was independently checked at **03:33:00 UTC**. The later check time
+reflects resumed work, not a new production observation. Production mode still
+has 92 `index,follow` routes and the same four `noindex,follow` exceptions.
+`/ar` remains unpublished, and all noindex/external-canonical exclusions persist.
+All 63 BlogPosting, 21 FAQPage and 96 existing organization blocks are unchanged.
+No publication, canonical, schema, robots, sitemap or translation policy changed.
+
+Browser-level desktop/mobile validation could not run because the browser
+transport was unavailable. Generated HTML, existing CSS reuse, one-H1/ID checks,
+link and image checks support the content review; they do not certify visual
+or interactive browser fidelity. No claim of completed pixel matching is made.
+
+### Read-only Structural Review and File Inventory
+
+There are **18 logical changed/new files**, including five `.md` → `.mdx`
+conversions (23 paths in an unstaged status listing). All paths below are
+relative to `www/`:
+
+| Classification | Files | Why required |
+| --- | --- | --- |
+| English content | `src/content/pages/en/aba-therapy.mdx`, `autism-evaluations.mdx`, `client-consultation.md`, `learner-social-club.mdx`, `schedule-consultation.mdx` | Confirmed ABA facts, one source heading/description and safe local CTAs |
+| English content conversions | `src/content/pages/en/referrals.md` → `.mdx`; `aba-therapy-intake-process.md` → `.mdx` | Use the existing Button component for previously inert CTA labels; referral range correction |
+| Spanish content | `src/content/pages/es/client-consultation.md`, `learner-social-club.mdx`, `services.mdx` | Approved audience/age correction, local enrollment destination, localized breadcrumb |
+| Spanish content conversions | `src/content/pages/es/aba-therapy.md` → `.mdx`; `autism-evaluations.md` → `.mdx`; `aba-therapy-intake-process.md` → `.mdx` | Approved ages/source branding and existing-label Button CTAs, with stable record identity |
+| Regression coverage | `tools/seo.test.mjs`, `tools/markdown.test.mjs` | Four focused service tests; restore original Markdown suite compatibility with accepted Phase 4B |
+| Dated evidence, new | `reports/phase-5a-source-evidence-2026-10-09.json` | Cache-aware targeted observations, separate from historical audit |
+| Offline reconciliation, new | `reports/route-reconciliation-2026-10-09-offline.json` | Refresh local source evidence without rewriting production observations |
+| Milestone report | `reports/migration-summary.md` | This reconciliation, audit, decisions, validation and review |
+
+Reviewed changes do not touch dependencies, application configuration, shared
+SEO/publication/translation/schema code, FormShell, ServiceInquiryDrawer,
+ServicesPage, shared service data, homepage, Library, team, employee portal,
+Ads handoff/landing pages, consent, analytics, deployment or Git configuration.
+No routes, H1 fields or translation relationships were added. No forms were
+activated, submitted or connected. No files are staged; no commit or push was
+made. Phase 5B and all other reconciliation phases remain unstarted.
+
+The existing untracked `merge-plan.md` remains unchanged, SHA-256:
+`015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.

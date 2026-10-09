@@ -7,8 +7,8 @@ lang: "es"
 translationKey: "client-consultation"
 draft: false
 ---
-Aquí en el Instituto de Autismo de Arizona (AIA), tenemos una política de lista de espera cero y brindamos atención clínica experta para niños y adolescentes diagnosticados con autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix.
+Aquí en el Instituto de Autismo de Arizona (AIA), tenemos una política de lista de espera cero y brindamos atención clínica experta para niños diagnosticados con autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix.
 
 ## Nuestros Servicios de Terapia ABA
 
-Además de la terapia ABA para niños y adolescentes, nuestros servicios incluyen apoyo para la defensa del autismo, apoyo para la evaluación y el diagnóstico, y capacitación familiar.
+Además de la terapia ABA para niños de 18 meses a 8 años, nuestros servicios incluyen apoyo para la defensa del autismo, apoyo para la evaluación y el diagnóstico, y capacitación familiar.

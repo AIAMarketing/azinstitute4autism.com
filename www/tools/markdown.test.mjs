@@ -29,6 +29,12 @@ const contentCases = [
   ['school-es', 'blog', 'es/aba-school-readiness-arizona'],
   ['faq-en', 'pages', 'en/faqs']
 ];
+// Render real content at its manifest URL: FAQ components now resolve publication
+// policy from Astro.url. Synthetic aliases such as /school-en are not published.
+const contentRoute = (collection, id) => {
+  const [lang, ...slug] = id.split('/');
+  return [...(lang === 'en' ? [] : [lang]), ...(collection === 'blog' ? ['library'] : []), ...slug].join('/');
+};
 let fixtureRoot;
 const rendered = new Map();
 
@@ -56,8 +62,10 @@ before(async () => {
     literalContent,
     '<span data-mdx="true">Embedded MDX: 1:2</span>'
   ].join('\n\n'));
-  for (const [route, collection, id] of contentCases) {
-    await writeFile(path.join(pages, `${route}.astro`), `---
+  for (const [, collection, id] of contentCases) {
+    const file = path.join(pages, `${contentRoute(collection, id)}.astro`);
+    await mkdir(path.dirname(file), { recursive: true });
+    await writeFile(file, `---
 import { getEntry, render } from 'astro:content';
 const entry = await getEntry('${collection}', '${id}');
 if (!entry) throw new Error('Missing regression content: ${id}');
@@ -80,8 +88,8 @@ const { Content } = await render(entry);
   } finally {
     process.chdir(originalCwd);
   }
-  for (const route of ['markdown', 'mdx', ...contentCases.map(([name]) => name)]) {
-    rendered.set(route, load(await readFile(path.join(fixtureRoot, 'dist', route, 'index.html'), 'utf8')));
+  for (const [name, route] of [['markdown', 'markdown'], ['mdx', 'mdx'], ...contentCases.map(([name, collection, id]) => [name, contentRoute(collection, id)])]) {
+    rendered.set(name, load(await readFile(path.join(fixtureRoot, 'dist', route, 'index.html'), 'utf8')));
   }
 }, { timeout: 120_000 });
 

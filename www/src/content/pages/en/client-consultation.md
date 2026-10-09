@@ -7,8 +7,8 @@ lang: "en"
 translationKey: "client-consultation"
 draft: false
 ---
-Here at the Arizona Institute for Autism (AIA), we have a no wait list policy and provide expert clinical care for children and teens diagnosed with autism. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas.
+At the Arizona Institute for Autism (AIA), we have a no wait list policy and provide expert clinical care for children diagnosed with autism. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas.
 
 ## Our ABA Therapy Services
 
-Along with ABA therapy for children and teens, our services include autism advocacy support, evaluation and assessment support, and family training.
+Along with ABA therapy for children aged 18 months through 8 years, our services include autism advocacy support, evaluation and assessment support, and family training.
