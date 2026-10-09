@@ -2008,3 +2008,126 @@ analytics, tracking, form/backend, or future-phase changes. No file is staged.
 
 `merge-plan.md` remains untracked and unchanged. Its verified SHA-256 is
 `015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
+
+## Phase 6A — Library Architecture Decision (2026-10-09 UTC)
+
+**Starting checkpoint:** `34d5394b3ce765028a27b9cddd9952de3f09bfe7`.
+This is a research and decision milestone. It changes no Library implementation,
+content, dependency, route, redirect, publication rule, or deployment file.
+
+### Scope and Method
+
+Inspected the catchall route, all three Library index components,
+`BlogIndexLayout`, `BlogCard`, `BlogPostLayout`, content/author schemas, all blog
+and author records, publication policy/manifest, structured-data author
+resolution, SEO/publication tests, route-audit tooling, Library page records,
+README, migration instructions, accepted reports, and the latest offline route
+reconciliation.
+
+Production `robots.txt` was checked before 29 bounded sequential GETs from
+**2026-10-09 18:01:51–18:02:17 UTC**. Requests covered Library/author roots,
+first-page aliases, representative/last/invalid pages in all three languages,
+trailing-slash examples, `/search`, and one search query. No redirects were
+followed, forms submitted, authentication used, or production writes made. One
+headless Chromium GET verified client-rendered search results.
+
+Responses variously reported HubSpot `HIT`, `MISS`, or `REVALIDATED` and mostly
+October 3–4 prerenders. They establish consistent current public behavior, not
+origin freshness. Historical October 7 observations remain intact and support
+the intervening English page 3–5/author page 3–5 statuses without repeat calls.
+
+### Current Inventory and Confirmed Behavior
+
+- **65 blog records:** 46 English, 12 Spanish, seven Arabic.
+- All 65 are non-draft and generated. Two English syndicated records are
+  accessible `noindex` external-canonical exceptions, leaving **63 sitemap-
+  eligible posts**.
+- Every post has title, description, date, author, category, featured image,
+  canonical, and translation key. Tags are empty on all 65; no post declares
+  `updatedDate` or image-alt frontmatter.
+- Every post uses author slug `rula-diab`. There is one author record per
+  language, all sharing explicit translation key `rula-diab`.
+- Current indexes sort date descending only; stable manifest order implicitly
+  breaks equal dates by route. They render every locale post in one list.
+- English alone has an inert search input. Spanish/Arabic have no search control.
+  No local pagination or author routes exist.
+- The three Library Markdown bodies contain bypassed historical listing
+  snapshots, creating a stale competing representation even though they do not
+  render.
+- Production uses ten posts per page: English 55 posts/six pages, Spanish 12/two,
+  Arabic seven/one. Author archives have the same counts because all posts are
+  currently attributed to Rula Diab.
+- All six `/page/1` Library/author aliases return duplicate 200 content. English
+  trailing-slash examples return 301 to no-slash roots. First invalid page
+  boundaries return 404.
+- Production search is a JavaScript-rendered GET `/search` flow. A browser query
+  for `autism` returned 66 mixed-language blog/listing results, ten per offset
+  page. Raw HTML contains no results and production supplies no useful search
+  canonical/robots/title.
+
+### Architecture Recommendation
+
+Generate one small metadata-only JSON search index per language from a new
+shared Library catalog based on the existing publication manifest. Use a
+dependency-free TypeScript client with Unicode-aware English/Spanish/Arabic
+normalization, weighted deterministic matching, accessible result state, and no
+external query service. Current measured aggregate metadata is 42,090 bytes raw,
+12,693 gzip, or 10,709 Brotli; a raw-body prototype is 474,623/135,796 gzip and
+is not recommended without a verified need.
+
+Use the same catalog for ten-item static Library and author pagination, explicit
+date-descending/route-ascending sorting, author validation, and generated route
+descriptors integrated with the shared publication policy. Page 1 remains each
+root; `/page/1` becomes a locale-specific permanent redirect. Invalid or empty
+pages are not generated. Numbered pages never gain hreflang from matching page
+numbers. Author roots may use explicit author translation keys after localized
+author content is source-reconciled and reviewed.
+
+The complete proposal, alternatives, current evidence, URL disposition matrix,
+route-count model, multilingual/RTL/SEO design, accessibility behavior, Phase 6B
+checkpoints, test matrix, and decision register are in
+[`phase-6a-library-architecture.md`](phase-6a-library-architecture.md).
+
+### Route Implications and Sequencing
+
+With the current corpus, the proposed `/search`, five numbered Library pages,
+three author roots, and five numbered author pages would add 14 HTML routes:
+**96 → 110**. Under the recommended policy, sitemap URLs would be **92 → 105**.
+Validated author-root equivalence would add 12 hreflang links: **174 → 186**.
+Redirect aliases add no HTML routes.
+
+The current corpus can generate only five nonempty English pages. Production
+page 6 and author page 6 contain real distinct content. Phase 6C's nine missing
+English posts must therefore precede final pagination acceptance; no empty page,
+generic-home redirect, or fabricated record is recommended. If all nine are
+ordinary indexable records, the combined upper-bound projection is 121 HTML
+routes and 116 sitemap URLs; exact policy and translation relationships must be
+recomputed from the reconciled records.
+
+### Validation
+
+| Check | Result |
+| --- | --- |
+| Normal `npm run build` | Passed; Astro check 0 errors/warnings/hints; 96 HTML routes |
+| `npm run audit:routes -- --check` | Passed offline against `route-reconciliation-2026-10-09-offline-17-20-21-008Z.json`; no network/writes |
+| Indexing-enabled evidence build | Passed; 96 routes, 92 sitemap URLs, 174 hreflang links across 53 pages |
+| Final normal build | Passed; restored staging output |
+| Final staging safeguards | 96 routes; global `noindex,nofollow`; empty sitemap; no hreflang |
+
+### Decisions Awaiting Approval
+
+1. Metadata-only dependency-free search rather than full-body/Pagefind/client
+   library search.
+2. Ten posts per page and permanent page-1 alias redirects.
+3. Preserved noindex `/search` compatibility for `term`, `q`, legacy `type`, and
+   `offset`, while embedded Library search remains locale-scoped.
+4. Indexable, self-canonical, sitemap-listed numbered/archive pages.
+5. Continued listing/search visibility for the two accessible noindex syndicated
+   pages, preserving current Astro behavior.
+6. Explicit author-root hreflang, optional localized author `displayName`, and
+   source-supported author bio reconciliation with human language review.
+7. Phase 6C content sequencing before English page-6 acceptance.
+
+No functional source file, dependency, route, redirect rule, content record,
+Nix/nginx/deployment configuration, publication policy, or generated application
+behavior was changed in Phase 6A.
