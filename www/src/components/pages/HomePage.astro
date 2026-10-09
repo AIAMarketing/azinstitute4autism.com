@@ -6,7 +6,9 @@ import HomeDirector from '../home/HomeDirector.astro';
 import HomeEsa from '../home/HomeEsa.astro';
 import HomeFinancialHelp from '../home/HomeFinancialHelp.astro';
 import HomeHero from '../home/HomeHero.astro';
+import HomeHsaFsa from '../home/HomeHsaFsa.astro';
 import HomeInsurance from '../home/HomeInsurance.astro';
+import HomeLogos from '../home/HomeLogos.astro';
 import HomeProcess from '../home/HomeProcess.astro';
 import HomeServicesIntro from '../home/HomeServicesIntro.astro';
 import HomeSkills from '../home/HomeSkills.astro';
@@ -25,10 +27,12 @@ function fromHomeContent(home: HomePageContent): HomeSection[] {
     { type: 'skills', ...home.skills },
     { type: 'insurance', ...home.insurance },
     { type: 'esa', ...home.esa },
+    ...(home.hsaFsa ? [{ type: 'hsa-fsa' as const, ...home.hsaFsa }] : []),
     { type: 'financial-help', ...home.financialHelp },
     { type: 'process', ...home.process },
     { type: 'director', ...home.director },
     { type: 'testimonials', ...home.testimonials },
+    ...(home.logos ? [{ type: 'logos' as const, ...home.logos }] : []),
   ];
 }
 
@@ -51,6 +55,8 @@ const sections: HomeSection[] = entry.data.home
         return <HomeInsurance section={section} />;
       case 'esa':
         return <HomeEsa section={section} />;
+      case 'hsa-fsa':
+        return <HomeHsaFsa section={section} />;
       case 'financial-help':
         return <HomeFinancialHelp section={section} />;
       case 'process':
@@ -59,6 +65,8 @@ const sections: HomeSection[] = entry.data.home
         return <HomeDirector section={section} />;
       case 'testimonials':
         return <HomeTestimonials section={section} />;
+      case 'logos':
+        return <HomeLogos section={section} />;
       default:
         return null;
     }

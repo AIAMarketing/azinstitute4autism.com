@@ -66,6 +66,13 @@ const esaSectionSchema = z.object({
   imageAlt: z.string(),
 });
 
+const hsaFsaSectionSchema = esaSectionSchema.extend({ type: z.literal('hsa-fsa') });
+
+const logosSectionSchema = z.object({
+  type: z.literal('logos'),
+  items: z.array(z.object({ file: z.string(), alt: z.string() })),
+});
+
 const financialHelpSectionSchema = z.object({
   type: z.literal('financial-help'),
   heading: z.string(),
@@ -79,6 +86,7 @@ const processSectionSchema = z.object({
   steps: z.array(z.object({
     icon: z.string(),
     label: z.string(),
+    href: z.string().optional(),
   })),
 });
 
@@ -110,10 +118,12 @@ export const homeSectionSchema = z.discriminatedUnion('type', [
   skillsSectionSchema,
   insuranceSectionSchema,
   esaSectionSchema,
+  hsaFsaSectionSchema,
   financialHelpSectionSchema,
   processSectionSchema,
   directorSectionSchema,
   testimonialsSectionSchema,
+  logosSectionSchema,
 ]);
 
 export const homeSectionsSchema = z.array(homeSectionSchema);
@@ -136,10 +146,12 @@ export const homePageSchema = z.object({
   skills: homeSkillsSchema,
   insurance: homeInsuranceSchema,
   esa: homeEsaSchema,
+  hsaFsa: hsaFsaSectionSchema.omit({ type: true }).optional(),
   financialHelp: homeFinancialHelpSchema,
   process: homeProcessSchema,
   director: homeDirectorSchema,
   testimonials: homeTestimonialsSchema,
+  logos: logosSectionSchema.omit({ type: true }).optional(),
 });
 
 export type HomeSection = z.infer<typeof homeSectionSchema>;
@@ -149,6 +161,8 @@ export type BenefitsSection = z.infer<typeof benefitsSectionSchema>;
 export type SkillsSection = z.infer<typeof skillsSectionSchema>;
 export type InsuranceSection = z.infer<typeof insuranceSectionSchema>;
 export type EsaSection = z.infer<typeof esaSectionSchema>;
+export type HsaFsaSection = z.infer<typeof hsaFsaSectionSchema>;
+export type LogosSection = z.infer<typeof logosSectionSchema>;
 export type FinancialHelpSection = z.infer<typeof financialHelpSectionSchema>;
 export type ProcessSection = z.infer<typeof processSectionSchema>;
 export type DirectorSection = z.infer<typeof directorSectionSchema>;

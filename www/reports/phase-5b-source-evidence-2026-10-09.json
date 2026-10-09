@@ -1,0 +1,1187 @@
+{
+  "phase": "5B",
+  "recordedAt": "2026-10-09T03:55:05.951Z",
+  "checkpoint": "051fb7c1081614329dd65cf9e72a496d851b2c37",
+  "editorialAuthority": {
+    "confirmedOn": "2026-10-08",
+    "source": "Explicit AIA instruction supplied by user",
+    "english": "18 months through 8 years",
+    "spanish": "18 meses a 8 años",
+    "scope": "General ABA eligibility only; historical testimonials and other programs unchanged"
+  },
+  "method": "Read-only GET; robots checked first; at least 1.1 seconds between homepage requests. Cache-Control: no-cache, max-age=0; Pragma: no-cache. One query recheck per homepage; identical hashes. No scripts, submissions, authentication, APIs or broad crawl. Browser attempt failed Transport closed; no browser-level verification.",
+  "robots": {
+    "url": "https://www.azinstitute4autism.com/robots.txt",
+    "observedAt": "2026-10-09T03:47:42Z",
+    "status": 200,
+    "body": "User-agent: *\nAllow: /\nDisallow: /_hcms/preview/\nDisallow: /hs/manage-preferences/\nDisallow: /hs/preferences-center/\nDisallow: /*?*hs_preview=*\nDisallow: /*?*hsCacheBuster=*\n",
+    "cacheControl": "s-maxage=36000, max-age=5",
+    "cacheStatus": "HIT",
+    "lastModified": "Sat, 12 Sep 2026 03:33:09 GMT"
+  },
+  "requests": [
+    {
+      "url": "https://www.azinstitute4autism.com/",
+      "observedAt": "2026-10-09T03:48:03.652341+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 03:48:03 GMT",
+        "age": null,
+        "cache-control": "s-maxage=36000, max-age=5",
+        "etag": null,
+        "last-modified": "Sat, 03 Oct 2026 23:58:31 GMT",
+        "location": null,
+        "cf-cache-status": null,
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:58:31 GMT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "server": "cloudflare",
+        "cf-ray": "a47a68537d6c3385-LAX"
+      },
+      "sha256": "aad32109057b797d1374bbcaf0a9c993db9a83770c671fd46221d258d39375ab",
+      "capture": "en"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es",
+      "observedAt": "2026-10-09T03:48:05.022332+00:00",
+      "status": 301,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 03:48:05 GMT",
+        "age": null,
+        "cache-control": "max-age=120",
+        "etag": null,
+        "last-modified": null,
+        "location": "https://www.azinstitute4autism.com/es/",
+        "cf-cache-status": null,
+        "x-hs-cf-cache-status": null,
+        "x-hs-prerendered": null,
+        "x-hs-cache-control": null,
+        "server": "cloudflare",
+        "cf-ray": "a47a685c1c25a652-LAX"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "es-redirect"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/",
+      "observedAt": "2026-10-09T03:48:06.491271+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 03:48:06 GMT",
+        "age": null,
+        "cache-control": "s-maxage=36000, max-age=5",
+        "etag": null,
+        "last-modified": "Sun, 04 Oct 2026 00:02:11 GMT",
+        "location": null,
+        "cf-cache-status": null,
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:02:11 GMT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "server": "cloudflare",
+        "cf-ray": "a47a68654cf8b611-LAX"
+      },
+      "sha256": "14cb8e7a696ac94c3880ad6302fde07883cdfc3edb7a4ec4dba509bf26452aa8",
+      "capture": "es"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/?migration_review=20261009T0348",
+      "observedAt": "2026-10-09T03:48:07.882981+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 03:48:07 GMT",
+        "age": null,
+        "cache-control": "s-maxage=36000, max-age=5",
+        "etag": null,
+        "last-modified": "Sat, 03 Oct 2026 23:58:31 GMT",
+        "location": null,
+        "cf-cache-status": null,
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:58:31 GMT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "server": "cloudflare",
+        "cf-ray": "a47a686dbd7a646a-LAX"
+      },
+      "sha256": "aad32109057b797d1374bbcaf0a9c993db9a83770c671fd46221d258d39375ab",
+      "capture": "en-recheck"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/?migration_review=20261009T0348",
+      "observedAt": "2026-10-09T03:48:09.218681+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 03:48:09 GMT",
+        "age": null,
+        "cache-control": "s-maxage=36000, max-age=5",
+        "etag": null,
+        "last-modified": "Sun, 04 Oct 2026 00:02:11 GMT",
+        "location": null,
+        "cf-cache-status": null,
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:02:11 GMT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "server": "cloudflare",
+        "cf-ray": "a47a68761c219dfc-LAX"
+      },
+      "sha256": "14cb8e7a696ac94c3880ad6302fde07883cdfc3edb7a4ec4dba509bf26452aa8",
+      "capture": "es-recheck"
+    }
+  ],
+  "asset": {
+    "url": "https://www.azinstitute4autism.com/hubfs/hsa-fsa-accepted.png",
+    "observedAt": "2026-10-09T03:51:40.337258+00:00",
+    "status": 200,
+    "bytes": 40208,
+    "sha256": "25d1a0c6ed1e156e0861071fa409b5b6908b7f3b02407066a0d3b7014b25c195",
+    "headers": {
+      "date": "Fri, 09 Oct 2026 03:51:40 GMT",
+      "content-type": "image/png",
+      "cache-control": "public, max-age=1209600",
+      "age": "1891407",
+      "etag": "\"f9bc4a5a5931cead117006fd8e7fdde9\"",
+      "last-modified": "Tue, 07 Jul 2026 19:44:58 GMT",
+      "cf-cache-status": "HIT",
+      "x-hs-cf-cache-status": null,
+      "server": "cloudflare"
+    },
+    "localPath": "public/assets/images/hsa-fsa-accepted.png",
+    "dimensions": {
+      "width": 500,
+      "height": 425
+    },
+    "note": "Exact downloaded source artwork, visually inspected; text on badge says HSA APPROVED FSA. This is published artwork, not independent verification of reimbursability."
+  },
+  "observations": [
+    {
+      "url": "https://www.azinstitute4autism.com/",
+      "requestCapture": "en",
+      "locale": "en",
+      "title": "Scottsdale ABA Therapy for Children | Arizona Institute for Autism",
+      "description": "Arizona Institute for Autism: center for behavioral health & education services in Scottsdale. We serve children diagnosed with autism and their families.",
+      "h1": [
+        "Behavioral Health & Special Education"
+      ],
+      "canonical": "https://www.azinstitute4autism.com",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Behavioral Health & Special Education"
+        },
+        {
+          "tag": "h2",
+          "text": "ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder"
+        },
+        {
+          "tag": "h2",
+          "text": "ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder"
+        },
+        {
+          "tag": "h3",
+          "text": "Our Commitment To Your Learner's Success"
+        },
+        {
+          "tag": "h2",
+          "text": "Benefits that go Beyond a Typical Integrated Therapy Provider"
+        },
+        {
+          "tag": "h3",
+          "text": "The AIA Difference"
+        },
+        {
+          "tag": "h2",
+          "text": "Does Your Learner Struggle With These Skills?"
+        },
+        {
+          "tag": "h3",
+          "text": "Social Engagement"
+        },
+        {
+          "tag": "h3",
+          "text": "Eye Contact"
+        },
+        {
+          "tag": "h3",
+          "text": "Listening"
+        },
+        {
+          "tag": "h3",
+          "text": "Repetitive Movement"
+        },
+        {
+          "tag": "h3",
+          "text": "Playing"
+        },
+        {
+          "tag": "h3",
+          "text": "Speech"
+        },
+        {
+          "tag": "h2",
+          "text": "Yes, We Take Insurance"
+        },
+        {
+          "tag": "h2",
+          "text": "Arizona Scholarship Account (ESA)"
+        },
+        {
+          "tag": "h2",
+          "text": "Health Savings Accounts (HSA) & Flexible Spending Accounts (FSA)"
+        },
+        {
+          "tag": "h2",
+          "text": "Need Help Paying for Your Care?"
+        },
+        {
+          "tag": "h2",
+          "text": "Our Process"
+        },
+        {
+          "tag": "h3",
+          "text": "Clinical Director Rula Diab, BCBA, LBA, M.Ed."
+        },
+        {
+          "tag": "h2",
+          "text": "An Extension of Your Family"
+        },
+        {
+          "tag": "h3",
+          "text": "What Clients Say"
+        }
+      ],
+      "sectionOrder": [
+        "hero",
+        "servicesIntro",
+        "benefits",
+        "skills",
+        "insurance",
+        "esa",
+        "hsaFsa",
+        "financialHelp",
+        "process",
+        "director",
+        "testimonials",
+        "logos"
+      ],
+      "excerpts": [
+        "Behavioral Health & Special Education",
+        "Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children and teens who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas.",
+        "ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder",
+        "Autism Advocacy Support",
+        "Evaluation & Assessment Support",
+        "Children Autism Services",
+        "Community Autism Services",
+        "Family Training Services",
+        "ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder",
+        "Autism Advocacy Support",
+        "Evaluation & Assessment Support",
+        "Children Autism Services",
+        "Community Autism Services",
+        "Family Training Services",
+        "Our Commitment To Your Learner's Success",
+        "In-Center",
+        "In-Home",
+        "Integrated Therapy Treatment",
+        "Early Intervention",
+        "Academic Readiness",
+        "Clinical Supervision",
+        "Parent Consultation",
+        "Benefits that go Beyond a Typical Integrated Therapy Provider",
+        "The AIA Difference",
+        "Compassionate Care",
+        "Individualized Results",
+        "Sensory-Friendly Rooms",
+        "Convenient and Affordable",
+        "Does Your Learner Struggle With These Skills?",
+        "Social Engagement",
+        "Eye Contact",
+        "Listening",
+        "Repetitive Movement",
+        "Playing",
+        "Speech",
+        "Yes, We Take Insurance",
+        "An all-in-one integrated service for your kiddo’s special education needs, the Arizona Institute for Autism (AIA) offers and accepts most insurance plans that cover ABA therapy. These include BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS, and UnitedHealth.",
+        "Arizona Scholarship Account (ESA)",
+        "Thousands of Arizona learners are currently eligible for the state funded ESA, which awards $4,000 – $6,500 annually per student towards private education tuition, home based education, and other services. The Arizona Institute for Autism (AIA) is approved by the Arizona Department of Education as a vendor for parents with learners who qualify for the Empowerment Scholarship Award. If you are eligible for the ESA program, you can use your funds towards tuition for our ABA programs.",
+        "Health Savings Accounts (HSA) & Flexible Spending Accounts (FSA)",
+        "Many families can also utilize their HSA and FSA to fund care, which allow you to pay for qualified clinical services using pre-tax dollars. The Arizona Institute for Autism (AIA) accepts Health Savings Account and Flexible Spending Account cards directly, making it easier to manage out-of-pocket costs for your learner's treatment. If you participate in one of these employer-sponsored or individual accounts, you can seamlessly apply your available funds toward tuition and fees for our ABA programs.",
+        "Need Help Paying for Your Care?",
+        "The Arizona Institute for Autism offers flexible financial assistance to the uninsured. Get the care you want or need and pay over time.",
+        "Our Process",
+        "Fill Out Learner Information Form",
+        "Speak with a Client Advocate",
+        "Fill and Sign a Client Intake Packet",
+        "Verify Billing and Insurance Information and Benefits",
+        "Schedule an Assessment",
+        "Collaborate on a Care Plan",
+        "Clinical Director Rula Diab, BCBA, LBA, M.Ed.",
+        "An Extension of Your Family",
+        "\"At AIA, We strive to provide excellent and compassionate care to all communities we serve. We could not accomplish that without excellent, passionate, and committed staff and families. We look forward to our collaboration with you as we continue to grow, serve and support our Learners in the pursuit of their individual potential.\"",
+        "What Clients Say"
+      ],
+      "links": [
+        {
+          "label": "Get Started",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "label": "Schedule an Assessment",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "label": "",
+          "href": "https://www.youtube-nocookie.com/embed/EczPH1jx9mc?si=beestOCaO4tL7Re6"
+        },
+        {
+          "label": "Request an Appointment",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "label": "Fill Out Learner Information Form",
+          "href": "/aba-therapy-intake-process#first-step"
+        },
+        {
+          "label": "Speak with a Client Advocate",
+          "href": "/aba-therapy-intake-process#second-step"
+        },
+        {
+          "label": "Fill and Sign a Client Intake Packet",
+          "href": "/aba-therapy-intake-process#third-step"
+        },
+        {
+          "label": "Verify Billing and Insurance Information and Benefits",
+          "href": "/aba-therapy-intake-process#fourth-step"
+        },
+        {
+          "label": "Schedule an Assessment",
+          "href": "/aba-therapy-intake-process#fifth-step"
+        },
+        {
+          "label": "Collaborate on a Care Plan",
+          "href": "/aba-therapy-intake-process#sixth-step"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/bcba-with-happy-toddler.webp",
+          "alt": "bcba therapist with happy toddler"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/playing-girl.webp",
+          "alt": "girl learning by playing"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/playing-girl.webp",
+          "alt": "girl learning by playing"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/playing-boy.webp",
+          "alt": "boy playing while learning"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey.webp",
+          "alt": "link - learner journey for children with autism video"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Social_Engagement.png",
+          "alt": "icon-Social_Engagement"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Eye_Contact.png",
+          "alt": "icon-Eye_Contact"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Listening.png",
+          "alt": "icon-Listening"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Repetitive_Movement.png",
+          "alt": "icon-Repetitive_Movement"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Playing.png",
+          "alt": "icon-Playing"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Speach.png",
+          "alt": "icon-Speach"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/bluecrossblueshield-logo-1.webp",
+          "alt": "logo for bluecross/blueshield"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/aetna.png",
+          "alt": "aetna logo"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-optum.webp",
+          "alt": "logo for optum"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-tricare-1.webp",
+          "alt": "logo for tricare"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-ahcccs.webp",
+          "alt": "logo for ahcccs"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/united-healthcare-logo-1.webp",
+          "alt": "logo for united healthcare"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-az-dept-of-education.webp",
+          "alt": "logo-az-dept-of-education"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/hsa-fsa-accepted.png",
+          "alt": "hsa-fsa-accepted"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-1a.svg",
+          "alt": "learner journey first step"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-2.svg",
+          "alt": "learner journey second step"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-3.svg",
+          "alt": "learner journey third step"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-4.svg",
+          "alt": "learner journey fourth step"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-5.svg",
+          "alt": "learner journey fifth step"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-6.svg",
+          "alt": "learner journey sixth step"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/rula-diab.webp",
+          "alt": "rula-diab"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/clinical-director-rula-diab.png",
+          "alt": "clinical-director-rula-diab"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-BACB.png",
+          "alt": "logo for Behavior Analyst Certification Board (BACB)"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/casp-member-logo.webp",
+          "alt": "the council of autism service providers member logo"
+        }
+      ],
+      "testimonials": {
+        "count": 11,
+        "localItemsSha256": "537829716b30dbf6137e46d04b639f6d2d9938fc806304259c0ddc84dbaf9582",
+        "resolution": "All 11 existing testimonial texts match retrieved source after whitespace/typographic-apostrophe normalization; preserved verbatim, including historical ages."
+      },
+      "freshness": "potentially cached; retrieved 2026-10-09, prerender dates precede the confirmed 2026-10-08 editorial requirement; query recheck body identical"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/",
+      "requestCapture": "es",
+      "locale": "es",
+      "title": "Terapia ABA cerca de mí | Arizona Institute for Autism | Scottsdale",
+      "description": "Arizona Institute for Autism: centro de servicios de salud conductual y educación ubicado en Scottsdale. Atendemos a personas con autismo y a sus familias.",
+      "h1": [
+        "Salud Mental y Educación Especial"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Salud Mental y Educación Especial"
+        },
+        {
+          "tag": "h2",
+          "text": "Servicios de terapia ABA para niños diagnosticados con TEA"
+        },
+        {
+          "tag": "h2",
+          "text": "Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA"
+        },
+        {
+          "tag": "h3",
+          "text": "Nuestro compromiso con el éxito de su estudiante"
+        },
+        {
+          "tag": "h2",
+          "text": "Beneficios que van más allá de un proveedor de terapia integrada típico"
+        },
+        {
+          "tag": "h3",
+          "text": "La Diferencia AIA"
+        },
+        {
+          "tag": "h2",
+          "text": "¿Su alumno tiene dificultades con estas habilidades?"
+        },
+        {
+          "tag": "h3",
+          "text": "Compromiso social"
+        },
+        {
+          "tag": "h3",
+          "text": "Contacto visual"
+        },
+        {
+          "tag": "h3",
+          "text": "Escuchar"
+        },
+        {
+          "tag": "h3",
+          "text": "Movimiento repetitivo"
+        },
+        {
+          "tag": "h3",
+          "text": "Jugando"
+        },
+        {
+          "tag": "h3",
+          "text": "Discurso"
+        },
+        {
+          "tag": "h2",
+          "text": "Sí, aceptamos seguros."
+        },
+        {
+          "tag": "h2",
+          "text": "Cuenta de Becas de Arizona (ESA)"
+        },
+        {
+          "tag": "h2",
+          "text": "¿Necesita ayuda para pagar su atención?"
+        },
+        {
+          "tag": "h2",
+          "text": "Nuestro proceso"
+        },
+        {
+          "tag": "h3",
+          "text": "Directora Clínica Rula Diab, BCBA, LBA, M.Ed."
+        },
+        {
+          "tag": "h2",
+          "text": "Una extensión de tu familia"
+        },
+        {
+          "tag": "h3",
+          "text": "Lo que dicen los clientes"
+        }
+      ],
+      "sectionOrder": [
+        "hero",
+        "servicesIntro",
+        "benefits",
+        "skills",
+        "insurance",
+        "esa",
+        "financialHelp",
+        "process",
+        "director",
+        "testimonials",
+        "logos"
+      ],
+      "excerpts": [
+        "Salud Mental y Educación Especial",
+        "Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix.",
+        "Servicios de terapia ABA para niños diagnosticados con TEA",
+        "Apoyo a la defensa del autismo",
+        "Apoyo a la evaluación y valoración",
+        "Servicios de Autismo para Niños",
+        "Servicios Comunitarios de Autismo",
+        "Servicios de Capacitación Familiar",
+        "Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA",
+        "Apoyo a la defensa del autismo",
+        "Apoyo a la evaluación y valoración",
+        "Servicios de Autismo para Niños",
+        "Servicios Comunitarios de Autismo",
+        "Servicios de Capacitación Familiar",
+        "Nuestro compromiso con el éxito de su estudiante",
+        "En el centro",
+        "En casa",
+        "Tratamiento de terapia integrada",
+        "Intervención temprana",
+        "Preparación Académica",
+        "Supervisión clínica",
+        "Consulta de padres",
+        "Beneficios que van más allá de un proveedor de terapia integrada típico",
+        "La Diferencia AIA",
+        "Cuidado compasivo",
+        "Resultados individualizados",
+        "Salas sensoriales",
+        "Conveniente y asequible",
+        "¿Su alumno tiene dificultades con estas habilidades?",
+        "Compromiso social",
+        "Contacto visual",
+        "Escuchar",
+        "Movimiento repetitivo",
+        "Jugando",
+        "Discurso",
+        "Sí, aceptamos seguros.",
+        "Un servicio integrado todo en uno para las necesidades de educación especial de su hijo, el Instituto de Autismo de Arizona (AIA) ofrece y acepta la mayoría de los planes de seguro que cubren la terapia ABA. Estos incluyen BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS y UnitedHealth.",
+        "Cuenta de Becas de Arizona (ESA)",
+        "Miles de estudiantes de Arizona son actualmente elegibles para la ESA financiada por el estado, que otorga entre $4,000 y $6,500 anualmente por estudiante para la matrícula de educación privada, educación en el hogar y otros servicios. El Instituto de Autismo de Arizona (AIA) está aprobado por el Departamento de Educación de Arizona como proveedor para padres con estudiantes que califican para la Beca de Empoderamiento. Si eres elegible para el programa ESA, puedes usar tus fondos para la matrícula de nuestros programas ABA.",
+        "¿Necesita ayuda para pagar su atención?",
+        "El Instituto de Autismo de Arizona ofrece asistencia financiera flexible a las personas sin seguro. Obtén la atención que deseas o necesitas y paga a plazos.",
+        "Nuestro proceso",
+        "Complete el formulario de información del estudiante",
+        "Hable con un Defensor del Cliente",
+        "Llenar y firmar un paquete de admisión de clientes",
+        "Verificar la información de facturación, seguro y beneficios",
+        "Programar una evaluación",
+        "Colaborar en un Plan de Cuidados",
+        "Directora Clínica Rula Diab, BCBA, LBA, M.Ed.",
+        "Una extensión de tu familia",
+        "\"En AIA, nos esforzamos por brindar atención excelente y compasiva a todas las comunidades a las que servimos. No podríamos lograr eso sin un personal y familias excelentes, apasionados y comprometidos. Esperamos con ansias nuestra colaboración con usted a medida que continuamos creciendo, sirviendo y apoyando a nuestros estudiantes en la búsqueda de su potencial individual.\"",
+        "Lo que dicen los clientes"
+      ],
+      "links": [
+        {
+          "label": "Empezar",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        },
+        {
+          "label": "Programar una evaluación",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        },
+        {
+          "label": "",
+          "href": "https://www.youtube-nocookie.com/embed/EczPH1jx9mc?si=beestOCaO4tL7Re6"
+        },
+        {
+          "label": "Solicitar cita",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        },
+        {
+          "label": "Complete el formulario de información del estudiante",
+          "href": "/aba-therapy-intake-process#first-step"
+        },
+        {
+          "label": "Hable con un Defensor del Cliente",
+          "href": "/aba-therapy-intake-process#second-step"
+        },
+        {
+          "label": "Llenar y firmar un paquete de admisión de clientes",
+          "href": "/aba-therapy-intake-process#third-step"
+        },
+        {
+          "label": "Verificar la información de facturación, seguro y beneficios",
+          "href": "/aba-therapy-intake-process#fourth-step"
+        },
+        {
+          "label": "Programar una evaluación",
+          "href": "/aba-therapy-intake-process#fifth-step"
+        },
+        {
+          "label": "Colaborar en un Plan de Cuidados",
+          "href": "/aba-therapy-intake-process#sixth-step"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/bcba-with-happy-toddler.webp",
+          "alt": "bcba therapist with happy toddler"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/playing-girl.webp",
+          "alt": "girl learning by playing"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/playing-girl.webp",
+          "alt": "girl learning by playing"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/playing-boy.webp",
+          "alt": "boy playing while learning"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey.webp",
+          "alt": "link - learner journey for children with autism video"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Social_Engagement.png",
+          "alt": "icon-Social_Engagement"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Eye_Contact.png",
+          "alt": "icon-Eye_Contact"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Listening.png",
+          "alt": "icon-Listening"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Repetitive_Movement.png",
+          "alt": "icon-Repetitive_Movement"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Playing.png",
+          "alt": "icon-Playing"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/icon-Speach.png",
+          "alt": "icon-Speach"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/bluecrossblueshield-logo-1.webp",
+          "alt": "logo for bluecross/blueshield"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/aetna.png",
+          "alt": "aetna logo"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-optum.webp",
+          "alt": "logo for optum"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-tricare-1.webp",
+          "alt": "logo for tricare"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-ahcccs.webp",
+          "alt": "logo for ahcccs"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/united-healthcare-logo-1.webp",
+          "alt": "logo for united healthcare"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-az-dept-of-education.webp",
+          "alt": "logo-az-dept-of-education"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-1a.svg",
+          "alt": "Primer paso del recorrido del estudiante"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-2.svg",
+          "alt": "segundo paso del recorrido del estudiante"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-3.svg",
+          "alt": "Tercer paso del recorrido del estudiante"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-4.svg",
+          "alt": "Cuarto paso del recorrido del estudiante"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-5.svg",
+          "alt": "Quinto paso del recorrido del estudiante"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/learner-journey-step-6.svg",
+          "alt": "sexto paso del recorrido del estudiante"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/rula-diab.webp",
+          "alt": "rula-diab"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/clinical-director-rula-diab.png",
+          "alt": "clinical-director-rula-diab"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/logo-BACB.png",
+          "alt": "logo for Behavior Analyst Certification Board (BACB)"
+        },
+        {
+          "src": "https://www.azinstitute4autism.com/hubfs/casp-member-logo.webp",
+          "alt": "the council of autism service providers member logo"
+        }
+      ],
+      "testimonials": {
+        "count": 11,
+        "localItemsSha256": "537829716b30dbf6137e46d04b639f6d2d9938fc806304259c0ddc84dbaf9582",
+        "resolution": "All 11 existing testimonial texts match retrieved source after whitespace/typographic-apostrophe normalization; preserved verbatim, including historical ages."
+      },
+      "freshness": "potentially cached; retrieved 2026-10-09, prerender dates precede the confirmed 2026-10-08 editorial requirement; query recheck body identical"
+    }
+  ],
+  "changes": [
+    {
+      "locale": "en",
+      "field": "frontmatter.title",
+      "previous": "ABA Therapy Near Me | Arizona Institute for Autism | Scottsdale",
+      "current": "Scottsdale ABA Therapy for Children | Arizona Institute for Autism",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.description",
+      "previous": "Arizona Institute for Autism: center for behavioral health & education services located in Scottsdale. We serve individuals with Autism and their families.",
+      "current": "Arizona Institute for Autism: center for behavioral health & education services in Scottsdale. We serve children diagnosed with autism and their families.",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.hero.body",
+      "previous": "Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children and teens who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas.",
+      "current": "Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas.",
+      "authority": "AIA editorial confirmation 2026-10-08 (Spanish hero removal also supported by source)"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.servicesIntro.servicesHeading",
+      "previous": "ABA Therapy Services for Children and Teens Diagnosed with Autism Spectrum Disorder",
+      "current": "ABA Therapy Services for Children 18 Months Through 8 Years Diagnosed with Autism Spectrum Disorder",
+      "authority": "AIA editorial confirmation 2026-10-08 (Spanish hero removal also supported by source)"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.servicesIntro.commitments.2",
+      "previous": "Integrated Therapy",
+      "current": "Integrated Therapy Treatment",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.0.href",
+      "previous": null,
+      "current": "/aba-therapy-intake-process#1-complete-the-learner-information-form",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.1.href",
+      "previous": null,
+      "current": "/aba-therapy-intake-process#2-speak-with-an-aia-client-advocate",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.2.label",
+      "previous": "Fill and Sign an Intake Packet",
+      "current": "Fill and Sign a Client Intake Packet",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.2.href",
+      "previous": null,
+      "current": "/aba-therapy-intake-process#3-fill-out-and-sign-the-client-intake-packet",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.3.label",
+      "previous": "Verify Billing and Insurance",
+      "current": "Verify Billing and Insurance Information and Benefits",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.3.href",
+      "previous": null,
+      "current": "/aba-therapy-intake-process#4-verify-insurance-and-billing-information",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.4.href",
+      "previous": null,
+      "current": "/aba-therapy-intake-process#5-schedule-your-childs-assessment",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.process.steps.5.href",
+      "previous": null,
+      "current": "/aba-therapy-intake-process#6-collaborate-on-a-personalized-care-plan",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.testimonials.heading",
+      "previous": "What Clients Are Saying",
+      "current": "What Clients Say",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.hsaFsa",
+      "previous": null,
+      "current": {
+        "heading": "Health Savings Accounts (HSA) & Flexible Spending Accounts (FSA)",
+        "body": "Many families can also utilize their HSA and FSA to fund care, which allow you to pay for qualified clinical services using pre-tax dollars. The Arizona Institute for Autism (AIA) accepts Health Savings Account and Flexible Spending Account cards directly, making it easier to manage out-of-pocket costs for your learner's treatment. If you participate in one of these employer-sponsored or individual accounts, you can seamlessly apply your available funds toward tuition and fees for our ABA programs.",
+        "image": "hsa-fsa-accepted.png",
+        "imageAlt": "hsa-fsa-accepted"
+      },
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "en",
+      "field": "frontmatter.home.logos",
+      "previous": null,
+      "current": {
+        "items": [
+          {
+            "file": "logo-BACB.png",
+            "alt": "logo for Behavior Analyst Certification Board (BACB)"
+          },
+          {
+            "file": "casp-member-logo.webp",
+            "alt": "the council of autism service providers member logo"
+          }
+        ]
+      },
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.hero.body",
+      "previous": "Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños y adolescentes con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix.",
+      "current": "Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix.",
+      "authority": "AIA editorial confirmation 2026-10-08 (Spanish hero removal also supported by source)"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.servicesIntro.servicesHeading",
+      "previous": "Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA",
+      "current": "Servicios de terapia ABA para niños de 18 meses a 8 años diagnosticados con TEA",
+      "authority": "AIA editorial confirmation 2026-10-08 (Spanish hero removal also supported by source)"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.process.steps.0.href",
+      "previous": null,
+      "current": "/es/aba-therapy-intake-process#1-complete-el-formulario-de-información-del-estudiante",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.process.steps.1.href",
+      "previous": null,
+      "current": "/es/aba-therapy-intake-process#2-hable-con-un-defensor-del-cliente-de-aia",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.process.steps.2.href",
+      "previous": null,
+      "current": "/es/aba-therapy-intake-process#3-complete-y-firme-el-paquete-de-admisión-del-cliente",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.process.steps.3.href",
+      "previous": null,
+      "current": "/es/aba-therapy-intake-process#4-verificar-la-información-del-seguro-y-la-facturación",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.process.steps.4.href",
+      "previous": null,
+      "current": "/es/aba-therapy-intake-process#5-programa-la-evaluación-de-tu-hijo",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.process.steps.5.href",
+      "previous": null,
+      "current": "/es/aba-therapy-intake-process#6-colaborar-en-un-plan-de-atención-personalizado",
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    },
+    {
+      "locale": "es",
+      "field": "frontmatter.home.logos",
+      "previous": null,
+      "current": {
+        "items": [
+          {
+            "file": "logo-BACB.png",
+            "alt": "logo for Behavior Analyst Certification Board (BACB)"
+          },
+          {
+            "file": "casp-member-logo.webp",
+            "alt": "the council of autism service providers member logo"
+          }
+        ]
+      },
+      "authority": "Production observation 2026-10-09; intake fragment destinations mapped to existing local same-language headings"
+    }
+  ],
+  "destinationVerification": [
+    {
+      "url": "https://www.azinstitute4autism.com/client-consultation",
+      "observedAt": "2026-10-09T01:26:28.019578+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:28 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998e9bd89a69a-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "source": "phase-5a-source-evidence-2026-10-09.json; inherited, not fetched again in 5B"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/aba-therapy-intake-process",
+      "observedAt": "2026-10-09T01:26:29.339474+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:29 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:15 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:15 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47998f20f6753ca-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "source": "phase-5a-source-evidence-2026-10-09.json; inherited, not fetched again in 5B"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/client-consultation",
+      "observedAt": "2026-10-09T01:26:36.736417+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:37 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sun, 04 Oct 2026 00:00:44 GMT",
+        "x-hs-cf-cache-status": "REVALIDATED",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:00:44 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a47999201ee950a9-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "source": "phase-5a-source-evidence-2026-10-09.json; inherited, not fetched again in 5B"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/es/aba-therapy-intake-process",
+      "observedAt": "2026-10-09T01:26:38.213768+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:26:38 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "x-hs-cf-cache-status": "MISS",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799929590eaebe-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "source": "phase-5a-source-evidence-2026-10-09.json; inherited, not fetched again in 5B"
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/client-consultation?migration_review=20261009T0130",
+      "observedAt": "2026-10-09T01:28:08.800682+00:00",
+      "status": 200,
+      "headers": {
+        "date": "Fri, 09 Oct 2026 01:28:08 GMT",
+        "cache-control": "s-maxage=36000, max-age=5",
+        "last-modified": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "x-hs-cf-cache-status": "HIT",
+        "x-hs-cache-control": "s-maxage=36000, max-age=0",
+        "x-hs-prerendered": "Sun, 04 Oct 2026 00:00:00 GMT",
+        "server": "cloudflare",
+        "cf-ray": "a4799b5fb92b23fc-LAX",
+        "age": null,
+        "etag": null,
+        "cf-cache-status": null
+      },
+      "freshness": "potentially cached; fresh retrieval does not establish origin freshness",
+      "source": "phase-5a-source-evidence-2026-10-09.json; inherited, not fetched again in 5B"
+    }
+  ],
+  "limitations": [
+    "200, HIT or a cache-bypass query do not prove origin freshness. No further retries made.",
+    "AIA confirmation overrides stale English hero and Spanish alternate services heading.",
+    "Financial copy is evidence of public wording, not independent benefit/insurance/tax verification.",
+    "Spanish main CTAs and process links on production target English routes; Astro deliberately retains/picks existing same-language destinations. No forms enabled.",
+    "Existing descriptive local image alt text retained; new badge/logo alt text copied from production, including English text on Spanish logos.",
+    "Raw production HTML and response cookies are not committed. Original migration/Phase 5A evidence remains unmodified."
+  ],
+  "validation": {
+    "seoTests": {
+      "passed": 30,
+      "failed": 0
+    },
+    "publicationTests": {
+      "passed": 33,
+      "failed": 0
+    },
+    "markdownTests": {
+      "passed": 20,
+      "failed": 0
+    },
+    "indexing": {
+      "checkedAt": "2026-10-09T03:56:49.595Z",
+      "mode": "indexing",
+      "routes": 96,
+      "sitemapUrls": 92,
+      "hreflangLinks": 174,
+      "hreflangPages": 53,
+      "schemas": {
+        "MedicalOrganization": 96,
+        "BlogPosting": 63,
+        "FAQPage": 21
+      },
+      "changedMain": [
+        "/",
+        "/es"
+      ],
+      "canonicalChanges": 0,
+      "languageDirectionChanges": 0,
+      "h1Changes": 0,
+      "headerFooterLinkChanges": 0,
+      "unrelatedMainTextChanges": 0
+    },
+    "staging": {
+      "checkedAt": "2026-10-09T03:57:28.639Z",
+      "mode": "staging",
+      "routes": 96,
+      "sitemapUrls": 0,
+      "hreflangLinks": 0,
+      "hreflangPages": 0,
+      "schemas": {
+        "MedicalOrganization": 96,
+        "BlogPosting": 63,
+        "FAQPage": 21
+      },
+      "changedMain": [
+        "/",
+        "/es"
+      ],
+      "canonicalChanges": 0,
+      "languageDirectionChanges": 0,
+      "h1Changes": 0,
+      "headerFooterLinkChanges": 0,
+      "unrelatedMainTextChanges": 0
+    },
+    "offlineReconciliation": "route-reconciliation-2026-10-09-offline-03-57-29-199Z.json",
+    "brokenInternalLinks": 0,
+    "missingMappedImages": 0,
+    "blogAuditFailures": 0,
+    "browser": "unavailable: Transport closed"
+  }
+}

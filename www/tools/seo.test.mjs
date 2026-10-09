@@ -11,6 +11,7 @@ import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, renderSitemap, robotsFor } from '../src/utils/publication-policy.ts';
 import { socialImageUrl } from '../src/utils/seo.ts';
 import { blogPostingSchema, faqItemsFromSourceHtml, faqPageSchema, serializeJsonLd } from '../src/utils/structured-data.ts';
+import { homePageSchema, homeSectionsSchema } from '../src/types/home-sections.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -114,6 +115,16 @@ await build({root:${JSON.stringify(temporary)},configFile:${JSON.stringify(path.
   ]) {
     const target = path.join(temporary, 'src/content/pages', file);
     await writeFile(target, (await readFile(target, 'utf8')).replace(/^---\n/, `---\ndisplayH1: ${JSON.stringify(heading)}\n`));
+  }
+  // Exercise old homepage data without the new optional sections or step links
+  // through the actual renderer, in the existing isolated override build.
+  for (const lang of ['en', 'es']) {
+    const target = path.join(temporary, 'src/content/pages', lang, 'index.md');
+    const { data, content } = matter(await readFile(target, 'utf8'));
+    delete data.home.hsaFsa;
+    delete data.home.logos;
+    data.home.process.steps.forEach((step) => delete step.href);
+    await writeFile(target, matter.stringify(content, data));
   }
   build();
   await capture('overrides');
@@ -525,6 +536,109 @@ test('Phase 5A preserves disabled forms and one localized H1 on every targeted p
     });
   }
   assert.equal(meta(page('/autism-evaluations'), 'description').attr('content'), "Get comprehensive childhood autism evaluations in Scottsdale, AZ. Our expert team provides accurate assessments to support your child's unique development.");
+});
+
+test('Phase 5B homepage schemas accept present/absent sections and reject incomplete data', () => {
+  for (const route of ['/', '/es']) {
+    const home = manifest.find((item) => item.route === route).entry.data.home;
+    assert.deepEqual(homePageSchema.parse(home), home);
+    const legacy = structuredClone(home);
+    delete legacy.hsaFsa;
+    delete legacy.logos;
+    legacy.process.steps.forEach((step) => delete step.href);
+    assert.ok(homePageSchema.safeParse(legacy).success);
+    assert.equal(homePageSchema.safeParse({ ...home, hsaFsa: { heading: 'Incomplete' } }).success, false);
+    assert.equal(homePageSchema.safeParse({ ...home, logos: { items: [{ file: 'missing-alt.png' }] } }).success, false);
+    assert.equal(homePageSchema.safeParse({ ...home, process: { ...home.process, steps: [{ icon: 'step.svg', label: 'Step', href: 42 }] } }).success, false);
+  }
+  const english = manifest.find((item) => item.route === '/').entry.data.home;
+  assert.ok(homeSectionsSchema.safeParse([{ type: 'hsa-fsa', ...english.hsaFsa }, { type: 'logos', ...english.logos }]).success);
+});
+
+test('Phase 5B corrects ABA-specific ages and audiences without rewriting historical testimonials', () => {
+  for (const mode of ['staging', 'indexing']) {
+    for (const [route, range] of [['/', '18 Months Through 8 Years'], ['/es', '18 meses a 8 años']]) {
+      const $ = page(route, mode);
+      const headings = $('main h2').map((_, el) => $(el).text()).get();
+      assert.ok(headings[0].includes(range));
+      assert.match(headings[0], /ABA/);
+      assert.doesNotMatch($('main').text(), /children (?:and|&) teens|niños y adolescentes|\b2\s*(?:[–-]|to|a)\s*(?:8|17)\b/i);
+      assert.equal($('main h1').length, 1);
+      assert.equal($('html').attr('lang'), route === '/' ? 'en' : 'es');
+      assert.equal($('html').attr('dir'), 'ltr');
+      assert.match($('.testimonial-section').text(), /21 months year old/);
+      assert.equal($('.testimonial-section .swiper-slide').length, 11);
+    }
+  }
+  assert.equal(page('/')('head title').text(), 'Scottsdale ABA Therapy for Children | Arizona Institute for Autism');
+  assert.equal(meta(page('/'), 'description').attr('content'), 'Arizona Institute for Autism: center for behavioral health & education services in Scottsdale. We serve children diagnosed with autism and their families.');
+  assert.equal(page('/es')('head title').text(), 'Terapia ABA cerca de mí | Arizona Institute for Autism | Scottsdale');
+});
+
+test('Phase 5B preserves section order, English-only HSA/FSA and the final source logo row', () => {
+  for (const mode of ['staging', 'indexing']) {
+    for (const route of ['/', '/es']) {
+      const $ = page(route, mode);
+      const home = manifest.find((item) => item.route === route).entry.data.home;
+      const expected = [home.servicesIntro.servicesHeading, home.servicesIntro.commitmentsHeading,
+        home.benefits.heading, home.skills.heading, home.insurance.heading, home.esa.heading,
+        ...(route === '/' ? [home.hsaFsa.heading] : []), home.financialHelp.heading,
+        home.process.heading, home.director.heading, home.testimonials.heading];
+      assert.deepEqual($('main h2').map((_, el) => $(el).text()).get(), expected);
+      assert.equal($('.hsa-fsa-section').length, route === '/' ? 1 : 0);
+      assert.deepEqual($('.home-logos img').map((_, el) => $(el).attr('src')).get(), ['/assets/images/logo-BACB.png', '/assets/images/casp-member-logo.webp']);
+      assert.equal($('.testimonial-section').nextAll(':not(script):not(style)').first().hasClass('home-logos'), true);
+      if (route === '/') {
+        assert.equal(text($('.hsa-fsa-section p').text()), home.hsaFsa.body);
+        assert.match(home.hsaFsa.body, /qualified clinical services/);
+        assert.match(home.hsaFsa.body, /If you participate/);
+        assert.equal($('.hsa-fsa-section img').attr('src'), '/assets/images/hsa-fsa-accepted.png');
+        assert.equal($('.hsa-fsa-section img').attr('alt'), 'hsa-fsa-accepted');
+        assert.equal($('.hsa-fsa-section').find('a, form, script, iframe').length, 0);
+      } else assert.doesNotMatch($('main').text(), /Health Savings|HSA|FSA/);
+      assert.deepEqual(jsonLd($).map((item) => item['@type']), ['MedicalOrganization']);
+    }
+  }
+  for (const route of ['/', '/es']) {
+    const $ = page(route, 'overrides');
+    assert.equal($('.hsa-fsa-section, .home-logos, .process-grid a').length, 0);
+    assert.equal($('.process-grid > div').length, 6);
+    assert.equal($('main h1').length, 1);
+  }
+});
+
+test('Phase 5B consultation and six intake-step CTAs resolve in each homepage language', async () => {
+  for (const route of ['/', '/es']) {
+    const $ = page(route);
+    const localePrefix = route === '/' ? '' : '/es';
+    const home = manifest.find((item) => item.route === route).entry.data.home;
+    const calls = [home.hero.cta, home.servicesIntro.commitmentsCta, home.financialHelp.cta];
+    for (const { label } of calls) {
+      const link = $('main a').not('.process-grid a').filter((_, el) => text($(el).text()) === label);
+      assert.equal(link.length, 1);
+      assert.equal(link.attr('href'), `${localePrefix}/client-consultation`);
+      const destination = page(link.attr('href'));
+      assert.equal(destination('form [type="submit"]:not([disabled])').length, 0);
+      assert.match(destination('form').text(), /Online submission is not yet connected/);
+    }
+    const links = $('.process-grid a');
+    assert.equal(links.length, 6);
+    const anchors = [];
+    links.each((_, el) => {
+      const url = new URL($(el).attr('href'), site);
+      assert.equal(url.pathname, `${localePrefix}/aba-therapy-intake-process`);
+      const target = page(url.pathname);
+      const id = decodeURIComponent(url.hash.slice(1));
+      assert.equal(target(`[id="${id}"]`).length, 1, url.href);
+      anchors.push(id);
+    });
+    assert.equal(new Set(anchors).size, 6);
+    // audit:images primarily covers banners/blogs; include every homepage image here.
+    for (const src of $('main img').map((_, el) => $(el).attr('src')).get()) {
+      assert.ok(src.startsWith('/assets/'), src);
+      assert.ok((await readFile(path.join(project, 'public', src))).length, src);
+    }
+  }
 });
 
 test('actual content-schema builds reject empty, whitespace-only and non-string displayH1', async () => {

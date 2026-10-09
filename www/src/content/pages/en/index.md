@@ -1,6 +1,6 @@
 ---
-title: "ABA Therapy Near Me | Arizona Institute for Autism | Scottsdale"
-description: "Arizona Institute for Autism: center for behavioral health & education services located in Scottsdale. We serve individuals with Autism and their families."
+title: "Scottsdale ABA Therapy for Children | Arizona Institute for Autism"
+description: "Arizona Institute for Autism: center for behavioral health & education services in Scottsdale. We serve children diagnosed with autism and their families."
 slug: "index"
 canonical: "https://www.azinstitute4autism.com/"
 lang: "en"
@@ -11,7 +11,7 @@ home:
   hero:
     eyebrow: "Arizona's Leading Experts"
     heading: "Behavioral Health<br />&amp; Special<br />Education"
-    body: "Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children and teens who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas."
+    body: "Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas."
     cta:
       label: Get Started
       href: /client-consultation
@@ -20,7 +20,7 @@ home:
 
   # Services and commitments
   servicesIntro:
-    servicesHeading: ABA Therapy Services for Children and Teens Diagnosed with Autism Spectrum Disorder
+    servicesHeading: ABA Therapy Services for Children 18 Months Through 8 Years Diagnosed with Autism Spectrum Disorder
     services:
       - Autism Advocacy Support
       - "Evaluation & Assessment Support"
@@ -33,7 +33,7 @@ home:
     commitments:
       - In-Center
       - In-Home
-      - Integrated Therapy
+      - Integrated Therapy Treatment
       - Early Intervention
       - Academic Readiness
       - Clinical Supervision
@@ -106,6 +106,13 @@ home:
     image: logo-az-dept-of-education.webp
     imageAlt: Arizona Department of Education
 
+  # HSA/FSA — published on the English homepage only
+  hsaFsa:
+    heading: Health Savings Accounts (HSA) & Flexible Spending Accounts (FSA)
+    body: Many families can also utilize their HSA and FSA to fund care, which allow you to pay for qualified clinical services using pre-tax dollars. The Arizona Institute for Autism (AIA) accepts Health Savings Account and Flexible Spending Account cards directly, making it easier to manage out-of-pocket costs for your learner's treatment. If you participate in one of these employer-sponsored or individual accounts, you can seamlessly apply your available funds toward tuition and fees for our ABA programs.
+    image: hsa-fsa-accepted.png
+    imageAlt: hsa-fsa-accepted
+
   # Financial help
   financialHelp:
     heading: Need Help Paying for Your Care?
@@ -120,16 +127,22 @@ home:
     steps:
       - icon: learner-journey-step-1a.svg
         label: Fill Out Learner Information Form
+        href: /aba-therapy-intake-process#1-complete-the-learner-information-form
       - icon: learner-journey-step-2.svg
         label: Speak with a Client Advocate
+        href: /aba-therapy-intake-process#2-speak-with-an-aia-client-advocate
       - icon: learner-journey-step-3.svg
-        label: Fill and Sign an Intake Packet
+        label: Fill and Sign a Client Intake Packet
+        href: /aba-therapy-intake-process#3-fill-out-and-sign-the-client-intake-packet
       - icon: learner-journey-step-4.svg
-        label: Verify Billing and Insurance
+        label: Verify Billing and Insurance Information and Benefits
+        href: /aba-therapy-intake-process#4-verify-insurance-and-billing-information
       - icon: learner-journey-step-5.svg
         label: Schedule an Assessment
+        href: /aba-therapy-intake-process#5-schedule-your-childs-assessment
       - icon: learner-journey-step-6.svg
         label: Collaborate on a Care Plan
+        href: /aba-therapy-intake-process#6-collaborate-on-a-personalized-care-plan
 
   # Director
   director:
@@ -144,7 +157,7 @@ home:
 
   # Testimonials
   testimonials:
-    heading: What Clients Are Saying
+    heading: What Clients Say
     items:
       - author: Claudia
         text: "Our son \U0001F499 is an autistic kid. We struggled to find the correct place for him, that place where you can feel comfortable leaving your kid. We visited five companies, and no one gave us that confidence until we found AIA. You can see the dedication from each employee (Director, therapists, coordinators, etc.) to every kid. Their therapy rooms are huge and spacious; every kid can play and learn simultaneously in their own spaces. We are thankful \U0001F64F to Arizona Institute for Autism for caring for Misael. All of you are Amazing!!! Thank you \U0001F60A"
@@ -168,4 +181,12 @@ home:
         text: "AIA has done wonders for my son. I drive from NW Peoria just to come here. Everyone is very professional and kind. They truly care about the kids and seeing them succeed. I'm so lucky to have found them. I would recommend them to anyone!"
       - author: Tim
         text: "The staff at AIA is my second family. Not only does my son receive the best care possible, they also keep me in check and help make sure I'm doing my part. That's the kind of love you get in this big family!"
+
+  # Logos published after testimonials
+  logos:
+    items:
+      - file: logo-BACB.png
+        alt: logo for Behavior Analyst Certification Board (BACB)
+      - file: casp-member-logo.webp
+        alt: the council of autism service providers member logo
 ---

@@ -1441,3 +1441,327 @@ made. Phase 5B and all other reconciliation phases remain unstarted.
 
 The existing untracked `merge-plan.md` remains unchanged, SHA-256:
 `015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
+
+## Phase 5B — Homepage Content Reconciliation (2026-10-09 UTC)
+
+Implemented on `faithful-astro-migration`, starting at the accepted Phase 5A
+checkpoint `051fb7c1081614329dd65cf9e72a496d851b2c37`. This section records a
+new observation and implementation milestone; it does not replace the earlier
+audit or Phase 5A evidence. Scope is the English `/` and Spanish `/es` homepages,
+their section model/components, focused tests and documentation. Detailed visual
+fidelity remains Phase 8. No changes are staged or committed.
+
+### Evidence, Dates and Cache Limitations
+
+Evidence labels used below:
+
+- **E — Implemented from confirmed AIA editorial requirements:** the user's
+  organizational confirmation dated **2026-10-08**: general ABA eligibility is
+  **18 months through 8 years / 18 meses a 8 años**; general ABA audience wording
+  referring to children and teens is superseded. This decision is resolved.
+- **P — Implemented from production evidence:** exact content observed in this
+  phase's bounded public GET responses. Publication on the retrieved page is
+  verified; current origin freshness and underlying business eligibility are
+  not independently established.
+- **R — Retained because current content is supported:** existing content matches
+  those retrieved responses, subject to the same cache limitations.
+- **D — Deferred due to uncertainty:** needs factual/operational or language review.
+- **O — Outside Phase 5B scope:** preserved for its assigned later milestone.
+
+New machine-readable evidence:
+[`phase-5b-source-evidence-2026-10-09.json`](phase-5b-source-evidence-2026-10-09.json).
+It records exact URLs, UTC timestamps, status, selected cache headers, body
+hashes, source metadata/headings, section order, important copy, lists, images
+and alt text, CTA destinations, before/after field changes and output checks.
+Raw HTML, cookies and broad production captures are not committed.
+
+| Request | Retrieval UTC, 2026-10-09 | Status / cache evidence |
+| --- | --- | --- |
+| `https://www.azinstitute4autism.com/robots.txt` | 03:47:42 | 200; HIT; permits these homepage/asset requests; avoids disallowed preview/cache-buster paths |
+| `https://www.azinstitute4autism.com/` | 03:48:03.652341 | 200; `X-HS-CF-Cache-Status: HIT`; Last-Modified and X-HS-Prerendered `2026-10-03 23:58:31 GMT` |
+| `https://www.azinstitute4autism.com/es` | 03:48:05.022332 | 301 to `https://www.azinstitute4autism.com/es/`; Cache-Control `max-age=120` |
+| `https://www.azinstitute4autism.com/es/` | 03:48:06.491271 | 200; HIT; Last-Modified and X-HS-Prerendered `2026-10-04 00:02:11 GMT` |
+| `https://www.azinstitute4autism.com/?migration_review=20261009T0348` | 03:48:07.882981 | 200; HIT; byte-identical to first English response |
+| `https://www.azinstitute4autism.com/es/?migration_review=20261009T0348` | 03:48:09.218681 | 200; HIT; byte-identical to first Spanish response |
+| `https://www.azinstitute4autism.com/hubfs/hsa-fsa-accepted.png` | 03:51:40.337258 | 200 PNG; `CF-Cache-Status: HIT`; Age `1891407`; Last-Modified `2026-07-07 19:44:58 GMT`; ETag recorded in JSON |
+
+Seven successful HTTP requests, including the redirect response and image;
+no production writes, script execution, submissions, API calls or broad crawl.
+Homepage requests were sequential, at least 1.1 seconds apart, with
+`Cache-Control: no-cache, max-age=0` and `Pragma: no-cache`. HTML responses have
+`Cache-Control: s-maxage=36000, max-age=5`,
+`X-HS-Cache-Control: s-maxage=36000, max-age=0`, `Server: cloudflare` and CF-Ray
+identifiers. Age, ETag and CF-Cache-Status were absent on those HTML responses.
+The first web-retrieval attempt for robots failed; direct retrieval succeeded.
+An independent browser attempt failed with `Transport closed`.
+
+**Fresh retrieval is not proof of fresh origin content.** The English hero
+still says “children and teens,” even though its services headings and metadata
+have changed. The Spanish hero already says “niños,” but the duplicated
+responsive services headings disagree: one still says “niños y adolescentes.”
+AIA's E correction governs both local homepages. Query variants and no-cache
+headers did not establish origin freshness; retries stopped after one recheck
+per language. Other source-backed copy is carried forward with these limitations.
+
+### English / Spanish Section Inventory and Resolution
+
+All existing YAML sections were inspected, including headings, body text,
+list order, image filenames/alt text and CTA references. Paragraph/list text
+comparison normalized whitespace and typographic apostrophes; existing local
+editorial formatting, descriptive alt text and historical quotations are retained.
+No existing section was found to have been removed in either retrieved page.
+
+| Order | Section | English comparison / resolution | Spanish comparison / resolution | Classification |
+| --- | --- | --- | --- | --- |
+| 1 | Hero | Preserve eyebrow, H1 markup, image, geography and CTA; remove “and teens” from body despite stale source | Preserve eyebrow, H1 markup, image, geography and CTA; remove “y adolescentes,” also matching source hero | E; remaining fields R |
+| 2 | Services introduction / commitments | Replace old audience heading with ABA-specific approved age range; add source word “Treatment” to “Integrated Therapy”; retain five service items and seven commitment items/order | Replace old audience heading with approved Spanish range; retain five services, seven commitments, images and source-supported existing wording | E, P, R |
+| 3 | Benefits | Heading, subheading, four benefits, video URL/title/image supported; retained | Own published wording, four benefits and same video retained | R |
+| 4 | Skills | Six skills and icons/order supported; retained | Six existing translated labels/icons/order supported; retained | R |
+| 5 | Insurance | Heading/body and six carrier logos supported; retained | Own heading/body and same six logos supported; retained | R, D for coverage verification |
+| 6 | ESA | Heading, one paragraph, dollar range and ADE image supported; retained | Own published heading/paragraph and ADE image supported; retained | R, D for eligibility/amounts |
+| 7 EN only | HSA/FSA | Missing locally; add exact published heading/paragraph and local copy of image, after ESA and before financial help | No equivalent in retrieved Spanish page; omit entirely | P; no invented translation |
+| 8 EN / 7 ES | Financial help | Existing heading, uninsured assistance/pay-over-time paragraph and CTA supported; retained | Own existing heading, paragraph and CTA supported; retained | R, D for program availability |
+| 9 EN / 8 ES | Process | Six cards present but inert locally; restore links and two incomplete source labels | Six source labels already match; restore links to Spanish intake headings | P; explicit local destination adaptation |
+| 10 EN / 9 ES | Clinical director | Heading, quote, Rula Diab name/credentials/photo/signature supported; unchanged | Own published heading/quote/name/credentials preserved | R |
+| 11 EN / 10 ES | Testimonials | Update heading “What Clients Are Saying” → “What Clients Say”; all 11 quotations/authors unchanged | Existing heading “Lo que dicen los clientes” and same 11 published English quotations unchanged | P for EN heading; R for quotes |
+| 12 EN / 11 ES | BACB/CASP logos | Missing locally; restore unlinked image row immediately after testimonials | Same row published; restore with exact source alt text, which is English | P |
+
+The logo row is inside production `<main>`, before the global footer, not a
+footer redesign. Its images already exist locally. No invented membership or
+certification paragraph, link or organization schema accompanies them.
+
+### Exact Substantive Copy and Metadata Changes
+
+All P observations refer to the two homepage timestamps above; E refers to
+2026-10-08. Full previous/current field values are also in the evidence JSON.
+
+| Route / field | Previous Astro | Resolution / source |
+| --- | --- | --- |
+| `/`, title | `ABA Therapy Near Me \| Arizona Institute for Autism \| Scottsdale` | P: `Scottsdale ABA Therapy for Children \| Arizona Institute for Autism` |
+| `/`, description | `Arizona Institute for Autism: center for behavioral health & education services located in Scottsdale. We serve individuals with Autism and their families.` | P: `Arizona Institute for Autism: center for behavioral health & education services in Scottsdale. We serve children diagnosed with autism and their families.` |
+| `/`, hero body phrase | `clinical care for children and teens who have an autism diagnosis` | E: `clinical care for children who have an autism diagnosis`; remaining sentence/geography untouched |
+| `/`, services heading | `ABA Therapy Services for Children and Teens Diagnosed with Autism Spectrum Disorder` | E: `ABA Therapy Services for Children 18 Months Through 8 Years Diagnosed with Autism Spectrum Disorder`; production removes “and Teens,” while the explicit range comes from E |
+| `/`, commitment item | `Integrated Therapy` | P: `Integrated Therapy Treatment` |
+| `/`, process step 3 | `Fill and Sign an Intake Packet` | P: `Fill and Sign a Client Intake Packet` |
+| `/`, process step 4 | `Verify Billing and Insurance` | P: `Verify Billing and Insurance Information and Benefits` |
+| `/`, testimonials heading | `What Clients Are Saying` | P: `What Clients Say` |
+| `/es`, hero body phrase | `atención clínica experta para niños y adolescentes con diagnóstico de autismo` | E + P: `atención clínica experta para niños con diagnóstico de autismo` |
+| `/es`, services heading | `Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA` | E: `Servicios de terapia ABA para niños de 18 meses a 8 años diagnosticados con TEA` |
+
+Both visible H1s are unchanged: English `Behavioral Health & Special Education`
+(with its existing line breaks) and Spanish `Salud Mental y Educación Especial`.
+Spanish title and description remain its own published values; they were not
+translated from the revised English metadata. The age range appears only in
+ABA-specific headings, not imposed on evaluations, the Social Club or other
+services. Historical testimonials, including the “21 months year old” statement,
+are untouched. This resolves the four homepage findings deferred by Phase 5A;
+its original eligibility audit remains intact as historical evidence.
+
+### English HSA/FSA Implementation and Source Qualifications
+
+Exact published heading:
+**Health Savings Accounts (HSA) & Flexible Spending Accounts (FSA)**.
+
+Exact substantive paragraph (only source nonbreaking whitespace normalized):
+
+> Many families can also utilize their HSA and FSA to fund care, which allow you to pay for qualified clinical services using pre-tax dollars. The Arizona Institute for Autism (AIA) accepts Health Savings Account and Flexible Spending Account cards directly, making it easier to manage out-of-pocket costs for your learner's treatment. If you participate in one of these employer-sponsored or individual accounts, you can seamlessly apply your available funds toward tuition and fees for our ABA programs.
+
+The optional `home.hsaFsa` content block uses `heading`, `body`, `image` and
+`imageAlt`, validated through the existing Zod homepage model. Its dedicated
+`HomeHsaFsa.astro` component renders after ESA/before financial help, matching
+production: image left (5/12), text right (7/12), tinted background, one heading
+and one paragraph. A single-column layout applies below 760px. The exact
+500×425 source PNG is self-hosted as `public/assets/images/hsa-fsa-accepted.png`
+(40,208 bytes), SHA-256
+`25d1a0c6ed1e156e0861071fa409b5b6908b7f3b02407066a0d3b7014b25c195`.
+Source alt `hsa-fsa-accepted` is preserved. The artwork itself says
+“HSA APPROVED FSA”; it is published artwork, not an independent certification.
+
+The qualifiers “Many families,” “qualified clinical services” and “If you
+participate” are preserved. The section does not claim every expense is eligible,
+provide a payment form, collect card data, load third-party scripts or add any
+JSON-LD. Spanish has no `hsaFsa` block and renders no empty placeholder.
+
+`home.logos` is a separate optional `items: [{ file, alt }]` block for the
+observed final image row. Both optional sections are also supported by the
+existing `sections:` discriminated union. Existing homepage records without
+these blocks still render. `home.process.steps[].href` is optional; old steps
+without destinations remain plain content. The existing process-card wrappers,
+equal-height script, labels and styling remain except for accessible links and
+focus indication. README documents all new editing fields.
+
+### CTA Reconciliation
+
+Production link labels/destinations are recorded verbatim in the evidence JSON.
+No production form was submitted or activated. The four destination pages were
+HTTP 200 in Phase 5A's **2026-10-09 01:26:28–01:26:38 UTC** observations; those
+checks are explicitly inherited, not claimed as new Phase 5B retrievals.
+Generated local destinations and every new fragment are checked by regression
+assertions; all links/images pass local audits.
+
+| CTA / locale | Production destination | Previous Astro | Intended Astro / verification |
+| --- | --- | --- | --- |
+| EN `Get Started`, `Schedule an Assessment` (commitments), `Request an Appointment` | `https://www.azinstitute4autism.com/client-consultation?hsLang=en` | Same labels, `/client-consultation` | Retain local route; all three links resolve; disabled form remains explicitly unavailable |
+| ES `Empezar`, `Programar una evaluación` (commitments), `Solicitar cita` | `https://www.azinstitute4autism.com/client-consultation?hsLang=es` | Same labels, `/es/client-consultation` | Retain real Spanish route rather than copying the production English-path destination; disabled form remains unavailable |
+| Six EN process cards | `/aba-therapy-intake-process#first-step` through `#sixth-step` | Plain labels, no links | Add links to existing EN intake heading IDs below; step 3/4 labels corrected as above |
+| Six ES process cards | English-path `/aba-therapy-intake-process#first-step` through `#sixth-step`, with Spanish labels | Plain labels, no links | Add links to existing Spanish intake heading IDs below; labels unchanged |
+| Learner journey video, both | `https://www.youtube-nocookie.com/embed/EczPH1jx9mc?si=beestOCaO4tL7Re6` | Same existing VideoCard destination | Retained; not played/fetched; privacy/loading behavior unchanged |
+
+Intake destination mapping preserves section intent without editing the
+out-of-scope intake records or copying nonexistent local HubSpot fragment IDs:
+
+| Step / production fragment | EN local fragment on `/aba-therapy-intake-process` | ES local fragment on `/es/aba-therapy-intake-process` |
+| --- | --- | --- |
+| 1 / `first-step` | `1-complete-the-learner-information-form` | `1-complete-el-formulario-de-información-del-estudiante` |
+| 2 / `second-step` | `2-speak-with-an-aia-client-advocate` | `2-hable-con-un-defensor-del-cliente-de-aia` |
+| 3 / `third-step` | `3-fill-out-and-sign-the-client-intake-packet` | `3-complete-y-firme-el-paquete-de-admisión-del-cliente` |
+| 4 / `fourth-step` | `4-verify-insurance-and-billing-information` | `4-verificar-la-información-del-seguro-y-la-facturación` |
+| 5 / `fifth-step` | `5-schedule-your-childs-assessment` | `5-programa-la-evaluación-de-tu-hijo` |
+| 6 / `sixth-step` | `6-collaborate-on-a-personalized-care-plan` | `6-colaborar-en-un-plan-de-atención-personalizado` |
+
+No new route, redirect or form-activation behavior is introduced. Existing
+consultation forms continue to state that online submission is not connected;
+backend, privacy and workflow decisions remain separately gated.
+
+### Human-decision and Multilingual Review Registers
+
+| Classification / area | Supported observation | Uncertainty / action |
+| --- | --- | --- |
+| R + D — Insurance | Both homepages explicitly name BCBS AZ, Aetna, Optum, Tricare, **United Healthcare AHCCCS**, UnitedHealth; six logos match | Retain exact plan-specific wording. AIA billing must confirm products, networks, authorization/diagnosis/referral requirements and covered services; no inference that all AHCCCS or all insurer products are accepted. Carries forward Phase 5A's gate |
+| R + D — ESA | Both sources give `$4,000 – $6,500` annually and say eligible families can apply funds to ABA tuition; ADE-vendor wording matches | Preserve existing qualified source wording, not a guarantee. Verify current award amounts, vendor status and eligible programs/expenses with AIA/ADE before public launch; no universal ESA eligibility inferred |
+| P + D — HSA/FSA | EN source says AIA accepts account cards and funds may apply toward qualified care and ABA tuition/fees | Exact published copy/art retained. AIA billing/account administrators must verify card acceptance, eligible expenses and any additional qualifications; source alone does not establish reimbursement/tax eligibility. No independent financial advice or promise added |
+| R + D — Financial assistance | Both sources describe assistance for the uninsured and paying over time | Eligibility, current availability and terms remain unverified. No financing product, universal approval, interest rate or new payment integration invented |
+| R + D — Geography / availability | Existing Phoenix-area city list and in-center/in-home program commitments match retrieved sources | Current staffing, openings and service availability still need operational confirmation under Phase 5A's register; no new claims added |
+| D — CTA/backend | Local EN/ES consultation and intake routes exist and resolve | Forms stay disabled. Backend, consent, privacy, callback/packet workflow and activation require separate authorization |
+| D — Spanish language review | Hero removes `y adolescentes`; services heading inserts explicitly approved `18 meses a 8 años` | Human Spanish editor should review the two revised sentences in context. This is approved wording applied narrowly, not a fabricated translation or self-approved fluency |
+| P + D — Spanish source differences | Spanish metadata/section wording differs; no HSA/FSA section; English testimonials and new logo alt text are published that way | Preserve differences. Human language/accessibility review may later localize source-supported alt text/quotes; no translations invented here |
+| O — Detailed fidelity / unrelated content | HSA and logos get scoped responsive CSS; other component styling retained | Phase 8 full-page desktop/mobile comparison, spacing/crops/typography and any shared header/footer reconciliation remain outstanding; Library, services beyond 5A, employee portal and Ads work untouched |
+
+There is **no unresolved human decision about general ABA ages or the removal
+of the superseded audience wording**. Remaining questions above concern separate
+financial, operational, language or integration facts.
+
+### Validation and Reproduction
+
+Run from `www/`:
+
+```sh
+npm run test:seo
+npm run test:publication
+npm run test:markdown
+npm run build
+PUBLIC_ALLOW_INDEXING=true npm run build
+# Refresh local fingerprint using saved evidence, without any live crawl:
+npm run audit:routes -- --offline --evidence reports/route-reconciliation-2026-10-09-offline.json
+npm run audit:routes -- --check
+npm run audit:links
+npm run audit:images
+npm run audit:blog
+npm run build
+# Preserve a separate reconciliation of the restored staging artifact:
+npm run audit:routes -- --offline --evidence reports/route-reconciliation-2026-10-09-offline.json
+npm run audit:routes -- --check
+git diff --check
+```
+
+The tool creates a new timestamp-suffixed report rather than overwriting existing
+evidence. This phase retains the final staging reconciliation as
+[`route-reconciliation-2026-10-09-offline-03-57-29-199Z.json`](route-reconciliation-2026-10-09-offline-03-57-29-199Z.json).
+The intermediate indexing reconciliation was moved to `/tmp` after its check.
+All **70 inherited production requests**, observation timestamps, production
+route records, original baseline and summary totals were preserved by deep
+comparison. No new production crawl was used to refresh the fingerprint.
+Only the local `/` route record changes title/description; generated route keys
+are unchanged. Historical discovery still has 129 route keys and 102 source
+sitemap URLs; those are not the current local 92-entry production-policy sitemap.
+
+| Check | Result |
+| --- | --- |
+| `test:seo` | **30 passed**, including four new homepage tests and all earlier SEO/service cases |
+| `test:publication` | **33 passed** |
+| `test:markdown` | **20 passed** |
+| Initial normal, indexing-enabled, final normal builds | All pass; each **96 routes**, Astro check **0 errors / 0 warnings / 0 hints** |
+| `audit:routes -- --check` | Pass for indexing and restored staging evidence; offline, no network |
+| `audit:links` | **0 broken internal links** |
+| `audit:images` | **0 missing mapped page images**; focused test also checks every homepage `<img>` asset |
+| `audit:blog` | **0 failures** |
+| `git diff --check` | Pass |
+| Browser | Unavailable: `Transport closed`; no browser-level visual/interactive verification claimed |
+
+The first SEO run found two incorrect assumptions in the new tests: an Astro
+script/style node intervenes after testimonials, and the process and commitment
+CTAs share an assessment label. Assertions now check the next content element
+and distinguish consultation links from process links. Rerun passed all 30 tests;
+no application defect or relaxed route/eligibility requirement was involved.
+
+Four focused tests cover valid/incomplete homepage schema input, present/absent
+optional blocks, old unlinked steps, approved ABA ranges and absent superseded
+audiences, retained 11 historical testimonials, source metadata, section order,
+English-only HSA/FSA and its qualifications, final logo row, one H1, same-language
+CTA routes and all 12 real intake IDs, disabled destination forms, local image
+files and absence of financial JSON-LD. Optional blocks/links are removed only
+inside the existing temporary fixture build to verify backward compatibility.
+Existing tests exercise publication metadata in both modes without duplicating
+its policy implementation.
+
+| Generated-output invariant | Indexing-enabled, checked 03:56:49 UTC | Final staging, checked 03:57:28 UTC |
+| --- | --- | --- |
+| HTML routes | **96**, identical route set | **96**, identical route set |
+| Sitemap URLs | **92** | **0** |
+| Hreflang | **174 links / 53 pages** | **0 links** |
+| Robots | Existing 92 indexable / four noindex exceptions | Every page **`noindex,nofollow`** |
+| Canonicals, languages/directions, visible H1s | Unchanged across all routes | Unchanged across all routes |
+| JSON-LD | Unchanged: 96 MedicalOrganization, 63 BlogPosting, 21 FAQPage | Same objects/counts |
+
+All-route comparison against the starting staging artifact confirmed unchanged
+header/footer/language-switcher destinations and unrelated main text; scripts
+and styles are excluded from visible-text comparison (contact-obfuscation IDs
+are randomized). Only `/` and `/es` change body copy. Only `/` changes title,
+description and their existing social-metadata projections. No canonical,
+indexing, translation, x-default, sitemap, display-H1, social-metadata or
+structured-data policy implementation changed. `/ar` stays unpublished; all
+four noindex/external-canonical exceptions remain excluded as before.
+
+### Read-only Structural Diff Review and Complete File Inventory
+
+**13 files: eight modified, five new.** Paths below are relative to `www/`.
+
+| Classification | File | Reason |
+| --- | --- | --- |
+| English content | `src/content/pages/en/index.md` | Approved audience/range, source metadata/labels, HSA/FSA, intake links and logo data |
+| Spanish content | `src/content/pages/es/index.md` | Two approved audience/range edits, existing-label Spanish intake links and source logo data; no HSA/FSA |
+| Content model | `src/types/home-sections.ts` | Optional HSA/FSA and logo blocks plus optional process destinations; no Schema.org additions |
+| Homepage composition | `src/components/pages/HomePage.astro` | Render optional sections in observed order, including legacy sections-array support |
+| Homepage presentation | `src/components/home/HomeProcess.astro` | Link existing process-card content to validated local intake sections; preserve fallback and client script |
+| Homepage presentation, **new** | `src/components/home/HomeHsaFsa.astro` | Source-oriented image/text layout with narrow responsive CSS |
+| Homepage presentation, **new** | `src/components/home/HomeLogos.astro` | Optional source image row after testimonials, responsive and unlinked |
+| Source asset, **new** | `public/assets/images/hsa-fsa-accepted.png` | Exact self-hosted published PNG; provenance/hash above |
+| Regression tests | `tools/seo.test.mjs` | Four homepage tests within existing temporary Astro build suite; prior tests preserved |
+| Editing documentation | `README.md` | New optional homepage fields and valid locale/fragment destinations |
+| Milestone report | `reports/migration-summary.md` | This dated section; earlier history untouched |
+| Source evidence, **new** | `reports/phase-5b-source-evidence-2026-10-09.json` | Cache-aware read-only observations, exact changes and verification |
+| Offline audit, **new** | `reports/route-reconciliation-2026-10-09-offline-03-57-29-199Z.json` | Updated local fingerprint/metadata; inherited production evidence unchanged |
+
+Reviewed scope excludes services/intake source records, Library, team, employee
+portal, separate Ads landing pages, global navigation/footer, deployment,
+dependencies/lockfile, Git configuration, form components/backends, analytics,
+consent and payment integration. No new translation relationships or fabricated
+Spanish sections were introduced. No staging, commit, push or Phase 5C work.
+
+`merge-plan.md` remains untracked and unchanged, verified SHA-256:
+`015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
+
+Tracked-file diff summary (`git diff --stat`; five new files are listed above
+and are not included by Git until staged):
+
+```text
+ www/README.md                             |   7 +
+ www/reports/migration-summary.md          | 324 ++++++++++++++++++++++++++++++
+ www/src/components/home/HomeProcess.astro |  17 +-
+ www/src/components/pages/HomePage.astro   |   8 +
+ www/src/content/pages/en/index.md         |  37 +++-
+ www/src/content/pages/es/index.md         |  18 +-
+ www/src/types/home-sections.ts            |  14 ++
+ www/tools/seo.test.mjs                    | 114 +++++++++++
+ 8 files changed, 526 insertions(+), 13 deletions(-)
+```

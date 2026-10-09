@@ -354,14 +354,21 @@ benefits
 skills
 insurance
 esa
+hsaFsa (optional; English only where published)
 financialHelp
 process
 director
 testimonials
+logos (optional)
 ```
 
 Keep homepage copy in those named blocks so the page remains easy to scan in
 Front Matter CMS and VS Code. `src/content.config.ts` validates the structure.
+`hsaFsa` uses `heading`, `body`, `image`, and `imageAlt`; omit the whole block
+where no section is published. It renders between ESA and financial help.
+`logos.items` holds `file`/`alt` pairs after testimonials. Process steps accept
+an optional `href`; use an existing intake route and section ID in the same
+language. Steps without a destination remain plain content.
 
 ### Images And Downloads
 

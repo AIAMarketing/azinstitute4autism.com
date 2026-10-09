@@ -11,7 +11,7 @@ home:
   hero:
     eyebrow: Los principales expertos de Arizona
     heading: "Salud Mental y<br />Educación Especial"
-    body: "Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños y adolescentes con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix."
+    body: "Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix."
     cta:
       label: Empezar
       href: /es/client-consultation
@@ -20,7 +20,7 @@ home:
 
   # Servicios y compromisos
   servicesIntro:
-    servicesHeading: Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA
+    servicesHeading: Servicios de terapia ABA para niños de 18 meses a 8 años diagnosticados con TEA
     services:
       - Apoyo a la defensa del autismo
       - Apoyo a la evaluación y valoración
@@ -121,16 +121,22 @@ home:
     steps:
       - icon: learner-journey-step-1a.svg
         label: Complete el formulario de información del estudiante
+        href: /es/aba-therapy-intake-process#1-complete-el-formulario-de-información-del-estudiante
       - icon: learner-journey-step-2.svg
         label: Hable con un Defensor del Cliente
+        href: /es/aba-therapy-intake-process#2-hable-con-un-defensor-del-cliente-de-aia
       - icon: learner-journey-step-3.svg
         label: Llenar y firmar un paquete de admisión de clientes
+        href: /es/aba-therapy-intake-process#3-complete-y-firme-el-paquete-de-admisión-del-cliente
       - icon: learner-journey-step-4.svg
         label: Verificar la información de facturación, seguro y beneficios
+        href: /es/aba-therapy-intake-process#4-verificar-la-información-del-seguro-y-la-facturación
       - icon: learner-journey-step-5.svg
         label: Programar una evaluación
+        href: /es/aba-therapy-intake-process#5-programa-la-evaluación-de-tu-hijo
       - icon: learner-journey-step-6.svg
         label: Colaborar en un Plan de Cuidados
+        href: /es/aba-therapy-intake-process#6-colaborar-en-un-plan-de-atención-personalizado
 
   # Directora
   director:
@@ -169,4 +175,12 @@ home:
         text: "AIA has done wonders for my son. I drive from NW Peoria just to come here. Everyone is very professional and kind. They truly care about the kids and seeing them succeed. I'm so lucky to have found them. I would recommend them to anyone!"
       - author: Tim
         text: "The staff at AIA is my second family. Not only does my son receive the best care possible, they also keep me in check and help make sure I'm doing my part. That's the kind of love you get in this big family!"
+
+  # Logos published after testimonials
+  logos:
+    items:
+      - file: logo-BACB.png
+        alt: logo for Behavior Analyst Certification Board (BACB)
+      - file: casp-member-logo.webp
+        alt: the council of autism service providers member logo
 ---
