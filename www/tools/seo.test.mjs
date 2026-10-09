@@ -10,6 +10,7 @@ import matter from 'gray-matter';
 import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, renderSitemap, robotsFor } from '../src/utils/publication-policy.ts';
 import { socialImageUrl } from '../src/utils/seo.ts';
+import { blogPostingSchema, faqItemsFromSourceHtml, faqPageSchema, serializeJsonLd } from '../src/utils/structured-data.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -31,7 +32,7 @@ async function writeEntry(collection, lang, slug, data = {}) {
 
 function build(indexing = false) {
   return execFileSync(process.execPath, ['--input-type=module', '-e', runner], {
-    cwd: temporary, env: { ...process.env, PUBLIC_ALLOW_INDEXING: String(indexing) },
+    cwd: temporary, env: { ...process.env, PUBLIC_ALLOW_INDEXING: String(indexing), TZ: 'America/Phoenix' },
     timeout: 60_000, maxBuffer: 2 * 1024 * 1024, stdio: 'pipe'
   });
 }
@@ -51,6 +52,16 @@ const page = (route, mode = 'staging') => {
   return load(html);
 };
 const meta = ($, key) => $(`head meta[${key.startsWith('og:') ? 'property' : 'name'}="${key}"]`);
+const jsonLd = ($) => $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+const schemaOf = ($, type) => jsonLd($).filter((schema) => schema['@type'] === type);
+const text = (value) => value.replace(/\s+/g, ' ').trim();
+
+async function writeFaqFixture(slug, content, flags = {}) {
+  await writeFile(path.join(temporary, 'src/content/pages/en', `${slug}.mdx`), matter.stringify(
+    `import FAQAccordion from '../../../components/FAQAccordion.astro';\n\n${content}\n`,
+    { title: 'FAQ fixture', slug, lang: 'en', ...flags }
+  ));
+}
 
 before(async () => {
   // The same real Astro configuration and temporary-copy approach as test:publication.
@@ -63,9 +74,21 @@ before(async () => {
     await writeEntry('blog', lang, 'seo-default');
     await writeEntry('blog', lang, 'seo-display', {
       displayH1: `Display heading (${lang}) <literal> & text`, featuredImage: image,
-      alt: `Existing image description (${lang})`
+      alt: `Existing image description (${lang})`, date: '2024-12-02', updatedDate: '2026-10-08'
     });
   }
+  await writeEntry('blog', 'en', 'seo-minimal', { description: '' });
+  await writeEntry('blog', 'en', 'seo-noindex', { noindex: true });
+  await writeEntry('blog', 'en', 'seo-external', { canonical: 'https://publisher.example/original' });
+  await writeEntry('blog', 'en', 'seo-draft', { draft: true });
+  await writeEntry('blog', 'en', 'seo-escaped', { title: 'Literal </script><script>not executable</script> & text' });
+  const accordion = '<FAQAccordion heading="Fixture questions" items={[{ question: "Visible question?", answer: "Stale duplicate text", answerHtml: "<p>Visible <strong>answer</strong> &amp; link.</p>" }]} />';
+  await writeFaqFixture('seo-faq', accordion + '\n<script type="application/ld+json" is:inline>{`{"@context":"https://schema.org","@type":"WebPage","name":"Existing unrelated block"}`}</script>');
+  await writeFaqFixture('seo-faq-noindex', accordion, { noindex: true });
+  await writeFaqFixture('seo-faq-external', accordion, { canonical: 'https://publisher.example/faq' });
+  await writeFaqFixture('seo-faq-empty', '<FAQAccordion heading="Empty" />');
+  // An unknown runtime source cannot be advertised as server-verified FAQ content.
+  await writeFaqFixture('seo-faq-runtime-only', '<FAQAccordion heading="Runtime only" sourceSelector="#not-rendered" />');
   await writeEntry('pages', 'en', 'seo-derived', { title: 'Derived banner | SEO suffix' });
   await writeEntry('pages', 'en', 'seo-no-image', { alt: 'Must not describe a nonexistent image' });
   // A fallback banner must not inherit unrelated alt text from the page record.
@@ -243,6 +266,180 @@ for (const mode of ['staging', 'indexing']) {
     assert.ok(!html.has('/ar'));
   });
 }
+
+test('BlogPosting uses the SEO title, canonical, declared day and matching locale author', () => {
+  for (const mode of ['staging', 'indexing']) {
+    for (const publication of manifest.filter((item) => item.eligible && item.entry.collection === 'blog')) {
+      const { entry, route } = publication;
+      const $ = page(route, mode);
+      const schemas = schemaOf($, 'BlogPosting');
+      assert.equal(schemas.length, publication.sitemapEligible ? 1 : 0, route);
+      if (!schemas.length) continue;
+      const schema = schemas[0];
+      assert.equal(schema.headline, entry.data.title, route);
+      assert.equal(schema['@id'], `${publication.canonical}#article`, route);
+      assert.equal(schema.url, publication.canonical, route);
+      assert.equal(schema.mainEntityOfPage, publication.canonical, route);
+      assert.equal(schema.inLanguage, entry.data.lang, route);
+      assert.equal(schema.datePublished, new Date(entry.data.date).toISOString().slice(0, 10), route);
+      assert.deepEqual(schema.author, { '@type': 'Person', name: 'Rula Diab' }, route);
+      assert.ok(!('publisher' in schema), 'Do not manufacture publisher entities');
+      assert.equal(schema.image, meta($, 'og:image').attr('content'), route);
+    }
+    for (const lang of languages) {
+      const $ = page(`${prefix(lang)}/library/seo-display`, mode);
+      const schema = schemaOf($, 'BlogPosting')[0];
+      assert.notEqual(schema.headline, $('main h1').text());
+      assert.equal(schema.dateModified, '2026-10-08');
+      assert.equal(schema.image, site + image);
+    }
+  }
+});
+
+test('missing optional article metadata stays absent, without fabricated modification dates or profile URLs', () => {
+  const schema = schemaOf(page('/library/seo-minimal'), 'BlogPosting')[0];
+  for (const key of ['image', 'description', 'dateModified', 'publisher']) assert.ok(!(key in schema), key);
+  assert.ok(!('url' in schema.author), 'Author archives are not generated local routes');
+  for (const lang of languages) {
+    const actual = schemaOf(page(`${prefix(lang)}/library/autism-self-advocacy-skills-aba`), 'BlogPosting')[0];
+    assert.ok(!('dateModified' in actual), 'Do not import a live timestamp into otherwise unreconciled local content');
+  }
+});
+
+test('article and card calendar dates match declared dates even on a negative-offset build host', () => {
+  for (const publication of manifest.filter((item) => item.eligible && item.entry.collection === 'blog')) {
+    const { data } = publication.entry;
+    const date = new Date(data.date);
+    const article = page(publication.route);
+    const byline = article('.article-byline time');
+    assert.equal(byline.attr('datetime'), date.toISOString());
+    assert.equal(byline.text(), date.toLocaleDateString(data.lang, { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' }));
+    const index = page(`${prefix(data.lang)}/library`);
+    const card = index('.blog-card').filter((_, el) => index(el).find('h3 a').attr('href') === publication.route);
+    assert.equal(card.find('time').text(), date.toLocaleDateString(data.lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }));
+  }
+});
+
+test('JSON-LD serialization preserves script-like text without creating HTML/script nodes', () => {
+  const schema = { text: '</script><script>not executable</script> & text' };
+  const html = `<script type="application/ld+json">${serializeJsonLd(schema)}</script>`;
+  const $ = load(html);
+  assert.equal($('script').length, 1);
+  assert.deepEqual(jsonLd($), [schema]);
+  const rendered = page('/library/seo-escaped');
+  assert.equal(schemaOf(rendered, 'BlogPosting')[0].headline, schema.text.replace(/^/, 'Literal '));
+  assert.equal(rendered('script:not([type="application/ld+json"])').filter((_, el) => rendered(el).text() === 'not executable').length, 0);
+});
+
+test('noindex, external-canonical and draft records cannot gain article or FAQ entities', () => {
+  for (const mode of ['staging', 'indexing']) {
+    for (const route of ['/schedule-consultation', '/employee-portal', '/library/community-highlight-meet-rula-diab', '/library/new-aia-scottsdale-office', '/library/seo-noindex', '/library/seo-external', '/seo-faq-noindex', '/seo-faq-external']) {
+      const $ = page(route, mode);
+      assert.equal(schemaOf($, 'BlogPosting').length, 0, route);
+      assert.equal(schemaOf($, 'FAQPage').length, 0, route);
+      assert.equal(schemaOf($, 'MedicalOrganization').length, 1, 'Existing site schema remains independent');
+    }
+    assert.ok(!artifacts.get(mode).html.has('/library/seo-draft'));
+    assert.ok(!artifacts.get(mode).html.has('/ar'));
+  }
+  const draft = manifest.find((item) => item.route === '/library/seo-draft');
+  assert.equal(blogPostingSchema(draft.entry, draft, [], site), undefined);
+  assert.equal(faqPageSchema([{ question: 'Q?', answer: 'A.' }], draft), undefined);
+});
+
+test('every server-item FAQ schema matches actual visible questions and answers', () => {
+  for (const mode of ['staging', 'indexing']) {
+    for (const [route, content] of artifacts.get(mode).html) {
+      const $ = load(content);
+      const schemas = schemaOf($, 'FAQPage');
+      const details = $('[data-faq-list] details.faq');
+      if (!schemas.length || !details.length) continue;
+      assert.equal(schemas.length, 1, route);
+      assert.equal(schemas[0]['@id'], `${site}${route}#faq`, route);
+      assert.equal(schemas[0].mainEntity.length, details.length, route);
+      details.each((i, el) => {
+        assert.deepEqual(schemas[0].mainEntity[i], {
+          '@type': 'Question', name: text($(el).find('summary').text()),
+          acceptedAnswer: { '@type': 'Answer', text: text($(el).find('.faq-answer__inner').text()) }
+        }, route);
+      });
+    }
+  }
+  const corrected = schemaOf(page('/seo-faq'), 'FAQPage')[0];
+  assert.equal(corrected.mainEntity[0].acceptedAnswer.text, 'Visible answer & link.');
+  assert.equal(schemaOf(page('/insurance'), 'FAQPage')[0].mainEntity.length, 2);
+  assert.equal(schemaOf(page('/es/library/parents-guide-to-autism-and-aba'), 'FAQPage')[0].mainEntity.length, 6);
+});
+
+test('standalone runtime accordion gets server schema from its exact rendered source, not invented items', () => {
+  const $ = page('/faqs');
+  const questions = $('#faq-page-source > h3');
+  const schema = schemaOf($, 'FAQPage')[0];
+  assert.equal(questions.length, 70);
+  assert.equal(schema.mainEntity.length, 70);
+  assert.equal($('[data-faq-list] details').length, 0, 'Preserve the existing runtime enhancement path');
+  questions.each((i, el) => {
+    assert.equal(schema.mainEntity[i].name, text($(el).text()));
+    // HTML compression and Cheerio's sibling selection discard block-boundary
+    // whitespace. Compare all answer characters independently of that spacing.
+    assert.equal(schema.mainEntity[i].acceptedAnswer.text.replace(/\s/g, ''), $(el).nextUntil('h3').text().replace(/\s/g, ''));
+  });
+  for (const route of ['/seo-faq-runtime-only', '/seo-faq-empty']) assert.equal(schemaOf(page(route), 'FAQPage').length, 0);
+  const nested = faqItemsFromSourceHtml('<h2>Introduction</h2><p>Not an answer</p><h3>One?</h3><p>Text &amp; <strong>more</strong>.</p><h4>Detail</h4><ul><li>Item</li></ul><h3>Two?</h3><p>Next.</p>');
+  assert.deepEqual(nested.map(({ question }) => question), ['One?', 'Two?']);
+  assert.ok(nested[0].answerHtml.includes('<h4>Detail</h4>'));
+  assert.ok(!nested[0].answer.includes('Not an answer'));
+});
+
+test('multiple JSON-LD blocks coexist without duplicate article, FAQ or entity IDs', () => {
+  for (const { html } of artifacts.values()) {
+    for (const [route, content] of html) {
+      const $ = load(content);
+      const schemas = jsonLd($);
+      assert.equal(schemaOf($, 'MedicalOrganization').length, 1, route);
+      assert.ok(schemaOf($, 'BlogPosting').length <= 1, route);
+      assert.ok(schemaOf($, 'FAQPage').length <= 1, route);
+      const ids = schemas.map((schema) => schema['@id']).filter(Boolean);
+      assert.equal(ids.length, new Set(ids).size, route);
+    }
+  }
+  assert.deepEqual(jsonLd(page('/library/parents-guide-to-autism-and-aba')).map((schema) => schema['@type']).sort(), ['BlogPosting', 'FAQPage', 'MedicalOrganization']);
+  assert.equal(schemaOf(page('/seo-faq'), 'WebPage')[0].name, 'Existing unrelated block');
+});
+
+test('duplicate questions, duplicate accordion schemas and conflicting canonicals fail explicitly', async () => {
+  const publication = manifest.find((item) => item.route === '/seo-faq');
+  assert.throws(() => faqPageSchema([{ question: 'Same?', answer: 'A' }, { question: ' same? ', answer: 'B' }], publication), /Duplicate FAQ question/);
+  assert.throws(() => faqPageSchema([{ question: 'Empty?', answer: ' ' }], publication), /Empty FAQ/);
+  for (const [content, expected] of [
+    ['<FAQAccordion heading="One" items={[{question:"One?",answer:"A"}]} /><FAQAccordion heading="Two" items={[{question:"Two?",answer:"B"}]} />', /Multiple FAQ schemas/],
+    ['<FAQAccordion heading="Wrong canonical" canonical="https://www.azinstitute4autism.com/other" items={[{question:"One?",answer:"A"}]} />', /FAQ canonical disagrees/],
+    ['<FAQAccordion heading="Mixed" sourceSelector="#source" items={[{question:"One?",answer:"A"}]} />', /must not be mixed/]
+  ]) {
+    try {
+      await writeFaqFixture('seo-invalid-faq', content);
+      assert.throws(() => build(), (error) => { assert.match(String(error.stdout) + String(error.stderr), expected); return true; });
+    } finally {
+      await rm(path.join(temporary, 'src/content/pages/en/seo-invalid-faq.mdx'), { force: true });
+    }
+  }
+}, { timeout: 60_000 });
+
+test('authors resolve by exact locale and slug; missing/ambiguous records and reversed dates fail', async () => {
+  const publication = manifest.find((item) => item.route === '/library/seo-display');
+  const entry = { ...publication.entry, data: { ...publication.entry.data, date: new Date('2024-12-02'), updatedDate: new Date('2026-10-08') } };
+  const author = (lang) => ({ id: `${lang}/rula-diab`, collection: 'authors', data: { slug: 'rula-diab', name: `Name (${lang})`, lang } });
+  assert.deepEqual(blogPostingSchema(entry, publication, [author('en'), author('es')], site).author, { '@type': 'Person', name: 'Name (en)' });
+  assert.throws(() => blogPostingSchema(entry, publication, [author('es')], site), /Missing or ambiguous article author/);
+  assert.throws(() => blogPostingSchema(entry, publication, [author('en'), author('en')], site), /Missing or ambiguous article author/);
+  assert.throws(() => blogPostingSchema({ ...entry, data: { ...entry.data, updatedDate: new Date('2020-01-01') } }, publication, [author('en')], site), /modification precedes publication/);
+  try {
+    await writeEntry('blog', 'en', 'seo-invalid-author', { author: 'missing-person' });
+    assert.throws(() => build(), (error) => { assert.match(String(error.stdout) + String(error.stderr), /Missing or ambiguous article author/); return true; });
+  } finally {
+    await rm(path.join(temporary, 'src/content/blog/en/seo-invalid-author.md'), { force: true });
+  }
+}, { timeout: 60_000 });
 
 test('actual content-schema builds reject empty, whitespace-only and non-string displayH1', async () => {
   for (const value of ['', '   ', '\n\t', 123]) {

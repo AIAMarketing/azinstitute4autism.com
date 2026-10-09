@@ -2,15 +2,23 @@
 import BaseLayout from './BaseLayout.astro';
 import BlogPostFooter from '../components/BlogPostFooter.astro';
 import LikeViewCounter from '../components/LikeViewCounter.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getPublication } from '../utils/publication';
+import { blogPostingSchema, serializeJsonLd } from '../utils/structured-data';
+import site from '../data/site.json';
+interface Props { entry: CollectionEntry<'blog'> }
 const { entry } = Astro.props;
+const publication = await getPublication(Astro.url.pathname);
+const schema = blogPostingSchema(entry, publication, await getCollection('authors'), site.url);
 ---
 <BaseLayout title={entry.data.title} description={entry.data.description} image={entry.data.featuredImage} lang={entry.data.lang} type="article">
+  {schema && <script slot="head" type="application/ld+json" is:inline set:html={serializeJsonLd(schema)} />}
   <article class="blog-post">
     <header class="article-header container">
       <h1>{entry.data.displayH1 ?? entry.data.title}</h1>
       <div class="article-byline">
         <img src="/assets/images/rula-diab-avatar.jpg" alt="" />
-        <p><strong>Rula Diab, Clinical Director, M.Ed, BCBA, LBA</strong><br /><time datetime={entry.data.date.toISOString()}>{entry.data.date.toLocaleDateString(entry.data.lang, { day: '2-digit', month: 'long', year: 'numeric' })}</time></p>
+        <p><strong>Rula Diab, Clinical Director, M.Ed, BCBA, LBA</strong><br /><time datetime={entry.data.date.toISOString()}>{entry.data.date.toLocaleDateString(entry.data.lang, { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time></p>
       </div>
       {entry.data.featuredImage && <div class="article-featured"><img src={entry.data.featuredImage} alt={entry.data.alt || ''} /></div>}
     </header>

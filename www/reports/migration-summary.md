@@ -865,3 +865,250 @@ No blocking Phase 3A/3B defect was found. Deferred work includes broader title,
 content and image-alt reconciliation, regional social locale decisions,
 article/FAQ schema, and human language review where substantive translations
 change. No Phase 4B work or commit is authorized by this implementation review.
+
+## Phase 4B — Article and FAQ Structured Data (2026-10-08)
+
+Implemented on `faithful-astro-migration`, starting from
+`4ed01d7d288b249bd028a492e534d3d91adad6f7`. The working tree initially contained
+only the unrelated untracked `merge-plan.md`. The current history has the
+Phase 4A change set after two Ads documentation commits; this phase does not
+alter or incorporate that handoff work. Earlier milestone sections remain
+historical evidence. Nothing in this phase is staged or committed.
+
+### Existing Implementation and New Production Evidence
+
+Inspection covered BlogPostLayout, BaseLayout, FAQAccordion, FaqPage, all FAQ
+component consumers, content schemas, the three author records, publication
+helpers, the existing SEO tests, and the plan's Phase 4B acceptance criteria.
+The initial generated artifact had 96 routes, one existing MedicalOrganization
+block per route, no BlogPosting blocks, and 20 FAQPage blocks: 125 questions in
+19 English/Spanish MDX articles and two insurance questions. Those 127 schema
+answers matched their rendered answers after whitespace normalization.
+
+`/faqs` was different: its rendered Markdown/MDX source contained 70 unique
+direct H3 questions, but FAQAccordion received no `items`. Browser code grouped
+the H3s and following siblings into accordions at runtime, so the server emitted
+no FAQPage. This was a missing schema path, not a reason to replace the working
+accordion, its interaction code, or its content.
+
+Nine read-only production GETs on **2026-10-08 21:57:43–21:57:53 UTC** comprised
+robots first and the eight targeted pages below. Robots allowed these paths;
+all responses were HTTP 200, requests were at least one second apart, and no
+redirects were followed. No forms, APIs, production writes or broad crawl were
+used. Production HTML stayed in temporary storage.
+
+| Production page | Observation UTC | Relevant findings |
+| --- | --- | --- |
+| [English self-advocacy](https://www.azinstitute4autism.com/library/autism-self-advocacy-skills-aba) | 21:57:44 | BlogPosting headline uses the SEO title, not display H1; Rula Diab author; published `2024-12-02T07:00:00.000Z`, modified `2026-10-03T20:47:43.625Z` |
+| [Spanish self-advocacy](https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba) | 21:57:45 | BlogPosting, localized Rula Diab byline; published `2026-04-09T03:36:24.000Z`, modified `2026-04-09T03:36:32.552Z`; current visible date is April 9, 2026 |
+| [Arabic self-advocacy](https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-skills-aba) | 21:57:47 | BlogPosting, localized Rula Diab byline; published `2024-12-02T07:00:00.000Z`, modified `2025-09-09T01:34:16.718Z` |
+| [Standalone FAQs](https://www.azinstitute4autism.com/faqs) | 21:57:48 | One FAQPage with 70 questions |
+| [Insurance](https://www.azinstitute4autism.com/insurance) | 21:57:49 | One FAQPage with two questions; local question/answer text matches the production schema after normalization |
+| [School readiness](https://www.azinstitute4autism.com/library/aba-school-readiness-arizona) | 21:57:51 | BlogPosting plus FAQPage with nine questions; local article has seven older questions |
+| [Community interview](https://www.azinstitute4autism.com/library/community-highlight-meet-rula-diab) | 21:57:52 | `noindex`, external Voyage Phoenix canonical; HubSpot still supplies BlogPosting with AIA-logo publisher and Rula Diab author |
+| [Office article](https://www.azinstitute4autism.com/library/new-aia-scottsdale-office) | 21:57:53 | `noindex`, external Scottsdale Airpark canonical; same generic HubSpot authorship/publisher pattern |
+
+Current source checks support the shared metadata structure and selected
+records; they do not certify the currency of all 65 local articles. Identified
+date/copy drift is explicitly deferred below, not silently reconciled.
+
+### Article Architecture and Publication Exceptions
+
+`src/utils/structured-data.ts` holds the schema builders and an HTML-safe JSON
+serializer. BlogPostLayout consumes the existing manifest publication record
+and authors collection and emits one BlogPosting through BaseLayout's existing
+head slot. BaseLayout's MedicalOrganization block is unchanged.
+
+BlogPosting includes canonical `@id` (`#article`), `url`, `mainEntityOfPage`, the
+existing SEO `title` as `headline`, language, declared publication day, and
+optional nonblank description, featured image and explicit modification day.
+Image resolution reuses Phase 4A's public-origin helper. Display H1 does not
+replace the SEO title. No body text, keywords, publisher, credentials, original
+publication claim or missing image is fabricated.
+
+Author resolution requires exactly one record with the article's declared
+author slug and language. Its `name` supplies a Person name. Missing/ambiguous
+references fail, rather than silently substituting Rula Diab or an English
+record. Existing authors all identify Rula Diab. Author URLs are omitted because
+the repository does not yet generate author archives. No author records or
+frontmatter/schema fields changed.
+
+Dates use the precision actually supplied by current records: calendar days.
+`updatedDate` is emitted only when explicitly present; all current records lack
+it. Neither build time, Git dates nor recently observed HubSpot update times
+are substituted. Modification before publication fails validation.
+
+Both article and FAQ builders reuse the manifest's **record-level
+`sitemapEligible`** gate. Drafts, noindex and external-canonical records emit
+neither new type. The two syndicated articles above therefore receive no
+invented original author/publisher claim, even though production HubSpot emits
+generic article schema there. Their external canonicals, noindex and global
+site organization block remain intact. `/schedule-consultation` and
+`/employee-portal` likewise emit neither type; `/ar` remains unpublished.
+
+The record gate is independent of `PUBLIC_ALLOW_INDEXING`. Eligible records
+emit schema in both build modes for local testing, while staging retains its
+global noindex protection, empty sitemap and absent hreflang. Schema does not
+make a record indexable or create translation relationships.
+
+### FAQ Verification and Corrections
+
+FAQAccordion remains the single FAQ schema producer. Its existing supplied-item
+markup, CSS, animation, search and runtime grouping code are preserved.
+
+- Schema answers derive from the HTML actually rendered by the component,
+  using `answerHtml` when present or the same `answer` fallback. This prevents
+  a stale duplicate plain-text field from contradicting the visible answer.
+  Entity decoding and block separators preserve readable text; nonvisible
+  script/style/template and explicitly hidden nodes are excluded.
+- FaqPage renders its existing slot once, displays that same HTML, and passes
+  it to FAQAccordion as `sourceHtml`. The builder groups direct H3 questions
+  and following siblings just as the unchanged browser enhancement does.
+  Nested H4/H5 headings and lists stay inside their answer. All 70 questions
+  are now described in server JSON-LD, including with JavaScript disabled.
+- A runtime-only selector without server source emits no invented FAQ schema.
+  Supplied items cannot be mixed with a runtime source. Empty groups emit none.
+- Schema IDs use the manifest canonical. Any retained component canonical prop
+  must agree with it; conflicting values fail. Existing canonical props and
+  article content are unchanged.
+- Empty questions/answers and duplicate questions fail. A request-scoped
+  `Astro.locals` claim rejects a second FAQ schema-producing accordion on the
+  same page. Separate rendered pages do not share this state. Existing
+  organization, article and FAQ blocks coexist with distinct entity IDs.
+- JSON-LD escapes `<` so script-like text cannot terminate its HTML script
+  element. This is exercised in both helper and rendered-article fixtures.
+
+Result: **21 FAQPage blocks, 197 questions** (125 article, two insurance, 70
+standalone), and **63 BlogPosting blocks** (65 articles minus two syndicated
+exceptions). No unrelated schema types or new organization entities were added.
+
+### Date-Display Defect Found During Validation
+
+The build host uses `America/Phoenix`. Existing article/card date formatting
+converted date-only frontmatter through that timezone: declared `2024-12-02`
+appeared as December 1 despite the machine-readable time retaining December 2.
+That would make the new schema disagree with the displayed calendar day.
+
+The minimal correction adds `timeZone: 'UTC'` to the two existing article/card
+formatters. It preserves declared dates, formatting options and locale, and
+does not update any article to match a newer production publication date. On
+this host it corrects **130 labels**: 65 article dates and 65 Library-card dates.
+SEO tests explicitly build under `America/Phoenix` and compare both visible
+formats with each record's declared date in all three languages. This is a
+rendering-consistency fix within Phase 4B, distinct from Phase 6C date research.
+
+### Phase 6C Drift and Remaining Uncertainty
+
+- Spanish self-advocacy still declares `2024-12-02` locally, while the current
+  production article declares/displays April 9, 2026. Its local publication
+  record was not rewritten. Reconcile translation publication history in
+  Phase 6C; do not mistake the timezone repair for this separate correction.
+- English school-readiness has seven older local FAQ items around the former
+  academy/program description. Production has nine questions about current
+  school-readiness skills and ABA's relationship to school. Its shared academy
+  question also has a different answer. Title/content/FAQ reconciliation stays
+  in Phase 6C; no answers or Library bodies changed here.
+- Production article modification timestamps and localized bylines are richer
+  than current local records. They were observed but not imported into otherwise
+  unreconciled records. No claim of full current-content parity is made.
+- The 70 standalone questions are derived from actual rendered local source.
+  Text extraction shows punctuation/HTML-spacing differences from production;
+  this milestone is not a sentence-by-sentence clinical/content review.
+
+Schema.org still defines [BlogPosting](https://schema.org/BlogPosting) and
+[FAQPage](https://schema.org/FAQPage). Google's
+[article documentation](https://developers.google.com/search/docs/appearance/structured-data/article)
+supports applicable, source-backed properties without requiring fabricated
+optional fields. Its [current changelog](https://developers.google.com/search/updates)
+records removal of FAQ rich results beginning May 7, 2026 and removal of that
+feature's documentation in June. This implementation preserves semantic FAQ
+markup and source fidelity; it makes no promise of Google FAQ rich results.
+
+The browser tool returned `Transport closed`, so interactive desktop/mobile
+checks could not run. The accordion's client code and CSS are unchanged, and
+all-route rendered comparisons verify content/markup, scripts and style content.
+Browser interaction/visual confirmation and external rich-result tooling remain
+manual checks; no remote validator submission or deployment was performed.
+
+### Validation and Artifact Invariants
+
+Final `npm run test:seo`: **22 passed**, comprising the 12 Phase 4A tests plus
+10 structured-data/date tests. Coverage includes en/es/ar articles, absent
+optional metadata, declared/modified dates, exact author resolution, noindex,
+external canonical and draft exclusions, every rendered FAQ answer, the
+standalone runtime source, empty/unknown sources, multiple JSON-LD blocks,
+duplicate/conflicting schema failures, safe serialization and timezone behavior.
+`npm run test:publication`: **33 passed** with no changes to that suite.
+
+An initial standalone-FAQ assertion incorrectly compared sibling text without
+block-boundary whitespace. The assertion was corrected and extraction now
+explicitly preserves block separators. After the date-display defect was found
+and fixed, the full tests/build/audit sequence was rerun successfully:
+
+```sh
+cd www
+npm run test:seo
+npm run test:publication
+npm run build
+PUBLIC_ALLOW_INDEXING=true npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+npm run audit:links
+npm run audit:blog
+npm run audit:images
+npm run build
+npm run audit:routes -- --offline
+npm run audit:routes -- --check
+git diff --check
+```
+
+Both normal builds and the indexing-enabled build checked 74 files with zero
+errors, warnings or hints. Link, blog and mapped-image audits each reported
+zero failures. All selected article schema images resolve to local public assets.
+
+| Final artifact | Verified UTC, 2026-10-08 | HTML routes | Sitemap URLs | Robots | Hreflang |
+| --- | --- | ---: | ---: | --- | --- |
+| Indexing-enabled local | 22:21:40 | 96 | 92 | 92 `index,follow`; four `noindex,follow` | 174 links on 53 routes, unchanged 24 sets |
+| Normal staging, restored | 22:22:24 | 96 | 0 | All 96 `noindex,nofollow` | Zero links |
+
+The route set remains 67 English, 21 Spanish and eight Arabic. All 96 canonicals,
+non-schema metadata, H1s, HTML language/direction and translation choices match
+the starting artifact/policy. Existing MedicalOrganization objects match on
+all 96 routes. Body markup and scripts match after accounting for the explicit
+date-label fix, added JSON-LD, whitespace and pre-existing random contact IDs.
+All inline CSS declarations and stylesheet URLs are unchanged. Astro moved the
+unchanged FAQ stylesheet link relative to an unrelated inline insurance-style
+block after making FAQ rendering asynchronous; no selectors/declarations changed.
+
+The final durable evidence is
+[`route-reconciliation-2026-10-08-offline-22-22-25-260Z.json`](route-reconciliation-2026-10-08-offline-22-22-25-260Z.json).
+It reuses all 70 historical discovery requests with their observation times.
+Route rows/totals remain unchanged: 129 discovered routes, historical production
+sitemap 102, local generated 96, overlap 92, and ten historical sitemap routes
+missing locally. Intermediate indexing evidence stayed in temporary storage;
+the prior committed audit evidence remains intact. No fresh crawl was made to
+refresh fingerprints; the targeted schema observations above are separately dated.
+
+### Read-only Structural Review
+
+The complete Phase 4B change set has nine files, all relative to `www/`:
+
+| Classification | File | Purpose |
+| --- | --- | --- |
+| Structured-data core, new | `src/utils/structured-data.ts` | Publication-gated builders, author validation, visible FAQ extraction, safe JSON serialization |
+| Article presentation/schema | `src/layouts/BlogPostLayout.astro` | Typed article entry, head-slot BlogPosting, calendar-day formatting |
+| Date presentation | `src/components/BlogCard.astro` | Same calendar-day correction for Library cards |
+| Existing FAQ producer | `src/components/FAQAccordion.astro` | Shared builder, manifest canonical validation, rendered-source support, duplicate guard; client script/styles unchanged |
+| Runtime FAQ source bridge | `src/components/pages/FaqPage.astro` | Render slot once for both visible source and server schema |
+| Regression coverage | `tools/seo.test.mjs` | Extend existing actual-Astro tests; no parallel publication policy |
+| Editing documentation | `README.md` | Schema/date/FAQ rules and known reconciliation boundaries |
+| Milestone evidence | `reports/migration-summary.md` | This dated implementation and review record |
+| Offline evidence, new | `reports/route-reconciliation-2026-10-08-offline-22-22-25-260Z.json` | Final source fingerprint with preserved production discovery |
+
+No content/frontmatter records, content schemas, dependencies, publication or
+translation policy, routing, deployment files, employee-portal work or Ads
+handoff files were modified. `merge-plan.md` remains untracked and unchanged,
+SHA-256 `015db80cdbaf7d68799265d2070db760155c342b432ce6795f17ebc2218c641c`.
+There is no new blocking policy question; Phase 6C must resolve the documented
+content/date drift. Stop for implementation/diff acceptance before any checkpoint
+commit. Phase 5A has not started.

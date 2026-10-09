@@ -1,9 +1,6 @@
 ---
-interface FAQItem {
-  question: string;
-  answer: string;
-  answerHtml?: string;
-}
+import { getPublication } from '../utils/publication';
+import { faqItemsFromSourceHtml, faqPageSchema, serializeJsonLd, type FAQItem } from '../utils/structured-data';
 
 interface Props {
   label?: string;
@@ -12,6 +9,7 @@ interface Props {
   canonical?: string;
   variant?: 'blog' | 'source' | 'page';
   sourceSelector?: string;
+  sourceHtml?: string;
   searchSelector?: string;
   faqIconColor?: string;
 }
@@ -23,6 +21,7 @@ const {
   canonical,
   variant = 'blog',
   sourceSelector,
+  sourceHtml,
   searchSelector,
   faqIconColor = '--color-accent-strong'
 } = Astro.props;
@@ -34,19 +33,23 @@ const headingId = variant === 'page'
   : label
     ? 'blog-faq-heading'
     : 'source-faq-heading';
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  ...(canonical ? { '@id': `${canonical}#faq` } : {}),
-  mainEntity: items.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer
-    }
-  }))
-};
+const publication = await getPublication(Astro.url.pathname);
+if (canonical && canonical.replace(/\/$/, '') !== publication.canonical.replace(/\/$/, '')) {
+  throw new Error(`FAQ canonical disagrees with publication policy: ${publication.route}`);
+}
+if ((sourceSelector && items.length) || (sourceHtml !== undefined && !sourceSelector)) {
+  throw new Error('FAQ items and runtime source content must not be mixed');
+}
+const schemaItems = sourceSelector
+  ? sourceHtml === undefined ? [] : faqItemsFromSourceHtml(sourceHtml)
+  : items;
+const schema = faqPageSchema(schemaItems, publication);
+// Locals belong to this render request, not a module-level build-wide registry.
+const state = Astro.locals as { aiaFaqSchemaClaimed?: boolean };
+if (schema) {
+  if (state.aiaFaqSchemaClaimed) throw new Error(`Multiple FAQ schemas: consolidate accordions on ${publication.route}`);
+  state.aiaFaqSchemaClaimed = true;
+}
 ---
 <section
   class:list={[
@@ -83,7 +86,7 @@ const schema = {
     </div>
   </div>
 </section>
-{items.length > 0 && <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />}
+{schema && <script type="application/ld+json" is:inline set:html={serializeJsonLd(schema)} />}
 
 <script>
   const initFaqAccordions = () => {

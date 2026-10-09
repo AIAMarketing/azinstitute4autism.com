@@ -474,9 +474,40 @@ import FAQAccordion from '../../../components/FAQAccordion.astro';
 ```
 
 Edit the component's `label`, `heading`, and `items` data in the post. Keep
-`answer` as plain text for JSON-LD and `answerHtml` as the matching visible
-answer. Shared FAQ markup, styling, interaction, and schema generation live in
-`src/components/FAQAccordion.astro`.
+`answer` and `answerHtml` consistent. JSON-LD derives its answer text from the
+actual visible `answerHtml` when supplied, otherwise from the rendered `answer`
+fallback. Shared FAQ markup, styling, interaction, and schema generation remain
+in `src/components/FAQAccordion.astro`, using `src/utils/structured-data.ts`.
+
+The standalone FAQ page passes its rendered Markdown/MDX slot as `sourceHtml`
+to the same component. Its server schema describes the direct H3 questions and
+following answer nodes that the existing browser code turns into accordions.
+Runtime-only sources without server content emit no invented FAQ schema. Do
+not mix `items` with `sourceSelector`. Duplicate questions, multiple schema
+producing accordions on one page, empty answers and conflicting canonical
+props fail validation; consolidate questions into one accordion per page.
+
+### Article and FAQ Structured Data
+
+Article JSON-LD uses the existing SEO `title`, description, featured image,
+language, `date`, optional `updatedDate`, and the exact locale/slug match in the
+authors collection. Dates use calendar-day precision; article/card bylines
+format that day in UTC to avoid shifting it on the build host. Missing
+modification dates are omitted. Missing or ambiguous author references fail validation.
+No author archive URL or publisher is invented. `displayH1` does not change
+the schema headline. No new frontmatter fields are required.
+
+BlogPosting and FAQPage emission reuse the manifest's `sitemapEligible` record
+gate: drafts, noindex records and external-canonical records are excluded.
+This gate is independent of the build's global indexing switch, so staging
+can exercise schema while retaining its global noindex, empty sitemap and
+absent hreflang. The existing site organization block remains unchanged.
+
+These schemas describe the rendered local records; they do not certify that
+older article dates or FAQ answers have been reconciled with production.
+Phase 6C drift observations and validation results are recorded in
+`reports/migration-summary.md`. Run `npm run test:seo` and
+`npm run test:publication`, and validate both build modes before publication.
 
 ## Reports And Utilities
 

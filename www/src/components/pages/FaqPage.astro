@@ -1,12 +1,11 @@
 ---
 import Button from '../Button.astro';
 import FAQAccordion from '../FAQAccordion.astro';
+const sourceHtml = await Astro.slots.render('default');
 ---
 
 <article class="faq-page">
-  <div id="faq-page-source" class="faq-source container source-page">
-    <slot />
-  </div>
+  <div id="faq-page-source" class="faq-source container source-page" set:html={sourceHtml} />
 
   <section class="faq-search container-narrow">
     <div class="hs-search-field hs-search-field--initialized">
@@ -36,6 +35,7 @@ import FAQAccordion from '../FAQAccordion.astro';
     heading="Questions & Answers"
     variant="page"
     sourceSelector="#faq-page-source"
+    sourceHtml={sourceHtml}
     searchSelector="#faq-search-input"
   />
 
