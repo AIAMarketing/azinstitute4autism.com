@@ -1,8 +1,9 @@
 ---
-import { getPublicationManifest } from '../../utils/publication';
+import { getLibraryCatalog } from '../../utils/library';
 import BlogIndexLayout from '../../layouts/BlogIndexLayout.astro';
 import BlogCard from '../BlogCard.astro';
-const posts = (await getPublicationManifest()).flatMap(({ eligible, entry }) => eligible && entry.collection === 'blog' && entry.data.lang === 'en' ? [entry] : []).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+import LibrarySearch from '../LibrarySearch.astro';
+const posts = (await getLibraryCatalog()).byLocale.en.map(({ entry }) => entry);
 const popular = posts.slice(0, 5);
 ---
 <BlogIndexLayout
@@ -13,10 +14,10 @@ const popular = posts.slice(0, 5);
     "We also highlight community events, success stories, and expert guidance to foster understanding and empowerment. Whether you're a parent, caregiver, educator, or advocate, our goal is to provide meaningful content that helps children with autism reach their highest potential in a compassionate and supportive environment. Stay connected with us as we continue to share knowledge and celebrate progress!",
   ]}
 >
-  <div class="blog-list">{posts.map((post) => <BlogCard post={post} />)}</div>
+  <div id="library-results-en" class="library-search-results" hidden></div>
+  <div id="library-archive-en" class="blog-list">{posts.map((post) => <BlogCard post={post} />)}</div>
   <aside class="library-sidebar">
-    <label for="library-search">Search</label>
-    <input id="library-search" type="search" placeholder="Search" />
+    <LibrarySearch locale="en" archiveId="library-archive-en" resultsId="library-results-en" />
     <h2>Popular Posts</h2>
     <ul>{popular.map((post) => <li><a href={`/library/${post.data.slug}`}>{post.data.title}</a></li>)}</ul>
   </aside>

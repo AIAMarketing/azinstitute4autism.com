@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import LibrarySearch from '../components/LibrarySearch.astro';
+---
+
+<BaseLayout
+  title="Search the Library | Arizona Institute for Autism"
+  description="Search English, Spanish, and Arabic articles from the Arizona Institute for Autism Library."
+  lang="en"
+>
+  <PageHero title="Search the Library" />
+  <section class="section">
+    <div class="container-narrow search-page">
+      <p>This search includes published Library articles in English, Spanish, and Arabic. It does not search other website pages.</p>
+      <p>Embedded Library search keeps terms in the browser URL fragment. Searches on this compatibility page use the URL query string and may appear in ordinary server access logs.</p>
+      <LibrarySearch mode="legacy" locale="en" resultsId="library-search-results" />
+      <div id="library-search-results" class="library-search-results" hidden></div>
+      <noscript>
+        <nav aria-label="Library languages">
+          <a href="/library">English Library</a> ·
+          <a href="/es/library" lang="es">Biblioteca en español</a> ·
+          <a href="/ar/library" lang="ar" dir="rtl">المكتبة العربية</a>
+        </nav>
+      </noscript>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .search-page > p { margin-bottom: 1rem; }
+  .search-page :global(.library-search) { margin-block: 2rem; }
+  .search-page :global(.library-search__controls) { grid-template-columns: minmax(0, 1fr) auto auto; }
+  .search-page :global(.library-search-results[hidden]) { display: none; }
+  .search-page :global(.library-search-result) { border-bottom: 1px solid var(--color-border); margin-bottom: 2rem; padding-bottom: 1.5rem; }
+  .search-page :global(.library-search-result__meta) { font-size: .85rem; }
+  .search-page :global(.library-search-results__pager) { display: flex; gap: .75rem; }
+  @media (max-width: 640px) {
+    .search-page :global(.library-search__controls) { grid-template-columns: 1fr; }
+  }
+</style>

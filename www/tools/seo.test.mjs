@@ -9,6 +9,7 @@ import fg from 'fast-glob';
 import matter from 'gray-matter';
 import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, renderSitemap, robotsFor } from '../src/utils/publication-policy.ts';
+import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
 import { socialImageUrl } from '../src/utils/seo.ts';
 import { blogPostingSchema, faqItemsFromSourceHtml, faqPageSchema, serializeJsonLd } from '../src/utils/structured-data.ts';
 import { homePageSchema, homeSectionsSchema } from '../src/types/home-sections.ts';
@@ -248,7 +249,10 @@ test('no image means no image-specific metadata and a valid summary card; no alt
 for (const mode of ['staging', 'indexing']) {
   test(`${mode}: existing publication policy, metadata, language and navigation are unchanged`, () => {
     const { html, sitemap } = artifacts.get(mode);
-    assert.deepEqual([...html.keys()].sort(), manifest.filter((item) => item.eligible).map((item) => item.route).sort());
+    assert.deepEqual([...html.keys()].sort(), [
+      ...manifest.filter((item) => item.eligible).map((item) => item.route),
+      createLibrarySearchPublication(site).route
+    ].sort());
     assert.equal(sitemap, renderSitemap(manifest, mode === 'indexing'));
     for (const publication of manifest.filter((item) => item.eligible)) {
       const { route, entry, canonical } = publication;

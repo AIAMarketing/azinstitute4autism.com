@@ -9,6 +9,7 @@ import fg from 'fast-glob';
 import matter from 'gray-matter';
 import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, normalizeRoute, publicationFor, renderSitemap, robotsFor, sitemapUrls, validateTranslationGraph } from '../src/utils/publication-policy.ts';
+import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -119,6 +120,10 @@ test('generated-head acceptance checks reject missing, duplicate and invalid can
 
 const sourceEntries = await readEntries(project);
 const actualManifest = createPublicationManifest(sourceEntries, site);
+const generatedPublications = (manifest) => [
+  ...manifest.filter((page) => page.eligible),
+  createLibrarySearchPublication(site)
+];
 
 function translationPair() {
   return createPublicationManifest([
@@ -331,13 +336,14 @@ after(async () => {
 
 for (const mode of ['staging', 'indexing']) {
   test(`${mode} build: only eligible local routes are generated, including home/Library`, () => {
-    assert.deepEqual([...artifacts.get(mode).html.keys()].sort(), fixtureManifest.filter((page) => page.eligible).map((page) => page.route).sort());
+    assert.deepEqual([...artifacts.get(mode).html.keys()].sort(), generatedPublications(fixtureManifest).map((page) => page.route).sort());
     assert.ok(!artifacts.get(mode).html.has('/ar'));
     assert.ok(artifacts.get(mode).html.has('/schedule-consultation'));
+    assert.ok(artifacts.get(mode).html.has('/search'));
   });
 
   test(`${mode} build: every generated head has exactly one correct canonical and robots tag`, () => {
-    for (const page of fixtureManifest.filter((candidate) => candidate.eligible)) {
+    for (const page of generatedPublications(fixtureManifest)) {
       const html = artifacts.get(mode).html.get(page.route);
       assertCanonical(html, page.canonical);
       const $ = load(html);
@@ -366,7 +372,7 @@ for (const mode of ['staging', 'indexing']) {
 }
 
 function assertRenderedTranslations({ html }, manifest, allowIndexing) {
-  const pages = new Map(manifest.map((page) => [page.route, page]));
+  const pages = new Map(generatedPublications(manifest).map((page) => [page.route, page]));
   for (const [route, content] of html) {
     const page = pages.get(route);
     assert.ok(page, `Unknown generated route: ${route}`);

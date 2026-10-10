@@ -1,11 +1,13 @@
 ---
-import { getPublicationManifest } from '../../utils/publication';
+import { getLibraryCatalog } from '../../utils/library';
 import BlogIndexLayout from '../../layouts/BlogIndexLayout.astro';
 import BlogCard from '../BlogCard.astro';
-const posts = (await getPublicationManifest()).flatMap(({ eligible, entry }) => eligible && entry.collection === 'blog' && entry.data.lang === 'es' ? [entry] : []).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+import LibrarySearch from '../LibrarySearch.astro';
+const posts = (await getLibraryCatalog()).byLocale.es.map(({ entry }) => entry);
 const popular = posts.slice(0, 5);
 ---
 <BlogIndexLayout title="La Biblioteca en AZ Institute for Autism" description="Noticias sobre terapia ABA y educación especial, casos de estudio, recetas, editoriales y tutoriales para y sobre nuestros estudiantes con autismo." lang="es">
-  <div class="blog-list">{posts.map((post) => <BlogCard post={post} prefix="/es" />)}</div>
-  <aside class="library-sidebar"><h2>Publicaciones populares</h2><ul>{popular.map((post) => <li><a href={`/es/library/${post.data.slug}`}>{post.data.title}</a></li>)}</ul></aside>
+  <div id="library-results-es" class="library-search-results" hidden></div>
+  <div id="library-archive-es" class="blog-list">{posts.map((post) => <BlogCard post={post} prefix="/es" />)}</div>
+  <aside class="library-sidebar"><LibrarySearch locale="es" archiveId="library-archive-es" resultsId="library-results-es" /><h2>Publicaciones populares</h2><ul>{popular.map((post) => <li><a href={`/es/library/${post.data.slug}`}>{post.data.title}</a></li>)}</ul></aside>
 </BlogIndexLayout>

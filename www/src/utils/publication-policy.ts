@@ -8,6 +8,9 @@ export interface PublicationEntry {
     noindex?: boolean;
     canonical?: string;
     translationKey?: string;
+    displayH1?: string;
+    featuredImage?: string;
+    alt?: string;
   };
 }
 

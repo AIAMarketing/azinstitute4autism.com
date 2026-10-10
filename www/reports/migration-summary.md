@@ -2131,3 +2131,301 @@ recomputed from the reconciled records.
 No functional source file, dependency, route, redirect rule, content record,
 Nix/nginx/deployment configuration, publication policy, or generated application
 behavior was changed in Phase 6A.
+
+## Phase 6A Architecture Ratification — October 9, 2026
+
+The Phase 6A proposal was ratified against checkpoint
+`76a035424dc5245443476b168d8c91ea62eed27b` with the following decisions. The
+original proposal remains preserved as historical architecture research;
+these later decisions govern Phase 6B implementation.
+
+1. **Search architecture approved.** Library search uses the existing content
+   collections and publication manifest, locale-specific static JSON indexes,
+   and dependency-free project-owned TypeScript. Initial fields are title,
+   description, headings, category, author display information, publication
+   date, and future nonempty tags. Full-body indexing, fuzzy matching,
+   stemming, hosted services, query logging, and third-party dependencies remain
+   deferred or disallowed.
+2. **Library pagination approved for a later checkpoint.** The agreed model is
+   ten posts per page, publication date descending, normalized route ascending
+   as a stable tie-breaker, the unnumbered root as page 1, nonempty generated
+   pages 2+, and HTTP 301 redirects from `/page/1` aliases. Phase 6B.1 does not
+   implement this decision.
+3. **Legacy `/search` approved with a narrower initial scope.** It preserves
+   `term`, `q`, repeated `type`, and `offset` compatibility but searches only
+   Library articles. It is `noindex`, sitemap-excluded, and outside the
+   hreflang graph. This intentional Library-only behavior differs from
+   HubSpot's broader production site search.
+4. **Archive indexing policy modified.** Future numbered Library pages are
+   self-canonical, indexable, and sitemap-eligible. Future author roots and
+   numbered author pages are initially `noindex,follow` and omitted from the
+   sitemap. This replaces the proposal's recommendation to index all archive
+   pages immediately. Phase 6B.1 creates no author routes.
+5. **Syndicated-article handling approved.** The two accessible English records
+   `community-highlight-meet-rula-diab` and `new-aia-scottsdale-office` remain
+   available in Library listings and internal search while retaining their
+   external canonicals, `noindex`, sitemap exclusion, and hreflang exclusion.
+6. **Author-root hreflang conditionally approved for later work.** It requires
+   explicit validated author translation keys plus eligible, indexable author
+   roots. Numbered author pages never receive hreflang merely from matching page
+   numbers. Because author archives initially remain `noindex`, Phase 6B.1 adds
+   no author hreflang.
+7. **Author content model approved for later work.** An optional localized
+   `displayName` may reproduce source-supported archive headings, while the
+   person's actual name remains the BlogPosting Person attribution. Biography
+   reconciliation and substantive Spanish/Arabic edits require source evidence
+   and human language review. Phase 6B.1 uses the existing author schema.
+8. **Phase 6C sequencing approved with a cutover constraint.** Pagination may
+   precede reconciliation of the nine missing English articles, but no records
+   or empty pages may be fabricated. Production `/library/page/6` and
+   `/library/author/rula-diab/page/6` cannot be accepted as migrated until
+   Phase 6C supplies the necessary source-supported content.
+
+The ratification therefore modifies four material recommendations in the
+original proposal: `/search` initially searches Library content rather than the
+whole site; author archives begin as `noindex` and outside the sitemap;
+author-root hreflang waits for later content and indexing approval; and Library
+pagination may be implemented before Phase 6C even though production page-6
+acceptance may not. Only the search-related parts of Decisions 1, 3, and 5 were
+authorized for Phase 6B.1. Pagination, author archives, redirects, and Phase 6C
+content retain separate review gates.
+
+## Phase 6B.1 — Shared Library Catalog and Search — October 9, 2026
+
+**Starting checkpoint:** `76a035424dc5245443476b168d8c91ea62eed27b`
+
+### Scope and Architecture
+
+Phase 6B.1 implements one shared Library catalog, three generated static search
+indexes, progressively enhanced locale-scoped search on the three Library
+roots, and a static `/search` compatibility page. It adds no pagination or
+author archive routes, changes no article body or date, installs no dependency,
+and sends no query to an external service.
+
+`src/utils/library-catalog.ts` is the single reusable catalog layer. It consumes
+generated blog entries from the Phase 3A publication manifest, resolves authors
+from the existing localized author records, and returns immutable metadata
+records separated by locale. It includes route-eligible accessible records even
+when they are `noindex` or externally canonicalized, while excluding drafts and
+other non-generated records. Results sort by publication date descending and
+normalized local route ascending; duplicate routes, missing authors, and
+ambiguous authors fail explicitly. That ordering and data shape can be reused by
+the later approved pagination work without maintaining a second article list.
+
+The catalog extracts bounded Markdown/MDX headings while ignoring fenced code,
+component syntax, and non-heading body content. A record contains only:
+
+- stable local URL and locale;
+- title and description;
+- at most 50 meaningful headings, each capped at 300 characters;
+- category and future nonempty tags;
+- localized author name and slug; and
+- publication date.
+
+It does not serialize article bodies, rendered HTML, canonicals, form data,
+visitor data, analytics identifiers, credentials, cookies, draft metadata, or
+runtime secrets. `src/utils/library.ts` adapts the pure catalog to Astro content
+collections and memoizes it for a build. The JSON endpoint at
+`src/pages/assets/search/library/[locale].json.ts` creates deterministic UTF-8
+assets for `en`, `es`, and `ar` on every build.
+
+### Search Normalization and Ranking
+
+`src/utils/library-search.ts` owns DOM-independent matching and compatibility
+query parsing. It applies Unicode NFKC normalization, locale-aware lowercasing,
+collapsed whitespace, punctuation normalization, Spanish accent-insensitive
+matching, and removal of Arabic combining marks and tatweel while preserving
+original display text. It does not stem or fuzzily rewrite words. Documented
+partial-token matching begins at three characters to accommodate useful prefix
+and attached-particle matches without turning short tokens into broad matches.
+
+All normalized query terms must match. Deterministic weights favor an exact
+title phrase, then title tokens, headings, description, category/tags, and
+author metadata. Equal scores sort by publication date descending and route
+ascending. Empty or whitespace-only input restores ordinary browsing. Unusual
+punctuation and Unicode input, no matches, one match, multiple matches, and
+cleared queries are covered by the focused test suite.
+
+### Embedded Library Search
+
+`LibrarySearch.astro` supplies the shared accessible interface for `/library`,
+`/es/library`, and `/ar/library`. Each root loads only its own locale index on
+the first real search. The existing server-rendered list remains complete (46
+English, 12 Spanish, seven Arabic) because ten-item pagination is deferred.
+Search state uses a `#search=` fragment, supports direct links and browser
+back/forward navigation, and avoids sending embedded queries to a static server.
+Clearing a query restores the server-rendered list and its pre-search fragment.
+
+Controls become visible only after successful client initialization. The
+ordinary listing and links remain available without JavaScript; a `<noscript>`
+message describes the limitation. A failed index request reports the error but
+does not hide or blank the archive. The component uses a visible label, native
+search input, submit and reset controls, visible focus styles, result heading,
+and a polite live region. It moves focus predictably after submission/reset,
+does not trap focus, and creates all query/result text with DOM `textContent`
+rather than unsanitized HTML.
+
+English, Spanish, and Arabic use locale-scoped indexes and existing route
+conventions. Arabic retains `lang="ar"`, `dir="rtl"`, RTL input/result
+presentation, and logical DOM focus order. The source-supported control labels
+`Search`, `Buscar`, and `بحث` are retained. Newly introduced Spanish and Arabic
+operational microcopy (loading, errors, counts, reset, and no-results text) is
+functionally complete but requires human language review; it is not represented
+as professionally reviewed translation.
+
+### Legacy `/search` Compatibility
+
+The generated `/search` page states that it searches AIA Library articles,
+rather than promising HubSpot's global-page search. `term` has precedence over
+`q` when both are present; repeated legacy `type` values are accepted as
+compatibility inputs but do not broaden the corpus. Visitors may search all
+three indexes or explicitly filter by English, Spanish, or Arabic. A narrow
+filter fetches only the selected index. Results use ten-item offset pages;
+nonnegative multiples of ten are accepted, and invalid, negative,
+non-numeric, non-multiple, or beyond-range offsets normalize to a valid state
+without exposing nonexistent records.
+
+The page is static, self-canonical to
+`https://www.azinstitute4autism.com/search`, `noindex,follow` in an
+indexing-enabled build, excluded from the sitemap, and excluded from hreflang.
+The final staging build applies the global `noindex,nofollow` safeguard. Its
+no-JavaScript fallback explains the requirement and links to all three working
+Library roots. Query-string values can appear in ordinary server logs, unlike
+fragment-based embedded queries; the page documents that privacy distinction.
+No cookies, local search history, analytics, query logging, external API,
+HubSpot forwarding, or persistent backend was added.
+
+The route is integrated through the existing publication-policy API using the
+small synthetic descriptor in `search-publication.ts`; it does not introduce a
+second robots/canonical/sitemap policy. The publication manifest and sitemap
+continue to represent content-backed routes only. The existing two syndicated
+articles remain accessible in listings and search while their external
+canonicals, `noindex`, sitemap exclusion, and hreflang exclusion remain intact.
+
+### Generated Asset Measurements
+
+Measurements were taken from the final generated JSON assets using local gzip
+and Brotli compression:
+
+| Locale | Records | Raw bytes | Gzip bytes | Brotli bytes |
+| --- | ---: | ---: | ---: | ---: |
+| English | 46 | 28,003 | 7,973 | 6,632 |
+| Spanish | 12 | 10,170 | 3,427 | 2,969 |
+| Arabic | 7 | 6,234 | 1,982 | 1,625 |
+| **Total** | **65** | **44,407** | **13,382** | **11,226** |
+
+The total is 2,317 raw bytes and 689 gzip bytes above Phase 6A's prototype,
+primarily because the implemented records carry validated author objects,
+bounded extracted headings, and their final endpoint representation. It remains
+a metadata-only index. The final shared client module is 6,539 bytes raw, 2,651
+bytes with gzip, and 2,312 bytes with Brotli. Measurements use `gzip -9 -n` and
+`brotli -q 11`. Ordinary Library visits fetch no index until a search starts,
+embedded searches fetch one locale, and filtered legacy searches avoid unused
+locale assets. All query processing occurs in the browser.
+
+### Validation and Browser Evidence
+
+| Check | Result |
+| --- | --- |
+| `npm run test:library` | Passed: 16 tests covering real catalogs/build output, publication exclusions, syndicated inclusion, authors, sorting, headings, Unicode matching, legacy state, SEO, and safe client rendering |
+| `npm run test:seo` | Passed: 34 tests |
+| `npm run test:publication` | Passed: 33 tests |
+| `npm run test:markdown` | Passed: 20 tests |
+| Normal `npm run build` | Passed: Astro check reported 0 errors, warnings, or hints; 97 HTML routes |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed: 97 HTML routes, 92 sitemap URLs, 174 hreflang links across 53 pages |
+| `npm run audit:routes -- --check` | Passed after the normal offline reconciliation process recorded the intentional `/search` route; no new production crawl |
+| `npm run audit:links` | Passed: 0 broken internal links |
+| `npm run audit:images` | Passed: 0 missing images |
+| `npm run audit:blog` | Passed: 0 failures |
+| Final normal `npm run build` | Passed and restored staging output: all 97 pages `noindex,nofollow`, empty sitemap, no hreflang |
+| `git diff --check` | Passed |
+
+The preserved-production offline reconciliation is
+`route-reconciliation-2026-10-09-offline-20-22-09-196Z.json`: 129 reconciled
+routes, 97 locally generated routes, and 70 inherited production verification
+requests. It preserves the earlier observations rather than asserting a new
+production crawl.
+
+Chromium DevTools Protocol checks exercised the generated static site at desktop
+and a 390-by-844 mobile Arabic viewport. They confirmed that an ordinary Library
+visit loads no JSON; direct fragments and Enter submission work; reset and
+back/forward restore state; failed JSON loading leaves 46 English cards usable;
+JavaScript-disabled English retains all 46 cards and working links; the legacy
+page honors `term` precedence and ten-result offsets; a Spanish filter fetches
+only the Spanish index; and Arabic results/input remain RTL without horizontal
+overflow. These checks also observed correct focus movement and live status
+updates. No screenshots or browser artifacts were added to the repository.
+
+The user also completed the full manual browser acceptance checklist against the
+built static site served through the project's nginx/reverse-proxy environment
+at `https://aia.web3app.dev`; every checklist item passed. Results display the
+clear heading “Library Search Results,” keyboard submission moves focus to that
+results region, the next Tab reaches the first result, and the browser focus
+indicator remains visible. That intentional results-region focus behavior was
+accepted without an additional accessibility correction. This acceptance did
+not claim testing with a specific screen reader, and a separate Astro preview
+run was unnecessary because the built output had already been tested through
+the existing static-serving environment.
+
+### Publication, Route, and Scope Invariants
+
+- Generated HTML routes changed only from 96 to **97** for `/search`.
+- The indexing-enabled sitemap remains **92** URLs.
+- Indexing-enabled hreflang remains **174** links across **53** routes.
+- `/search` is self-canonical, `noindex,follow`, sitemap-excluded, and has no
+  hreflang in the indexing-enabled build.
+- Final staging output contains **97** globally `noindex,nofollow` pages, an
+  empty sitemap, and no hreflang.
+- The three generated JSON assets are static assets, not HTML routes.
+- No new article, numbered Library, author, or translation route exists.
+- Canonicals, existing Library-root translation relationships, publication
+  eligibility, syndicated exceptions, BlogPosting/FAQPage rules, author
+  attribution, Header, Footer, LanguageSwitcher, forms, and integrations are
+  unchanged.
+
+Phase 6B.1 deliberately did not implement Library pagination, `/page/1`
+redirects, author archives, author schema/biography changes, article/date
+reconciliation, production redirects, Phase 6C records, hosting configuration,
+analytics, or an external search service.
+
+### Changed-File Inventory
+
+Modified files:
+
+- `package.json` — adds the focused `test:library` command.
+- `src/components/pages/LibraryEnglish.astro`
+- `src/components/pages/LibrarySpanish.astro`
+- `src/components/pages/LibraryArabic.astro` — consume the shared catalog and
+  mount the reusable search enhancement while retaining complete SSR listings.
+- `src/layouts/BlogIndexLayout.astro` — narrowly scoped search/result styling.
+- `src/utils/publication-policy.ts` — broadens the existing descriptor's data
+  type for fields already consumed by the catalog; policy behavior is unchanged.
+- `src/utils/publication.ts` — resolves the `/search` utility descriptor through
+  the existing publication API.
+- `tools/publication.test.mjs` and `tools/seo.test.mjs` — include the deliberate
+  `/search` route in route and SEO invariants.
+- `reports/migration-summary.md` — records ratification, implementation, and
+  validation evidence.
+
+New files:
+
+- `src/utils/library-catalog.ts`
+- `src/utils/library-search.ts`
+- `src/utils/library.ts`
+- `src/utils/search-publication.ts`
+- `src/components/LibrarySearch.astro`
+- `src/pages/assets/search/library/[locale].json.ts`
+- `src/pages/search.astro`
+- `tools/library.test.mjs`
+- `reports/route-reconciliation-2026-10-09-offline-20-22-09-196Z.json`
+
+### Remaining Review Items
+
+1. Human language review is required for the newly introduced Spanish and
+   Arabic search-state/accessibility microcopy. This does not change or invent
+   article translations.
+2. The intentional Library-only scope of `/search` should remain visible to
+   stakeholders because it differs from production HubSpot global search.
+3. Pagination, page-1 redirect rules, noindex author archives, eventual author
+   indexability/hreflang, author biographies, and Phase 6C page-6 content remain
+   separate approved or conditional checkpoints and are not implemented here.

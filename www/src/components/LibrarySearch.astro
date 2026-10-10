@@ -1,0 +1,312 @@
+---
+import type { LibraryLocale } from '../utils/library-catalog';
+
+interface Props {
+  mode?: 'embedded' | 'legacy';
+  locale?: LibraryLocale;
+  archiveId?: string;
+  resultsId: string;
+}
+
+const { mode = 'embedded', locale = 'en', archiveId, resultsId } = Astro.props;
+const messages = {
+  en: {
+    label: 'Search the Library', placeholder: 'Search', submit: 'Search', clear: 'Clear search',
+    loading: 'Loading Library search…', prompt: 'Enter a term to search Library articles.',
+    noResults: 'No Library articles matched your search.', error: 'Search is unavailable. The Library list remains available.',
+    results: 'Library search results', result: 'result', resultsWord: 'results', previous: 'Previous results', next: 'Next results',
+    language: 'Language', allLanguages: 'All languages', js: 'Interactive Library search requires JavaScript.'
+  },
+  es: {
+    label: 'Buscar en la Biblioteca', placeholder: 'Buscar', submit: 'Buscar', clear: 'Borrar búsqueda',
+    loading: 'Cargando la búsqueda de la Biblioteca…', prompt: 'Ingrese un término para buscar artículos de la Biblioteca.',
+    noResults: 'No se encontraron artículos de la Biblioteca.', error: 'La búsqueda no está disponible. La lista de la Biblioteca permanece disponible.',
+    results: 'Resultados de búsqueda de la Biblioteca', result: 'resultado', resultsWord: 'resultados', previous: 'Resultados anteriores', next: 'Resultados siguientes',
+    language: 'Idioma', allLanguages: 'Todos los idiomas', js: 'La búsqueda interactiva de la Biblioteca requiere JavaScript.'
+  },
+  ar: {
+    label: 'البحث في المكتبة', placeholder: 'بحث', submit: 'بحث', clear: 'مسح البحث',
+    loading: 'جارٍ تحميل البحث في المكتبة…', prompt: 'أدخل عبارة للبحث في مقالات المكتبة.',
+    noResults: 'لم يتم العثور على مقالات مطابقة في المكتبة.', error: 'البحث غير متاح. تبقى قائمة المكتبة متاحة.',
+    results: 'نتائج البحث في المكتبة', result: 'نتيجة', resultsWord: 'نتائج', previous: 'النتائج السابقة', next: 'النتائج التالية',
+    language: 'اللغة', allLanguages: 'كل اللغات', js: 'يتطلب البحث التفاعلي في المكتبة تفعيل JavaScript.'
+  }
+}[locale];
+---
+
+<div
+  class="library-search"
+  data-library-search
+  data-mode={mode}
+  data-locale={locale}
+  data-index-base="/assets/search/library"
+  data-archive-id={archiveId}
+  data-results-id={resultsId}
+  data-messages={JSON.stringify(messages)}
+  hidden
+>
+  <form class="library-search__form" action={mode === 'legacy' ? '/search' : undefined} method="get" role="search">
+    <label for={`library-search-${mode}-${locale}`}>{messages.label}</label>
+    <div class="library-search__controls">
+      <input
+        id={`library-search-${mode}-${locale}`}
+        name={mode === 'legacy' ? 'term' : undefined}
+        type="search"
+        placeholder={messages.placeholder}
+        autocomplete="off"
+        data-search-input
+      />
+      <button type="submit">{messages.submit}</button>
+      <button type="reset" class="library-search__clear" data-search-clear disabled>{messages.clear}</button>
+    </div>
+    {mode === 'legacy' && (
+      <label class="library-search__language">
+        <span>{messages.language}</span>
+        <select name="lang" data-search-language>
+          <option value="all">{messages.allLanguages}</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ar">العربية</option>
+        </select>
+      </label>
+    )}
+  </form>
+  <p class="library-search__status" data-search-status aria-live="polite" aria-atomic="true"></p>
+</div>
+<noscript><p class="library-search__noscript">{messages.js}</p></noscript>
+
+<script>
+  import { boundedSearchOffset, parseLegacyLibrarySearchState, searchLibrary } from '../utils/library-search';
+  import type { LibraryLocale, LibrarySearchRecord } from '../utils/library-catalog';
+
+  interface SearchMessages {
+    loading: string; prompt: string; noResults: string; error: string; results: string;
+    result: string; resultsWord: string; previous: string; next: string;
+  }
+
+  const localeNames: Record<LibraryLocale, string> = { en: 'English', es: 'Español', ar: 'العربية' };
+  const indexCache = new Map<LibraryLocale, Promise<LibrarySearchRecord[]>>();
+
+  function loadIndex(base: string, locale: LibraryLocale): Promise<LibrarySearchRecord[]> {
+    let request = indexCache.get(locale);
+    if (!request) {
+      request = fetch(`${base}/${locale}.json`, { headers: { Accept: 'application/json' } }).then(async (response) => {
+        if (!response.ok) throw new Error(`Search index HTTP ${response.status}`);
+        const records = await response.json();
+        if (!Array.isArray(records) || records.some((record) => record?.locale !== locale || typeof record?.url !== 'string')) {
+          throw new Error('Invalid Library search index');
+        }
+        return records as LibrarySearchRecord[];
+      }).catch((error) => {
+        indexCache.delete(locale);
+        throw error;
+      });
+      indexCache.set(locale, request);
+    }
+    return request;
+  }
+
+  function createResult(record: LibrarySearchRecord): HTMLElement {
+    const article = document.createElement('article');
+    article.className = 'library-search-result';
+    article.lang = record.locale;
+    article.dir = record.locale === 'ar' ? 'rtl' : 'ltr';
+    const heading = document.createElement('h3');
+    const link = document.createElement('a');
+    link.href = record.url;
+    link.textContent = record.title;
+    heading.append(link);
+    const description = document.createElement('p');
+    description.textContent = record.description;
+    const meta = document.createElement('p');
+    meta.className = 'library-search-result__meta';
+    const date = new Intl.DateTimeFormat(record.locale, { dateStyle: 'long', timeZone: 'UTC' })
+      .format(new Date(`${record.publishedAt}T00:00:00Z`));
+    meta.textContent = `${record.author.name} · ${date} · ${localeNames[record.locale]}`;
+    article.append(heading, description, meta);
+    return article;
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-library-search]').forEach((root) => {
+    const form = root.querySelector<HTMLFormElement>('form');
+    const input = root.querySelector<HTMLInputElement>('[data-search-input]');
+    const clear = root.querySelector<HTMLButtonElement>('[data-search-clear]');
+    const language = root.querySelector<HTMLSelectElement>('[data-search-language]');
+    const status = root.querySelector<HTMLElement>('[data-search-status]');
+    const results = document.getElementById(root.dataset.resultsId ?? '');
+    const archive = root.dataset.archiveId ? document.getElementById(root.dataset.archiveId) : null;
+    const mode = root.dataset.mode === 'legacy' ? 'legacy' : 'embedded';
+    const locale = (root.dataset.locale ?? 'en') as LibraryLocale;
+    const base = root.dataset.indexBase ?? '/assets/search/library';
+    const messages = JSON.parse(root.dataset.messages ?? '{}') as SearchMessages;
+    if (!form || !input || !clear || !status || !results) return;
+
+    const setArchiveVisible = (visible: boolean) => {
+      if (archive) archive.hidden = !visible;
+      results.hidden = visible;
+      if (visible) results.replaceChildren();
+    };
+    const setStatus = (message: string) => { status.textContent = message; };
+    const heading = () => {
+      const element = document.createElement('h2');
+      element.tabIndex = -1;
+      element.textContent = messages.results;
+      return element;
+    };
+    const render = (records: LibrarySearchRecord[], query: string, offset = 0, focus = false) => {
+      const matches = searchLibrary(records, query);
+      const normalizedOffset = boundedSearchOffset(matches.length, offset);
+      const visible = mode === 'legacy' ? matches.slice(normalizedOffset, normalizedOffset + 10) : matches;
+      const fragment = document.createDocumentFragment();
+      const title = heading();
+      fragment.append(title);
+      const list = document.createElement('div');
+      list.className = 'library-search-results__list';
+      visible.forEach(({ record }) => list.append(createResult(record)));
+      fragment.append(list);
+      if (mode === 'legacy' && matches.length > 10) {
+        const pager = document.createElement('nav');
+        pager.className = 'library-search-results__pager';
+        pager.setAttribute('aria-label', messages.results);
+        for (const [label, nextOffset] of [[messages.previous, normalizedOffset - 10], [messages.next, normalizedOffset + 10]] as const) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = label;
+          button.disabled = nextOffset < 0 || nextOffset >= matches.length;
+          button.addEventListener('click', () => updateLegacyOffset(nextOffset));
+          pager.append(button);
+        }
+        fragment.append(pager);
+      }
+      results.replaceChildren(fragment);
+      results.hidden = false;
+      if (archive) archive.hidden = true;
+      clear.disabled = false;
+      setStatus(matches.length
+        ? `${matches.length} ${matches.length === 1 ? messages.result : messages.resultsWord}`
+        : messages.noResults);
+      if (focus) title.focus();
+      return normalizedOffset;
+    };
+    const fail = () => {
+      setArchiveVisible(true);
+      clear.disabled = !input.value;
+      setStatus(messages.error);
+    };
+
+    const embeddedQuery = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return '';
+      const params = new URLSearchParams(hash);
+      return params.has('search') ? params.get('search') ?? '' : '';
+    };
+    let focusAfterNavigation = false;
+    const runEmbedded = async () => {
+      const query = embeddedQuery();
+      input.value = query;
+      if (!query.trim()) {
+        setArchiveVisible(true);
+        clear.disabled = true;
+        setStatus('');
+        return;
+      }
+      setStatus(messages.loading);
+      try {
+        const records = await loadIndex(base, locale);
+        render(records, query, 0, focusAfterNavigation);
+      } catch { fail(); }
+      finally { focusAfterNavigation = false; }
+    };
+
+    const legacyState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const state = parseLegacyLibrarySearchState(params);
+      return { params, query: state.query, selected: state.language, offset: state.offset };
+    };
+    const runLegacy = async (focus = false) => {
+      const state = legacyState();
+      input.value = state.query;
+      if (language) language.value = state.selected;
+      if (!state.query.trim()) {
+        results.hidden = false;
+        results.replaceChildren(heading());
+        clear.disabled = true;
+        setStatus(messages.prompt);
+        return;
+      }
+      setStatus(messages.loading);
+      try {
+        const locales: LibraryLocale[] = state.selected === 'all' ? ['en', 'es', 'ar'] : [state.selected];
+        const records = (await Promise.all(locales.map((item) => loadIndex(base, item)))).flat();
+        const actualOffset = render(records, state.query, state.offset, focus);
+        const sourceOffset = state.params.get('offset');
+        const canonicalOffset = actualOffset ? String(actualOffset) : null;
+        if (actualOffset !== state.offset || sourceOffset !== canonicalOffset) {
+          if (actualOffset) state.params.set('offset', String(actualOffset)); else state.params.delete('offset');
+          history.replaceState(null, '', `${location.pathname}?${state.params}${location.hash}`);
+        }
+      } catch { fail(); }
+    };
+    const updateLegacyOffset = (offset: number) => {
+      const state = legacyState();
+      if (offset > 0) state.params.set('offset', String(offset)); else state.params.delete('offset');
+      history.pushState(null, '', `${location.pathname}?${state.params}${location.hash}`);
+      void runLegacy(true);
+    };
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const query = input.value.trim();
+      if (mode === 'embedded') {
+        if (!root.dataset.previousHash && location.hash && !location.hash.startsWith('#search=')) root.dataset.previousHash = location.hash;
+        focusAfterNavigation = true;
+        const nextHash = query ? `#${new URLSearchParams({ search: query })}` : root.dataset.previousHash ?? '';
+        if (location.hash === nextHash) void runEmbedded(); else location.hash = nextHash;
+      } else {
+        const state = legacyState();
+        if (query) state.params.set('term', query); else state.params.delete('term');
+        state.params.delete('q');
+        state.params.delete('offset');
+        if (language?.value && language.value !== 'all') state.params.set('lang', language.value); else state.params.delete('lang');
+        history.pushState(null, '', `${location.pathname}${state.params.size ? `?${state.params}` : ''}`);
+        void runLegacy(true);
+      }
+    });
+    form.addEventListener('reset', (event) => {
+      event.preventDefault();
+      input.value = '';
+      if (mode === 'embedded') {
+        const previous = root.dataset.previousHash ?? '';
+        delete root.dataset.previousHash;
+        history.pushState(null, '', `${location.pathname}${location.search}${previous}`);
+        void runEmbedded();
+      } else {
+        const params = legacyState().params;
+        params.delete('term'); params.delete('q'); params.delete('offset'); params.delete('lang');
+        history.pushState(null, '', `${location.pathname}${params.size ? `?${params}` : ''}`);
+        if (language) language.value = 'all';
+        void runLegacy();
+      }
+      input.focus();
+    });
+    if (language) language.addEventListener('change', () => form.requestSubmit());
+    window.addEventListener(mode === 'embedded' ? 'hashchange' : 'popstate', () => {
+      if (mode === 'embedded') void runEmbedded(); else void runLegacy();
+    });
+    root.hidden = false;
+    if (mode === 'embedded') void runEmbedded(); else void runLegacy();
+  });
+</script>
+
+<style>
+  .library-search label { display: block; font-weight: 700; margin-bottom: .4rem; }
+  .library-search__controls { display: grid; gap: .5rem; }
+  .library-search input, .library-search select { border: 1px solid var(--color-border); border-radius: 4px; font: inherit; padding: .7rem; width: 100%; }
+  .library-search button { background: var(--color-primary); border: 2px solid var(--color-primary); border-radius: 4px; color: white; cursor: pointer; font: inherit; font-weight: 700; padding: .55rem .75rem; }
+  .library-search button:focus-visible, .library-search input:focus-visible, .library-search select:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+  .library-search button:disabled { cursor: default; opacity: .55; }
+  .library-search__clear { background: white !important; color: var(--color-primary) !important; }
+  .library-search__language { margin-top: 1rem; }
+  .library-search__status { font-size: .9rem; min-height: 1.5em; }
+  .library-search__noscript { font-size: .9rem; }
+</style>

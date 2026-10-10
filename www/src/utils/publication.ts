@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
 import site from '../data/site.json';
 import { createPublicationManifest, normalizeRoute } from './publication-policy';
+import { createLibrarySearchPublication } from './search-publication';
 
 export const allowIndexing = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true';
 
@@ -11,6 +12,7 @@ export async function getPublicationManifest() {
 
 export async function getPublication(route: string) {
   const normalized = normalizeRoute(route);
+  if (normalized === '/search') return createLibrarySearchPublication(site.url);
   const publication = (await getPublicationManifest()).find((page) => page.route === normalized);
   if (!publication?.eligible) throw new Error(`Route is not published: ${normalized}`);
   return publication;
