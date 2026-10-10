@@ -2429,3 +2429,219 @@ New files:
 3. Pagination, page-1 redirect rules, noindex author archives, eventual author
    indexability/hreflang, author biographies, and Phase 6C page-6 content remain
    separate approved or conditional checkpoints and are not implemented here.
+
+## Phase 6B.2 — Library Pagination and Page-1 Redirects (2026-10-10)
+
+### Scope and Starting State
+
+Phase 6B.2 started from checkpoint
+`b20c253383440598c2d07bf6f852906ac00c42df` on
+`faithful-astro-migration`. It implements deterministic, static pagination for
+the three existing Library roots and repository-level redirect definitions for
+their first-page aliases. It does not add Library articles, author routes,
+author metadata, production hosting configuration, or deployment changes.
+
+The Phase 6B.1 catalog was recalculated from the repository rather than from
+historical counts. It contains 46 eligible English records, 12 Spanish records,
+and seven Arabic records. The two accessible English syndicated records remain
+in that listing catalog despite retaining their external canonicals and
+`noindex` publication treatment.
+
+### Shared Pagination and Route Integration
+
+`src/utils/library-pagination.ts` is a pure, reusable layer over the existing
+catalog. Its page size is ten. It reports total items, nonempty page count,
+current slice, and previous/next page numbers; rejects unsafe, non-integer,
+zero, negative, and beyond-last page numbers; and maps page 1 back to the
+unnumbered locale root. An empty root is a valid archive state, while no empty
+numbered page is generated. Tests show that adding, removing, drafting, or
+republishing catalog records changes the generated page inventory without a
+manual route list.
+
+The content publication manifest remains independent of the Library catalog.
+`getLibraryPaginationManifest()` first receives the completed content manifest,
+then derives the catalog and generated page descriptors from it.
+`getRoutePublicationManifest()` composes and sorts those two inventories for
+static route generation and sitemap output. This ordering avoids a recursive
+manifest/catalog dependency. Generated pages reuse their locale's Library root
+entry for presentation, while their publication descriptor supplies the
+numbered route, self-canonical URL, eligibility, sitemap status, and page
+metadata. The reserved `/{locale?}/library/page` families are checked against
+content routes before generation, so content cannot silently shadow an archive
+or alias.
+
+The generated current-corpus inventory is:
+
+| Language | Eligible articles | Routes and card counts |
+| --- | ---: | --- |
+| English | 46 | `/library` (10), `/library/page/2` (10), `/library/page/3` (10), `/library/page/4` (10), `/library/page/5` (6) |
+| Spanish | 12 | `/es/library` (10), `/es/library/page/2` (2) |
+| Arabic | 7 | `/ar/library` (7); no numbered page |
+
+The implementation intentionally generates no `/page/1` HTML, English page 6,
+Spanish page 3, Arabic page 2, page 0, leading-zero alias, decimal page, or
+beyond-last page. Those absent paths fall through to the static host's 404
+behavior.
+
+### Rendering, Navigation, and Search
+
+The three locale components now render the page slice returned by the shared
+helper. Existing heroes, introductory content, cards, article URLs, featured
+images, popular-post lists, and search controls remain in place. Page-specific
+document titles append `Page N` or the existing locale's equivalent; the
+visible root H1 is unchanged and remains unique. `BlogIndexLayout.astro` accepts
+the heading separately from the document title so a numbered title does not
+alter the source heading.
+
+`LibraryPagination.astro` renders server-side anchors for previous, next, and
+each valid page. Page 1 always links to the unnumbered root. The current link
+uses `aria-current="page"`; the navigation has a locale-specific accessible
+label, visible focus styles, 44-pixel minimum targets, wrapping layout, and no
+disabled or nonexistent links. Arabic retains document RTL direction and
+logical DOM focus order. The newly introduced Spanish and Arabic pagination
+labels are functional but remain ready for human language review rather than
+being represented as professionally reviewed translations.
+
+The ordinary cards and pager share one archive wrapper. Phase 6B.1 search still
+loads the full locale JSON index, including when initiated on a numbered page.
+While search is active it hides both that page's cards and pager. Reset restores
+the same numbered page without navigating to page 1. Direct fragments and
+browser Back/Forward preserve the expected state. If index loading fails, the
+page slice and pager remain usable. With JavaScript disabled, cards and real
+pagination links remain fully navigable and the search enhancement stays
+honestly unavailable. Legacy `/search` query and offset behavior is unchanged.
+
+The historical Markdown listing snapshots remain bypassed and were not edited;
+the catalog remains the only rendered listing source.
+
+### First-Page Alias Redirect Definitions
+
+The existing generator and redirect registry retain the three service aliases
+and add exactly these definitions:
+
+| Source | Destination | Status |
+| --- | --- | ---: |
+| `/library/page/1` | `/library` | 301 |
+| `/es/library/page/1` | `/es/library` | 301 |
+| `/ar/library/page/1` | `/ar/library` | 301 |
+
+`src/data/redirects.json`, `reports/redirect-map.csv`, and
+`reports/nginx-rewrites.conf` are generated from the same source definitions.
+Tests reject duplicate sources, redirect loops, altered service aliases,
+generated alias HTML, or alias sitemap entries.
+
+An isolated `nginx:latest` container served the generated static output with
+the generated snippet mounted read-only. Each alias returned HTTP 301 with its
+exact path-only `Location`, following each redirect ended at HTTP 200 without a
+loop, `/library/page/2` returned 200, and `/library/page/6` returned 404. The
+container was stopped after the check. These results validate the repository
+definitions and compatible nginx behavior only. Neither the NixOS reverse
+proxy nor the deployed staging/production configuration was changed; activation
+and host-level verification remain explicitly gated.
+
+### Publication and SEO Results
+
+The three Library roots preserve their existing self-canonicals and reciprocal
+root hreflang relationships. Each generated numbered page is self-canonical,
+`index,follow` in the local indexing-enabled build, present in that sitemap,
+and deliberately has no hreflang. The five routes increase the generated HTML
+count from 97 to 102 and the production-policy sitemap count from 92 to 97.
+Hreflang remains 174 links across the same 53 routes.
+
+The existing article routes, article canonicals, syndicated exceptions,
+BlogPosting and FAQPage output, `/search` noindex behavior, LanguageSwitcher,
+Header, Footer, forms, and integrations are unchanged. The final normal build
+restored all 102 pages to global `noindex,nofollow`, an empty sitemap, and no
+hreflang.
+
+The saved-production offline reconciliation is
+`reports/route-reconciliation-2026-10-10-offline-02-51-44-711Z.json`. It records
+102 locally generated routes and reuses the existing 70 production requests
+without making network requests or changing the historical observations. Its
+production sitemap figures describe the preserved discovery baseline, not the
+local indexing-enabled sitemap assertion above.
+
+### Browser and Redirect Validation
+
+A local Astro preview of the generated static artifact was exercised through
+headless Chromium at desktop and 390-by-844 mobile viewports. Thirty-six focused
+checks covered all three Library roots, English pages 2, 3, and 5, Spanish page
+2, visible-link navigation, boundary controls, exact card counts, unique H1s,
+mobile wrapping and overflow, Arabic RTL, and direct numbered URLs.
+
+On `/library/page/3`, search found an article outside that ten-card slice,
+hid cards and pagination, and restored the original page-3 archive on reset.
+Direct search fragments and browser Back/Forward worked. Representative Spanish
+search also used its full locale catalog. A blocked index request retained the
+archive and pager. With JavaScript disabled, page-3 cards, article links, and
+pagination remained available while search stayed unavailable. No claim is
+made for a particular screen reader. The deployed `aia.web3app.dev` host was not
+changed or used as evidence that the new redirect definitions are active.
+
+### Automated Validation
+
+| Check | Result |
+| --- | --- |
+| `npm run test:library` | Passed: 25 tests, including pagination boundaries, real corpus slices, route growth/removal, collisions, rendering, navigation, search, redirects, and SEO |
+| `npm run test:seo` | Passed: 34 tests |
+| `npm run test:publication` | Passed: 33 tests |
+| `npm run test:markdown` | Passed: 20 tests |
+| Normal `npm run build` | Passed: Astro check reported 0 errors, warnings, or hints; 102 HTML routes |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed: 102 HTML routes, 97 sitemap URLs, 174 hreflang links across 53 routes |
+| `npm run audit:routes -- --check` | Passed after the established offline reconciliation procedure; no production requests |
+| `npm run audit:links` | Passed: 0 broken internal links |
+| `npm run audit:images` | Passed: 0 missing mapped page images |
+| `npm run audit:blog` | Passed: 0 blog content audit failures |
+| Final normal `npm run build` | Passed: 102 pages, all `noindex,nofollow`, empty sitemap, no hreflang |
+| `git diff --check` | Passed |
+
+### Cutover Blockers and Deferred Work
+
+1. Production exposes `/library/page/6`, but the repository still lacks the
+   nine source-supported English articles assigned to Phase 6C. No empty page,
+   placeholder record, or misleading redirect was created. Phase 6C remains a
+   production-cutover prerequisite for accepting that URL.
+2. Production's English author page 6 depends on the same missing corpus and on
+   Phase 6B.3 author archive implementation. No author route or author redirect
+   was added here.
+3. Activation and HTTP verification of the three first-page redirects on the
+   intended hosting stack require a separately approved hosting change.
+4. The Spanish and Arabic pagination navigation strings require human language
+   review. No article translation or translation relationship changed.
+
+### Changed-File Inventory
+
+Modified files:
+
+- `reports/migration-summary.md` — this implementation, evidence, validation,
+  and cutover record.
+- `reports/nginx-rewrites.conf`, `reports/redirect-map.csv`, and
+  `src/data/redirects.json` — generated first-page alias definitions while
+  preserving the three service aliases.
+- `src/components/pages/LibraryEnglish.astro`,
+  `src/components/pages/LibrarySpanish.astro`, and
+  `src/components/pages/LibraryArabic.astro` — deterministic locale page slices,
+  pager integration, and separate numbered document titles.
+- `src/layouts/BlogIndexLayout.astro` — separates the H1 from numbered document
+  titles and makes cards plus pager one search visibility boundary.
+- `src/pages/[...slug].astro` — generates and renders composed numbered routes.
+- `src/pages/sitemap.xml.ts` — uses the composed eligible route manifest.
+- `src/utils/publication.ts` — composes content and generated Library page
+  descriptors through the existing publication API.
+- `tools/generate-redirects.mjs` — adds the three approved Library aliases.
+- `tools/library.test.mjs`, `tools/publication.test.mjs`, and
+  `tools/seo.test.mjs` — focused pagination, routing, search, redirect,
+  publication, sitemap, and metadata regression coverage.
+
+New files:
+
+- `src/utils/library-pagination.ts` — pure pagination and generated publication
+  descriptors.
+- `src/components/LibraryPagination.astro` — accessible locale-aware pager.
+- `reports/route-reconciliation-2026-10-10-offline-02-51-44-711Z.json` —
+  reproducible offline route evidence using the preserved production baseline.
+
+No package dependency, article body, author record, content date, form,
+analytics, advertising, production hosting, employee-portal, or unrelated page
+was changed. Author archives, author biographies, Phase 6C content, page-1
+author aliases, and production deployment remain outside this checkpoint.

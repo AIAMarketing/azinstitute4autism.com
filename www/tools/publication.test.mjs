@@ -9,6 +9,8 @@ import fg from 'fast-glob';
 import matter from 'gray-matter';
 import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, normalizeRoute, publicationFor, renderSitemap, robotsFor, sitemapUrls, validateTranslationGraph } from '../src/utils/publication-policy.ts';
+import { createLibraryCatalog } from '../src/utils/library-catalog.ts';
+import { createLibraryPaginationPublications } from '../src/utils/library-pagination.ts';
 import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
@@ -22,6 +24,13 @@ async function readEntries(root) {
     const [, , collection, ...parts] = file.split('/');
     return { id: parts.join('/').replace(/\.mdx?$/, ''), collection, data: matter(await readFile(path.join(root, file), 'utf8')).data };
   }));
+}
+
+async function readAuthors(root) {
+  return Promise.all((await fg('src/content/authors/**/*.{md,mdx}', { cwd: root })).sort().map(async (file) => ({
+    id: file.replace(/^src\/content\/authors\//, '').replace(/\.mdx?$/, ''),
+    data: matter(await readFile(path.join(root, file), 'utf8')).data
+  })));
 }
 
 function assertCanonical(html, expected) {
@@ -120,8 +129,13 @@ test('generated-head acceptance checks reject missing, duplicate and invalid can
 
 const sourceEntries = await readEntries(project);
 const actualManifest = createPublicationManifest(sourceEntries, site);
+const sourceAuthors = await readAuthors(project);
+const sitePublications = (manifest) => [
+  ...manifest,
+  ...createLibraryPaginationPublications(createLibraryCatalog(manifest, sourceAuthors), manifest, site)
+].sort((left, right) => left.route.localeCompare(right.route, 'en'));
 const generatedPublications = (manifest) => [
-  ...manifest.filter((page) => page.eligible),
+  ...sitePublications(manifest).filter((page) => page.eligible),
   createLibrarySearchPublication(site)
 ];
 
@@ -355,7 +369,7 @@ for (const mode of ['staging', 'indexing']) {
 
   test(`${mode} build: sitemap exactly matches eligible local indexable self-canonical routes`, () => {
     const { sitemap, html, robots } = artifacts.get(mode);
-    assert.equal(sitemap, renderSitemap(fixtureManifest, mode === 'indexing'));
+    assert.equal(sitemap, renderSitemap(sitePublications(fixtureManifest), mode === 'indexing'));
     const $ = load(sitemap, { xml: true });
     const urls = $('loc').map((_, node) => $(node).text()).get();
     assert.equal(new Set(urls).size, urls.length);

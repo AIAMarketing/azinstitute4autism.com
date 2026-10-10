@@ -5,16 +5,17 @@ import { getPublication } from '../utils/publication';
 
 interface Props {
   title: string;
+  heading?: string;
   description: string;
   intro?: string[];
   lang?: 'en' | 'ar' | 'es';
 }
 
-const { title, description, intro = [], lang = 'en' } = Astro.props;
+const { title, heading, description, intro = [], lang = 'en' } = Astro.props;
 const { entry } = await getPublication(Astro.url.pathname);
 ---
 <BaseLayout title={title} description={description} lang={lang}>
-  <PageHero title={entry.data.displayH1 ?? title} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
+  <PageHero title={entry.data.displayH1 ?? heading ?? title} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
   <section class="library-intro">
     <div class="container">
       <h2>Library</h2>
@@ -34,7 +35,7 @@ const { entry } = await getPublication(Astro.url.pathname);
   :global(.library-sidebar li) { border-bottom: 1px solid var(--color-border); padding-block: .65rem; }
   :global(.library-sidebar a) { color: var(--color-primary); font-size: .9rem; }
   :global(.blog-list) { display: block; }
-  :global(.library-search-results[hidden]), :global(.blog-list[hidden]) { display: none; }
+  :global(.library-search-results[hidden]), :global(.library-archive[hidden]), :global(.blog-list[hidden]) { display: none; }
   :global(.library-search-results h2) { margin-top: 0; }
   :global(.library-search-result) { border-bottom: 1px solid var(--color-border); margin-bottom: 2rem; padding-bottom: 1.5rem; }
   :global(.library-search-result h3) { font-family: var(--font-body); margin-bottom: .65rem; }

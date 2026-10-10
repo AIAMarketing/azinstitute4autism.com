@@ -2,3 +2,6 @@ from,to,status,reason
 "/aba","/aba-therapy",301,"Brief legacy alias to preserved URL"
 "/autismevaluations","/autism-evaluations",301,"Brief legacy alias to preserved URL"
 "/learnersocialclub","/learner-social-club",301,"Brief legacy alias to preserved URL"
+"/library/page/1","/library",301,"Library first-page alias"
+"/es/library/page/1","/es/library",301,"Spanish Library first-page alias"
+"/ar/library/page/1","/ar/library",301,"Arabic Library first-page alias"

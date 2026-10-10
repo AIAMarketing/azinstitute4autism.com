@@ -3,7 +3,10 @@ import fs from 'node:fs/promises';
 const redirects = [
   { from: '/aba', to: '/aba-therapy', status: 301, reason: 'Brief legacy alias to preserved URL' },
   { from: '/autismevaluations', to: '/autism-evaluations', status: 301, reason: 'Brief legacy alias to preserved URL' },
-  { from: '/learnersocialclub', to: '/learner-social-club', status: 301, reason: 'Brief legacy alias to preserved URL' }
+  { from: '/learnersocialclub', to: '/learner-social-club', status: 301, reason: 'Brief legacy alias to preserved URL' },
+  { from: '/library/page/1', to: '/library', status: 301, reason: 'Library first-page alias' },
+  { from: '/es/library/page/1', to: '/es/library', status: 301, reason: 'Spanish Library first-page alias' },
+  { from: '/ar/library/page/1', to: '/ar/library', status: 301, reason: 'Arabic Library first-page alias' }
 ];
 await fs.writeFile(new URL('../src/data/redirects.json', import.meta.url), `${JSON.stringify(redirects, null, 2)}\n`);
 await fs.writeFile(new URL('../reports/redirect-map.csv', import.meta.url),

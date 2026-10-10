@@ -1,13 +1,25 @@
 ---
 import { getLibraryCatalog } from '../../utils/library';
+import { paginateLibraryItems } from '../../utils/library-pagination';
 import BlogIndexLayout from '../../layouts/BlogIndexLayout.astro';
 import BlogCard from '../BlogCard.astro';
 import LibrarySearch from '../LibrarySearch.astro';
-const posts = (await getLibraryCatalog()).byLocale.es.map(({ entry }) => entry);
-const popular = posts.slice(0, 5);
+import LibraryPagination from '../LibraryPagination.astro';
+interface Props { page?: number; }
+const { page = 1 } = Astro.props;
+const allPosts = (await getLibraryCatalog()).byLocale.es;
+const pagination = paginateLibraryItems(allPosts, page);
+if (!pagination) throw new Error(`Invalid Spanish Library page: ${page}`);
+const posts = pagination.items.map(({ entry }) => entry);
+const popular = allPosts.slice(0, 5).map(({ entry }) => entry);
+const heading = 'La Biblioteca en AZ Institute for Autism';
+const title = page === 1 ? heading : `${heading} | Página ${page}`;
 ---
-<BlogIndexLayout title="La Biblioteca en AZ Institute for Autism" description="Noticias sobre terapia ABA y educación especial, casos de estudio, recetas, editoriales y tutoriales para y sobre nuestros estudiantes con autismo." lang="es">
+<BlogIndexLayout title={title} heading={heading} description="Noticias sobre terapia ABA y educación especial, casos de estudio, recetas, editoriales y tutoriales para y sobre nuestros estudiantes con autismo." lang="es">
   <div id="library-results-es" class="library-search-results" hidden></div>
-  <div id="library-archive-es" class="blog-list">{posts.map((post) => <BlogCard post={post} prefix="/es" />)}</div>
+  <div id="library-archive-es" class="library-archive">
+    <div class="blog-list">{posts.map((post) => <BlogCard post={post} prefix="/es" />)}</div>
+    <LibraryPagination locale="es" page={pagination} />
+  </div>
   <aside class="library-sidebar"><LibrarySearch locale="es" archiveId="library-archive-es" resultsId="library-results-es" /><h2>Publicaciones populares</h2><ul>{popular.map((post) => <li><a href={`/es/library/${post.data.slug}`}>{post.data.title}</a></li>)}</ul></aside>
 </BlogIndexLayout>

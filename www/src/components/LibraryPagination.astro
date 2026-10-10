@@ -1,0 +1,53 @@
+---
+import {
+  libraryPageRoute,
+  type LibraryPageSlice
+} from '../utils/library-pagination';
+import type { LibraryLocale } from '../utils/library-catalog';
+
+interface Props {
+  locale: LibraryLocale;
+  page: LibraryPageSlice<unknown>;
+}
+
+const { locale, page } = Astro.props;
+const messages = {
+  en: { navigation: 'Library pagination', previous: 'Previous', next: 'Next', page: 'Page', current: 'current page' },
+  es: { navigation: 'Paginación de la biblioteca', previous: 'Anterior', next: 'Siguiente', page: 'Página', current: 'página actual' },
+  ar: { navigation: 'ترقيم صفحات المكتبة', previous: 'السابق', next: 'التالي', page: 'الصفحة', current: 'الصفحة الحالية' }
+}[locale];
+const pages = Array.from({ length: page.totalPages }, (_, index) => index + 1);
+---
+{page.totalPages > 1 && (
+  <nav class="library-pagination" aria-label={messages.navigation}>
+    <ul>
+      {page.previousPage && (
+        <li class="library-pagination__previous">
+          <a rel="prev" href={libraryPageRoute(locale, page.previousPage)}>{messages.previous}</a>
+        </li>
+      )}
+      {pages.map((number) => (
+        <li>
+          <a
+            href={libraryPageRoute(locale, number)}
+            aria-current={number === page.currentPage ? 'page' : undefined}
+            aria-label={`${messages.page} ${number}${number === page.currentPage ? `, ${messages.current}` : ''}`}
+          >{number}</a>
+        </li>
+      ))}
+      {page.nextPage && (
+        <li class="library-pagination__next">
+          <a rel="next" href={libraryPageRoute(locale, page.nextPage)}>{messages.next}</a>
+        </li>
+      )}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .library-pagination { margin-top: 2rem; }
+  .library-pagination ul { align-items: center; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; list-style: none; margin: 0; padding: 0; }
+  .library-pagination a { align-items: center; border: 2px solid var(--color-primary); border-radius: 4px; color: var(--color-primary); display: inline-flex; font-weight: 700; justify-content: center; min-height: 44px; min-width: 44px; padding: .5rem .75rem; text-decoration: none; }
+  .library-pagination a[aria-current="page"] { background: var(--color-primary); color: white; }
+  .library-pagination a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+</style>

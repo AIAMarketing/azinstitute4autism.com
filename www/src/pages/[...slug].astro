@@ -1,6 +1,7 @@
 ---
-import { render } from 'astro:content';
-import { getPublicationManifest } from '../utils/publication';
+import { render, type CollectionEntry } from 'astro:content';
+import { getRoutePublicationManifest } from '../utils/publication';
+import type { LibraryPageDescriptor } from '../utils/library-pagination';
 import PageLayout from '../layouts/PageLayout.astro';
 import BlogPostLayout from '../layouts/BlogPostLayout.astro';
 import HomePage from '../components/pages/HomePage.astro';
@@ -9,12 +10,18 @@ import LibraryEnglish from '../components/pages/LibraryEnglish.astro';
 import LibrarySpanish from '../components/pages/LibrarySpanish.astro';
 import LibraryArabic from '../components/pages/LibraryArabic.astro';
 export async function getStaticPaths() {
-  return (await getPublicationManifest()).filter((page) => page.eligible).map(({ route, entry }) => ({
-    params: { slug: route === '/' ? undefined : decodeURI(route.slice(1)) },
-    props: { entry }
+  return (await getRoutePublicationManifest()).filter((page) => page.eligible).map((publication) => ({
+    params: { slug: publication.route === '/' ? undefined : decodeURI(publication.route.slice(1)) },
+    props: {
+      entry: publication.entry,
+      libraryPage: 'libraryPage' in publication ? publication.libraryPage : undefined
+    }
   }));
 }
-const { entry } = Astro.props;
+const { entry, libraryPage } = Astro.props as {
+  entry: CollectionEntry<'pages'> | CollectionEntry<'blog'>;
+  libraryPage?: LibraryPageDescriptor;
+};
 const { Content } = await render(entry);
 ---
 {entry.collection === 'blog'
@@ -22,5 +29,5 @@ const { Content } = await render(entry);
   : entry.data.slug === 'index'
     ? entry.data.lang === 'ar' ? <ArabicHome /> : <HomePage entry={entry} />
     : entry.data.slug === 'library'
-      ? entry.data.lang === 'es' ? <LibrarySpanish /> : entry.data.lang === 'ar' ? <LibraryArabic /> : <LibraryEnglish />
+      ? entry.data.lang === 'es' ? <LibrarySpanish page={libraryPage?.currentPage} /> : entry.data.lang === 'ar' ? <LibraryArabic page={libraryPage?.currentPage} /> : <LibraryEnglish page={libraryPage?.currentPage} />
       : <PageLayout entry={entry}><Content /></PageLayout>}

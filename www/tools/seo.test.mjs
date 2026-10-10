@@ -9,6 +9,8 @@ import fg from 'fast-glob';
 import matter from 'gray-matter';
 import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, renderSitemap, robotsFor } from '../src/utils/publication-policy.ts';
+import { createLibraryCatalog } from '../src/utils/library-catalog.ts';
+import { createLibraryPaginationPublications } from '../src/utils/library-pagination.ts';
 import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
 import { socialImageUrl } from '../src/utils/seo.ts';
 import { blogPostingSchema, faqItemsFromSourceHtml, faqPageSchema, serializeJsonLd } from '../src/utils/structured-data.ts';
@@ -23,6 +25,7 @@ const prefix = (lang) => lang === 'en' ? '' : `/${lang}`;
 const artifacts = new Map();
 let temporary;
 let manifest;
+let routeManifest;
 let runner;
 
 async function writeEntry(collection, lang, slug, data = {}) {
@@ -58,6 +61,23 @@ const meta = ($, key) => $(`head meta[${key.startsWith('og:') ? 'property' : 'na
 const jsonLd = ($) => $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
 const schemaOf = ($, type) => jsonLd($).filter((schema) => schema['@type'] === type);
 const text = (value) => value.replace(/\s+/g, ' ').trim();
+const libraryCardTitle = (articleRoute, mode = 'staging') => {
+  for (const [route, html] of artifacts.get(mode).html) {
+    if (!/^\/(?:es\/|ar\/)?library(?:\/page\/\d+)?$/.test(route)) continue;
+    const title = load(html)(`.blog-card h3 a[href="${articleRoute}"]`).text();
+    if (title) return title;
+  }
+  return '';
+};
+const libraryCardDate = (articleRoute, mode = 'staging') => {
+  for (const [route, html] of artifacts.get(mode).html) {
+    if (!/^\/(?:es\/|ar\/)?library(?:\/page\/\d+)?$/.test(route)) continue;
+    const $ = load(html);
+    const card = $('.blog-card').filter((_, element) => $(element).find('h3 a').attr('href') === articleRoute);
+    if (card.length) return card.find('time').text();
+  }
+  return '';
+};
 
 async function writeFaqFixture(slug, content, flags = {}) {
   await writeFile(path.join(temporary, 'src/content/pages/en', `${slug}.mdx`), matter.stringify(
@@ -102,6 +122,12 @@ before(async () => {
     return { id: parts.join('/').replace(/\.mdx?$/, ''), collection, data: matter(await readFile(path.join(temporary, file), 'utf8')).data };
   }));
   manifest = createPublicationManifest(entries, site);
+  const authors = await Promise.all((await fg('src/content/authors/**/*.{md,mdx}', { cwd: temporary })).map(async (file) => ({
+    id: file.replace(/^src\/content\/authors\//, '').replace(/\.mdx?$/, ''),
+    data: matter(await readFile(path.join(temporary, file), 'utf8')).data
+  })));
+  routeManifest = [...manifest, ...createLibraryPaginationPublications(createLibraryCatalog(manifest, authors), manifest, site)]
+    .sort((left, right) => left.route.localeCompare(right.route, 'en'));
   // A preview Astro.site must not leak into social assets or publication metadata.
   runner = `import {build} from ${JSON.stringify(pathToFileURL(path.join(project, 'node_modules/astro/dist/index.js')).href)};
 await build({root:${JSON.stringify(temporary)},configFile:${JSON.stringify(path.relative(temporary, path.join(project, 'astro.config.mjs')))},site:'https://preview.example.invalid',logLevel:'silent',vite:{cacheDir:${JSON.stringify(path.join(temporary, '.vite'))}}});`;
@@ -163,8 +189,7 @@ test('explicit article H1 changes only the heading; SEO and card titles retain t
     assert.equal($('main h1').children().length, 0, 'Overrides are text, not injected markup');
     for (const tag of ['og:title', 'twitter:title']) assert.equal(meta($, tag).attr('content'), `SEO title (${lang})`);
     assert.equal($('head title').text(), `SEO title (${lang})`);
-    const index = page(`${prefix(lang)}/library`);
-    assert.equal(index(`.blog-card h3 a[href="${route}"]`).text(), `SEO title (${lang})`);
+    assert.equal(libraryCardTitle(route), `SEO title (${lang})`);
   }
 });
 
@@ -179,8 +204,7 @@ test('production-supported English and Spanish article headings retain their ori
     assert.equal($('main h1').text(), heading);
     assert.notEqual(heading, record.title);
     assert.equal($('head title').text(), record.title);
-    const index = page(`${prefix(lang)}/library`);
-    assert.equal(index(`.blog-card h3 a[href="${route}"]`).text(), record.title);
+    assert.equal(libraryCardTitle(route), record.title);
   }
 });
 
@@ -250,10 +274,10 @@ for (const mode of ['staging', 'indexing']) {
   test(`${mode}: existing publication policy, metadata, language and navigation are unchanged`, () => {
     const { html, sitemap } = artifacts.get(mode);
     assert.deepEqual([...html.keys()].sort(), [
-      ...manifest.filter((item) => item.eligible).map((item) => item.route),
+      ...routeManifest.filter((item) => item.eligible).map((item) => item.route),
       createLibrarySearchPublication(site).route
     ].sort());
-    assert.equal(sitemap, renderSitemap(manifest, mode === 'indexing'));
+    assert.equal(sitemap, renderSitemap(routeManifest, mode === 'indexing'));
     for (const publication of manifest.filter((item) => item.eligible)) {
       const { route, entry, canonical } = publication;
       const $ = page(route, mode);
@@ -330,9 +354,7 @@ test('article and card calendar dates match declared dates even on a negative-of
     const byline = article('.article-byline time');
     assert.equal(byline.attr('datetime'), date.toISOString());
     assert.equal(byline.text(), date.toLocaleDateString(data.lang, { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' }));
-    const index = page(`${prefix(data.lang)}/library`);
-    const card = index('.blog-card').filter((_, el) => index(el).find('h3 a').attr('href') === publication.route);
-    assert.equal(card.find('time').text(), date.toLocaleDateString(data.lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }));
+    assert.equal(libraryCardDate(publication.route), date.toLocaleDateString(data.lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }));
   }
 });
 
