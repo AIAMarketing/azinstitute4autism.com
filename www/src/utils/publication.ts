@@ -3,6 +3,7 @@ import site from '../data/site.json';
 import { createPublicationManifest, normalizeRoute } from './publication-policy';
 import { createLibraryCatalog } from './library-catalog';
 import { createLibraryPaginationPublications } from './library-pagination';
+import { createAuthorArchivePublications } from './author-archives';
 import { createLibrarySearchPublication } from './search-publication';
 
 export const allowIndexing = import.meta.env.PUBLIC_ALLOW_INDEXING === 'true';
@@ -27,8 +28,13 @@ export async function getLibraryPaginationManifest(
 /** Content publications plus deterministic generated archive routes. */
 export async function getRoutePublicationManifest() {
   const content = await getPublicationManifest();
-  const pagination = await getLibraryPaginationManifest(content);
-  return [...content, ...pagination].sort((left, right) => left.route.localeCompare(right.route, 'en'));
+  const authors = await getCollection('authors');
+  const catalog = createLibraryCatalog(
+    content as Parameters<typeof createLibraryCatalog<CollectionEntry<'blog'>>>[0], authors
+  );
+  const pagination = createLibraryPaginationPublications(catalog, content, site.url);
+  const archives = createAuthorArchivePublications(catalog, authors, [...content, ...pagination], site.url);
+  return [...content, ...pagination, ...archives].sort((left, right) => left.route.localeCompare(right.route, 'en'));
 }
 
 export async function getPublication(route: string) {

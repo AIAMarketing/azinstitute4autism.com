@@ -59,8 +59,9 @@ const authors = defineCollection({
     generateId: ({ entry }) => entry.replace(/\.(md|mdx)$/, '')
   }),
   schema: z.object({
-    name: z.string(),
-    slug: z.string(),
+    name: z.string().refine((value) => value.trim().length > 0, 'Author name must not be blank'),
+    displayName: z.string().refine((value) => value.trim().length > 0, 'Author displayName must not be blank').optional(),
+    slug: z.string().regex(/^[\p{L}\p{N}]+(?:[-_][\p{L}\p{N}]+)*$/u, 'Author slug must be a safe single path segment'),
     description: z.string().optional(),
     avatar: z.string().optional(),
     lang: language,

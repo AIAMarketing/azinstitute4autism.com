@@ -2,6 +2,7 @@ import type { CollectionEntry } from 'astro:content';
 import { load } from 'cheerio';
 import type { Publication } from './publication-policy';
 import { socialImageUrl } from './seo.ts';
+import { createAuthorResolver } from './authors.ts';
 
 /** JSON embedded in HTML must not be able to close its script element. */
 export function serializeJsonLd(value: unknown): string {
@@ -18,10 +19,7 @@ export function blogPostingSchema(
   // Syndicated records must not acquire an invented original author/publisher.
   if (!publication.sitemapEligible) return undefined;
   const data = entry.data;
-  const matches = authors.filter(({ data: author }) => author.slug === data.author && author.lang === data.lang);
-  if (matches.length !== 1 || !matches[0].data.name.trim()) {
-    throw new Error(`Missing or ambiguous article author: ${entry.id} (${data.lang}/${data.author})`);
-  }
+  const author = createAuthorResolver(authors)(data.lang, data.author);
   const image = socialImageUrl(data.featuredImage, site);
   // Current content records establish calendar days, not publication times.
   const datePublished = data.date.toISOString().slice(0, 10);
@@ -41,7 +39,7 @@ export function blogPostingSchema(
     datePublished,
     ...(dateModified ? { dateModified } : {}),
     ...(image ? { image } : {}),
-    author: { '@type': 'Person', name: matches[0].data.name }
+    author: { '@type': 'Person', name: author.name }
   };
 }
 

@@ -1,10 +1,12 @@
 # AIA Astro Migration — Living Session Handoff
 
-**Last updated:** October 9, 2026 (America/Phoenix)  
+**Last updated:** October 10, 2026 (UTC)
 **Repository:** `AIAMarketing/azinstitute4autism.com`  
 **Working branch:** `faithful-astro-migration`  
-**Last completed *implementation* checkpoint:** `6f5ac3c0d233cee5fbbb62be79bc6909e6bec183` (Phase 6B.2)  
-**Next planned milestone:** Phase 6B.3 — Author Archives and Linked Bylines
+**Last accepted implementation:** Phase 6B.3 — Author Archives and Linked Bylines
+**Verified pre-commit parent:** `0957c06a18726a01531f5b46a1d74bc67aa58f60`
+**Implementation checkpoint:** the commit containing this handoff update; obtain its actual SHA from Git history
+**Next planned milestone:** Phase 6B.4 — URL and SEO Reconciliation
 
 > This is a short, continually updated orientation document, not a replacement for
 > the code, accepted project instructions, or detailed migration evidence.
@@ -31,39 +33,50 @@
 - Phase 5C Team reconciliation: `34d5394b3ce765028a27b9cddd9952de3f09bfe7`.
 - Phase 6A Library architecture proposal: `76a035424dc5245443476b168d8c91ea62eed27b`.
 - Phase 6B.1 multilingual metadata search: `b20c253383440598c2d07bf6f852906ac00c42df`.
-- **Phase 6B.2 static Library pagination and redirect definitions:
-  `6f5ac3c0d233cee5fbbb62be79bc6909e6bec183`.**
-  This commit has parent `b20c253383440598c2d07bf6f852906ac00c42df`,
-  message `feat(library): add static pagination and page-one redirects`, and
-  exactly 18 changed files. GitHub verification confirmed all three.
+- Phase 6B.2 static Library pagination and redirect definitions:
+  `6f5ac3c0d233cee5fbbb62be79bc6909e6bec183`.
+- **Phase 6B.3 author archives and linked bylines: accepted in the checkpoint
+  containing this handoff, with pre-commit parent
+  `0957c06a18726a01531f5b46a1d74bc67aa58f60`.** The file intentionally does
+  not invent the containing commit's SHA; verify it from Git history.
 
 Other earlier milestones and acceptance details are recorded in
 `www/reports/migration-summary.md`. Keep phase checkpoints separate.
 
-### Phase 6B.2 completed behavior
+### Phase 6B.3 accepted behavior
 
 - **65 eligible Library posts:** 46 English, 12 Spanish, seven Arabic.
-  English pagination contains 10/10/10/10/6 cards on five pages; Spanish
-  contains 10/2 on two pages; Arabic has seven on its single Library root.
-- Generated numbered Library routes: `/library/page/2` through
-  `/library/page/5` and `/es/library/page/2`.
-- Existing metadata-only, locale-scoped Library search and Library-only
-  `/search` compatibility survive pagination. Searches use the full locale
-  index, even from numbered pages; clear/reset restores that archive page.
-- Library first-page 301 definitions were added for `/library/page/1`,
-  `/es/library/page/1`, and `/ar/library/page/1`. Isolated nginx redirect
-  tests passed. **These rules have not been activated in the deployed staging
-  or production nginx configuration.**
-- Phase 6B.2 reported 25 Library + 34 SEO + 33 publication + 20 Markdown
-  passing tests, 36 headless Chromium checks, and clean route/link/image/blog
-  audits. No particular screen reader was claimed to have been tested.
-- Normal staging build: **102 HTML routes**, all `noindex,nofollow`, empty
-  sitemap, no hreflang. Indexing-enabled test build: **97 sitemap URLs**,
-  **174 hreflang links over 53 routes**. Restore normal staging build after
-  an indexing-enabled test.
-- Phase 6B.1 separately received manual browser acceptance through the user's
-  built-static-site nginx staging domain `https://aia.web3app.dev`.
-  Do not conflate that evidence with the Phase 6B.2 headless Chromium checks.
+  Author archive pagination is 10/10/10/10/6 English, 10/2 Spanish, and seven
+  Arabic, producing eight routes without a fabricated English page 6.
+- Generated author routes are English `/library/author/rula-diab` plus pages
+  2–5, Spanish `/es/library/author/rula-diab` plus page 2, and Arabic
+  `/ar/library/author/rula-diab`.
+- Exact locale/slug author resolution now supplies archives, Library cards,
+  full-post bylines, catalog metadata, and BlogPosting identity. Published
+  localized headings and biographies are stored in the author collection; the
+  verified 755-pixel portrait is self-hosted. Underlying Person identity stays
+  separate from credentialed presentation text and from Team membership.
+- Archive bylines link to the correct locale route. Author archives remain
+  self-canonical, `noindex,follow`, sitemap-excluded, and hreflang-excluded in
+  indexing-enabled builds. Existing Library roots, search, pagination,
+  syndicated exceptions, and article schema remain intact.
+- Automated acceptance: 31 Library, 34 SEO, 33 publication, and 20 Markdown
+  tests; 39 headless Chromium checks; clean route/link/image/blog audits; 110
+  HTML routes, 97 indexing-enabled sitemap URLs, and 174 hreflang links across
+  53 routes. The final staging build has all 110 pages `noindex,nofollow`, an
+  empty sitemap, and no hreflang.
+- The user separately completed the Phase 6B.3 manual browser checklist for all
+  three languages, first/final pages, biography/portrait, bylines, mobile, RTL,
+  keyboard focus, and existing Library behavior. No screen-reader test,
+  professional language approval, or organizational credential verification
+  is claimed.
+- Spanish and Arabic biographies/headings remain ready for human language
+  review; public biographical, credential, role, and employment claims remain
+  ready for organizational review if required.
+- Phase 6B.2's three Library `/page/1` redirect definitions remain repository
+  artifacts only. They have not been activated on deployed staging or
+  production hosts.
+- No production deployment or cutover has been authorized.
 
 ## Ratified Library rules to retain
 
@@ -86,35 +99,13 @@ Other earlier milestones and acceptance details are recorded in
 - Do not manufacture missing content or redirect distinct later pagination
   pages to earlier pages.
 
-## Next: Phase 6B.3 — Author Archives and Linked Bylines
+## Next: Phase 6B.4 — URL and SEO Reconciliation
 
-Prepare a **new, self-contained Codex CLI kickoff prompt**, grounded in the
-latest source and the ratified 6A/6B decisions, for this milestone only.
-
-Expected scope, subject to targeted inspection:
-
-- Generate language-specific author archive roots and nonempty numbered pages
-  from exact locale/author references and the shared eligible-post catalog,
-  reusing the ten-item pagination helper rather than manual article lists.
-- Preserve current known author URLs including
-  `/library/author/rula-diab`, `/es/library/author/rula-diab`, and
-  `/ar/library/author/rula-diab`. Current corpus would support five English
-  author pages, two Spanish, and one Arabic. Do not invent English page 6.
-- Link article cards and post bylines to the correct locale author archive.
-  Share exact locale/slug author resolution with BlogPosting Person semantics;
-  fail on missing/ambiguous author records. Keep author and Team membership
-  separate, and do not infer employment changes.
-- Reconcile published author headings and biographies only against traceable,
-  sufficiently current public source material; distinguish potentially stale
-  HubSpot prerenders. Add optional localized `displayName` only if warranted.
-  Substantive Spanish/Arabic biography or navigation text requires human review.
-- Keep author archives `noindex,follow` and outside the sitemap/hreflang graph
-  at this milestone. Keep existing Library-root hreflang unchanged.
-- Plan first-page author alias redirects using the existing redirect registry,
-  respecting the Phase 6B.3/6B.4 boundary and separate host-activation gate.
-- Preserve current search, pagination, publication, staging SEO protections,
-  and static hosting. Include browser/keyboard/RTL/no-JavaScript tests.
-- Do not implement Phase 6C missing articles or deploy hosting rules.
+Prepare a bounded, separately reviewed Phase 6B.4 kickoff from the latest
+committed source. Reconcile URL, canonical, sitemap, and redirect behavior,
+including the three author `/page/1` aliases. Do not activate repository
+redirects on deployed hosts without a separate approval gate. Phase 6B.5 then
+handles multilingual, RTL, accessibility, and performance acceptance.
 
 ## Outstanding blockers and subsequent milestones
 
@@ -122,10 +113,18 @@ Expected scope, subject to targeted inspection:
    source before `/library/page/6` and
    `/library/author/rula-diab/page/6` can be accepted for cutover.
    Do not generate empty substitutes or misleading redirects.
-2. **Phase 6B.4:** Complete URL, canonical, sitemap, and redirect reconciliation;
-   host activation requires separate approval.
+2. **Phase 6B.4:** Complete URL, canonical, sitemap, and redirect reconciliation,
+   including author first-page aliases; host activation requires separate
+   approval.
 3. **Phase 6B.5:** Multilingual, RTL, accessibility, and performance acceptance.
-   Spanish/Arabic search and pagination microcopy awaits human language review.
+   This includes human review of Spanish/Arabic content and three newly observed
+   defects: Arabic footer contact direction, an apparently unresponsive Arabic
+   author-archive language selector, and locale-inappropriate desktop/mobile/
+   footer navigation destinations. Code inspection suggests the selector is
+   coupled to SEO translation edges and Arabic MainNav falls back to English,
+   but those are hypotheses requiring targeted verification. Visitor language
+   navigation may use explicitly validated published counterparts without
+   enabling author hreflang, indexing, or sitemap participation.
 4. **Later phases:** Other content and language reconciliation (including
    missing Spanish privacy content), visual/accessibility review, operational
    integration decisions, and cutover.

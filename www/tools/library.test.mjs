@@ -13,6 +13,8 @@ import { createLibraryPaginationPublications, libraryPageRoute, paginateLibraryI
 import { boundedSearchOffset, normalizeLibrarySearchText, parseLegacyLibrarySearchState, searchLibrary } from '../src/utils/library-search.ts';
 import { createPublicationManifest, renderSitemap, robotsFor } from '../src/utils/publication-policy.ts';
 import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
+import { createAuthorResolver } from '../src/utils/authors.ts';
+import { authorPageRoute, createAuthorArchivePublications } from '../src/utils/author-archives.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -29,15 +31,17 @@ async function contentEntries(root = project) {
 async function authorEntries(root = project) {
   return Promise.all((await fg('src/content/authors/**/*.{md,mdx}', { cwd: root })).sort().map(async (file) => {
     const parsed = matter(await readFile(path.join(root, file), 'utf8'));
-    return { id: file.replace(/^src\/content\/authors\//, '').replace(/\.mdx?$/, ''), data: parsed.data };
+    return { id: file.replace(/^src\/content\/authors\//, '').replace(/\.mdx?$/, ''), data: parsed.data, body: parsed.content };
   }));
 }
 
 const entries = await contentEntries();
 const manifest = createPublicationManifest(entries, site);
-const catalog = createLibraryCatalog(manifest, await authorEntries());
+const authors = await authorEntries();
+const catalog = createLibraryCatalog(manifest, authors);
 const paginationPublications = createLibraryPaginationPublications(catalog, manifest, site);
-const routeManifest = [...manifest, ...paginationPublications].sort((left, right) => left.route.localeCompare(right.route, 'en'));
+const authorPublications = createAuthorArchivePublications(catalog, authors, [...manifest, ...paginationPublications], site);
+const routeManifest = [...manifest, ...paginationPublications, ...authorPublications].sort((left, right) => left.route.localeCompare(right.route, 'en'));
 
 function record(overrides = {}) {
   return {
@@ -64,6 +68,67 @@ test('catalog ordering is date descending with route ascending as the stable tie
     const dateOrder = Date.parse(previous.publishedAt) - Date.parse(current.publishedAt);
     assert.ok(dateOrder > 0 || (dateOrder === 0 && previous.url.localeCompare(current.url, 'en') < 0));
   }
+});
+
+test('author resolution is exact by locale and slug, keeps identity separate, and rejects invalid or ambiguous data', () => {
+  const resolve = createAuthorResolver(authors);
+  for (const locale of ['en', 'es', 'ar']) {
+    const author = resolve(locale, 'rula-diab');
+    assert.equal(author.name, 'Rula Diab');
+    assert.equal(author.displayName, authors.find(({ data }) => data.lang === locale).data.displayName);
+    assert.equal(author.archiveRoute, `${locale === 'en' ? '' : '/' + locale}/library/author/rula-diab`);
+    assert.equal(author.avatar, '/assets/images/rula-diab-avatar.jpg');
+  }
+  assert.throws(() => resolve('fr', 'rula-diab'), /Missing or ambiguous/);
+  assert.throws(() => resolve('en', 'Rula-Diab'), /Missing or ambiguous/);
+  assert.throws(() => createAuthorResolver([...authors, authors[0]]), /Missing or ambiguous/);
+  const source = authors[0];
+  for (const override of [{ name: ' ' }, { name: 4 }, { displayName: '' }, { displayName: ' \t' },
+    { slug: '../other' }, { slug: 'name/page/2' }, { slug: '%72ula' }, { lang: 'fr' },
+    { avatar: 'https://example.org/image.jpg' }, { description: 1 }]) {
+    assert.throws(() => createAuthorResolver([{ ...source, data: { ...source.data, ...override } }]), /Invalid author/);
+  }
+  const plain = { id: 'en/another', data: { lang: 'en', slug: 'another', name: 'Another Author' } };
+  assert.equal(createAuthorResolver([plain])('en', 'another').displayName, 'Another Author');
+});
+
+test('author archives automatically follow multiple authors, exact locale references, draft removal and growth', () => {
+  const author = (locale, slug) => ({ id: `${locale}/${slug}`, data: { lang: locale, slug, name: `${locale} ${slug}` } });
+  const sources = [author('en', 'one'), author('es', 'one'), author('en', 'two'), author('en', 'empty'), author('en', 'draft-only')];
+  const post = (slug, authorSlug, lang = 'en', draft = false) => ({
+    id: `${lang}/${slug}`, collection: 'blog',
+    data: { lang, slug, title: slug, date: '2026-01-01', author: authorSlug, draft }
+  });
+  const posts = [...Array.from({ length: 11 }, (_, i) => post(`post-${String(i).padStart(2, '0')}`, 'one')),
+    post('spanish', 'one', 'es'), post('another', 'two'), post('unpublished', 'draft-only', 'en', true)];
+  const generate = (records) => {
+    const m = createPublicationManifest(records, site);
+    return createAuthorArchivePublications(createLibraryCatalog(m, sources), sources, m, site);
+  };
+  const generated = generate(posts);
+  assert.deepEqual(generated.map(({ route }) => route), [
+    '/es/library/author/one', '/library/author/one', '/library/author/one/page/2', '/library/author/two'
+  ]);
+  assert.equal(generated.find(({ route }) => route === '/library/author/one').authorPage.totalItems, 11);
+  assert.ok(!generate(posts.slice(1)).some(({ route }) => route.endsWith('/page/2')));
+  assert.ok(!generate(posts.map((p, i) => i === 0 ? { ...p, data: { ...p.data, draft: true } } : p))
+    .some(({ route }) => route.endsWith('/page/2')));
+  assert.equal(generate([]).length, 0);
+  assert.ok(generate([...posts, post('new-author-post', 'empty')]).some(({ route }) => route === '/library/author/empty'));
+});
+
+test('author descriptors reject reserved routes including drafts, duplicate canonical targets, and invalid page paths', () => {
+  const root = manifest.find(({ route }) => route === '/library');
+  for (const route of ['/library/author', '/library/author/rula-diab', '/library/author/rula-diab/page/02', '/es/library/author/unknown']) {
+    assert.throws(() => createAuthorArchivePublications(catalog, authors, [...manifest, { ...root, route, eligible: false }], site), /Reserved author archive route collision/);
+  }
+  assert.throws(() => createAuthorArchivePublications(catalog, authors, [
+    ...manifest, { ...root, route: '/other', canonical: `${site}/library/author/rula-diab` }
+  ], site), /Duplicate canonical/);
+  for (const page of [0, -1, 1.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1, '02', '2']) {
+    assert.throws(() => authorPageRoute('/library/author/rula-diab', page), /Invalid author page/);
+  }
+  assert.throws(() => authorPageRoute('/library/author/../bad', 1), /Invalid author archive root/);
 });
 
 test('pagination handles empty, boundary and exact-multiple catalogs without empty numbered pages', () => {
@@ -406,6 +471,119 @@ test('numbered pages are self-canonical, production-indexable, sitemap-listed an
   for (const locale of ['en', 'es', 'ar']) {
     const root = libraryPageRoute(locale, 1);
     assert.equal(load(artifacts.get('indexing').html.get(root))('link[hreflang]').length > 0, true, root);
+  }
+});
+
+test('eight author archives contain all and only matching eligible posts in stable ten-item slices', () => {
+  const expected = {
+    en: [10, 10, 10, 10, 6], es: [10, 2], ar: [7]
+  };
+  assert.equal(authorPublications.length, 8);
+  assert.deepEqual(authorPublications.map(({ route }) => route), [
+    '/ar/library/author/rula-diab',
+    '/es/library/author/rula-diab',
+    '/es/library/author/rula-diab/page/2',
+    '/library/author/rula-diab',
+    '/library/author/rula-diab/page/2',
+    '/library/author/rula-diab/page/3',
+    '/library/author/rula-diab/page/4',
+    '/library/author/rula-diab/page/5'
+  ]);
+  const html = artifacts.get('staging').html;
+  assert.equal(html.size, 110);
+  for (const [locale, sizes] of Object.entries(expected)) {
+    const author = createAuthorResolver(authors)(locale, 'rula-diab');
+    const links = [];
+    for (const [index, count] of sizes.entries()) {
+      const route = authorPageRoute(author.archiveRoute, index + 1);
+      const $ = load(html.get(route));
+      const cards = $('.blog-list .blog-card');
+      assert.equal(cards.length, count, route);
+      links.push(...cards.find('h3 a').map((_, a) => $(a).attr('href')).get());
+      assert.equal($('main h1').length, 1, route);
+      assert.equal($('#author-heading').prop('tagName'), 'H2');
+      assert.equal($('#author-heading').text(), author.displayName);
+      assert.equal($('.author-biography').text().trim(), author.entry.body.trim(), route);
+      assert.equal($('.author-profile__avatar').attr('src'), author.avatar);
+      assert.equal($('.author-profile__avatar').attr('alt'), author.displayName);
+      assert.equal($('html').attr('lang'), locale);
+      assert.equal($('html').attr('dir'), locale === 'ar' ? 'rtl' : 'ltr');
+      assert.equal($('[data-library-search]').length, 0, 'No new archive search enhancement');
+      assert.equal($('.library-pagination').length, sizes.length > 1 ? 1 : 0);
+      if (sizes.length > 1) {
+        assert.equal($('.library-pagination [aria-current="page"]').text(), String(index + 1));
+        assert.equal($('.library-pagination [rel=prev]').attr('href'), index ? authorPageRoute(author.archiveRoute, index) : undefined);
+        assert.equal($('.library-pagination [rel=next]').attr('href'), index + 1 < sizes.length ? authorPageRoute(author.archiveRoute, index + 2) : undefined);
+        assert.ok($('.library-pagination [aria-current="page"]').attr('aria-label'));
+      }
+      assert.equal($('a[href$="/page/1"]').length, 0);
+      for (const image of $('main img').toArray()) assert.ok(image.attribs.src.startsWith('/assets/'));
+    }
+    assert.deepEqual(links, catalog.byLocale[locale].map(({ route }) => route));
+    assert.equal(new Set(links).size, links.length);
+    for (const suffix of ['/page/1', '/page/0', '/page/-1', '/page/2.5', '/page/02', '/page/abc', '/page/999999', `/page/${sizes.length + 1}`]) {
+      assert.ok(!html.has(author.archiveRoute + suffix), suffix);
+    }
+    assert.ok(!html.has(author.archiveRoute.replace('rula-diab', 'unknown')));
+  }
+});
+
+test('every card and post byline uses its resolved locale author without nested links or altered Person identity', () => {
+  const html = artifacts.get('staging').html;
+  const resolve = createAuthorResolver(authors);
+  for (const [route, source] of html) {
+    const $ = load(source);
+    for (const card of $('.blog-card').toArray()) {
+      const articleRoute = $(card).find('h3 a').attr('href');
+      const item = catalog.all.find(({ route }) => route === articleRoute);
+      assert.ok(item, articleRoute);
+      const author = resolve(item.entry.data.lang, item.entry.data.author);
+      assert.equal($(card).find('a[rel=author]').attr('href'), author.archiveRoute, route);
+      assert.equal($(card).find('a[rel=author]').text(), author.displayName, route);
+      assert.equal($(card).find('.blog-card-meta img').attr('src'), author.avatar);
+      assert.equal($(card).find('.blog-card-meta img').attr('alt'), '');
+      assert.ok(html.has(author.archiveRoute));
+      assert.equal($(card).find('a a').length, 0);
+      assert.equal($(card).find('a.text-link').attr('href'), articleRoute);
+    }
+  }
+  for (const item of catalog.all) {
+    const $ = load(html.get(item.route));
+    const author = resolve(item.entry.data.lang, item.entry.data.author);
+    assert.equal($('.article-byline a[rel=author]').attr('href'), author.archiveRoute, item.route);
+    assert.equal($('.article-byline a').text(), author.displayName);
+    assert.equal($('.article-byline img').attr('src'), author.avatar);
+    const schema = $('script[type="application/ld+json"]').toArray().map(s => JSON.parse($(s).text())).find(x => x['@type'] === 'BlogPosting');
+    if (manifest.find(x => x.route === item.route).sitemapEligible) assert.deepEqual(schema.author, { '@type': 'Person', name: author.name });
+    else assert.equal(schema, undefined, item.route);
+  }
+});
+
+test('author publication descriptors and HTML obey noindex, self-canonical, sitemap and translation exclusions in both modes', () => {
+  for (const mode of ['staging', 'indexing']) {
+    const { html, sitemap } = artifacts.get(mode);
+    assert.equal((sitemap.match(/<url>/g) ?? []).length, mode === 'indexing' ? 97 : 0);
+    let hreflang = 0, pages = 0;
+    for (const source of html.values()) {
+      const $ = load(source), count = $('link[hreflang]').length;
+      hreflang += count; if (count) pages++;
+      if (mode === 'staging') assert.equal($('meta[name=robots]').attr('content'), 'noindex,nofollow');
+    }
+    assert.equal(hreflang, mode === 'indexing' ? 174 : 0);
+    assert.equal(pages, mode === 'indexing' ? 53 : 0);
+    for (const publication of authorPublications) {
+      assert.equal(publication.eligible, true);
+      assert.equal(publication.noindex, true);
+      assert.equal(publication.externalCanonical, false);
+      assert.equal(publication.sitemapEligible, false);
+      const $ = load(html.get(publication.route));
+      assert.equal($('link[rel=canonical]').attr('href'), site + publication.route);
+      assert.equal($('meta[name=robots]').attr('content'), mode === 'indexing' ? 'noindex,follow' : 'noindex,nofollow');
+      assert.equal($('link[hreflang]').length, 0);
+      assert.equal($('.lang-switcher__menu').length, 0);
+      assert.ok(!sitemap.includes(publication.url));
+      if (publication.authorPage.currentPage > 1) assert.match($('title').text(), /(?:Page|Página) \d+$/u);
+    }
   }
 });
 

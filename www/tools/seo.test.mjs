@@ -11,6 +11,7 @@ import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, renderSitemap, robotsFor } from '../src/utils/publication-policy.ts';
 import { createLibraryCatalog } from '../src/utils/library-catalog.ts';
 import { createLibraryPaginationPublications } from '../src/utils/library-pagination.ts';
+import { createAuthorArchivePublications } from '../src/utils/author-archives.ts';
 import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
 import { socialImageUrl } from '../src/utils/seo.ts';
 import { blogPostingSchema, faqItemsFromSourceHtml, faqPageSchema, serializeJsonLd } from '../src/utils/structured-data.ts';
@@ -126,7 +127,8 @@ before(async () => {
     id: file.replace(/^src\/content\/authors\//, '').replace(/\.mdx?$/, ''),
     data: matter(await readFile(path.join(temporary, file), 'utf8')).data
   })));
-  routeManifest = [...manifest, ...createLibraryPaginationPublications(createLibraryCatalog(manifest, authors), manifest, site)]
+  routeManifest = [...manifest, ...createLibraryPaginationPublications(createLibraryCatalog(manifest, authors), manifest, site),
+    ...createAuthorArchivePublications(createLibraryCatalog(manifest, authors), authors, manifest, site)]
     .sort((left, right) => left.route.localeCompare(right.route, 'en'));
   // A preview Astro.site must not leak into social assets or publication metadata.
   runner = `import {build} from ${JSON.stringify(pathToFileURL(path.join(project, 'node_modules/astro/dist/index.js')).href)};
@@ -339,7 +341,7 @@ test('BlogPosting uses the SEO title, canonical, declared day and matching local
 test('missing optional article metadata stays absent, without fabricated modification dates or profile URLs', () => {
   const schema = schemaOf(page('/library/seo-minimal'), 'BlogPosting')[0];
   for (const key of ['image', 'description', 'dateModified', 'publisher']) assert.ok(!(key in schema), key);
-  assert.ok(!('url' in schema.author), 'Author archives are not generated local routes');
+  assert.ok(!('url' in schema.author), 'Phase 6B.3 preserves existing Person name-only attribution');
   for (const lang of languages) {
     const actual = schemaOf(page(`${prefix(lang)}/library/autism-self-advocacy-skills-aba`), 'BlogPosting')[0];
     assert.ok(!('dateModified' in actual), 'Do not import a live timestamp into otherwise unreconciled local content');
@@ -466,7 +468,7 @@ test('duplicate questions, duplicate accordion schemas and conflicting canonical
 test('authors resolve by exact locale and slug; missing/ambiguous records and reversed dates fail', async () => {
   const publication = manifest.find((item) => item.route === '/library/seo-display');
   const entry = { ...publication.entry, data: { ...publication.entry.data, date: new Date('2024-12-02'), updatedDate: new Date('2026-10-08') } };
-  const author = (lang) => ({ id: `${lang}/rula-diab`, collection: 'authors', data: { slug: 'rula-diab', name: `Name (${lang})`, lang } });
+  const author = (lang) => ({ id: `${lang}/rula-diab`, collection: 'authors', data: { slug: 'rula-diab', name: `Name (${lang})`, displayName: `Credentialed (${lang})`, lang } });
   assert.deepEqual(blogPostingSchema(entry, publication, [author('en'), author('es')], site).author, { '@type': 'Person', name: 'Name (en)' });
   assert.throws(() => blogPostingSchema(entry, publication, [author('es')], site), /Missing or ambiguous article author/);
   assert.throws(() => blogPostingSchema(entry, publication, [author('en'), author('en')], site), /Missing or ambiguous article author/);

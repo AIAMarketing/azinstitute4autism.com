@@ -1,0 +1,72 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import BlogCard from '../BlogCard.astro';
+import LibraryPagination from '../LibraryPagination.astro';
+import { getLibraryCatalog } from '../../utils/library';
+import { libraryRootRoute, paginateLibraryItems } from '../../utils/library-pagination';
+import type { AuthorArchiveDescriptor } from '../../utils/author-archives';
+
+interface Props { page: AuthorArchiveDescriptor<CollectionEntry<'authors'>>; }
+const { page } = Astro.props;
+const { author, locale, currentPage } = page;
+const catalog = (await getLibraryCatalog()).byLocale[locale];
+const slice = paginateLibraryItems(catalog.filter(({ entry }) => entry.data.author === author.slug), currentPage);
+if (!slice?.items.length) throw new Error(`Empty author archive: ${author.archiveRoute}, page ${currentPage}`);
+const { Content } = await render(author.entry);
+const prefix = locale === 'en' ? '' : `/${locale}`;
+const text = {
+  en: { heading: 'The Library at AZ Institute for Autism', title: 'Library & News Room | Arizona Institute for Autism', page: 'Page' },
+  es: { heading: 'La Biblioteca en AZ Institute for Autism', title: 'Biblioteca y Noticias | Instituto de Autismo de Arizona', page: 'Página' },
+  ar: { heading: 'مكتبة معهد أريزونا للتوحد', title: 'المكتبة وغرفة الأخبار | معهد أريزونا للتوحد', page: 'الصفحة' }
+}[locale];
+const title = `${text.title} | ${author.displayName}${currentPage > 1 ? ` | ${text.page} ${currentPage}` : ''}`;
+// Use the existing catalog's latest-post treatment; no second article list.
+const popular = catalog.slice(0, 5);
+---
+<BaseLayout title={title} description={author.description} image={author.avatar} lang={locale}>
+  <PageHero title={text.heading} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
+  <section class="author-profile" aria-labelledby="author-heading">
+    {author.avatar && <img class="author-profile__avatar" src={author.avatar} alt={author.displayName} width="176" height="176" />}
+    <div class="author-profile__content">
+      <h2 id="author-heading"><bdi>{author.displayName}</bdi></h2>
+      <div class="author-biography"><Content /></div>
+    </div>
+  </section>
+  <div class="author-listing container">
+    <section aria-labelledby="author-posts-heading">
+      <h2 id="author-posts-heading" class="author-posts-heading"><a href={libraryRootRoute(locale)}>All Post</a></h2>
+      <div class="blog-list">{slice.items.map(({ entry }) => <BlogCard post={entry} prefix={prefix} />)}</div>
+      <LibraryPagination locale={locale} page={slice} authorRoot={author.archiveRoute} />
+    </section>
+    <aside class="author-sidebar" aria-labelledby="author-popular-heading">
+      <h2 id="author-popular-heading">Popular Posts</h2>
+      <ul>{popular.map(({ entry, route }) => <li><a href={route}>{entry.data.title}</a></li>)}</ul>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .author-profile { align-items: start; display: flex; gap: 4rem; margin: 100px auto 60px; max-width: 768px; width: calc(100% - 96px); }
+  .author-profile__avatar { flex: 0 0 176px; height: 176px; object-fit: cover; width: 176px; }
+  .author-profile__content { flex: 1; min-width: 0; }
+  .author-profile h2 { font-size: 2.4rem; line-height: 1.25; margin: 0 0 10px; }
+  .author-biography { font-size: 1rem; line-height: 26px; }
+  .author-biography :global(p) { margin: 0 0 20px; }
+  .author-listing { align-items: start; display: grid; gap: 30px; grid-template-columns: minmax(0, 1fr) 294px; padding-bottom: 60px; }
+  .author-posts-heading { font-family: var(--font-body); font-size: 1rem; margin: 0 0 24px; }
+  .author-posts-heading a { color: inherit; }
+  .author-sidebar h2 { font-size: 1.25rem; margin: 0 0 20px; }
+  .author-sidebar ul { list-style: none; margin: 0; padding: 0; }
+  .author-sidebar li { margin-bottom: 20px; }
+  .author-sidebar a { color: inherit; }
+  .author-listing a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+  @media (max-width: 760px) {
+    .author-profile { flex-direction: column; gap: 5px; }
+    .author-profile__avatar { flex-basis: auto; width: 100px; height: 100px; }
+    .author-profile h2 { font-size: 2rem; }
+    .author-biography { line-height: 20px; }
+    .author-listing { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>

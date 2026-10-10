@@ -11,6 +11,7 @@ import { load } from 'cheerio';
 import { createPublicationManifest, hreflangLinksFor, normalizeRoute, publicationFor, renderSitemap, robotsFor, sitemapUrls, validateTranslationGraph } from '../src/utils/publication-policy.ts';
 import { createLibraryCatalog } from '../src/utils/library-catalog.ts';
 import { createLibraryPaginationPublications } from '../src/utils/library-pagination.ts';
+import { createAuthorArchivePublications } from '../src/utils/author-archives.ts';
 import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
@@ -132,7 +133,8 @@ const actualManifest = createPublicationManifest(sourceEntries, site);
 const sourceAuthors = await readAuthors(project);
 const sitePublications = (manifest) => [
   ...manifest,
-  ...createLibraryPaginationPublications(createLibraryCatalog(manifest, sourceAuthors), manifest, site)
+  ...createLibraryPaginationPublications(createLibraryCatalog(manifest, sourceAuthors), manifest, site),
+  ...createAuthorArchivePublications(createLibraryCatalog(manifest, sourceAuthors), sourceAuthors, manifest, site)
 ].sort((left, right) => left.route.localeCompare(right.route, 'en'));
 const generatedPublications = (manifest) => [
   ...sitePublications(manifest).filter((page) => page.eligible),

@@ -2,6 +2,8 @@
 import { render, type CollectionEntry } from 'astro:content';
 import { getRoutePublicationManifest } from '../utils/publication';
 import type { LibraryPageDescriptor } from '../utils/library-pagination';
+import type { AuthorArchiveDescriptor } from '../utils/author-archives';
+import AuthorArchive from '../components/pages/AuthorArchive.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 import BlogPostLayout from '../layouts/BlogPostLayout.astro';
 import HomePage from '../components/pages/HomePage.astro';
@@ -14,20 +16,22 @@ export async function getStaticPaths() {
     params: { slug: publication.route === '/' ? undefined : decodeURI(publication.route.slice(1)) },
     props: {
       entry: publication.entry,
-      libraryPage: 'libraryPage' in publication ? publication.libraryPage : undefined
+      libraryPage: 'libraryPage' in publication ? publication.libraryPage : undefined,
+      authorPage: 'authorPage' in publication ? publication.authorPage : undefined
     }
   }));
 }
-const { entry, libraryPage } = Astro.props as {
+const { entry, libraryPage, authorPage } = Astro.props as {
   entry: CollectionEntry<'pages'> | CollectionEntry<'blog'>;
   libraryPage?: LibraryPageDescriptor;
+  authorPage?: AuthorArchiveDescriptor<CollectionEntry<'authors'>>;
 };
-const { Content } = await render(entry);
+const { Content } = authorPage ? { Content: null } : await render(entry);
 ---
-{entry.collection === 'blog'
-  ? <BlogPostLayout entry={entry}><Content /></BlogPostLayout>
+{authorPage ? <AuthorArchive page={authorPage} /> : entry.collection === 'blog'
+  ? <BlogPostLayout entry={entry}>{Content && <Content />}</BlogPostLayout>
   : entry.data.slug === 'index'
     ? entry.data.lang === 'ar' ? <ArabicHome /> : <HomePage entry={entry} />
     : entry.data.slug === 'library'
       ? entry.data.lang === 'es' ? <LibrarySpanish page={libraryPage?.currentPage} /> : entry.data.lang === 'ar' ? <LibraryArabic page={libraryPage?.currentPage} /> : <LibraryEnglish page={libraryPage?.currentPage} />
-      : <PageLayout entry={entry}><Content /></PageLayout>}
+      : <PageLayout entry={entry}>{Content && <Content />}</PageLayout>}

@@ -49,6 +49,7 @@
       "pageBundle": false,
       "fields": [
         { "title": "Name", "name": "name", "type": "string", "required": true },
+        { "title": "Display name (published heading/byline)", "name": "displayName", "type": "string" },
         { "title": "Slug", "name": "slug", "type": "string", "required": true },
         { "title": "Description", "name": "description", "type": "string" },
         { "title": "Avatar", "name": "avatar", "type": "image" },

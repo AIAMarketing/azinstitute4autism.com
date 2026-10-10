@@ -4,13 +4,16 @@ import {
   type LibraryPageSlice
 } from '../utils/library-pagination';
 import type { LibraryLocale } from '../utils/library-catalog';
+import { authorPageRoute } from '../utils/author-archives';
 
 interface Props {
   locale: LibraryLocale;
   page: LibraryPageSlice<unknown>;
+  authorRoot?: string;
 }
 
-const { locale, page } = Astro.props;
+const { locale, page, authorRoot } = Astro.props;
+const pageRoute = (number: number) => authorRoot ? authorPageRoute(authorRoot, number) : libraryPageRoute(locale, number);
 const messages = {
   en: { navigation: 'Library pagination', previous: 'Previous', next: 'Next', page: 'Page', current: 'current page' },
   es: { navigation: 'Paginación de la biblioteca', previous: 'Anterior', next: 'Siguiente', page: 'Página', current: 'página actual' },
@@ -23,13 +26,13 @@ const pages = Array.from({ length: page.totalPages }, (_, index) => index + 1);
     <ul>
       {page.previousPage && (
         <li class="library-pagination__previous">
-          <a rel="prev" href={libraryPageRoute(locale, page.previousPage)}>{messages.previous}</a>
+          <a rel="prev" href={pageRoute(page.previousPage)}>{messages.previous}</a>
         </li>
       )}
       {pages.map((number) => (
         <li>
           <a
-            href={libraryPageRoute(locale, number)}
+            href={pageRoute(number)}
             aria-current={number === page.currentPage ? 'page' : undefined}
             aria-label={`${messages.page} ${number}${number === page.currentPage ? `, ${messages.current}` : ''}`}
           >{number}</a>
@@ -37,7 +40,7 @@ const pages = Array.from({ length: page.totalPages }, (_, index) => index + 1);
       ))}
       {page.nextPage && (
         <li class="library-pagination__next">
-          <a rel="next" href={libraryPageRoute(locale, page.nextPage)}>{messages.next}</a>
+          <a rel="next" href={pageRoute(page.nextPage)}>{messages.next}</a>
         </li>
       )}
     </ul>

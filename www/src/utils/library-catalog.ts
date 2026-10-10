@@ -1,3 +1,5 @@
+import { createAuthorResolver, type AuthorEntry } from './authors.ts';
+
 export const libraryLocales = ['en', 'es', 'ar'] as const;
 export type LibraryLocale = typeof libraryLocales[number];
 
@@ -17,14 +19,7 @@ export interface LibraryBlogEntry {
   };
 }
 
-export interface LibraryAuthorEntry {
-  id: string;
-  data: {
-    lang: string;
-    slug: string;
-    name: string;
-  };
-}
+export type LibraryAuthorEntry = AuthorEntry;
 
 export interface LibraryPublication<TEntry extends LibraryBlogEntry = LibraryBlogEntry> {
   route: string;
@@ -112,15 +107,7 @@ export function createLibraryCatalog<TEntry extends LibraryBlogEntry>(
   manifest: LibraryPublication<TEntry>[],
   authors: LibraryAuthorEntry[]
 ): LibraryCatalog<TEntry> {
-  const authorMap = new Map<string, LibraryAuthorEntry>();
-  for (const author of authors) {
-    if (!localeOrder.has(author.data.lang) || !author.data.slug || !author.data.name.trim()) {
-      throw new Error(`Invalid Library author record: ${author.id}`);
-    }
-    const key = `${author.data.lang}:${author.data.slug}`;
-    if (authorMap.has(key)) throw new Error(`Missing or ambiguous article author: ${key} (duplicate Library author records)`);
-    authorMap.set(key, author);
-  }
+  const resolveAuthor = createAuthorResolver(authors);
 
   const seenRoutes = new Set<string>();
   const dated: Array<LibraryCatalogItem<TEntry> & { publicationTime: number }> = [];
@@ -132,8 +119,7 @@ export function createLibraryCatalog<TEntry extends LibraryBlogEntry>(
     if (seenRoutes.has(publication.route)) throw new Error(`Duplicate Library route: ${publication.route}`);
     seenRoutes.add(publication.route);
 
-    const author = authorMap.get(`${locale}:${entry.data.author}`);
-    if (!author) throw new Error(`Missing or ambiguous article author: ${locale}:${entry.data.author} for ${entry.id}`);
+    const author = resolveAuthor(locale, entry.data.author);
     const date = publishedAt(entry.data.date, entry.id);
     dated.push({
       route: publication.route,
@@ -147,7 +133,7 @@ export function createLibraryCatalog<TEntry extends LibraryBlogEntry>(
         headings: extractMarkdownHeadings(entry.body),
         category: entry.data.category?.trim() ?? '',
         tags: normalizedTags(entry.data.tags),
-        author: { name: author.data.name, slug: author.data.slug },
+        author: { name: author.name, slug: author.slug },
         publishedAt: date.iso
       }
     });

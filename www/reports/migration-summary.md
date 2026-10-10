@@ -2663,3 +2663,328 @@ This is a **documentation-only transition checkpoint**. No application code,
 publication rules, search or pagination behavior, redirect definitions, or
 hosting/deployment configuration were changed; no build or browser-test result
 is claimed for this documentation update.
+
+## Phase 6B.3 — Author Archives and Linked Bylines (2026-10-10)
+
+### Scope and Starting State
+
+Phase 6B.3 was implemented for review from branch
+`faithful-astro-migration` at starting HEAD
+`0957c06a18726a01531f5b46a1d74bc67aa58f60`. The last completed
+implementation checkpoint remains Phase 6B.2 at
+`6f5ac3c0d233cee5fbbb62be79bc6909e6bec183`; the later starting HEAD is the
+documentation-only session-handoff commit. This milestone adds generated
+author archives and linked bylines. It does not implement author redirects,
+make author pages indexable, add the nine Phase 6C articles, change deployment,
+or alter Library search semantics.
+
+The existing catalog was recalculated at 46 English, 12 Spanish, and seven
+Arabic eligible articles. All 65 records reference the exact locale-specific
+`rula-diab` author record. The two accessible syndicated English records remain
+in the catalog and author archive listings while retaining their existing
+article-level external canonicals, `noindex`, sitemap exclusion, hreflang
+exclusion, and structured-data exclusion.
+
+### Public Source Evidence and Limits
+
+The three published roots were inspected with bounded, read-only requests:
+
+- `https://www.azinstitute4autism.com/library/author/rula-diab`
+- `https://www.azinstitute4autism.com/es/library/author/rula-diab`
+- `https://www.azinstitute4autism.com/ar/library/author/rula-diab`
+
+Normal and explicit revalidation requests ran from `2026-10-10T03:22:53Z`
+through `2026-10-10T03:23:00Z`, at least one second apart. All returned 200,
+`Cache-Control: no-store, no-cache, must-revalidate`, Cloudflare as the server,
+and `x-hs-cache-config: BrowserCache-5s-EdgeCache-0s`. HubSpot reported October
+3 prerenders and matching `Last-Modified` values: English at
+`2026-10-03T23:13:21Z`, Spanish at `23:13:18Z`, and Arabic at `23:13:19Z`.
+Normal, revalidation, desktop-browser, and mobile-browser observations agreed.
+That agreement establishes the observed public representation but does not
+prove uncached origin freshness or independently verify the biographical,
+credential, role, or employment claims.
+
+The evidence file
+`reports/phase-6b3-source-evidence-2026-10-10.json` preserves request metadata,
+titles, descriptions, headings, biography transcriptions, avatar mapping,
+pagination links, popular-post observations, and desktop/mobile measurements.
+No cookies, credentials, authenticated requests, forms, APIs, or production
+writes were used.
+
+The author records reproduce the observed locale-specific credentialed
+headings and one-paragraph biographies. The underlying identity remains `Rula
+Diab` in every locale. Spanish and Arabic text is a traceable transcription of
+the public source and remains ready for human language review; it is not
+represented as a professionally approved translation. The source 755-by-755
+JPEG replaces the old 100-by-100 derivative at the existing local asset path
+`/assets/images/rula-diab-avatar.jpg`; its SHA-256 is
+`0ea7b2c2d4e4a5e23b375ffa9ebbcf658e0cf5898f43c3a5506a80db86fa974a`.
+
+### Author Model and Resolution
+
+`src/utils/authors.ts` now provides one exact `(locale, author slug)` resolver
+for the catalog, cards, full posts, BlogPosting generation, and archives. It
+validates supported locale, a safe single-segment Unicode slug, nonblank
+identity and optional display name, description type, and a normalized local
+avatar path. Duplicate, missing, invalid, or ambiguous references fail with an
+actionable build error. The resolver returns the underlying `name`, optional
+presentation `displayName`, biography data, avatar, and computed locale archive
+route. It does not consult Team records or infer employment, credentials, or
+translation equivalence.
+
+The author content schema and Front Matter CMS configuration add the optional
+`displayName`. `name` continues to hold the person's identity. BlogPosting
+continues to emit `author: { "@type": "Person", "name": "Rula Diab" }`; the
+credentialed display string is used only in visible headings and bylines. No
+unsupported author URL, credential, employer, `sameAs`, or Team relationship
+was added to JSON-LD.
+
+### Archive Generation and Rendering
+
+`src/utils/author-archives.ts` composes author descriptors only after the
+content manifest and shared eligible Library catalog exist. It groups catalog
+records by exact locale and declared author slug, resolves each author through
+the shared resolver, and reuses `paginateLibraryItems()` with the existing
+ten-item page size and date-descending/normalized-route-ascending order. It
+generates only nonempty pages and detects reserved author-family route
+collisions, including ineligible content records, as well as duplicate
+canonical targets. This preserves the manifest-first composition order and
+does not create a recursive catalog/publication dependency.
+
+The current generated route inventory is:
+
+| Locale | Eligible author articles | Generated routes and card counts |
+| --- | ---: | --- |
+| English | 46 | `/library/author/rula-diab` (10), pages 2–4 (10 each), page 5 (6) |
+| Spanish | 12 | `/es/library/author/rula-diab` (10), page 2 (2) |
+| Arabic | 7 | `/ar/library/author/rula-diab` (7) |
+
+These eight routes are derived rather than hardcoded. A newly referenced valid
+author gains an archive automatically; an author with no eligible posts gains
+none. No `/page/1`, English page 6, Spanish page 3, Arabic page 2, malformed
+page number, beyond-last page, or unknown-author route is generated.
+
+The catchall renderer distinguishes the synthetic author descriptor before
+rendering ordinary page or article content. `AuthorArchive.astro` uses the
+existing Library hero, shared `BlogCard`, shared pagination component, author
+record body, catalog, and locale shell. It preserves one H1, uses the author
+heading as H2, renders the verified portrait and biography, retains the
+catalog's sidebar treatment, and preserves Arabic `lang="ar" dir="rtl"`.
+Numbered pages have distinct titles while retaining the same visible archive
+headings. Pagination uses real links, root page-one URLs, previous/next
+boundaries, `aria-current="page"`, localized labels, 44-pixel targets, and
+visible keyboard focus. It remains fully usable without JavaScript.
+
+The production Popular Posts links are an editorial selection and differ from
+the current repository's five newest eligible posts. The new archive reuses the
+same deterministic catalog-derived sidebar behavior already used by the three
+Astro Library indexes rather than introducing a second manually maintained
+article list. Exact production sidebar selection remains a content-fidelity
+review item and should be reconciled together with the Phase 6C corpus rather
+than hardcoded here.
+
+### Linked Bylines and Existing Library Behavior
+
+`BlogCard.astro` and `BlogPostLayout.astro` no longer hardcode one English
+credential string and avatar. Both resolve the article's exact locale/slug
+author, display the source-supported localized presentation name and avatar,
+and link it with `rel="author"` to the corresponding local archive. Decorative
+adjacent avatars retain empty alternatives; archive portraits use the
+localized display heading. Article titles, Read More links, dates, bodies,
+canonicals, and publication metadata are unchanged. Tests reject nested links
+and verify visible focus.
+
+Phase 6B.1 search indexes, legacy `/search`, and Phase 6B.2 Library slices are
+unchanged. Search on a numbered Library page still covers the full locale
+catalog, hides the ordinary cards and pager while active, and restores that
+same page on reset. No search feature was added to author archives. No search
+logging, external service, analytics, query transmission, cookies, or backend
+was introduced.
+
+### Publication and SEO Results
+
+Every author descriptor is eligible for static generation but carries
+`noindex: true`, no external canonical, no translation edges, and no sitemap
+eligibility. In the indexing-enabled build all eight pages are self-canonical,
+emit `noindex,follow`, have no hreflang, and remain absent from the 97-URL
+sitemap. Existing Library-root hreflang stays unchanged. Production source
+pages exposed no canonical or robots meta in the captured HTML; the local
+self-canonical/noindex behavior is the ratified migration policy rather than a
+claim that HubSpot currently emits it.
+
+The indexing-enabled build produced 110 HTML routes, 97 sitemap URLs, and 174
+hreflang links across 53 routes. The eight new author routes explain the change
+from the Phase 6B.2 total of 102; sitemap and hreflang totals do not change.
+Existing article canonicals, syndicated exceptions, BlogPosting and FAQPage
+rules, Library pagination metadata, `/search`, and global publication controls
+remain unchanged.
+
+The route audit first reported the expected source-fingerprint mismatch. The
+established offline procedure then generated
+`reports/route-reconciliation-2026-10-10-offline-03-48-54-074Z.json`, reusing all 70 saved
+production requests with no new production fetches, and its subsequent
+`--check` passed. The reconciliation records 110 locally generated routes and
+preserves historical production observations rather than rewriting them.
+
+### Automated and Browser Validation
+
+| Check | Result |
+| --- | --- |
+| `npm run check` | Passed: 90 Astro files, 0 errors, warnings, or hints |
+| `npm run test:library` | Passed: 31 tests, including resolver validation, eight exact archive routes, 46/12/7 slices, growth/removal, collisions, rendering, bylines, SEO, and search regression |
+| `npm run test:seo` | Passed: 34 tests, including identity-versus-display-name BlogPosting coverage |
+| `npm run test:publication` | Passed: 33 tests |
+| `npm run test:markdown` | Passed: 20 tests |
+| Normal `npm run build` | Passed: 110 HTML routes |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed: 110 HTML routes, 97 sitemap URLs, 174 hreflang links across 53 routes |
+| `npm run audit:routes -- --check` | Passed after offline reconciliation; no live requests |
+| `npm run audit:links` | Passed: 0 broken internal links |
+| `npm run audit:images` | Passed: 0 missing mapped page images |
+| `npm run audit:blog` | Passed: 0 blog content audit failures |
+
+Headless Chromium performed 39 focused checks against the built static output
+through local Astro preview. Coverage included English first/final pages,
+Spanish first/final pages, Arabic root, exact card counts, titles/canonicals and
+robots, no hreflang, local assets, locale and direction, desktop and 390-by-844
+mobile overflow, profile sizing, pager boundaries, card and full-post byline
+navigation in all three languages, keyboard Tab focus and visible focus on the
+author link, no-JavaScript archive and pager navigation, and unchanged
+full-catalog Library search/reset behavior. Source and local desktop screenshots
+were inspected from temporary files and are not committed. No particular
+screen reader or user-performed manual acceptance is claimed.
+
+The final validation step restores the normal staging artifact. Its expected
+and verified safeguards are 110 HTML pages, all `noindex,nofollow`, an empty
+sitemap, and no hreflang.
+
+### Redirect Boundary, Deferred Work, and Human Review
+
+No author alias was added to the redirect registry. The intended future
+Phase 6B.4 definitions remain:
+
+- `/library/author/rula-diab/page/1` → `/library/author/rula-diab` (301)
+- `/es/library/author/rula-diab/page/1` → `/es/library/author/rula-diab` (301)
+- `/ar/library/author/rula-diab/page/1` → `/ar/library/author/rula-diab` (301)
+
+No duplicate page-one HTML exists. Repository or host activation and HTTP
+verification of these aliases remain separately gated. No distinct later page
+is redirected to an earlier page.
+
+Outstanding review items are:
+
+1. Human language review of the source-transcribed Spanish and Arabic display
+   headings, biographies, and existing pagination labels.
+2. Independent organizational review of the public biographical, credential,
+   and role claims if AIA requires factual approval beyond faithful source
+   reproduction. Author attribution does not establish Team membership.
+3. Phase 6C's nine missing English articles remain required before either
+   production `/library/page/6` or `/library/author/rula-diab/page/6` can be
+   accepted for cutover. No substitute route or content was fabricated.
+4. Exact production Popular Posts selection should be reconsidered after the
+   Phase 6C corpus is complete.
+5. Author archive indexability, sitemap eligibility, and author-root hreflang
+   remain later human-decision gates. This milestone intentionally emits none.
+
+### Changed-File Inventory
+
+Modified files:
+
+- `frontmatter.json` — optional author presentation-name field.
+- `public/assets/images/rula-diab-avatar.jpg` — verified full-size source
+  portrait at the existing local path.
+- `src/components/BlogCard.astro` — resolved, linked locale byline and avatar.
+- `src/components/LibraryPagination.astro` — narrow author-root route support
+  through the shared pager.
+- `src/content.config.ts` — validated optional display name and author identity
+  fields.
+- `src/content/authors/en/rula-diab.md`,
+  `src/content/authors/es/rula-diab.md`, and
+  `src/content/authors/ar/rula-diab.md` — observed display headings and public
+  biography transcriptions.
+- `src/layouts/BlogPostLayout.astro` — resolved, linked full-post byline.
+- `src/pages/[...slug].astro` — author-descriptor rendering dispatch.
+- `src/utils/library-catalog.ts` — uses the shared exact author resolver.
+- `src/utils/publication.ts` — composes author descriptors after content and
+  Library pagination.
+- `src/utils/structured-data.ts` — shared resolver while retaining underlying
+  Person identity.
+- `tools/library.test.mjs`, `tools/publication.test.mjs`, and
+  `tools/seo.test.mjs` — archive, resolver, byline, route, publication, schema,
+  and generated-HTML regression coverage.
+- `reports/migration-summary.md` — this dated implementation and review record.
+
+New files:
+
+- `src/utils/authors.ts` — shared author validation and resolution.
+- `src/utils/author-archives.ts` — derived author archive publications.
+- `src/components/pages/AuthorArchive.astro` — source-specific archive
+  presentation.
+- `reports/phase-6b3-source-evidence-2026-10-10.json` — dated production and
+  source-asset evidence.
+- `reports/route-reconciliation-2026-10-10-offline-03-48-54-074Z.json` — reproducible offline
+  route reconciliation.
+
+No package dependency, article body/date, Team record, Library search index,
+redirect definition, form, analytics, advertising, consent, employee portal,
+deployment, or unrelated site content was changed. `reports/SESSION_HANDOFF.md`
+was intentionally left at Phase 6B.2 during implementation review; checkpoint
+acceptance advances it separately without inventing the containing commit SHA.
+
+### Manual Acceptance and Newly Observed Deferred Defects (2026-10-10)
+
+The user completed and accepted the Phase 6B.3 manual browser checklist after
+the automated review. Manual coverage included English, Spanish, and Arabic
+author archives; first and final pagination pages; biography and portrait
+presentation; card and full-post byline links; mobile layouts; Arabic RTL
+archive layout; keyboard focus; and preservation of existing Library behavior.
+This user acceptance is separate from the 39 automated headless Chromium
+checks. It does not establish screen-reader testing, professional Spanish or
+Arabic language review, or organizational verification of credentials,
+biographical claims, roles, or employment.
+
+The accepted validation baseline remains 110 generated HTML routes, including
+eight author archive routes; 97 indexing-enabled sitemap URLs; 174 hreflang
+links across 53 routes; all eight author routes self-canonical,
+`noindex,follow`, sitemap-excluded, and hreflang-excluded; and the final staging
+build globally `noindex,nofollow` with an empty sitemap and no hreflang. The 31
+Library, 34 SEO, 33 publication, and 20 Markdown tests passed, as did the link,
+image, blog, and saved-evidence offline route audits. No new production crawl
+was performed for checkpoint acceptance.
+
+Broader user inspection subsequently identified three open multilingual
+defects. They do not invalidate the accepted core author-archive implementation
+and were not changed during checkpoint preparation:
+
+1. **Arabic footer contact presentation — Phase 6B.5.** On Arabic pages,
+   articles, and author archives, RTL direction disrupts the visual presentation
+   of Latin-script telephone, email, and address content. The shared footer may
+   require explicit direction isolation and RTL-aware formatting. This is a
+   user-observed presentation defect; its precise code-level cause still needs
+   targeted verification.
+2. **Author archive language selector — high-priority pre-cutover navigation
+   defect; targeted remediation and Phase 6B.5 verification.** The selector in
+   the Arabic author archive header appeared unresponsive. Code inspection
+   suggests a likely architectural cause: the committed LanguageSwitcher uses
+   `publication.translations`, while author descriptors deliberately have no
+   SEO translation relationships during their initial `noindex` period. This
+   is a hypothesis, not a completed runtime diagnosis. A correction must
+   distinguish visitor navigation through explicitly validated locale author
+   records and translation keys from SEO hreflang. Author hreflang, sitemap
+   inclusion, or indexing must not be enabled as a workaround.
+3. **Language-appropriate navigation destinations — Phase 6B.5.** From an
+   Arabic author archive, Library should prefer `/ar/library` rather than the
+   English `/library` when that published route exists. The committed MainNav
+   currently falls back to English navigation for Arabic despite
+   `navigation.ar.json`; Spanish is partly localized, and the footer retains
+   English-path assumptions. A later correction must cover desktop, mobile,
+   and footer navigation; validate actual published destinations; define
+   explicit fallback behavior; avoid guessed translated routes; and preserve
+   the approved SEO translation policy. The navigation behavior is
+   user-observed; the cited code paths are inspection hypotheses pending the
+   scoped remediation.
+
+Phase 6B.4 remains the next milestone for URL and SEO reconciliation, including
+the deferred author `/page/1` aliases. Phase 6B.5 follows for multilingual,
+RTL, accessibility, and performance acceptance, including the three defects
+above. The nine missing English articles remain Phase 6C work and continue to
+block final acceptance of the two production page-6 URL families.
