@@ -16,8 +16,9 @@ indexes, and blog-post family.
 - Current June and May 2026 English library articles are included.
 
 HubSpot-generated wrappers, analytics, scripts, CSS, query-language duplicates,
-AMP variants, pagination, and author archive variants are not carried into the
-Astro implementation.
+AMP variants, and HubSpot-specific archive implementations are not copied into
+Astro. Native static Library pagination is now implemented (Phase 6B.2);
+author archives are planned for Phase 6B.3.
 
 ## Live-Source Fidelity Pass
 
@@ -2645,3 +2646,20 @@ No package dependency, article body, author record, content date, form,
 analytics, advertising, production hosting, employee-portal, or unrelated page
 was changed. Author archives, author biographies, Phase 6C content, page-1
 author aliases, and production deployment remain outside this checkpoint.
+
+## Session Transition Handoff — October 9, 2026
+
+After verifying the pushed Phase 6B.2 checkpoint
+`6f5ac3c0d233cee5fbbb62be79bc6909e6bec183` on branch
+`faithful-astro-migration` (parent `b20c253383440598c2d07bf6f852906ac00c42df`,
+18 changed files), a short, continually maintained handoff was added at
+[`reports/SESSION_HANDOFF.md`](SESSION_HANDOFF.md). The handoff identifies
+Phase 6B.3 as the next milestone, links to controlling instructions and
+accepted ratification decisions, and lists known Phase 6C content gaps,
+localization review, and pending redirect-host activation. It is an orientation
+index, not a replacement for this dated migration evidence.
+
+This is a **documentation-only transition checkpoint**. No application code,
+publication rules, search or pagination behavior, redirect definitions, or
+hosting/deployment configuration were changed; no build or browser-test result
+is claimed for this documentation update.

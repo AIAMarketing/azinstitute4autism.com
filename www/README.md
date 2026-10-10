@@ -527,6 +527,12 @@ Phase 6C drift observations and validation results are recorded in
 
 ## Reports And Utilities
 
+For the current migration checkpoint, next Codex phase, ratified decisions,
+and outstanding cutover blockers, begin with the
+**[living session handoff](reports/SESSION_HANDOFF.md)**. Update that short
+handoff at each accepted milestone transition; detailed historical evidence
+remains in `reports/migration-summary.md`.
+
 Migration reports are stored in `reports/`.
 
 Useful commands:
