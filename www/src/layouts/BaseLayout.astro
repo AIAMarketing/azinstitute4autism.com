@@ -3,16 +3,19 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Seo from '../components/Seo.astro';
 import site from '../data/site.json';
-import { getPublication } from '../utils/publication';
+import { getPublication, getRoutePublicationManifest } from '../utils/publication';
+import type { VisitorLocale, VisitorPublication } from '../utils/visitor-navigation';
 import '../styles/global.css';
 import '../styles/rtl.css';
 const { title, description, image, lang = 'en', type = 'website' } = Astro.props;
 const publication = await getPublication(Astro.url.pathname);
+const manifest = await getRoutePublicationManifest() as VisitorPublication[];
 // Reuse alt text only for the image it describes, not a fallback banner image.
 const imageAlt = image && image === publication.entry.data.featuredImage
   ? publication.entry.data.alt
   : undefined;
 const dir = lang === 'ar' ? 'rtl' : 'ltr';
+const skipLink = { en: 'Skip to content', es: 'Saltar al contenido', ar: 'انتقل إلى المحتوى' }[lang as VisitorLocale] ?? 'Skip to content';
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalOrganization',
@@ -41,9 +44,9 @@ const organizationSchema = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <Header lang={lang} />
+    <a class="skip-link" href="#main">{skipLink}</a>
+    <Header lang={lang as VisitorLocale} publication={publication as VisitorPublication} manifest={manifest} />
     <main id="main"><slot /></main>
-    <Footer lang={lang} />
+    <Footer lang={lang as VisitorLocale} manifest={manifest} />
   </body>
 </html>

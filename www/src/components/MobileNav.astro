@@ -1,14 +1,29 @@
 ---
 import MainNav from './MainNav.astro';
-const { lang = 'en' } = Astro.props;
+import type { VisitorLocale, VisitorPublication } from '../utils/visitor-navigation';
+interface Props { lang?: VisitorLocale; manifest: VisitorPublication[]; }
+const { lang = 'en', manifest } = Astro.props;
+const menu = { en: 'Menu', es: 'Menú', ar: 'القائمة' }[lang];
 ---
 <details class="mobile-nav">
-  <summary>Menu</summary>
-  <MainNav lang={lang} />
+  <summary>{menu}</summary>
+  <MainNav lang={lang} manifest={manifest} />
 </details>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('details.mobile-nav').forEach((details) => {
+    details.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && details.open) {
+        details.open = false;
+        details.querySelector<HTMLElement>('summary')?.focus();
+      }
+    });
+  });
+</script>
 
 <style>
   .mobile-nav { display: none; }
+  .mobile-nav summary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   @media (max-width: 950px) {
     .mobile-nav { display: block; }
   }

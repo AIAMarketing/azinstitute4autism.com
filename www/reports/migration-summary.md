@@ -3222,3 +3222,129 @@ behavior rather than configuration syntax alone. Staging and production
 indexing safeguards must remain in place until their separately approved
 transitions. No nginx, Docker, NixOS, Contabo, Cloudflare, HubSpot, DNS, Astro
 canonical, or deployment configuration changed during checkpoint preparation.
+
+## Phase 6B.5 — Multilingual, RTL, Accessibility, and Performance Acceptance (2026-10-10)
+
+### Scope, Source Review, and Reported Defects
+
+Work began from checkpoint `8192ea71c47a7163b40a7fad144ebbd2523282d1` and was limited to visitor-language navigation, locale-aware shared navigation, Arabic footer bidi presentation, focused regressions, and acceptance evidence. No content, author biography, publication-policy, sitemap, canonical, redirect, dependency, or deployment change was made.
+
+Bounded read-only inspection covered the published English, Spanish, and Arabic Rula Diab author roots and the Arabic Library root. The pages exposed the three author-locale roots and retained the source labels `Welcome to`, `All Post`, and `Popular Posts` in English on the Spanish and Arabic author presentations. These observations are useful presentation evidence, but HubSpot/CDN prerender freshness remains inconclusive. A later header-only verification attempt at `2026-10-11T02:03:14Z`–`02:03:15Z` could not complete certificate verification in the local curl environment and is not presented as independent origin evidence. No full production crawl or production write occurred.
+
+The three accepted defects and demonstrated code causes were:
+
+1. **Author language selector.** `LanguageSwitcher.astro` used only `publication.translations`. Author archives deliberately have no SEO translations while noindex, leaving an empty/nonworking selector. A native `details`/`summary` disclosure now receives a separately validated visitor-navigation model. Author roots use exact locale records and explicit author `translationKey` identity; numbered archives offer the other locale roots as clearly labeled section navigation rather than claiming page-number equivalence. Ordinary content still uses only the validated content translation graph. `/search` and untranslated articles receive no fabricated choices. This adds no author hreflang, sitemap entry, or indexability.
+2. **Locale-aware shared navigation.** `MainNav.astro` explicitly selected English data for Arabic (`ar: en`), while the footer and header used fixed English destinations. A shared `visitor-navigation.ts` resolver now validates every internal destination against the eligible route manifest, prefers exact locale routes or explicit content translations, and marks deliberate cross-language fallbacks. Desktop, mobile, footer, logo, and Tour destinations share that policy. The unpublished `/ar` placeholder remains absent: the visible Arabic Home item and logo explicitly fall back to the published English `/` route. From `/ar/library/author/rula-diab`, Library now resolves to `/ar/library`; Spanish and English resolve to their corresponding roots. No locale prefix is guessed.
+3. **Arabic footer bidi presentation.** Mixed Latin phone, email, and postal-address strings inherited the page RTL direction. Narrow `bdi`/`dir="ltr"` boundaries and scoped `direction`, `text-align`, and `unicode-bidi: isolate` rules now protect those values while the footer remains RTL. Existing contact values, obfuscation scripts, `tel:`/`mailto:` behavior, icons, and reversed-text no-JavaScript fallbacks remain intact.
+
+### Visitor Navigation and Language Matrix
+
+| Source context | English destination | Spanish destination | Arabic destination | Classification |
+| --- | --- | --- | --- | --- |
+| Rula Diab author root | `/library/author/rula-diab` | `/es/library/author/rula-diab` | `/ar/library/author/rula-diab` | Exact validated author equivalents for visitor navigation; still no SEO hreflang |
+| Numbered Rula Diab archive | English author root | Spanish author root | Arabic author root | Section-root navigation; page numbers are not translation equivalents |
+| Numbered Library page | `/library` | `/es/library` | `/ar/library` | Section-root navigation; no numbered-page hreflang |
+| Current-language Library menu | `/library` | `/es/library` | `/ar/library` | Exact eligible locale destination |
+| Spanish translated service/menu item | Validated English route | Validated `/es/...` route | Published Arabic equivalent when one exists; otherwise labeled source-language fallback | Exact translation or explicit fallback |
+| Arabic Home/logo | `/` | not applicable in Arabic context | `/` labeled as an English fallback because `/ar` is unpublished | Explicit fallback; no `/ar` route fabricated |
+| Untranslated article | No unrelated language choices | No unrelated language choices | No unrelated language choices | Language indicator remains static and honest |
+| `/search` | `/search` only | language filtering inside `/search` | language filtering inside `/search` | No page-equivalence menu or hreflang invented |
+
+Fallback annotations expose the destination language through visible text, `hreflang`, and accessible labels without incorrectly marking the localized link label itself as another language. External payment-provider links remain intentional external destinations.
+
+### Accessibility, Localization, RTL, and Progressive Enhancement
+
+The selector now uses native disclosure behavior, actual anchors, a localized accessible name, current-language state, 44-pixel minimum trigger height, visible focus styles, Escape-to-close enhancement, logical positioning, and RTL-aware menu placement. It remains usable without JavaScript. Mobile navigation also uses native disclosure behavior, localized Menu labels, visible focus, and Escape-to-close enhancement. The skip link is localized for English, Spanish, and Arabic.
+
+Generated-output checks verified published destinations for all internal desktop, mobile, footer, and language links; `lang="ar"`/`dir="rtl"` on Arabic pages; no `/ar` link; three isolated Arabic contact values; no listbox misuse; no empty interactive language trigger; and static navigation without JavaScript. Existing Library cards, pagination, search result focus/status code, fragment history, accent/Arabic normalization, full-locale search, and legacy query behavior remain covered by the Library suite. Date rendering continues to use the record locale and UTC, with machine-readable `datetime` values, so calendar dates do not shift by host timezone.
+
+No local Chromium/Playwright/Puppeteer executable or package and no screen reader were available. Consequently, this phase does not claim new browser screenshots, touch testing, visual overflow inspection, assistive-technology speech output, or manual screen-reader acceptance. Generated HTML, CSS, component source, semantic DOM assertions, focus styles, no-JavaScript structure, and existing regression fixtures were used instead. The user should still inspect desktop and 390×844 layouts and complete fluent Spanish/Arabic and screen-reader review before cutover.
+
+The source-published author labels `Welcome to`, `All Post`, and `Popular Posts` were retained in English in all locales rather than inventing translations. Spanish/Arabic fallback notices, the Arabic menu label, skip link, language label, and section-root explanation use straightforward operational wording and remain flagged for human language review. Author biographies, credentials, article bodies, Team records, and marketing claims were untouched.
+
+### Performance and Privacy Evidence
+
+The static search architecture remains dependency-free and local. Final generated assets measured:
+
+| Asset | Records | Raw bytes | Gzip bytes | Brotli bytes |
+| --- | ---: | ---: | ---: | ---: |
+| English JSON index | 46 | 28,003 | 7,973 | 6,632 |
+| Spanish JSON index | 12 | 10,170 | 3,427 | 2,969 |
+| Arabic JSON index | 7 | 6,234 | 1,982 | 1,625 |
+| **Index total** | **65** | **44,407** | **13,382** | **11,226** |
+| Shared Library search client | — | 6,539 | 2,651 | 2,312 |
+
+Representative raw/gzip HTML sizes were: English Library 49,001/9,642; Spanish Library 50,910/9,847; Arabic Library 43,494/9,209; English author root 49,687/9,216; Spanish author root 52,973/9,697; Arabic author root 47,119/9,155; and `/search` 19,158/5,182 bytes.
+
+Source and regression inspection confirm that embedded search returns before `fetch` for an empty query and requests only its one locale index on the first real search. `/search` requests one selected locale or the three indexes only when `all` is explicitly selected. Navigation changes add no preload, search request, query transmission, analytics, cookie, external provider, or article-body/private-data exposure. No executable browser was available for a network-panel trace, so request behavior is source- and regression-verified rather than presented as browser-observed.
+
+### Publication Invariants and Validation
+
+The indexing-enabled build remained at 110 HTML routes, including eight author archives; 97 sitemap URLs; 174 hreflang links across 53 routes; 65 Library records; three locale JSON indexes; and nine repository redirects. Its robots distribution was 97 `index,follow` and 13 intentional `noindex,follow`. Author archives remained self-canonical, noindex, sitemap-excluded, and hreflang-excluded. The search route, syndicated exceptions, BlogPosting Person identity, FAQPage rules, Library pagination, external canonicals, and explicit translation graph were unchanged. Neither `/ar` nor either Phase 6C page-6 route was generated.
+
+The final normal build restored all 110 HTML pages to `noindex,nofollow`, an empty sitemap, and zero hreflang links.
+
+| Check | Result |
+| --- | --- |
+| `npm run check` | Passed: 91 Astro files; zero diagnostics |
+| `npm run test:library` | Passed sequentially: 37 tests |
+| `npm run test:seo` | Passed sequentially: 34 tests |
+| `npm run test:publication` | Passed sequentially: 33 tests |
+| `npm run test:markdown` | Passed: 20 tests |
+| `npm run test:routes` | Passed: 10 tests |
+| Normal `npm run build` | Passed twice; final artifact is the normal staging build with 110 routes |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed; 110 routes, 97 sitemap URLs, 174 hreflang links across 53 routes |
+| `npm run audit:links` | Passed after final build: zero broken internal links |
+| `npm run audit:images` | Passed after final build: zero missing mapped page images |
+| `npm run audit:blog` | Passed after final build: zero failures |
+| Offline route reconciliation | Final `route-reconciliation-2026-10-11-offline-03-01-25-775Z.json` generated after the address refinement from the 70 saved requests with no network access; explicit consistency check passed for 133 dispositions, 110 generated routes, and nine redirects |
+| Generated-output and payload inspection | Passed for language/direction, navigation destinations, disclosure semantics, footer isolation, robots, sitemap, hreflang, index counts, and asset sizes |
+| `git diff --check` | Passed before documentation; repeated in the final structural review |
+
+One attempted concurrent Library/publication run produced the known shared-fixture interference (118 transient routes and missing fixture output). That result was discarded. Both suites passed independently and sequentially without an application-code correction. The inherited shell `TMPDIR` pointed at an inaccessible prior Nix temporary directory, so fixture commands used `TMPDIR=/tmp`; this was an environment correction, not a project change.
+
+### Files, Boundaries, and Remaining Review
+
+Modified implementation and test files:
+
+- `src/components/Footer.astro`
+- `src/components/Header.astro`
+- `src/components/LanguageSwitcher.astro`
+- `src/components/MainNav.astro`
+- `src/components/MobileNav.astro`
+- `src/layouts/BaseLayout.astro`
+- `src/utils/authors.ts`
+- `tools/library.test.mjs`
+- `tools/publication.test.mjs`
+
+New implementation/evidence files:
+
+- `src/utils/visitor-navigation.ts`
+- `reports/route-reconciliation-2026-10-11-offline-03-01-25-775Z.json`
+
+Documentation updated in this phase:
+
+- `reports/accessibility-audit.md`
+- `reports/migration-summary.md`
+
+The living `reports/SESSION_HANDOFF.md` was deliberately not advanced before acceptance. No author/content record, biography, publication rule, sitemap rule, canonical, redirect, dependency, form, analytics, advertising, consent, employee portal, hosting, or deployment file changed.
+
+Manual acceptance should cover the three author roots and their language disclosure; a numbered English and Spanish author page returning to locale roots; English/Spanish/Arabic Library navigation; the Arabic Home fallback; desktop/mobile/footer destinations and fallback labels; Arabic footer phone, email, address, and activation with JavaScript enabled/disabled; keyboard and Escape behavior for both disclosures; skip-link focus; embedded and legacy search states/history/status; first/final pagination pages; Arabic RTL wrapping and horizontal overflow at desktop and approximately 390×844; and representative localized dates.
+
+Remaining work includes fluent Spanish and Arabic review of operational wording and biographies; organizational review of author credentials/claims where required; manual screen-reader and browser/touch acceptance; the nine Phase 6C English articles and both page-6 cutover gaps; the deferred author-archive indexing, sitemap, and hreflang decision; and separate Contabo/nginx activation and validation of slashless canonical serving, approved redirects, HTTPS behavior, query preservation, and 404 handling. No hosting rule was activated.
+
+### Final Footer Address Refinement (2026-10-10)
+
+Following manual acceptance of the Phase 6B.5 browser checklist, the shared `site.address` value was changed from one string to `line1` and `line2` fields. The footer now renders `8901 E Raintree Dr Ste 160,` and `Scottsdale, AZ 85260` on two intentional lines with an explicit `<br>` inside an LTR `<bdi>`. English, Spanish, and Arabic generated footers use the same punctuation and line structure; the surrounding Arabic footer remains RTL, and existing phone/email isolation is unchanged. The only runtime `site.address` consumer was `Footer.astro`. Organization JSON-LD already used separate `PostalAddress` properties and remains semantically unchanged. The historical Phase 5C source-evidence address was inspected but appropriately left unchanged.
+
+The user's contact-page observation was made with JavaScript disabled through uBlock Origin. The reversed phone and email strings are the intentional static `ContactObfuscation` fallbacks. The English and Spanish contact-page MDX records and `ContactObfuscation.astro` were therefore left unchanged. A generated-page JavaScript execution harness ran all six contact/footer obfuscation scripts on the English contact page and recovered the expected `tel:+14806877099`, `tel:+16027080429`, and `mailto:info@azinstitute4autism.com` links and visible values; this is a local script/DOM-harness regression, not a new screen-reader claim.
+
+Focused generated-output assertions passed for one English, one Spanish, and one Arabic route, including exact two-line text, one explicit break, nested LTR direction, and preserved navigation. Sequential validation passed with 91 Astro files and zero diagnostics; 37 Library, 34 SEO, 33 publication, 20 Markdown, and 10 route tests; normal and indexing-enabled builds; and clean link, image, and blog audits. The indexing build retained 110 HTML routes, eight author archives, 97 sitemap URLs, and 174 hreflang links across 53 routes. The final normal build restored all 110 pages to `noindex,nofollow`, with an empty sitemap and no hreflang. Because the source fingerprint changed, `route-reconciliation-2026-10-11-offline-03-01-25-775Z.json` was created from the existing 70 saved requests without network access, and its explicit consistency check passed. No prior evidence file was overwritten.
+
+### Manual Acceptance and Checkpoint Disposition (2026-10-10)
+
+The user completed and accepted the full Phase 6B.5 browser checklist, including English, Spanish, and Arabic navigation; author-root language disclosure; desktop and mobile layouts; Arabic RTL presentation; keyboard focus; search behavior; and the final two-line footer address. This manual acceptance is separate from the automated and generated-output evidence above. No real screen-reader session was performed or claimed.
+
+The final source-matching reconciliation artifact is `route-reconciliation-2026-10-11-offline-03-01-25-775Z.json` (source fingerprint `639a8bcdf9f710fa1444393ce7eab9588a93144ed3045d4a2d758734a9fe530c`). The earlier `route-reconciliation-2026-10-11-offline.json` records the intermediate pre-address source fingerprint and is superseded checkpoint evidence; it remains an excluded local untracked file rather than being deleted or committed.
+
+Outstanding pre-cutover review remains limited to a real screen-reader session; fluent Spanish and Arabic review of operational copy and author biographies; organizational approval of public author credentials, role, and biography claims where required; the deferred author-archive indexing, sitemap, and hreflang decisions; Contabo/nginx slashless serving, HTTPS, redirect, query, and 404 verification; and the nine Phase 6C English articles needed for both page-6 routes. No deployment or cutover was authorized.

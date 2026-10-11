@@ -16,6 +16,7 @@ import { createLibrarySearchPublication } from '../src/utils/search-publication.
 import { createAuthorResolver } from '../src/utils/authors.ts';
 import { authorPageRoute, createAuthorArchivePublications } from '../src/utils/author-archives.ts';
 import { redirectArtifacts, redirects as approvedRedirects, validateRedirects } from './generate-redirects.mjs';
+import { resolveNavigationDestination, visitorLanguageChoices } from '../src/utils/visitor-navigation.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -91,6 +92,50 @@ test('author resolution is exact by locale and slug, keeps identity separate, an
   }
   const plain = { id: 'en/another', data: { lang: 'en', slug: 'another', name: 'Another Author' } };
   assert.equal(createAuthorResolver([plain])('en', 'another').displayName, 'Another Author');
+});
+
+test('visitor language navigation resolves explicit content and author relationships without changing SEO translations', () => {
+  const englishAuthor = routeManifest.find(({ route }) => route === '/library/author/rula-diab');
+  const englishAuthorPage = routeManifest.find(({ route }) => route === '/library/author/rula-diab/page/5');
+  assert.deepEqual(englishAuthor.translations, []);
+  assert.deepEqual(visitorLanguageChoices(englishAuthor, routeManifest), [
+    { lang: 'en', route: '/library/author/rula-diab', current: true, kind: 'equivalent' },
+    { lang: 'es', route: '/es/library/author/rula-diab', current: false, kind: 'equivalent' },
+    { lang: 'ar', route: '/ar/library/author/rula-diab', current: false, kind: 'equivalent' }
+  ]);
+  assert.deepEqual(visitorLanguageChoices(englishAuthorPage, routeManifest), [
+    { lang: 'en', route: '/library/author/rula-diab', current: true, kind: 'section-root' },
+    { lang: 'es', route: '/es/library/author/rula-diab', current: false, kind: 'section-root' },
+    { lang: 'ar', route: '/ar/library/author/rula-diab', current: false, kind: 'section-root' }
+  ]);
+  const libraryPage = routeManifest.find(({ route }) => route === '/library/page/2');
+  assert.deepEqual(visitorLanguageChoices(libraryPage, routeManifest).map(({ route, kind }) => ({ route, kind })), [
+    { route: '/library', kind: 'section-root' },
+    { route: '/es/library', kind: 'section-root' },
+    { route: '/ar/library', kind: 'section-root' }
+  ]);
+  const untranslated = routeManifest.find(({ route }) => route === '/library/new-aia-scottsdale-office');
+  assert.deepEqual(visitorLanguageChoices(untranslated, routeManifest), []);
+});
+
+test('menu destinations prefer eligible locale publications and expose deliberate fallbacks', () => {
+  assert.deepEqual(resolveNavigationDestination('/library', 'ar', routeManifest), {
+    href: '/ar/library', lang: 'ar', fallback: false, source: 'translation'
+  });
+  assert.deepEqual(resolveNavigationDestination('/ar/library', 'ar', routeManifest), {
+    href: '/ar/library', lang: 'ar', fallback: false, source: 'exact'
+  });
+  assert.deepEqual(resolveNavigationDestination('/ar', 'ar', routeManifest), {
+    href: '/', lang: 'en', fallback: true, source: 'explicit-fallback'
+  });
+  assert.deepEqual(resolveNavigationDestination('/team', 'ar', routeManifest), {
+    href: '/team', lang: 'en', fallback: true, source: 'explicit-fallback'
+  });
+  assert.equal(resolveNavigationDestination('/missing', 'es', routeManifest), null);
+  assert.deepEqual(resolveNavigationDestination('/library', 'es', [{
+    ...routeManifest.find(({ route }) => route === '/library'), translations: []
+  }]), { href: '/library', lang: 'en', fallback: true, source: 'explicit-fallback' },
+  'Missing explicit equivalence falls back to the known published source instead of guessing /es/library');
 });
 
 test('author archives automatically follow multiple authors, exact locale references, draft removal and growth', () => {
@@ -612,10 +657,68 @@ test('author publication descriptors and HTML obey noindex, self-canonical, site
       assert.equal($('link[rel=canonical]').attr('href'), site + publication.route);
       assert.equal($('meta[name=robots]').attr('content'), mode === 'indexing' ? 'noindex,follow' : 'noindex,nofollow');
       assert.equal($('link[hreflang]').length, 0);
-      assert.equal($('.lang-switcher__menu').length, 0);
+      assert.equal($('.lang-switcher__menu').length, 1);
+      assert.deepEqual($('.lang-switcher__menu a').map((_, link) => $(link).attr('href')).get(), [
+        '/library/author/rula-diab', '/es/library/author/rula-diab', '/ar/library/author/rula-diab'
+      ]);
+      assert.equal($('head link[hreflang]').length, 0, 'Visitor navigation must not enable author hreflang');
       assert.ok(!sitemap.includes(publication.url));
       if (publication.authorPage.currentPage > 1) assert.match($('title').text(), /(?:Page|Página) \d+$/u);
     }
+  }
+});
+
+test('generated multilingual navigation, disclosure semantics and RTL contact isolation remain usable without JavaScript', async () => {
+  const html = artifacts.get('staging').html;
+  for (const [route, locale, library] of [
+    ['/library/author/rula-diab', 'en', '/library'],
+    ['/es/library/author/rula-diab', 'es', '/es/library'],
+    ['/ar/library/author/rula-diab', 'ar', '/ar/library']
+  ]) {
+    const $ = load(html.get(route));
+    assert.equal($('html').attr('lang'), locale);
+    assert.equal($('html').attr('dir'), locale === 'ar' ? 'rtl' : 'ltr');
+    assert.equal($('.lang-switcher details > summary').length, 1);
+    assert.equal($('.lang-switcher [role=listbox]').length, 0);
+    assert.deepEqual($('.lang-switcher__menu a').map((_, link) => $(link).attr('href')).get(), [
+      '/library/author/rula-diab', '/es/library/author/rula-diab', '/ar/library/author/rula-diab'
+    ]);
+    assert.ok($('.header-inner > .main-nav > ul > li > a').toArray().some((link) => $(link).attr('href') === library));
+    assert.equal($('.mobile-nav details, details.mobile-nav').length, 1);
+    assert.ok($('.mobile-nav a').toArray().some((link) => $(link).attr('href') === library));
+    for (const destination of $('.lang-switcher a, .main-nav a, .site-footer a').toArray()
+      .map((link) => $(link).attr('href')).filter((href) => href?.startsWith('/'))) {
+      assert.ok(html.has(destination), `${route} links to unpublished ${destination}`);
+    }
+  }
+  const arabic = load(html.get('/ar/library/author/rula-diab'));
+  assert.equal(arabic('.main-nav a[href="/ar"]').length, 0);
+  assert.equal(arabic('.main-nav a[href="/"][hreflang="en"]').length > 0, true);
+  assert.equal(arabic('.main-nav a[href="/"][lang="en"]').length, 0,
+    'Only the fallback annotation, rather than the localized link label, is marked as English');
+  assert.equal(arabic('.footer-contact-value[dir="ltr"]').length, 3);
+  for (const route of ['/library', '/es/library', '/ar/library/author/rula-diab']) {
+    const footer = load(html.get(route));
+    const address = footer('address.footer-contact-value[dir="ltr"] > bdi[dir="ltr"]');
+    assert.equal(address.length, 1);
+    assert.equal(address.find('br').length, 1);
+    assert.equal(address.clone().find('br').replaceWith('\n').end().text().replace(/\s*\n\s*/u, '\n').trim(),
+      '8901 E Raintree Dr Ste 160,\nScottsdale, AZ 85260');
+  }
+  assert.equal(arabic('.footer-contact-value').toArray().every((node) => arabic(node).css('unicode-bidi') === undefined), true,
+    'Direction isolation is supplied by component CSS, not unsafe inline styles');
+  assert.match(await readFile(path.join(project, 'src/components/Footer.astro'), 'utf8'), /unicode-bidi:\s*isolate/);
+});
+
+test('search indexes remain demand-loaded and navigation changes introduce no tracking or external query transmission', async () => {
+  const source = await readFile(path.join(project, 'src/components/LibrarySearch.astro'), 'utf8');
+  assert.match(source, /if \(!query\.trim\(\)\)[\s\S]*return;/);
+  assert.match(source, /locales\.map\(\(item\) => loadIndex\(base, item\)\)/);
+  assert.doesNotMatch(source, /fetch\((?!`\$\{base\}\/\$\{locale\}\.json`)/);
+  for (const route of ['/library', '/es/library', '/ar/library']) {
+    const $ = load(artifacts.get('staging').html.get(route));
+    assert.equal($('link[rel=preload][href*="/assets/search/library/"]').length, 0);
+    assert.equal($('script[src*="/assets/search/library/"]').length, 0);
   }
 });
 

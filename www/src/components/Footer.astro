@@ -1,46 +1,62 @@
 ---
 import ContactObfuscation from './ContactObfuscation.astro';
 import site from '../data/site.json';
+import { fallbackLabel, resolveNavigationDestination, type VisitorLocale, type VisitorPublication } from '../utils/visitor-navigation';
 const year = new Date().getFullYear();
-const { lang = 'en' } = Astro.props;
+interface Props { lang?: VisitorLocale; manifest: VisitorPublication[]; }
+const { lang = 'en', manifest } = Astro.props;
 const labels = lang === 'es'
   ? { about: 'Información', overview: 'Acerca de AIA', team: 'Equipo', careers: 'Carreras', giveback: 'Devolver', resources: 'Recursos', forms: 'Formularios', insurance: 'Seguros', referrals: 'Referencias', employee: 'Portal para empleados', contact: 'Contáctanos' }
   : { about: 'About', overview: 'Overview', team: 'Team', careers: 'Careers', giveback: 'Giveback', resources: 'Resources', forms: 'Forms', insurance: 'Insurance', referrals: 'Referrals', employee: 'Employee Portal', contact: 'Get In Touch' };
+const resolve = (label: string, href: string) => {
+  const destination = resolveNavigationDestination(href, lang, manifest);
+  return destination ? { label, ...destination } : null;
+};
+const aboutLinks = [
+  resolve(labels.overview, '/about'), resolve(labels.team, '/team'),
+  resolve(labels.careers, '/careers'), resolve(labels.giveback, '/donate-autism-giveback')
+].filter((item) => item !== null);
+const resourceLinks = [
+  resolve(labels.forms, '/client-forms'), resolve(labels.insurance, '/insurance'),
+  resolve(labels.referrals, '/referrals'), resolve(labels.employee, '/employee-portal')
+].filter((item) => item !== null);
+const privacy = resolve('Privacy Policy', '/privacy-policy');
+const faq = resolve('FAQ', '/faqs');
+const sourceLanguage = lang === 'ar' ? 'en' : undefined;
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
-    <div>
+    <div lang={sourceLanguage}>
       <h2>{labels.about}</h2>
       <ul>
-        <li><a href="/about">{labels.overview}</a></li>
-        <li><a href="/team">{labels.team}</a></li>
-        <li><a href="/careers">{labels.careers}</a></li>
-        <li><a href="/donate-autism-giveback">{labels.giveback}</a></li>
+        {aboutLinks.map((item) => <li><a href={item.href} hreflang={item.fallback ? item.lang : undefined} aria-label={item.fallback ? `${item.label} — ${fallbackLabel(item.lang)}` : undefined}>{item.label}{item.fallback && <bdi class="footer-fallback" lang={item.lang}>{fallbackLabel(item.lang)}</bdi>}</a></li>)}
       </ul>
     </div>
-    <div>
+    <div lang={sourceLanguage}>
       <h2>{labels.resources}</h2>
       <ul>
-        <li><a href="/client-forms">{labels.forms}</a></li>
-        <li><a href="/insurance">{labels.insurance}</a></li>
-        <li><a href="/referrals">{labels.referrals}</a></li>
-        <li><a href="/employee-portal">{labels.employee}</a></li>
+        {resourceLinks.map((item) => <li><a href={item.href} hreflang={item.fallback ? item.lang : undefined} aria-label={item.fallback ? `${item.label} — ${fallbackLabel(item.lang)}` : undefined}>{item.label}{item.fallback && <bdi class="footer-fallback" lang={item.lang}>{fallbackLabel(item.lang)}</bdi>}</a></li>)}
       </ul>
     </div>
-    <div>
+    <div lang={sourceLanguage}>
       <h2>{labels.contact}</h2>
       <div class="footer-contact">
         <div class="footer-contact-item">
           <img src="/assets/images/phone-blue.svg" alt="" aria-hidden="true" width="24" height="24" />
-          <ContactObfuscation phone={site.phone} hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />
+          <bdi class="footer-contact-value" dir="ltr"><ContactObfuscation phone={site.phone} hrefValue="+14806877099" obfuscatedText="9907-786 (084)" /></bdi>
         </div>
         <div class="footer-contact-item">
           <img src="/assets/images/envelope-blue.svg" alt="" aria-hidden="true" width="24" height="24" />
-          <ContactObfuscation email={site.email} obfuscatedText="moc.msitua4etutitsniza@ofni" />
+          <bdi class="footer-contact-value" dir="ltr"><ContactObfuscation email={site.email} obfuscatedText="moc.msitua4etutitsniza@ofni" /></bdi>
         </div>
         <div class="footer-contact-item">
           <img src="/assets/images/location-blue.svg" alt="" aria-hidden="true" width="24" height="24" />
-          <address>{site.address}</address>
+          <address class="footer-contact-value" dir="ltr">
+            <bdi dir="ltr">
+              {site.address.line1}<br />
+              {site.address.line2}
+            </bdi>
+          </address>
         </div>
       </div>
       <div class="social-links">
@@ -61,7 +77,7 @@ const labels = lang === 'es'
   </div>
   <div class="container footer-bottom">
     <p>© 2018-{year} Arizona Institute for Autism ♥ All Rights Reserved</p>
-    <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/faqs">FAQ</a></p>
+    <p lang={sourceLanguage}>{privacy && <a href={privacy.href} hreflang={privacy.fallback ? privacy.lang : undefined} aria-label={privacy.fallback ? `Privacy Policy — ${fallbackLabel(privacy.lang)}` : undefined}>Privacy Policy{privacy.fallback && <bdi class="footer-fallback" lang={privacy.lang}>{fallbackLabel(privacy.lang)}</bdi>}</a>} | {faq && <a href={faq.href} hreflang={faq.fallback ? faq.lang : undefined} aria-label={faq.fallback ? `FAQ — ${fallbackLabel(faq.lang)}` : undefined}>FAQ{faq.fallback && <bdi class="footer-fallback" lang={faq.lang}>{fallbackLabel(faq.lang)}</bdi>}</a>}</p>
   </div>
 </footer>
 
@@ -71,6 +87,8 @@ const labels = lang === 'es'
   .site-footer h2, .site-footer a { color: white; text-decoration: none; }
   .site-footer h2 { font-size: 1.25rem; letter-spacing: .3px; margin-bottom: 1.2rem; }
   .site-footer a:hover { color: var(--color-accent); }
+  .site-footer a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+  .footer-fallback { border: 1px solid currentColor; border-radius: 2px; font-size: .58rem; line-height: 1; margin-inline-start: .35rem; padding: .1rem .2rem; text-transform: uppercase; }
   .site-footer ul { list-style: none; padding: 0; }
   .site-footer li { line-height: 2.6; margin-bottom: 0; }
   .site-footer p { line-height: 2.6; }
@@ -78,6 +96,7 @@ const labels = lang === 'es'
   .footer-contact-item { align-items: flex-start; display: flex; gap: .6rem; line-height: 1.5; }
   .footer-contact-item img { flex-shrink: 0; }
   .footer-contact-item address { font-style: normal; }
+  .footer-contact-value { direction: ltr; text-align: left; unicode-bidi: isolate; }
   .social-links { display: flex; gap: .85rem; margin-left: 1.6rem; margin-top: .25rem; }
   .social-links a { align-items: center; color: white; display: flex; opacity: .85; }
   .social-links a:hover { color: var(--color-accent); opacity: 1; }

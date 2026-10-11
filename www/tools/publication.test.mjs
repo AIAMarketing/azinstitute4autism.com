@@ -13,6 +13,7 @@ import { createLibraryCatalog } from '../src/utils/library-catalog.ts';
 import { createLibraryPaginationPublications } from '../src/utils/library-pagination.ts';
 import { createAuthorArchivePublications } from '../src/utils/author-archives.ts';
 import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
+import { visitorLanguageChoices } from '../src/utils/visitor-navigation.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -388,7 +389,8 @@ for (const mode of ['staging', 'indexing']) {
 }
 
 function assertRenderedTranslations({ html }, manifest, allowIndexing) {
-  const pages = new Map(generatedPublications(manifest).map((page) => [page.route, page]));
+  const publications = generatedPublications(manifest);
+  const pages = new Map(publications.map((page) => [page.route, page]));
   for (const [route, content] of html) {
     const page = pages.get(route);
     assert.ok(page, `Unknown generated route: ${route}`);
@@ -401,8 +403,9 @@ function assertRenderedTranslations({ html }, manifest, allowIndexing) {
     const choices = $('.lang-switcher__menu a').map((_, tag) => ({
       lang: $(tag).attr('lang'), route: $(tag).attr('href')
     })).get();
-    assert.deepEqual(choices, page.translations.map(({ lang, route }) => ({ lang, route })), route);
-    assert.equal($('.lang-switcher__trigger').attr('aria-haspopup'), choices.length ? 'listbox' : undefined);
+    assert.deepEqual(choices, visitorLanguageChoices(page, publications).map(({ lang, route }) => ({ lang, route })), route);
+    assert.equal($('.lang-switcher__details').length, choices.some(({ route }) => route !== page.route) ? 1 : 0);
+    assert.equal($('.lang-switcher [role="listbox"]').length, 0);
     for (const translation of page.translations) {
       assert.ok(html.has(translation.route), `Missing generated translation target: ${route} -> ${translation.route}`);
     }

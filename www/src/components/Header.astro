@@ -3,10 +3,12 @@ import Button from './Button.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import MainNav from './MainNav.astro';
 import MobileNav from './MobileNav.astro';
-import { getPublicationManifest } from '../utils/publication';
-const { lang = 'en' } = Astro.props;
-const localizedHome = lang === 'en' ? '/' : `/${lang}`;
-const homeHref = (await getPublicationManifest()).some((page) => page.eligible && page.route === localizedHome) ? localizedHome : '/';
+import { fallbackLabel, resolveNavigationDestination, type VisitorLocale, type VisitorPublication } from '../utils/visitor-navigation';
+interface Props { lang?: VisitorLocale; publication: VisitorPublication; manifest: VisitorPublication[]; }
+const { lang = 'en', publication, manifest } = Astro.props;
+const homeTarget = resolveNavigationDestination(lang === 'en' ? '/' : `/${lang}`, lang, manifest)
+  ?? resolveNavigationDestination('/', lang, manifest);
+const tourTarget = resolveNavigationDestination('/tour', lang, manifest);
 const utility = lang === 'es'
   ? { credit: 'Solicitar CareCredit', bill: 'Pagar mi factura' }
   : { credit: 'Apply Care Credit', bill: 'Pay My Bill' };
@@ -19,13 +21,13 @@ const utility = lang === 'es'
     </div>
   </div>
   <div class="container header-inner">
-    <a class="brand" href={homeHref}>
+    {homeTarget ? <a class="brand" href={homeTarget.href} lang={homeTarget.fallback ? homeTarget.lang : undefined} hreflang={homeTarget.fallback ? homeTarget.lang : undefined}>
       <img src="/assets/images/aia-logo.svg" alt="Arizona Institute for Autism" width="150" height="70" />
-    </a>
-    <MainNav lang={lang} />
-    <MobileNav lang={lang} />
-    <LanguageSwitcher />
-    <Button href="/tour" size="small">Tour AIA</Button>
+    </a> : <span class="brand"><img src="/assets/images/aia-logo.svg" alt="Arizona Institute for Autism" width="150" height="70" /></span>}
+    <MainNav lang={lang} manifest={manifest} />
+    <MobileNav lang={lang} manifest={manifest} />
+    <LanguageSwitcher publication={publication} manifest={manifest} />
+    {tourTarget && <Button href={tourTarget.href} size="small">Tour AIA{tourTarget.fallback && ` (${fallbackLabel(tourTarget.lang)})`}</Button>}
   </div>
 </header>
 

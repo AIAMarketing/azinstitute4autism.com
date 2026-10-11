@@ -11,6 +11,7 @@ export interface AuthorEntry {
     displayName?: string;
     description?: string;
     avatar?: string;
+    translationKey?: string;
   };
 }
 
