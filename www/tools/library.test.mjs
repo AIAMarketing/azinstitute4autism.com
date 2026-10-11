@@ -15,6 +15,7 @@ import { createPublicationManifest, renderSitemap, robotsFor } from '../src/util
 import { createLibrarySearchPublication } from '../src/utils/search-publication.ts';
 import { createAuthorResolver } from '../src/utils/authors.ts';
 import { authorPageRoute, createAuthorArchivePublications } from '../src/utils/author-archives.ts';
+import { redirectArtifacts, redirects as approvedRedirects, validateRedirects } from './generate-redirects.mjs';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const site = JSON.parse(await readFile(path.join(project, 'src/data/site.json'), 'utf8')).url;
@@ -422,21 +423,52 @@ test('numbered pages keep full-locale search indexes and hide cards plus pager t
   }
 });
 
-test('page-1 redirect registry preserves service aliases and defines only three Library aliases', async () => {
+test('redirect registry preserves service aliases and defines all six page-one aliases', async () => {
   const redirects = JSON.parse(await readFile(path.join(project, 'src/data/redirects.json'), 'utf8'));
-  assert.deepEqual(redirects.slice(0, 3).map(({ from, to, status }) => ({ from, to, status })), [
+  const expected = [
     { from: '/aba', to: '/aba-therapy', status: 301 },
     { from: '/autismevaluations', to: '/autism-evaluations', status: 301 },
-    { from: '/learnersocialclub', to: '/learner-social-club', status: 301 }
-  ]);
-  assert.deepEqual(redirects.slice(3).map(({ from, to, status }) => ({ from, to, status })), [
+    { from: '/learnersocialclub', to: '/learner-social-club', status: 301 },
     { from: '/library/page/1', to: '/library', status: 301 },
     { from: '/es/library/page/1', to: '/es/library', status: 301 },
-    { from: '/ar/library/page/1', to: '/ar/library', status: 301 }
-  ]);
-  assert.equal(new Set(redirects.map(({ from }) => from)).size, redirects.length);
-  const rewrites = await readFile(path.join(project, 'reports/nginx-rewrites.conf'), 'utf8');
-  for (const { from, to } of redirects.slice(3)) assert.ok(rewrites.includes(`rewrite ^${from}$ ${to} permanent;`));
+    { from: '/ar/library/page/1', to: '/ar/library', status: 301 },
+    { from: '/library/author/rula-diab/page/1', to: '/library/author/rula-diab', status: 301 },
+    { from: '/es/library/author/rula-diab/page/1', to: '/es/library/author/rula-diab', status: 301 },
+    { from: '/ar/library/author/rula-diab/page/1', to: '/ar/library/author/rula-diab', status: 301 }
+  ];
+  assert.deepEqual(redirects.map(({ from, to, status }) => ({ from, to, status })), expected);
+  assert.deepEqual(redirects, approvedRedirects);
+  const generatedRoutes = routeManifest.filter(({ eligible }) => eligible).map(({ route }) => route).concat('/search');
+  assert.doesNotThrow(() => validateRedirects(redirects, generatedRoutes));
+  const rendered = redirectArtifacts(redirects);
+  assert.equal(await readFile(path.join(project, 'src/data/redirects.json'), 'utf8'), rendered.json);
+  assert.equal(await readFile(path.join(project, 'reports/redirect-map.csv'), 'utf8'), rendered.csv);
+  assert.equal(await readFile(path.join(project, 'reports/nginx-rewrites.conf'), 'utf8'), rendered.nginx);
+  assert.ok(!redirects.some(({ from }) => /\/page\/[2-9]\d*$/.test(from)));
+});
+
+test('redirect validation rejects duplicate, unsafe, chained, cyclic and non-generated routes', () => {
+  const redirect = (from, to, overrides = {}) => ({ from, to, status: 301, reason: 'Fixture', ...overrides });
+  assert.throws(() => validateRedirects([redirect('/old', '/target'), redirect('/old', '/other')]), /Duplicate redirect source/);
+  assert.throws(() => validateRedirects([redirect('/same', '/same')]), /Self-redirect/);
+  assert.throws(() => validateRedirects([redirect('/one', '/two'), redirect('/two', '/three')]), /chain or cycle/);
+  assert.throws(() => validateRedirects([redirect('/one', '/two'), redirect('/two', '/one')]), /chain or cycle/);
+  assert.throws(() => validateRedirects([redirect('/old/', '/target')]), /not normalized/);
+  assert.throws(() => validateRedirects([redirect('/es/old', '/target')]), /changes locale/);
+  assert.throws(() => validateRedirects([redirect('/old', '/target', { status: 302 })]), /HTTP 301/);
+  assert.throws(() => validateRedirects([redirect('/old', '/missing')], ['/target']), /target is not a generated route/);
+  assert.throws(() => validateRedirects([redirect('/old', '/target')], ['/old', '/target']), /source collides/);
+});
+
+test('redirect-only aliases generate no HTML, canonical, sitemap or hreflang entry', () => {
+  for (const mode of ['staging', 'indexing']) {
+    const { html, sitemap } = artifacts.get(mode);
+    for (const { from, to } of approvedRedirects) {
+      assert.ok(!html.has(from), from);
+      assert.ok(html.has(to), to);
+      assert.ok(!sitemap.includes(`<loc>${site}${from}</loc>`), from);
+    }
+  }
 });
 
 test('/search is a noindex static Library-only compatibility route in both build modes', () => {

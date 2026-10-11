@@ -7,6 +7,7 @@ import { load } from 'cheerio';
 import fg from 'fast-glob';
 import matter from 'gray-matter';
 import { createPublicationManifest } from '../src/utils/publication-policy.ts';
+import { validateRedirects } from './generate-redirects.mjs';
 
 export const ORIGIN = 'https://www.azinstitute4autism.com';
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
@@ -56,15 +57,30 @@ export function addDiscovery(records, value, source, observedAt, base = ORIGIN) 
 export function classify(local, production) {
   const status = production?.http?.status;
   const hasLocal = Boolean(local?.generated);
-  if (status >= 300 && status < 400) return hasLocal ? 'local-and-production-redirect' : 'production-redirect-only';
+  const redirect = local?.redirect;
+  if (status >= 300 && status < 400) {
+    if (redirect) {
+      const target = production?.http?.location ? normalizeReference(production.http.location)?.route : null;
+      return !target || target === redirect.to ? 'local-and-production-redirect' : 'local-production-redirect-conflict';
+    }
+    return hasLocal ? 'local-generated-production-redirect' : 'production-redirect-only';
+  }
   if (status === 404 || status === 410) {
+    if (redirect) return 'local-redirect-production-absent';
     return hasLocal ? (local.placeholder ? 'local-placeholder-production-absent' : 'local-only-production-absent')
       : 'discovered-production-absent';
   }
-  if (status >= 200 && status < 300) return hasLocal ? 'both-route-present-content-unverified' : 'live-only-verified';
+  if (status >= 200 && status < 300) {
+    if (redirect) return 'local-redirect-production-live';
+    return hasLocal ? 'both-route-present-content-unverified' : 'live-only-verified';
+  }
   const discovered = production?.sources?.some((s) => /^(sitemap|link|form|alternate):/.test(s));
-  if (discovered) return hasLocal ? 'both-discovered-http-unverified' : 'live-discovered-local-missing';
-  if (local) return local.generated ? 'local-only-production-unverified' : 'local-source-not-generated';
+  if (discovered) {
+    if (redirect) return 'local-redirect-production-unverified';
+    return hasLocal ? 'both-discovered-http-unverified' : 'live-discovered-local-missing';
+  }
+  if (local) return redirect ? 'local-redirect-production-unverified'
+    : local.generated ? 'local-only-production-unverified' : 'local-source-not-generated';
   return 'verification-inconclusive';
 }
 
@@ -89,6 +105,7 @@ export function summarize(routes) {
   return {
     routes: routes.length,
     localGenerated: routes.filter(generated).length,
+    localRedirects: routes.filter((r) => r.local?.redirect).length,
     sitemap: routes.filter(hasSitemap).length,
     sitemapLocalOverlap: routes.filter((r) => hasSitemap(r) && generated(r)).length,
     sitemapLocalMissing: routes.filter((r) => hasSitemap(r) && !generated(r)).length,
@@ -194,12 +211,25 @@ async function localInventory() {
     const route = file.replace(/^dist/, '').replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
     records.set(route, { ...records.get(route), route, generated: true, ...metadata(await fs.readFile(path.join(ROOT, file), 'utf8')) });
   }
+  const redirects = validateRedirects(
+    JSON.parse(await fs.readFile(path.join(ROOT, 'src/data/redirects.json'), 'utf8')),
+    [...records.values()].filter(({ generated }) => generated).map(({ route }) => route)
+  );
+  for (const { from, to, status, reason } of redirects) {
+    records.set(from, {
+      ...records.get(from), route: from, generated: false, eligible: false,
+      sitemapEligible: false, redirect: { to, status, reason }
+    });
+  }
   return [...records.values()].sort((a, b) => compare(a.route, b.route));
 }
 
 async function sourceFingerprint() {
   const hash = createHash('sha256');
-  for (const file of (await fg(['src/**/*', 'public/**/*', 'astro.config.mjs', 'package-lock.json'], { cwd: ROOT, onlyFiles: true })).sort(compare)) {
+  for (const file of (await fg([
+    'src/**/*', 'public/**/*', 'astro.config.mjs', 'package.json', 'package-lock.json',
+    'tools/audit-routes.mjs', 'tools/generate-redirects.mjs'
+  ], { cwd: ROOT, onlyFiles: true })).sort(compare)) {
     hash.update(file + '\0'); hash.update(await fs.readFile(path.join(ROOT, file))); hash.update('\0');
   }
   return hash.digest('hex');
@@ -342,12 +372,14 @@ async function main() {
   if (check || offline) {
     evidenceFile ??= await latestEvidence();
     const saved = JSON.parse(await fs.readFile(evidenceFile, 'utf8'));
-    if (saved.schemaVersion !== 1 || saved.baselineSha256 !== baselineSha256) throw new Error('Saved evidence schema/baseline does not match.');
+    if (![1, 2].includes(saved.schemaVersion) || saved.baselineSha256 !== baselineSha256) throw new Error('Saved evidence schema/baseline does not match.');
     discovery = { ...saved.discovery, production: saved.routes.flatMap((r) => r.production ? [r.production] : []) };
     const routes = reconcile(local, discovery.production);
     if (check) {
+      if (saved.schemaVersion !== 2) throw new Error('Saved evidence predates redirect-aware reconciliation. Run --offline to produce a schema 2 report.');
       if (fingerprint !== saved.sourceFingerprint) throw new Error('Application source/assets changed since evidence capture. Build, then run --offline to produce a new reconciliation.');
-      for (const [key, expected] of Object.entries({ routes, summary: summarize(routes), baselineChanges: baselineChanges(baseline, routes) })) {
+      const localRedirects = local.filter(({ redirect }) => redirect).map(({ route, redirect }) => ({ route, ...redirect }));
+      for (const [key, expected] of Object.entries({ routes, localRedirects, summary: summarize(routes), baselineChanges: baselineChanges(baseline, routes) })) {
         if (JSON.stringify(saved[key]) !== JSON.stringify(expected)) throw new Error(`Offline ${key} mismatch. Rebuild/reconcile; saved evidence was not changed.`);
       }
       if (discovery.warnings.length) throw new Error(`Saved production discovery is incomplete: ${discovery.warnings.join('; ')}`);
@@ -360,12 +392,14 @@ async function main() {
   const generatedAt = now();
   const { production: _production, ...discoveryDetails } = discovery;
   const report = {
-    schemaVersion: 1, generatedAt, mode: offline ? 'offline-reconciliation' : 'fresh-discovery',
+    schemaVersion: 2, generatedAt, mode: offline ? 'offline-reconciliation' : 'fresh-discovery',
     gitHead: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).trim(),
     sourceFingerprint: fingerprint, baselineFile: BASELINE, baselineSha256,
-    limitations: ['Route presence is not content or visual parity.', 'Unrequested sitemap URLs are not HTTP-verified.', 'Existing dist required; rebuild before capture if application files changed.', 'Fragments are preserved references, not separately fetched documents.', 'Query variants are retained; automatic requests do not submit search terms.', 'Fresh requests record redirects without following them; inherited observations generally recorded final responses. A status difference alone is not evidence of a newly introduced redirect.'],
+    limitations: ['Route presence is not content or visual parity.', 'Unrequested sitemap URLs are not HTTP-verified.', 'Existing dist required; rebuild before capture if application files changed.', 'Fragments are preserved references, not separately fetched documents.', 'Query variants are retained; automatic requests do not submit search terms.', 'Fresh requests record redirects without following them; inherited observations generally recorded final responses. A status difference alone is not evidence of a newly introduced redirect.', 'Local redirects are repository definitions; this report does not establish activation on a deployed host.'],
     localUtilities: (await fg(['dist/robots.txt', 'dist/sitemap.xml'], { cwd: ROOT })).map((f) => '/' + f.slice(5)).sort(compare),
-    discovery: discoveryDetails, summary: summarize(routes), baselineChanges: baselineChanges(baseline, routes), routes
+    discovery: discoveryDetails,
+    localRedirects: local.filter(({ redirect }) => redirect).map(({ route, redirect }) => ({ route, ...redirect })),
+    summary: summarize(routes), baselineChanges: baselineChanges(baseline, routes), routes
   };
   const name = `route-reconciliation-${generatedAt.slice(0, 10)}${offline ? '-offline' : ''}.json`;
   let output = path.join(REPORTS, name);

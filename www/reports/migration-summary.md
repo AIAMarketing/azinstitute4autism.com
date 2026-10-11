@@ -2988,3 +2988,237 @@ the deferred author `/page/1` aliases. Phase 6B.5 follows for multilingual,
 RTL, accessibility, and performance acceptance, including the three defects
 above. The nine missing English articles remain Phase 6C work and continue to
 block final acceptance of the two production page-6 URL families.
+
+## Phase 6B.4 — URL, Canonical, Sitemap, and Redirect Reconciliation (2026-10-10)
+
+Implemented on `faithful-astro-migration` from accepted checkpoint
+`8646792d46a8a117ef617f5dd2582c2550b45d19`. This milestone reconciles the
+generated route inventory and SEO output, adds the approved author page-one
+aliases, and makes repository redirects part of the repeatable offline route
+matrix. It does not activate hosting rules, add content, change publication
+eligibility, or address the Phase 6B.5 multilingual defects.
+
+### Evidence and URL Dispositions
+
+No production request or crawl was made. The new reconciliation reuses the 70
+saved requests and original observation times from
+[`route-reconciliation-2026-10-10-offline-03-48-54-074Z.json`](route-reconciliation-2026-10-10-offline-03-48-54-074Z.json).
+The Phase 6A source investigation remains separate supporting evidence: 29
+bounded public GETs from **2026-10-09 18:01:51–18:02:17 UTC** observed all six
+Library/author `/page/1` candidates as duplicate HTTP 200 pages. The older
+October 7 route evidence directly observed the three legacy service aliases as
+matching 301 redirects. These observations describe HubSpot behavior and do
+not establish origin freshness or deployment of the new rules.
+
+The repeatable schema-2 result is
+[`route-reconciliation-2026-10-10-offline.json`](route-reconciliation-2026-10-10-offline.json).
+It inventories 110 generated HTML routes and nine repository redirects across
+133 reconciled route/query records. Each redirect source now carries its
+destination, status, reason, discovery sources, saved HTTP evidence where
+available, and an explicit disposition. The three service aliases classify as
+`local-and-production-redirect`; the six page-one aliases classify as
+`local-redirect-production-unverified` in this inherited October 7 evidence.
+The report records repository definitions, not deployed-host activation.
+
+| URL family | Local disposition | SEO / preservation result |
+| --- | --- | --- |
+| `/library`, `/es/library`, `/ar/library` | Preserved generated roots | Self-canonical, indexable and sitemap-eligible in the indexing build; existing explicit root hreflang retained |
+| English Library pages 2–5; Spanish page 2 | Preserved generated pages | Self-canonical, indexable, sitemap-eligible; no numbered-page hreflang |
+| Eight current author roots/pages | Generated but deliberately `noindex` | Self-canonical `noindex,follow`; sitemap- and hreflang-excluded |
+| Six Library/author `/page/1` aliases | Approved repository 301 definitions | No HTML, canonical, sitemap, or hreflang entity at the source path |
+| `/search` and supported `term`, `q`, repeated `type`, `lang`, and `offset` state | Preserved static Library-only compatibility route | `/search` self-canonical, `noindex,follow`, sitemap- and hreflang-excluded; query state remains client-side and escaped |
+| Three legacy service aliases | Preserved repository 301 definitions | Exact existing destinations and statuses retained |
+| Two syndicated English articles | Accessible external-canonical records | Still `noindex`, sitemap- and hreflang-excluded; remain in Library/author listings |
+| `/library/page/6` and `/library/author/rula-diab/page/6` | Verified production routes, missing locally | Phase 6C cutover blockers; no empty page, copied page 5, or redirect substitute |
+| Page 0, negative/decimal/leading-zero/beyond-last pages, unknown authors | Intentionally absent | No generated output, sitemap entry, metadata, or concealment redirect |
+| Draft and unpublished records, including `/ar` | Intentionally excluded | Publication policy unchanged |
+
+The 102 sitemap routes in the offline report are the preserved historical
+production discovery baseline. They are not the local policy sitemap, which
+contains 97 URLs in the indexing-enabled build. Sitemap omission is not used
+as proof that a production URL is absent. `reports/url-inventory.csv` remains
+the historical extracted content-file inventory; its `source_file` model does
+not represent synthetic archives, utility routes, or redirect-only aliases, so
+it is not presented as the current complete disposition matrix.
+
+### Redirect Registry and Validation
+
+`tools/generate-redirects.mjs` remains the single redirect definition source.
+It now rejects unnormalized paths, duplicate sources, non-301 definitions,
+empty reasons, locale-changing destinations, self-redirects, chains/cycles,
+generated-source collisions, and destinations missing from the generated
+route inventory. It writes deterministic JSON, CSV, and nginx artifacts.
+
+The existing service and Library definitions are unchanged. These three author
+aliases complete the current nine-rule registry:
+
+| Source | Destination | Status |
+| --- | --- | ---: |
+| `/library/author/rula-diab/page/1` | `/library/author/rula-diab` | 301 |
+| `/es/library/author/rula-diab/page/1` | `/es/library/author/rula-diab` | 301 |
+| `/ar/library/author/rula-diab/page/1` | `/ar/library/author/rula-diab` | 301 |
+
+These aliases are intentionally explicit for the one current referenced
+author. A future author must first have a real eligible generated archive; its
+page-one alias can then be deliberately added and validated rather than being
+created for zero-post or nonexistent author records.
+
+An isolated `nginx:latest` container served the normal local static build with
+the generated snippet. All nine definitions returned HTTP 301 with exact
+locale-preserving `Location` values; following each ended at HTTP 200 without a
+loop. A `term=autism` query on `/library/page/1` was preserved at
+`/library?term=autism`. Both Library and
+author page 2 returned 200. Both English page-6 gaps, page 0, leading-zero page
+aliases, an unknown author, and an invalid author page returned 404. `nginx -t`
+passed. This validates the repository artifacts under a compatible isolated
+server only; neither deployed staging nor production nginx was changed. The
+[nginx rewrite module](https://nginx.org/en/docs/http/ngx_http_rewrite_module.html)
+documents that the generated `permanent` flag returns HTTP 301.
+
+### Trailing-Slash Reconciliation
+
+The public canonical model remains no-slash except `/`, enforced by
+`normalizeRoute`, canonical validation, and `trailingSlash: 'never'`. Phase 6A
+observed current English `/library/` and `/library/author/rula-diab/` requests
+returning 301 to their no-slash forms on October 9. The other locale and
+numbered trailing-slash variants were not individually requested. Historical
+October 7 evidence also records HubSpot redirecting `/es` to `/es/`, so the
+source host is not evidence of one universal no-slash transport policy.
+
+The [Astro configuration reference](https://docs.astro.build/en/reference/configuration-reference/#trailingslash)
+states that prerendered-page trailing slashes are handled by the hosting
+platform and may not follow the Astro setting. A neutral isolated nginx
+`try_files` configuration returned 200 for both slash
+and no-slash versions of the same local Library and author files. No broad
+rewrite was added: it could affect assets, the root URL, query strings, or
+utility endpoints without deployment-specific validation. The proposed cutover
+behavior is a bounded host rule that preserves `/`, assets and queries while
+redirecting non-root page-directory trailing slashes to the established
+no-slash canonicals. Activation and full English/Spanish/Arabic verification
+remain part of the hosting gate.
+
+### Canonical, Robots, Sitemap, Hreflang, and Schema Results
+
+The indexing-enabled build produced 110 HTML files and 110 unique canonical
+targets. Every local canonical used the public origin and normalized pathname;
+the two syndicated pages retained their external canonicals. No redirect source
+generated HTML or appeared in the sitemap. Numbered pages never canonicalized
+to a root or another page.
+
+The indexing-enabled sitemap contained exactly 97 unique local URLs. It
+excluded all eight author archives, `/search`, redirect sources, drafts, both
+external-canonical articles, invalid pages, and both Phase 6C page-6 gaps.
+Ordinary and numbered Library pages were `index,follow`; author archives and
+`/search` were `noindex,follow`; existing page-level noindex rules remained.
+
+Hreflang remained 174 links across 53 routes. The three Library roots retained
+their validated relationships; numbered Library pages, author archives,
+`/search`, noindex/external-canonical routes, and redirect aliases emitted
+none. Existing English `x-default` selection and all article/service
+translation sets were unchanged. BlogPosting Person attribution, FAQPage
+eligibility, titles, descriptions, H1 behavior, article dates, and syndicated
+schema exclusions also remained unchanged.
+
+The final normal build restored 110 pages with `noindex,nofollow`, an empty
+sitemap, and zero hreflang links.
+
+### Validation and Review
+
+| Check | Result |
+| --- | --- |
+| `npm run check` | Passed: 90 Astro files; 0 errors, warnings, or hints |
+| `npm run test:library` | Passed: 33 tests, including the exact nine-rule registry, synchronized artifacts, invalid redirect graphs, generated target/source validation, SEO exclusion, pagination, archives, and search |
+| `npm run test:seo` | Passed sequentially: 34 tests |
+| `npm run test:publication` | Passed sequentially: 33 tests |
+| `npm run test:markdown` | Passed: 20 tests |
+| `npm run test:routes` | Passed: 10 tests, including redirect-aware classification and reconciliation |
+| Normal `npm run build` | Passed twice; 110 generated HTML routes |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed; 110 routes, 97 sitemap URLs, 174 hreflang links on 53 routes |
+| Generated-output SEO inspection | Passed: 110 unique canonicals; all redirect, author, search, pagination, syndicated, sitemap, robots, and hreflang assertions |
+| `npm run audit:routes -- --check --evidence reports/route-reconciliation-2026-10-10-offline.json` | Passed with no network or writes |
+| `npm run audit:links` | Passed: 0 broken internal links |
+| `npm run audit:images` | Passed: 0 missing mapped page images |
+| `npm run audit:blog` | Passed: 0 blog content audit failures |
+| Isolated nginx HTTP verification | Passed: nine exact 301s, valid final targets, preserved query, distinct pages, expected 404 boundaries, valid config |
+| Headless Chromium | Passed: eight representative desktop DOM loads and two 390×844 loads across Library, author, search, syndicated, English, Spanish, and Arabic routes |
+| `git diff --check` | Passed after the final acceptance and handoff documentation updates |
+
+An initial attempt to run the SEO and publication fixture suites concurrently
+caused their temporary Astro content collections to cross-contaminate. That
+parallel result was discarded. Running the established commands sequentially
+passed all 34 and 33 tests without source changes. A first ad hoc generated-
+output inspection requested unavailable Python `bs4`; the equivalent project-
+dependency Cheerio inspection then passed. Browser checks establish page-load,
+DOM metadata, language/direction, and responsive-viewport execution; they are
+not a manual visual or screen-reader acceptance claim.
+
+### Changed Files and Deferred Decisions
+
+Modified files:
+
+- `tools/generate-redirects.mjs` — approved aliases, structural validation,
+  and deterministic artifact serializers.
+- `src/data/redirects.json`, `reports/redirect-map.csv`, and
+  `reports/nginx-rewrites.conf` — synchronized nine-rule outputs.
+- `tools/audit-routes.mjs` — redirect-aware local inventory, dispositions,
+  schema-2 evidence, and audit-tool fingerprinting.
+- `tools/audit-routes.test.mjs` and `tools/library.test.mjs` — focused route,
+  redirect, generated-output, and failure-mode regressions.
+- `reports/seo-audit.md` — corrected current pagination/archive/search state
+  while preserving the historical omission.
+- `reports/migration-summary.md` — this dated implementation record.
+
+New file:
+
+- `reports/route-reconciliation-2026-10-10-offline.json` — schema-2,
+  redirect-aware reconciliation based on saved evidence and current output.
+
+`reports/SESSION_HANDOFF.md` was advanced only during the separately authorized
+Phase 6B.4 acceptance/transition step. No content record, route generator,
+publication policy, layout, component, dependency, Nix/nginx host configuration,
+form, analytics, advertising, consent, employee portal, or deployment file
+changed.
+
+Manual review before checkpoint approval should cover the nine redirect source
+and destination pairs in the generated reports; representative root/numbered
+Library and author canonicals; `/search` noindex behavior; both page-6 404 gaps;
+and the documented difference between repository rules and deployed-host
+activation. A later hosting review must decide and test bounded no-slash
+normalization. Phase 6C still supplies nine English articles. Phase 6B.5 still
+owns the three accepted multilingual defects and human language review. Author
+archive indexing, sitemap participation, and hreflang remain unapproved.
+
+### Checkpoint Acceptance and Deferred Hosting Behavior (2026-10-10)
+
+The user authorized the Phase 6B.4 checkpoint after reviewing the completed
+implementation and automated evidence. This acceptance does not claim that the
+user independently repeated every suggested manual URL check.
+
+The user tested the existing staging URLs `/search`, `/library`,
+`/library/page/2`, `/es/library`, and `/ar/library/author/rula-diab`; all five
+redirected to trailing-slash URLs. The detailed `/search` observation was:
+
+1. `https://aia.web3app.dev/search` returned HTTP 301 to
+   `http://aia.web3app.dev/search/`.
+2. `http://aia.web3app.dev/search/` returned HTTP 301 to
+   `https://aia.web3app.dev/search/`.
+3. The final HTTPS response returned HTTP 200.
+
+This behavior is attributed to the temporary Docker/nginx static-serving and
+reverse-proxy arrangement. The user explicitly deferred changes to that
+environment. Phase 6B.4 accepts Astro's slashless canonical policy and the nine
+validated repository redirect definitions. The observed redirect chain does
+not block this checkpoint, but it is not accepted production behavior and is
+not described as fixed.
+
+Production configuration on the Contabo VPS must be separately implemented and
+verified before cutover. It must serve canonical slashless HTML paths without
+unnecessary redirects; avoid HTTPS-to-HTTP redirects; normalize trailing-slash
+variants consistently with the accepted canonical policy; preserve query
+strings and locale-specific destinations; avoid chains and loops; implement
+the approved repository redirects; return appropriate 404 responses for
+nonexistent routes; treat `/` as the root exception; and verify real HTTP
+behavior rather than configuration syntax alone. Staging and production
+indexing safeguards must remain in place until their separately approved
+transitions. No nginx, Docker, NixOS, Contabo, Cloudflare, HubSpot, DNS, Astro
+canonical, or deployment configuration changed during checkpoint preparation.

@@ -70,7 +70,13 @@ test('a generated placeholder is not misrepresented as already unpublished', () 
 test('external canonicals remain live pages; redirects remain redirects', () => {
   assert.equal(classify({ generated: true }, { http: { status: 200, canonical: 'https://publisher.example/original' } }), 'both-route-present-content-unverified');
   assert.equal(classify(null, { http: { status: 301, location: ORIGIN + '/aba-therapy' } }), 'production-redirect-only');
-  assert.equal(classify({ generated: true }, { http: { status: 302 } }), 'local-and-production-redirect');
+  assert.equal(classify({ generated: true }, { http: { status: 302 } }), 'local-generated-production-redirect');
+  const redirect = { redirect: { to: '/aba-therapy', status: 301 } };
+  assert.equal(classify(redirect, { http: { status: 301, location: ORIGIN + '/aba-therapy' } }), 'local-and-production-redirect');
+  assert.equal(classify(redirect, { http: { status: 301, location: ORIGIN + '/other' } }), 'local-production-redirect-conflict');
+  assert.equal(classify(redirect, { http: { status: 200 } }), 'local-redirect-production-live');
+  assert.equal(classify(redirect, { http: { status: 404 } }), 'local-redirect-production-absent');
+  assert.equal(classify(redirect, null), 'local-redirect-production-unverified');
 });
 
 test('reconciliation is stable and distinguishes listed, verified and generated counts', () => {
@@ -84,11 +90,24 @@ test('reconciliation is stable and distinguishes listed, verified and generated 
   assert.deepEqual(routes, reconcile([...local].reverse(), [...production].reverse()));
   const summary = summarize(routes);
   assert.equal(summary.localGenerated, 2);
+  assert.equal(summary.localRedirects, 0);
   assert.equal(summary.sitemap, 2);
   assert.equal(summary.sitemapLocalOverlap, 1);
   assert.equal(summary.sitemapLocalMissing, 1);
   assert.equal(summary.verifiedLiveNotInSitemap, 1);
   assert.deepEqual(JSON.parse(compactJson({ routes, summary })), { routes, summary });
+});
+
+test('redirect definitions receive reproducible local dispositions without becoming generated pages', () => {
+  const redirect = { route: '/library/page/1', generated: false, redirect: { to: '/library', status: 301 } };
+  const routes = reconcile([redirect, { route: '/library', generated: true }], [
+    { route: '/library/page/1', sources: ['link:/library/page/2'], http: null }
+  ]);
+  const alias = routes.find(({ route }) => route === '/library/page/1');
+  assert.equal(alias.local.redirect.to, '/library');
+  assert.equal(alias.disposition, 'local-redirect-production-unverified');
+  assert.equal(summarize(routes).localRedirects, 1);
+  assert.equal(summarize(routes).localGenerated, 1);
 });
 
 test('baseline changes preserve original observations and never compare unknown values', () => {

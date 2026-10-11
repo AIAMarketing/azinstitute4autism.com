@@ -5,3 +5,6 @@ from,to,status,reason
 "/library/page/1","/library",301,"Library first-page alias"
 "/es/library/page/1","/es/library",301,"Spanish Library first-page alias"
 "/ar/library/page/1","/ar/library",301,"Arabic Library first-page alias"
+"/library/author/rula-diab/page/1","/library/author/rula-diab",301,"Author first-page alias"
+"/es/library/author/rula-diab/page/1","/es/library/author/rula-diab",301,"Spanish author first-page alias"
+"/ar/library/author/rula-diab/page/1","/ar/library/author/rula-diab",301,"Arabic author first-page alias"

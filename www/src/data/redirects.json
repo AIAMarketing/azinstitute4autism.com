@@ -34,5 +34,23 @@
     "to": "/ar/library",
     "status": 301,
     "reason": "Arabic Library first-page alias"
+  },
+  {
+    "from": "/library/author/rula-diab/page/1",
+    "to": "/library/author/rula-diab",
+    "status": 301,
+    "reason": "Author first-page alias"
+  },
+  {
+    "from": "/es/library/author/rula-diab/page/1",
+    "to": "/es/library/author/rula-diab",
+    "status": 301,
+    "reason": "Spanish author first-page alias"
+  },
+  {
+    "from": "/ar/library/author/rula-diab/page/1",
+    "to": "/ar/library/author/rula-diab",
+    "status": 301,
+    "reason": "Arabic author first-page alias"
   }
 ]
