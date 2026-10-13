@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/ar/library/behavior-management-fu
 lang: "ar"
 translationKey: "behavior-management-functions-guide"
 featuredImage: "/assets/images/hero-behavior-functions-management.webp"
+alt: "طفل يكدّس مكعبات حروف ملوّنة أثناء نشاط تعلّمي."
 date: "2024-06-28"
+updatedDate: "2025-09-09"
 author: "rula-diab"
 category: "Library"
 tags: []

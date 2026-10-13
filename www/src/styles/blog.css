@@ -11,7 +11,25 @@
 .source-page > h2:first-of-type { margin-top: 0; }
 .blog-post-body { max-width: 960px; }
 .blog-post-body p { margin-bottom: 1.55rem; }
+.blog-post-body h3.article-inline-heading { display: inline; margin: 0; }
 .blog-post-body table { border: 1px solid #d7d9e3; border-collapse: collapse; display: table; margin: 0 0 1.4rem; width: 100%; }
 .blog-post-body td, .blog-post-body th { border: 1px solid #d7d9e3; padding: 10px; }
 .blog-post-body th { background: var(--color-primary); color: #fff; }
 .blog-post-body td { background: #fff; color: var(--color-primary); }
+.article-diagram-scroll { max-width: 100%; }
+.article-diagram-scroll:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.article-diagram-scroll img { display: block; width: 100%; }
+
+@media (max-width: 700px) {
+  .blog-post-body table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .article-diagram-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .article-diagram-scroll img { min-width: 720px; }
+}

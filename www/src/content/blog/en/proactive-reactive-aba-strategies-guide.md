@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/proactive-reactive-aba-st
 lang: "en"
 translationKey: "proactive-reactive-aba-strategies-guide"
 featuredImage: "/assets/images/hero-proactive-reactive-strategies.webp"
+alt: "An adult helps two children build a tower with colorful blocks."
 date: "2024-09-01"
+updatedDate: "2025-04-19"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -31,7 +33,7 @@ By focusing on prevention and skill acquisition, proactive strategies empower in
 
 - **Teaching Replacement Behaviors:** Educating individuals to implement alternative, more appropriate behaviors helps replace challenging ones.
 
-- Teaching functional communication allows individuals to express their needs and desires appropriately. For example, if a child is screaming for attention, they can be taught to use words, [PECS system](https://www.iidc.indiana.edu/irca/articles/what-is-the-picture-exchange-communication-system-or-pecs), or a communication device to ask for help or communicate their needs.
+- Teaching functional communication allows individuals to express their needs and desires appropriately. For example, if a child is screaming for attention, they can be taught to use words, [PECS system](https://www.iidc.indiana.edu/irca/articles/what-is-the-picture-exchange-communication-system-or-pecs.html), or a communication device to ask for help or communicate their needs.
 
 - **Reinforcing Replacement Behaviors:** Reinforcement is key to maintaining new behaviors. By consistently providing positive reinforcement, the likelihood of the new behavior replacing the old one increases over time.
 

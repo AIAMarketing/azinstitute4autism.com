@@ -37,7 +37,7 @@ for (const file of files) {
     if (!file.endsWith('.mdx') || !content.includes("import FAQAccordion from '../../../components/FAQAccordion.astro';")) {
       failures.push(`${path.relative(root, file)}: FAQAccordion must be used from an MDX post`);
     }
-    if (!/label="(?:Frequently Asked Questions|Preguntas [Ff]recuentes)"/.test(componentMatch[0]) || !/heading="[^"]+"/.test(componentMatch[0])) {
+    if (!/label="(?:Frequently Asked Questions|Preguntas [Ff]recuentes|الأسئلة الشائعة)"/u.test(componentMatch[0]) || !/heading="[^"]+"/.test(componentMatch[0])) {
       failures.push(`${path.relative(root, file)}: FAQAccordion is missing its label or topic heading`);
     }
     if (!componentMatch[0].includes(`canonical="${data.canonical}"`)) {

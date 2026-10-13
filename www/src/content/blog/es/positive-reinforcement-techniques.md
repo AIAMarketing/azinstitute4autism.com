@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/es/library/positive-reinforcement
 lang: "es"
 translationKey: "positive-reinforcement-techniques"
 featuredImage: "/assets/images/hero-positive-reinforcement-techniques.webp"
+alt: "Una persona adulta lee un libro ilustrado con dos niños."
 date: "2026-04-09"
+updatedDate: "2026-04-09"
 author: "rula-diab"
 category: "Library"
 tags: []

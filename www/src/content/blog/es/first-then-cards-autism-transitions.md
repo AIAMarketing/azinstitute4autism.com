@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/es/library/first-then-cards-autis
 lang: "es"
 translationKey: "first-then-cards-autism-transitions"
 featuredImage: "/assets/images/hero-first-then-cards.webp"
+alt: "Una profesional muestra tarjetas visuales «Primero/Después» a un niño durante una actividad de aprendizaje."
 date: "2026-04-09"
+updatedDate: "2026-04-09"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -107,4 +109,4 @@ Ubicado en Scottsdale, dentro del Valle del Este de Phoenix, el Instituto de Aut
 
 -   **Terapia en el hogar**: Disponible en Tucson para brindar apoyo dentro del entorno natural de su hijo.
 
-- **Próximamente, Gifted Shop de AIA** : Pronto, podrá acceder a una variedad de herramientas de apoyo visual, incluyendo tarjetas de Primero/Después y colecciones de PECS, a través de nuestra tienda en línea. Manténgase atento a las actualizaciones.
+- **Próximamente, Gifted Shop de AIA** : Pronto, podrá acceder a una variedad de herramientas de apoyo visual, incluyendo tarjetas de Primero/Después y colecciones de PECS, a través de nuestra tienda en línea. [Manténgase atento a las actualizaciones](/es/library/first-then-cards-autism-transitions).

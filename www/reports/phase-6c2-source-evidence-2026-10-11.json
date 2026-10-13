@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "phase": "6C.2",
+  "generatedAt": "2026-10-11T20:35:00Z",
+  "startingHead": "a699d467f19fafbfdda5fce1ce6226baa6e5fc3c",
+  "method": {
+    "scope": "Five bounded public article GETs plus eight referenced public image GETs; no site crawl, forms, previews, or authenticated APIs.",
+    "transport": "curl followed redirects with a migration-audit user agent; TLS certificate verification was disabled because the sandbox CA path was unavailable.",
+    "freshness": "Responses were HubSpot prerender/cache representations. Cache status, Last-Modified, and x-hs-prerendered are preserved; they do not prove independently fresh origin rendering.",
+    "bodyExtraction": "Reader-facing .blog-post__body content was normalized into Markdown/MDX; HubSpot wrappers and tracking parameters were omitted while headings, tables, links, images, and visible FAQs were retained."
+  },
+  "sources": [
+    {
+      "id": "en-school-readiness",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aba-school-readiness-arizona",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aba-school-readiness-arizona",
+      "status": 200,
+      "observedAt": "2026-10-11T20:28:44Z",
+      "cache": "HIT",
+      "lastModified": "2026-10-03T23:13:20Z",
+      "prerendered": "2026-10-03T23:13:20Z",
+      "contentId": "233383506644",
+      "responseSha256": "0d5bd0c47258248767d9eecf63ef99fffaa275f67b1209c38be794f49a0d2d59",
+      "title": "ABA School Readiness in Arizona: A Parent Guide",
+      "h1": "ABA School Readiness for Autistic Children in Arizona",
+      "published": "2025-08-21",
+      "modified": "2026-09-17",
+      "substantiveHeadings": 18,
+      "faqs": 9,
+      "tables": 1,
+      "bodyImages": 2
+    },
+    {
+      "id": "es-school-readiness",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/aba-school-readiness-arizona",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/aba-school-readiness-arizona",
+      "status": 200,
+      "observedAt": "2026-10-11T20:28:45Z",
+      "cache": "REVALIDATED",
+      "lastModified": "2026-10-03T23:13:18Z",
+      "prerendered": "2026-10-03T23:13:18Z",
+      "contentId": "237329226443",
+      "responseSha256": "3b8e9f9495dd0423e83a08f4a785bb3a5228b46543a42f235400e85bc4762619",
+      "title": "Preparación escolar y autismo en Arizona: guía para familias",
+      "h1": "Preparación escolar para niños autistas en Arizona: cómo puede ayudar la terapia ABA",
+      "published": "2025-09-02",
+      "modified": "2026-09-25",
+      "substantiveHeadings": 18,
+      "faqs": 9,
+      "tables": 1,
+      "bodyImages": 2
+    },
+    {
+      "id": "en-antecedent-consequence",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aba-school-readiness-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aba-school-readiness-guide",
+      "status": 200,
+      "observedAt": "2026-10-11T20:28:46Z",
+      "cache": "HIT",
+      "lastModified": "2026-10-03T23:13:21Z",
+      "prerendered": "2026-10-03T23:13:21Z",
+      "contentId": "208314278618",
+      "responseSha256": "d871d5364723a5d7d39daa29bbd32f4519fa2b93072859b3500ba7a9c965374b",
+      "title": "Antecedent Interventions & Consequence Strategies in ABA",
+      "h1": "Antecedent and Consequence Interventions in ABA: Strategies and Examples",
+      "published": "2024-07-30",
+      "modified": "2026-08-13",
+      "substantiveHeadings": 19,
+      "faqs": 6,
+      "tables": 3,
+      "bodyImages": 3
+    },
+    {
+      "id": "ar-old-school-readiness",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide",
+      "status": 200,
+      "observedAt": "2026-10-11T20:28:48Z",
+      "cache": "REVALIDATED",
+      "lastModified": "2026-10-03T23:13:19Z",
+      "prerendered": "2026-10-03T23:13:19Z",
+      "contentId": "237437788889",
+      "responseSha256": "c57cf00d7c4a79de6c623052cfb80f234a9ab7f547976f9c413fbcfcbbc0aec5",
+      "title": "تدخلات ABA للمقدمات والنتائج | دليل العودة إلى المدرسة",
+      "h1": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+      "published": "2024-07-30",
+      "modified": "2025-11-22",
+      "substantiveHeadings": 3,
+      "faqs": 0,
+      "tables": 0,
+      "bodyImages": 0
+    },
+    {
+      "id": "en-fall-break",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/autism-fall-break-routine-tips-halloween-thanksgiving",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-fall-break-routine-tips-halloween-thanksgiving",
+      "status": 200,
+      "observedAt": "2026-10-11T20:28:49Z",
+      "cache": "HIT",
+      "lastModified": "2026-10-07T16:20:00Z",
+      "prerendered": "2026-10-07T16:20:00Z",
+      "contentId": "241180769001",
+      "responseSha256": "c35e91e05908c7c668acdf4889a4c65353225f67872b601efbe89c493c4de517",
+      "title": "Autism and Fall Break: Routines and Transition Tips",
+      "h1": "Autism and Fall Break: How to Keep Routines Calm and Predictable",
+      "published": "2025-10-01",
+      "modified": "2026-10-03",
+      "substantiveHeadings": 9,
+      "faqs": 6,
+      "tables": 2,
+      "bodyImages": 2
+    }
+  ],
+  "assets": [
+    {
+      "localPath": "public/assets/images/school-readiness-supports-infographic.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/school-readiness-supports-infographic.webp?width=800&height=600&name=school-readiness-supports-infographic.webp",
+      "dimensions": "800x600",
+      "sha256": "0a37ae2c98e052f4517cd0bea422b94c387d79352ae354cf8754d1750dabf2ac"
+    },
+    {
+      "localPath": "public/assets/images/one-to-one-to-group-progression.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/one-to-one-to-group-progression.webp?width=800&height=450&name=one-to-one-to-group-progression.webp",
+      "dimensions": "800x450",
+      "sha256": "704a875b02f525b3a3a40c28ee981badd7becf87c05efb3196b22424e3717cee"
+    },
+    {
+      "localPath": "public/assets/images/school-readiness-supports-infographic_es.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/school-readiness-supports-infographic_es.webp?width=800&height=533&name=school-readiness-supports-infographic_es.webp",
+      "dimensions": "800x533",
+      "sha256": "9ee693d775e428a6e9e8bfdbe881276ca0d42efa8cbfd96d1957ef0676e28371"
+    },
+    {
+      "localPath": "public/assets/images/one-to-one-to-group-progression_es.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/one-to-one-to-group-progression_es.webp?width=800&height=308&name=one-to-one-to-group-progression_es.webp",
+      "dimensions": "800x308",
+      "sha256": "ae6a933ee082541f348462e2431b5595605d3154673533b05d9ebd7ba756d805"
+    },
+    {
+      "localPath": "public/assets/images/antecedent-consequence.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hubfs/antecedent-consequence.webp",
+      "dimensions": "800x450",
+      "sha256": "29dd8dc617aa81d7473c75834bdcc43c5812b5744241c40ff98a8f72febbba3d"
+    },
+    {
+      "localPath": "public/assets/images/antecedent-behavior-consequence.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/antecedent-behavior-consequence.webp?width=800&height=450&name=antecedent-behavior-consequence.webp",
+      "dimensions": "800x450",
+      "sha256": "783df59a2c8edc40dcbdd03fc82104735de0a30e04b4f8a2dea1b398e6dbff83"
+    },
+    {
+      "localPath": "public/assets/images/reduce-environmental-distractions.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/reduce-environmental-distractions.webp?width=800&height=450&name=reduce-environmental-distractions.webp",
+      "dimensions": "800x450",
+      "sha256": "3751c87abc796a93a3f401dfccc752a6f71a4d0fc57baabf3c56aac4df7aeadb"
+    },
+    {
+      "localPath": "public/assets/images/reinforcement-replacement-behavior.webp",
+      "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/reinforcement-replacement-behavior.webp?width=800&height=533&name=reinforcement-replacement-behavior.webp",
+      "dimensions": "800x533",
+      "sha256": "4088ca8337062482b8492c749fa00f2ea10590b5d73bf0a49a5de5284bffeca6"
+    }
+  ],
+  "translationAudit": {
+    "explicitPairCount": 19,
+    "englishSpanishPairs": 12,
+    "englishArabicPairs": 7,
+    "preImplementation": {
+      "substantivelyEquivalent": 15,
+      "minorTranslationDrift": 2,
+      "substantialStructuralDrift": 1,
+      "differentArticleAndSemanticDrift": 1
+    },
+    "actions": {
+      "/es/library/aba-school-readiness-arizona": "Replaced from the current public Spanish article, which is structurally and substantively equivalent to the revised English source.",
+      "/ar/library/aba-school-readiness-guide": "Replaced with a complete Arabic translation of the revised English article because the public Arabic article is the superseded short school-readiness publication."
+    },
+    "review": "The Spanish transcription requires fluent-language and organizational review. The new Arabic translation requires fluent Arabic plus clinical/editorial review before cutover. The two self-advocacy pairs retain minor drift limited to the new English Halloween contextual sentence."
+  }
+}

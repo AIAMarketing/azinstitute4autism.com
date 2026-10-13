@@ -7,7 +7,9 @@ canonical: "https://www.azinstitute4autism.com/es/library/autism-self-advocacy-s
 lang: "es"
 translationKey: "autism-self-advocacy-skills-aba"
 featuredImage: "/assets/images/hero-teach-self-advocacy.webp"
+alt: "Un grupo diverso de niños sonríe mientras está acostado sobre el césped."
 date: "2026-04-09"
+updatedDate: "2026-04-09"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -33,6 +35,8 @@ Aplicando esta habilidad a niños con autismo, la autodefensa podría verse así
 - Elegir entre actividades o artículos.
 
 - Decir "no" a algo que no les gusta o con lo que no se sienten cómodos.
+
+Nuestra [guía para planificar Halloween (en inglés)](/library/halloween-and-autism) muestra cómo las familias pueden dar cabida a «no», «descanso» y «ya terminé» durante una salida comunitaria.
 
 Enseñar la autodefensa empodera a los niños para:
 

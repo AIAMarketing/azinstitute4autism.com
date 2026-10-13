@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/ar/library/proactive-reactive-aba
 lang: "ar"
 translationKey: "proactive-reactive-aba-strategies-guide"
 featuredImage: "/assets/images/hero-proactive-reactive-strategies.webp"
+alt: "شخص بالغ يساعد طفلين على بناء برج من المكعبات الملوّنة."
 date: "2025-07-19"
+updatedDate: "2025-07-19"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -31,7 +33,7 @@ draft: false
 
 - **تعليم سلوكيات بديلة:** تعليم الأفراد تطبيق سلوكيات بديلة أكثر ملاءمة يساعد في استبدال السلوكيات الصعبة.
 
-- تعليم التواصل الوظيفي لتمكين الأفراد من التعبير عن احتياجاتهم بطريقة مناسبة، مثل استخدام الكلمات، أو [نظام PECS](https://www.iidc.indiana.edu/irca/articles/what-is-the-picture-exchange-communication-system-or-pecs)، أو جهاز تواصل.
+- تعليم التواصل الوظيفي لتمكين الأفراد من التعبير عن احتياجاتهم بطريقة مناسبة، مثل استخدام الكلمات، أو [نظام PECS](https://www.iidc.indiana.edu/irca/articles/what-is-the-picture-exchange-communication-system-or-pecs.html)، أو جهاز تواصل.
 
 - **تعزيز السلوكيات البديلة:** التعزيز عنصر أساسي للحفاظ على السلوكيات الجديدة. من خلال توفير التعزيز الإيجابي بشكل متسق، تزداد احتمالية ثبات السلوك الجديد.
 

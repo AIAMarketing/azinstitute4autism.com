@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/ar/library/executive-functioning-
 lang: "ar"
 translationKey: "executive-functioning-skills-autism"
 featuredImage: "/assets/images/hero-executive-functioning-skills-autism.webp"
+alt: "طفل يرسم بأقلام ملوّنة على طاولة نشاط."
 date: "2025-05-01"
+updatedDate: "2025-09-09"
 author: "rula-diab"
 category: "Library"
 tags: []

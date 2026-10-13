@@ -1,12 +1,14 @@
 ---
 title: "November AIA Update"
-description: "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community"
+description: "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community's strength and unity."
 slug: "november-2022-aia-update"
 canonical: "https://www.azinstitute4autism.com/library/november-2022-aia-update"
 lang: "en"
 translationKey: "november-2022-aia-update"
 featuredImage: "/assets/images/hero-november-2022-aia-update_800x.jpg"
+alt: "A child arranges toy cars on a table."
 date: "2022-10-31"
+updatedDate: "2025-03-09"
 author: "rula-diab"
 category: "Library"
 tags: []

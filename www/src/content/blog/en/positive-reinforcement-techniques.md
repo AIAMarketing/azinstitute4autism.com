@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/positive-reinforcement-te
 lang: "en"
 translationKey: "positive-reinforcement-techniques"
 featuredImage: "/assets/images/hero-positive-reinforcement-techniques.webp"
+alt: "An adult reads a picture book with two children."
 date: "2025-08-01"
+updatedDate: "2025-09-09"
 author: "rula-diab"
 category: "Library"
 tags: []

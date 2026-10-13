@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/autism-therapy-rapport-st
 lang: "en"
 translationKey: "autism-therapy-rapport-strategies"
 featuredImage: "/assets/images/hero-rapport-strategies.webp"
+alt: "An adult and child read a picture book together."
 date: "2024-06-03"
+updatedDate: "2025-04-18"
 author: "rula-diab"
 category: "Library"
 tags: []

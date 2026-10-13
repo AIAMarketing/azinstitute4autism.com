@@ -1,12 +1,15 @@
 ---
 title: "Personalized ABA Therapy Plans | Schedule Your Free Consultation"
+displayH1: "Individualized Care Plans in ABA Therapy"
 description: "Empower your child with individualized ABA therapy at Arizona Institute for Autism. Book a free consultation and kickstart personalized autism care today!"
 slug: "individualized-aba-therapy"
 canonical: "https://www.azinstitute4autism.com/library/individualized-aba-therapy"
 lang: "en"
 translationKey: "individualized-aba-therapy"
 featuredImage: "/assets/images/hero-aba-individual-care-plans.webp"
+alt: "Four children use costumes and props during imaginative group play."
 date: "2024-10-01"
+updatedDate: "2025-04-19"
 author: "rula-diab"
 category: "Library"
 tags: []

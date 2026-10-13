@@ -1,0 +1,3238 @@
+{
+  "schemaVersion": 1,
+  "phase": "6C.3",
+  "generatedAt": "2026-10-12T22:03:46.390Z",
+  "startingHead": "a699d467f19fafbfdda5fce1ce6226baa6e5fc3c",
+  "method": {
+    "scope": "61 bounded public GETs for records still missing updatedDate or featured-image alt after Phase 6C.2; no crawl, forms, previews, or authenticated APIs.",
+    "transport": "curl followed redirects with a migration-audit user agent and Cache-Control: no-cache; TLS verification was bypassed because the sandbox CA path was unavailable.",
+    "freshness": "All requests returned HTTP 200 without a route change. HubSpot Last-Modified and prerender timestamps were captured. Prior 2026-10-11 cache states and response hash prefixes come from the immutable 74-article parity audit; neither pass proves fresh origin rendering.",
+    "modificationDateDecision": "The 60 same-language records had matching public bodies and explicit BlogPosting dateModified values in both evidence passes. Their date component is preserved for structured-data parity. The new Arabic antecedent translation is excluded because its public route still represents a different superseded article.",
+    "altDecision": "Each local hero asset was visually reviewed. Source descriptions informed the result, but truncated, keyword-style, article-title, and nonlocalized strings were replaced by concise descriptions of the rendered image.",
+    "arabicDiagramResponsiveTreatment": "At viewports up to 700 pixels, each localized diagram keeps a 720-pixel minimum width inside an explicitly named, keyboard-focusable horizontal scroll region with visible focus; generated markup and CSS were verified, while 390-pixel browser interaction remains a manual acceptance item."
+  },
+  "counts": {
+    "requested": 61,
+    "http200": 61,
+    "altsAdded": 60,
+    "h1Corrected": 7,
+    "descriptionsRestored": 4,
+    "updatedDatesAdded": 60,
+    "updatedDatesIntentionallyUnresolved": 1
+  },
+  "records": [
+    {
+      "file": "src/content/blog/ar/aba-school-readiness-guide.mdx",
+      "route": "/ar/library/aba-school-readiness-guide",
+      "locale": "ar",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:16.408Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "العودة إلى المدرسة بسهولة | تدخلات ABA: تعزيز بالمقدمات والنتائج",
+        "description": "خفّف توتر العودة إلى المدرسة وعزّز الاستعداد المدرسي باستراتيجيات بسيطة للمقدمات والنتائج، وتكتيكات ABA خطوة بخطوة يمكن لأي والد تطبيقها.",
+        "h1": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-back-to-school.webp",
+        "alt": "نصائح حول المقدمات والنتائج التي يحتاجها كل والد/ة مصاب/ة بالتوحد لتجهيز أطفالهم للمدرسة - صورة رئيسية",
+        "datePublished": "2024-07-30T07:00:00.000Z",
+        "dateModified": "2025-11-22T18:21:14.923Z"
+      },
+      "local": {
+        "title": "التدخلات التمهيدية واستراتيجيات العواقب في تحليل السلوك التطبيقي",
+        "description": "تعرّف إلى كيفية عمل التدخلات التمهيدية واستراتيجيات العواقب في تحليل السلوك التطبيقي، مع نموذج ABC وأمثلة عملية والتعزيز ووظيفة السلوك.",
+        "displayH1": "التدخلات التمهيدية وتدخلات العواقب في تحليل السلوك التطبيقي: استراتيجيات وأمثلة",
+        "featuredImage": "/assets/images/antecedent-consequence.webp",
+        "alt": "طفل مصاب بالتوحد يقرأ داخل ركن هادئ مصنوع من البطانيات بوصفه تعديلًا داعمًا للبيئة.",
+        "date": "2024-07-30",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:22Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "c57cf00d7c4a"
+      },
+      "changes": []
+    },
+    {
+      "file": "src/content/blog/ar/autism-self-advocacy-skills-aba.md",
+      "route": "/ar/library/autism-self-advocacy-skills-aba",
+      "locale": "ar",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-skills-aba",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-skills-aba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:17.099Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "source": {
+        "title": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "description": "مكّن طفلك بعلاج ABA فردي في معهد أريزونا للتوحّد. احجز استشارة مجانية اليوم وابدأ رعاية مخصّصة للتوحّد!",
+        "h1": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-teach-self-advocacy.webp",
+        "alt": "مهارات الدفاع عن النفس لدى الأطفال ذوي التوحّد عبر تحليل السلوك التطبيقي (ABA) – الصورة الرئيسية",
+        "datePublished": "2024-12-02T07:00:00.000Z",
+        "dateModified": "2025-09-09T01:34:16.718Z"
+      },
+      "local": {
+        "title": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "description": "مكّن طفلك بعلاج ABA فردي في معهد أريزونا للتوحّد. احجز استشارة مجانية اليوم وابدأ رعاية مخصّصة للتوحّد!",
+        "displayH1": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "featuredImage": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "",
+        "date": "2024-12-02",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:24Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "0b5f78789785"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "مجموعة من الأطفال يبتسمون وهم مستلقون معًا على العشب.",
+          "sourceAlt": "مهارات الدفاع عن النفس لدى الأطفال ذوي التوحّد عبر تحليل السلوك التطبيقي (ABA) – الصورة الرئيسية",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-09",
+          "sourceValue": "2025-09-09T01:34:16.718Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/ar/behavior-management-functions-guide.md",
+      "route": "/ar/library/behavior-management-functions-guide",
+      "locale": "ar",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/behavior-management-functions-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/behavior-management-functions-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:17.846Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "description": "اكتشف لماذا تحدث السلوكيات وكيفية تعليم بدائل إيجابية عبر دليلنا المبسّط. بادر الآن لروتينات أكثر سلاسة وتعلّم أسعد!",
+        "h1": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-behavior-functions-management.webp",
+        "alt": "أتقن إدارة السلوك: اكتشف الوظائف الأربع للسلوك – الصورة الرئيسية",
+        "datePublished": "2024-06-28T07:00:00.000Z",
+        "dateModified": "2025-09-09T01:08:16.891Z"
+      },
+      "local": {
+        "title": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "description": "اكتشف لماذا تحدث السلوكيات وكيفية تعليم بدائل إيجابية عبر دليلنا المبسّط. بادر الآن لروتينات أكثر سلاسة وتعلّم أسعد!",
+        "displayH1": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "featuredImage": "/assets/images/hero-behavior-functions-management.webp",
+        "alt": "",
+        "date": "2024-06-28",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:25Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "d9befd82e128"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "طفل يكدّس مكعبات حروف ملوّنة أثناء نشاط تعلّمي.",
+          "sourceAlt": "أتقن إدارة السلوك: اكتشف الوظائف الأربع للسلوك – الصورة الرئيسية",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-09",
+          "sourceValue": "2025-09-09T01:08:16.891Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/ar/executive-functioning-skills-autism.md",
+      "route": "/ar/library/executive-functioning-skills-autism",
+      "locale": "ar",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/executive-functioning-skills-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/executive-functioning-skills-autism",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:18.671Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:23 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:23 GMT",
+      "source": {
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "description": "استراتيجيات وظائف تنفيذية قائمة على الأدلة للتوحّد: دعائم بصرية للتخطيط، وتنظيم الانفعالات، وضبط الاندفاع، وحلّ المشكلات.",
+        "h1": "مهارات الوظائف التنفيذية والتوحّد",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-executive-functioning-skills-autism.webp",
+        "alt": "الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد",
+        "datePublished": "2025-05-01T07:00:00.000Z",
+        "dateModified": "2025-09-09T02:04:01.016Z"
+      },
+      "local": {
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "description": "استراتيجيات وظائف تنفيذية قائمة على الأدلة للتوحّد: دعائم بصرية للتخطيط، وتنظيم الانفعالات، وضبط الاندفاع، وحلّ المشكلات.",
+        "displayH1": "مهارات الوظائف التنفيذية والتوحّد",
+        "featuredImage": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "",
+        "date": "2025-05-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:26Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "cd36c8ef498f"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "طفل يرسم بأقلام ملوّنة على طاولة نشاط.",
+          "sourceAlt": "الصورة الرئيسية – استراتيجيات مهارات الوظائف التنفيذية للأطفال المصابين بالتوحّد",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-09",
+          "sourceValue": "2025-09-09T02:04:01.016Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/ar/first-then-cards-autism-transitions.md",
+      "route": "/ar/library/first-then-cards-autism-transitions",
+      "locale": "ar",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/first-then-cards-autism-transitions",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/first-then-cards-autism-transitions",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:19.371Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "source": {
+        "title": "بطاقات أولاً/ثم: تمكين الانتقالات للأطفال المصابين بالتوحد",
+        "description": "تعرّف على كيفية دعم بطاقات أولاً/ثم للانتقال السلس والسلوكيات الإيجابية لدى الأطفال المصابين بالتوحد. اكتشف نصائح عملية وموارد محلية في أريزونا.",
+        "h1": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-first-then-cards.webp",
+        "alt": "بطاقات ",
+        "datePublished": "2025-09-01T08:12:05.000Z",
+        "dateModified": "2025-12-02T18:21:00.258Z"
+      },
+      "local": {
+        "title": "بطاقات أولاً/ثم: تمكين الانتقالات للأطفال المصابين بالتوحد",
+        "description": "تعرّف على كيفية دعم بطاقات أولاً/ثم للانتقال السلس والسلوكيات الإيجابية لدى الأطفال المصابين بالتوحد. اكتشف نصائح عملية وموارد محلية في أريزونا.",
+        "displayH1": "بطاقات أولاً/ثم: تمكين الانتقالات للأطفال المصابين بالتوحد",
+        "featuredImage": "/assets/images/hero-first-then-cards.webp",
+        "alt": "",
+        "date": "2025-09-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:27Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "bbbf06a2c9a9"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "اختصاصية تعرض بطاقات «أولًا/ثم» لطفل أثناء نشاط تعلّمي.",
+          "sourceAlt": "بطاقات ",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-12-02",
+          "sourceValue": "2025-12-02T18:21:00.258Z"
+        },
+        {
+          "field": "displayH1",
+          "before": "بطاقات أولاً/ثم: تمكين الانتقالات للأطفال المصابين بالتوحد",
+          "after": "بطاقات \"أولًا/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+          "sourceValue": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/ar/positive-reinforcement-techniques.md",
+      "route": "/ar/library/positive-reinforcement-techniques",
+      "locale": "ar",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/positive-reinforcement-techniques",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/positive-reinforcement-techniques",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:20.072Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "source": {
+        "title": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "description": "تعلّم أساليب التعزيز الإيجابي الفعّالة لتشجيع السلوكيات المرغوبة لدى الأطفال. اكتشف نصائح وأدوات مرئية وأفضل الممارسات للآباء.",
+        "h1": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-positive-reinforcement-techniques.webp",
+        "alt": "العلاج السلوكي المعرفي (ABA) التعزيز الإيجابي",
+        "datePublished": "2025-08-05T01:07:43.000Z",
+        "dateModified": "2025-09-09T01:48:19.594Z"
+      },
+      "local": {
+        "title": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "description": "تعلّم أساليب التعزيز الإيجابي الفعّالة لتشجيع السلوكيات المرغوبة لدى الأطفال. اكتشف نصائح وأدوات مرئية وأفضل الممارسات للآباء.",
+        "displayH1": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "featuredImage": "/assets/images/hero-positive-reinforcement-techniques.webp",
+        "alt": "",
+        "date": "2025-08-05",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:28Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "992fddfee853"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "شخص بالغ يقرأ كتابًا مصورًا مع طفلين.",
+          "sourceAlt": "العلاج السلوكي المعرفي (ABA) التعزيز الإيجابي",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-09",
+          "sourceValue": "2025-09-09T01:48:19.594Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/ar/proactive-reactive-aba-strategies-guide.md",
+      "route": "/ar/library/proactive-reactive-aba-strategies-guide",
+      "locale": "ar",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/proactive-reactive-aba-strategies-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/proactive-reactive-aba-strategies-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:20.787Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "source": {
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "description": "تعلم استراتيجيات الـ ABA الاستباقية والتفاعلية لخفض السلوكيات المشكلية وتعزيز النجاح. اقرأ الآن وحدد موعد استشارة مع معهد أريزونا للتوحد.",
+        "h1": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-proactive-reactive-strategies.webp",
+        "alt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+        "datePublished": "2025-07-19T04:24:17.000Z",
+        "dateModified": "2025-07-19T04:24:17.013Z"
+      },
+      "local": {
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "description": "تعلم استراتيجيات الـ ABA الاستباقية والتفاعلية لخفض السلوكيات المشكلية وتعزيز النجاح. اقرأ الآن وحدد موعد استشارة مع معهد أريزونا للتوحد.",
+        "displayH1": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "featuredImage": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "",
+        "date": "2025-07-19",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:29Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "78c85639e3d1"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "شخص بالغ يساعد طفلين على بناء برج من المكعبات الملوّنة.",
+          "sourceAlt": "دليل استراتيجيات تحليل السلوك التطبيقي الاستباقية والتفاعلية— الصورة الرئيسية",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-07-19",
+          "sourceValue": "2025-07-19T04:24:17.013Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/aac-visual-supports-autism.mdx",
+      "route": "/library/aac-visual-supports-autism",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aac-visual-supports-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aac-visual-supports-autism",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:21.482Z",
+      "cache": null,
+      "lastModified": "Mon, 05 Oct 2026 14:19:37 GMT",
+      "prerendered": "Mon, 05 Oct 2026 14:19:37 GMT",
+      "source": {
+        "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "description": "Learn how AAC and visual supports help autistic children communicate, reduce frustration, and build routines at home, school, and ABA therapy.",
+        "h1": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/visual-supports-aac-communication.png",
+        "alt": "child pointing to a picture on a digital AAC tablet during play",
+        "datePublished": "2026-05-28T22:16:43.000Z",
+        "dateModified": "2026-10-03T00:59:39.321Z"
+      },
+      "local": {
+        "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "description": "Learn how AAC and visual supports help autistic children communicate, reduce frustration, and build routines at home, school, and ABA therapy.",
+        "displayH1": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "featuredImage": "/assets/images/visual-supports-aac-communication.png",
+        "alt": "",
+        "date": "2026-05-28",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:43Z",
+        "lastModified": "05 Oct 2026",
+        "responseSha256Prefix": "306c78f6e420"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child holds a picture communication board while playing with an adult.",
+          "sourceAlt": "child pointing to a picture on a digital AAC tablet during play",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-10-03",
+          "sourceValue": "2026-10-03T00:59:39.321Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/aba-therapy-benefits.mdx",
+      "route": "/library/aba-therapy-benefits",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aba-therapy-benefits",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aba-therapy-benefits",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:22.104Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "description": "Discover how ABA therapy, tailored to each child's unique needs, can enhance social skills, communication, and independence in children with autism.",
+        "h1": "The Benefits of ABA Therapy for Children with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "Benefits of ABA Therapy for Children with Autism - hero image",
+        "datePublished": "2023-09-19T07:00:00.000Z",
+        "dateModified": "2025-09-16T17:14:32.501Z"
+      },
+      "local": {
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "description": "Discover how ABA therapy, tailored to each child",
+        "displayH1": "The Benefits of ABA Therapy for Children with Autism",
+        "featuredImage": "/assets/images/hero-aba-therapy-benefits_800x.jpg",
+        "alt": "",
+        "date": "2023-09-19",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:46Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "220a4210f35a"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A therapist supports two children during a hands-on classroom activity.",
+          "sourceAlt": "Benefits of ABA Therapy for Children with Autism - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:14:32.501Z"
+        },
+        {
+          "field": "description",
+          "before": "Discover how ABA therapy, tailored to each child",
+          "after": "Discover how ABA therapy, tailored to each child's unique needs, can enhance social skills, communication, and independence in children with autism.",
+          "sourceValue": "Discover how ABA therapy, tailored to each child's unique needs, can enhance social skills, communication, and independence in children with autism."
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/aba-therapy-dtt-net-guide.md",
+      "route": "/library/aba-therapy-dtt-net-guide",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aba-therapy-dtt-net-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aba-therapy-dtt-net-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:22.806Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:15 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:15 GMT",
+      "source": {
+        "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "description": "Learn how Discrete Trial Training (DTT) and Natural Environment Training (NET) help to create comprehensive ABA therapy plans tailored to individual needs.",
+        "h1": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-learn-dtt-net-methods.webp",
+        "alt": "Learn About DTT and NET Methods for More Effective ABA Therapy - hero image",
+        "datePublished": "2024-02-29T07:00:00.000Z",
+        "dateModified": "2025-04-18T01:27:18.750Z"
+      },
+      "local": {
+        "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "description": "Learn how Discrete Trial Training (DTT) and Natural Environment Training (NET) help to create comprehensive ABA therapy plans tailored to individual needs.",
+        "displayH1": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "featuredImage": "/assets/images/hero-learn-dtt-net-methods.webp",
+        "alt": "",
+        "date": "2024-02-29",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:47Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "914e7915de6b"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Close-up of a child placing colorful rings on a wooden peg board.",
+          "sourceAlt": "Learn About DTT and NET Methods for More Effective ABA Therapy - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-04-18",
+          "sourceValue": "2025-04-18T01:27:18.750Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/aba-therapy-prompting-parenting-benefits.md",
+      "route": "/library/aba-therapy-prompting-parenting-benefits",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aba-therapy-prompting-parenting-benefits",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aba-therapy-prompting-parenting-benefits",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:23.588Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:25 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:25 GMT",
+      "source": {
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "description": "Empower yourself as a parent and enhance your child’s ABA therapy journey. Learn to implement prompting strategies for better results and faster progress.",
+        "h1": "Benefits of Prompting & Parenting in ABA Therapy",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-prompting-parenting-benefits.webp",
+        "alt": "Benefits of Prompting & Parenting in ABA Therapy - hero image",
+        "datePublished": "2024-04-02T07:00:00.000Z",
+        "dateModified": "2025-04-18T01:50:19.907Z"
+      },
+      "local": {
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "description": "Empower yourself as a parent and enhance your child’s ABA therapy journey. Learn to implement prompting strategies for better results and faster progress.",
+        "displayH1": "Benefits of Prompting & Parenting in ABA Therapy",
+        "featuredImage": "/assets/images/hero-prompting-parenting-benefits.webp",
+        "alt": "",
+        "date": "2024-04-02",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:48Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "b1304aaa230f"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult uses a wooden shape-sorter toy with a young child.",
+          "sourceAlt": "Benefits of Prompting & Parenting in ABA Therapy - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-04-18",
+          "sourceValue": "2025-04-18T01:50:19.907Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/aba-therapy-summer-routine-tips.mdx",
+      "route": "/library/aba-therapy-summer-routine-tips",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aba-therapy-summer-routine-tips",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aba-therapy-summer-routine-tips",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:24.185Z",
+      "cache": null,
+      "lastModified": "Sun, 04 Oct 2026 00:10:23 GMT",
+      "prerendered": "Sun, 04 Oct 2026 00:10:23 GMT",
+      "source": {
+        "title": "How to Support ABA Therapy Over Summer Break",
+        "description": "Help your child thrive this summer with structured ABA routines, reinforcement tips, and support from the Arizona Institute for Autism.",
+        "h1": "How to Support ABA Therapy Over Summer Break",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-summer-aba.webp",
+        "alt": "aba therapy summer time tips for parents and caregivers",
+        "datePublished": "2025-07-01T07:15:00.000Z",
+        "dateModified": "2026-10-04T00:09:51.917Z"
+      },
+      "local": {
+        "title": "How to Support ABA Therapy Over Summer Break",
+        "description": "Help your child thrive this summer with structured ABA routines, reinforcement tips, and support from the Arizona Institute for Autism.",
+        "displayH1": "How to Support ABA Therapy Over Summer Break",
+        "featuredImage": "/assets/images/hero-summer-aba.webp",
+        "alt": "",
+        "date": "2025-07-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:49Z",
+        "lastModified": "04 Oct 2026",
+        "responseSha256Prefix": "34f918fddec3"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child plays at the edge of a swimming pool.",
+          "sourceAlt": "aba therapy summer time tips for parents and caregivers",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-10-04",
+          "sourceValue": "2026-10-04T00:09:51.917Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/aba-toilet-training-child-autism.mdx",
+      "route": "/library/aba-toilet-training-child-autism",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aba-toilet-training-child-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aba-toilet-training-child-autism",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:24.892Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "source": {
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "description": "Empower your autistic child to achieve confidence and independence in their daily routines by using these simple ABA-based potty training methods.",
+        "h1": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-aba-toilet-training-child-autism.webp",
+        "alt": "potty train children with autism using simple aba techniques - hero image",
+        "datePublished": "2023-11-20T07:00:00.000Z",
+        "dateModified": "2025-09-16T17:21:58.413Z"
+      },
+      "local": {
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "description": "Empower your autistic child to achieve confidence and independence in their daily routines by using these simple ABA-based potty training methods.",
+        "displayH1": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "featuredImage": "/assets/images/hero-aba-toilet-training-child-autism.webp",
+        "alt": "",
+        "date": "2023-11-20",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:50Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "d4b6add79a29"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult and young child high-five beside a toilet in a bathroom.",
+          "sourceAlt": "potty train children with autism using simple aba techniques - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:21:58.413Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/aia-world-autism-community-day-celebration.mdx",
+      "route": "/library/aia-world-autism-community-day-celebration",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/aia-world-autism-community-day-celebration",
+      "finalUrl": "https://www.azinstitute4autism.com/library/aia-world-autism-community-day-celebration",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:25.502Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "source": {
+        "title": "AIA’s World Autism Community Day of Celebration",
+        "description": "Join AIA on April 1st at Scottsdale Ranch Park to celebrate World Autism Month and support neurodiversity. Learn about the event and how to participate.",
+        "h1": "AIA’s World Autism Community Day of Celebration",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-aia-world-autism-community-day-celebration_800x.jpg",
+        "alt": "aia world autism community day of celebration - hero image",
+        "datePublished": "2023-01-30T07:00:00.000Z",
+        "dateModified": "2026-05-12T17:31:51.797Z"
+      },
+      "local": {
+        "title": "AIA’s World Autism Community Day of Celebration",
+        "description": "Join AIA on April 1st at Scottsdale Ranch Park to celebrate World Autism Month and support neurodiversity. Learn about the event and how to participate.",
+        "displayH1": "AIA’s World Autism Community Day of Celebration",
+        "featuredImage": "/assets/images/hero-aia-world-autism-community-day-celebration_800x.jpg",
+        "alt": "",
+        "date": "2023-01-30",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:51Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "e4e4fb4d7f41"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult and three children hold hands while walking outdoors.",
+          "sourceAlt": "aia world autism community day of celebration - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-05-12",
+          "sourceValue": "2026-05-12T17:31:51.797Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake.mdx",
+      "route": "/library/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake",
+      "finalUrl": "https://www.azinstitute4autism.com/library/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:26.168Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "description": "Our Thanksgiving recipe is crafted for sensory sensitivities, ensuring a delightful meal for individuals with ASD. Celebrate inclusively and deliciously.",
+        "h1": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake_800x.jpg",
+        "alt": "asd sensory-friendly pumpkin dump cake thanksgiving recipe",
+        "datePublished": "2023-11-15T07:00:00.000Z",
+        "dateModified": "2025-05-21T21:30:29.140Z"
+      },
+      "local": {
+        "title": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "description": "Our Thanksgiving recipe is crafted for sensory sensitivities, ensuring a delightful meal for individuals with ASD. Celebrate inclusively and deliciously.",
+        "displayH1": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "featuredImage": "/assets/images/hero-asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake_800x.jpg",
+        "alt": "",
+        "date": "2023-11-15",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:52Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "f03f35ed9f2a"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult and child prepare cake batter together in a kitchen.",
+          "sourceAlt": "asd sensory-friendly pumpkin dump cake thanksgiving recipe",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-05-21",
+          "sourceValue": "2025-05-21T21:30:29.140Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/asd-sensory-friendly-recipes-pancakes.mdx",
+      "route": "/library/asd-sensory-friendly-recipes-pancakes",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/asd-sensory-friendly-recipes-pancakes",
+      "finalUrl": "https://www.azinstitute4autism.com/library/asd-sensory-friendly-recipes-pancakes",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:26.774Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "source": {
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "description": "Discover sensory-friendly pancake recipes tailored for children with autism, including chocolate chip and blueberry variations, to make mealtime enjoyable.",
+        "h1": "ASD Sensory-Friendly Recipes: Pancakes",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg",
+        "alt": "asd sensory-friendly pancake recipe - hero image",
+        "datePublished": "2023-09-12T07:00:00.000Z",
+        "dateModified": "2025-09-16T17:43:11.124Z"
+      },
+      "local": {
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "description": "Discover sensory-friendly pancake recipes tailored for children with autism, including chocolate chip and blueberry variations, to make mealtime enjoyable.",
+        "displayH1": "ASD Sensory-Friendly Recipes: Pancakes",
+        "featuredImage": "/assets/images/hero-asd-sensory-friendly-recipe-pancakes_800x.jpg",
+        "alt": "",
+        "date": "2023-09-12",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:53Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "d783051509e3"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Two children mix pancake batter together in a kitchen.",
+          "sourceAlt": "asd sensory-friendly pancake recipe - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:43:11.124Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/autism-evaluation-diagnosis-arizona-parent-guide.mdx",
+      "route": "/library/autism-evaluation-diagnosis-arizona-parent-guide",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/autism-evaluation-diagnosis-arizona-parent-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-evaluation-diagnosis-arizona-parent-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:27.563Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:22 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:22 GMT",
+      "source": {
+        "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "description": "Learn autism signs by age, who can diagnose in Arizona, and next steps after diagnosis. Get ABA, speech, and OT support. Schedule a free consultation.",
+        "h1": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatrician performing a toddler's autism evaluation in an Arizona clinic",
+        "datePublished": "2026-01-01T07:45:00.000Z",
+        "dateModified": "2026-01-01T07:45:00.838Z"
+      },
+      "local": {
+        "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "description": "Learn autism signs by age, who can diagnose in Arizona, and next steps after diagnosis. Get ABA, speech, and OT support. Schedule a free consultation.",
+        "displayH1": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "featuredImage": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "",
+        "date": "2026-01-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:57Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "1b490b082a5b"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A pediatrician interacts with a toddler during an autism evaluation in an Arizona clinic.",
+          "sourceAlt": "Pediatrician performing a toddler's autism evaluation in an Arizona clinic",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-01-01",
+          "sourceValue": "2026-01-01T07:45:00.838Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/autism-evaluation-what-to-expect.mdx",
+      "route": "/library/autism-evaluation-what-to-expect",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/autism-evaluation-what-to-expect",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-evaluation-what-to-expect",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:28.491Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "description": "Learn what happens before, during, and after a child’s autism evaluation. See who you’ll meet, how long it takes, and how results guide next steps.",
+        "h1": "What to Expect at Your Child’s First Autism Evaluation",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/autism-evaluation-expectations_hero.png",
+        "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+        "datePublished": "2026-03-01T07:30:00.000Z",
+        "dateModified": "2026-03-10T19:43:20.551Z"
+      },
+      "local": {
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "description": "Learn what happens before, during, and after a child’s autism evaluation. See who you’ll meet, how long it takes, and how results guide next steps.",
+        "displayH1": "What to Expect at Your Child’s First Autism Evaluation",
+        "featuredImage": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "",
+        "date": "2026-03-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:58Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "c6322821fea7"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child plays at a table while two clinicians speak with a parent during an evaluation.",
+          "sourceAlt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-03-10",
+          "sourceValue": "2026-03-10T19:43:20.551Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/autism-family-self-care-tips.md",
+      "route": "/library/autism-family-self-care-tips",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/autism-family-self-care-tips",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-family-self-care-tips",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:29.240Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "description": "Take charge of your wellness as an autism caregiver. Explore simple strategies to reduce stress, improve mental health, and thrive in your role.",
+        "h1": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-self-care-priority.webp",
+        "alt": "autism family self care tips - hero image",
+        "datePublished": "2024-11-01T07:00:00.000Z",
+        "dateModified": "2026-05-12T20:56:37.318Z"
+      },
+      "local": {
+        "title": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "description": "Take charge of your wellness as an autism caregiver. Explore simple strategies to reduce stress, improve mental health, and thrive in your role.",
+        "displayH1": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "featuredImage": "/assets/images/hero-self-care-priority.webp",
+        "alt": "",
+        "date": "2024-11-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:01Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "ed69410848c6"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A letter board reading “Mental Health Matters” beside a person resting their head.",
+          "sourceAlt": "autism family self care tips - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-05-12",
+          "sourceValue": "2026-05-12T20:56:37.318Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/autism-friendships-social-play-support.mdx",
+      "route": "/library/autism-friendships-social-play-support",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/autism-friendships-social-play-support",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-friendships-social-play-support",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:29.990Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "source": {
+        "title": "Supporting Friendships and Social Play for Children with Autism",
+        "description": "Learn how to support friendships and social play for autistic children. Discover practical tips for playdates, leveraging special interests, and ABA therapy.",
+        "h1": "Supporting Friendships and Social Play for Children with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/parallel-players-hero.png",
+        "alt": "Three children engaging happily in parallel play on a colorful rug.",
+        "datePublished": "2026-06-01T12:15:00.000Z",
+        "dateModified": "2026-06-01T12:15:00.865Z"
+      },
+      "local": {
+        "title": "Supporting Friendships and Social Play for Children with Autism",
+        "description": "Learn how to support friendships and social play for autistic children. Discover practical tips for playdates, leveraging special interests, and ABA therapy.",
+        "displayH1": "Supporting Friendships and Social Play for Children with Autism",
+        "featuredImage": "/assets/images/parallel-players-hero.png",
+        "alt": "",
+        "date": "2026-06-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:02Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "b2c342631653"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Three children build with colorful blocks while playing alongside one another.",
+          "sourceAlt": "Three children engaging happily in parallel play on a colorful rug.",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-06-01",
+          "sourceValue": "2026-06-01T12:15:00.865Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/autism-self-advocacy-skills-aba.md",
+      "route": "/library/autism-self-advocacy-skills-aba",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/autism-self-advocacy-skills-aba",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-self-advocacy-skills-aba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:30.586Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:15 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:15 GMT",
+      "source": {
+        "title": "Unlock Independence for Children with Autism Through ABA Self‑Advocacy",
+        "description": "Empower your child with individualized ABA therapy at Arizona Institute for Autism. Book a free consultation and kickstart personalized autism care today!",
+        "h1": "Guide to Teaching Self‑Advocacy in ABA",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-teach-self-advocacy.webp",
+        "alt": "autism self-advocacy skills through aba - hero image",
+        "datePublished": "2024-12-02T07:00:00.000Z",
+        "dateModified": "2026-10-03T20:47:43.625Z"
+      },
+      "local": {
+        "title": "Unlock Independence for Children with Autism Through ABA Self‑Advocacy",
+        "description": "Empower your child with individualized ABA therapy at Arizona Institute for Autism. Book a free consultation and kickstart personalized autism care today!",
+        "displayH1": "Guide to Teaching Self‑Advocacy in ABA",
+        "featuredImage": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "",
+        "date": "2024-12-02",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:34:03Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "c2ce9884141e"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A diverse group of children smile while lying together on the grass.",
+          "sourceAlt": "autism self-advocacy skills through aba - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-10-03",
+          "sourceValue": "2026-10-03T20:47:43.625Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/autism-therapy-rapport-strategies.md",
+      "route": "/library/autism-therapy-rapport-strategies",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/autism-therapy-rapport-strategies",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-therapy-rapport-strategies",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:31.315Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "description": "Discover proven strategies to build rapport and support children during ABA therapy sessions for fun, effective learning with increased engagement.",
+        "h1": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-rapport-strategies.webp",
+        "alt": "rapport strategies for effective aba therapy - hero image",
+        "datePublished": "2024-06-03T07:00:00.000Z",
+        "dateModified": "2025-04-18T02:25:29.915Z"
+      },
+      "local": {
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "description": "Discover proven strategies to build rapport and support children during ABA therapy sessions for fun, effective learning with increased engagement.",
+        "displayH1": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "featuredImage": "/assets/images/hero-rapport-strategies.webp",
+        "alt": "",
+        "date": "2024-06-03",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:05Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "5ce91c364f03"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult and child read a picture book together.",
+          "sourceAlt": "rapport strategies for effective aba therapy - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-04-18",
+          "sourceValue": "2025-04-18T02:25:29.915Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/behavior-management-functions-guide.md",
+      "route": "/library/behavior-management-functions-guide",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/behavior-management-functions-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/library/behavior-management-functions-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:32.084Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "description": "Discover why behaviors happen and how to teach positive replacements with our simple guide. Take action now for smoother routines and happier learning!",
+        "h1": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-behavior-functions-management.webp",
+        "alt": "Master Behavior Management: Discover the Four Functions of Behavior - hero image",
+        "datePublished": "2024-06-28T07:00:00.000Z",
+        "dateModified": "2025-04-18T23:01:24.436Z"
+      },
+      "local": {
+        "title": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "description": "Discover why behaviors happen and how to teach positive replacements with our simple guide. Take action now for smoother routines and happier learning!",
+        "displayH1": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "featuredImage": "/assets/images/hero-behavior-functions-management.webp",
+        "alt": "",
+        "date": "2024-06-28",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:34:06Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "7745bb0182af"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child stacks colorful letter blocks during a learning activity.",
+          "sourceAlt": "Master Behavior Management: Discover the Four Functions of Behavior - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-04-18",
+          "sourceValue": "2025-04-18T23:01:24.436Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/behavior-modification-techniques-reinforcement-theory.mdx",
+      "route": "/library/behavior-modification-techniques-reinforcement-theory",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/behavior-modification-techniques-reinforcement-theory",
+      "finalUrl": "https://www.azinstitute4autism.com/library/behavior-modification-techniques-reinforcement-theory",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:32.685Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "source": {
+        "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "description": "Explore reinforcement theory and its application in behavior modification techniques, focusing on strategies to encourage positive behaviors and reduce negative ones.",
+        "h1": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-behavior-modification-techniques-reinforcement-theory_800x.jpg",
+        "alt": "Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory - hero image",
+        "datePublished": "2023-02-01T07:00:00.000Z",
+        "dateModified": "2025-12-02T18:26:06.285Z"
+      },
+      "local": {
+        "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "description": "Explore reinforcement theory and its application in behavior modification techniques, focusing on strategies to encourage positive behaviors and reduce negative ones.",
+        "displayH1": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "featuredImage": "/assets/images/hero-behavior-modification-techniques-reinforcement-theory_800x.jpg",
+        "alt": "",
+        "date": "2023-02-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:07Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "4d97ec78f8d0"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult and child build a tower with wooden blocks.",
+          "sourceAlt": "Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-12-02",
+          "sourceValue": "2025-12-02T18:26:06.285Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/communication-social-skills-autistic-children-guide.mdx",
+      "route": "/library/communication-social-skills-autistic-children-guide",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/communication-social-skills-autistic-children-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/library/communication-social-skills-autistic-children-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:33.325Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "Building Communication & Social Skills in Autistic Children",
+        "description": "Learn how to build communication and social skills in autistic children. Discover practical strategies, AAC tools, and ABA techniques for daily connection.",
+        "h1": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/communication-skills-autistic-children-hero_img.png",
+        "alt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+        "datePublished": "2026-04-02T07:30:00.000Z",
+        "dateModified": "2026-04-02T17:05:27.028Z"
+      },
+      "local": {
+        "title": "Building Communication & Social Skills in Autistic Children",
+        "description": "Learn how to build communication and social skills in autistic children. Discover practical strategies, AAC tools, and ABA techniques for daily connection.",
+        "displayH1": "Building Communication & Social Skills in Autistic Children",
+        "featuredImage": "/assets/images/communication-skills-autistic-children-hero_img.png",
+        "alt": "",
+        "date": "2026-04-02",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:08Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "51cb3998d415"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A parent and child use a picture communication board during play.",
+          "sourceAlt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-02",
+          "sourceValue": "2026-04-02T17:05:27.028Z"
+        },
+        {
+          "field": "displayH1",
+          "before": "Building Communication & Social Skills in Autistic Children",
+          "after": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+          "sourceValue": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/community-highlight-meet-rula-diab.md",
+      "route": "/library/community-highlight-meet-rula-diab",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/community-highlight-meet-rula-diab",
+      "finalUrl": "https://www.azinstitute4autism.com/library/community-highlight-meet-rula-diab",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:33.923Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "description": "Read about Rula Diab's mission to make ABA therapy accessible to children with Autism Spectrum Disorder through her Arizona Institute for Autism.",
+        "h1": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-community-highlight-meet-rula-diab_800x.jpg",
+        "alt": "meet rula diab of aia - hero image",
+        "datePublished": "2023-10-24T19:00:00.000Z",
+        "dateModified": "2025-05-27T19:37:31.053Z"
+      },
+      "local": {
+        "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "description": "Read about Rula Diab",
+        "displayH1": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "featuredImage": "/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg",
+        "alt": "",
+        "date": "2023-10-24",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:09Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "b0a16ee762f2"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Portrait of Rula Diab, founder and clinical director of the Arizona Institute for Autism.",
+          "sourceAlt": "meet rula diab of aia - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-05-27",
+          "sourceValue": "2025-05-27T19:37:31.053Z"
+        },
+        {
+          "field": "description",
+          "before": "Read about Rula Diab",
+          "after": "Read about Rula Diab's mission to make ABA therapy accessible to children with Autism Spectrum Disorder through her Arizona Institute for Autism.",
+          "sourceValue": "Read about Rula Diab's mission to make ABA therapy accessible to children with Autism Spectrum Disorder through her Arizona Institute for Autism."
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/critical-thinking-skills.mdx",
+      "route": "/library/critical-thinking-skills",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/critical-thinking-skills",
+      "finalUrl": "https://www.azinstitute4autism.com/library/critical-thinking-skills",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:34.574Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:17 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:17 GMT",
+      "source": {
+        "title": "Critical Thinking Skills for Children with Autism",
+        "description": "Enhance critical thinking in children with autism through tailored strategies that promote problem-solving, perspective-taking, and adaptability.",
+        "h1": "Critical Thinking Skills for Children with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-critical-thinking-skills_800x.jpg",
+        "alt": "Critical Thinking Skills for Children with Autism - hero image",
+        "datePublished": "2022-11-28T19:00:00.000Z",
+        "dateModified": "2025-03-09T20:22:26.165Z"
+      },
+      "local": {
+        "title": "Critical Thinking Skills for Children with Autism",
+        "description": "Enhance critical thinking in children with autism through tailored strategies that promote problem-solving, perspective-taking, and adaptability.",
+        "displayH1": "Critical Thinking Skills for Children with Autism",
+        "featuredImage": "/assets/images/hero-critical-thinking-skills_800x.jpg",
+        "alt": "",
+        "date": "2022-11-28",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:10Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "e02abd46a5fd"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult guides a small group of children during a play-based activity.",
+          "sourceAlt": "Critical Thinking Skills for Children with Autism - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-03-09",
+          "sourceValue": "2025-03-09T20:22:26.165Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/early-signs-autism-by-age.mdx",
+      "route": "/library/early-signs-autism-by-age",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/early-signs-autism-by-age",
+      "finalUrl": "https://www.azinstitute4autism.com/library/early-signs-autism-by-age",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:35.297Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "source": {
+        "title": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "description": "Learn early autism signs by age (12–24 months and 2–4 years), what patterns matter most, and how screening and evaluations can help.",
+        "h1": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/early_signs_autism_by_age_hero.png",
+        "alt": "Parent and toddler playing with blocks, sharing eye contact and pointing during play.",
+        "datePublished": "2026-02-01T07:15:00.000Z",
+        "dateModified": "2026-03-10T18:52:54.050Z"
+      },
+      "local": {
+        "title": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "description": "Learn early autism signs by age (12–24 months and 2–4 years), what patterns matter most, and how screening and evaluations can help.",
+        "displayH1": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "featuredImage": "/assets/images/early_signs_autism_by_age_hero.png",
+        "alt": "",
+        "date": "2026-02-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:13Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "05300297e763"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A parent and young child build with colorful blocks during play.",
+          "sourceAlt": "Parent and toddler playing with blocks, sharing eye contact and pointing during play.",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-03-10",
+          "sourceValue": "2026-03-10T18:52:54.050Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/emotional-regulation-aba.mdx",
+      "route": "/library/emotional-regulation-aba",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/emotional-regulation-aba",
+      "finalUrl": "https://www.azinstitute4autism.com/library/emotional-regulation-aba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:35.955Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "source": {
+        "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "description": "Why emotional regulation should lead ABA therapy. Learn co-regulation steps, coping tools, and family tips from the Arizona Institute for Autism.",
+        "h1": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/child-shopping-cart-tired-cranky.jpg",
+        "alt": "child taking emotional regulation timeout in shopping cart - hero",
+        "datePublished": "2025-11-01T07:34:00.000Z",
+        "dateModified": "2025-11-06T21:52:52.892Z"
+      },
+      "local": {
+        "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "description": "Why emotional regulation should lead ABA therapy. Learn co-regulation steps, coping tools, and family tips from the Arizona Institute for Autism.",
+        "displayH1": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "featuredImage": "/assets/images/child-shopping-cart-tired-cranky.jpg",
+        "alt": "",
+        "date": "2025-11-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:14Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "ce8cf2fb11b3"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child rests with their head down in the seat of a shopping cart.",
+          "sourceAlt": "child taking emotional regulation timeout in shopping cart - hero",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-11-06",
+          "sourceValue": "2025-11-06T21:52:52.892Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/enhancing-generalization-skills.mdx",
+      "route": "/library/enhancing-generalization-skills",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/enhancing-generalization-skills",
+      "finalUrl": "https://www.azinstitute4autism.com/library/enhancing-generalization-skills",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:36.751Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "description": "Enhancing generalization in autism involves stimulus, response, and situation generalizations, ensuring learned behaviors apply across various situations.",
+        "h1": "Enhancing Generalization for Broader Impact in Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "enhancing generalization skills in children with autism - hero image",
+        "datePublished": "2023-07-04T07:00:00.000Z",
+        "dateModified": "2026-05-12T20:51:55.701Z"
+      },
+      "local": {
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "description": "Enhancing generalization in autism involves stimulus, response, and situation generalizations, ensuring learned behaviors apply across various situations.",
+        "displayH1": "Enhancing Generalization for Broader Impact in Autism",
+        "featuredImage": "/assets/images/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "",
+        "date": "2023-07-04",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:15Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "62e1ab4edcb3"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child looks through a colorful toy viewer during play.",
+          "sourceAlt": "enhancing generalization skills in children with autism - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-05-12",
+          "sourceValue": "2026-05-12T20:51:55.701Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/executive-functioning-skills-autism.md",
+      "route": "/library/executive-functioning-skills-autism",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/executive-functioning-skills-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/library/executive-functioning-skills-autism",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:37.417Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "source": {
+        "title": "Executive Functioning Skills & Autism: Success Strategies Across Ages",
+        "description": "Evidence-based executive functioning strategies for autism: visual supports for planning, emotion regulation, impulse control & problem solving.",
+        "h1": "Executive Functioning Skills and Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-executive-functioning-skills-autism.webp",
+        "alt": "hero image - executive functioning skills strategies for autistic children",
+        "datePublished": "2025-05-01T07:00:00.000Z",
+        "dateModified": "2025-10-20T21:47:56.706Z"
+      },
+      "local": {
+        "title": "Executive Functioning Skills & Autism: Success Strategies Across Ages",
+        "description": "Evidence-based executive functioning strategies for autism: visual supports for planning, emotion regulation, impulse control & problem solving.",
+        "displayH1": "Executive Functioning Skills & Autism: Success Strategies Across Ages",
+        "featuredImage": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "",
+        "date": "2025-05-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:16Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "7d039c8d3b3c"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child draws with colored pencils at an activity table.",
+          "sourceAlt": "hero image - executive functioning skills strategies for autistic children",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-10-20",
+          "sourceValue": "2025-10-20T21:47:56.706Z"
+        },
+        {
+          "field": "displayH1",
+          "before": "Executive Functioning Skills & Autism: Success Strategies Across Ages",
+          "after": "Executive Functioning Skills and Autism",
+          "sourceValue": "Executive Functioning Skills and Autism"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/first-then-cards-autism-transitions.md",
+      "route": "/library/first-then-cards-autism-transitions",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/first-then-cards-autism-transitions",
+      "finalUrl": "https://www.azinstitute4autism.com/library/first-then-cards-autism-transitions",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:38.362Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "source": {
+        "title": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "description": "Learn how First/Then cards support smoother transitions and positive behaviors in autistic children. Discover practical tips and local Arizona resources.",
+        "h1": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-first-then-cards.webp",
+        "alt": "first then cards help autistic children with transitions",
+        "datePublished": "2025-06-01T07:15:00.000Z",
+        "dateModified": "2025-12-02T20:07:03.834Z"
+      },
+      "local": {
+        "title": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "description": "Learn how First/Then cards support smoother transitions and positive behaviors in autistic children. Discover practical tips and local Arizona resources.",
+        "displayH1": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "featuredImage": "/assets/images/hero-first-then-cards.webp",
+        "alt": "",
+        "date": "2025-06-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:17Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "2ec8d20e8e13"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A clinician shows First/Then picture cards to a child during a learning activity.",
+          "sourceAlt": "first then cards help autistic children with transitions",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-12-02",
+          "sourceValue": "2025-12-02T20:07:03.834Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/heart-full-of-gratitude.md",
+      "route": "/library/heart-full-of-gratitude",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/heart-full-of-gratitude",
+      "finalUrl": "https://www.azinstitute4autism.com/library/heart-full-of-gratitude",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:39.111Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "source": {
+        "title": "Heart Full of Gratitude",
+        "description": "Clinic Director Rula Diab reflects back on her journey so far with Arizona Institute for Autism and all of the awesome people that make it great.",
+        "h1": "Heart Full of Gratitude",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/giving-thanks-1.jpg",
+        "alt": "AZ Institute for Autism Clinical Director Rula Diab gives thanks",
+        "datePublished": "2025-11-24T23:56:58.000Z",
+        "dateModified": "2025-12-15T21:01:31.864Z"
+      },
+      "local": {
+        "title": "Heart Full of Gratitude",
+        "description": "Clinic Director Rula Diab reflects back on her journey so far with Arizona Institute for Autism and all of the awesome people that make it great.",
+        "displayH1": "Heart Full of Gratitude",
+        "featuredImage": "/assets/images/giving-thanks-1.jpg",
+        "alt": "",
+        "date": "2025-11-24",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:19Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "f085f1ac74d9"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Autumn leaves surround a sign that reads “SO THANKFUL.”",
+          "sourceAlt": "AZ Institute for Autism Clinical Director Rula Diab gives thanks",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-12-15",
+          "sourceValue": "2025-12-15T21:01:31.864Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/individualized-aba-therapy.md",
+      "route": "/library/individualized-aba-therapy",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/individualized-aba-therapy",
+      "finalUrl": "https://www.azinstitute4autism.com/library/individualized-aba-therapy",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:39.900Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "source": {
+        "title": "Personalized ABA Therapy Plans | Schedule Your Free Consultation",
+        "description": "Empower your child with individualized ABA therapy at Arizona Institute for Autism. Book a free consultation and kickstart personalized autism care today!",
+        "h1": "Individualized Care Plans in ABA Therapy",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-aba-individual-care-plans.webp",
+        "alt": "individualized aba therapy - hero image",
+        "datePublished": "2024-10-01T07:00:00.000Z",
+        "dateModified": "2025-04-19T01:48:57.435Z"
+      },
+      "local": {
+        "title": "Personalized ABA Therapy Plans | Schedule Your Free Consultation",
+        "description": "Empower your child with individualized ABA therapy at Arizona Institute for Autism. Book a free consultation and kickstart personalized autism care today!",
+        "displayH1": "Personalized ABA Therapy Plans | Schedule Your Free Consultation",
+        "featuredImage": "/assets/images/hero-aba-individual-care-plans.webp",
+        "alt": "",
+        "date": "2024-10-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:34:21Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "5eb8493e918e"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Four children use costumes and props during imaginative group play.",
+          "sourceAlt": "individualized aba therapy - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-04-19",
+          "sourceValue": "2025-04-19T01:48:57.435Z"
+        },
+        {
+          "field": "displayH1",
+          "before": "Personalized ABA Therapy Plans | Schedule Your Free Consultation",
+          "after": "Individualized Care Plans in ABA Therapy",
+          "sourceValue": "Individualized Care Plans in ABA Therapy"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/integrated-aba-model-announcement.mdx",
+      "route": "/library/integrated-aba-model-announcement",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/integrated-aba-model-announcement",
+      "finalUrl": "https://www.azinstitute4autism.com/library/integrated-aba-model-announcement",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:40.578Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "description": "Arizona Institute for Autism has transitioned to an integrated Applied Behavior Analysis model, enhancing comprehensive care for children with autism.",
+        "h1": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-integrated-aba-model-announcement_800x.jpg",
+        "alt": "integrated aba model announcement - hero image",
+        "datePublished": "2023-08-02T07:00:00.000Z",
+        "dateModified": "2025-09-16T17:10:49.444Z"
+      },
+      "local": {
+        "title": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "description": "Arizona Institute for Autism has transitioned to an integrated Applied Behavior Analysis model, enhancing comprehensive care for children with autism.",
+        "displayH1": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "featuredImage": "/assets/images/hero-integrated-aba-model-announcement_800x.jpg",
+        "alt": "",
+        "date": "2023-08-02",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:22Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "4b3ffc74199c"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Three Arizona Institute for Autism team members stand outside the clinic.",
+          "sourceAlt": "integrated aba model announcement - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:10:49.444Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/managing-aggressive-behavior-outbursts.mdx",
+      "route": "/library/managing-aggressive-behavior-outbursts",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/managing-aggressive-behavior-outbursts",
+      "finalUrl": "https://www.azinstitute4autism.com/library/managing-aggressive-behavior-outbursts",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:41.183Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:16 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:16 GMT",
+      "source": {
+        "title": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "description": "Learn strategies to manage aggressive behaviors in children with autism by promoting functional communication and providing positive reinforcement.",
+        "h1": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-managing-aggressive-behavior-outbursts_800x.jpg",
+        "alt": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments - hero image",
+        "datePublished": "2022-10-30T19:00:00.000Z",
+        "dateModified": "2025-03-09T20:19:34.243Z"
+      },
+      "local": {
+        "title": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "description": "Learn strategies to manage aggressive behaviors in children with autism by promoting functional communication and providing positive reinforcement.",
+        "displayH1": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "featuredImage": "/assets/images/hero-managing-aggressive-behavior-outbursts_800x.jpg",
+        "alt": "",
+        "date": "2022-10-30",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:23Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "1352419db326"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A parent holds a tablet while sitting with two young children.",
+          "sourceAlt": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-03-09",
+          "sourceValue": "2025-03-09T20:19:34.243Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/meet-rula-diab-bcba.md",
+      "route": "/library/meet-rula-diab-bcba",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/meet-rula-diab-bcba",
+      "finalUrl": "https://www.azinstitute4autism.com/library/meet-rula-diab-bcba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:42.004Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:16 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:16 GMT",
+      "source": {
+        "title": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "description": "Find out how Rula Diab, a compassionate, certified behavior analyst, makes a difference in Arizona. Read to empower your path for positive outcomes now!",
+        "h1": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-meet-rula-diab-shoutout-az_800x.jpg",
+        "alt": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA) - hero image",
+        "datePublished": "2023-10-24T07:00:00.000Z",
+        "dateModified": "2025-03-11T22:53:17.683Z"
+      },
+      "local": {
+        "title": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "description": "Find out how Rula Diab, a compassionate, certified behavior analyst, makes a difference in Arizona. Read to empower your path for positive outcomes now!",
+        "displayH1": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "featuredImage": "/assets/images/hero-meet-rula-diab-shoutout-az_800x.jpg",
+        "alt": "",
+        "date": "2023-10-24",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:24Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "4b675af138d1"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A framed black-and-white portrait of Rula Diab.",
+          "sourceAlt": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA) - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-03-11",
+          "sourceValue": "2025-03-11T22:53:17.683Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/new-aia-scottsdale-office.md",
+      "route": "/library/new-aia-scottsdale-office",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/new-aia-scottsdale-office",
+      "finalUrl": "https://www.azinstitute4autism.com/library/new-aia-scottsdale-office",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:42.633Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "description": "Discover how Arizona Institute for Autism's new Scottsdale office expands autism services, empowering lives with integrity and excellence. Learn more!",
+        "h1": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-integrity-empowerment-excellence_800x.jpg",
+        "alt": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image",
+        "datePublished": "2023-10-24T13:00:00.000Z",
+        "dateModified": "2025-05-27T19:39:38.824Z"
+      },
+      "local": {
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "description": "Discover how Arizona Institute for Autism",
+        "displayH1": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "featuredImage": "/assets/images/hero-integrity-empowerment-excellence_800x.jpg",
+        "alt": "",
+        "date": "2023-10-24",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:25Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "9e21aec28a5a"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Rula Diab stands beside a wall displaying the words Integrity, Empowerment, and Excellence.",
+          "sourceAlt": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-05-27",
+          "sourceValue": "2025-05-27T19:39:38.824Z"
+        },
+        {
+          "field": "description",
+          "before": "Discover how Arizona Institute for Autism",
+          "after": "Discover how Arizona Institute for Autism's new Scottsdale office expands autism services, empowering lives with integrity and excellence. Learn more!",
+          "sourceValue": "Discover how Arizona Institute for Autism's new Scottsdale office expands autism services, empowering lives with integrity and excellence. Learn more!"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/new-year-2024-autism-holiday-tips.mdx",
+      "route": "/library/new-year-2024-autism-holiday-tips",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/new-year-2024-autism-holiday-tips",
+      "finalUrl": "https://www.azinstitute4autism.com/library/new-year-2024-autism-holiday-tips",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:43.230Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "description": "Learn simple, effective strategies to help your autistic child thrive in 2024. Reflect on their progress and set new goals for growth in the New Year.",
+        "h1": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-new-year-goals-2024.webp",
+        "alt": "2024 new year reflection and planning for autism support and awareness - hero image",
+        "datePublished": "2023-12-27T07:00:00.000Z",
+        "dateModified": "2025-09-16T17:40:13.649Z"
+      },
+      "local": {
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "description": "Learn simple, effective strategies to help your autistic child thrive in 2024. Reflect on their progress and set new goals for growth in the New Year.",
+        "displayH1": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "featuredImage": "/assets/images/hero-new-year-goals-2024.webp",
+        "alt": "",
+        "date": "2023-12-27",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:26Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "33adaba2062e"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child holds up a colorful drawing at an activity table.",
+          "sourceAlt": "2024 new year reflection and planning for autism support and awareness - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:40:13.649Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/new-year-goals-2023.mdx",
+      "route": "/library/new-year-goals-2023",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/new-year-goals-2023",
+      "finalUrl": "https://www.azinstitute4autism.com/library/new-year-goals-2023",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:43.844Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "New Year Goals for Our Children with Autism",
+        "description": "The New Year offers an opportunity to reflect, plan, and set goals for children with autism, promoting healthy growth and development to last a lifetime.",
+        "h1": "New Year Goals for Our Children with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-new-year-goals-2023_800x.jpg",
+        "alt": "New Year Goals for Our Children with Autism - hero image",
+        "datePublished": "2023-01-01T07:00:00.000Z",
+        "dateModified": "2025-03-09T20:23:34.639Z"
+      },
+      "local": {
+        "title": "New Year Goals for Our Children with Autism",
+        "description": "The New Year offers an opportunity to reflect, plan, and set goals for children with autism, promoting healthy growth and development to last a lifetime.",
+        "displayH1": "New Year Goals for Our Children with Autism",
+        "featuredImage": "/assets/images/hero-new-year-goals-2023_800x.jpg",
+        "alt": "",
+        "date": "2023-01-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:27Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "c629f4a8ecea"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child reaches toward soap bubbles floating outdoors.",
+          "sourceAlt": "New Year Goals for Our Children with Autism - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-03-09",
+          "sourceValue": "2025-03-09T20:23:34.639Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/november-2022-aia-update.md",
+      "route": "/library/november-2022-aia-update",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/november-2022-aia-update",
+      "finalUrl": "https://www.azinstitute4autism.com/library/november-2022-aia-update",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:44.505Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "November AIA Update",
+        "description": "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community's strength and unity.",
+        "h1": "November AIA Update",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-november-2022-aia-update_800x.jpg",
+        "alt": "November AIA Update - hero image",
+        "datePublished": "2022-10-31T19:00:00.000Z",
+        "dateModified": "2025-03-09T20:21:11.990Z"
+      },
+      "local": {
+        "title": "November AIA Update",
+        "description": "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community",
+        "displayH1": "November AIA Update",
+        "featuredImage": "/assets/images/hero-november-2022-aia-update_800x.jpg",
+        "alt": "",
+        "date": "2022-10-31",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:28Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "5520551cd4aa"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child arranges toy cars on a table.",
+          "sourceAlt": "November AIA Update - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-03-09",
+          "sourceValue": "2025-03-09T20:21:11.990Z"
+        },
+        {
+          "field": "description",
+          "before": "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community",
+          "after": "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community's strength and unity.",
+          "sourceValue": "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community's strength and unity."
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/parents-guide-to-autism-and-aba.mdx",
+      "route": "/library/parents-guide-to-autism-and-aba",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/parents-guide-to-autism-and-aba",
+      "finalUrl": "https://www.azinstitute4autism.com/library/parents-guide-to-autism-and-aba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:45.241Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:21 GMT",
+      "source": {
+        "title": "How to Help Your Autistic Child: A Parent & Caregiver Guide",
+        "description": "Learn practical autism and ABA-informed strategies parents and caregivers can use to support communication, routines, behavior, and regulation.",
+        "h1": "Autism Guide for Parents and Caregivers",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "datePublished": "2026-04-02T20:39:27.000Z",
+        "dateModified": "2026-04-02T21:55:39.994Z"
+      },
+      "local": {
+        "title": "How to Help Your Autistic Child: A Parent & Caregiver Guide",
+        "description": "Learn practical autism and ABA-informed strategies parents and caregivers can use to support communication, routines, behavior, and regulation.",
+        "displayH1": "How to Help Your Autistic Child: A Parent & Caregiver Guide",
+        "featuredImage": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "",
+        "date": "2026-04-02",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:30Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "0f94dabeafa5"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A parent and child use visual supports and colorful blocks during structured play.",
+          "sourceAlt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-02",
+          "sourceValue": "2026-04-02T21:55:39.994Z"
+        },
+        {
+          "field": "displayH1",
+          "before": "How to Help Your Autistic Child: A Parent & Caregiver Guide",
+          "after": "Autism Guide for Parents and Caregivers",
+          "sourceValue": "Autism Guide for Parents and Caregivers"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/play-leisure-skills.mdx",
+      "route": "/library/play-leisure-skills",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/play-leisure-skills",
+      "finalUrl": "https://www.azinstitute4autism.com/library/play-leisure-skills",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:46.094Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "description": "Learn how autistic children play, why play skills matter, and how parents can support functional, sensory, pretend, and social play.",
+        "h1": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-play-leisure-skills-children-autism_800x.avif",
+        "alt": "play and leisure are important tools for growth",
+        "datePublished": "2022-09-26T19:00:00.000Z",
+        "dateModified": "2026-09-09T18:46:06.352Z"
+      },
+      "local": {
+        "title": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "description": "Learn how autistic children play, why play skills matter, and how parents can support functional, sensory, pretend, and social play.",
+        "displayH1": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "featuredImage": "/assets/images/hero-play-leisure-skills-children-autism_800x.jpg",
+        "alt": "",
+        "date": "2022-09-26",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:32Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "e93dff4afc55"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult and child use a tablet-based matching activity together.",
+          "sourceAlt": "play and leisure are important tools for growth",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-09-09",
+          "sourceValue": "2026-09-09T18:46:06.352Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/positive-reinforcement-techniques.md",
+      "route": "/library/positive-reinforcement-techniques",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/positive-reinforcement-techniques",
+      "finalUrl": "https://www.azinstitute4autism.com/library/positive-reinforcement-techniques",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:46.859Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "description": "Learn effective positive reinforcement techniques to encourage desired behavior in children. Discover tips, visual tools, & best practices for parents.",
+        "h1": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-positive-reinforcement-techniques.webp",
+        "alt": "aba therapy positive reinforcement",
+        "datePublished": "2025-08-01T07:15:00.000Z",
+        "dateModified": "2025-09-09T01:47:23.448Z"
+      },
+      "local": {
+        "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "description": "Learn effective positive reinforcement techniques to encourage desired behavior in children. Discover tips, visual tools, & best practices for parents.",
+        "displayH1": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "featuredImage": "/assets/images/hero-positive-reinforcement-techniques.webp",
+        "alt": "",
+        "date": "2025-08-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:33Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "00876c377389"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult reads a picture book with two children.",
+          "sourceAlt": "aba therapy positive reinforcement",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-09",
+          "sourceValue": "2025-09-09T01:47:23.448Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/proactive-reactive-aba-strategies-guide.md",
+      "route": "/library/proactive-reactive-aba-strategies-guide",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/proactive-reactive-aba-strategies-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/library/proactive-reactive-aba-strategies-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:47.624Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "description": "Learn proactive and reactive ABA strategies to cut problem behaviors and boost success. Read now and schedule a consult with Arizona Institute for Autism.",
+        "h1": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-proactive-reactive-strategies.webp",
+        "alt": "proactive reactive aba strategies guide - hero image",
+        "datePublished": "2024-09-01T07:00:00.000Z",
+        "dateModified": "2025-04-19T01:13:29.631Z"
+      },
+      "local": {
+        "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "description": "Learn proactive and reactive ABA strategies to cut problem behaviors and boost success. Read now and schedule a consult with Arizona Institute for Autism.",
+        "displayH1": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "featuredImage": "/assets/images/hero-proactive-reactive-strategies.webp",
+        "alt": "",
+        "date": "2024-09-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:34:34Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "8d9295606f12"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult helps two children build a tower with colorful blocks.",
+          "sourceAlt": "proactive reactive aba strategies guide - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-04-19",
+          "sourceValue": "2025-04-19T01:13:29.631Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/reduce-behavior-management.mdx",
+      "route": "/library/reduce-behavior-management",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/reduce-behavior-management",
+      "finalUrl": "https://www.azinstitute4autism.com/library/reduce-behavior-management",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:48.405Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "4 Ways on How to Reduce Behavior Management",
+        "description": "Children may show challenging behavior patterns due to frustration or sensory overload. Strategic support of communications skills can help prevent issues.",
+        "h1": "4 Ways on How to Reduce Behavior Management",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-reduce-behavior-management_800x.jpg",
+        "alt": "reduce behavior management - hero image",
+        "datePublished": "2022-08-26T19:00:00.000Z",
+        "dateModified": "2025-09-16T17:35:06.289Z"
+      },
+      "local": {
+        "title": "4 Ways on How to Reduce Behavior Management",
+        "description": "Children may show challenging behavior patterns due to frustration or sensory overload. Strategic support of communications skills can help prevent issues.",
+        "displayH1": "4 Ways on How to Reduce Behavior Management",
+        "featuredImage": "/assets/images/hero-reduce-behavior-management_800x.jpg",
+        "alt": "",
+        "date": "2022-08-26",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:35Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "ce55fbb077af"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child holds two plastic eggs over their eyes during play.",
+          "sourceAlt": "reduce behavior management - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:35:06.289Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/repetitive-behavior.mdx",
+      "route": "/library/repetitive-behavior",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/repetitive-behavior",
+      "finalUrl": "https://www.azinstitute4autism.com/library/repetitive-behavior",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:49.066Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:14 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:14 GMT",
+      "source": {
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "description": "Understanding and managing repetitive behaviors in children with autism spectrum disorder (ASD), including causes, types, and intervention strategies.",
+        "h1": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-repetetive-behaviors.webp",
+        "alt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+        "datePublished": "2023-09-04T07:00:00.000Z",
+        "dateModified": "2025-09-16T17:16:51.300Z"
+      },
+      "local": {
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "description": "Understanding and managing repetitive behaviors in children with autism spectrum disorder (ASD), including causes, types, and intervention strategies.",
+        "displayH1": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "featuredImage": "/assets/images/hero-repetetive-behaviors.webp",
+        "alt": "",
+        "date": "2023-09-04",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:34:36Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "974d14002745"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Two children focus on a tabletop activity in a classroom.",
+          "sourceAlt": "Repetitive Behaviors with Children Diagnosed with Autism - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:16:51.300Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/sensory-processing.md",
+      "route": "/library/sensory-processing",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/sensory-processing",
+      "finalUrl": "https://www.azinstitute4autism.com/library/sensory-processing",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:49.814Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "description": "Learn to address sensory challenges for children diagnosed with autism through customized ABA therapy. Expert tips for parents and caregivers inside.",
+        "h1": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-sensory-processing.webp",
+        "alt": "sensory processing challenges in aba therapy - hero image",
+        "datePublished": "2024-01-30T07:00:00.000Z",
+        "dateModified": "2025-04-18T00:01:26.976Z"
+      },
+      "local": {
+        "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "description": "Learn to address sensory challenges for children diagnosed with autism through customized ABA therapy. Expert tips for parents and caregivers inside.",
+        "displayH1": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "featuredImage": "/assets/images/hero-sensory-processing.webp",
+        "alt": "",
+        "date": "2024-01-30",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:37Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "6f33f2b8dac0"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "A child washes dishes at a kitchen sink.",
+          "sourceAlt": "sensory processing challenges in aba therapy - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-04-18",
+          "sourceValue": "2025-04-18T00:01:26.976Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/social-pragmatic-communication-autism.mdx",
+      "route": "/library/social-pragmatic-communication-autism",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/social-pragmatic-communication-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/library/social-pragmatic-communication-autism",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:50.608Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:15 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:15 GMT",
+      "source": {
+        "title": "Why My Child Can Talk but Still Struggles Socially",
+        "description": "Your child can talk yet struggles socially. See how pragmatic language, inference, and nonverbal cues shape connection, and how ABA builds skills.",
+        "h1": "Why My Child Can Talk but Still Struggles Socially",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/talk-not-social.jpg",
+        "alt": "talking child has trouble socializing - hero",
+        "datePublished": "2025-12-01T07:45:00.000Z",
+        "dateModified": "2025-12-02T19:59:54.220Z"
+      },
+      "local": {
+        "title": "Why My Child Can Talk but Still Struggles Socially",
+        "description": "Your child can talk yet struggles socially. See how pragmatic language, inference, and nonverbal cues shape connection, and how ABA builds skills.",
+        "displayH1": "Why My Child Can Talk but Still Struggles Socially",
+        "featuredImage": "/assets/images/talk-not-social.jpg",
+        "alt": "",
+        "date": "2025-12-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:34:39Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "047c698d8bdb"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "One child covers their face while another child offers support outdoors.",
+          "sourceAlt": "talking child has trouble socializing - hero",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-12-02",
+          "sourceValue": "2025-12-02T19:59:54.220Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/en/understanding-autism-support.mdx",
+      "route": "/library/understanding-autism-support",
+      "locale": "en",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/understanding-autism-support",
+      "finalUrl": "https://www.azinstitute4autism.com/library/understanding-autism-support",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:51.363Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:12 GMT",
+      "source": {
+        "title": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "description": "Explore effective strategies and therapies to lift up and support children with autism, fostering their development while enhancing their quality of life.",
+        "h1": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-understanding-autism-support_800x.jpg",
+        "alt": "navigating the autism journey: understanding and supporting our children with autism - hero image",
+        "datePublished": "2023-06-11T07:00:00.000Z",
+        "dateModified": "2025-09-16T17:15:43.268Z"
+      },
+      "local": {
+        "title": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "description": "Explore effective strategies and therapies to lift up and support children with autism, fostering their development while enhancing their quality of life.",
+        "displayH1": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "featuredImage": "/assets/images/hero-understanding-autism-support_800x.jpg",
+        "alt": "",
+        "date": "2023-06-11",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:34:40Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "ca4dbd1214fe"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "An adult and child smile while playing a board game in a bedroom.",
+          "sourceAlt": "navigating the autism journey: understanding and supporting our children with autism - hero image",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-09-16",
+          "sourceValue": "2025-09-16T17:15:43.268Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/autism-evaluation-diagnosis-arizona-parent-guide.mdx",
+      "route": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/autism-evaluation-diagnosis-arizona-parent-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/autism-evaluation-diagnosis-arizona-parent-guide",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:51.984Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:14 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:14 GMT",
+      "source": {
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "description": "Aprende los signos del autismo según la edad, quién puede diagnosticar en Arizona y los próximos pasos después del diagnóstico. Obtén apoyo de ABA. Programa una consulta gratuita.",
+        "h1": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/autism_evaluation_arizona_hero.jpg",
+        "alt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+        "datePublished": "2026-01-22T23:51:04.000Z",
+        "dateModified": "2026-01-22T23:51:04.064Z"
+      },
+      "local": {
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "description": "Aprende los signos del autismo según la edad, quién puede diagnosticar en Arizona y los próximos pasos después del diagnóstico. Obtén apoyo de ABA. Programa una consulta gratuita.",
+        "displayH1": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "featuredImage": "/assets/images/autism_evaluation_arizona_hero.jpg",
+        "alt": "",
+        "date": "2026-01-22",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:31Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "2c7df1098b06"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Una pediatra interactúa con un niño pequeño durante una evaluación de autismo en una clínica de Arizona.",
+          "sourceAlt": "Pediatra realizando una evaluación de autismo a un niño pequeño en una clínica de Arizona",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-01-22",
+          "sourceValue": "2026-01-22T23:51:04.064Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/autism-evaluation-what-to-expect.mdx",
+      "route": "/es/library/autism-evaluation-what-to-expect",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/autism-evaluation-what-to-expect",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/autism-evaluation-what-to-expect",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:52.744Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:25 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:25 GMT",
+      "source": {
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "description": "Aprenda qué sucede antes, durante y después de una evaluación de autismo en un niño.  Vea a quién conocerá, cuánto tiempo lleva y cómo los resultados guían los siguientes pasos.",
+        "h1": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/autism-evaluation-expectations_hero.png",
+        "alt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+        "datePublished": "2026-04-09T03:46:20.000Z",
+        "dateModified": "2026-05-12T21:13:23.481Z"
+      },
+      "local": {
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "description": "Aprenda qué sucede antes, durante y después de una evaluación de autismo en un niño. Vea a quién conocerá, cuánto tiempo lleva y cómo los resultados guían los siguientes pasos.",
+        "displayH1": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "featuredImage": "/assets/images/autism-evaluation-expectations_hero.png",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:32Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "2307eb755998"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Un niño juega en una mesa mientras dos profesionales hablan con uno de sus padres durante una evaluación.",
+          "sourceAlt": "Reunión entre padres e hijos con un clínico en un entorno de evaluación del autismo tranquilo y basado en el juego.",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-05-12",
+          "sourceValue": "2026-05-12T21:13:23.481Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/autism-family-self-care-tips.md",
+      "route": "/es/library/autism-family-self-care-tips",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/autism-family-self-care-tips",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/autism-family-self-care-tips",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:53.514Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:20 GMT",
+      "source": {
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "description": "Toma las riendas de tu bienestar como cuidador de una persona con autismo.  Explora estrategias sencillas para reducir el estrés, mejorar la salud mental y prosperar en tu función.",
+        "h1": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-self-care-priority.webp",
+        "alt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+        "datePublished": "2026-04-09T02:42:50.000Z",
+        "dateModified": "2026-04-09T02:42:57.982Z"
+      },
+      "local": {
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "description": "Toma las riendas de tu bienestar como cuidador de una persona con autismo. Explora estrategias sencillas para reducir el estrés, mejorar la salud mental y prosperar en tu función.",
+        "displayH1": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "featuredImage": "/assets/images/hero-self-care-priority.webp",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:33Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "57e82e78c21f"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Un letrero que dice «Mental Health Matters» junto a una persona que descansa la cabeza.",
+          "sourceAlt": "Consejos de autocuidado para familias con autismo - imagen destacada",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-09",
+          "sourceValue": "2026-04-09T02:42:57.982Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/autism-self-advocacy-skills-aba.md",
+      "route": "/es/library/autism-self-advocacy-skills-aba",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:54.298Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:22 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:22 GMT",
+      "source": {
+        "title": "Desbloqueando la independencia para niños con autismo a través de la autodefensa ABA",
+        "description": "Empodere a su hijo con terapia ABA individualizada en el Instituto de Autismo de Arizona.  ¡Reserva una consulta gratuita y comienza hoy mismo la atención personalizada para el autismo!",
+        "h1": "Guía para enseñar la autodefensa en el ABA",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-teach-self-advocacy.webp",
+        "alt": "Habilidades de autodefensa para el autismo a través del ABA - imagen destacada",
+        "datePublished": "2026-04-09T03:36:24.000Z",
+        "dateModified": "2026-04-09T03:36:32.552Z"
+      },
+      "local": {
+        "title": "Desbloqueando la independencia para niños con autismo a través de la autodefensa ABA",
+        "description": "Empodere a su hijo con terapia ABA individualizada en el Instituto de Autismo de Arizona. ¡Reserva una consulta gratuita y comienza hoy mismo la atención personalizada para el autismo!",
+        "displayH1": "Guía para enseñar la autodefensa en el ABA",
+        "featuredImage": "/assets/images/hero-teach-self-advocacy.webp",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:34Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "4f0a32468331"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Un grupo diverso de niños sonríe mientras está acostado sobre el césped.",
+          "sourceAlt": "Habilidades de autodefensa para el autismo a través del ABA - imagen destacada",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-09",
+          "sourceValue": "2026-04-09T03:36:32.552Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/emotional-regulation-aba.mdx",
+      "route": "/es/library/emotional-regulation-aba",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/emotional-regulation-aba",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/emotional-regulation-aba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:54.936Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:29 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:29 GMT",
+      "source": {
+        "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "description": "Por qué la regulación emocional debe guiar la terapia ABA. Conozca pasos de corregulación, herramientas de afrontamiento y consejos para familias del Instituto de Autismo de Arizona.",
+        "h1": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/child-shopping-cart-tired-cranky.jpg",
+        "alt": "Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal",
+        "datePublished": "2025-11-01T07:45:00.000Z",
+        "dateModified": "2025-11-22T18:06:43.342Z"
+      },
+      "local": {
+        "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "description": "Por qué la regulación emocional debe guiar la terapia ABA. Conozca pasos de corregulación, herramientas de afrontamiento y consejos para familias del Instituto de Autismo de Arizona.",
+        "displayH1": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "featuredImage": "/assets/images/child-shopping-cart-tired-cranky.jpg",
+        "alt": "",
+        "date": "2025-11-01",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:35Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "af48d580b542"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Un niño descansa con la cabeza baja en el asiento de un carrito de compras.",
+          "sourceAlt": "Niño tomando una pausa de regulación emocional en un carrito de compras - imagen principal",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2025-11-22",
+          "sourceValue": "2025-11-22T18:06:43.342Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/enhancing-generalization-skills.mdx",
+      "route": "/es/library/enhancing-generalization-skills",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/enhancing-generalization-skills",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/enhancing-generalization-skills",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:55.869Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "description": "Mejorar la generalización en el autismo implica generalizaciones de estímulos, respuestas y situaciones, asegurando que los comportamientos aprendidos se apliquen en diversas situaciones.",
+        "h1": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "Mejorar las habilidades de generalización en niños con autismo",
+        "datePublished": "2026-04-09T03:47:04.000Z",
+        "dateModified": "2026-04-09T03:47:08.817Z"
+      },
+      "local": {
+        "title": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "description": "Mejorar la generalización en el autismo implica generalizaciones de estímulos, respuestas y situaciones, asegurando que los comportamientos aprendidos se apliquen en diversas situaciones.",
+        "displayH1": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "featuredImage": "/assets/images/hero-enhancing-generalization-skills_800x.jpg",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:36Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "c43c16e5932a"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Un niño mira a través de un visor de juguete de colores durante el juego.",
+          "sourceAlt": "Mejorar las habilidades de generalización en niños con autismo",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-09",
+          "sourceValue": "2026-04-09T03:47:08.817Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/executive-functioning-skills-autism.md",
+      "route": "/es/library/executive-functioning-skills-autism",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/executive-functioning-skills-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/executive-functioning-skills-autism",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:56.576Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "Habilidades de funcionamiento ejecutivo y autismo: estrategias de éxito",
+        "description": "Estrategias basadas en evidencia para la función ejecutiva en el autismo: apoyos visuales para la planificación, la regulación emocional, el control de impulsos y la resolución de problemas.",
+        "h1": "Habilidades de funcionamiento ejecutivo y autismo",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-executive-functioning-skills-autism.webp",
+        "alt": "estrategias para el desarrollo de habilidades de funcionamiento ejecutivo en niños autistas - imagen destacada",
+        "datePublished": "2026-04-09T03:39:26.000Z",
+        "dateModified": "2026-04-09T03:39:33.490Z"
+      },
+      "local": {
+        "title": "Habilidades de funcionamiento ejecutivo y autismo: estrategias de éxito",
+        "description": "Estrategias basadas en evidencia para la función ejecutiva en el autismo: apoyos visuales para la planificación, la regulación emocional, el control de impulsos y la resolución de problemas.",
+        "displayH1": "Habilidades de funcionamiento ejecutivo y autismo: estrategias de éxito",
+        "featuredImage": "/assets/images/hero-executive-functioning-skills-autism.webp",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "REVALIDATED",
+        "observedAt": "2026-10-11T07:33:37Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "f736b39b05c1"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Un niño dibuja con lápices de colores en una mesa de actividades.",
+          "sourceAlt": "estrategias para el desarrollo de habilidades de funcionamiento ejecutivo en niños autistas - imagen destacada",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-09",
+          "sourceValue": "2026-04-09T03:39:33.490Z"
+        },
+        {
+          "field": "displayH1",
+          "before": "Habilidades de funcionamiento ejecutivo y autismo: estrategias de éxito",
+          "after": "Habilidades de funcionamiento ejecutivo y autismo",
+          "sourceValue": "Habilidades de funcionamiento ejecutivo y autismo"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/first-then-cards-autism-transitions.md",
+      "route": "/es/library/first-then-cards-autism-transitions",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/first-then-cards-autism-transitions",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/first-then-cards-autism-transitions",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:57.266Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:19 GMT",
+      "source": {
+        "title": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "description": "Aprenda cómo Primero/después, las tarjetas apoyan transiciones más suaves y comportamientos positivos en niños autistas.  Descubre consejos prácticos y recursos locales de Arizona.",
+        "h1": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-first-then-cards.webp",
+        "alt": "Las tarjetas de ",
+        "datePublished": "2026-04-09T03:23:34.000Z",
+        "dateModified": "2026-04-09T03:23:43.485Z"
+      },
+      "local": {
+        "title": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "description": "Aprenda cómo Primero/después, las tarjetas apoyan transiciones más suaves y comportamientos positivos en niños autistas. Descubre consejos prácticos y recursos locales de Arizona.",
+        "displayH1": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "featuredImage": "/assets/images/hero-first-then-cards.webp",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:38Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "9b594c6dbfbf"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Una profesional muestra tarjetas visuales «Primero/Después» a un niño durante una actividad de aprendizaje.",
+          "sourceAlt": "Las tarjetas de ",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-09",
+          "sourceValue": "2026-04-09T03:23:43.485Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/parents-guide-to-autism-and-aba.mdx",
+      "route": "/es/library/parents-guide-to-autism-and-aba",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/parents-guide-to-autism-and-aba",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/parents-guide-to-autism-and-aba",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:57.989Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:18 GMT",
+      "source": {
+        "title": "Cómo ayudar a su hijo autista: Una guía para padres y cuidadores",
+        "description": "Learn practical autism and ABA-informed strategies parents and caregivers can use to support communication, routines, behavior, and regulation.",
+        "h1": "Guía de Autismo para Padres y Cuidadores",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+        "datePublished": "2026-04-09T03:43:28.000Z",
+        "dateModified": "2026-05-07T23:44:26.817Z"
+      },
+      "local": {
+        "title": "Cómo ayudar a su hijo autista: Una guía para padres y cuidadores",
+        "description": "Learn practical autism and ABA-informed strategies parents and caregivers can use to support communication, routines, behavior, and regulation.",
+        "displayH1": "Cómo ayudar a su hijo autista: Una guía para padres y cuidadores",
+        "featuredImage": "/assets/images/family-guide-to-autism-aba-at-home_hero.png",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "HIT",
+        "observedAt": "2026-10-11T07:33:40Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "447c941757dc"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Una madre y su hijo usan apoyos visuales y bloques de colores durante un juego estructurado.",
+          "sourceAlt": "Parent and autistic child using visual supports, structured play, and calm routines together",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-05-07",
+          "sourceValue": "2026-05-07T23:44:26.817Z"
+        },
+        {
+          "field": "displayH1",
+          "before": "Cómo ayudar a su hijo autista: Una guía para padres y cuidadores",
+          "after": "Guía de Autismo para Padres y Cuidadores",
+          "sourceValue": "Guía de Autismo para Padres y Cuidadores"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/positive-reinforcement-techniques.md",
+      "route": "/es/library/positive-reinforcement-techniques",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/positive-reinforcement-techniques",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/positive-reinforcement-techniques",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:58.890Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:13 GMT",
+      "source": {
+        "title": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "description": "Aprenda técnicas efectivas de refuerzo positivo para fomentar el comportamiento deseado en los niños. Descubre consejos, herramientas visuales y mejores prácticas para padres.",
+        "h1": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/hero-positive-reinforcement-techniques.webp",
+        "alt": "terapia aba refuerzo positivo",
+        "datePublished": "2026-04-09T03:40:27.000Z",
+        "dateModified": "2026-04-09T03:40:34.034Z"
+      },
+      "local": {
+        "title": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "description": "Aprenda técnicas efectivas de refuerzo positivo para fomentar el comportamiento deseado en los niños. Descubre consejos, herramientas visuales y mejores prácticas para padres.",
+        "displayH1": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "featuredImage": "/assets/images/hero-positive-reinforcement-techniques.webp",
+        "alt": "",
+        "date": "2026-04-09",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:41Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "4c5b0fc8d8e8"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Una persona adulta lee un libro ilustrado con dos niños.",
+          "sourceAlt": "terapia aba refuerzo positivo",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-04-09",
+          "sourceValue": "2026-04-09T03:40:34.034Z"
+        }
+      ]
+    },
+    {
+      "file": "src/content/blog/es/social-pragmatic-communication-autism.mdx",
+      "route": "/es/library/social-pragmatic-communication-autism",
+      "locale": "es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism",
+      "status": 200,
+      "observedAt": "2026-10-12T21:56:59.702Z",
+      "cache": null,
+      "lastModified": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "prerendered": "Sat, 03 Oct 2026 23:13:24 GMT",
+      "source": {
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "description": "Tu hijo puede hablar, pero tiene dificultades sociales.  Vea cómo el lenguaje pragmático, la inferencia y las señales no verbales moldean la conexión, y cómo el ABA desarrolla habilidades.",
+        "h1": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "featuredImage": "https://www.azinstitute4autism.com/hubfs/talk-not-social.jpg",
+        "alt": "niño que habla tiene problemas para socializar - imagen principal",
+        "datePublished": "2026-01-22T23:50:15.000Z",
+        "dateModified": "2026-01-22T23:50:15.090Z"
+      },
+      "local": {
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "description": "Tu hijo puede hablar, pero tiene dificultades sociales. Vea cómo el lenguaje pragmático, la inferencia y las señales no verbales moldean la conexión, y cómo el ABA desarrolla habilidades.",
+        "displayH1": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "featuredImage": "/assets/images/talk-not-social.jpg",
+        "alt": "",
+        "date": "2026-01-22",
+        "updatedDate": null
+      },
+      "priorAudit": {
+        "cache": "MISS",
+        "observedAt": "2026-10-11T07:33:42Z",
+        "lastModified": "03 Oct 2026",
+        "responseSha256Prefix": "b119eba501d6"
+      },
+      "changes": [
+        {
+          "field": "alt",
+          "before": "",
+          "after": "Un niño se cubre el rostro mientras otro le ofrece apoyo al aire libre.",
+          "sourceAlt": "niño que habla tiene problemas para socializar - imagen principal",
+          "decision": "narrow visual description"
+        },
+        {
+          "field": "updatedDate",
+          "before": "",
+          "after": "2026-01-22",
+          "sourceValue": "2026-01-22T23:50:15.090Z"
+        }
+      ]
+    }
+  ],
+  "arabicDiagrams": [
+    {
+      "source": "public/assets/images/antecedent-behavior-consequence.webp",
+      "replacement": "public/assets/images/antecedent-behavior-consequence_ar.svg",
+      "dimensions": "800x450",
+      "sourceSha256": "783df59a2c8edc40dcbdd03fc82104735de0a30e04b4f8a2dea1b398e6dbff83",
+      "replacementSha256": "bf91468f55df61f23ac7baff635c29214bd11b5e1f5c79777b315d09f22036d4",
+      "replacementBytes": 59261,
+      "labels": [
+        "المُقدِّمة",
+        "السلوك",
+        "النتيجة اللاحقة",
+        "حصلتَ على دقيقتين إضافيتين",
+        "تستمر خطة «أولًا/ثم»"
+      ]
+    },
+    {
+      "source": "public/assets/images/reduce-environmental-distractions.webp",
+      "replacement": "public/assets/images/reduce-environmental-distractions_ar.svg",
+      "dimensions": "800x450",
+      "sourceSha256": "3751c87abc796a93a3f401dfccc752a6f71a4d0fc57baabf3c56aac4df7aeadb",
+      "replacementSha256": "e2f20a532cf1ac0badec96f6b0acbfbe286b021355b0fa3a797856f4855c9660",
+      "replacementBytes": 36460,
+      "labels": [
+        "ركن الهدوء",
+        "كن لطيفًا",
+        "خذ نفسًا عميقًا",
+        "ابذل جهدك",
+        "أنت قادر"
+      ]
+    },
+    {
+      "source": "public/assets/images/reinforcement-replacement-behavior.webp",
+      "replacement": "public/assets/images/reinforcement-replacement-behavior_ar.svg",
+      "dimensions": "800x533",
+      "sourceSha256": "4088ca8337062482b8492c749fa00f2ea10590b5d73bf0a49a5de5284bffeca6",
+      "replacementSha256": "ccbd893c8e2b3fda490de55eb5311fd6476fc4b879c1e019642bc7486b081ae1",
+      "replacementBytes": 80872,
+      "labels": [
+        "الموقف نفسه: المهمة صعبة",
+        "المسار أ",
+        "استجابة غير فعّالة",
+        "المسار ب",
+        "بديل فعّال",
+        "السلوك البديل",
+        "استجابة مفيدة",
+        "التعزيز الفعّال يجعل استخدام المهارة البديلة مجديًا"
+      ]
+    }
+  ]
+}

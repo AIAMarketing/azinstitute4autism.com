@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/aba-therapy-prompting-par
 lang: "en"
 translationKey: "aba-therapy-prompting-parenting-benefits"
 featuredImage: "/assets/images/hero-prompting-parenting-benefits.webp"
+alt: "An adult uses a wooden shape-sorter toy with a young child."
 date: "2024-04-02"
+updatedDate: "2025-04-18"
 author: "rula-diab"
 category: "Library"
 tags: []

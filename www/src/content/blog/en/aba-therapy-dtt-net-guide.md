@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/aba-therapy-dtt-net-guide
 lang: "en"
 translationKey: "aba-therapy-dtt-net-guide"
 featuredImage: "/assets/images/hero-learn-dtt-net-methods.webp"
+alt: "Close-up of a child placing colorful rings on a wooden peg board."
 date: "2024-02-29"
+updatedDate: "2025-04-18"
 author: "rula-diab"
 category: "Library"
 tags: []

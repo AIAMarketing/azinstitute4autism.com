@@ -28,7 +28,8 @@
 
 ## Manual Review
 
-- Review extracted image alt text; source content frequently omitted or duplicated alt text.
+- Have fluent Spanish/Arabic reviewers assess the newly localized article hero
+  descriptions and Arabic diagram alternatives in their full article context.
 - Test keyboard and screen-reader behavior across all migrated pages.
 - Perform contrast testing against final approved brand colors.
 - Review extracted article heading hierarchy and any table markup.
@@ -42,3 +43,81 @@
   executable was available in the implementation environment.
 - Validate the rebuilt mobile navigation and all full-page responsive
   layouts in a browser outside the autonomous sandbox.
+## Phase 6C.3 article-image update — 2026-10-12
+
+The current 74-article Library corpus was re-audited after the Phase 6C.2
+rewrites. All 74 featured images are informative in their present article
+context. The 60 records that still lacked frontmatter descriptions now have
+concise, locale-appropriate alt text based on direct visual inspection and the
+corresponding public-page evidence. No current featured image is treated as an
+accidental empty-alt fallback; this is a decision about the audited corpus, not
+a rule that future decorative images must have nonempty alt text.
+
+The three English-text diagrams in the revised Arabic antecedent/consequence
+article now use separate self-hosted Arabic SVG counterparts. Each preserves
+the source raster and its relationships while replacing the visible labels
+with Arabic. The article also retains adjacent Arabic prose and semantic tables
+that communicate the same information without relying on the images. The
+causal panel order remains left-to-right where reversing it could obscure the
+sequence, while Arabic labels render right-to-left within their panels.
+At narrow widths, each detailed diagram sits in a keyboard-focusable,
+explicitly named horizontal scroll region with a visible focus outline. This
+keeps its labels at a readable minimum width without introducing page-level
+horizontal overflow.
+
+Generated-markup checks cover featured-image alt propagation to the article,
+Open Graph, and Twitter metadata; localized Arabic asset references; and the
+absence of the English diagram references from the Arabic body. The SVGs were
+rendered locally for visual inspection at their native dimensions. A browser
+was not available for desktop/390-pixel overflow checks, and no screen-reader
+or fluent-Arabic review was performed. Those checks, plus clinical review of
+the translated ABA terminology and diagram relationships, remain required
+before cutover.
+
+## Phase 6C.4 article-link update — 2026-10-13
+
+Generated-HTML checks now cover every Library body link's published destination,
+asset, and fragment, plus the rendered previous/next/related links. Spanish and
+Arabic self-advocacy articles identify their Halloween-guide destination as
+English; the two new localized sentences still require fluent-language review.
+
+The play/leisure article retains two native image links to the full-size,
+self-hosted infographics. Duplicate expanded images and orphaned lightbox close
+symbols were removed. The ABC-data preview links to the existing full-size
+worksheet. These static anchors do not require JavaScript; this is markup
+verification, not a completed keyboard or no-JavaScript browser session.
+
+Local Chromium failed its sandbox socket check; remote Playwright could not
+reach the generated site and subsequently closed its transport. Desktop/mobile
+visual checks, focus, image opening and browser Back behavior remain manual
+acceptance items. No screen-reader or fluent Arabic/Spanish acceptance is
+claimed. The three Phase 6C.3 Arabic diagrams still need visual-language review.
+
+## Phase 6C.5 final verification — 2026-10-13
+
+All 74 featured images retain the individually reviewed alternatives from Phase
+6C.3. Final generated-output inspection found and corrected two flattened
+screening/evaluation/diagnosis tables (English and Spanish), ten toilet-training
+H3 labels that had absorbed adjacent list prose, and the opening headings in the
+English/Spanish social-communication articles that had absorbed a quoted
+paragraph. Words, article dates and clinical guidance were not changed. The
+play/leisure closing CTA is now outside its last FAQ, matching the public page;
+all 182 FAQ answers across 30 articles match their visible content and schema.
+
+Actual raster inspection of the three Arabic SVGs found two bounded visual
+issues: a replacement-behavior subtitle extended beyond its colored panel, and
+a few original English calm-corner title pixels appeared above the overlay.
+The subtitle now wraps and the calm-corner overlay starts 10 pixels higher.
+Reinspection shows no exposed English labels or clipped Arabic text in the
+inspection rasters. The previews used installed DejaVu fonts and losslessly
+decoded PNG backing in temporary files because this environment's librsvg did
+not render the SVGs' embedded WebP directly. Production SVGs retain their source
+WebP artwork. This is raster evidence, not browser/font-fallback acceptance.
+
+All three diagram wrappers retain a named, focusable region, narrow-screen
+horizontal scrolling, a 720-pixel minimum image width and focus-outline CSS.
+Browser transport remains unavailable; real desktop/390px overflow, keyboard
+scrolling, no-JavaScript interactions, screen-reader and fluent Arabic checks
+remain **pending**. The source-inherited English tip in the Spanish
+positive-reinforcement article also remains a bounded language-review item.
+See the final Phase 6C.5 report for the route-specific checklist and release gates.

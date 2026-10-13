@@ -1,12 +1,15 @@
 ---
 title: "Habilidades de funcionamiento ejecutivo y autismo: estrategias de éxito"
+displayH1: "Habilidades de funcionamiento ejecutivo y autismo"
 description: "Estrategias basadas en evidencia para la función ejecutiva en el autismo: apoyos visuales para la planificación, la regulación emocional, el control de impulsos y la resolución de problemas."
 slug: "executive-functioning-skills-autism"
 canonical: "https://www.azinstitute4autism.com/es/library/executive-functioning-skills-autism"
 lang: "es"
 translationKey: "executive-functioning-skills-autism"
 featuredImage: "/assets/images/hero-executive-functioning-skills-autism.webp"
+alt: "Un niño dibuja con lápices de colores en una mesa de actividades."
 date: "2026-04-09"
+updatedDate: "2026-04-09"
 author: "rula-diab"
 category: "Library"
 tags: []

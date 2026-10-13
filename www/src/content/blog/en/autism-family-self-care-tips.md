@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/autism-family-self-care-t
 lang: "en"
 translationKey: "autism-family-self-care-tips"
 featuredImage: "/assets/images/hero-self-care-priority.webp"
+alt: "A letter board reading “Mental Health Matters” beside a person resting their head."
 date: "2024-11-01"
+updatedDate: "2026-05-12"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -37,6 +39,6 @@ Parenting a child with autism comes with unique joys and challenges. From naviga
 
 ## Remember: You Deserve Care, Too
 
-At the [Arizona Institute for Autism](../index), we understand that caring for a child with autism is a journey that requires balance. We believe that the well-being of autism parents is just as important as the therapies we provide to children. You are your child’s greatest advocate and most constant source of support. To continue being that pillar of strength, it’s essential to prioritize your health, happiness, and peace of mind.
+At the [Arizona Institute for Autism](/), we understand that caring for a child with autism is a journey that requires balance. We believe that the well-being of autism parents is just as important as the therapies we provide to children. You are your child’s greatest advocate and most constant source of support. To continue being that pillar of strength, it’s essential to prioritize your health, happiness, and peace of mind.
 
 We’re here to support, not only your child’s development, but also your journey as a parent during parent consultation sessions. If you ever feel overwhelmed, know that you’re not alone. Lean on your support network, practice self-care, and take it one day at a time.

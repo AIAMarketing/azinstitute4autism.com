@@ -3348,3 +3348,557 @@ The user completed and accepted the full Phase 6B.5 browser checklist, including
 The final source-matching reconciliation artifact is `route-reconciliation-2026-10-11-offline-03-01-25-775Z.json` (source fingerprint `639a8bcdf9f710fa1444393ce7eab9588a93144ed3045d4a2d758734a9fe530c`). The earlier `route-reconciliation-2026-10-11-offline.json` records the intermediate pre-address source fingerprint and is superseded checkpoint evidence; it remains an excluded local untracked file rather than being deleted or committed.
 
 Outstanding pre-cutover review remains limited to a real screen-reader session; fluent Spanish and Arabic review of operational copy and author biographies; organizational approval of public author credentials, role, and biography claims where required; the deferred author-archive indexing, sitemap, and hreflang decisions; Contabo/nginx slashless serving, HTTPS, redirect, query, and 404 verification; and the nine Phase 6C English articles needed for both page-6 routes. No deployment or cutover was authorized.
+
+## Phase 6C — Missing English Library Article Reconciliation (2026-10-11 UTC)
+
+### Starting Point, Scope, and Evidence Method
+
+Work began from signed checkpoint `a699d467f19fafbfdda5fce1ce6226baa6e5fc3c` on `faithful-astro-migration` and was limited to the nine accepted missing English Library routes. The implementation adds source-supported article records, self-hosted article media, source-derived article-footer relationships, the narrow heading-extraction support needed by metadata search, focused tests, and current audit evidence. No existing article body, Spanish or Arabic record, author biography, publication rule, redirect, dependency, form, analytics, advertising, hosting, or deployment configuration changed.
+
+Evidence is preserved in `reports/phase-6c-source-evidence-2026-10-11.json`. Each article received one bounded public GET between `2026-10-11T03:24:40Z` and `2026-10-11T03:24:50Z`; all returned HTTP 200 at the requested URL with the same local canonical. Responses declared `cache-control: s-maxage=36000, max-age=5`, `x-hs-cf-cache-status: HIT` or `REVALIDATED`, and HubSpot `Last-Modified`/`x-hs-prerendered` values from October 3. These are cached HubSpot prerenders and do not prove current origin freshness. The local curl environment could not validate its certificate chain, so the bounded retrieval used curl's certificate-verification bypass and the limitation is recorded. An independent web reader rendered eight articles; it could not access the Halloween route, whose recovery is supported by the bounded public GET and the accepted saved route evidence. No production form, search query, authenticated endpoint, preview URL, or unrestricted crawl was used.
+
+A later bounded independent rendering of the public Library and Rula Diab author page-6 URLs confirmed the same five cards, dates, and order as the derived local pages. The reader exposed rendered content but no HTTP/cache headers, so this is ordering evidence rather than proof of fresh origin content. The Phase 6A and saved route observations remain historical evidence.
+
+### Nine-Article Reconciliation Matrix
+
+| Destination | Source status and retrieval | SEO title / visible H1 | Published / modified source date | Body, FAQ, and media | Decision |
+| --- | --- | --- | --- | --- | --- |
+| `/library/autism-after-school-meltdowns` | 200, same URL/canonical, cached HubSpot prerender at 03:24:40Z | `After-School Meltdowns in Autism: Why They Happen` / `After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home` | 2026-09-01 / 2026-09-02 | Complete body; 3 FAQs; 6 source article assets | Publish locally; Rula Diab; no translation key |
+| `/library/autism-back-to-school-transition` | 200, same URL/canonical, cached prerender at 03:24:41Z | `Back-to-School Autism Transition: ABA Strategies` / `Back to School with Autism: ABA Strategies for a Smoother Transition` | 2026-09-10 / 2026-09-10 | Complete body; 3 FAQs; 3 assets | Publish locally; Rula Diab; no translation key |
+| `/library/autism-daily-living-skills-challenges` | 200, same URL/canonical, cached prerender at 03:24:42Z | `Daily Living Challenges in Autism: Eating, Sleep & Self-Care` / `Daily Living Challenges in Autism: Eating, Sleeping & Self-Care` | 2026-07-01 / 2026-07-09 | Complete body; 6 FAQs; 3 assets | Publish locally; Rula Diab; no translation key |
+| `/library/autism-social-skills-by-age` | 200, same URL/canonical, revalidated prerender at 03:24:43Z | `Autism Social Skills by Age: Childhood to Teens \| AIA` / `Autism Social Skills by Age: How Social Development Changes as Kids Grow` | 2026-09-24 / 2026-09-24 | Complete body; 3 FAQs; 4 assets | Publish locally; Rula Diab; no translation key |
+| `/library/does-aba-therapy-replace-school` | 200, same URL/canonical, cached prerender at 03:24:45Z | `Does ABA Therapy Replace School? A Parent Guide` / `Does ABA Therapy Replace School?` | 2026-07-08 / 2026-07-22 | Complete body; 4 FAQs; 3 assets | Publish locally; Rula Diab; no translation key |
+| `/library/halloween-and-autism` | 200, same URL/canonical, revalidated prerender at 03:24:46Z; independent reader unavailable | `Halloween and Autism: Sensory-Friendly Tips for Families` / `Halloween and Autism: Making the Holiday Comfortable, Safe, and Fun` | 2026-10-01 / 2026-10-03 | Complete recovered body; 3 FAQs; 3 assets | Publish locally with recorded freshness limitation; Rula Diab; no translation key |
+| `/library/how-many-hours-aba-child-need` | 200, same URL/canonical, revalidated prerender at 03:24:48Z | `How Many Hours of ABA Does a Child Need?` / same | 2026-09-08 / 2026-09-08 | Complete body; 7 FAQs; 3 assets | Publish locally; Rula Diab; no translation key |
+| `/library/picky-eating-autism-parent-guide` | 200, same URL/canonical, cached prerender at 03:24:49Z | `Picky Eating and Autism: A Practical Parent Guide` / `Picky Eating and Restricted Diets in Autistic Children` | 2026-08-01 / 2026-10-03 | Complete body; 5 FAQs; 5 assets | Publish locally; Rula Diab; no translation key |
+| `/library/sleep-issues-autistic-children` | 200, same URL/canonical, revalidated prerender at 03:24:50Z | `Sleep Problems in Autism: Causes, Tips & When to Get Help` / `Sleep Issues in Autistic Children: Calmer Nights for the Whole Family` | 2026-09-28 / 2026-09-28 | Complete body; 7 FAQs; 3 assets | Publish locally; Rula Diab; no translation key |
+
+All dates come from the public BlogPosting data and are stored as calendar dates rather than retrieval or migration dates. All nine public bylines identify Rula Diab, so the records use the validated `rula-diab` author reference. No source established a genuine article translation relationship, so no `translationKey` was created. All are ordinary local, indexable English publications; no placeholder, draft, external canonical, or noindex exception was used.
+
+### Content, Media, and Source Fidelity
+
+The nine records are MDX because every source article includes an FAQ accordion. They preserve the substantive article sequence, paragraphs, lists, blockquotes, tables, figures, links, source headings and fragment targets, conclusion, and FAQ wording. Literal semantic headings retain source fragment IDs where Astro MDX does not accept Markdown attribute syntax. `library-catalog.ts` now extracts bounded visible literal HTML headings in addition to Markdown headings, so the metadata-only search index includes the migrated headings without serializing article bodies, scripts, code fences, or component implementation.
+
+Generated-output comparison found every non-FAQ H2/H3 in the same order and wording after normalizing typographic apostrophes. All 41 FAQ questions and visible answers match their FAQPage entities. The established accordion presents questions through accessible `<summary>` controls rather than duplicating the source's raw HubSpot heading markup. Titles, visible H1s, dates, canonicals, Rula Diab bylines, BlogPosting entities, and FAQ counts match the evidence matrix. The source HTML itself was not committed; source/body hashes, extracted structure, links, FAQ data, cache headers, and destination hashes provide compact provenance.
+
+Thirty-three source-backed image files were added (1,374,213 bytes total). Existing assets were checked first; no byte-identical local duplicate was found. Most files preserve the source WebP bytes and dimensions. The two very large source PNGs used source-served 400×400 and 600×400 JPEG renditions, stored with accurate `.jpg` extensions. Source alt text was preserved where useful. The picky-eating hero exposed no usable source alt, so the local contextual alt is `Parent sitting with a child at a kitchen table during a meal.` No stock substitute, generated image, placeholder diagram, or inaccessible download was added. Image and page-content audits find no missing references.
+
+`blog-footers.json` now holds only source-observed previous, next, and related relationships for these routes. Two related play/leisure cards reuse the verified existing local JPEG rather than adding duplicate AVIF assets. The article `how-many-hours-aba-child-need` source CTA points to `/lp/early-intervention`, a separate live landing route absent from the accepted Astro route inventory. Its link text and consultation purpose are preserved, but its local destination is `/client-consultation`, the existing published consultation page. This single documented deviation prevents a cutover-time broken link without adding an out-of-scope landing page or redirect.
+
+### Derived Catalog, Pagination, Search, and SEO Results
+
+The existing manifest-first catalog discovered all nine files automatically. The corpus is now 74 records: 55 English, 12 Spanish, and 7 Arabic. English Library pagination is 10/10/10/10/10/5 across pages 1–6; Spanish remains 10/2 and Arabic remains a seven-record single page. Because all 55 English records resolve to Rula Diab, the English author archive derives the same six page sizes. Spanish and Arabic author inventories remain unchanged. No manual page-6 record, page-count constant, page 7, translation, or alternate inventory was added.
+
+Both page-6 routes contain, in order: `Critical Thinking Skills for Children with Autism`, `November AIA Update`, `Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments`, `Autism Play: Helping Autistic Children Build Play and Leisure Skills`, and `4 Ways on How to Reduce Behavior Management`. This order and the displayed November 28, October 31, October 30, September 26, and August 26, 2022 dates match the independently rendered public page-6 evidence. Both have five unique cards, a page-5 previous link, current page 6, and no page-7 link. `/library/page/6` is self-canonical, `index,follow` in the indexing-enabled build, sitemap-eligible, and has no hreflang. `/library/author/rula-diab/page/6` is self-canonical, `noindex,follow`, sitemap-excluded, and hreflang-excluded. Both remain statically navigable without JavaScript.
+
+The English metadata search index now contains 55 records and includes all nine new routes, titles, descriptions, headings, author, category, and dates without body text. Final search assets measured: English 37,442 raw / 10,830 gzip / 9,068 Brotli bytes; Spanish 10,170 / 3,425 / 2,969; Arabic 6,234 / 1,981 / 1,624. No external search service, query transmission, tracking, cookie, or dependency was added.
+
+The indexing-enabled build contains 121 HTML routes, 107 sitemap URLs, 174 hreflang links across 53 routes, 107 `index,follow` pages, 14 intentional `noindex,follow` pages, and 121 unique canonical targets. The nine new articles and Library page 6 account for ten new sitemap entries. Author page 6 remains outside the sitemap. The explicit translation graph and nine repository redirects are unchanged. The final normal staging artifact contains 121 HTML pages, all `noindex,nofollow`, an empty sitemap, and no hreflang.
+
+The final schema-2 offline reconciliation is `reports/route-reconciliation-2026-10-11-offline-04-58-33-208Z.json`. It reused the accepted 70 saved production requests, made no network requests, and passed an explicit read-only check. Its 133 dispositions now include 121 local generated routes and nine redirect definitions; the nine former production-live/local-missing article routes are locally generated. Saved production sitemap observations remain 102 and are not confused with the 107-URL local indexing-enabled sitemap.
+
+### Validation and Browser Limitation
+
+| Check | Result |
+| --- | --- |
+| `npm run check` | Passed: 91 Astro files; zero diagnostics |
+| `npm run test:library` | Passed: 38 tests, including nine records, 55/12/7 catalog, page 6, author page 6, heading extraction, search, and staging/indexing fixtures |
+| `npm run test:seo` | Passed: 34 tests; FAQ visible/schema identity, one H1, BlogPosting, canonical, and date behavior retained |
+| `npm run test:publication` | Passed sequentially: 33 tests |
+| `npm run test:markdown` | Passed: 20 tests |
+| `npm run test:routes` | Passed: 10 tests |
+| Normal `npm run build` | Passed; final artifact is the staging build with 121 routes |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed after the final content correction; 121 routes, 107 sitemap URLs, 174 hreflang links across 53 routes |
+| Offline route reconciliation | New schema-2 artifact generated from the 70 accepted saved requests; explicit `--check --evidence` passed |
+| `npm run audit:links` | Passed after the documented CTA destination reconciliation: zero broken internal links |
+| `npm run audit:images` | Passed: zero missing mapped page images |
+| `npm run audit:blog` | Passed: 74 bodies, 166 FAQ questions across 28 FAQ-bearing posts, 47 source-faithful blockquotes, zero failures |
+| Generated-output source comparison | Passed for nine titles/H1s/dates/canonicals/authors, all non-FAQ source headings, 41 visible/schema FAQs, all media references, and both five-card page-6 routes |
+| `git diff --check` | Passed before documentation; repeated during final structural review |
+
+The first focused build exposed unsupported Markdown `{#id}` heading attributes in Astro MDX; these became literal semantic headings with the same IDs. The first SEO run then exposed three FAQ answers where source `<br><br>` boundaries lacked a text-node space; their plain and visible representations were aligned without changing visible wording. Both suites passed after correction.
+
+Two installed Chromium binaries were attempted for desktop/mobile and interaction coverage. Both terminate before page creation because the managed environment denies Chromium's process-singleton socket (`socket() failed: Operation not permitted`). No screenshot, touch, keyboard, JavaScript-disabled browser, or manual assistive-technology result is claimed. Generated HTML and regression checks establish image references, responsive source structure, headings, navigation boundaries, progressive static content, and page-6 semantics, but human desktop/mobile fidelity and interaction acceptance remain required.
+
+### Known Drift and Human Review
+
+This milestone did not expand into an unrestricted rewrite of accepted content. The previously recorded Spanish self-advocacy date discrepancy, English school-readiness FAQ differences, potentially outdated age/program wording in older articles, unreconciled source modification timestamps, and inherited related-post metadata remain candidates for a separately bounded existing-article drift review. Fluent Spanish/Arabic operational-copy and biography review, a real screen-reader session, and the deferred author archive indexing/sitemap/hreflang decisions also remain open.
+
+The new articles faithfully preserve source clinical, feeding, sleep, school, legal, and ABA-hours guidance. That fidelity is not independent clinical, legal, or organizational approval. AIA should review professional/clinical claims, external references, author attribution, and program-specific statements before cutover. The social-skills article's Learner Social Club ages 8–17 are program-specific and do not replace the accepted general ABA eligibility of 18 months through eight years. No Team membership or current employment conclusion was inferred from authorship.
+
+### Phase 6C File Inventory
+
+Modified tracked files:
+
+- `reports/blog-content-audit.md`
+- `reports/migration-summary.md`
+- `reports/seo-audit.md`
+- `src/data/blog-footers.json`
+- `src/utils/library-catalog.ts`
+- `tools/library.test.mjs`
+
+New content and evidence files:
+
+- `reports/phase-6c-source-evidence-2026-10-11.json`
+- `reports/route-reconciliation-2026-10-11-offline-04-58-33-208Z.json`
+- `src/content/blog/en/autism-after-school-meltdowns.mdx`
+- `src/content/blog/en/autism-back-to-school-transition.mdx`
+- `src/content/blog/en/autism-daily-living-skills-challenges.mdx`
+- `src/content/blog/en/autism-social-skills-by-age.mdx`
+- `src/content/blog/en/does-aba-therapy-replace-school.mdx`
+- `src/content/blog/en/halloween-and-autism.mdx`
+- `src/content/blog/en/how-many-hours-aba-child-need.mdx`
+- `src/content/blog/en/picky-eating-autism-parent-guide.mdx`
+- `src/content/blog/en/sleep-issues-autistic-children.mdx`
+
+New self-hosted assets:
+
+- `public/assets/images/aba-hours-recommendation-delivery.webp`
+- `public/assets/images/aba-therapy-replace-school.webp`
+- `public/assets/images/aba-therapy-vs-school.webp`
+- `public/assets/images/aba-to-group-transition.webp`
+- `public/assets/images/abc-worksheet.webp`
+- `public/assets/images/after-school-routine-chart.webp`
+- `public/assets/images/autism-after-school-meltdowns_HERO.webp`
+- `public/assets/images/autism-food-symptom-observations.webp`
+- `public/assets/images/autism-social-skills-by-age_hero-1.webp`
+- `public/assets/images/back-to-school.webp`
+- `public/assets/images/bedtime-sensory-comfort.webp`
+- `public/assets/images/collaborative-play.webp`
+- `public/assets/images/daily-living-challenges-autism.webp`
+- `public/assets/images/divided-meal-plate-food-introduction-400.jpg`
+- `public/assets/images/first-then-visual-support-after-school.webp`
+- `public/assets/images/food-chaining-example.webp`
+- `public/assets/images/food-preferences-characteristics-infographic.webp`
+- `public/assets/images/halloween-and-autism_hero2.webp`
+- `public/assets/images/halloween-and-autism_simple-visual-schedule.webp`
+- `public/assets/images/halloween-porch-candy-teal-pumpking-bookmarks.webp`
+- `public/assets/images/last-straw-vs-whole-story.webp`
+- `public/assets/images/learning-skill-generalization.webp`
+- `public/assets/images/masking-school-decompressing-home-dyptich.webp`
+- `public/assets/images/morning-routine-schedule.webp`
+- `public/assets/images/parent-pediatric-support-team-meeting.webp`
+- `public/assets/images/picky-eating-autism-parent-guide.webp`
+- `public/assets/images/prompt-fading-therapist-help-600.jpg`
+- `public/assets/images/recommended-hours-aba-therapy.webp`
+- `public/assets/images/school-readiness-planning.webp`
+- `public/assets/images/sleep-diary.webp`
+- `public/assets/images/sleep-issues-autism-bedtime-routines.webp`
+- `public/assets/images/social-demands-change-as-child-grows.webp`
+- `public/assets/images/support-tools-transition-help.webp`
+
+The complete Phase 6C working set is 51 files: seven modified tracked files and 44 new files. `reports/SESSION_HANDOFF.md` remains unchanged pending human acceptance. The pre-existing untracked root `merge-plan.md` and superseded untracked `reports/route-reconciliation-2026-10-11-offline.json` remain excluded and untouched. No file is staged or committed.
+
+### Phase 6C.1 — Confirmed Halloween Contextual Links (2026-10-11 UTC)
+
+The immutable supplemental parity audit in `reports/phase-6c-article-parity-audit-2026-10-11.md` identified two narrow, source-supported corrections that do not depend on the separately reviewed material rewrites. In `src/content/blog/en/autism-self-advocacy-skills-aba.md`, the sentence beginning “Our Halloween planning guide” was restored immediately after the examples of requesting a break, choosing, and saying no. In `src/content/blog/en/aac-visual-supports-autism.mdx`, the sentence beginning “For a seasonal example” was restored after the low-tech/high-tech comparison and before `Using Visual Supports in Everyday Life`. The respective anchor texts, `Halloween planning guide` and `trick-or-treating with an autistic child`, both use the normalized local destination `/library/halloween-and-autism`; HubSpot's `?hsLang=en-us` parameter was intentionally omitted.
+
+The self-advocacy sentence was independently established by the supplemental audit from an HTTP 200 cached HubSpot prerender at `2026-10-11T07:34:03Z` and an independent public text rendering. A single bounded AAC retrieval at `2026-10-11T17:57:14Z` returned HTTP 200 and confirmed the exact sentence and placement; it was a HubSpot prerender/cache `HIT` with `Last-Modified: Mon, 05 Oct 2026 14:19:37 GMT`. The local curl environment could not validate the public certificate chain, so that request used certificate-verification bypass and is corroborating cached-public evidence rather than proof of fresh origin content. No other article text, heading, frontmatter, publication date, author, metadata, footer relationship, publication policy, or route was changed.
+
+Sequential validation passed after directing temporary fixtures to the writable `/tmp` root: 20 Markdown tests, 33 publication tests, an indexing-enabled build, a final normal staging build, the link audit with zero broken internal links, generated-output assertions for exactly one restored destination link in each article, and `git diff --check`. The first Markdown attempt did not execute assertions because the inherited Nix `TMPDIR` was permission-denied; the unchanged suite passed completely with `TMPDIR=/tmp`. The indexing-enabled artifact retained 121 HTML routes, 107 sitemap URLs, and 174 hreflang links across 53 routes. The final staging artifact contains 121 `noindex,nofollow` HTML pages, an empty sitemap, no hreflang, 55/12/7 search records, and nine redirect definitions.
+
+The remaining material reconciliation batches are unchanged: the English `aba-school-readiness-arizona`, `aba-school-readiness-guide`, and `autism-fall-break-routine-tips-halloween-thanksgiving` rewrites, plus the Spanish `aba-school-readiness-arizona` rewrite requiring fluent language and editorial review. The fall-break article's Halloween link remains part of that full rewrite. The parity audit was not modified, `reports/SESSION_HANDOFF.md` was not advanced, and all Phase 6C.1 changes remain unstaged and uncommitted.
+
+## Phase 6C.2 — Material Article and Translation Reconciliation (2026-10-11 UTC)
+
+### Starting Point, Scope, and Source Evidence
+
+This work continued from checkpoint `a699d467f19fafbfdda5fce1ce6226baa6e5fc3c` while preserving the unstaged Phase 6C and Phase 6C.1 working set. It replaces three materially outdated English articles, replaces the corresponding outdated Spanish school-readiness record from its current public Spanish source, replaces the superseded Arabic school-readiness article with a complete Arabic counterpart to the revised English antecedent/consequence publication, and audits all explicit English–Spanish and English–Arabic Library relationships. It does not add routes, change publication policy, create translations for unpaired articles, resolve the `/lp/early-intervention` gate, or advance `SESSION_HANDOFF.md`.
+
+Evidence is recorded in `reports/phase-6c2-source-evidence-2026-10-11.json` and the complete relationship matrix in `reports/phase-6c2-translation-equivalence-2026-10-11.md`. Five bounded public GETs between `2026-10-11T20:28:44Z` and `20:28:49Z` returned HTTP 200 without redirects. The English school-readiness, English antecedent/consequence, and English fall-break responses were cache `HIT`; Spanish school readiness and the old Arabic school article were `REVALIDATED`. All declared `cache-control: s-maxage=36000, max-age=5` and preserved HubSpot prerender/Last-Modified timestamps from October 3 or October 7. These are current cached public representations, not independently fresh origin responses. The sandbox could not validate its CA path, so the bounded curl requests used certificate-verification bypass. No form, search query, authenticated API, preview URL, or unrestricted crawl was used.
+
+### English Reconciliations
+
+| Route | Previous local publication | Reconciled public publication | Result |
+| --- | --- | --- | --- |
+| `/library/aba-school-readiness-arizona` | `ABA School Readiness in Arizona \| AIA Preparatory Academy (Ages 2–6)`; 729-word promotional record; seven FAQs; no body infographic | SEO title `ABA School Readiness in Arizona: A Parent Guide`; H1 `ABA School Readiness for Autistic Children in Arizona`; current description; 18 pre-FAQ H2/H3 headings; one semantic table; two body infographics; nine FAQs; published 2025-08-21, modified 2026-09-17 | Full current parent guide restored. It preserves distinctions among access, individualized supports, clinical ABA, school responsibilities, and the 2–6 Preparatory Academy program. |
+| `/library/aba-school-readiness-guide` | Short `Ease Back-to-School Time` article in `.md`, using the old school-transition subject and hero | SEO title `Antecedent Interventions & Consequence Strategies in ABA`; H1 `Antecedent and Consequence Interventions in ABA: Strategies and Examples`; 19 substantive headings before the FAQ; ABC explanation; three semantic tables; three body images; six FAQs; final AIA section; published 2024-07-30, modified 2026-08-13 | The old `.md` record was replaced by one `.mdx` record at the same route. No duplicate content identity remains. |
+| `/library/autism-fall-break-routine-tips-halloween-thanksgiving` | Older title/description/H1, older paragraphs and FAQ set | SEO title `Autism and Fall Break: Routines and Transition Tips`; H1 `Autism and Fall Break: How to Keep Routines Calm and Predictable`; nine substantive headings; two tables; two body images; revised six-FAQ set; modified 2026-10-03 | The complete current body was restored, including the normalized contextual link to `/library/halloween-and-autism`. |
+
+All three retain their established route, local canonical, English locale, Rula Diab author reference, publication date, Library category, and explicit translation-key status. Source-supported `updatedDate` values were added; migration time was not used as a publication date. MDX literal headings retain source fragment IDs, and visible FAQ text remains identical to its FAQPage entity.
+
+The directly modified English footer records now use the source-observed relationships. School readiness relates to emotional regulation, first-evaluation expectations, and the ABA-versus-school guide. Antecedent/consequence relates to the behavior-functions, proactive/reactive, and ABA-versus-school guides. Fall break retains its source-observed previous/next boundaries and relates to social skills by age, the Halloween guide, and AAC/visual supports. The Spanish school-readiness footer now retains its single source-observed emotional-regulation relationship. Dependent old titles in unrelated footer records remain assigned to Phase 6C.5.
+
+### Translation-Equivalence Audit and Replacements
+
+The content collection contains 19 explicit blog relationships: 12 English–Spanish and seven English–Arabic. Before Phase 6C.2, 15 were substantively equivalent, two self-advocacy pairs had only minor drift from the newly restored English Halloween sentence, Spanish school readiness had substantial structural drift, and the Arabic `aba-school-readiness-guide` relationship had become a different article with both structural and semantic drift. The complete route-by-route evidence and classifications are in the dedicated translation report.
+
+The 15 substantively equivalent translations were retained without literalizing their wording. The Spanish and Arabic self-advocacy records were also retained because their missing Halloween contextual sentence does not alter the principal subject, clinical guidance, structure, or conclusion; that small optional addition belongs to the later link/editorial batch.
+
+`/es/library/aba-school-readiness-arizona` now transcribes the current public Spanish guide. It uses the public Spanish title, description, H1, 18-heading structure, table, nine FAQs, two Spanish-language infographics, localized links where validated, its independent 2025-09-02 publication date, and source-supported 2026-09-25 modification date. English-only article destinations are retained only where no real Spanish counterpart exists and are labeled `en inglés`; no locale-prefixed URL was guessed. The public Spanish wording requires fluent Spanish, clinical/editorial, and organizational acceptance despite being source-published.
+
+`/ar/library/aba-school-readiness-guide` now contains a complete Modern Standard Arabic translation of the revised English antecedent/consequence article. It preserves the Arabic route, 2024-07-30 publication date, author, and explicit translation key; no unsupported Arabic `updatedDate` was invented. The record includes all substantive sections, the ABC explanation, three semantic tables, six FAQs, all three body images, Arabic alternatives and explanatory context, references, conclusion, and same-locale links where validated. English-only links use Arabic anchor text that announces the language change. Principal Latin abbreviations use LTR isolation, and a shared narrow-screen table rule provides horizontal scrolling without changing the page's RTL direction.
+
+The Arabic public route remains the superseded short school-readiness article, so this migration-produced translation is intentionally ahead of HubSpot. It is not professionally translated or clinically approved and is a pre-cutover fluent-Arabic and clinical/editorial acceptance blocker. The three reused diagrams contain embedded English text. Arabic alternatives, tables, and surrounding prose convey their essential information, but localized graphics remain a visual-translation and accessibility review item.
+
+No explicit translation relationship exists for the fall-break article, so no Spanish or Arabic route was created. Translation keys, local canonicals, indexing eligibility, sitemap eligibility, visitor-language navigation, and hreflang rules were preserved. The repaired English–Arabic relationship remains technically reciprocal, but human semantic acceptance is still required before production.
+
+### Media, Accessibility, and Clinical Review
+
+Eight exact source-backed WebP assets were added: English and Spanish school-readiness overview/progression infographics, the antecedent/consequence hero, the ABC diagram, the environmental-distraction photograph, and the replacement-behavior diagram. Their provenance, dimensions, and SHA-256 values are recorded in the source-evidence report. The English and Spanish infographics preserve their source language. Arabic reuses the English graphics with complete Arabic textual alternatives rather than fabricating localized diagrams.
+
+Article tables remain semantic `<table>` structures. At viewports up to 700 pixels, `.blog-post-body table` becomes a bounded horizontal scrolling region; this narrowly prevents clipped English, Spanish, and RTL Arabic tables without redesigning article typography. Generated output confirms `lang="ar"`, `dir="rtl"`, one H1, three tables, three body images, and six matching FAQ entities on the Arabic page. No executable Chromium, Playwright, Puppeteer package, or screen reader was available, so no touch, screenshot, visual-overflow, or assistive-technology claim is made.
+
+Clinical/editorial and organizational reviewers must assess the Academy's stated ages 2–6 and 1:2 ratio separately from AIA's accepted general ABA eligibility of 18 months through eight years; the clinical-versus-educational boundary; Arizona education/access statements; functional assessment; reinforcement and differential reinforcement; ignoring/extinction; aggression, self-injury, and safety guidance; BCBA involvement; and claims about participation or expected outcomes. Fluent reviewers must assess Spanish school-readiness terminology and all Arabic behavior-analytic terminology.
+
+### Publication, SEO, Route, and Search Invariants
+
+This phase modifies existing records only. The corpus remains 55 English, 12 Spanish, and seven Arabic articles (74 total), with six English Library pages, six English author pages, two Spanish Library/author pages, and single Arabic roots. The indexing-enabled build contains 121 HTML routes, 107 sitemap URLs, 174 hreflang links across 53 routes, 107 `index,follow` pages, 14 intentional `noindex,follow` pages, and 121 unique canonical targets. All five modified routes are self-canonical; the two repaired translation sets retain their three-link English/translated/x-default relationships, while the unpaired fall-break route has none. Author archives remain noindex, sitemap-excluded, and hreflang-excluded. Nine repository redirects remain unchanged.
+
+The metadata-only search indexes remain at 55 English, 12 Spanish, and seven Arabic records. Updated titles, descriptions, and headings flow from the shared catalog; no body, FAQ answer, private data, external search service, or tracking was added.
+
+The final schema-2 route evidence is `reports/route-reconciliation-2026-10-11-offline-20-48-03-927Z.json`. It reused the accepted 70 saved requests, made no network requests, and passed the explicit read-only consistency check against the restored staging build. Its 133 dispositions contain 121 locally generated routes and nine repository redirect definitions. The immutable earlier Phase 6C reconciliation and 74-article parity audit remain preserved.
+
+### Validation Results and Corrections Found
+
+| Check | Result |
+| --- | --- |
+| `npm run check` | Passed: 91 files; zero errors, warnings, or hints |
+| `npm run test:markdown` | Passed: 20/20 with `TMPDIR=/tmp` after current source-backed school-readiness ratio assertions replaced the old article assumptions |
+| `npm run test:publication` | Passed sequentially: 33/33 |
+| `npm run test:seo` | Passed sequentially: 34/34; every visible FAQ answer matches FAQPage text |
+| `npm run test:library` | Passed: 39/39, including complete Phase 6C.2 headings, FAQs, tables, assets, links, catalog, search, pagination, author, navigation, and both build modes |
+| `npm run test:routes` | Passed: 10/10 |
+| Normal `npm run build` | Passed; final artifact contains 121 routes |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed; 107 sitemap URLs and 174 hreflang links across 53 routes |
+| `npm run audit:links` | Passed: zero broken internal links |
+| `npm run audit:images` | Passed: zero missing mapped page images |
+| `npm run audit:blog` | Passed after recognizing the established Arabic FAQ label: 74 bodies, 182 questions across 30 FAQ-bearing posts, 58 source-faithful blockquotes, zero failures |
+| Offline route reconciliation | New schema-2 staging artifact generated from saved evidence; explicit `--check --evidence` passed |
+| Generated-output checks | Passed for locale/direction, titles/H1s, canonicals, robots, tables, images, FAQ entity counts, publication totals, sitemap, and hreflang |
+| `git diff --check` | Repeated in the final structural review |
+
+The first Markdown invocation inherited an inaccessible Nix `TMPDIR` and executed no assertions; it passed with `TMPDIR=/tmp`. Its first source-aware rerun exposed assertions for the obsolete school-readiness ratios, so the test was updated to the current public 1:1 support and 1:2 program statements. The first SEO run exposed FAQ HTML boundaries whose DOM text omitted spaces between source paragraphs. Text-node spacing was restored without changing visible wording, and all FAQ/schema checks then passed. The blog audit originally accepted only English and Spanish FAQ labels; it now recognizes the established Arabic `الأسئلة الشائعة` label.
+
+The indexing-mode reconciliation artifact was internally valid when created, but its local sitemap eligibility state intentionally differed after the required staging rebuild. It was superseded locally by the final staging artifact above and was not retained. The final normal build contains 121 pages, all `noindex,nofollow`, an empty sitemap, and no hreflang.
+
+### Phase 6C.2 File Inventory and Remaining Gates
+
+Phase 6C.2 adds eight image assets, the two evidence reports, and the final offline reconciliation. It replaces the English and Arabic `aba-school-readiness-guide.md` files with one `.mdx` record per locale; modifies the English and Spanish school-readiness records and the English fall-break record; updates their direct footer relationships; adds the responsive article-table rule; extends the Library and Markdown assertions; teaches the blog audit its Arabic FAQ label; refreshes the blog audit report; and appends this implementation record. No dependency, route definition, publication policy, redirect, service page, form, analytics, advertising, ContactObfuscation, navigation, hosting, or deployment file changed.
+
+The exact Phase 6C.2 paths are:
+
+- `public/assets/images/antecedent-behavior-consequence.webp`
+- `public/assets/images/antecedent-consequence.webp`
+- `public/assets/images/one-to-one-to-group-progression.webp`
+- `public/assets/images/one-to-one-to-group-progression_es.webp`
+- `public/assets/images/reduce-environmental-distractions.webp`
+- `public/assets/images/reinforcement-replacement-behavior.webp`
+- `public/assets/images/school-readiness-supports-infographic.webp`
+- `public/assets/images/school-readiness-supports-infographic_es.webp`
+- `reports/blog-content-audit.md`
+- `reports/migration-summary.md`
+- `reports/phase-6c2-source-evidence-2026-10-11.json`
+- `reports/phase-6c2-translation-equivalence-2026-10-11.md`
+- `reports/route-reconciliation-2026-10-11-offline-20-48-03-927Z.json`
+- `src/content/blog/ar/aba-school-readiness-guide.md` (removed)
+- `src/content/blog/ar/aba-school-readiness-guide.mdx` (added)
+- `src/content/blog/en/aba-school-readiness-arizona.mdx`
+- `src/content/blog/en/aba-school-readiness-guide.md` (removed)
+- `src/content/blog/en/aba-school-readiness-guide.mdx` (added)
+- `src/content/blog/en/autism-fall-break-routine-tips-halloween-thanksgiving.mdx`
+- `src/content/blog/es/aba-school-readiness-arizona.mdx`
+- `src/data/blog-footers.json`
+- `src/styles/blog.css`
+- `tools/audit-blog-content.mjs`
+- `tools/library.test.mjs`
+- `tools/markdown.test.mjs`
+
+Manual acceptance must cover the complete English school-readiness, antecedent/consequence, and fall-break articles; the complete public-source Spanish school-readiness article; and the new Arabic antecedent/consequence article at desktop and approximately 390-pixel widths. Review headings, all tables and diagrams, all FAQs, contextual and footer links, English-to-Spanish/Arabic language choices, RTL ordering, abbreviation isolation, keyboard focus, and horizontal overflow with and without JavaScript.
+
+Remaining Phase 6C work includes Phase 6C.4 metadata and featured-image accessibility, Phase 6C.5 link and related-post fidelity, and Phase 6C.6 final parity validation and acceptance. Outstanding gates also include fluent Spanish and Arabic review, clinical/editorial and organizational approval, localized Arabic diagrams or explicit acceptance of the accessible-text treatment, real screen-reader testing, the `/lp/early-intervention` ownership decision, deferred author archive SEO decisions, and Contabo/nginx slashless/HTTPS/redirect/404 verification. Phase 6C is not declared accepted, and `reports/SESSION_HANDOFF.md` remains unchanged.
+
+## Phase 6C.3 — Article Metadata, Featured-Image Accessibility, and Arabic Diagram Localization (2026-10-12 UTC)
+
+### Phase-numbering clarification
+
+The originally planned Phase 6C.3 Spanish school-readiness reconciliation was incorporated into the expanded Phase 6C.2 multilingual implementation. The remaining phases have therefore been renumbered: metadata/accessibility becomes 6C.3, links/related-post reconciliation becomes 6C.4, and final parity acceptance becomes 6C.5. Historical implementation and audit records retain their original context.
+
+This clarification supersedes the forward-looking Phase 6C.4/6C.5/6C.6 labels in the dated Phase 6C.2 record above without relabeling work that was actually performed. Spanish school readiness remains part of Phase 6C.2; no separate completed Spanish Phase 6C.3 milestone was created. The immutable Phase 6C parity audit, Phase 6C.2 evidence files, and `reports/SESSION_HANDOFF.md` were not rewritten.
+
+### Scope and evidence
+
+Work continued from checkpoint `a699d467f19fafbfdda5fce1ce6226baa6e5fc3c` while preserving the complete unstaged Phase 6C, 6C.1, and 6C.2 working set. The implementation reconciles article hero descriptions, remaining source H1s, four truncated descriptions, supported modification dates, and the three English-text diagrams in the new Arabic antecedent/consequence article. It does not change article bodies beyond the Arabic image references and alternatives, publication eligibility, slugs, canonicals, translation keys, pagination, search, redirects, footer relationships, forms, tracking, or hosting.
+
+The complete route matrix is `reports/phase-6c3-metadata-reconciliation-2026-10-12.md`; reproducible source details are in `reports/phase-6c3-source-evidence-2026-10-12.json`. Sixty-one bounded public GETs on October 12 returned HTTP 200 without route changes. They covered only records still lacking a hero description or modification date after Phase 6C.2. Requests used an audit user agent and `Cache-Control: no-cache`; TLS verification was bypassed because the sandbox CA path was unavailable. The evidence records HubSpot BlogPosting values, `Last-Modified`, prerender timestamps, and the earlier immutable audit's cache/hash observations. These cached public representations do not prove fresh origin content. No forms, searches, preview URLs, authenticated APIs, or unrestricted crawl were used.
+
+### Recalculated discrepancies and metadata decisions
+
+| Field | Original audit | After Phase 6C.2 | After Phase 6C.3 | Result |
+| --- | ---: | ---: | ---: | --- |
+| Missing or unsuitable hero alt | 65 | 60 | 0 | Sixty localized descriptions added after visual inspection; all 74 current heroes are informative. |
+| Public H1 differences | 12 | 7 | 0 | Five material rewrites resolved five; seven remaining `displayH1` values restored here. |
+| Truncated descriptions | 4 older plus 4 material rewrites | 4 | 0 | Four complete public English values restored. |
+| Missing `updatedDate` | 65 | 61 | 1 | Sixty evidence-backed values added; one intentionally unresolved Arabic translation. |
+
+The seven restored headings are the Arabic `first-then-cards-autism-transitions` heading; Spanish `executive-functioning-skills-autism` and `parents-guide-to-autism-and-aba`; and English `communication-social-skills-autistic-children-guide`, `executive-functioning-skills-autism`, `individualized-aba-therapy`, and `parents-guide-to-autism-and-aba`. The exact public strings are recorded in the matrix and guarded by focused tests. The complete source descriptions were restored for English `aba-therapy-benefits`, `community-highlight-meet-rula-diab`, `new-aia-scottsdale-office`, and `november-2022-aia-update`. The two syndicated records retain their accepted external canonicals, noindex policy, sitemap exclusion, and schema exclusion.
+
+All 74 current featured images were visually classified as informative in their article context. The 60 missing frontmatter values now contain concise English, Spanish, or Arabic descriptions of the actual image rather than blindly copying truncated, title-like, keyword-style, or wrong-language HubSpot alternatives. There are no decorative empty-alt exceptions in this audited corpus, but tests do not impose nonempty alt on future genuinely decorative assets. Article alt now agrees with `og:image:alt` and `twitter:image:alt`.
+
+The 60 modification dates were present as explicit public BlogPosting `dateModified` values in both the October 11 audit evidence and the October 12 bounded pass, and each is on or after its locale-specific publication date. They are preserved as public structured-data metadata without claiming every CMS update was a substantive editorial revision. HTTP `Last-Modified` and prerender timestamps remain separate evidence and were not copied into frontmatter. The new `/ar/library/aba-school-readiness-guide` translation deliberately remains without `updatedDate`: its public Arabic URL still serves the superseded school-readiness article, so that article's timestamp cannot support the new translation. Original publication dates remain unchanged, and Library/author ordering still uses publication date followed by normalized route rather than modification date.
+
+### Arabic diagram localization
+
+The Arabic antecedent/consequence article now references three separate self-contained SVGs instead of the English-text WebPs:
+
+| English source | Arabic counterpart | Visible Arabic treatment |
+| --- | --- | --- |
+| `antecedent-behavior-consequence.webp` | `antecedent-behavior-consequence_ar.svg` | ABC headings, card labels, consequence, and first/then outcome localized; 800×450 source sequence retained. |
+| `reduce-environmental-distractions.webp` | `reduce-environmental-distractions_ar.svg` | Calm-corner poster labels localized over the unchanged source photograph; 800×450. |
+| `reinforcement-replacement-behavior.webp` | `reinforcement-replacement-behavior_ar.svg` | Situation, path, response, replacement, support, and reinforcement labels localized; 800×533. |
+
+Each SVG embeds the exact source raster to remain self-contained when served through an `<img>`, overlays Arabic labels, preserves semantically meaningful colors and relationships, and has a distinct `_ar` filename. The causal panel sequence remains left-to-right where reversing it could change the temporal meaning; individual labels use RTL direction. The MDX provides complete Arabic alternatives, and adjacent prose plus semantic tables continue to convey the same information without relying on the images. The SVGs were rendered locally at native dimensions for inspection. Browser/mobile overflow, fluent-Arabic terminology, clinical accuracy, and real screen-reader acceptance remain human gates.
+
+At viewports up to 700 pixels, only these detailed diagrams keep a 720-pixel minimum image width inside a named, keyboard-focusable horizontal scroll region with a visible focus outline. This preserves label legibility without causing page-level horizontal overflow; generated markup and CSS were verified, while actual 390-pixel browser behavior remains on the manual checklist.
+
+### Publication, SEO, and validation results
+
+No publication count changed. The indexing-enabled build contains 55 English, 12 Spanish, and seven Arabic Library records; 121 HTML routes; nine author archives; 107 sitemap URLs; 174 hreflang links across 53 routes; 107 `index,follow` pages; 14 intentional `noindex,follow` pages; and 121 unique canonical targets. Search indexes remain 55/12/7 records and the redirect registry remains nine definitions. The final staging build contains 121 HTML pages, all `noindex,nofollow`, an empty sitemap, and no hreflang.
+
+| Check | Result |
+| --- | --- |
+| `npm run check` | Passed: 91 files, zero diagnostics. |
+| `npm run test:markdown` | Passed sequentially with `TMPDIR=/tmp`: 20/20. |
+| `npm run test:publication` | Passed sequentially: 33/33. |
+| `npm run test:seo` | Passed sequentially: 35/35, including exact dateModified and article/social alt behavior. |
+| `npm run test:library` | Passed sequentially: 40/40, including metadata totals and Arabic asset references. |
+| `npm run test:routes` | Passed sequentially: 10/10. |
+| Normal and `PUBLIC_ALLOW_INDEXING=true` builds | Passed; counts match the unchanged baseline. |
+| `npm run audit:links` | Passed: zero broken internal links. |
+| `npm run audit:images` | Passed: zero missing mapped page images. |
+| `npm run audit:blog` | Passed: zero blog-content failures. |
+| Offline route reconciliation | Final source-matching `reports/route-reconciliation-2026-10-12-offline-22-12-30-166Z.json` generated from the accepted 70 saved requests; explicit read-only check passed with no network or writes. |
+| SVG/generated output review | All three SVGs report the intended dimensions; Arabic HTML references only the `_ar.svg` body diagrams and retains complete Arabic alt text. |
+| `git diff --check` | Passed in final structural review. |
+
+No Chromium, Playwright, Puppeteer, or screen reader was available. The three SVGs were rasterized and visually inspected with local image tooling, but desktop/390-pixel browser layout, touch, page overflow, fluent-language quality, clinical meaning, and assistive-technology behavior are not claimed as accepted.
+
+### Phase 6C.3 file inventory and remaining work
+
+The 60 frontmatter records changed in this phase are identified exactly by `file` and `route` in `phase-6c3-source-evidence-2026-10-12.json` and exhaustively by route in the 74-record metadata matrix: six Arabic, 11 Spanish, and 43 English records. The Arabic `aba-school-readiness-guide.mdx` also changes its three body image references and alternatives. The other Phase 6C.3 paths are:
+
+- `public/assets/images/antecedent-behavior-consequence_ar.svg`
+- `public/assets/images/reduce-environmental-distractions_ar.svg`
+- `public/assets/images/reinforcement-replacement-behavior_ar.svg`
+- `reports/accessibility-audit.md`
+- `reports/migration-summary.md`
+- `reports/page-imagery-audit.md`
+- `reports/phase-6c3-metadata-reconciliation-2026-10-12.md`
+- `reports/phase-6c3-source-evidence-2026-10-12.json`
+- `reports/route-reconciliation-2026-10-12-offline-22-12-30-166Z.json`
+- `reports/seo-audit.md`
+- `src/content/blog/ar/aba-school-readiness-guide.mdx`
+- `src/styles/blog.css`
+- `tools/library.test.mjs`
+- `tools/seo.test.mjs`
+
+Historical Phase 6C.1/6C.2 reports and evidence were not modified. `reports/SESSION_HANDOFF.md` remains unchanged. No dependencies, publication-policy files, redirect files, Blog footer data, service/page content, navigation, ContactObfuscation, forms, APIs, analytics, advertising, or hosting/deployment configuration changed in Phase 6C.3.
+
+The earlier untracked `reports/route-reconciliation-2026-10-12-offline.json` was generated before the final narrow-screen diagram wrapper and is superseded by the timestamped source-matching report. It remains unmodified and unstaged as intermediate local evidence rather than being presented as the final reconciliation.
+
+The revised remaining sequence is Phase 6C.4 for internal-link and related-post fidelity and Phase 6C.5 for final Library parity validation and acceptance. Other pre-cutover gates remain clinical/editorial and organizational approval, fluent Spanish and Arabic review, real screen-reader acceptance, the `/lp/early-intervention` ownership decision, deferred author-archive SEO policy, and Contabo/nginx slashless/HTTPS/redirect/404 verification. Phase 6C is not declared accepted.
+
+## Phase 6C.4 — Internal-link and related-post fidelity — 2026-10-13
+
+### Scope and source evidence
+
+Work continued on `faithful-astro-migration` at `a699d467f19fafbfdda5fce1ce6226baa6e5fc3c`, with the complete Phase 6C–6C.3 working set preserved and no staged changes. This phase reconciles links and curated footer relationships across the actual 74-record Library catalog. It does not change publication policy, metadata, dates, translations/route identity, navigation, search, redirects, dependencies, forms, tracking, or hosting. `SESSION_HANDOFF.md` remains unchanged; Phase 6C is not declared accepted.
+
+The complete 74-article matrix, all 37 changed footer entries, all 25 narrowly edited article files, validation and manual checklist are in `reports/phase-6c4-link-reconciliation-2026-10-13.md`. Exact source/body anchors, requested URLs, cache evidence, source hashes and before/after footer relationships are in `reports/phase-6c4-link-evidence-2026-10-13.json`.
+
+The review uses 66 saved October 11 supplemental-audit responses and two later October 11 Phase 6C.2 responses, plus six bounded public article GETs on October 13 at 00:27:54–00:28:01 UTC. The six refreshed pages were Spanish school readiness, English antecedent/consequence, Spanish and Arabic self-advocacy, play/leisure, and behavior modification. All returned HTTP 200, HubSpot `HIT`, and October 3 prerender timestamps. These are served public/cache observations, not independent proof of origin freshness. Public robots rules were checked; no full-site crawl, form/search submission, authenticated API, or conversion event was performed. An initial GET batch failed CA validation; public read-only retrieval was repeated with TLS verification disabled because this environment lacks a usable CA bundle. No private headers, credentials, or full redundant HTML captures enter the repository evidence.
+
+### Re-established differences and implementation
+
+Of the original 28 footer findings, 25 still had membership/title/previous-next differences. The three English rewrites already had the correct destinations and titles, but differed in source order. The new comparison also counted eight order-only differences in total. All 33 source comparisons are reconciled. Four additional Arabic footer entries still referenced the superseded back-to-school title; they now label the accepted Arabic antecedent/consequence replacement correctly while preserving the source relationships. Thus **37 footer records changed: 24 English, nine Spanish and four Arabic**.
+
+Previous, next and related recommendations remain separate curated fields in `blog-footers.json`; no date- or keyword-based recommendation algorithm was introduced. English/Spanish school-readiness labels use their verified related-widget titles, not interchangeable SEO titles. English antecedent/consequence labels use its current source H1. The four Arabic references use the current 6C.2 Arabic H1 instead of restoring obsolete HubSpot copy. The nine newly migrated articles' own footer records remain byte-for-byte equivalent as data to the phase-start snapshot. All final footer targets are eligible same-locale article publications, without duplicate recommendations or accidental self-recommendations. `BlogPostFooter.astro` needs no change.
+
+Body edits affect **25 files: 17 English, five Spanish, three Arabic**:
+
+- Thirteen homepage destinations now point directly to `/` rather than `/index`, matching the public source (11 English, two Spanish). The two Spanish corporate homepage links intentionally retain the source English-root destination; the accepted locale-aware shared navigation is unchanged.
+- Ten exact external URL occurrences in six articles regain the source `.html` suffix. Four distinct CDC/Indiana resources returned 404 without the suffix and 200 with it. This includes two escaped FAQ links missed by the first editing pass and caught by the final source comparison.
+- The English and Spanish evaluation articles regain their source CDC screening links around existing wording. Three First/Then articles regain their source “Stay tuned” self-links; no shop URL is fabricated.
+- Spanish and Arabic self-advocacy each gain one faithful localized version of the accepted English Halloween-planning sentence, immediately after the break/choice/no examples. Their public localized captures still lack this passage, so these are new local translations, not claimed HubSpot transcriptions. Both link to `/library/halloween-and-autism` with explicit `en inglés` / `بالإنجليزية` labels. Fluent-language review remains required. No translated Halloween route or new translation relationship is created.
+- The behavior-modification article's ABC preview now links to the existing full-size worksheet. Its downloaded public source and local file have identical SHA-256 `d6eb8194cb2e27127fc18f454016c9d56ca6ef8cf271fd4d53dedc1054b6a78c`; no asset was added.
+- Play/leisure retains two native full-size image links. The first now reaches the source expanded image; two duplicate expanded images and orphaned close symbols left by the old lightbox extraction were removed. This is an intentional static image-link alternative to HubSpot's modal overlay, usable without a client dependency. Browser Back/focus/visual acceptance remains manual.
+
+The final selected-source comparison has no unexplained body-link differences after normalizing insignificant apostrophe typography. Remaining differences are explicitly accounted for: the approved Arabic rewrite, destination-language annotations, the two localized Halloween additions, self-hosted image targets/static image interaction, and the provisional consultation CTA. All four internal picky-eating section fragments resolve to unique IDs; all article HTML IDs are unique. External sensory-processing text fragments remain source references rather than claimed remote-browser acceptance.
+
+All 25 edited article frontmatter blocks remain byte-identical to the phase-start snapshot, including publication/modification dates and featured-image alternatives. The five substantive Phase 6C.2 files and the two Phase 6C.1 English Halloween additions are unchanged. No body paragraphs were rewritten beyond the two authorized localized contextual additions and removal of duplicated lightbox implementation fragments.
+
+### Unresolved external and owner decisions
+
+The Scottsdale syndicated original-article link now matches the source `.html` URL. Both tested variants were rate-limited with HTTP 429; the suffixless variant first redirected to a slash. Current availability is not claimed and needs an ordinary later human check. No rate-limit bypass or generic homepage substitution was attempted; the syndicated canonical/noindex exceptions remain intact.
+
+The public `/library/how-many-hours-aba-child-need` body points to `/lp/early-intervention`, while local `/client-consultation` remains unchanged and provisional. These destinations are not declared equivalent. No landing-page import, `/lp/` route/redirect or backend was created. Explicit owner authorization under the Phase 9 gate is still required before cutover.
+
+### Validation and publication safeguards
+
+Tests ran sequentially with `TMPDIR=/tmp` for fixture compatibility:
+
+| Command | Result |
+|---|---|
+| `npm run check` | 91 files, zero diagnostics |
+| `npm run test:markdown` | 20 passed |
+| `npm run test:publication` | 33 passed |
+| `npm run test:seo` | 35 passed |
+| `npm run test:library` | 44 passed |
+| `npm run test:routes` | 10 passed |
+| `npm run build` | Passed; normal staging output restored last |
+| `PUBLIC_ALLOW_INDEXING=true npm run build` | Passed |
+| `npm run audit:links` | Zero broken internal links |
+| `npm run audit:images` | Zero missing mapped page images |
+| `npm run audit:blog` | Zero failures |
+| `git diff --check` | Passed |
+
+Four added Library tests inspect every footer's eligibility, locale and rendered labels/order, all article-body internal destinations/assets/fragments, representative source relationships, current recommendation titles, duplicate/self-recommendation prevention, multilingual Halloween links, exact FAQ/external URLs, static image links and the unresolved CTA exception. Generated-output tests use the shared publication manifest; they do not substitute for editorial, linguistic or accessibility acceptance.
+
+Initial scratch Library/route-check invocations from the repository root failed before running a suite and were reissued from `www`. Two inherited trailing whitespace endings on touched lines were removed to satisfy `git diff --check`. After the final comparison exposed two still-suffixless FAQ URLs, those were corrected and Markdown/SEO/Library tests, both builds and all three output audits passed again. No unresolved automated failure remains.
+
+The final totals remain **55/12/7 articles and search records, 74 total records, 121 HTML routes, nine author archive routes, 107 indexing-enabled sitemap URLs, 174 hreflang links across 53 routes, and nine redirects**. All 121 HTML documents have one canonical and 121 unique canonical targets, preserving the external syndicated targets. Author archives remain self-canonical/noindex,follow, sitemap-excluded and hreflang-excluded in indexing-enabled mode. Library and author page 6 each retain five cards with their different approved SEO policies. Final staging has **121 noindex,nofollow pages, zero sitemap URLs and zero hreflang**.
+
+Final schema-2 offline evidence is `reports/route-reconciliation-2026-10-13-offline-03-01-03-889Z.json`. It was generated with `npm run audit:routes -- --offline --evidence reports/route-reconciliation-2026-10-12-offline-22-12-30-166Z.json`, then validated with `npm run audit:routes -- --check --evidence reports/route-reconciliation-2026-10-13-offline-03-01-03-889Z.json`. Both passed. The report reuses 70 saved production requests and contains 133 dispositions. Its 102 inherited production sitemap observations must not be confused with the new 107-URL Astro sitemap. The earlier `route-reconciliation-2026-10-13-offline.json` is retained as superseded intermediate evidence captured before the final FAQ URL repairs; the timestamped report matches the final application fingerprint. No historical report was overwritten.
+
+### Browser limitations, inventory and review gate
+
+Local Chromium failed because sandbox socket creation was denied. Remote Playwright could open a blank page but could not reach loopback output; subsequent interception/snapshot calls failed with a closed transport. No successful local desktop/mobile, keyboard, touch, no-JavaScript browser or screen-reader acceptance is claimed. All static links, targets and unique fragment IDs were checked in generated HTML. Manual acceptance must cover exact footer titles/order, previous/next navigation, the two localized additions, full-size image opening and Back, fragments, focus, 390px wrapping and no-JavaScript navigation. The existing Arabic diagram raster-label concealment and Arabic legibility checks remain outstanding.
+
+The phase-specific inventory is 25 article files listed in the reconciliation matrix, plus `src/data/blog-footers.json`, `tools/library.test.mjs`, `reports/migration-summary.md`, and the appended finding in `reports/accessibility-audit.md`. New files are the dated link matrix/evidence JSON and the two separately named October 13 offline reconciliation artifacts. No assets or components were added or modified. The matrix includes the final cumulative `git status --short` and `git diff --stat`, which also include earlier unstaged Phase 6C work.
+
+`merge-plan.md` was not read, modified or checksummed. Both protected superseded October 11/12 reports remain untouched and untracked. The staging area remains empty; no commit, push, deployment or redirect activation occurred. The living handoff is unchanged.
+
+Next remains **Phase 6C.5 — Final Library parity validation and acceptance**; it has not begun. Other gates remain clinical/editorial/organizational approval, fluent Spanish/Arabic review, Arabic diagram visual-language acceptance, real screen-reader testing, the Phase 9 landing-page ownership decision, deferred author archive SEO decisions and Contabo/nginx slashless routing, HTTPS, redirect and 404 verification.
+
+## Phase 6C.5 Final Parity Validation — 2026-10-13
+
+### Starting state, evidence and scope
+
+Verified `faithful-astro-migration` at `a699d467f19fafbfdda5fce1ce6226baa6e5fc3c`,
+with zero staged paths, 75 modified tracked files, two deleted Markdown records
+replaced by MDX, and 71 untracked files. Cumulative Phase 6C–6C.4 work was
+preserved. No handoff update, staging, commit, push, deployment or activation
+occurred. The latest Phase 6C.4 offline report passed an explicit read-only
+consistency check before any final corrections.
+
+The final comparison derives all 74 articles and 19 translation relationships
+from the content collection/shared publication helpers. It reuses the selected
+October 11/13 body observations and October 12 metadata evidence; there were no
+new public content requests or unrestricted crawl. Cache-qualified public parity
+is not independent origin freshness or browser acceptance. The Halloween
+independent-reader limitation remains explicit. Historical diagnostic and
+implementation evidence is unchanged.
+
+Complete route-by-route classifications, source provenance, counts and review
+requirements are in `phase-6c5-final-parity-evidence-2026-10-13.json` and
+`phase-6c5-final-library-acceptance-2026-10-13.md`. Final primary classifications:
+**10 parity confirmed, 58 parity with accepted intentional deviations, one minor
+discrepancy remaining, five human review required, zero material discrepancies
+remaining, zero insufficient-verification records against the selected dated
+evidence.** Every source remains cache-qualified. These are not 74 professional
+editorial approvals.
+
+### Bounded corrections discovered during final inspection
+
+No substantive wording, clinical guidance, frontmatter, dates, alt descriptions,
+footer relationships, publication policy or locale-navigation rules changed.
+
+- English and Spanish `autism-evaluation-what-to-expect.mdx`: restored the
+  three-column, three-row screening/evaluation/diagnosis table. Its wording and
+  CDC link had survived as flattened paragraphs.
+- English `play-leisure-skills.mdx`: moved the existing closing consultation CTA
+  outside the last FAQ into its source-supported position after the accordion.
+  The four FAQ answers now match the public FAQ/schema boundary.
+- English `aba-toilet-training-child-autism.mdx`: separated ten inline H3 labels
+  from adjacent list prose; one narrowly scoped rule in `src/styles/blog.css`
+  retains inline presentation.
+- English and Spanish `social-pragmatic-communication-autism.mdx`: separated the
+  opening H2 from the following quoted paragraph without changing its words.
+- `reinforcement-replacement-behavior_ar.svg`: wrapped the existing Path A
+  subtitle so it fits the colored panel.
+- `reduce-environmental-distractions_ar.svg`: raised the overlay by 10 pixels
+  after raster inspection exposed remnants of the original English title.
+- `tools/library.test.mjs`: added meaningful generated-heading/list coverage
+  and extended table/FAQ-boundary checks. Library tests increase from 44 to 45.
+
+All three Arabic SVGs were rasterized and inspected. The final previews show no
+exposed English labels or clipped Arabic text. Temporary inspection copies used
+installed DejaVu fonts and losslessly decoded PNG backing because the available
+librsvg did not display embedded WebP directly. Production SVG artwork remains
+source-backed WebP. Browser font fallback, mobile scrolling, keyboard behavior,
+fluent Arabic and screen-reader acceptance are still unverified.
+
+### Final technical results
+
+- Library/search inventory: **55 English / 12 Spanish / seven Arabic**, 74 total.
+- **121 HTML routes and unique canonical targets**, nine author archives, nine
+  unchanged repository redirects.
+- Indexing-enabled output: **107 sitemap URLs, 174 hreflang links on 53 routes**.
+- Final normal staging: **121 `noindex,nofollow` pages, empty sitemap, no hreflang**.
+- **72 BlogPosting entities**, with the two syndicated exclusions preserved;
+  **182 visible/schema-aligned FAQ answers on 30 articles**; all 74 featured
+  images have their previously reviewed alternatives; 73 supported modification
+  dates, with the new Arabic guide's date intentionally absent.
+- All 74 original publication dates agree with selected source calendar dates.
+  Ordering remains publication-date descending then normalized route; no new
+  date or eligibility flag was introduced to force counts.
+- Both English page-6 routes have the same five source-supported final records,
+  correct previous page, current-page state and no page 7. Spanish remains 10/2
+  and Arabic seven on one page. Author noindex/sitemap/hreflang rules remain.
+- All 74 rendered footers match the final Phase 6C.4 relationships and titles
+  after insignificant apostrophe normalization. Its 37 corrected records, all
+  contextual repairs, four internal fragments and static image links remain.
+
+Validation ran sequentially with `TMPDIR=/tmp`: Astro check 91 files and zero
+diagnostics; Markdown **20**, publication **33**, SEO **35**, Library **45**,
+routes **10** passing. Normal and indexing-enabled builds passed. Link audit:
+zero broken links; image audit: zero missing mapped images; blog audit: zero
+failures; `git diff --check` passed. Relevant checks were repeated after the
+last SVG correction. Temporary preview module/path/font failures were confined
+to inspection tooling; no application workaround or dependency was introduced.
+Remote Playwright again returned `Transport closed`; no browser, touch or
+screen-reader pass is claimed. A redundant route recheck from the repository
+root failed because package.json lives in `www`; the same read-only command
+passed from `www`, without source changes. Final comparison also confirms that
+all 74 visible article word/punctuation sequences remain unchanged in this phase.
+
+Final schema-2 offline evidence:
+`route-reconciliation-2026-10-13-offline-06-21-20-316Z.json`, source fingerprint
+`f11726b057b1d2f0a59ee1b952d847712caab05cf2f1539b36e80442372f2b00`.
+It reuses 70 production requests, retains 133 dispositions, and passes the
+explicit read-only `--check --evidence` command. The intermediate
+`route-reconciliation-2026-10-13-offline-06-16-06-857Z.json` predates the final
+mask correction: retain locally but exclude from checkpoint. The inherited
+102 production sitemap observations are not the new 107-URL local sitemap.
+
+### Remaining human and production gates
+
+The 19 translation pairs comprise 17 substantively aligned comparisons, one
+technically reconciled Arabic replacement awaiting semantic/clinical acceptance,
+and one minor Spanish localization gap. Public Spanish reinforcement retains an
+English Tip paragraph; it is also present locally and needs a bounded fluent
+translation. The new Arabic guide and both self-advocacy additions remain ahead
+of their public localized sources. All revised Spanish/Arabic wording,
+alternatives and diagrams require fluent review.
+
+Five primary human-review rows are the new Arabic guide, both localized
+self-advocacy additions, the summer-routine eligibility disagreement and the
+hours article's `/lp/early-intervention` versus provisional
+`/client-consultation` ownership gate. The summer article's local 2–17/2–8
+ranges were not silently changed to different public age statements; AIA must
+resolve program scope against general ABA eligibility of 18 months through
+eight years. School access, Preparatory Academy eligibility/staffing, behavior
+intervention/safety and author claims still require professional/organizational
+review. Scottsdale reference reachability remains unverified after prior 429s.
+
+Desktop/mobile keyboard and no-JavaScript acceptance, real screen-reader testing,
+fluent Arabic diagram review, Phase 9 landing-page ownership, forms/privacy and
+analytics/consent gates, author SEO decisions, and Contabo HTTPS/slashless/query/
+redirect/404 verification remain separate. Repository redirects are not deployed.
+
+**Recommendation: Technically ready with documented nontechnical release gates.**
+The final report contains a reviewer/date/status checklist. The explicit proposed
+file inventory and exclusions are in
+`phase-6c5-checkpoint-manifest-2026-10-13.md`. This recommendation does not accept
+Phase 6C on the user's behalf. Wait for user review and a separate checkpoint
+instruction before updating the living handoff or staging any path.

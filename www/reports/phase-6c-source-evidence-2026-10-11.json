@@ -1,0 +1,2491 @@
+{
+  "schemaVersion": 1,
+  "phase": "6C",
+  "generatedAt": "2026-10-11T04:51:22.933Z",
+  "startingCheckpoint": "a699d467f19fafbfdda5fce1ce6226baa6e5fc3c",
+  "scope": "Nine missing English Library articles only",
+  "robotsEvidence": {
+    "url": "https://www.azinstitute4autism.com/robots.txt",
+    "observed": "User-agent: *; Allow: /; preview and preference paths disallowed",
+    "result": "The nine public Library routes are allowed."
+  },
+  "retrieval": {
+    "method": "One bounded public GET per article with redirects followed and a migration-specific user agent; no forms, search submissions, previews, authentication, API access, or crawl.",
+    "tlsLimitation": "The local CA environment did not validate the public certificate chain, so curl used -k. An independent web reader confirmed eight articles; the Halloween route relies on the bounded response and accepted saved production route evidence.",
+    "freshnessLimitation": "All responses expose HubSpot prerender timestamps and HIT or REVALIDATED cache states. HTTP 200 and revalidation do not prove current origin freshness. The migrated source is the precise public HTML returned at the recorded times.",
+    "savedProductionEvidence": "reports/route-reconciliation-2026-10-11-offline-03-01-25-775Z.json"
+  },
+  "summary": {
+    "articlesExpected": 9,
+    "articlesRecovered": 9,
+    "articlesBlocked": 0,
+    "authors": [
+      "rula-diab"
+    ],
+    "newAssets": 33,
+    "publicationProjection": {
+      "totalLibraryRecords": 74,
+      "englishRecords": 55,
+      "spanishRecords": 12,
+      "arabicRecords": 7,
+      "generatedHtmlRoutes": 121,
+      "authorArchiveRoutes": 9,
+      "indexingEnabledSitemapUrls": 107,
+      "hreflangLinks": 174,
+      "hreflangRoutes": 53,
+      "redirectDefinitions": 9
+    }
+  },
+  "articles": [
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/autism-after-school-meltdowns",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-after-school-meltdowns",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:40 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:40 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "xHsCfCacheStatus": "HIT",
+        "xHsContentId": "382688428788",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:23 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "After-School Meltdowns in Autism: Why They Happen",
+      "metaDescription": "Why can an autistic child seem fine at school and fall apart at home? Learn how masking, fatigue, sensory load, transitions, and behavior patterns may contribute.",
+      "canonical": "https://www.azinstitute4autism.com/library/autism-after-school-meltdowns",
+      "displayH1": "After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home",
+      "datePublished": "2026-09-01T12:45:00.000Z",
+      "dateModified": "2026-09-02T00:14:31.421Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 23776,
+        "sourceHtmlSha256": "c100f4325d2707ba113e88e9d5fb12395f1816810dc1fe7ecfac505f7e04050c",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "What is an after-school meltdown?"
+          },
+          {
+            "level": "h2",
+            "text": "Why can a child look “fine” at school and fall apart at home?"
+          },
+          {
+            "level": "h3",
+            "text": "School may provide more structure and predictability"
+          },
+          {
+            "level": "h3",
+            "text": "The total effort of the school day may matter"
+          },
+          {
+            "level": "h3",
+            "text": "Masking may be part of the picture"
+          },
+          {
+            "level": "h3",
+            "text": "Sensory and social demands can accumulate"
+          },
+          {
+            "level": "h3",
+            "text": "Hunger, thirst, fatigue and physical discomfort matter"
+          },
+          {
+            "level": "h3",
+            "text": "The transition itself may be difficult"
+          },
+          {
+            "level": "h2",
+            "text": "Look beyond the final trigger"
+          },
+          {
+            "level": "h2",
+            "text": "What should parents do during an after-school meltdown?"
+          },
+          {
+            "level": "h2",
+            "text": "Build a predictable after-school landing routine"
+          },
+          {
+            "level": "h3",
+            "text": "Build decompression into the routine"
+          },
+          {
+            "level": "h3",
+            "text": "Reduce unnecessary questions at the door"
+          },
+          {
+            "level": "h3",
+            "text": "Make functional communication easy to use"
+          },
+          {
+            "level": "h3",
+            "text": "Use visual supports when they help"
+          },
+          {
+            "level": "h3",
+            "text": "Do not turn the evening into a second full school day"
+          },
+          {
+            "level": "h2",
+            "text": "Teach skills when your child is calm"
+          },
+          {
+            "level": "h2",
+            "text": "Ask the school for more than “They had a great day”"
+          },
+          {
+            "level": "h2",
+            "text": "Is it a meltdown, a tantrum, or masking?"
+          },
+          {
+            "level": "h2",
+            "text": "What about autism masking?"
+          },
+          {
+            "level": "h2",
+            "text": "When should parents seek additional help?"
+          },
+          {
+            "level": "h2",
+            "text": "Five questions to ask before reacting"
+          },
+          {
+            "level": "h2",
+            "text": "The goal is not to help a child “hold it together” longer"
+          },
+          {
+            "level": "h2",
+            "text": "After-School Meltdowns in Autism"
+          },
+          {
+            "level": "h3",
+            "text": "Does an after-school meltdown mean my child is masking at school?"
+          },
+          {
+            "level": "h3",
+            "text": "Should I give my child downtime before homework?"
+          },
+          {
+            "level": "h3",
+            "text": "When should I be concerned about after-school meltdowns?"
+          },
+          {
+            "level": "h2",
+            "text": "How Arizona Institute for Autism can help"
+          }
+        ],
+        "faqCount": 3,
+        "faq": [
+          {
+            "question": "Does an after-school meltdown mean my child is masking at school?",
+            "answer": "Not necessarily. Masking may contribute, particularly when the child suppresses autistic traits, hides discomfort or works hard to appear okay. Fatigue, hunger, sensory demands, transitions, social effort, difficult school events, medical discomfort and other variables can also contribute."
+          },
+          {
+            "question": "Should I give my child downtime before homework?",
+            "answer": "Many children benefit from a predictable decompression period, but the right activity and amount of time are individual. Rather than treating downtime as a reward for “good behavior,” consider making recovery part of the planned school-to-home transition and then introducing necessary expectations with appropriate support."
+          },
+          {
+            "question": "When should I be concerned about after-school meltdowns?",
+            "answer": "Seek additional help when episodes are frequent or escalating, substantially interfere with daily life, involve aggression, self-injury or elopement, or represent a significant unexplained change from your child&#39;s usual behavior. Medical concerns should also be evaluated when pain, illness, sleep, eating, toileting or other physical factors may be contributing."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/autism-after-school-meltdowns_HERO.webp",
+          "localPath": "/assets/images/autism-after-school-meltdowns_HERO.webp",
+          "sourceAlt": "Autistic elementary-age child decompressing quietly at home after school while a nearby parent gives them space",
+          "localAlt": "Autistic elementary-age child decompressing quietly at home after school while a nearby parent gives them space",
+          "bytes": 46062,
+          "sha256": "9fbe3e7e45b3e81e29c6bd81cd97e37e08dd9701a354466c63fd5d3c5e10e339",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/last-straw-vs-whole-story.webp?width=800&height=450&name=last-straw-vs-whole-story.webp",
+          "localPath": "/assets/images/last-straw-vs-whole-story.webp",
+          "sourceAlt": "Timeline showing how events throughout a school day can contribute to an after-school meltdown even when the immediate trigger seems small.",
+          "localAlt": "Timeline showing how events throughout a school day can contribute to an after-school meltdown even when the immediate trigger seems small.",
+          "bytes": 39854,
+          "sha256": "258f5c92d5ab152ac890f61ee8122bb8ce01759c56f4f5b5355c6064f5f2e3ba",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/abc-worksheet.webp?width=800&height=533&name=abc-worksheet.webp",
+          "localPath": "/assets/images/abc-worksheet.webp",
+          "sourceAlt": "Printable “ABC + Earlier Today” behavior-tracking worksheet with four columns for earlier-day events, antecedent, observable behavior, and consequence, plus spaces for patterns and possible support needs or skills to teach.",
+          "localAlt": "Printable “ABC + Earlier Today” behavior-tracking worksheet with four columns for earlier-day events, antecedent, observable behavior, and consequence, plus spaces for patterns and possible support needs or skills to teach.",
+          "bytes": 35586,
+          "sha256": "c124d288267a978466a1e3e8e2f8c98231487e5e21e2d1a3a31f7919af9a5092",
+          "width": 800,
+          "height": 533,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/after-school-routine-chart.webp?width=800&height=600&name=after-school-routine-chart.webp",
+          "localPath": "/assets/images/after-school-routine-chart.webp",
+          "sourceAlt": "Example visual after-school routine with bathroom, snack, decompression, preferred activity, and later evening expectations.",
+          "localAlt": "Example visual after-school routine with bathroom, snack, decompression, preferred activity, and later evening expectations.",
+          "bytes": 39114,
+          "sha256": "ea1cdf4d0ea2e0d7ba45504640eb85565fead316e07d092d3a63c9066bdd8090",
+          "width": 800,
+          "height": 600,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/first-then-visual-support-after-school.webp?width=800&height=600&name=first-then-visual-support-after-school.webp",
+          "localPath": "/assets/images/first-then-visual-support-after-school.webp",
+          "sourceAlt": "Infographic showing three First-Then visual support examples: first snack then tablet, first backpack away then outside, and first 10 minutes of homework then break.",
+          "localAlt": "Infographic showing three First-Then visual support examples: first snack then tablet, first backpack away then outside, and first 10 minutes of homework then break.",
+          "bytes": 38556,
+          "sha256": "3b2eed814bb22d5208e18958c72a09f68ff4c21efc858eb1f7fdbd3a608ebef2",
+          "width": 800,
+          "height": 600,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/masking-school-decompressing-home-dyptich.webp?width=800&height=450&name=masking-school-decompressing-home-dyptich.webp",
+          "localPath": "/assets/images/masking-school-decompressing-home-dyptich.webp",
+          "sourceAlt": "Side-by-side editorial image of the same autistic child appearing composed in class while facing the front with classmates, then quietly decompressing at home after school with backpack and shoes nearby.",
+          "localAlt": "Side-by-side editorial image of the same autistic child appearing composed in class while facing the front with classmates, then quietly decompressing at home after school with backpack and shoes nearby.",
+          "bytes": 31058,
+          "sha256": "cfc3ee4130f032a77b87be6a98dbc29b166188a62d34b72e4e073d7aeaadabc5",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "ABA strategies for a smoother back-to-school transition",
+            "href": "/library/autism-back-to-school-transition"
+          },
+          {
+            "text": "antecedent and consequence interventions in ABA",
+            "href": "/library/aba-school-readiness-guide"
+          },
+          {
+            "text": "teaching self-advocacy in ABA",
+            "href": "/library/autism-self-advocacy-skills-aba"
+          },
+          {
+            "text": "emotional regulation and ABA",
+            "href": "/library/emotional-regulation-aba"
+          },
+          {
+            "text": "the four functions of behavior in ABA",
+            "href": "/library/behavior-management-functions-guide"
+          },
+          {
+            "text": "schedule a consultation with Arizona Institute for Autism",
+            "href": "/client-consultation"
+          }
+        ],
+        "external": [
+          {
+            "text": "Research on autistic camouflaging",
+            "href": "https://pubmed.ncbi.nlm.nih.gov/34563942/"
+          },
+          {
+            "text": "using functional behavioral assessments to understand behavior and environmental conditions",
+            "href": "https://sites.ed.gov/idea/idea-files/using-functional-behavioral-assessments-to-create-supportive-learning-environments/"
+          }
+        ]
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "Picky Eating and Restricted Diets in Autistic Children",
+          "href": "/library/picky-eating-autism-parent-guide"
+        },
+        "next": {
+          "title": "How Many Hours of ABA Does a Child Need?",
+          "href": "/library/how-many-hours-aba-child-need"
+        },
+        "related": []
+      },
+      "destination": {
+        "route": "/library/autism-after-school-meltdowns",
+        "contentFile": "src/content/blog/en/autism-after-school-meltdowns.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "7277f6e026f8f296295e722e779a1d7db6b17677a700f03420a77179da35863d",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Clinical, safety, or medical guidance is copied from the published source without independent clinical certification; no conflict with the accepted AIA 18-months-through-8-years general ABA eligibility was identified."
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/autism-back-to-school-transition",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-back-to-school-transition",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:41 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:41 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:21 GMT",
+        "xHsCfCacheStatus": "HIT",
+        "xHsContentId": "381190964928",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:21 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "Back-to-School Autism Transition: ABA Strategies",
+      "metaDescription": "Use ABA-informed routines, visual supports, communication practice, sensory planning, and school collaboration to make back-to-school transitions easier.",
+      "canonical": "https://www.azinstitute4autism.com/library/autism-back-to-school-transition",
+      "displayH1": "Back to School with Autism: ABA Strategies for a Smoother Transition",
+      "datePublished": "2026-09-10T01:51:38.000Z",
+      "dateModified": "2026-09-10T01:51:49.836Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 21646,
+        "sourceHtmlSha256": "21f7fe0a207aef8508b48ab29d3713d634916fad29ef52ca7aebe0d12c2cb8f1",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "Why back-to-school transitions can be difficult for autistic children"
+          },
+          {
+            "level": "h2",
+            "text": "1. Rebuild the school-day routine gradually"
+          },
+          {
+            "level": "h2",
+            "text": "2. Make the routine visible"
+          },
+          {
+            "level": "h2",
+            "text": "3. Preview the parts of school that are new"
+          },
+          {
+            "level": "h2",
+            "text": "4. Rehearse the difficult part, not the entire school day"
+          },
+          {
+            "level": "h2",
+            "text": "5. Use clear transition cues and First/Then supports"
+          },
+          {
+            "level": "h2",
+            "text": "6. Teach useful communication before stressful moments"
+          },
+          {
+            "level": "h2",
+            "text": "7. Reinforce useful skills"
+          },
+          {
+            "level": "h2",
+            "text": "8. Plan for sensory demands and environmental changes"
+          },
+          {
+            "level": "h2",
+            "text": "9. Practice regulation strategies while the child is regulated"
+          },
+          {
+            "level": "h2",
+            "text": "10. Offer real choices and build independence"
+          },
+          {
+            "level": "h2",
+            "text": "11. Look for patterns when behavior changes"
+          },
+          {
+            "level": "h2",
+            "text": "12. Keep home, school, and ABA teams connected"
+          },
+          {
+            "level": "h2",
+            "text": "What if my child is refusing or avoiding school?"
+          },
+          {
+            "level": "h2",
+            "text": "A simple back-to-school preparation timeline"
+          },
+          {
+            "level": "h2",
+            "text": "Don't measure success by a perfect first day"
+          },
+          {
+            "level": "h2",
+            "text": "When should families ask for additional support?"
+          },
+          {
+            "level": "h2",
+            "text": "Back-to-school autism transitions"
+          },
+          {
+            "level": "h3",
+            "text": "How early should I start preparing my autistic child for school?"
+          },
+          {
+            "level": "h3",
+            "text": "What if we cannot visit the school before the first day?"
+          },
+          {
+            "level": "h3",
+            "text": "What should I do if my child keeps refusing school?"
+          },
+          {
+            "level": "h2",
+            "text": "How AIA can help with school transitions"
+          }
+        ],
+        "faqCount": 3,
+        "faq": [
+          {
+            "question": "How early should I start preparing my autistic child for school?",
+            "answer": "Start as early as is practical for your family, but do not worry if you only have a few days. Prioritize the most important changes first, such as sleep, the morning routine, transportation, communication, and the part of the school day your child is most uncertain about. Some children benefit from a longer preparation period. Others may do better when information is introduced closer to the transition. Use your child&#39;s response to guide how much advance preparation is helpful."
+          },
+          {
+            "question": "What if we cannot visit the school before the first day?",
+            "answer": "Use whatever concrete information is available. Photos, a teacher picture, a map, the school&#39;s website, a short video, driving the route, practicing the backpack routine, or reviewing a simple social narrative can still make unfamiliar parts of the day more predictable. Focus on information your child can actually use rather than trying to recreate the entire school day at home."
+          },
+          {
+            "question": "What should I do if my child keeps refusing school?",
+            "answer": "First investigate what is making attendance difficult rather than assuming there is one behavioral cause. Talk with your child using whatever communication mode works for them, involve the school, and consider sensory, academic, social, medical, and mental-health factors when appropriate. Persistent or severe school avoidance deserves coordinated professional support, particularly when it interferes substantially with daily functioning or involves safety concerns."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/back-to-school.webp",
+          "localPath": "/assets/images/back-to-school.webp",
+          "sourceAlt": "Autistic elementary-age student raising his hand during a classroom lesson while classmates sit at their desks and the teacher leads the class.",
+          "localAlt": "Autistic elementary-age student raising his hand during a classroom lesson while classmates sit at their desks and the teacher leads the class.",
+          "bytes": 43282,
+          "sha256": "8c5abdd37774585affb4ac55c2fcc0f31a8cc3ff09c8c1bea8740f7d632b3ca4",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/morning-routine-schedule.webp?width=800&height=600&name=morning-routine-schedule.webp",
+          "localPath": "/assets/images/morning-routine-schedule.webp",
+          "sourceAlt": "Parent and autistic child checking a visual morning routine before leaving for school.",
+          "localAlt": "Parent and autistic child checking a visual morning routine before leaving for school.",
+          "bytes": 42374,
+          "sha256": "ea494a22851dc35344cfd8eb35aca1b6fd8b1d9c72f8112429536776e408d324",
+          "width": 800,
+          "height": 600,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/support-tools-transition-help.webp?width=800&height=450&name=support-tools-transition-help.webp",
+          "localPath": "/assets/images/support-tools-transition-help.webp",
+          "sourceAlt": "Autistic student moving through a busy school hallway with supportive staff nearby.",
+          "localAlt": "Autistic student moving through a busy school hallway with supportive staff nearby.",
+          "bytes": 37870,
+          "sha256": "23bf154248774529fe47a72ffdbf14b1dd426a93773a021d9b098a903b09008c",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "AAC and visual supports",
+            "href": "/library/aac-visual-supports-autism"
+          },
+          {
+            "text": "First/Then card",
+            "href": "/library/first-then-cards-autism-transitions"
+          },
+          {
+            "text": "antecedent and consequence interventions in ABA",
+            "href": "/library/aba-school-readiness-guide"
+          },
+          {
+            "text": "four functions of behavior",
+            "href": "/library/behavior-management-functions-guide"
+          },
+          {
+            "text": "how ABA therapy and school can complement one another",
+            "href": "/library/does-aba-therapy-replace-school"
+          }
+        ],
+        "external": [
+          {
+            "text": "Visual supports",
+            "href": "https://afirm.fpg.unc.edu/resource/visual-supports-brief-packet/"
+          },
+          {
+            "text": "Functional Communication Training",
+            "href": "https://afirm.fpg.unc.edu/resource/a-case-for-fct/"
+          },
+          {
+            "text": "IEP teams identify appropriate special education, related services, supports, and program modifications",
+            "href": "https://sites.ed.gov/idea/about-idea/"
+          },
+          {
+            "text": "guidance on school avoidance",
+            "href": "https://www.healthychildren.org/English/health-issues/conditions/emotional-problems/Pages/School-Avoidance.aspx"
+          }
+        ]
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "How Many Hours of ABA Does a Child Need?",
+          "href": "/library/how-many-hours-aba-child-need"
+        },
+        "next": {
+          "title": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+          "href": "/library/autism-social-skills-by-age"
+        },
+        "related": [
+          {
+            "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+            "alt": "academic, social, communications, and independence skills",
+            "title": "ABA School Readiness for Autistic Children in Arizona",
+            "href": "/library/aba-school-readiness-arizona"
+          },
+          {
+            "image": "/assets/images/aba-therapy-replace-school.webp",
+            "alt": "aba therapy does not replace school",
+            "title": "Does ABA Therapy Replace School?",
+            "href": "/library/does-aba-therapy-replace-school"
+          },
+          {
+            "image": "/assets/images/visual-supports-aac-communication.png",
+            "alt": "child pointing to a picture on a digital AAC tablet during play",
+            "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+            "href": "/library/aac-visual-supports-autism"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/autism-back-to-school-transition",
+        "contentFile": "src/content/blog/en/autism-back-to-school-transition.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "1190a3d06faa3c901998222d83f9a793811be4339f228e44f98b962216dbfff0",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Clinical, safety, or medical guidance is copied from the published source without independent clinical certification; no conflict with the accepted AIA 18-months-through-8-years general ABA eligibility was identified."
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/autism-daily-living-skills-challenges",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-daily-living-skills-challenges",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:42 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:42 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+        "xHsCfCacheStatus": "HIT",
+        "xHsContentId": "360646715109",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:13 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "Daily Living Challenges in Autism: Eating, Sleep & Self-Care",
+      "metaDescription": "Learn how autism impacts daily living skills like eating, sleeping, and hygiene, and discover how ABA therapy can support your child's long-term independence.",
+      "canonical": "https://www.azinstitute4autism.com/library/autism-daily-living-skills-challenges",
+      "displayH1": "Daily Living Challenges in Autism: Eating, Sleeping & Self-Care",
+      "datePublished": "2026-07-01T12:15:00.000Z",
+      "dateModified": "2026-07-09T21:11:00.889Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 20903,
+        "sourceHtmlSha256": "814e39cc242f60f5cb5b0cb5b100e98613398603f12e3e054f7155aa73ca5e69",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "Understanding Daily Living Skills in Autism"
+          },
+          {
+            "level": "h3",
+            "text": "When Is It a Concern vs. a Quirk?"
+          },
+          {
+            "level": "h2",
+            "text": "Eating and Mealtime Challenges"
+          },
+          {
+            "level": "h2",
+            "text": "Sleep Issues and Establishing Sleep Routines"
+          },
+          {
+            "level": "h2",
+            "text": "Hygiene and Self-Care Struggles"
+          },
+          {
+            "level": "h2",
+            "text": "How ABA Therapy Supports Daily Living Skills"
+          },
+          {
+            "level": "h2",
+            "text": "Collaborating with Other Professionals"
+          },
+          {
+            "level": "h2",
+            "text": "About Daily Living Skills"
+          },
+          {
+            "level": "h3",
+            "text": "What are examples of daily living skills?"
+          },
+          {
+            "level": "h3",
+            "text": "Why do autistic children struggle with daily living skills?"
+          },
+          {
+            "level": "h3",
+            "text": "At what age should we start teaching these skills?"
+          },
+          {
+            "level": "h3",
+            "text": "How does task analysis work?"
+          },
+          {
+            "level": "h3",
+            "text": "Can ABA therapy help with picky eating?"
+          },
+          {
+            "level": "h3",
+            "text": "What is the difference between academic skills and adaptive behavior?"
+          }
+        ],
+        "faqCount": 6,
+        "faq": [
+          {
+            "question": "What are examples of daily living skills?",
+            "answer": "Daily living skills, or adaptive behaviors, include personal hygiene (brushing teeth, bathing), dressing, eating, toilet training, managing a schedule, doing household chores, and safely navigating the community."
+          },
+          {
+            "question": "Why do autistic children struggle with daily living skills?",
+            "answer": "Challenges usually stem from a combination of sensory processing differences (finding textures or sounds overwhelming), motor skill delays, and executive functioning difficulties, which make it hard to plan and execute multi-step tasks."
+          },
+          {
+            "question": "At what age should we start teaching these skills?",
+            "answer": "You should begin as early as possible. Introducing visual schedules and breaking down basic self-care tasks in early childhood lays a critical foundation for transition planning and independence during the teenage years."
+          },
+          {
+            "question": "How does task analysis work?",
+            "answer": "Task analysis is an ABA technique that breaks a complex activity into small, manageable steps. For example, &quot;brushing teeth&quot; is broken into: pick up toothbrush, turn on water, wet bristles, apply paste, brush top left, etc."
+          },
+          {
+            "question": "Can ABA therapy help with picky eating?",
+            "answer": "Yes. ABA can help identify the sensory or behavioral barriers to eating and use gentle shaping and positive reinforcement to increase a child&#39;s tolerance to new foods without forcing or pressuring them."
+          },
+          {
+            "question": "What is the difference between academic skills and adaptive behavior?",
+            "answer": "Academic skills relate to reading, math, and school-based learning. Adaptive behavior relates to the practical skills needed to function in everyday life. Research shows adaptive behavior is a stronger predictor of adult independence for autistic individuals than academic intelligence."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/daily-living-challenges-autism.webp",
+          "localPath": "/assets/images/daily-living-challenges-autism.webp",
+          "sourceAlt": "daily living challenges in autism",
+          "localAlt": "daily living challenges in autism",
+          "bytes": 23438,
+          "sha256": "291bd1a9fd0f7ba5468ef4cf772bf0fbe4e1e7949e0395c4ce8368f2c907f9d5",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/divided-meal-plate-food-introduction.png?width=400&height=400&name=divided-meal-plate-food-introduction.png",
+          "localPath": "/assets/images/divided-meal-plate-food-introduction-400.jpg",
+          "sourceAlt": "A divided meal plate demonstrating gentle food exposure for autistic children.",
+          "localAlt": "A divided meal plate demonstrating gentle food exposure for autistic children.",
+          "bytes": 31872,
+          "sha256": "2d494c17ad004876c616237ccf586003d33a121edb185318eab0529ca170abfc",
+          "width": 400,
+          "height": 400,
+          "format": "jpeg"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/prompt-fading-therapist-help.png?width=600&height=400&name=prompt-fading-therapist-help.png",
+          "localPath": "/assets/images/prompt-fading-therapist-help-600.jpg",
+          "sourceAlt": "ABA therapist using prompt fading to help an autistic child zip a jacket.",
+          "localAlt": "ABA therapist using prompt fading to help an autistic child zip a jacket.",
+          "bytes": 24755,
+          "sha256": "b393f27f9c9ed40c36799ef889b89214c30a82ccda3407844fcfdbe8dd4b26c6",
+          "width": 600,
+          "height": 400,
+          "format": "jpeg"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "learning to use the toilet",
+            "href": "/library/aba-toilet-training-child-autism"
+          },
+          {
+            "text": "executive functioning challenges",
+            "href": "/library/executive-functioning-skills-autism"
+          },
+          {
+            "text": "Natural Environment Training (NET)",
+            "href": "/library/aba-therapy-dtt-net-guide"
+          }
+        ],
+        "external": []
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "Supporting Friendships and Social Play for Children with Autism",
+          "href": "/library/autism-friendships-social-play-support"
+        },
+        "next": {
+          "title": "Does ABA Therapy Replace School?",
+          "href": "/library/does-aba-therapy-replace-school"
+        },
+        "related": [
+          {
+            "image": "/assets/images/talk-not-social.jpg",
+            "alt": "talking child has trouble socializing - hero",
+            "title": "Why My Child Can Talk but Still Struggles Socially",
+            "href": "/library/social-pragmatic-communication-autism"
+          },
+          {
+            "image": "/assets/images/parallel-players-hero.png",
+            "alt": "Three children engaging happily in parallel play on a colorful rug.",
+            "title": "Supporting Friendships and Social Play for Children with Autism",
+            "href": "/library/autism-friendships-social-play-support"
+          },
+          {
+            "image": "/assets/images/autism-social-skills-by-age_hero-1.webp",
+            "alt": "Autistic school-age child and peers working together on a creative group activity in a relaxed community setting.",
+            "title": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+            "href": "/library/autism-social-skills-by-age"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/autism-daily-living-skills-challenges",
+        "contentFile": "src/content/blog/en/autism-daily-living-skills-challenges.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "80ca868ce1ffbf7f8f3c46b813baca419975386a03e270b62abed8a8675e7e9d",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Clinical, safety, or medical guidance is copied from the published source without independent clinical certification; no conflict with the accepted AIA 18-months-through-8-years general ABA eligibility was identified."
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/autism-social-skills-by-age",
+      "finalUrl": "https://www.azinstitute4autism.com/library/autism-social-skills-by-age",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:43 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:43 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:19 GMT",
+        "xHsCfCacheStatus": "REVALIDATED",
+        "xHsContentId": "396417625827",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:19 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "Autism Social Skills by Age: Childhood to Teens | AIA",
+      "metaDescription": "See how social skills and social demands change from early childhood through the teen years, with practical, individualized guidance for autistic children.",
+      "canonical": "https://www.azinstitute4autism.com/library/autism-social-skills-by-age",
+      "displayH1": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+      "datePublished": "2026-09-24T20:12:22.000Z",
+      "dateModified": "2026-09-24T20:12:33.739Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 21208,
+        "sourceHtmlSha256": "370aaa932f0e6a1ffe7833974357c1b71d5f11c4e538a7d51029b49985491aa2",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "How Social Demands Change as Children Grow"
+          },
+          {
+            "level": "h2",
+            "text": "Early Childhood: Around Ages 2–3"
+          },
+          {
+            "level": "h2",
+            "text": "Preschool and Kindergarten: Around Ages 4–5"
+          },
+          {
+            "level": "h2",
+            "text": "Early Elementary Years: Around Ages 6–8"
+          },
+          {
+            "level": "h2",
+            "text": "Later Elementary and Preteen Years: Around Ages 9–12"
+          },
+          {
+            "level": "h2",
+            "text": "Adolescence: Around Ages 13–17"
+          },
+          {
+            "level": "h2",
+            "text": "Social Development Is More Than Conversation or Eye Contact"
+          },
+          {
+            "level": "h2",
+            "text": "Support Social Skills Without Forcing Masking"
+          },
+          {
+            "level": "h2",
+            "text": "Practice Skills Where They Will Actually Be Used"
+          },
+          {
+            "level": "h2",
+            "text": "What Social Groups Can and Cannot Do"
+          },
+          {
+            "level": "h2",
+            "text": "When Additional Support May Help"
+          },
+          {
+            "level": "h2",
+            "text": "Social Goals Should Grow With the Child"
+          },
+          {
+            "level": "h2",
+            "text": "Autism Social Skills by Age"
+          },
+          {
+            "level": "h3",
+            "text": "Are these age ranges developmental milestones for autistic children?"
+          },
+          {
+            "level": "h3",
+            "text": "Should an autistic child be taught to make eye contact?"
+          },
+          {
+            "level": "h3",
+            "text": "What makes a social group appropriate for a child?"
+          },
+          {
+            "level": "h2",
+            "text": "Opportunities to Practice Social Skills at AIA"
+          }
+        ],
+        "faqCount": 3,
+        "faq": [
+          {
+            "question": "Are these age ranges developmental milestones for autistic children?",
+            "answer": "No. The age ranges in this guide describe common changes in children&#39;s social environments and the kinds of skills that may become useful at different stages. They are not diagnostic criteria or a pass-or-fail checklist. Appropriate goals should reflect the individual child&#39;s development, communication, needs, environment, and priorities."
+          },
+          {
+            "question": "Should an autistic child be taught to make eye contact?",
+            "answer": "Eye contact should not be treated as proof that a child is listening or connecting. If direct eye contact is uncomfortable or distracting, communication can still be effective without it. More useful goals may include responding, sharing information, orienting toward an activity, asking questions, or otherwise showing engagement in a way that works for the child."
+          },
+          {
+            "question": "What makes a social group appropriate for a child?",
+            "answer": "Look beyond chronological age alone. A useful group should consider communication abilities, developmental needs, interests, sensory comfort, independence, safety, and the child&#39;s willingness to participate. The activities should create meaningful opportunities for interaction rather than requiring children to perform social behaviors simply because they are in a group."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/autism-social-skills-by-age_hero-1.webp",
+          "localPath": "/assets/images/autism-social-skills-by-age_hero-1.webp",
+          "sourceAlt": "Autistic school-age child and peers working together on a creative group activity in a relaxed community setting.",
+          "localAlt": "Autistic school-age child and peers working together on a creative group activity in a relaxed community setting.",
+          "bytes": 87734,
+          "sha256": "2a632bb5d80b2963aaae4cc351021acf3732bd9b46ba449ed5bc76ddaf7d0cbb",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/social-demands-change-as-child-grows.webp?width=800&height=450&name=social-demands-change-as-child-grows.webp",
+          "localPath": "/assets/images/social-demands-change-as-child-grows.webp",
+          "sourceAlt": "Diagram showing how social demands often progress from communication and shared play in early childhood to group participation, friendship, boundaries, self-advocacy, and independence during adolescence.",
+          "localAlt": "Diagram showing how social demands often progress from communication and shared play in early childhood to group participation, friendship, boundaries, self-advocacy, and independence during adolescence.",
+          "bytes": 52368,
+          "sha256": "e449d0b16f5efe122cf049b267774eebe4cd0bec351145c3b38a6631e6fe09f0",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/collaborative-play.webp?width=800&height=450&name=collaborative-play.webp",
+          "localPath": "/assets/images/collaborative-play.webp",
+          "sourceAlt": "collaborative-play",
+          "localAlt": "collaborative-play",
+          "bytes": 57080,
+          "sha256": "b637ad2d4c1bc8d090448e2bcfc206eff5037d410608d6ac55915548032668b9",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/learning-skill-generalization.webp?width=800&height=450&name=learning-skill-generalization.webp",
+          "localPath": "/assets/images/learning-skill-generalization.webp",
+          "sourceAlt": "learning-skill-generalization",
+          "localAlt": "learning-skill-generalization",
+          "bytes": 49724,
+          "sha256": "c90f2dcb6aa6b2d9b3f04603df8b17d287a458ffc6182a9583b42f1f89bbb49c",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "guide to communication and social skills in autistic children",
+            "href": "/library/communication-social-skills-autistic-children-guide"
+          },
+          {
+            "text": "Supporting Friendships and Social Play for Children with Autism",
+            "href": "/library/autism-friendships-social-play-support"
+          },
+          {
+            "text": "executive functioning skills and autism",
+            "href": "/library/executive-functioning-skills-autism"
+          },
+          {
+            "text": "Guide to Teaching Self-Advocacy in ABA",
+            "href": "/library/autism-self-advocacy-skills-aba"
+          },
+          {
+            "text": "AIA Learner Social Club",
+            "href": "/learner-social-club"
+          }
+        ],
+        "external": []
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "Back to School with Autism: ABA Strategies for a Smoother Transition",
+          "href": "/library/autism-back-to-school-transition"
+        },
+        "next": {
+          "title": "Sleep Issues in Autistic Children: Calmer Nights for the Whole Family",
+          "href": "/library/sleep-issues-autistic-children"
+        },
+        "related": [
+          {
+            "image": "/assets/images/hero-play-leisure-skills-children-autism_800x.avif",
+            "alt": "play and leisure are important tools for growth",
+            "title": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+            "href": "/library/play-leisure-skills"
+          },
+          {
+            "image": "/assets/images/parallel-players-hero.png",
+            "alt": "Three children engaging happily in parallel play on a colorful rug.",
+            "title": "Supporting Friendships and Social Play for Children with Autism",
+            "href": "/library/autism-friendships-social-play-support"
+          },
+          {
+            "image": "/assets/images/communication-skills-autistic-children-hero_img.png",
+            "alt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+            "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+            "href": "/library/communication-social-skills-autistic-children-guide"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/autism-social-skills-by-age",
+        "contentFile": "src/content/blog/en/autism-social-skills-by-age.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "1742fee518944b16ac0044c5089f4103562eae45fb15a62da738b4c3bc64d6a5",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "The source-supported Learner Social Club ages 8–17 statement matches the accepted program-specific range; it is not used as general ABA eligibility."
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/does-aba-therapy-replace-school",
+      "finalUrl": "https://www.azinstitute4autism.com/library/does-aba-therapy-replace-school",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:45 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:45 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "xHsCfCacheStatus": "HIT",
+        "xHsContentId": "361586670273",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:18 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "Does ABA Therapy Replace School? A Parent Guide",
+      "metaDescription": "Does ABA therapy replace school? Learn how ABA, IEP services, school supports, and readiness planning can work together for autistic children.",
+      "canonical": "https://www.azinstitute4autism.com/library/does-aba-therapy-replace-school",
+      "displayH1": "Does ABA Therapy Replace School?",
+      "datePublished": "2026-07-08T22:30:57.000Z",
+      "dateModified": "2026-07-22T00:29:50.788Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 13154,
+        "sourceHtmlSha256": "22a6f55da10ae9ec98064e9348e92f9f3cc6e4085de92c1f3adfd148dea601b9",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "ABA Therapy and School Do Different Jobs"
+          },
+          {
+            "level": "h2",
+            "text": "Can a Child Attend School and Receive ABA Therapy?"
+          },
+          {
+            "level": "h2",
+            "text": "When ABA Takes More of a Child's Weekday Schedule"
+          },
+          {
+            "level": "h2",
+            "text": "School Readiness Is About Access, Not Compliance"
+          },
+          {
+            "level": "h2",
+            "text": "What a Coordinated ABA and School Plan Can Look Like"
+          },
+          {
+            "level": "h2",
+            "text": "Before Changing the School Day, Ask These Questions"
+          },
+          {
+            "level": "h2",
+            "text": "How AIA Can Help Families Plan Next Steps"
+          },
+          {
+            "level": "h2",
+            "text": "About ABA Therapy and School"
+          },
+          {
+            "level": "h3",
+            "text": "Does ABA therapy replace school?"
+          },
+          {
+            "level": "h3",
+            "text": "Can my child attend school and receive ABA therapy?"
+          },
+          {
+            "level": "h3",
+            "text": "Can a private ABA therapist work with my child at school?"
+          },
+          {
+            "level": "h3",
+            "text": "Can ABA therapy happen during school hours?"
+          }
+        ],
+        "faqCount": 4,
+        "faq": [
+          {
+            "question": "Does ABA therapy replace school?",
+            "answer": "No. ABA therapy can support functional skills that help a child participate in education, but it does not replace an educational program. For school-age children, education decisions also need to follow applicable state requirements and school processes."
+          },
+          {
+            "question": "Can my child attend school and receive ABA therapy?",
+            "answer": "Yes. Many children attend school and receive ABA therapy before school, after school, on selected weekdays, during school breaks, or through another individualized arrangement."
+          },
+          {
+            "question": "Can a private ABA therapist work with my child at school?",
+            "answer": "Sometimes, but access is not automatic. School policy, privacy requirements, funding, the student&#39;s educational plan, and team decisions may all affect whether an outside provider can enter the classroom. A school may also provide behavior-related support through its own staff rather than a private ABA provider."
+          },
+          {
+            "question": "Can ABA therapy happen during school hours?",
+            "answer": "It can be part of an individualized schedule in some circumstances, but school-age families should not assume that therapy alone excuses school attendance. Discuss the plan with the school or district, the IEP or Section 504 team when applicable, and the ABA provider before changing the school day."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/aba-therapy-replace-school.webp",
+          "localPath": "/assets/images/aba-therapy-replace-school.webp",
+          "sourceAlt": "aba therapy does not replace school",
+          "localAlt": "aba therapy does not replace school",
+          "bytes": 64052,
+          "sha256": "deaa53ae51661331da2f915d02db3efdc22411cee0d570925f32e12729496ea4",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/aba-therapy-vs-school.webp?width=800&height=450&name=aba-therapy-vs-school.webp",
+          "localPath": "/assets/images/aba-therapy-vs-school.webp",
+          "sourceAlt": "diagram comparing the distinct and overlapping roles of ABA therapy and school",
+          "localAlt": "diagram comparing the distinct and overlapping roles of ABA therapy and school",
+          "bytes": 30026,
+          "sha256": "77367e2d07bc24d0cab82488c9413042704fd668e92dc9d963241fdd1305c539",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/school-readiness-planning.webp?width=800&height=450&name=school-readiness-planning.webp",
+          "localPath": "/assets/images/school-readiness-planning.webp",
+          "sourceAlt": "family reviewing a visual school-transition plan with campus photos and a weekly schedule",
+          "localAlt": "family reviewing a visual school-transition plan with campus photos and a weekly schedule",
+          "bytes": 43826,
+          "sha256": "cb194a2201c1f2b4c4fe26d075135ac6c62b56155aecc727844fb1e1be56a42a",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "AAC and visual supports",
+            "href": "/library/aac-visual-supports-autism"
+          },
+          {
+            "text": "school readiness program",
+            "href": "/library/aba-school-readiness-arizona"
+          },
+          {
+            "text": "ABA therapy services",
+            "href": "/aba-therapy"
+          },
+          {
+            "text": "schedule a free consultation",
+            "href": "/client-consultation"
+          }
+        ],
+        "external": [
+          {
+            "text": "Individuals with Disabilities Education Act",
+            "href": "https://sites.ed.gov/idea/about-idea/"
+          },
+          {
+            "text": "Arizona Revised Statutes § 15-802",
+            "href": "https://www.azleg.gov/ars/15/00802.htm"
+          }
+        ]
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "Daily Living Challenges in Autism: Eating, Sleeping & Self-Care",
+          "href": "/library/autism-daily-living-skills-challenges"
+        },
+        "next": {
+          "title": "Picky Eating and Restricted Diets in Autistic Children",
+          "href": "/library/picky-eating-autism-parent-guide"
+        },
+        "related": [
+          {
+            "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+            "alt": "academic, social, communications, and independence skills",
+            "title": "ABA School Readiness for Autistic Children in Arizona",
+            "href": "/library/aba-school-readiness-arizona"
+          },
+          {
+            "image": "/assets/images/back-to-school.webp",
+            "alt": "Autistic elementary-age student raising his hand during a classroom lesson while classmates sit at their desks and the teacher leads the class.",
+            "title": "Back to School with Autism: ABA Strategies for a Smoother Transition",
+            "href": "/library/autism-back-to-school-transition"
+          },
+          {
+            "image": "/assets/images/visual-supports-aac-communication.png",
+            "alt": "child pointing to a picture on a digital AAC tablet during play",
+            "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+            "href": "/library/aac-visual-supports-autism"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/does-aba-therapy-replace-school",
+        "contentFile": "src/content/blog/en/does-aba-therapy-replace-school.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "9ce141fbddf687f1e21185e3cae7fbfea014a4212838aa4f8f3ad03c98e42416",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Published legal/education framing retained verbatim; organizational/legal review remains advisable before cutover."
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/halloween-and-autism",
+      "finalUrl": "https://www.azinstitute4autism.com/library/halloween-and-autism",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:46 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:46 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:23 GMT",
+        "xHsCfCacheStatus": "REVALIDATED",
+        "xHsContentId": "404123181789",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:23 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader could not access this route; accepted saved route evidence plus the bounded public GET support route/content recovery.",
+      "title": "Halloween and Autism: Sensory-Friendly Tips for Families",
+      "metaDescription": "Plan Halloween around your autistic child's needs with costume ideas, visual schedules, AAC options, sensory breaks, safety tips, and candy alternatives.",
+      "canonical": "https://www.azinstitute4autism.com/library/halloween-and-autism",
+      "displayH1": "Halloween and Autism: Making the Holiday Comfortable, Safe, and Fun",
+      "datePublished": "2026-10-01T12:45:00.000Z",
+      "dateModified": "2026-10-03T00:31:32.564Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 13667,
+        "sourceHtmlSha256": "a27447e99a52c387cc497a1684e394b18829b1817425cd443bac7bdef483d112",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "Let your child help choose the celebration"
+          },
+          {
+            "level": "h2",
+            "text": "Preview a short, flexible Halloween plan"
+          },
+          {
+            "level": "h3",
+            "text": "A simple Halloween visual schedule"
+          },
+          {
+            "level": "h2",
+            "text": "Choose a costume your child wants to wear"
+          },
+          {
+            "level": "h2",
+            "text": "Support communication beyond “trick or treat”"
+          },
+          {
+            "level": "h2",
+            "text": "Plan breaks and an easy way home"
+          },
+          {
+            "level": "h3",
+            "text": "If your child becomes overwhelmed"
+          },
+          {
+            "level": "h2",
+            "text": "Make street safety and supervision concrete"
+          },
+          {
+            "level": "h2",
+            "text": "Plan treats around allergies and food preferences"
+          },
+          {
+            "level": "h2",
+            "text": "Let useful skills grow through enjoyable moments"
+          },
+          {
+            "level": "h2",
+            "text": "Leave time to settle in afterward"
+          },
+          {
+            "level": "h2",
+            "text": "Halloween and Autism"
+          },
+          {
+            "level": "h3",
+            "text": "Are organized Halloween events always sensory-friendly?"
+          },
+          {
+            "level": "h3",
+            "text": "What if siblings want different Halloween plans?"
+          },
+          {
+            "level": "h3",
+            "text": "How can neighbors make trick-or-treating more inclusive?"
+          }
+        ],
+        "faqCount": 3,
+        "faq": [
+          {
+            "question": "Are organized Halloween events always sensory-friendly?",
+            "answer": "No. Even a trunk-or-treat, where children collect treats from decorated, parked cars, can be crowded or noisy. Check for amplified music, flashing lights, waiting times, and a quiet place to step away. Ask whether moving vehicles are kept separate from children. An earlier start does not automatically make an event comfortable for your child."
+          },
+          {
+            "question": "What if siblings want different Halloween plans?",
+            "answer": "If two trusted adults are available, consider separate routes or different finishing times. Otherwise, agree on a short shared outing and another activity at home. Explain the plan beforehand so one child&#39;s need for a break does not become a source of blame."
+          },
+          {
+            "question": "How can neighbors make trick-or-treating more inclusive?",
+            "answer": "Offer treats without requiring speech, eye contact, or a costume. Give children time to respond, keep the path clear, and avoid sudden scare effects. Offer a non-food option separately from candy, and let caregivers help without asking them to explain a child&#39;s diagnosis."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/halloween-and-autism_hero2.webp",
+          "localPath": "/assets/images/halloween-and-autism_hero2.webp",
+          "sourceAlt": "A child in a pumpkin T-shirt and a caregiver prepare a treat bag beside headphones and a picture schedule.",
+          "localAlt": "A child in a pumpkin T-shirt and a caregiver prepare a treat bag beside headphones and a picture schedule.",
+          "bytes": 42532,
+          "sha256": "d249b3ca8e702db89ad723912629bc7eac03802d763177131d2d830800fc5205",
+          "width": 800,
+          "height": 466,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/halloween-and-autism_simple-visual-schedule.webp?width=800&height=533&name=halloween-and-autism_simple-visual-schedule.webp",
+          "localPath": "/assets/images/halloween-and-autism_simple-visual-schedule.webp",
+          "sourceAlt": "Six-step Halloween plan showing clothes, a familiar house, waiting, a treat, a choice to continue or stop, and home.",
+          "localAlt": "Six-step Halloween plan showing clothes, a familiar house, waiting, a treat, a choice to continue or stop, and home.",
+          "bytes": 69560,
+          "sha256": "962aac13a4e9bc25f2764a4653594185d6fc67d79350e8bceb4660fbac0bfca1",
+          "width": 800,
+          "height": 533,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/halloween-porch-candy-teal-pumpking-bookmarks.webp?width=800&height=450&name=halloween-porch-candy-teal-pumpking-bookmarks.webp",
+          "localPath": "/assets/images/halloween-porch-candy-teal-pumpking-bookmarks.webp",
+          "sourceAlt": "Separate containers hold wrapped candy and bookmarks beside a teal pumpkin.",
+          "localAlt": "Separate containers hold wrapped candy and bookmarks beside a teal pumpkin.",
+          "bytes": 51800,
+          "sha256": "e1b7152fa6a2d9a8c360db14991ab06502584cf8297d63aa0bb36c9413ad56b2",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "keeping routines predictable during fall break",
+            "href": "/library/autism-fall-break-routine-tips-halloween-thanksgiving"
+          },
+          {
+            "text": "First/Then card",
+            "href": "/library/first-then-cards-autism-transitions"
+          },
+          {
+            "text": "AAC and visual supports",
+            "href": "/library/aac-visual-supports-autism"
+          },
+          {
+            "text": "picky eating and autism",
+            "href": "/library/picky-eating-autism-parent-guide"
+          },
+          {
+            "text": "practicing self-advocacy",
+            "href": "/library/autism-self-advocacy-skills-aba"
+          }
+        ],
+        "external": [
+          {
+            "text": "American Academy of Pediatrics' Halloween safety guidance",
+            "href": "https://www.healthychildren.org/English/safety-prevention/all-around/Pages/Halloween-Safety-Tips.aspx"
+          },
+          {
+            "text": "American Speech-Language-Hearing Association's AAC guidance",
+            "href": "https://www.asha.org/Practice-Portal/Professional-Issues/Augmentative-and-Alternative-Communication/"
+          },
+          {
+            "text": "National Autistic Society's guidance on meltdowns",
+            "href": "https://www.autism.org.uk/advice-and-guidance/behaviour/meltdowns/all-audiences"
+          },
+          {
+            "text": "AAP's guidance on wandering",
+            "href": "https://www.healthychildren.org/English/health-issues/conditions/Autism/Pages/Autism-Wandering-Tips-AAP.aspx"
+          },
+          {
+            "text": "National Center for Missing & Exploited Children advises immediate action",
+            "href": "https://www.missingkids.org/gethelpnow/isyourchildmissing"
+          },
+          {
+            "text": "FARE's candy guidance",
+            "href": "https://www.foodallergy.org/resources/candy-facts"
+          },
+          {
+            "text": "FARE's trick-or-treating tips",
+            "href": "https://www.foodallergy.org/resources/tips-trick-or-treating-food-allergy"
+          },
+          {
+            "text": "FARE's Teal Pumpkin Project",
+            "href": "https://www.foodallergy.org/resources/about-teal-pumpkin-project"
+          }
+        ]
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "Sleep Issues in Autistic Children: Calmer Nights for the Whole Family",
+          "href": "/library/sleep-issues-autistic-children"
+        },
+        "related": [
+          {
+            "image": "/assets/images/picky-eating-autism-parent-guide.webp",
+            "alt": "",
+            "title": "Picky Eating and Restricted Diets in Autistic Children",
+            "href": "/library/picky-eating-autism-parent-guide"
+          },
+          {
+            "image": "/assets/images/autism-social-skills-by-age_hero-1.webp",
+            "alt": "Autistic school-age child and peers working together on a creative group activity in a relaxed community setting.",
+            "title": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+            "href": "/library/autism-social-skills-by-age"
+          },
+          {
+            "image": "/assets/images/hero-autumn-break-autism-routines-1.jpg",
+            "alt": "visual schedule and sensory tools help keep routines during fall break - hero image",
+            "title": "Autism and Fall Break: How to Keep Routines Calm and Predictable",
+            "href": "/library/autism-fall-break-routine-tips-halloween-thanksgiving"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/halloween-and-autism",
+        "contentFile": "src/content/blog/en/halloween-and-autism.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "20bcded7f61bc1e0c9a9379574402ab4fd4cae421ec9f5cdba7ad6ed021874eb",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Clinical, safety, or medical guidance is copied from the published source without independent clinical certification; no conflict with the accepted AIA 18-months-through-8-years general ABA eligibility was identified."
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/how-many-hours-aba-child-need",
+      "finalUrl": "https://www.azinstitute4autism.com/library/how-many-hours-aba-child-need",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:48 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:48 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:13 GMT",
+        "xHsCfCacheStatus": "REVALIDATED",
+        "xHsContentId": "390393800435",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:13 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "How Many Hours of ABA Does a Child Need?",
+      "metaDescription": "Learn how ABA hours are determined, when focused or comprehensive treatment may fit, and why medical necessity and progress guide the plan.",
+      "canonical": "https://www.azinstitute4autism.com/library/how-many-hours-aba-child-need",
+      "displayH1": "How Many Hours of ABA Does a Child Need?",
+      "datePublished": "2026-09-08T16:30:00.000Z",
+      "dateModified": "2026-09-08T16:30:00.588Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 17862,
+        "sourceHtmlSha256": "961555f2755530f7a8ae9483d278dca2b8f25db39b74b8a0925cb3e4c21332a6",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "When Can High-Intensity ABA Be Appropriate?"
+          },
+          {
+            "level": "h2",
+            "text": "How a BCBA Determines ABA Hours"
+          },
+          {
+            "level": "h2",
+            "text": "What Does “Direct Hours of ABA” Actually Mean?"
+          },
+          {
+            "level": "h2",
+            "text": "Does More ABA Always Produce Better Outcomes?"
+          },
+          {
+            "level": "h2",
+            "text": "Medical Necessity Comes First"
+          },
+          {
+            "level": "h2",
+            "text": "School and Other Therapies Matter"
+          },
+          {
+            "level": "h2",
+            "text": "Parent Involvement and Generalization"
+          },
+          {
+            "level": "h2",
+            "text": "When Should ABA Hours Be Reviewed?"
+          },
+          {
+            "level": "h2",
+            "text": "Transitioning From High-Intensity ABA"
+          },
+          {
+            "level": "h2",
+            "text": "Questions to Ask About a Recommended ABA Schedule"
+          },
+          {
+            "level": "h2",
+            "text": "Recommended ABA Hours"
+          },
+          {
+            "level": "h3",
+            "text": "Is 20 hours of ABA a week enough?"
+          },
+          {
+            "level": "h3",
+            "text": "Is 40 hours of ABA too much?"
+          },
+          {
+            "level": "h3",
+            "text": "Can ABA hours decrease over time?"
+          },
+          {
+            "level": "h3",
+            "text": "Can ABA hours increase over time?"
+          },
+          {
+            "level": "h3",
+            "text": "Does school count toward ABA therapy hours?"
+          },
+          {
+            "level": "h3",
+            "text": "Does insurance decide how many ABA hours my child needs?"
+          },
+          {
+            "level": "h3",
+            "text": "How often should ABA treatment hours be reassessed?"
+          },
+          {
+            "level": "h2",
+            "text": "The Right Amount of ABA Is the Amount the Child Needs Now"
+          }
+        ],
+        "faqCount": 7,
+        "faq": [
+          {
+            "question": "Is 20 hours of ABA a week enough?",
+            "answer": "It can be enough for some children and insufficient for others. The appropriate treatment intensity depends on the scope of the plan, the child&#39;s functional needs, treatment goals, learning opportunities, other services, and response to treatment. A BCBA assessment should explain why X amount of hours is appropriate for that particular child."
+          },
+          {
+            "question": "Is 40 hours of ABA too much?",
+            "answer": "Forty hours is a high-intensity schedule and may be appropriate within some comprehensive ABA programs, but it should not be treated as a default. The child&#39;s needs, engagement, stamina, health, family circumstances, other services, and progress all matter."
+          },
+          {
+            "question": "Can ABA hours decrease over time?",
+            "answer": "Yes. As goals are met, skills generalize, independence increases, or the child&#39;s school and daily-life needs change, fewer direct treatment hours may become appropriate. A step-down plan should be guided by data rather than treated as a loss of care."
+          },
+          {
+            "question": "Can ABA hours increase over time?",
+            "answer": "They can when assessment and progress data show that the current intensity is not sufficient for identified clinical goals or when significant new needs emerge. Before increasing hours, the team should also consider whether the goals, teaching plan, supervision, setting, health factors, or treatment fidelity need adjustment."
+          },
+          {
+            "question": "Does school count toward ABA therapy hours?",
+            "answer": "School is not automatically counted as ABA therapy. Education and medically necessary ABA have different purposes even when they address overlapping skills. The ABA team should consider the school schedule when planning treatment and coordinate with the educational team when appropriate and permitted."
+          },
+          {
+            "question": "Does insurance decide how many ABA hours my child needs?",
+            "answer": "The clinician makes a treatment recommendation based on assessment findings and medical necessity. An insurer determines what it will authorize under the member&#39;s coverage and criteria. The decisions are related, but they are not the same."
+          },
+          {
+            "question": "How often should ABA treatment hours be reassessed?",
+            "answer": "There is no single reassessment interval that fits every situation. Treatment intensity should be reviewed during formal reassessments and sooner when progress, goals, health, school, family circumstances, engagement, or other important factors change."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/recommended-hours-aba-therapy.webp",
+          "localPath": "/assets/images/recommended-hours-aba-therapy.webp",
+          "sourceAlt": "Autistic child practicing a daily living skill during ABA while a parent and clinician review an individualized weekly treatment schedule nearby",
+          "localAlt": "Autistic child practicing a daily living skill during ABA while a parent and clinician review an individualized weekly treatment schedule nearby",
+          "bytes": 68264,
+          "sha256": "16f38cff31a2ab775b7987d7417e1ca65fe4c0d15b9bd897e67a0a74f30ce870",
+          "width": 800,
+          "height": 533,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/aba-hours-recommendation-delivery.webp?width=800&height=450&name=aba-hours-recommendation-delivery.webp",
+          "localPath": "/assets/images/aba-hours-recommendation-delivery.webp",
+          "sourceAlt": "Flowchart distinguishing clinically recommended, requested, authorized, scheduled, and delivered ABA therapy hours.",
+          "localAlt": "Flowchart distinguishing clinically recommended, requested, authorized, scheduled, and delivered ABA therapy hours.",
+          "bytes": 27418,
+          "sha256": "9dde979966bd3037202851ec17bac87738b49811d2c97c320a16aa82b64a31d7",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/aba-to-group-transition.webp?width=800&height=450&name=aba-to-group-transition.webp",
+          "localPath": "/assets/images/aba-to-group-transition.webp",
+          "sourceAlt": "Autistic child practicing learned skills in a small-group school readiness setting with individualized support nearby.",
+          "localAlt": "Autistic child practicing learned skills in a small-group school readiness setting with individualized support nearby.",
+          "bytes": 35236,
+          "sha256": "14fac3b75fdabe3fd9fbd0499bb923a76918a4e17036fc6ecdee14297a509d4a",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "guide to how ABA therapy and school serve different purposes",
+            "href": "/library/does-aba-therapy-replace-school"
+          },
+          {
+            "text": "ABA therapy and parent consultation services",
+            "href": "/aba-therapy"
+          },
+          {
+            "text": "AIA School Readiness program for younger learners",
+            "href": "/library/aba-school-readiness-arizona"
+          },
+          {
+            "text": "request a consultation with Arizona Institute for Autism",
+            "href": "/lp/early-intervention"
+          }
+        ],
+        "external": [
+          {
+            "text": "CASP ABA Practice Guidelines, Version 3.0",
+            "href": "https://www.casproviders.org/asd-guidelines"
+          },
+          {
+            "text": "National Academies review of ABA standards and treatment intensity",
+            "href": "https://www.nationalacademies.org/read/29139/chapter/6"
+          },
+          {
+            "text": "BACB Ethics Code for Behavior Analysts",
+            "href": "https://www.bacb.com/ethics-information/ethics-codes/"
+          },
+          {
+            "text": "2024 JAMA Pediatrics meta-analysis of intervention amount for young autistic children",
+            "href": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/2819784"
+          },
+          {
+            "text": "2026 individual-participant-data meta-analysis of Early Intensive Behavioral Intervention",
+            "href": "https://pubmed.ncbi.nlm.nih.gov/41502379/"
+          }
+        ]
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home",
+          "href": "/library/autism-after-school-meltdowns"
+        },
+        "next": {
+          "title": "Back to School with Autism: ABA Strategies for a Smoother Transition",
+          "href": "/library/autism-back-to-school-transition"
+        },
+        "related": [
+          {
+            "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+            "alt": "academic, social, communications, and independence skills",
+            "title": "ABA School Readiness for Autistic Children in Arizona",
+            "href": "/library/aba-school-readiness-arizona"
+          },
+          {
+            "image": "/assets/images/autism-social-skills-by-age_hero-1.webp",
+            "alt": "Autistic school-age child and peers working together on a creative group activity in a relaxed community setting.",
+            "title": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+            "href": "/library/autism-social-skills-by-age"
+          },
+          {
+            "image": "/assets/images/aba-therapy-replace-school.webp",
+            "alt": "aba therapy does not replace school",
+            "title": "Does ABA Therapy Replace School?",
+            "href": "/library/does-aba-therapy-replace-school"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/how-many-hours-aba-child-need",
+        "contentFile": "src/content/blog/en/how-many-hours-aba-child-need.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "4ebb737a4ad9732abe6e0e8e3c9e8fd9cb07bb767558559e93e6a2ace8baa4bc",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Clinical, safety, or medical guidance is copied from the published source without independent clinical certification; no conflict with the accepted AIA 18-months-through-8-years general ABA eligibility was identified.",
+      "linkDecisions": [
+        {
+          "sourceHref": "/lp/early-intervention",
+          "implementedHref": "/client-consultation",
+          "reason": "The source CTA targets a separate live landing page that is absent from the accepted Astro route inventory. The existing published Client Consultation page provides the same consultation action; using it avoids a broken cutover link without adding an out-of-scope landing route or redirect."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/picky-eating-autism-parent-guide",
+      "finalUrl": "https://www.azinstitute4autism.com/library/picky-eating-autism-parent-guide",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:49 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:49 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:18 GMT",
+        "xHsCfCacheStatus": "HIT",
+        "xHsContentId": "375092654784",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:18 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "Picky Eating and Autism: A Practical Parent Guide",
+      "metaDescription": "Learn why autistic children may have restricted diets, what parents can try without pressure, and when feeding concerns need medical or specialist evaluation.",
+      "canonical": "https://www.azinstitute4autism.com/library/picky-eating-autism-parent-guide",
+      "displayH1": "Picky Eating and Restricted Diets in Autistic Children",
+      "datePublished": "2026-08-01T22:08:14.000Z",
+      "dateModified": "2026-10-03T20:47:25.542Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 21455,
+        "sourceHtmlSha256": "5c8a6c0569fead88f7db6402b12c76147e08fe1ed434b48cbb3cf8144b984e60",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "Typical picky eating versus autism-related food selectivity"
+          },
+          {
+            "level": "h2",
+            "text": "Why is picky eating common in autism?"
+          },
+          {
+            "level": "h3",
+            "text": "Sensory differences"
+          },
+          {
+            "level": "h3",
+            "text": "Predictability and sameness"
+          },
+          {
+            "level": "h3",
+            "text": "Anxiety and previous negative experiences"
+          },
+          {
+            "level": "h3",
+            "text": "Interoception and appetite awareness"
+          },
+          {
+            "level": "h3",
+            "text": "Oral-motor or swallowing difficulties"
+          },
+          {
+            "level": "h3",
+            "text": "Gastrointestinal, dental, or other medical discomfort"
+          },
+          {
+            "level": "h2",
+            "text": "When restricted eating needs professional evaluation"
+          },
+          {
+            "level": "h2",
+            "text": "Food selectivity, pediatric feeding disorder, and ARFID"
+          },
+          {
+            "level": "h2",
+            "text": "Creating a calmer mealtime environment"
+          },
+          {
+            "level": "h2",
+            "text": "Low-pressure strategies parents can try"
+          },
+          {
+            "level": "h3",
+            "text": "Start with observation"
+          },
+          {
+            "level": "h3",
+            "text": "Offer one familiar food"
+          },
+          {
+            "level": "h3",
+            "text": "Make new foods small and optional"
+          },
+          {
+            "level": "h3",
+            "text": "Use neutral language"
+          },
+          {
+            "level": "h3",
+            "text": "Involve the child outside mealtimes"
+          },
+          {
+            "level": "h3",
+            "text": "Model eating without performing"
+          },
+          {
+            "level": "h3",
+            "text": "Maintain an individualized routine"
+          },
+          {
+            "level": "h2",
+            "text": "What is food chaining?"
+          },
+          {
+            "level": "h2",
+            "text": "Approaches that may increase mealtime stress"
+          },
+          {
+            "level": "h2",
+            "text": "Which professionals can help?"
+          },
+          {
+            "level": "h2",
+            "text": "How ABA may support mealtime skills"
+          },
+          {
+            "level": "h2",
+            "text": "Picky Eating in Autism"
+          },
+          {
+            "level": "h3",
+            "text": "Will my child outgrow picky eating?"
+          },
+          {
+            "level": "h3",
+            "text": "Should I hide vegetables in other foods?"
+          },
+          {
+            "level": "h3",
+            "text": "How many times should I offer a new food?"
+          },
+          {
+            "level": "h3",
+            "text": "Can anxiety make food selectivity worse?"
+          },
+          {
+            "level": "h3",
+            "text": "Does a restricted diet mean my child has ARFID?"
+          },
+          {
+            "level": "h2",
+            "text": "How Arizona Institute for Autism can help"
+          }
+        ],
+        "faqCount": 5,
+        "faq": [
+          {
+            "question": "Will my child outgrow picky eating?",
+            "answer": "Some children gradually become more flexible, while others continue to need support. It is difficult to predict progress from food count alone. Seek guidance when eating affects health, safety, growth, nutrition, distress, or participation."
+          },
+          {
+            "question": "Should I hide vegetables in other foods?",
+            "answer": "Adding nutritious ingredients to accepted foods may sometimes increase nutrient intake, but routinely concealing ingredients can damage trust if the child discovers the change. It also does not necessarily help the child become comfortable with the visible food. Discuss nutritional concerns with a pediatrician or registered dietitian. When appropriate, nutrition support can occur alongside honest, gradual food exploration."
+          },
+          {
+            "question": "How many times should I offer a new food?",
+            "answer": "There is no universal number. Some children need many low-pressure encounters, while others may become more distressed when the same food is repeatedly presented. Focus on the child’s response and the quality of the interaction rather than reaching a predetermined exposure count."
+          },
+          {
+            "question": "Can anxiety make food selectivity worse?",
+            "answer": "Yes. Uncertainty, sensory overload, fear of choking or vomiting, previous pain, and pressure from adults can all increase anxiety around food. Reducing pressure may help, but significant fear or avoidance may require assessment for ARFID, a feeding disorder, or another health concern."
+          },
+          {
+            "question": "Does a restricted diet mean my child has ARFID?",
+            "answer": "No. A limited diet alone does not establish an ARFID diagnosis. ARFID involves specific health, nutritional, supplementation, growth, or functional consequences and must be diagnosed by qualified professionals."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/picky-eating-autism-parent-guide.webp",
+          "localPath": "/assets/images/picky-eating-autism-parent-guide.webp",
+          "sourceAlt": null,
+          "localAlt": "Parent sitting with a child at a kitchen table during a meal.",
+          "bytes": 31910,
+          "sha256": "fa0e9e6143c2a597a40def5423ca6af30e71f33a1818ad07af3c731313a01591",
+          "width": 800,
+          "height": 466,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/food-preferences-characteristics-infographic.webp?width=800&height=600&name=food-preferences-characteristics-infographic.webp",
+          "localPath": "/assets/images/food-preferences-characteristics-infographic.webp",
+          "sourceAlt": "food characteristics that may influence food selectivity, including texture, smell, temperature, color, shape, and predictability",
+          "localAlt": "food characteristics that may influence food selectivity, including texture, smell, temperature, color, shape, and predictability",
+          "bytes": 62848,
+          "sha256": "fce22f933a94f7ad05438e73d034db0247caa4047d4b21b7e20361452f7bf063",
+          "width": 800,
+          "height": 600,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/autism-food-symptom-observations.webp?width=800&height=450&name=autism-food-symptom-observations.webp",
+          "localPath": "/assets/images/autism-food-symptom-observations.webp",
+          "sourceAlt": "autism-food-symptom-observations",
+          "localAlt": "autism-food-symptom-observations",
+          "bytes": 26624,
+          "sha256": "c9ada61a914bfc7d6424fbe3f4094d5befe3a1138d1ea0bed1091d0ff17f8b84",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/food-chaining-example.webp?width=800&height=450&name=food-chaining-example.webp",
+          "localPath": "/assets/images/food-chaining-example.webp",
+          "sourceAlt": "example food chain progressing from a familiar thin French fry to similar potato foods",
+          "localAlt": "example food chain progressing from a familiar thin French fry to similar potato foods",
+          "bytes": 31468,
+          "sha256": "0eb185620abf20a8430538de8740322cd1f4ab4ede2a12dcef496d01fbc57887",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/parent-pediatric-support-team-meeting.webp?width=800&height=450&name=parent-pediatric-support-team-meeting.webp",
+          "localPath": "/assets/images/parent-pediatric-support-team-meeting.webp",
+          "sourceAlt": "parent-pediatric-support-team-meeting",
+          "localAlt": "parent-pediatric-support-team-meeting",
+          "bytes": 28220,
+          "sha256": "905e28ced8d32c9ca0b665f57f9e3305f5c9f75a00de05aa3c60f932ca84cbc4",
+          "width": 800,
+          "height": 450,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "When to seek help",
+            "href": "/#when-restricted-eating-needs-professional-evaluation"
+          },
+          {
+            "text": "Strategies to try",
+            "href": "/#low-pressure-strategies-parents-can-try"
+          },
+          {
+            "text": "Food chaining",
+            "href": "/#what-is-food-chaining"
+          },
+          {
+            "text": "Finding professional support",
+            "href": "/#which-professionals-can-help"
+          },
+          {
+            "text": "Halloween treats and food preferences",
+            "href": "/library/halloween-and-autism"
+          },
+          {
+            "text": "Daily Living Challenges in Autism: Eating, Sleeping and Self-Care",
+            "href": "/library/autism-daily-living-skills-challenges"
+          }
+        ],
+        "external": [
+          {
+            "text": "American Speech-Language-Hearing Association's pediatric feeding and swallowing guidance",
+            "href": "https://www.asha.org/practice-portal/clinical-topics/pediatric-feeding-and-swallowing/"
+          },
+          {
+            "text": "ARFID and other eating disorders from the National Institute of Mental Health",
+            "href": "https://www.nimh.nih.gov/health/publications/eating-disorders"
+          },
+          {
+            "text": "(480) 687-7099",
+            "href": "tel:+14806877099"
+          }
+        ]
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "Does ABA Therapy Replace School?",
+          "href": "/library/does-aba-therapy-replace-school"
+        },
+        "next": {
+          "title": "After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home",
+          "href": "/library/autism-after-school-meltdowns"
+        },
+        "related": [
+          {
+            "image": "/assets/images/hero-aba-preschool-az_800x.jpg",
+            "alt": "academic, social, communications, and independence skills",
+            "title": "ABA School Readiness for Autistic Children in Arizona",
+            "href": "/library/aba-school-readiness-arizona"
+          },
+          {
+            "image": "/assets/images/autism-evaluation-expectations_hero.png",
+            "alt": "Parent and child meeting with a clinician in a calm, play-based autism evaluation setting",
+            "title": "What to Expect at Your Child’s First Autism Evaluation",
+            "href": "/library/autism-evaluation-what-to-expect"
+          },
+          {
+            "image": "/assets/images/communication-skills-autistic-children-hero_img.png",
+            "alt": "A parent and an autistic child smiling while using a picture communication board during playtime.",
+            "title": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+            "href": "/library/communication-social-skills-autistic-children-guide"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/picky-eating-autism-parent-guide",
+        "contentFile": "src/content/blog/en/picky-eating-autism-parent-guide.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "6c036392303cf3c06f725126532abd1c5cc44b98d0e371fb8100dadd5fec477d",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Clinical, safety, or medical guidance is copied from the published source without independent clinical certification; no conflict with the accepted AIA 18-months-through-8-years general ABA eligibility was identified."
+    },
+    {
+      "sourceUrl": "https://www.azinstitute4autism.com/library/sleep-issues-autistic-children",
+      "finalUrl": "https://www.azinstitute4autism.com/library/sleep-issues-autistic-children",
+      "sourceStatus": "verified HTTP 200 from bounded public GET; freshness limited by HubSpot prerender cache",
+      "retrievedAt": "Sun, 11 Oct 2026 03:24:50 GMT",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "cacheEvidence": {
+        "date": "Sun, 11 Oct 2026 03:24:50 GMT",
+        "cacheControl": "s-maxage=36000, max-age=5",
+        "age": null,
+        "cfCacheStatus": null,
+        "etag": null,
+        "lastModified": "Sat, 03 Oct 2026 23:13:20 GMT",
+        "xHsCfCacheStatus": "REVALIDATED",
+        "xHsContentId": "390046809831",
+        "xHsHubId": "241905239",
+        "xHsPrerendered": "Sat, 03 Oct 2026 23:13:20 GMT"
+      },
+      "independentReaderEvidence": "Independent web reader rendered the public article in addition to the bounded HTML GET.",
+      "title": "Sleep Problems in Autism: Causes, Tips & When to Get Help",
+      "metaDescription": "Learn why autistic children may struggle with sleep, what families can try at home, when to seek medical help, and how melatonin fits into care.",
+      "canonical": "https://www.azinstitute4autism.com/library/sleep-issues-autistic-children",
+      "displayH1": "Sleep Issues in Autistic Children: Calmer Nights for the Whole Family",
+      "datePublished": "2026-09-28T18:52:34.000Z",
+      "dateModified": "2026-09-28T18:52:47.748Z",
+      "author": {
+        "display": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "slug": "rula-diab",
+        "archiveUrl": "https://www.azinstitute4autism.com/library/author/rula-diab"
+      },
+      "language": "en",
+      "translationStatus": "none identified or inferred",
+      "category": "Library",
+      "tags": [],
+      "body": {
+        "status": "complete",
+        "sourceSelector": ".blog-post__body",
+        "visibleCharacters": 16459,
+        "sourceHtmlSha256": "b9955a948ca0c85a2517518d05c41a5be1644020ae2ef798c1ba50eda88bbdeb",
+        "headingHierarchy": [
+          {
+            "level": "h2",
+            "text": "What sleep problems are common in autistic children?"
+          },
+          {
+            "level": "h2",
+            "text": "Why can sleep be harder for autistic children?"
+          },
+          {
+            "level": "h3",
+            "text": "Do not overlook medical contributors"
+          },
+          {
+            "level": "h2",
+            "text": "Start with a simple sleep diary"
+          },
+          {
+            "level": "h2",
+            "text": "What can families try first?"
+          },
+          {
+            "level": "h3",
+            "text": "Build a predictable bedtime routine"
+          },
+          {
+            "level": "h3",
+            "text": "Make the sleep environment sensory-friendly"
+          },
+          {
+            "level": "h3",
+            "text": "Support sleep during the day"
+          },
+          {
+            "level": "h2",
+            "text": "What if my autistic child won’t sleep even with a routine?"
+          },
+          {
+            "level": "h2",
+            "text": "When should sleep problems be evaluated medically?"
+          },
+          {
+            "level": "h2",
+            "text": "What about melatonin for autistic children?"
+          },
+          {
+            "level": "h2",
+            "text": "Better sleep usually comes from solving the right problem"
+          },
+          {
+            "level": "h2",
+            "text": "Sleep Problems in Autism"
+          },
+          {
+            "level": "h3",
+            "text": "Why do autistic children have sleep problems?"
+          },
+          {
+            "level": "h3",
+            "text": "How long should a bedtime routine be?"
+          },
+          {
+            "level": "h3",
+            "text": "Should I use a visual schedule at bedtime?"
+          },
+          {
+            "level": "h3",
+            "text": "What should I do about frequent night waking?"
+          },
+          {
+            "level": "h3",
+            "text": "Can snoring be related to sleep apnea?"
+          },
+          {
+            "level": "h3",
+            "text": "Is melatonin safe for autistic children?"
+          },
+          {
+            "level": "h3",
+            "text": "Do weighted blankets improve sleep in autism?"
+          },
+          {
+            "level": "h2",
+            "text": "How Arizona Institute for Autism can help"
+          }
+        ],
+        "faqCount": 7,
+        "faq": [
+          {
+            "question": "Why do autistic children have sleep problems?",
+            "answer": "There is no single cause. Sensory differences, anxiety, circadian rhythm differences, routines, communication needs, daytime habits, co-occurring health conditions, and medications can all contribute."
+          },
+          {
+            "question": "How long should a bedtime routine be?",
+            "answer": "Many families use roughly 20 to 30 minutes, but the best routine is the one that is calm, predictable, and sustainable for the child."
+          },
+          {
+            "question": "Should I use a visual schedule at bedtime?",
+            "answer": "It can help when a child benefits from seeing the sequence of upcoming activities. Keep the number of steps manageable and use activities that are genuinely calming."
+          },
+          {
+            "question": "What should I do about frequent night waking?",
+            "answer": "Track when waking occurs and what happens before the child returns to sleep. Look for patterns involving toileting, discomfort, noise, light, anxiety, or sleep associations. Persistent or prolonged waking should be discussed with a healthcare professional."
+          },
+          {
+            "question": "Can snoring be related to sleep apnea?",
+            "answer": "Yes. Persistent snoring, gasping, choking, or pauses in breathing can be signs of obstructive sleep apnea and should be evaluated medically."
+          },
+          {
+            "question": "Is melatonin safe for autistic children?",
+            "answer": "Melatonin can be useful for some children, but it should be discussed with a healthcare professional. The decision depends on the sleep pattern, health conditions, medications, and strategies already tried."
+          },
+          {
+            "question": "Do weighted blankets improve sleep in autism?",
+            "answer": "Some children find pressure from a weighted blanket comfortable, but current clinical guidance does not support weighted blankets as a routine treatment for sleep disturbance in autistic children. The American Academy of Neurology sleep guideline found insufficient evidence to recommend weighted blankets specifically for improving disrupted sleep. Think of a weighted blanket as an individual comfort preference rather than a proven treatment for insomnia, and consider whether it can be used safely for the particular child."
+          }
+        ]
+      },
+      "assets": [
+        {
+          "kind": "featured",
+          "sourceUrl": "https://www.azinstitute4autism.com/hubfs/sleep-issues-autism-bedtime-routines.webp",
+          "localPath": "/assets/images/sleep-issues-autism-bedtime-routines.webp",
+          "sourceAlt": "Autistic child settling into a calm bedtime routine while a parent supports from nearby in a softly lit bedroom.",
+          "localAlt": "Autistic child settling into a calm bedtime routine while a parent supports from nearby in a softly lit bedroom.",
+          "bytes": 26478,
+          "sha256": "c6c420a7762f54a64a156ceb353bcbd473c67de7de1a0466e789b9b1f6816d7b",
+          "width": 800,
+          "height": 466,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/sleep-diary.webp?width=800&height=600&name=sleep-diary.webp",
+          "localPath": "/assets/images/sleep-diary.webp",
+          "sourceAlt": "Simple sleep diary tracking bedtime, night waking, morning wake time, naps, and daily observations.",
+          "localAlt": "Simple sleep diary tracking bedtime, night waking, morning wake time, naps, and daily observations.",
+          "bytes": 35878,
+          "sha256": "65d92a9a8e517199f458b1441835e5f464982866b65eda1524af558263de4174",
+          "width": 800,
+          "height": 600,
+          "format": "webp"
+        },
+        {
+          "kind": "body",
+          "sourceUrl": "https://www.azinstitute4autism.com/hs-fs/hubfs/bedtime-sensory-comfort.webp?width=800&height=533&name=bedtime-sensory-comfort.webp",
+          "localPath": "/assets/images/bedtime-sensory-comfort.webp",
+          "sourceAlt": "Parent adjusting bedroom lighting to create a comfortable sleep environment for an autistic child.",
+          "localAlt": "Parent adjusting bedroom lighting to create a comfortable sleep environment for an autistic child.",
+          "bytes": 17346,
+          "sha256": "730c1081337480c8658e2a3cd8ee0438b58395c9397c85cee3aeabf96fdd05da",
+          "width": 800,
+          "height": 533,
+          "format": "webp"
+        }
+      ],
+      "links": {
+        "internal": [
+          {
+            "text": "daily living challenges in autism",
+            "href": "/library/autism-daily-living-skills-challenges"
+          },
+          {
+            "text": "sensory processing in autistic children",
+            "href": "/library/sensory-processing"
+          },
+          {
+            "text": "parent and caregiver guide to supporting autistic children",
+            "href": "/library/parents-guide-to-autism-and-aba"
+          },
+          {
+            "text": "building communication skills in autistic children",
+            "href": "/library/communication-social-skills-autistic-children-guide"
+          },
+          {
+            "text": "schedule a consultation with Arizona Institute for Autism",
+            "href": "/client-consultation"
+          }
+        ],
+        "external": [
+          {
+            "text": "American Academy of Pediatrics guidance on identifying, evaluating, and managing autism spectrum disorder",
+            "href": "https://publications.aap.org/pediatrics/article/145/1/e20193447/36917/Identification-Evaluation-and-Management-of"
+          },
+          {
+            "text": "healthy sleep habits guidance for families",
+            "href": "https://www.healthychildren.org/English/healthy-living/sleep/Pages/Healthy-Sleep-Habits-How-Many-Hours-Does-Your-Child-Need.aspx"
+          },
+          {
+            "text": "American Academy of Neurology practice guideline for sleep problems in autistic children and adolescents",
+            "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7238942/"
+          },
+          {
+            "text": "American Academy of Neurology sleep guideline",
+            "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7238942/"
+          }
+        ]
+      },
+      "relatedNavigation": {
+        "previous": {
+          "title": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+          "href": "/library/autism-social-skills-by-age"
+        },
+        "next": {
+          "title": "Halloween and Autism: Making the Holiday Comfortable, Safe, and Fun",
+          "href": "/library/halloween-and-autism"
+        },
+        "related": [
+          {
+            "image": "/assets/images/hero-summer-aba.webp",
+            "alt": "aba therapy summer time tips for parents and caregivers",
+            "title": "How to Support ABA Therapy Over Summer Break",
+            "href": "/library/aba-therapy-summer-routine-tips"
+          },
+          {
+            "image": "/assets/images/hero-play-leisure-skills-children-autism_800x.avif",
+            "alt": "play and leisure are important tools for growth",
+            "title": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+            "href": "/library/play-leisure-skills"
+          },
+          {
+            "image": "/assets/images/daily-living-challenges-autism.webp",
+            "alt": "daily living challenges in autism",
+            "title": "Daily Living Challenges in Autism: Eating, Sleeping & Self-Care",
+            "href": "/library/autism-daily-living-skills-challenges"
+          }
+        ]
+      },
+      "destination": {
+        "route": "/library/sleep-issues-autistic-children",
+        "contentFile": "src/content/blog/en/sleep-issues-autistic-children.mdx",
+        "format": "MDX because the source includes an FAQ accordion",
+        "contentSha256": "c3d99fbceb708fee3e5768037f63dad09ba2ac274d572d30466e3ebd1b99cada",
+        "publicationDecision": "publish as an ordinary locally canonical English Library article",
+        "authorReference": "rula-diab",
+        "draft": false,
+        "noindex": false,
+        "hashScope": "UTF-8 bytes of the final destination content file"
+      },
+      "reviewNote": "Clinical, safety, or medical guidance is copied from the published source without independent clinical certification; no conflict with the accepted AIA 18-months-through-8-years general ABA eligibility was identified."
+    }
+  ],
+  "humanReview": {
+    "clinicalEditorial": "The migration reproduces public clinical, medical, safety, and legal wording. It does not certify those claims; AIA clinical/editorial review remains appropriate.",
+    "translations": "No Spanish or Arabic article translations were created or inferred.",
+    "organization": "Rula Diab attribution is source-supported for all nine articles. This does not infer Team membership or current employment beyond the public byline.",
+    "existingContentDrift": [
+      "Spanish self-advocacy publication-date history remains unreconciled.",
+      "Existing English and Spanish school-readiness content/FAQ drift remains separately bounded.",
+      "Previously recorded age/program descriptions and related-post title drift remain for a separate existing-content review.",
+      "Modification timestamps on other previously migrated articles remain unreconciled."
+    ]
+  },
+  "updatedAt": "2026-10-11T05:02:48.558Z",
+  "paginationEvidence": {
+    "observedAt": "2026-10-11T05:02:48.557Z",
+    "method": "Independent read-only web rendering of the two public page-6 URLs; the reader reported each page as crawled today but did not expose HTTP/cache headers.",
+    "routes": [
+      {
+        "url": "https://www.azinstitute4autism.com/library/page/6",
+        "visibleCards": [
+          "Critical Thinking Skills for Children with Autism",
+          "November AIA Update",
+          "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+          "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+          "4 Ways on How to Reduce Behavior Management"
+        ]
+      },
+      {
+        "url": "https://www.azinstitute4autism.com/library/author/rula-diab/page/6",
+        "visibleCards": [
+          "Critical Thinking Skills for Children with Autism",
+          "November AIA Update",
+          "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+          "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+          "4 Ways on How to Reduce Behavior Management"
+        ]
+      }
+    ],
+    "result": "Both public page-6 families show the same five records, dates, and order as the derived local catalog. This supports current ordering but does not independently prove HubSpot origin freshness."
+  }
+}

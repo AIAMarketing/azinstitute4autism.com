@@ -1,12 +1,14 @@
 ---
 title: "Community Highlights: Meet Rula Diab of Arizona Institute for Autism"
-description: "Read about Rula Diab"
+description: "Read about Rula Diab's mission to make ABA therapy accessible to children with Autism Spectrum Disorder through her Arizona Institute for Autism."
 slug: "community-highlight-meet-rula-diab"
 canonical: "https://voyagephoenix.com/interview/community-highlights-meet-rula-diab-of-arizona-institute-for-autism/"
 lang: "en"
 translationKey: "community-highlight-meet-rula-diab"
 featuredImage: "/assets/images/hero-community-highlight-meet-rula-diab_800x.jpg"
+alt: "Portrait of Rula Diab, founder and clinical director of the Arizona Institute for Autism."
 date: "2023-10-24"
+updatedDate: "2025-05-27"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -58,6 +60,6 @@ We accept a variety of insurance carriers, including Blue Cross Blue Shield, Uni
 
 ***Contact Info:***
 
-- Website: [https://www.azinstitute4autism.com](../index)
+- Website: [https://www.azinstitute4autism.com](/)
 
 - Instagram: [https://www.linkedin.com/company/azinstituteforautism](https://www.linkedin.com/company/azinstituteforautism)

@@ -7,7 +7,9 @@ canonical: "https://www.azinstitute4autism.com/library/autism-self-advocacy-skil
 lang: "en"
 translationKey: "autism-self-advocacy-skills-aba"
 featuredImage: "/assets/images/hero-teach-self-advocacy.webp"
+alt: "A diverse group of children smile while lying together on the grass."
 date: "2024-12-02"
+updatedDate: "2026-10-03"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -33,6 +35,8 @@ Applying this skill to children with autism, self-advocacy might look like:
 - Choosing between activities or items.
 
 - Saying “no” to something they dislike or are uncomfortable with.
+
+Our [Halloween planning guide](/library/halloween-and-autism) shows how families can make room for “no,” “break,” and “all done” during a community outing.
 
 Teaching self-advocacy empowers children to:
 

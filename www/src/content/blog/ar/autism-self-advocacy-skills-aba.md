@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-s
 lang: "ar"
 translationKey: "autism-self-advocacy-skills-aba"
 featuredImage: "/assets/images/hero-teach-self-advocacy.webp"
+alt: "مجموعة من الأطفال يبتسمون وهم مستلقون معًا على العشب."
 date: "2024-12-02"
+updatedDate: "2025-09-09"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -32,6 +34,8 @@ draft: false
 - الاختيار بين الأنشطة أو الأشياء.
 
 - قول «لا» لشيء لا يحبّونه أو يشعرون بعدم الارتياح تجاهه.
+
+يوضّح [دليلنا للتخطيط للهالوين (بالإنجليزية)](/library/halloween-and-autism) كيف يمكن للأسر إتاحة المجال لقول «لا» و«استراحة» و«انتهيت» أثناء نزهة في المجتمع.
 
 يُمكّن تعليم الدفاع عن النفس الأطفال من:
 

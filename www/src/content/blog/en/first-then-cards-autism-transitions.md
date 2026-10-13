@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/first-then-cards-autism-t
 lang: "en"
 translationKey: "first-then-cards-autism-transitions"
 featuredImage: "/assets/images/hero-first-then-cards.webp"
+alt: "A clinician shows First/Then picture cards to a child during a learning activity."
 date: "2025-06-01"
+updatedDate: "2025-12-02"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -107,4 +109,4 @@ Located in Scottsdale within Phoenix's East Valley, the Arizona Institute for Au
 
 -   **In-Home Therapy**: Available in Tucson to provide support within your child's natural environment.
 
-- **Upcoming AIA Gifted Shop** : Soon, you'll be able to access a variety of visual support tools, including First/Then cards and PECS collections, through our online storefront. Stay tuned for updates.
+- **Upcoming AIA Gifted Shop** : Soon, you'll be able to access a variety of visual support tools, including First/Then cards and PECS collections, through our online storefront. [Stay tuned for updates](/library/first-then-cards-autism-transitions).

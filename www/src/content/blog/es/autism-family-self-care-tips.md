@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/es/library/autism-family-self-car
 lang: "es"
 translationKey: "autism-family-self-care-tips"
 featuredImage: "/assets/images/hero-self-care-priority.webp"
+alt: "Un letrero que dice «Mental Health Matters» junto a una persona que descansa la cabeza."
 date: "2026-04-09"
+updatedDate: "2026-04-09"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -37,6 +39,6 @@ El [autocuidado](https://www.autismparentingmagazine.com/ways-reducing-stress-ga
 
 ## Recuerda: Tú también mereces cuidado
 
-En el [Instituto de Autismo de Arizona](../../index), entendemos que cuidar a un niño con autismo es un viaje que requiere equilibrio. Creemos que el bienestar de los padres de niños con autismo es tan importante como las terapias que brindamos a los niños. Eres el mayor defensor de tu hijo y la fuente de apoyo más constante. Para seguir siendo ese pilar de fortaleza, es esencial priorizar tu salud, felicidad y paz mental.
+En el [Instituto de Autismo de Arizona](/), entendemos que cuidar a un niño con autismo es un viaje que requiere equilibrio. Creemos que el bienestar de los padres de niños con autismo es tan importante como las terapias que brindamos a los niños. Eres el mayor defensor de tu hijo y la fuente de apoyo más constante. Para seguir siendo ese pilar de fortaleza, es esencial priorizar tu salud, felicidad y paz mental.
 
 Estamos aquí para apoyar, no solo el desarrollo de su hijo, sino también su viaje como padres durante las sesiones de consulta para padres. Si alguna vez te sientes abrumado, debes saber que no estás solo. Apóyate en tu red de apoyo, practica el autocuidado y tómalo un día a la vez.

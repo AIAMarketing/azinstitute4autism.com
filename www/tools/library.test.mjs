@@ -53,14 +53,154 @@ function record(overrides = {}) {
   };
 }
 
+const phase6CArticles = [
+  ['autism-after-school-meltdowns', '2026-09-01', '2026-09-02'],
+  ['autism-back-to-school-transition', '2026-09-10', '2026-09-10'],
+  ['autism-daily-living-skills-challenges', '2026-07-01', '2026-07-09'],
+  ['autism-social-skills-by-age', '2026-09-24', '2026-09-24'],
+  ['does-aba-therapy-replace-school', '2026-07-08', '2026-07-22'],
+  ['halloween-and-autism', '2026-10-01', '2026-10-03'],
+  ['how-many-hours-aba-child-need', '2026-09-08', '2026-09-08'],
+  ['picky-eating-autism-parent-guide', '2026-08-01', '2026-10-03'],
+  ['sleep-issues-autistic-children', '2026-09-28', '2026-09-28']
+];
+
 test('actual catalog groups every eligible post by locale and preserves syndicated noindex records', () => {
-  assert.deepEqual(Object.fromEntries(Object.entries(catalog.byLocale).map(([locale, items]) => [locale, items.length])), { en: 46, es: 12, ar: 7 });
-  assert.equal(catalog.all.length, 65);
+  assert.deepEqual(Object.fromEntries(Object.entries(catalog.byLocale).map(([locale, items]) => [locale, items.length])), { en: 55, es: 12, ar: 7 });
+  assert.equal(catalog.all.length, 74);
   for (const slug of ['community-highlight-meet-rula-diab', 'new-aia-scottsdale-office']) {
     assert.ok(catalog.byLocale.en.some(({ search }) => search.url === `/library/${slug}`));
   }
-  assert.equal(new Set(catalog.all.map(({ route }) => route)).size, 65);
+  assert.equal(new Set(catalog.all.map(({ route }) => route)).size, 74);
   assert.ok(catalog.all.every(({ search }) => search.author.name === 'Rula Diab'));
+});
+
+test('all nine Phase 6C records are source-backed, public English articles with complete collection metadata', async () => {
+  for (const [slug, date, updatedDate] of phase6CArticles) {
+    const entry = entries.find((item) => item.collection === 'blog' && item.id === `en/${slug}`);
+    assert.ok(entry, slug);
+    assert.equal(entry.data.slug, slug);
+    assert.equal(entry.data.lang, 'en');
+    assert.equal(entry.data.author, 'rula-diab');
+    assert.equal(entry.data.category, 'Library');
+    assert.equal(entry.data.draft, false);
+    assert.equal(entry.data.date, date);
+    assert.equal(entry.data.updatedDate, updatedDate);
+    assert.equal(entry.data.canonical, `${site}/library/${slug}`);
+    assert.equal(entry.data.translationKey, undefined);
+    assert.ok(entry.data.title && entry.data.description && entry.data.featuredImage && entry.data.alt);
+    assert.match(entry.body, /<FAQAccordion/);
+    assert.ok(catalog.byLocale.en.find((item) => item.route === `/library/${slug}`).search.headings.length > 0);
+    await readFile(path.join(project, 'public', entry.data.featuredImage));
+  }
+});
+
+test('Phase 6C.2 material reconciliations retain the complete source-backed structure', async () => {
+  const expected = [
+    {
+      id: 'en/aba-school-readiness-arizona',
+      title: 'ABA School Readiness in Arizona: A Parent Guide',
+      displayH1: 'ABA School Readiness for Autistic Children in Arizona',
+      updatedDate: '2026-09-17', faqCount: 9, tableCount: 1,
+      images: ['school-readiness-supports-infographic.webp', 'one-to-one-to-group-progression.webp'],
+      headings: ['What Does School Readiness Mean in Arizona?', 'How ABA Therapy May Support School Readiness', 'How AIA Can Help With School Readiness']
+    },
+    {
+      id: 'es/aba-school-readiness-arizona',
+      title: 'Preparación escolar y autismo en Arizona: guía para familias',
+      displayH1: 'Preparación escolar para niños autistas en Arizona: cómo puede ayudar la terapia ABA',
+      updatedDate: '2026-09-25', faqCount: 9, tableCount: 1,
+      images: ['school-readiness-supports-infographic_es.webp', 'one-to-one-to-group-progression_es.webp'],
+      headings: ['¿Qué significa estar preparado para la escuela en Arizona?', 'Cómo puede ayudar la terapia ABA con la preparación escolar', 'Cómo puede ayudar AIA con la preparación escolar']
+    },
+    {
+      id: 'en/aba-school-readiness-guide',
+      title: 'Antecedent Interventions & Consequence Strategies in ABA',
+      displayH1: 'Antecedent and Consequence Interventions in ABA: Strategies and Examples',
+      updatedDate: '2026-08-13', faqCount: 6, tableCount: 3,
+      images: ['antecedent-behavior-consequence.webp', 'reduce-environmental-distractions.webp', 'reinforcement-replacement-behavior.webp'],
+      headings: ['What are antecedents and consequences in ABA?', 'How antecedent and consequence strategies fit with proactive and reactive ABA', 'Individualized ABA support at AIA']
+    },
+    {
+      id: 'ar/aba-school-readiness-guide',
+      title: 'التدخلات التمهيدية واستراتيجيات العواقب في تحليل السلوك التطبيقي',
+      displayH1: 'التدخلات التمهيدية وتدخلات العواقب في تحليل السلوك التطبيقي: استراتيجيات وأمثلة',
+      updatedDate: undefined, faqCount: 6, tableCount: 3,
+      images: ['antecedent-behavior-consequence_ar.svg', 'reduce-environmental-distractions_ar.svg', 'reinforcement-replacement-behavior_ar.svg'],
+      headings: ['ما المقدمات والعواقب في تحليل السلوك التطبيقي؟', 'ما استراتيجيات العواقب في تحليل السلوك التطبيقي؟', 'كيف ترتبط استراتيجيات المقدمات والعواقب بتحليل السلوك التطبيقي الاستباقي والتفاعلي؟']
+    },
+    {
+      id: 'en/autism-fall-break-routine-tips-halloween-thanksgiving',
+      title: 'Autism and Fall Break: Routines and Transition Tips',
+      displayH1: 'Autism and Fall Break: How to Keep Routines Calm and Predictable',
+      updatedDate: '2026-10-03', faqCount: 6, tableCount: 2,
+      images: ['trick-or-treat-porch-800x.jpg', 'quiet-nature-walk-800x.jpg'],
+      headings: ['Why breaks feel hard for autistic learners', 'Halloween strategies that reduce overload', 'Conclusion & Next Steps']
+    }
+  ];
+
+  for (const item of expected) {
+    const entry = entries.find(({ collection, id }) => collection === 'blog' && id === item.id);
+    assert.ok(entry, item.id);
+    assert.equal(entry.data.title, item.title);
+    assert.equal(entry.data.displayH1, item.displayH1);
+    assert.equal(entry.data.updatedDate, item.updatedDate);
+    assert.equal((entry.body.match(/["']question["']\s*:/gu) ?? []).length, item.faqCount, item.id);
+    assert.equal((entry.body.match(/<table>/gu) ?? []).length, item.tableCount, item.id);
+    for (const heading of item.headings) assert.ok(entry.body.includes(`>${heading}</h`), `${item.id}: ${heading}`);
+    for (const image of item.images) {
+      assert.ok(entry.body.includes(`/assets/images/${image}`), `${item.id}: ${image}`);
+      await readFile(path.join(project, 'public/assets/images', image));
+    }
+  }
+
+  assert.equal(entries.filter(({ collection, id }) => collection === 'blog' && id === 'en/aba-school-readiness-guide').length, 1);
+  assert.equal(entries.filter(({ collection, id }) => collection === 'blog' && id === 'ar/aba-school-readiness-guide').length, 1);
+  assert.match(entries.find(({ id }) => id === 'en/autism-fall-break-routine-tips-halloween-thanksgiving').body,
+    /\[Halloween and autism\]\(\/library\/halloween-and-autism\)/u);
+});
+
+test('Phase 6C.3 reconciles audited article metadata and Arabic visual translations', async () => {
+  const blog = entries.filter(({ collection }) => collection === 'blog');
+  assert.equal(blog.length, 74);
+  assert.ok(blog.every(({ data }) => typeof data.alt === 'string' && data.alt.trim()),
+    'Every currently audited featured image is informative and has a deliberate localized description');
+
+  const missingModified = blog.filter(({ data }) => data.updatedDate === undefined).map(({ id }) => id);
+  assert.deepEqual(missingModified, ['ar/aba-school-readiness-guide'],
+    'The newly translated Arabic article must not inherit the superseded public article timestamp');
+
+  const headings = new Map([
+    ['ar/first-then-cards-autism-transitions', 'بطاقات "أولًا/ثم": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد'],
+    ['es/executive-functioning-skills-autism', 'Habilidades de funcionamiento ejecutivo y autismo'],
+    ['es/parents-guide-to-autism-and-aba', 'Guía de Autismo para Padres y Cuidadores'],
+    ['en/communication-social-skills-autistic-children-guide', 'Building Communication & Social Skills in Autistic Children: A Practical Guide for Families'],
+    ['en/executive-functioning-skills-autism', 'Executive Functioning Skills and Autism'],
+    ['en/individualized-aba-therapy', 'Individualized Care Plans in ABA Therapy'],
+    ['en/parents-guide-to-autism-and-aba', 'Autism Guide for Parents and Caregivers']
+  ]);
+  for (const [id, displayH1] of headings) assert.equal(blog.find((entry) => entry.id === id).data.displayH1, displayH1, id);
+
+  const descriptions = new Map([
+    ['en/aba-therapy-benefits', "Discover how ABA therapy, tailored to each child's unique needs, can enhance social skills, communication, and independence in children with autism."],
+    ['en/community-highlight-meet-rula-diab', "Read about Rula Diab's mission to make ABA therapy accessible to children with Autism Spectrum Disorder through her Arizona Institute for Autism."],
+    ['en/new-aia-scottsdale-office', "Discover how Arizona Institute for Autism's new Scottsdale office expands autism services, empowering lives with integrity and excellence. Learn more!"],
+    ['en/november-2022-aia-update', "Nov 2022: Arizona Institute for Autism expresses gratitude to families for their support and commitment, highlighting the community's strength and unity."]
+  ]);
+  for (const [id, description] of descriptions) assert.equal(blog.find((entry) => entry.id === id).data.description, description, id);
+
+  const arabic = blog.find(({ id }) => id === 'ar/aba-school-readiness-guide');
+  assert.equal((arabic.body.match(/class="article-diagram-scroll"/gu) ?? []).length, 3);
+  assert.equal((arabic.body.match(/role="region"/gu) ?? []).length, 3);
+  assert.equal((arabic.body.match(/tabindex="0"/gu) ?? []).length, 3);
+  for (const name of ['antecedent-behavior-consequence_ar.svg', 'reduce-environmental-distractions_ar.svg', 'reinforcement-replacement-behavior_ar.svg']) {
+    assert.ok(arabic.body.includes(`/assets/images/${name}`), name);
+    const svg = await readFile(path.join(project, 'public/assets/images', name), 'utf8');
+    assert.match(svg, /^<svg/u);
+    assert.match(svg, /data:image\/webp;base64,/u, `${name} embeds its exact source-backed raster`);
+    assert.match(svg, /[\u0600-\u06ff]/u, `${name} contains Arabic visual labels`);
+  }
+  assert.doesNotMatch(arabic.body, /\/assets\/images\/(?:antecedent-behavior-consequence|reduce-environmental-distractions|reinforcement-replacement-behavior)\.webp/u);
 });
 
 test('catalog ordering is date descending with route ascending as the stable tie-breaker', () => {
@@ -198,17 +338,17 @@ test('pagination handles empty, boundary and exact-multiple catalogs without emp
   assert.equal(paginateLibraryItems([1], 1, 0), null);
 });
 
-test('current catalogs generate only five numbered Library routes with expected slices', () => {
+test('current catalogs generate six English and two Spanish Library pages with expected slices', () => {
   assert.deepEqual(paginationPublications.map(({ route }) => route), [
-    '/es/library/page/2', '/library/page/2', '/library/page/3', '/library/page/4', '/library/page/5'
+    '/es/library/page/2', '/library/page/2', '/library/page/3', '/library/page/4', '/library/page/5', '/library/page/6'
   ]);
   assert.deepEqual(Object.fromEntries(['en', 'es', 'ar'].map((locale) => {
     const root = paginateLibraryItems(catalog.byLocale[locale], 1);
     return [locale, { total: root.totalItems, pages: root.totalPages }];
   })), {
-    en: { total: 46, pages: 5 }, es: { total: 12, pages: 2 }, ar: { total: 7, pages: 1 }
+    en: { total: 55, pages: 6 }, es: { total: 12, pages: 2 }, ar: { total: 7, pages: 1 }
   });
-  assert.deepEqual([1, 2, 3, 4, 5].map((page) => paginateLibraryItems(catalog.byLocale.en, page).items.length), [10, 10, 10, 10, 6]);
+  assert.deepEqual([1, 2, 3, 4, 5, 6].map((page) => paginateLibraryItems(catalog.byLocale.en, page).items.length), [10, 10, 10, 10, 10, 5]);
   assert.deepEqual([1, 2].map((page) => paginateLibraryItems(catalog.byLocale.es, page).items.length), [10, 2]);
   assert.equal(paginateLibraryItems(catalog.byLocale.ar, 1).items.length, 7);
   for (const publication of paginationPublications) {
@@ -220,9 +360,9 @@ test('current catalogs generate only five numbered Library routes with expected 
 
 test('generated page inventory follows catalog growth and removal without manual routes', () => {
   const english = catalog.byLocale.en;
-  const withFiveMore = [...english, ...english.slice(0, 5)];
-  const grown = { ...catalog, byLocale: { ...catalog.byLocale, en: withFiveMore } };
-  assert.ok(createLibraryPaginationPublications(grown, manifest, site).some(({ route }) => route === '/library/page/6'));
+  const withSixMore = [...english, ...english.slice(0, 6)];
+  const grown = { ...catalog, byLocale: { ...catalog.byLocale, en: withSixMore } };
+  assert.ok(createLibraryPaginationPublications(grown, manifest, site).some(({ route }) => route === '/library/page/7'));
   const reduced = { ...catalog, byLocale: { ...catalog.byLocale, en: english.slice(0, 40) } };
   assert.deepEqual(createLibraryPaginationPublications(reduced, manifest, site)
     .filter(({ libraryPage }) => libraryPage.locale === 'en').map(({ route }) => route), [
@@ -270,9 +410,9 @@ test('catalog rejects duplicate routes and missing or ambiguous locale authors',
   ]), /Missing or ambiguous article author/);
 });
 
-test('heading extraction ignores fenced code and strips Markdown/MDX presentation syntax', () => {
-  assert.deepEqual(extractMarkdownHeadings(`## Visible **heading**\n\n\`\`\`md\n## Hidden code\n\`\`\`\n## [Linked heading](/path)\n## <Widget script="ignored" />\n## ![Image heading](/image.jpg)`), [
-    'Visible heading', 'Linked heading', 'Image heading'
+test('heading extraction includes visible Markdown and literal HTML headings while ignoring code and MDX implementation', () => {
+  assert.deepEqual(extractMarkdownHeadings(`## Visible **heading**\n\n\`\`\`md\n## Hidden code\n\`\`\`\n## [Linked heading](/path)\n<h2 id="source-anchor">Source heading</h2>\n## <Widget script="ignored" />\n## ![Image heading](/image.jpg)`), [
+    'Visible heading', 'Linked heading', 'Source heading', 'Image heading'
   ]);
 });
 
@@ -379,7 +519,7 @@ test('build emits one deterministic, minimal UTF-8 index per locale', () => {
   const first = artifacts.get('staging').indexes;
   const second = artifacts.get('indexing').indexes;
   assert.deepEqual(second, first);
-  assert.deepEqual(Object.fromEntries(Object.entries(first).map(([locale, records]) => [locale, records.length])), { en: 46, es: 12, ar: 7 });
+  assert.deepEqual(Object.fromEntries(Object.entries(first).map(([locale, records]) => [locale, records.length])), { en: 55, es: 12, ar: 7 });
   for (const [locale, records] of Object.entries(first)) {
     assert.ok(records.every((item) => item.locale === locale && item.url.startsWith(locale === 'en' ? '/library/' : `/${locale}/library/`)));
     assert.equal(new Set(records.map((item) => item.url)).size, records.length);
@@ -395,7 +535,7 @@ test('build emits one deterministic, minimal UTF-8 index per locale', () => {
 test('Library roots and numbered pages render exact slices with progressive search controls', () => {
   for (const [route, locale, count] of [
     ['/library', 'en', 10], ['/library/page/2', 'en', 10], ['/library/page/3', 'en', 10],
-    ['/library/page/4', 'en', 10], ['/library/page/5', 'en', 6],
+    ['/library/page/4', 'en', 10], ['/library/page/5', 'en', 10], ['/library/page/6', 'en', 5],
     ['/es/library', 'es', 10], ['/es/library/page/2', 'es', 2], ['/ar/library', 'ar', 7]
   ]) {
     const $ = load(artifacts.get('staging').html.get(route));
@@ -413,7 +553,7 @@ test('Library roots and numbered pages render exact slices with progressive sear
 test('generated Library routes contain every eligible article exactly once and omit invalid pages', () => {
   const html = artifacts.get('staging').html;
   const routeGroups = {
-    en: ['/library', '/library/page/2', '/library/page/3', '/library/page/4', '/library/page/5'],
+    en: ['/library', '/library/page/2', '/library/page/3', '/library/page/4', '/library/page/5', '/library/page/6'],
     es: ['/es/library', '/es/library/page/2'],
     ar: ['/ar/library']
   };
@@ -427,7 +567,7 @@ test('generated Library routes contain every eligible article exactly once and o
     assert.deepEqual(links, catalog.byLocale[locale].map(({ route }) => route), locale);
   }
   for (const route of [
-    '/library/page/1', '/library/page/6', '/library/page/0', '/library/page/02', '/library/page/not-a-number',
+    '/library/page/1', '/library/page/7', '/library/page/0', '/library/page/02', '/library/page/not-a-number',
     '/es/library/page/1', '/es/library/page/3', '/ar/library/page/1', '/ar/library/page/2'
   ]) assert.ok(!html.has(route), route);
 });
@@ -437,7 +577,8 @@ test('pagination navigation uses roots for page 1, valid boundaries, aria-curren
   for (const [route, current, previous, next] of [
     ['/library', '1', null, '/library/page/2'],
     ['/library/page/3', '3', '/library/page/2', '/library/page/4'],
-    ['/library/page/5', '5', '/library/page/4', null],
+    ['/library/page/5', '5', '/library/page/4', '/library/page/6'],
+    ['/library/page/6', '6', '/library/page/5', null],
     ['/es/library', '1', null, '/es/library/page/2'],
     ['/es/library/page/2', '2', '/es/library', null]
   ]) {
@@ -457,7 +598,7 @@ test('pagination navigation uses roots for page 1, valid boundaries, aria-curren
 
 test('numbered pages keep full-locale search indexes and hide cards plus pager through one archive boundary', () => {
   for (const [route, locale, expectedIndexCount] of [
-    ['/library/page/3', 'en', 46], ['/es/library/page/2', 'es', 12], ['/ar/library', 'ar', 7]
+    ['/library/page/3', 'en', 55], ['/es/library/page/2', 'es', 12], ['/ar/library', 'ar', 7]
   ]) {
     const $ = load(artifacts.get('staging').html.get(route));
     const search = $('[data-library-search]');
@@ -551,11 +692,11 @@ test('numbered pages are self-canonical, production-indexable, sitemap-listed an
   }
 });
 
-test('eight author archives contain all and only matching eligible posts in stable ten-item slices', () => {
+test('nine author archives contain all and only matching eligible posts in stable ten-item slices', () => {
   const expected = {
-    en: [10, 10, 10, 10, 6], es: [10, 2], ar: [7]
+    en: [10, 10, 10, 10, 10, 5], es: [10, 2], ar: [7]
   };
-  assert.equal(authorPublications.length, 8);
+  assert.equal(authorPublications.length, 9);
   assert.deepEqual(authorPublications.map(({ route }) => route), [
     '/ar/library/author/rula-diab',
     '/es/library/author/rula-diab',
@@ -564,10 +705,11 @@ test('eight author archives contain all and only matching eligible posts in stab
     '/library/author/rula-diab/page/2',
     '/library/author/rula-diab/page/3',
     '/library/author/rula-diab/page/4',
-    '/library/author/rula-diab/page/5'
+    '/library/author/rula-diab/page/5',
+    '/library/author/rula-diab/page/6'
   ]);
   const html = artifacts.get('staging').html;
-  assert.equal(html.size, 110);
+  assert.equal(html.size, 121);
   for (const [locale, sizes] of Object.entries(expected)) {
     const author = createAuthorResolver(authors)(locale, 'rula-diab');
     const links = [];
@@ -639,7 +781,7 @@ test('every card and post byline uses its resolved locale author without nested 
 test('author publication descriptors and HTML obey noindex, self-canonical, sitemap and translation exclusions in both modes', () => {
   for (const mode of ['staging', 'indexing']) {
     const { html, sitemap } = artifacts.get(mode);
-    assert.equal((sitemap.match(/<url>/g) ?? []).length, mode === 'indexing' ? 97 : 0);
+    assert.equal((sitemap.match(/<url>/g) ?? []).length, mode === 'indexing' ? 107 : 0);
     let hreflang = 0, pages = 0;
     for (const source of html.values()) {
       const $ = load(source), count = $('link[hreflang]').length;
@@ -728,4 +870,169 @@ test('client source uses textContent and contains no analytics, cookies, externa
   assert.doesNotMatch(source, /innerHTML|document\.cookie|localStorage|sessionStorage|analytics|HubSpot/i);
   assert.match(source, /URLSearchParams/);
   assert.match(source, /popstate|hashchange/);
+});
+
+test('article footer relationships resolve through the publication manifest and render in their curated order', async () => {
+  const footers = JSON.parse(await readFile(path.join(project, 'src/data/blog-footers.json'), 'utf8'));
+  const html = artifacts.get('staging').html;
+  for (const item of catalog.all) {
+    const footer = footers[item.entry.id];
+    assert.ok(footer, item.route);
+    const relatedRoutes = footer.related.map(({ href }) => href);
+    assert.equal(new Set(relatedRoutes).size, relatedRoutes.length, `${item.route}: duplicate recommendation`);
+    for (const link of [footer.previous, footer.next, ...footer.related].filter(Boolean)) {
+      const target = manifest.find(({ route }) => route === link.href);
+      assert.ok(target?.eligible && target.entry.collection === 'blog', `${item.route}: unpublished article ${link.href}`);
+      assert.equal(target.entry.data.lang, item.entry.data.lang, `${item.route}: unintended locale change`);
+      assert.notEqual(link.href, item.route, `${item.route}: self-recommendation`);
+      assert.ok(link.title.trim(), item.route);
+    }
+    const $ = load(html.get(item.route));
+    for (const type of ['previous', 'next']) {
+      const anchor = $(`.post-pagination__item--${type} a`);
+      assert.equal(anchor.length, footer[type] ? 1 : 0, `${item.route}: ${type}`);
+      if (footer[type]) {
+        assert.equal(anchor.attr('href'), footer[type].href);
+        assert.equal(anchor.text(), footer[type].title);
+      }
+    }
+    assert.deepEqual($('.related-post h3 a').map((_, a) => ({ title: $(a).text(), href: $(a).attr('href') })).get(),
+      footer.related.map(({ title, href }) => ({ title, href })), item.route);
+    for (const post of footer.related) await readFile(path.join(project, 'public', post.image));
+  }
+});
+
+test('source-backed school, antecedent, fall-break and new-article footer recommendations stay distinct', async () => {
+  const footers = JSON.parse(await readFile(path.join(project, 'src/data/blog-footers.json'), 'utf8'));
+  const related = (id) => footers[id].related.map(({ href }) => href);
+  assert.deepEqual(related('en/aba-school-readiness-arizona'), [
+    '/library/autism-evaluation-what-to-expect', '/library/does-aba-therapy-replace-school', '/library/emotional-regulation-aba'
+  ]);
+  assert.deepEqual(related('es/aba-school-readiness-arizona'), [
+    '/es/library/emotional-regulation-aba', '/es/library/autism-evaluation-what-to-expect', '/es/library/social-pragmatic-communication-autism'
+  ]);
+  assert.deepEqual(related('en/aba-school-readiness-guide'), [
+    '/library/does-aba-therapy-replace-school', '/library/behavior-management-functions-guide', '/library/proactive-reactive-aba-strategies-guide'
+  ]);
+  assert.deepEqual(related('en/autism-fall-break-routine-tips-halloween-thanksgiving'), [
+    '/library/aac-visual-supports-autism', '/library/halloween-and-autism', '/library/autism-social-skills-by-age'
+  ]);
+  for (const locale of ['en', 'es', 'ar']) {
+    const target = entries.find(({ id, collection }) => collection === 'blog' && id === `${locale}/${locale === 'ar' ? 'aba-school-readiness-guide' : 'aba-school-readiness-arizona'}`);
+    const route = `${locale === 'en' ? '' : `/${locale}`}/library/${target.data.slug}`;
+    for (const footer of Object.values(footers)) {
+      for (const link of [footer.previous, footer.next, ...footer.related].filter(Boolean)) {
+        if (link.href === route) assert.equal(link.title, target.data.displayH1);
+      }
+    }
+  }
+  assert.equal(footers['en/autism-friendships-social-play-support'].next.href, '/library/autism-daily-living-skills-challenges');
+  assert.ok(related('en/halloween-and-autism').includes('/library/autism-fall-break-routine-tips-halloween-thanksgiving'));
+});
+
+test('all rendered article-body internal links resolve to eligible publications, assets and unique fragments', async () => {
+  const html = artifacts.get('staging').html;
+  const targets = new Map(routeManifest.filter(({ eligible }) => eligible).map((item) => [item.route, item]));
+  for (const item of catalog.all) {
+    const $ = load(html.get(item.route));
+    const ids = $('[id]').map((_, element) => $(element).attr('id')).get();
+    assert.equal(new Set(ids).size, ids.length, `${item.route}: duplicate fragment IDs`);
+    for (const anchor of $('.blog-post-body a[href]').toArray()) {
+      const raw = $(anchor).attr('href');
+      const url = new URL(raw, `${site}${item.route}`);
+      if (url.origin !== new URL(site).origin) continue;
+      assert.notEqual(url.pathname, '/index', `${item.route}: link to noncanonical homepage alias`);
+      assert.equal(url.searchParams.has('hsLang'), false, `${item.route}: unnecessary HubSpot language query`);
+      if (url.pathname.startsWith('/assets/')) {
+        await readFile(path.join(project, 'public', decodeURIComponent(url.pathname)));
+        continue;
+      }
+      const targetRoute = url.pathname.replace(/\/$/u, '') || '/';
+      assert.ok(targets.get(targetRoute)?.eligible, `${item.route}: unpublished destination ${raw}`);
+      assert.ok(html.has(targetRoute), `${item.route}: missing rendered destination ${raw}`);
+      if (url.hash) {
+        const target = load(html.get(targetRoute));
+        const id = decodeURIComponent(url.hash.slice(1));
+        assert.equal(target('[id]').filter((_, element) => target(element).attr('id') === id).length, 1,
+          `${item.route}: missing/ambiguous fragment ${raw}`);
+      }
+    }
+  }
+});
+
+test('Halloween translations, exact references and functional image links preserve the bounded reconciliation', () => {
+  const html = artifacts.get('staging').html;
+  const obsoleteReferences = new Set([
+    'https://www.cdc.gov/autism/signs-symptoms/index',
+    'https://www.cdc.gov/autism/hcp/diagnosis/screening',
+    'https://www.iidc.indiana.edu/irca/articles/observing-behavior-using-a-b-c-data',
+    'https://www.iidc.indiana.edu/irca/articles/what-is-the-picture-exchange-communication-system-or-pecs'
+  ]);
+  for (const item of catalog.all) {
+    const $ = load(html.get(item.route));
+    for (const anchor of $('.blog-post-body a[href]').toArray()) {
+      assert.equal(obsoleteReferences.has($(anchor).attr('href')), false, `${item.route}: obsolete external reference, including FAQ answers`);
+    }
+  }
+  for (const locale of ['en', 'es', 'ar']) {
+    const route = `${locale === 'en' ? '' : `/${locale}`}/library/autism-self-advocacy-skills-aba`;
+    const $ = load(html.get(route));
+    const link = $('.blog-post-body a[href="/library/halloween-and-autism"]');
+    assert.equal(link.length, 1, route);
+    if (locale === 'es') assert.match(link.text(), /en inglés/u);
+    if (locale === 'ar') assert.match(link.text(), /بالإنجليزية/u);
+    const firstThen = load(html.get(`${locale === 'en' ? '' : `/${locale}`}/library/first-then-cards-autism-transitions`));
+    assert.equal(firstThen(`.blog-post-body a[href="${locale === 'en' ? '' : `/${locale}`}/library/first-then-cards-autism-transitions"]`).length, 1);
+  }
+  for (const slug of ['aac-visual-supports-autism', 'autism-fall-break-routine-tips-halloween-thanksgiving']) {
+    const $ = load(html.get(`/library/${slug}`));
+    assert.equal($('.blog-post-body a[href="/library/halloween-and-autism"]').length, 1);
+  }
+  for (const locale of ['en', 'es']) {
+    const $ = load(html.get(`${locale === 'en' ? '' : `/${locale}`}/library/autism-evaluation-what-to-expect`));
+    assert.equal($('.blog-post-body a[href="https://www.cdc.gov/autism/hcp/diagnosis/screening.html"]').length, 1);
+    const table = $('.blog-post-body table');
+    assert.equal(table.length, 1, 'Screening/evaluation/diagnosis must retain its source table relationships');
+    assert.equal(table.find('thead th').length, 3);
+    assert.equal(table.find('tbody tr').length, 3);
+    assert.deepEqual(table.find('tbody tr').toArray().map(row => $(row).find('td').first().text()),
+      locale === 'en' ? ['Screening', 'Evaluation', 'Diagnosis'] : ['Detección', 'Evaluación', 'Diagnóstico']);
+    assert.equal(table.find('tbody tr').first().find('a[href="https://www.cdc.gov/autism/hcp/diagnosis/screening.html"]').length, 1);
+  }
+  const abc = load(html.get('/library/behavior-modification-techniques-reinforcement-theory'));
+  assert.equal(abc('.blog-post-body a[href="/assets/images/abc-data-template-download.png"] img').length, 1);
+  assert.equal(abc('.blog-post-body a[href="https://www.iidc.indiana.edu/irca/articles/observing-behavior-using-a-b-c-data.html"]').length, 1);
+  const play = load(html.get('/library/play-leisure-skills'));
+  for (const asset of ['play-appearance-infographic.png', 'how-to-support-playtime.png']) {
+    assert.equal(play(`.blog-post-body a[href="/assets/images/${asset}"] img`).length, 1);
+    assert.equal(play(`.blog-post-body > p > img[src="/assets/images/${asset}"]`).length, 0, 'No duplicated lightbox expansion');
+  }
+  assert.equal(play('.blog-post-body a[href^="#"]').length, 0, 'No orphaned lightbox anchors');
+  const playFaq = play('script[type="application/ld+json"]').toArray()
+    .map(element => JSON.parse(play(element).text())).find(entity => entity['@type'] === 'FAQPage');
+  assert.equal(playFaq.mainEntity.length, 4);
+  assert.doesNotMatch(playFaq.mainEntity.at(-1).acceptedAnswer.text, /Schedule a free consultation/u,
+    'The source closing CTA is outside the final FAQ answer');
+  assert.equal(play('.blog-post-body > p > a[href="/client-consultation"]').last().text(), 'Schedule a free consultation');
+  const hours = load(html.get('/library/how-many-hours-aba-child-need'));
+  assert.ok(hours('.blog-post-body a[href="/client-consultation"]').length > 0);
+  assert.equal(hours('.blog-post-body a[href="/lp/early-intervention"]').length, 0, 'Phase 9 ownership gate remains unresolved');
+});
+
+test('article headings exclude adjacent prose while preserving source list structure', () => {
+  const html = artifacts.get('staging').html;
+  for (const [locale, heading] of [['en', 'The questions parents ask us every week'], ['es', 'Las preguntas que los padres nos hacen cada semana']]) {
+    const $ = load(html.get(`${locale === 'en' ? '' : `/${locale}`}/library/social-pragmatic-communication-autism`));
+    const firstHeading = $('.blog-post-body h2').first();
+    assert.equal(firstHeading.text(), heading);
+    assert.equal(firstHeading.next().prop('tagName'), 'P');
+    assert.ok(firstHeading.next().text().length > 60);
+  }
+  const $ = load(html.get('/library/aba-toilet-training-child-autism'));
+  const subheadings = $('.blog-post-body li h3');
+  assert.equal(subheadings.length, 10);
+  for (const element of subheadings.toArray()) {
+    assert.match($(element).text(), /:$/u);
+    assert.ok($(element).parent().text().length > $(element).text().length);
+  }
 });

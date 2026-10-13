@@ -1,12 +1,15 @@
 ---
 title: "Executive Functioning Skills & Autism: Success Strategies Across Ages"
+displayH1: "Executive Functioning Skills and Autism"
 description: "Evidence-based executive functioning strategies for autism: visual supports for planning, emotion regulation, impulse control & problem solving."
 slug: "executive-functioning-skills-autism"
 canonical: "https://www.azinstitute4autism.com/library/executive-functioning-skills-autism"
 lang: "en"
 translationKey: "executive-functioning-skills-autism"
 featuredImage: "/assets/images/hero-executive-functioning-skills-autism.webp"
+alt: "A child draws with colored pencils at an activity table."
 date: "2025-05-01"
+updatedDate: "2025-10-20"
 author: "rula-diab"
 category: "Library"
 tags: []

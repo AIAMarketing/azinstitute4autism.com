@@ -71,7 +71,7 @@ function plainHeading(value: string): string {
   return text.length <= 300 ? text : text.slice(0, 300).trimEnd();
 }
 
-/** Extract bounded visible Markdown headings without parsing code or MDX implementation. */
+/** Extract bounded visible Markdown or literal HTML headings without parsing code or MDX implementation. */
 export function extractMarkdownHeadings(source = ''): string[] {
   const headings: string[] = [];
   let fence: string | undefined;
@@ -83,7 +83,8 @@ export function extractMarkdownHeadings(source = ''): string[] {
       continue;
     }
     if (fence) continue;
-    const match = line.match(/^\s{0,3}#{1,6}\s+(.+?)\s*$/u);
+    const match = line.match(/^\s{0,3}#{1,6}\s+(.+?)\s*$/u)
+      ?? line.match(/^\s*<h[1-6](?:\s+[^>]*)?>(.*?)<\/h[1-6]>\s*$/iu);
     if (!match) continue;
     const heading = plainHeading(match[1]);
     if (heading && !headings.includes(heading)) headings.push(heading);

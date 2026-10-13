@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/library/behavior-management-funct
 lang: "en"
 translationKey: "behavior-management-functions-guide"
 featuredImage: "/assets/images/hero-behavior-functions-management.webp"
+alt: "A child stacks colorful letter blocks during a learning activity."
 date: "2024-06-28"
+updatedDate: "2025-04-18"
 author: "rula-diab"
 category: "Library"
 tags: []

@@ -23,8 +23,10 @@
 - Historical note: the initial migration did not preserve Blog pagination or
   author archives. Phases 6B.2 and 6B.3 replaced that limitation with generated
   English, Spanish, and Arabic Library/author routes derived from the eligible
-  content catalog. The two English page-6 families remain intentionally absent
-  until Phase 6C supplies the nine missing source-supported articles.
+  content catalog. Phase 6C supplied the nine missing source-supported English
+  articles, so `/library/page/6` and
+  `/library/author/rula-diab/page/6` now derive from the complete 55-record
+  English catalog instead of manual route records.
 - Library and author `/page/1` duplicates are represented by nine synchronized
   repository redirect definitions, including the three existing service
   aliases. Redirect activation on deployed hosts remains separately gated.
@@ -42,9 +44,52 @@
 - Activate and verify the approved redirects on the intended hosting stack.
 - Decide and test host-level no-slash normalization for prerendered routes;
   Astro's static output does not enforce that transport behavior by itself.
-- Reconcile the nine missing English articles before accepting
-  `/library/page/6` or `/library/author/rula-diab/page/6` for cutover.
+- Complete editorial, clinical, and organizational review of the nine Phase 6C
+  articles and manually accept both generated English page-6 routes before
+  cutover.
 - Author archives remain `noindex,follow`, sitemap-excluded, and without
   hreflang pending separate content/indexability approval.
 - Add additional page-specific JSON-LD only after business review of the
   appropriate schema.
+## Phase 6C.3 article metadata update — 2026-10-12
+
+The complete 74-record Library corpus was compared with the accepted public
+evidence after Phase 6C.2. Seven remaining public H1 differences now use the
+existing `displayH1` field, and the four truncated English descriptions now
+match their full public values. Sixty same-language records received explicit
+`updatedDate` values supported by matching BlogPosting metadata in two bounded
+evidence passes. The newly translated Arabic antecedent/consequence record is
+the sole deliberate omission because the public Arabic route still represents
+the superseded article and cannot support a modification date for the new
+translation.
+
+The modification metadata does not participate in Library or author sorting;
+the catalog remains ordered by original publication date and normalized route.
+Article hero descriptions now propagate consistently to rendered image alt,
+`og:image:alt`, and `twitter:image:alt`. The two syndicated English records keep
+their external canonicals, noindex policy, sitemap exclusion, and other
+publication exceptions.
+
+The dated source evidence and complete route matrix are in
+`phase-6c3-source-evidence-2026-10-12.json` and
+`phase-6c3-metadata-reconciliation-2026-10-12.md`. Public HubSpot timestamps are
+recorded as metadata evidence and are not described as proof that every CMS
+update was a substantive editorial revision.
+
+## Phase 6C.5 final verification — 2026-10-13
+
+The generated corpus has 121 unique canonical targets, 74 Library articles,
+72 eligible BlogPosting entities and 182 visible/schema-aligned FAQ answers on
+30 articles. The two syndicated articles retain their external canonicals and
+schema exclusions. The play/leisure closing CTA was removed from its last FAQ
+answer and restored after the accordion, matching the public component boundary.
+All 74 original publication dates match the selected source evidence at calendar
+date resolution; 73 supported modification dates remain, with the new Arabic
+antecedent/consequence translation intentionally undated as a revision.
+
+The indexing-enabled build retains 107 sitemap URLs, 174 hreflang links on 53
+routes and nine noindex author archives. The final staging build restores 121
+`noindex,nofollow` pages, an empty sitemap and no hreflang. Nine redirect
+definitions remain unchanged and are not activated by this audit. The final
+report separates technical readiness from outstanding clinical, translation,
+accessibility, landing-page ownership and production-hosting approval gates.

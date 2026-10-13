@@ -6,7 +6,9 @@ canonical: "https://www.azinstitute4autism.com/ar/library/positive-reinforcement
 lang: "ar"
 translationKey: "positive-reinforcement-techniques"
 featuredImage: "/assets/images/hero-positive-reinforcement-techniques.webp"
+alt: "شخص بالغ يقرأ كتابًا مصورًا مع طفلين."
 date: "2025-08-05"
+updatedDate: "2025-09-09"
 author: "rula-diab"
 category: "Library"
 tags: []

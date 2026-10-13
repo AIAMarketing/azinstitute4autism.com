@@ -1,12 +1,15 @@
 ---
 title: "بطاقات أولاً/ثم: تمكين الانتقالات للأطفال المصابين بالتوحد"
+displayH1: "بطاقات \"أولًا/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد"
 description: "تعرّف على كيفية دعم بطاقات أولاً/ثم للانتقال السلس والسلوكيات الإيجابية لدى الأطفال المصابين بالتوحد. اكتشف نصائح عملية وموارد محلية في أريزونا."
 slug: "first-then-cards-autism-transitions"
 canonical: "https://www.azinstitute4autism.com/ar/library/first-then-cards-autism-transitions"
 lang: "ar"
 translationKey: "first-then-cards-autism-transitions"
 featuredImage: "/assets/images/hero-first-then-cards.webp"
+alt: "اختصاصية تعرض بطاقات «أولًا/ثم» لطفل أثناء نشاط تعلّمي."
 date: "2025-09-01"
+updatedDate: "2025-12-02"
 author: "rula-diab"
 category: "Library"
 tags: []
@@ -107,4 +110,4 @@ draft: false
 
 -   **العلاج المنزلي**: متاح لتقديم الدعم داخل بيئة الطفل الطبيعية.
 
-- **متجر AIA القادم** : قريباً ستتمكّن من الوصول إلى مجموعة متنوعة من أدوات الدعم البصري، بما في ذلك بطاقات "أولاً/ثم" ومجموعات PECS، عبر متجرنا الإلكتروني. ترقّبوا التحديثات.
+- **متجر AIA القادم** : قريباً ستتمكّن من الوصول إلى مجموعة متنوعة من أدوات الدعم البصري، بما في ذلك بطاقات "أولاً/ثم" ومجموعات PECS، عبر متجرنا الإلكتروني. [ترقّبوا التحديثات](/ar/library/first-then-cards-autism-transitions).

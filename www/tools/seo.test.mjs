@@ -264,7 +264,7 @@ test('no image means no image-specific metadata and a valid summary card; no alt
     assert.equal($('meta[property^="og:image"], meta[name^="twitter:image"]').length, 0, route);
     assert.equal(meta($, 'twitter:card').attr('content'), 'summary');
   }
-  for (const route of ['/aba-therapy', '/library/autism-self-advocacy-skills-aba']) {
+  for (const route of ['/aba-therapy']) {
     const $ = page(route);
     assert.equal(meta($, 'og:image').length, 1);
     assert.equal(meta($, 'og:image:alt').length, 0);
@@ -338,13 +338,31 @@ test('BlogPosting uses the SEO title, canonical, declared day and matching local
   }
 });
 
-test('missing optional article metadata stays absent, without fabricated modification dates or profile URLs', () => {
+test('missing optional article metadata stays absent and reconciled dates remain source-scoped', () => {
   const schema = schemaOf(page('/library/seo-minimal'), 'BlogPosting')[0];
   for (const key of ['image', 'description', 'dateModified', 'publisher']) assert.ok(!(key in schema), key);
   assert.ok(!('url' in schema.author), 'Phase 6B.3 preserves existing Person name-only attribution');
-  for (const lang of languages) {
-    const actual = schemaOf(page(`${prefix(lang)}/library/autism-self-advocacy-skills-aba`), 'BlogPosting')[0];
-    assert.ok(!('dateModified' in actual), 'Do not import a live timestamp into otherwise unreconciled local content');
+  for (const publication of manifest.filter((item) => item.sitemapEligible && item.entry.collection === 'blog')) {
+    const actual = schemaOf(page(publication.route), 'BlogPosting')[0];
+    const expected = publication.entry.data.updatedDate
+      ? new Date(publication.entry.data.updatedDate).toISOString().slice(0, 10)
+      : undefined;
+    assert.equal(actual.dateModified, expected, publication.route);
+  }
+  assert.ok(!('dateModified' in schemaOf(page('/ar/library/aba-school-readiness-guide'), 'BlogPosting')[0]),
+    'The new Arabic translation does not inherit the superseded public article modification date');
+});
+
+test('audited article featured images expose the deliberate localized description in HTML and social metadata', () => {
+  for (const publication of manifest.filter((item) =>
+    item.eligible && item.entry.collection === 'blog' && !item.route.includes('/seo-')
+  )) {
+    const { entry, route } = publication;
+    const $ = page(route);
+    assert.ok(entry.data.alt?.trim(), route);
+    assert.equal($('.article-featured img').attr('alt'), entry.data.alt, route);
+    assert.equal(meta($, 'og:image:alt').attr('content'), entry.data.alt, route);
+    assert.equal(meta($, 'twitter:image:alt').attr('content'), entry.data.alt, route);
   }
 });
 

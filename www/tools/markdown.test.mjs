@@ -156,11 +156,11 @@ for (const lang of ['en', 'es']) {
     assert.equal(text.split(hours).length - 1, 2);
   });
 
-  test(`${lang}: actual school-readiness prose and table ratios survive`, () => {
+  test(`${lang}: current school-readiness support and program ratios survive`, () => {
     const $ = rendered.get(`school-${lang}`);
-    assert.equal(($('main').text().match(/1:1(?!\d)/g) ?? []).length, lang === 'en' ? 3 : 1);
-    assert.equal(($('main').text().match(/1:10/g) ?? []).length, lang === 'en' ? 1 : 2);
-    assert.ok($('table').text().includes('1:10'));
+    assert.equal(($('main').text().match(/1:1(?!\d)/g) ?? []).length, lang === 'en' ? 1 : 0);
+    assert.equal(($('main').text().match(/1:2(?!\d)/g) ?? []).length, lang === 'en' ? 5 : 4);
+    assert.ok($('main').text().includes(lang === 'en' ? 'children ages 2–6' : 'niños de 2 a 6 años'));
   });
 }
 
