@@ -1,14 +1,14 @@
 # AIA Astro Migration — Living Session Handoff
 
-**Last updated:** October 13, 2026 (UTC)
+**Last updated:** October 14, 2026 (UTC)
 **Repository:** `AIAMarketing/azinstitute4autism.com`
 **Working branch:** `faithful-astro-migration`
-**Last accepted technical implementation:** Phase 6C — Library Content and Multilingual Parity
-**Previous accepted checkpoint:** Phase 6B.5, `a699d467f19fafbfdda5fce1ce6226baa6e5fc3c`
+**Last accepted technical implementation:** Phase 7 — Multilingual Reconciliation
+**Previous accepted checkpoint:** Phase 6C, signed `b5bc95bc2b8e36c58e8b4d8ab4b11391374a7883`
 **Implementation checkpoint:** the commit containing this handoff update; obtain its actual SHA from Git history after the user creates the signed commit.
-**Next work:** read-only production-readiness and integration-gap assessment within the existing migration roadmap.
+**Next milestone:** Phase 8 — Visual and Accessibility Acceptance; then Phase 9 Human-Decision Gates and Phase 10 Final QA/Cutover Readiness.
 
-Phase 6C is technically accepted for checkpoint preparation. Editorial,
+Phase 7 is technically accepted for checkpoint preparation. Editorial,
 accessibility, stakeholder and production-release approval remain separate.
 The user stages, signs and pushes from the host terminal; this handoff does not
 authorize deployment or integration activation.
@@ -27,6 +27,9 @@ Later Phase 6A ratification controls conflicting original recommendations.
 - Phase 6B.4 URL/SEO: `8192ea71c47a7163b40a7fad144ebbd2523282d1`.
 - Phase 6B.5 multilingual navigation/RTL: the signed replacement checkpoint
   `a699d467f19fafbfdda5fce1ce6226baa6e5fc3c`; do not use its superseded unsigned SHA.
+
+- Phase 6C Library/multilingual parity: signed checkpoint
+  `b5bc95bc2b8e36c58e8b4d8ab4b11391374a7883`.
 
 Phase 6B.5 visitor navigation remains independent of SEO hreflang. Published
 locale destinations, explicit fallback notices, native language disclosure,
@@ -59,18 +62,41 @@ The earlier Phase 6B.5 manual acceptance does not cover subsequent Phase 6C work
 Detailed evidence and reviewer checklists are in the
 [final acceptance report](phase-6c5-final-library-acceptance-2026-10-13.md).
 The [checkpoint manifest](phase-6c5-checkpoint-manifest-2026-10-13.md) lists 148
-implementation/evidence paths; this handoff adds the 149th checkpoint path.
+implementation/evidence paths; that checkpoint included its handoff as path 149.
 Historical phase records retain their original context.
+
+## Completed Phase 7 technical sequence
+
+- Recovered Spanish privacy policy with February 19, 2025 revision date,
+  localized metadata and reciprocal English/Spanish policy navigation.
+- Localized actual Spanish form labels, options, instructions, disabled notices
+  and Contact map text using explicitly passed publication locale; no backend enabled.
+- Translated the Spanish reinforcement tip without changing article identity,
+  dates or surrounding content; fluent/clinical approval remains pending.
+- Localized Spanish/Arabic author headings and isolated Arabic BCBA/LBA text;
+  biographies, identities and archive SEO unchanged.
+- Prepared the [nonproduction verification plan](phase-7-nonproduction-verification-plan-2026-10-14.md)
+  and [Phase 9 decision register](phase-9-decision-register-2026-10-14.md).
+  P9-01 through P9-10 all remain **Pending decision**.
+
+See the [Phase 7 reconciliation report](phase-7-multilingual-reconciliation-2026-10-14.md)
+and [checkpoint manifest](phase-7-checkpoint-manifest-2026-10-14.md).
+The non-Library matrix excludes all three Library-root content records:
+20 EN / 8 ES / 1 unpublished AR draft → 20 EN / 9 ES / 1 unpublished AR draft;
+28 → 29 eligible pages and 8 → 9 English–Spanish pairs. The final matrix has
+30 records including the draft. Whole pages-collection counts (including roots)
+are 21/9/2 → 21/10/2, with 9 → 10 English–Spanish pairs. Do not mix populations.
 
 ## Verified technical baseline
 
 | Metric | Result |
 |---|---:|
 | Library articles / locale search records | 55 EN / 12 ES / 7 AR = 74 |
-| Generated HTML routes / unique canonical targets | 121 / 121 |
+| Generated HTML routes / unique canonical targets | 122 / 122 |
 | Author archive routes | 9 |
-| Indexing-enabled sitemap URLs | 107 |
-| Hreflang links / participating routes | 174 / 53 |
+| Indexing-enabled sitemap URLs | 108 |
+| Hreflang links / participating routes | 180 / 55 |
+| Validated page/article translation sets | 25 |
 | Repository redirect definitions | 9, not activated on deployed hosts |
 | Visible/schema-aligned FAQ answers / articles | 182 / 30 |
 
@@ -80,18 +106,18 @@ HTML alias. Search remains locale-scoped, metadata-only and demand-loaded.
 Publication ordering uses original dates, not modification dates. Existing
 syndicated external-canonical/noindex exceptions remain unchanged.
 
-Normal staging output is **121 `noindex,nofollow` HTML pages, an empty sitemap
+Normal staging output is **122 `noindex,nofollow` HTML pages, an empty sitemap
 and no hreflang**. Indexing-enabled validation is local only. No deployment,
 redirect activation, form submission or production integration is authorized.
 
 Final source-matching offline evidence is
-[the October 13 final reconciliation](route-reconciliation-2026-10-13-offline-06-21-20-316Z.json):
+[the Phase 7 reconciliation](route-reconciliation-2026-10-14-offline.json):
 133 dispositions, 70 historical production requests, schema 2. Its source
-fingerprint is `f11726b057b1d2f0a59ee1b952d847712caab05cf2f1539b36e80442372f2b00`.
+fingerprint is `59753ffefd162f9110e05acea73e20147a7fc8286af132ea7b8e1748de180901`.
 Use the explicit evidence path for read-only checks; do not select an excluded
 intermediate automatically or recrawl production to refresh a timestamp.
 
-The final parity classifications are 10 confirmed, 58 with accepted intentional
+The historical Phase 6C.5 parity classifications were 10 confirmed, 58 with accepted intentional
 deviations, one minor discrepancy, five requiring human review, zero material
 discrepancies and zero insufficient-verification records against the selected
 evidence. Findings rely on dated, sometimes cached/prerendered public HubSpot
@@ -99,9 +125,9 @@ representations; they do not establish independent current origin freshness.
 The newer Arabic antecedent/consequence translation intentionally supersedes
 its outdated public Arabic body. Machine-assisted work is not professional approval.
 
-Checkpoint preparation revalidation on October 13 passed sequentially with
-`TMPDIR=/tmp`: Astro check (91 files, zero diagnostics), Markdown 20,
-publication 33, SEO 35, Library 45 and route 10 tests; both build modes;
+Phase 7 checkpoint preparation revalidation on October 14 passed sequentially with
+`TMPDIR=/tmp`: Astro check (92 files, zero diagnostics), Markdown 20,
+publication 33, SEO 35, Library 49 and route 10 tests; both build modes;
 link/image/blog audits with zero failures; explicit offline consistency check;
 and `git diff --check`. The last build restores normal staging safeguards.
 Git identity/signing remains the user’s host-terminal responsibility.
@@ -114,15 +140,23 @@ Git identity/signing remains the user’s host-terminal responsibility.
   2–6 and 1:2 delivery ratio, ABA versus education, Arizona educational guidance,
   functional assessment, behavior intervention, reinforcement, extinction,
   aggression, self-injury, safety, treatment/outcome claims and author roles,
-  credentials and biographies. Source publication alone is not clinical approval.
+  credentials and biographies, including Arabic physician-like wording versus
+  English “clinician.” Source publication alone is not clinical approval.
 - **Fluent Spanish/Arabic and clinical review:** revised Spanish school readiness,
   rewritten Arabic antecedent/consequence guidance and terminology, all three
   localized Arabic diagrams, localized self-advocacy Halloween additions,
   operational labels and cross-language notices remain pending.
-- **Minor localization:** `/es/library/positive-reinforcement-techniques` retains
-  a source-inherited English tip paragraph under “Por qué el refuerzo positivo
-  es importante en el ABA”. It needs bounded fluent/editorial correction;
-  checkpoint preparation does not close it.
+- **Spanish tip review:** Phase 7 corrected the English tip at
+  `/es/library/positive-reinforcement-techniques`. Its fluent-Spanish and
+  clinical/editorial acceptance remains open; historical Phase 6C findings remain intact.
+- **Privacy/legal and trusted-source approval — P9-07:** both policy claims need
+  AIA privacy/legal approval. Spanish privacy was recovered from a cache-qualified
+  response after standard TLS certificate validation failed; fallback disabled
+  certificate verification. Matching captured text does not prove authenticated
+  origin fidelity. Before production, compare against a certificate-validated
+  source or owner-supplied authoritative export with provenance; no trusted
+  comparison is available yet. Fluent Spanish approval remains mandatory.
+  Do not repeat insecure retrieval or rewrite policies to hide this limitation.
 - **Browser/accessibility:** desktop and approximately 390px mobile, keyboard
   focus, JavaScript-disabled browsing, RTL reading order and diagram scrolling,
   Arabic visual-language acceptance and a real screen-reader session remain
@@ -133,6 +167,14 @@ Git identity/signing remains the user’s host-terminal responsibility.
   provisionally `/client-consultation` locally. These are not approved equivalents.
   Do not import the separate landing-pages repository, create a redirect or
   activate a form without explicit authorization.
+- **Employee portal — P9-02:** staff/management access separation, authentication,
+  authorization and employee/clinical data security remain unresolved; current
+  metadata-only route is not a completed portal. See the
+  [portal brief](employee-portal-migration-brief-2026-10-08.md).
+- **Likes/views API — P9-04:** production fallback outside localhost includes
+  credentialed stats requests and interaction writes. Empty configuration/noindex
+  do not isolate it. Hosted review requires separately authorized fail-closed
+  isolation and evidence of zero production API traffic.
 - **Author SEO:** keep archives self-canonical, `noindex,follow` in indexing-enabled
   builds, sitemap-excluded and hreflang-excluded. Changes require explicit approval.
 - **Forms/privacy/analytics/advertising:** approve form destinations and submission
@@ -145,25 +187,22 @@ Git identity/signing remains the user’s host-terminal responsibility.
   trailing-slash HTTPS-to-HTTP-to-HTTPS chain remains explicitly deferred.
   Static-build success does not verify these deployed behaviors.
 
-## Next: production-readiness planning and verification
+## Next: Phase 8 — Visual and Accessibility Acceptance
 
-Start from the signed checkpoint SHA supplied by the user and verify Git history.
-Begin with a read-only architecture and integration-gap inventory, not another
-Library migration or live configuration change. Use the existing roadmap's
-Phase 7 language/form review, Phase 8 full-page visual fidelity and Phase 9
-human-decision gates; do not renumber or invent a conflicting implementation phase.
+Begin from the signed Phase 7 SHA the user supplies; verify branch, history and
+working tree. Use the [verification plan](phase-7-nonproduction-verification-plan-2026-10-14.md)
+for full-page 1440px/approximately 390px review, keyboard/focus, no-JavaScript,
+Spanish forms/privacy, language fallback/navigation, Arabic RTL/diagrams and
+real screen-reader sessions. Record reviewer, date, device, evidence and failures.
+Use an approved local environment first with synthetic data and controlled
+network requests. Do not deploy a hosted preview before API isolation and
+appropriate authorization. No Phase 8 acceptance is implied by this checkpoint.
 
-Inventory Astro/static deployment and environment configuration; hosting
-assumptions; route/redirect requirements; form/API ownership; landing-page and
-employee-portal decisions; privacy, consent and analytics; nonproduction browser
-and accessibility acceptance; rollback and cutover sequencing. Consult the
-[employee-portal decision record](employee-portal-migration-brief-2026-10-08.md)
-without retrieving private staff or clinical records.
-
-Produce a plan separating safe nonproduction technical work, stakeholder
-questions, live-impacting actions and deferred activation. Stop for review before
-implementation or production configuration changes. No DNS, nginx, Cloudflare,
-forms, analytics, advertising or deployment authorization is implied.
+Phase 9 keeps all ten stakeholder decisions pending, including portal/landing
+ownership, form/API/privacy, analytics/advertising, clinical claims, policy
+provenance, author SEO, hosting and launch authorization. Phase 10 covers final
+QA/cutover readiness. Neither a browser pass nor technical translation approval
+clears production gates. Do not renumber the roadmap or begin production changes.
 
 ## Working protocol and protected local files
 
@@ -173,6 +212,15 @@ report evidence and structural diffs before the user stages or commits. Follow
 `AUTONOMOUS-CODEX.md`; do not repair identity/signing or bypass sandbox restrictions.
 
 Do not read, modify, move, delete, stage or checksum root `merge-plan.md`.
-Preserve all four superseded reconciliation files listed under exclusions in the
-checkpoint manifest. Exclude those five files and temporary `.phase6c-stage-paths.nul`
-from the commit. The staging aid is for the user's host terminal only.
+Preserve and exclude these four superseded reconciliation reports without
+reading or modifying their contents:
+
+- `www/reports/route-reconciliation-2026-10-11-offline.json`
+- `www/reports/route-reconciliation-2026-10-12-offline.json`
+- `www/reports/route-reconciliation-2026-10-13-offline.json`
+- `www/reports/route-reconciliation-2026-10-13-offline-06-16-06-857Z.json`
+
+Exclude root `merge-plan.md` and temporary `.phase7-stage-paths.nul` as well.
+The staging aid is for the user's host terminal only; never stage it or use a
+broad Git add. The actual future checkpoint SHA comes from Git after the user
+signs; do not amend merely to insert it here.

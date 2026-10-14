@@ -2,11 +2,16 @@
 import Button from './Button.astro';
 import ContactObfuscation from './ContactObfuscation.astro';
 
+import { formMessages } from '../utils/form-messages';
+
 interface Props {
+  lang?: string;
   title?: string;
 }
 
-const { title = 'Contact AIA' } = Astro.props;
+const { lang = 'en' } = Astro.props;
+const text = formMessages(lang);
+const title = Astro.props.title ?? text.contactHeading;
 ---
 
 <form class="contact-form-card" method="post" action="">
@@ -14,13 +19,13 @@ const { title = 'Contact AIA' } = Astro.props;
   <!-- TODO: Add spam protection before production launch. -->
   <h3 class="contact-form-card__title">{title}</h3>
   <div class="contact-form-card__fields">
-    <label>Parent or guardian name<input name="name" autocomplete="name" /></label>
-    <label>Email<input type="email" name="email" autocomplete="email" /></label>
-    <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
-    <label>Service of interest<select name="service"><option>ABA Therapy</option><option>Autism Evaluation</option><option>Learner Social Club</option><option>Other</option></select></label>
-    <label>How can we help?<textarea name="message" rows="5"></textarea></label>
-    <Button type="submit" disabled aria-describedby="contact-form-note" class="contact-form-card__submit">Submit</Button>
-    <p id="contact-form-note" class="contact-form-card__note">Online submission is not yet connected. Please call <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
+    <label>{text.name}<input name="name" autocomplete="name" /></label>
+    <label>{text.email}<input type="email" name="email" autocomplete="email" /></label>
+    <label>{text.phone}<input type="tel" name="phone" autocomplete="tel" /></label>
+    <label>{text.service}<select name="service">{text.options.map((label) => <option>{label}</option>)}</select></label>
+    <label>{text.message}<textarea name="message" rows="5"></textarea></label>
+    <Button type="submit" disabled aria-describedby="contact-form-note" class="contact-form-card__submit">{text.submit}</Button>
+    <p id="contact-form-note" class="contact-form-card__note">{text.disabled} <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
   </div>
 </form>
 

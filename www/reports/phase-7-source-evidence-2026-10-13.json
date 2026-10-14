@@ -1,0 +1,1595 @@
+{
+  "observedOn": "2026-10-13",
+  "method": "21 bounded public GETs, at least one second apart; robots allows these paths. No scripts executed, no form submission, no production API call. TLS verification initially failed; public curl retrieval bypassed certificate verification. Web reader failed Spanish/privacy and robots; English reader was cached. Content is cache-qualified, not origin freshness or independently verified rendered parity.",
+  "robots": "User-agent: *\nAllow: /\nDisallow: /_hcms/preview/\nDisallow: /hs/manage-preferences/\nDisallow: /hs/preferences-center/\nDisallow: /*?*hs_preview=*\nDisallow: /*?*hsCacheBuster=*\n",
+  "requests": [
+    {
+      "route": "/privacy-policy",
+      "requestedUrl": "https://www.azinstitute4autism.com/privacy-policy",
+      "observedAt": "2026-10-13T21:38:03.188877+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/privacy-policy",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:03 GMT",
+        "date: Tue, 13 Oct 2026 21:38:03 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:19 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:19 GMT"
+      ],
+      "sha256": "6c6c229a8109d34bf1ec693ff05bf458d25d2cb8003f94e71bffb1a5595c5b0a",
+      "title": "Privacy Policy | Arizona Institute for Autism",
+      "description": "Discover how the Arizona Institute for Autism protects your data. Our Privacy Policy details collection, usage, and security to keep your information safe.",
+      "h1": [
+        "Privacy Policy"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/privacy-policy",
+      "headings": [
+        "Introduction",
+        "Information We Collect",
+        "How We Use Your Information",
+        "How We Protect Your Information",
+        "Sharing Your Information",
+        "Your Rights",
+        "Children's Privacy & COPPA Compliance",
+        "Data Protection Agreements (DPA)",
+        "Third-Party Tracking & Website Usage Data",
+        "Changes to This Policy",
+        "Contact Us"
+      ],
+      "bodyText": "Last updated: February 19, 2025 Introduction At Arizona Institute for Autism, we are dedicated to protecting the privacy and security of our website visitors, clients, and their families. This policy explains how we collect, use, and safeguard your personal information. As a healthcare provider, we strictly adhere to the HIPAA (Health Insurance Portability and Accountability Act), COPPA (Children's Online Privacy Protection Act), and all applicable federal and state regulations governing the privacy and security of PHI (Protected Health Information). Information We Collect We may collect the following types of information: Personal Identification Information: Your name, address, phone number, email address, and other contact details. Health Information: Diagnoses, treatment plans, medical history, and other health-related information required to provide autism treatment services. Website Usage Data: Information such as IP addresses, browser type, device type, operating system, and pages visited. This data is collected in a non-identifiable, aggregated form for analytics purposes. Payment Information: Credit card numbers, expiration dates, and other payment details needed to process transactions securely. How We Use Your Information We use the collected information for the following purposes: Providing Services: To deliver autism treatment services, including Applied Behavior Analysis (ABA) therapy and related programs. Communication: To respond to inquiries, send newsletters, and provide updates about our services. Marketing (Non-Personalized & HIPAA-Compliant): We use aggregated, anonymized data to analyze trends and enhance our outreach efforts. We do not use any health-related data for targeted advertising or remarketing. PHI is never shared with third-party marketers, advertisers, or analytics platforms. Research and Development: To improve our services, optimize website functionality, and support research in autism treatment. Legal Compliance: To comply with HIPAA, COPPA, and other relevant laws, including meeting legal and law enforcement requirements. How We Protect Your Information We implement robust security measures to ensure the confidentiality and integrity of your data: Encryption: We use HIPAA-compliant encryption protocols to protect data during transmission and storage. Access Controls: Only authorized personnel, with proper background checks and confidentiality training, can access your information. Secure Data Storage: All data is stored on secure, HIPAA-compliant servers, both physically and electronically. Incident Response: We maintain a comprehensive data breach response plan to promptly address and mitigate any security incidents. Sharing Your Information We do not sell, rent, or share PHI with third-party advertisers. Information may be shared only in the following necessary and permitted circumstances: Service Providers: Contractors, vendors, and partners who assist in delivering our services in a HIPAA-compliant manner. Insurance Companies: For processing claims and obtaining reimbursement for services. Research Institutions: In a de-identified format to support research and the advancement of autism treatment. Legal Obligations: When required by law, regulation, or court order. Your Rights You have the following rights regarding your personal and health information: Access: You may request a copy of your records at any time. Correction: If any information is incorrect or incomplete, you can request corrections. Opt-Out: You may opt out of receiving newsletters, marketing emails, or other non-essential communications. Deletion: You can request the deletion of your personal data when legally permissible. Please note that some records must be retained in accordance with HIPAA regulations. Children's Privacy & COPPA Compliance We comply with the Children's Online Privacy Protection Act. This means: We obtain verifiable parental consent before collecting personal information from children under 13. We do not knowingly collect information from children without parental or guardian approval. Any data collected from children is used solely for autism treatment services and is never shared for marketing purposes. If you believe we have inadvertently collected data from a child without proper consent, please contact us immediately for removal. Data Protection Agreements (DPA) We have established Data Protection Agreements with our service providers and contractors. These agreements require that: Your information is processed in accordance with HIPAA and all applicable data protection laws. No personal health data is used for advertising, analytics tracking, or marketing purposes. PHI is never shared with third-party marketing platforms. Third-Party Tracking & Website Usage Data Our website uses anonymous analytics to improve functionality. Specifically: We do not track website visitors for personalized health-related advertising. We do not use third-party advertising cookies to collect health-related data. We do not engage in behavioral tracking that targets users based on health conditions. These practices are designed to ensure compliance with healthcare and sensitive information policies. Changes to This Policy We may update this privacy policy periodically. All changes will be posted on this page with an updated Last updated date. Your continued use of our website and services after such changes signifies your acceptance of the revised terms. Contact Us If you have any questions or concerns about this privacy policy or wish to exercise your privacy rights, please contact us at: Email: info@azinstitute4autism.com Address: 8901 E. Raintree Drive, Suite #160 Scottsdale Arizona 85260 Phone: (480) 687-7099 By using our website and services, you confirm that you have read, understood, and agree to the terms outlined in this privacy policy.",
+      "links": [
+        {
+          "text": "HIPAA",
+          "href": "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
+        },
+        {
+          "text": "COPPA",
+          "href": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312"
+        },
+        {
+          "text": "PHI",
+          "href": "https://cphs.berkeley.edu/hipaa/hipaa18.html"
+        },
+        {
+          "text": "(480) 687-7099",
+          "href": "tel:+14806877099"
+        }
+      ]
+    },
+    {
+      "route": "/es/privacy-policy",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/privacy-policy",
+      "observedAt": "2026-10-13T21:38:04.507373+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/privacy-policy",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:04 GMT",
+        "date: Tue, 13 Oct 2026 21:38:04 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:19 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:19 GMT"
+      ],
+      "sha256": "f6307e83b586f29963a60243887e9234d310c99921f06e914ed0e880de28a7f4",
+      "title": "Privacy Policy | Arizona Institute for Autism",
+      "description": "Discover how the Arizona Institute for Autism protects your data. Our Privacy Policy details collection, usage, and security to keep your information safe.",
+      "h1": [
+        "Política de privacidad"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/privacy-policy",
+      "headings": [
+        "Introducción",
+        "Cómo Usamos Su Información",
+        "Cómo Protegemos Su Información",
+        "Compartiendo su información",
+        "Sus derechos",
+        "Privacidad de los niños y cumplimiento de la COPPA",
+        "Acuerdos de Protección de Datos (APD)",
+        "Seguimiento de terceros y datos de uso del sitio web",
+        "Cambios a esta política",
+        "Contáctenos"
+      ],
+      "bodyText": "Última actualización: 19 de febrero de 2025 Introducción En el Instituto de Autismo de Arizona, nos dedicamos a proteger la privacidad y seguridad de los visitantes de nuestro sitio web, clientes y sus familias. Esta política explica cómo recopilamos, usamos y protegemos su información personal. Como proveedores de atención médica, cumplimos estrictamente con la HIPAA (Ley de Portabilidad y Responsabilidad del Seguro Médico), la COPPA (Ley de Protección de la Privacidad en Línea de los Niños) y todas las regulaciones federales y estatales aplicables que rigen la privacidad y seguridad de la PHI (Información de Salud Protegida). Podemos recopilar los siguientes tipos de información: Información de identificación personal: Su nombre, dirección, número de teléfono, dirección de correo electrónico y otros datos de contacto. Información de salud: Diagnósticos, planes de tratamiento, historial médico y otra información relacionada con la salud necesaria para proporcionar servicios de tratamiento para el autismo. Datos de uso del sitio web: Información como direcciones IP, tipo de navegador, tipo de dispositivo, sistema operativo y páginas visitadas. Estos datos se recopilan de forma agregada y no identificable con fines analíticos. Información de pago: Números de tarjetas de crédito, fechas de vencimiento y otros detalles de pago necesarios para procesar las transacciones de forma segura. Cómo Usamos Su Información Utilizamos la información recopilada para los siguientes fines: Prestación de servicios: Para brindar servicios de tratamiento para el autismo, incluyendo la terapia de Análisis de Comportamiento Aplicado (ABA) y programas relacionados. Comunicación: Para responder a consultas, enviar boletines informativos y proporcionar actualizaciones sobre nuestros servicios. Marketing (No Personalizado y Cumpliendo con HIPAA): Utilizamos datos agregados y anonimizados para analizar tendencias y mejorar nuestros esfuerzos de divulgación. No utilizamos ningún dato relacionado con la salud para publicidad dirigida o remarketing. La información de salud protegida (PHI) nunca se comparte con comercializadores externos, anunciantes o plataformas de análisis. Investigación y Desarrollo: Para mejorar nuestros servicios, optimizar la funcionalidad del sitio web y apoyar la investigación en el tratamiento del autismo. Cumplimiento Legal: Para cumplir con la HIPAA, la COPPA y otras leyes pertinentes, incluidos los requisitos legales y policiales. Cómo Protegemos Su Información Implementamos medidas de seguridad sólidas para garantizar la confidencialidad e integridad de sus datos: Cifrado: Utilizamos protocolos de cifrado compatibles con HIPAA para proteger los datos durante la transmisión y el almacenamiento. Controles de acceso: Solo el personal autorizado, con las verificaciones de antecedentes adecuadas y capacitación en confidencialidad, puede acceder a su información. Almacenamiento seguro de datos: Todos los datos se almacenan en servidores seguros y compatibles con HIPAA, tanto física como electrónicamente. Respuesta a incidentes: Mantenemos un plan integral de respuesta a brechas de datos para abordar y mitigar rápidamente cualquier incidente de seguridad. Compartiendo su información No vendemos, alquilamos ni compartimos información de salud protegida con anunciantes externos. La información solo podrá compartirse en las siguientes circunstancias necesarias y permitidas: Proveedores de servicios: Contratistas, proveedores y socios que nos ayudan a prestar nuestros servicios de manera compatible con la HIPAA. Compañías de Seguros: Para procesar reclamaciones y obtener el reembolso de los servicios. Instituciones de investigación: En un formato desidentificado para apoyar la investigación y el avance del tratamiento del autismo. Obligaciones Legales: Cuando lo exija la ley, la normativa o una orden judicial. Sus derechos Tiene los siguientes derechos con respecto a su información personal y de salud: Acceso: Puede solicitar una copia de sus registros en cualquier momento. Corrección: Si alguna información es incorrecta o incompleta, puede solicitar correcciones. Exclusión: Puede optar por no recibir boletines informativos, correos electrónicos de marketing u otras comunicaciones no esenciales. Eliminación: Puede solicitar la eliminación de sus datos personales cuando sea legalmente permisible. Tenga en cuenta que algunos registros deben conservarse de acuerdo con las regulaciones de la HIPAA. Privacidad de los niños y cumplimiento de la COPPA Cumplimos con la Ley de Protección de la Privacidad en Línea de los Niños. Esto significa: Obtenemos el consentimiento parental verificable antes de recopilar información personal de niños menores de 13 años. No recopilamos información de niños a sabiendas sin la aprobación de los padres o tutores. Cualquier dato recopilado de niños se utiliza únicamente para servicios de tratamiento del autismo y nunca se comparte con fines de marketing. Si cree que hemos recopilado datos de un niño inadvertidamente sin el consentimiento adecuado, póngase en contacto con nosotros inmediatamente para su eliminación. Acuerdos de Protección de Datos (APD) Hemos establecido Acuerdos de Protección de Datos con nuestros proveedores de servicios y contratistas. Estos acuerdos exigen que: Su información se procese de acuerdo con la HIPAA y todas las leyes de protección de datos aplicables. No se utilizan datos personales de salud para publicidad, seguimiento analítico o fines de marketing. La información de salud protegida (PHI) nunca se comparte con plataformas de marketing de terceros. Seguimiento de terceros y datos de uso del sitio web Nuestro sitio web utiliza análisis anónimos para mejorar la funcionalidad. Específicamente: No rastreamos a los visitantes del sitio web para publicidad personalizada relacionada con la salud. No utilizamos cookies de publicidad de terceros para recopilar datos relacionados con la salud. No realizamos seguimiento del comportamiento que se dirige a los usuarios en función de sus condiciones de salud. Estas prácticas están diseñadas para garantizar el cumplimiento de las políticas de atención médica e información confidencial. Cambios a esta política Podemos actualizar esta política de privacidad periódicamente. Todos los cambios se publicarán en esta página con una fecha de Última actualización actualizada. Su uso continuo de nuestro sitio web y servicios después de dichos cambios significa su aceptación de los términos revisados. Contáctenos Si tiene alguna pregunta o inquietud sobre esta política de privacidad o desea ejercer sus derechos de privacidad, contáctenos en: Correo electrónico: info@azinstitute4autism.com Dirección: 8901 E. Raintree Drive, Suite #160 Scottsdale Arizona 85260 Teléfono: (480) 687-7099 Al utilizar nuestro sitio web y servicios, usted confirma que ha leído, comprendido y acepta los términos descritos en esta política de privacidad.",
+      "links": [
+        {
+          "text": "HIPAA",
+          "href": "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
+        },
+        {
+          "text": "COPPA",
+          "href": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312"
+        },
+        {
+          "text": "PHI",
+          "href": "https://cphs.berkeley.edu/hipaa/hipaa18.html"
+        },
+        {
+          "text": "(480) 687-7099",
+          "href": "tel:+14806877099"
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "requestedUrl": "https://www.azinstitute4autism.com/",
+      "observedAt": "2026-10-13T21:38:06.013953+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 103 ",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:06 GMT",
+        "date: Tue, 13 Oct 2026 21:38:06 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:58:31 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:58:31 GMT"
+      ],
+      "sha256": "aad32109057b797d1374bbcaf0a9c993db9a83770c671fd46221d258d39375ab",
+      "title": "Scottsdale ABA Therapy for Children | Arizona Institute for Autism",
+      "description": "Arizona Institute for Autism: center for behavioral health & education services in Scottsdale. We serve children diagnosed with autism and their families.",
+      "h1": [
+        "Behavioral Health & Special Education"
+      ],
+      "canonical": "https://www.azinstitute4autism.com",
+      "headings": [
+        "ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder",
+        "ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder",
+        "Our Commitment To Your Learner's Success",
+        "Benefits that go Beyond a Typical Integrated Therapy Provider",
+        "The AIA Difference",
+        "Does Your Learner Struggle With These Skills?",
+        "Social Engagement",
+        "Eye Contact",
+        "Listening",
+        "Repetitive Movement",
+        "Playing",
+        "Speech",
+        "Yes, We Take Insurance",
+        "Arizona Scholarship Account (ESA)",
+        "Health Savings Accounts (HSA) & Flexible Spending Accounts (FSA)",
+        "Need Help Paying for Your Care?",
+        "Our Process",
+        "Clinical Director Rula Diab, BCBA, LBA, M.Ed.",
+        "An Extension of Your Family",
+        "What Clients Say"
+      ],
+      "bodyText": "Arizona's Leading Experts Behavioral Health & Special Education Here at the Arizona Institute for Autism (AIA), we provide expert clinical care for children and teens who have an autism diagnosis. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas. Get Started ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder Autism Advocacy Support Evaluation & Assessment Support Children Autism Services Community Autism Services Family Training Services ABA Therapy Services for Children Diagnosed with Autism Spectrum Disorder Autism Advocacy Support Evaluation & Assessment Support Children Autism Services Community Autism Services Family Training Services Our Commitment To Your Learner's Success In-Center In-Home Integrated Therapy Treatment Early Intervention Academic Readiness Clinical Supervision Parent Consultation Schedule an Assessment Benefits that go Beyond a Typical Integrated Therapy Provider The AIA Difference Compassionate Care Individualized Results Sensory-Friendly Rooms Convenient and Affordable Does Your Learner Struggle With These Skills? Social Engagement Eye Contact Listening Repetitive Movement Playing Speech Yes, We Take Insurance An all-in-one integrated service for your kiddo’s special education needs, the Arizona Institute for Autism (AIA) offers and accepts most insurance plans that cover ABA therapy. These include BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS, and UnitedHealth. Arizona Scholarship Account (ESA) Thousands of Arizona learners are currently eligible for the state funded ESA, which awards $4,000 – $6,500 annually per student towards private education tuition, home based education, and other services. The Arizona Institute for Autism (AIA) is approved by the Arizona Department of Education as a vendor for parents with learners who qualify for the Empowerment Scholarship Award. If you are eligible for the ESA program, you can use your funds towards tuition for our ABA programs. Health Savings Accounts (HSA) & Flexible Spending Accounts (FSA) Many families can also utilize their HSA and FSA to fund care, which allow you to pay for qualified clinical services using pre-tax dollars. The Arizona Institute for Autism (AIA) accepts Health Savings Account and Flexible Spending Account cards directly, making it easier to manage out-of-pocket costs for your learner's treatment. If you participate in one of these employer-sponsored or individual accounts, you can seamlessly apply your available funds toward tuition and fees for our ABA programs. Need Help Paying for Your Care? The Arizona Institute for Autism offers flexible financial assistance to the uninsured. Get the care you want or need and pay over time. Request an Appointment Our Process Fill Out Learner Information Form Speak with a Client Advocate Fill and Sign a Client Intake Packet Verify Billing and Insurance Information and Benefits Schedule an Assessment Collaborate on a Care Plan Clinical Director Rula Diab, BCBA, LBA, M.Ed. An Extension of Your Family \"At AIA, We strive to provide excellent and compassionate care to all communities we serve. We could not accomplish that without excellent, passionate, and committed staff and families. We look forward to our collaboration with you as we continue to grow, serve and support our Learners in the pursuit of their individual potential.\" What Clients Say Claudia Our son 💙 is an autistic kid. We struggled to find the correct place for him, that place where you can feel comfortable leaving your kid. We visited five companies, and no one gave us that confidence until we found AIA. You can see the dedication from each employee (Director, therapists, coordinators, etc.) to every kid. Their therapy rooms are huge and spacious; every kid can play and learn simultaneously in their own spaces. We are thankful 🙏 to Arizona Institute for Autism for caring for Misael. All of you are Amazing!!! Thank you 😊 Kristin My son has grown and learned so much from the team at AIA. He loves the team and they love him... Amanda My son loves this program. He started when he was 21 months year old, so I was picky in choosing where he would go. I love that it is play based and he is 1-on-1 with a therapist the whole time. Dave I highly recommend Arizona Institute for Autism. Rula Diab runs a fantastic clinic and has an amazing team. Shoutout to Coach D - it is incredible that they have a former NFL Player helping with P.E.! They also held a birthday party for our son. Amazing and so full of love & care... Meagan We are incredibly grateful for the support and guidance our child has received from the team at Arizona Institute for Autism. The professionalism and dedication of the team have made a remarkable difference in our child's development. They truly care about each child's growth and tailor their approach to meet individual needs. Our child has made significant strides in communication and social skills, and we couldn't be happier with the positive impact they've had on our family. Highly recommend AIA. Macey We love AIA, you can expect amazing staff and a clean facility. Along with a safe environment for your children. We love the mission behind AIA and feel like there’s no other place here in Arizona that does what they do here. S.L. My son has developed faster and been happier at this Autism center over all others he’s experienced. The therapist/teachers and all the way to the Rula the manager have gone above and beyond to work with my son’s special needs. As every Autistic child is different they have developed a plan specifically fit to him. We have weekly meetings to join our knowledge to develop my son as quickly and efficiently comfortably for him as possible. I’m blown away by how I finally feel like part of a team that is my son’s team. Thank you. Emily AIA is phenomenal!!! Rula and her staff are fantastic. They are patient, professional, compassionate and extremely knowledgeable. My son loves his providers. They have helped me navigate some extremely tough times. I highly recommend AIA. Raye I absolutely love it here! They care about your child so much! They work with you when it comes to your schedule. They are all so very friendly here. Anytime I step in here I feel a warm welcoming from everyone. My son loves coming here. They care about helping your child succeed in every possible way, my din is going to flourish here! Danielle AIA has done wonders for my son. I drive from NW Peoria just to come here. Everyone is very professional and kind. They truly care about the kids and seeing them succeed. I’m so lucky to have found them. I would recommend them to anyone! Tim The staff at AIA is my second family. Not only does my son receive the best care possible, they also keep me in check and help make sure I’m doing my part. That’s the kind of love you get in this big family!",
+      "links": [
+        {
+          "text": "Get Started",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "text": "Schedule an Assessment",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "text": "",
+          "href": "https://www.youtube-nocookie.com/embed/EczPH1jx9mc?si=beestOCaO4tL7Re6"
+        },
+        {
+          "text": "Request an Appointment",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "text": "Fill Out Learner Information Form",
+          "href": "/aba-therapy-intake-process#first-step"
+        },
+        {
+          "text": "Speak with a Client Advocate",
+          "href": "/aba-therapy-intake-process#second-step"
+        },
+        {
+          "text": "Fill and Sign a Client Intake Packet",
+          "href": "/aba-therapy-intake-process#third-step"
+        },
+        {
+          "text": "Verify Billing and Insurance Information and Benefits",
+          "href": "/aba-therapy-intake-process#fourth-step"
+        },
+        {
+          "text": "Schedule an Assessment",
+          "href": "/aba-therapy-intake-process#fifth-step"
+        },
+        {
+          "text": "Collaborate on a Care Plan",
+          "href": "/aba-therapy-intake-process#sixth-step"
+        }
+      ]
+    },
+    {
+      "route": "/es",
+      "requestedUrl": "https://www.azinstitute4autism.com/es",
+      "observedAt": "2026-10-13T21:38:07.365046+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 301 ",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:07 GMT",
+        "date: Tue, 13 Oct 2026 21:38:07 GMT",
+        "location: https://www.azinstitute4autism.com/es/",
+        "cache-control: max-age=120",
+        "date: Tue, 13 Oct 2026 21:38:07 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sun, 04 Oct 2026 00:02:11 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sun, 04 Oct 2026 00:02:11 GMT"
+      ],
+      "sha256": "14cb8e7a696ac94c3880ad6302fde07883cdfc3edb7a4ec4dba509bf26452aa8",
+      "title": "Terapia ABA cerca de mí | Arizona Institute for Autism | Scottsdale",
+      "description": "Arizona Institute for Autism: centro de servicios de salud conductual y educación ubicado en Scottsdale. Atendemos a personas con autismo y a sus familias.",
+      "h1": [
+        "Salud Mental y Educación Especial"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/",
+      "headings": [
+        "Servicios de terapia ABA para niños diagnosticados con TEA",
+        "Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA",
+        "Nuestro compromiso con el éxito de su estudiante",
+        "Beneficios que van más allá de un proveedor de terapia integrada típico",
+        "La Diferencia AIA",
+        "¿Su alumno tiene dificultades con estas habilidades?",
+        "Compromiso social",
+        "Contacto visual",
+        "Escuchar",
+        "Movimiento repetitivo",
+        "Jugando",
+        "Discurso",
+        "Sí, aceptamos seguros.",
+        "Cuenta de Becas de Arizona (ESA)",
+        "¿Necesita ayuda para pagar su atención?",
+        "Nuestro proceso",
+        "Directora Clínica Rula Diab, BCBA, LBA, M.Ed.",
+        "Una extensión de tu familia",
+        "Lo que dicen los clientes"
+      ],
+      "bodyText": "Los principales expertos de Arizona Salud Mental y Educación Especial Aquí en el Instituto de Autismo de Arizona (AIA), brindamos atención clínica experta para niños con diagnóstico de autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix. Empezar Servicios de terapia ABA para niños diagnosticados con TEA Apoyo a la defensa del autismo Apoyo a la evaluación y valoración Servicios de Autismo para Niños Servicios Comunitarios de Autismo Servicios de Capacitación Familiar Servicios de terapia ABA para niños y adolescentes diagnosticados con TEA Apoyo a la defensa del autismo Apoyo a la evaluación y valoración Servicios de Autismo para Niños Servicios Comunitarios de Autismo Servicios de Capacitación Familiar Nuestro compromiso con el éxito de su estudiante En el centro En casa Tratamiento de terapia integrada Intervención temprana Preparación Académica Supervisión clínica Consulta de padres Programar una evaluación Beneficios que van más allá de un proveedor de terapia integrada típico La Diferencia AIA Cuidado compasivo Resultados individualizados Salas sensoriales Conveniente y asequible ¿Su alumno tiene dificultades con estas habilidades? Compromiso social Contacto visual Escuchar Movimiento repetitivo Jugando Discurso Sí, aceptamos seguros. Un servicio integrado todo en uno para las necesidades de educación especial de su hijo, el Instituto de Autismo de Arizona (AIA) ofrece y acepta la mayoría de los planes de seguro que cubren la terapia ABA. Estos incluyen BCBS AZ, Aetna, Optum, Tricare, United Healthcare AHCCCS y UnitedHealth. Cuenta de Becas de Arizona (ESA) Miles de estudiantes de Arizona son actualmente elegibles para la ESA financiada por el estado, que otorga entre $4,000 y $6,500 anualmente por estudiante para la matrícula de educación privada, educación en el hogar y otros servicios. El Instituto de Autismo de Arizona (AIA) está aprobado por el Departamento de Educación de Arizona como proveedor para padres con estudiantes que califican para la Beca de Empoderamiento. Si eres elegible para el programa ESA, puedes usar tus fondos para la matrícula de nuestros programas ABA. ¿Necesita ayuda para pagar su atención? El Instituto de Autismo de Arizona ofrece asistencia financiera flexible a las personas sin seguro. Obtén la atención que deseas o necesitas y paga a plazos. Solicitar cita Nuestro proceso Complete el formulario de información del estudiante Hable con un Defensor del Cliente Llenar y firmar un paquete de admisión de clientes Verificar la información de facturación, seguro y beneficios Programar una evaluación Colaborar en un Plan de Cuidados Directora Clínica Rula Diab, BCBA, LBA, M.Ed. Una extensión de tu familia \"En AIA, nos esforzamos por brindar atención excelente y compasiva a todas las comunidades a las que servimos. No podríamos lograr eso sin un personal y familias excelentes, apasionados y comprometidos. Esperamos con ansias nuestra colaboración con usted a medida que continuamos creciendo, sirviendo y apoyando a nuestros estudiantes en la búsqueda de su potencial individual.\" Lo que dicen los clientes Claudia Our son 💙 is an autistic kid. We struggled to find the correct place for him, that place where you can feel comfortable leaving your kid. We visited five companies, and no one gave us that confidence until we found AIA. You can see the dedication from each employee (Director, therapists, coordinators, etc.) to every kid. Their therapy rooms are huge and spacious; every kid can play and learn simultaneously in their own spaces. We are thankful 🙏 to Arizona Institute for Autism for caring for Misael. All of you are Amazing!!! Thank you 😊 Kristin My son has grown and learned so much from the team at AIA. He loves the team and they love him... Amanda My son loves this program. He started when he was 21 months year old, so I was picky in choosing where he would go. I love that it is play based and he is 1-on-1 with a therapist the whole time. Dave I highly recommend Arizona Institute for Autism. Rula Diab runs a fantastic clinic and has an amazing team. Shoutout to Coach D - it is incredible that they have a former NFL Player helping with P.E.! They also held a birthday party for our son. Amazing and so full of love & care... Meagan We are incredibly grateful for the support and guidance our child has received from the team at Arizona Institute for Autism. The professionalism and dedication of the team have made a remarkable difference in our child's development. They truly care about each child's growth and tailor their approach to meet individual needs. Our child has made significant strides in communication and social skills, and we couldn't be happier with the positive impact they've had on our family. Highly recommend AIA. Macey We love AIA, you can expect amazing staff and a clean facility. Along with a safe environment for your children. We love the mission behind AIA and feel like there’s no other place here in Arizona that does what they do here. S.L. My son has developed faster and been happier at this Autism center over all others he’s experienced. The therapist/teachers and all the way to the Rula the manager have gone above and beyond to work with my son’s special needs. As every Autistic child is different they have developed a plan specifically fit to him. We have weekly meetings to join our knowledge to develop my son as quickly and efficiently comfortably for him as possible. I’m blown away by how I finally feel like part of a team that is my son’s team. Thank you. Emily AIA is phenomenal!!! Rula and her staff are fantastic. They are patient, professional, compassionate and extremely knowledgeable. My son loves his providers. They have helped me navigate some extremely tough times. I highly recommend AIA. Raye I absolutely love it here! They care about your child so much! They work with you when it comes to your schedule. They are all so very friendly here. Anytime I step in here I feel a warm welcoming from everyone. My son loves coming here. They care about helping your child succeed in every possible way, my din is going to flourish here! Danielle AIA has done wonders for my son. I drive from NW Peoria just to come here. Everyone is very professional and kind. They truly care about the kids and seeing them succeed. I’m so lucky to have found them. I would recommend them to anyone! Tim The staff at AIA is my second family. Not only does my son receive the best care possible, they also keep me in check and help make sure I’m doing my part. That’s the kind of love you get in this big family!",
+      "links": [
+        {
+          "text": "Empezar",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        },
+        {
+          "text": "Programar una evaluación",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        },
+        {
+          "text": "",
+          "href": "https://www.youtube-nocookie.com/embed/EczPH1jx9mc?si=beestOCaO4tL7Re6"
+        },
+        {
+          "text": "Solicitar cita",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        },
+        {
+          "text": "Complete el formulario de información del estudiante",
+          "href": "/aba-therapy-intake-process#first-step"
+        },
+        {
+          "text": "Hable con un Defensor del Cliente",
+          "href": "/aba-therapy-intake-process#second-step"
+        },
+        {
+          "text": "Llenar y firmar un paquete de admisión de clientes",
+          "href": "/aba-therapy-intake-process#third-step"
+        },
+        {
+          "text": "Verificar la información de facturación, seguro y beneficios",
+          "href": "/aba-therapy-intake-process#fourth-step"
+        },
+        {
+          "text": "Programar una evaluación",
+          "href": "/aba-therapy-intake-process#fifth-step"
+        },
+        {
+          "text": "Colaborar en un Plan de Cuidados",
+          "href": "/aba-therapy-intake-process#sixth-step"
+        }
+      ]
+    },
+    {
+      "route": "/aba-therapy",
+      "requestedUrl": "https://www.azinstitute4autism.com/aba-therapy",
+      "observedAt": "2026-10-13T21:38:09.094370+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/aba-therapy",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:09 GMT",
+        "date: Tue, 13 Oct 2026 21:38:09 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:27:01 GMT",
+        "x-hs-cf-cache-status: REVALIDATED",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:27:01 GMT"
+      ],
+      "sha256": "3e4835ea8562169812c61b0d98603daf7124ce4006f8b37a0539beb3d837d0be",
+      "title": "Integrated ABA Therapy for Autism | Arizona Institute for Autism",
+      "description": "Empower your child for life with one-on-one integrated ABA therapy. Book a free consultation and join our supportive autism community!",
+      "h1": [
+        "Behavioral"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/aba-therapy",
+      "headings": [
+        "ABA Therapy",
+        "Services We Offer",
+        "ABA Therapy 1:1 Program",
+        "ABA Therapy 1:2 Academic Readiness Program",
+        "Parent Consultation Program",
+        "About Rula Diab, Chief Clinical Director, BCBA, LBA"
+      ],
+      "bodyText": "Behavioral ABA Therapy The Arizona Institute for Autism offers a variety of evidence-based, clinical services for children who have been diagnosed with Autism Spectrum Disorder or other related developmental disorders. Depending on your individual preference as well as your child's specific needs, some of our comprehensive clinical services are conducted in our institute with a focus on helping your child attain a better quality of life & and a greater sense of independence. Our ABA Therapy programs address the comprehensive needs of each learner, equipping children with the skills necessary to become independent learners. Services We Offer Individual Learning ABA Therapy 1:1 Program The ABA Therapy 1:1 program, designed for children aged 18 months to 8 years, adopts an integrative approach aimed at fostering independent learning. The Arizona Institute for Autism employs a naturalistic, neurodiversity-affirming model within its applied behavior analysis (ABA) program, incorporating essential insights from neuroscientific research. Our ABA therapy focuses on improving socially significant behaviors by using positive reinforcement, systematic teaching, and data-driven methods. AIA Clinicians focus on tailoring our services to accommodate the unique neurodevelopmental profiles of each learner. Group Learning ABA Therapy 1:2 Academic Readiness Program The ABA Therapy 1:2 Academic Readiness Program is specifically designed for children aged 2 to 6 years and utilizes a tailored group therapy approach to prepare learners for successful integration into the mainstream classroom.This program incorporates the AIA Preparatory Academy© curriculum, combining the esteemed Montessori method with Applied Behavior Analysis (ABA). This integrated approach fosters a supportive environment tailored to the individual learning styles and strengths of our learners, facilitating the development of essential social, communication, cognitive, and motor skills necessary for success in mainstream classrooms. The primary developmental milestones emphasized in this program include social, communication, cognitive, social-emotional, executive functioning, and motor skills. Throughout the Academic Readiness Program, your child will engage in a variety of structured electives such as speech therapy, recreational therapy, and music therapy. These electives, including circle time, arts and crafts, music, play, and other group interactions, that are designed to support skills development in these key areas. Family Education Parent Consultation Program We believe that parents, siblings and caregivers play a crucial role in the success of their child’s therapy. That’s why we offer Parent Consultation Services as part of our comprehensive ABA program. Our goal is to empower families with the knowledge, tools, and support they need to confidently help their child navigate this developmental journey. Parent consultation is a vital component of ABA therapy, designed to ensure that the progress made during therapy extends beyond the clinic. These consultations provide parents with personalized guidance, training, and strategies tailored to their child’s unique needs. Make an Appointment About Rula Diab, Chief Clinical Director, BCBA, LBA Rula Diab, M.Ed, BCBA, LBA, is the Clinical Director at the Arizona Institute for Autism and an industry expert with over 15 years of experience in Special Education and Behavioral Analysis. In her role as Clinical Director, Diab guides and shapes the clinical practices and ABA therapy programs at the Arizona Institute for Autism. Rula collaborates closely with practitioners, academics, policymakers, teachers, families, and, most significantly, children with developmental disabilities throughout Arizona. Recognizing significant gaps in the way Applied Behavior Analysis (ABA) principles were traditionally implemented, Rula pioneered the Arizona Institute for Autism educational model. This innovative approach celebrates individuality while honoring dignity and nurturing each child's unique interests, preferences, and motivations. She firmly believes that education should be engaging and enjoyable for every child.",
+      "links": [
+        {
+          "text": "Make an Appointment",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ]
+    },
+    {
+      "route": "/es/aba-therapy",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/aba-therapy",
+      "observedAt": "2026-10-13T21:38:10.546079+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/aba-therapy",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:10 GMT",
+        "date: Tue, 13 Oct 2026 21:38:11 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:14 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:14 GMT"
+      ],
+      "sha256": "bf5c84fae42bbb11b6bd3e73cd28487bfee895769129f442b7ee92fe01e773e9",
+      "title": "Terapia ABA Integrada para el Autismo | Arizona Institute for Autism",
+      "description": "Empodere a su hijo para la vida con terapia ABA integrada individualizada. ¡Reserva una consulta gratuita y únete a nuestra comunidad de apoyo para el autismo!",
+      "h1": [
+        "Conductual"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/aba-therapy",
+      "headings": [
+        "Terapia ABA",
+        "Servicios que ofrecemos",
+        "Programa de Terapia ABA 1:1",
+        "Terapia ABA 1:2 Programa de Preparación Académica",
+        "Programa de Consulta para Padres",
+        "Acerca de Rula Diab, Directora Clínica Principal, BCBA, LBA"
+      ],
+      "bodyText": "Conductual Terapia ABA El Arizona Institute for Autism ofrece una variedad de servicios clínicos basados en evidencia para niños diagnosticadas con Trastorno del Espectro Autista u otros trastornos del desarrollo relacionados. Dependiendo de sus preferencias individuales, así como de las necesidades específicas de su hijo, algunos de nuestros servicios clínicos integrales se llevan a cabo en nuestro instituto con el objetivo de ayudar a su hijo a alcanzar una mejor calidad de vida y un mayor sentido de independencia. Nuestros programas de terapia ABA abordan las necesidades integrales de cada estudiante, equipando a los niños con las habilidades necesarias para convertirse en aprendices independientes. Servicios que ofrecemos Aprendizaje individual Programa de Terapia ABA 1:1 El programa de Terapia ABA 1:1, diseñado para niños de 18 meses a 8 años, adopta un enfoque integrador destinado a fomentar el aprendizaje independiente. El Arizona Institute for Autism emplea un modelo naturalista y que afirma la neurodiversidad dentro de su programa de análisis de comportamiento aplicado (ABA), incorporando conocimientos esenciales de la investigación neurocientífica. Nuestra terapia ABA se centra en mejorar comportamientos socialmente significativos mediante el uso de refuerzo positivo, enseñanza sistemática y métodos basados en datos. Los clínicos de AIA se centran en adaptar nuestros servicios para acomodar los perfiles únicos de desarrollo neurológico de cada estudiante. Aprendizaje en grupo Terapia ABA 1:2 Programa de Preparación Académica El programa de preparación académica 1:2 de terapia ABA está diseñado específicamente para niños de 2 a 6 años y utiliza un enfoque de terapia grupal personalizado para preparar a los estudiantes para una integración exitosa en el aula regular. Este programa incorpora el currículo de la AIA Preparatory Academy©, combinando el estimado método Montessori con el Análisis de Comportamiento Aplicado (ABA). Este enfoque integrado fomenta un entorno de apoyo adaptado a los estilos de aprendizaje y fortalezas individuales de nuestros estudiantes, facilitando el desarrollo de habilidades sociales, comunicativas, cognitivas y motoras esenciales necesarias para el éxito en las aulas regulares. Los principales hitos del desarrollo que se enfatizan en este programa incluyen las habilidades sociales, de comunicación, cognitivas, socioemocionales, de funcionamiento ejecutivo y motoras. A lo largo del Programa de Preparación Académica, su hijo participará en una variedad de asignaturas optativas estructuradas, como terapia del habla, terapia recreativa y musicoterapia. Estos cursos optativos, que incluyen el tiempo en círculo, manualidades, música, juego y otras interacciones grupales, están diseñados para apoyar el desarrollo de habilidades en estas áreas clave. Educación Familiar Programa de Consulta para Padres Creemos que los padres, hermanos y cuidadores desempeñan un papel crucial en el éxito de la terapia de su hijo. Por eso ofrecemos Servicios de Consulta para Padres como parte de nuestro programa integral de ABA. Nuestro objetivo es empoderar a las familias con el conocimiento, las herramientas y el apoyo que necesitan para ayudar a su hijo a navegar este viaje de desarrollo con confianza. La consulta con los padres es un componente vital de la terapia ABA, diseñada para asegurar que el progreso logrado durante la terapia se extienda más allá de la clínica. Estas consultas brindan a los padres orientación, capacitación y estrategias personalizadas adaptadas a las necesidades únicas de su hijo. Hacer una cita Acerca de Rula Diab, Directora Clínica Principal, BCBA, LBA Rula Diab, M.Ed, BCBA, LBA, es la Directora Clínica del Instituto de Autismo de Arizona y una experta de la industria con más de 15 años de experiencia en Educación Especial y Análisis de Comportamiento. En su papel de Directora Clínica, Diab guía y da forma a las prácticas clínicas y a los programas de terapia ABA en el Instituto de Autismo de Arizona. Rula colabora estrechamente con profesionales, académicos, legisladores, maestros, familias y, lo más importante, niños con discapacidades del desarrollo en todo Arizona. Reconociendo brechas significativas en la forma en que tradicionalmente se implementaban los principios del Análisis de Comportamiento Aplicado (ABA), Rula fue pionera en el modelo educativo del Instituto de Autismo de Arizona. Este enfoque innovador celebra la individualidad al tiempo que honra la dignidad y nutre los intereses, preferencias y motivaciones únicos de cada niño. Ella cree firmemente que la educación debe ser atractiva y agradable para cada niño.",
+      "links": [
+        {
+          "text": "Hacer una cita",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ]
+    },
+    {
+      "route": "/aba-therapy-intake-process",
+      "requestedUrl": "https://www.azinstitute4autism.com/aba-therapy-intake-process",
+      "observedAt": "2026-10-13T21:38:12.182814+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/aba-therapy-intake-process",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:12 GMT",
+        "date: Tue, 13 Oct 2026 21:38:12 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:15 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:15 GMT"
+      ],
+      "sha256": "f8cc3b24c506fac722aa6a20b558708e53c6ae2abf8770d09421d961f5dba2e5",
+      "title": "Starting ABA Therapy Step-by-Step Guide | Arizona Institute for Autism",
+      "description": "Discover how to begin ABA therapy at Arizona Institute for Autism. Our simple, supportive intake process guides your child toward growth and success.",
+      "h1": [
+        "Learner Intake Process"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/aba-therapy-intake-process",
+      "headings": [
+        "Getting Started with ABA Therapy at the Arizona Institute for Autism",
+        "1. Complete the Learner Information Form",
+        "2. Speak with an AIA Client Advocate",
+        "3. Fill Out and Sign the Client Intake Packet",
+        "4. Verify Insurance and Billing Information",
+        "5. Schedule Your Child’s Assessment",
+        "6. Collaborate on a Personalized Care Plan",
+        "Early Intervention Makes a Difference"
+      ],
+      "bodyText": "Learner Intake Process Getting Started with ABA Therapy at the Arizona Institute for Autism Starting Applied Behavior Analysis (ABA) therapy with the Arizona Institute for Autism (AIA) is a simple, supportive, and clearly guided process. Follow the steps below to begin your child’s journey toward growth, development, and success. 1. Complete the Learner Information Form Begin by completing our Learner Information Packet, which collects essential information about your child. This packet provides our team with initial insights to understand your child’s unique needs. After submitting the packet, our Client Advocate will promptly reach out to discuss the next steps, answer your questions, and guide you through the intake process. We are here to support you every step of the way, ensuring you feel comfortable and informed from the start. 2. Speak with an AIA Client Advocate Our dedicated Client Advocate team is passionate about assisting families through every aspect of starting ABA therapy. During this initial conversation, your Advocate will: Listen and learn about your child’s specific needs and circumstances. Clearly explain the services and support available at AIA. Address any questions or concerns you might have. Guide you smoothly through each step of the intake and onboarding process. Our goal is to ensure your experience is supportive, transparent, and stress-free from day one. 3. Fill Out and Sign the Client Intake Packet The next step involves completing and signing our Client Intake Packet. This packet gathers detailed information about your child's strengths, challenges, and developmental history. Providing thorough and accurate information at this stage helps our clinical team prepare effectively for your child’s assessment, allowing us to tailor our therapeutic approach specifically to your child's individual needs and goals. 4. Verify Insurance and Billing Information To ensure a smooth start to therapy, our billing manager will verify your insurance coverage and benefits once your intake packet is complete. Our billing team will: Review your insurance plan details, including ABA therapy coverage. Clarify your co-pays, deductibles, and any required authorizations. Answer your billing-related questions, maintaining transparency and clarity. We strive to simplify the financial aspect of ABA therapy, guiding you through the process so you can focus confidently on your child’s care. 5. Schedule Your Child’s Assessment With your intake and billing details finalized, our Client Advocate will assist you in scheduling a comprehensive assessment with our clinical team. We’ll work closely with you to find an appointment time that suits your family’s schedule and your child’s comfort. This assessment is a vital step in understanding your child’s strengths and identifying areas where they need targeted support. The information gathered during the assessment will guide the creation of a personalized treatment plan specifically designed to support your child’s growth and developmental milestones. 6. Collaborate on a Personalized Care Plan At the Arizona Institute for Autism, collaboration is fundamental to your child's long-term success. Consistent communication and coordination among our team, your family, caregivers, educators, and external clinicians help ensure clear expectations, effective skill generalization, and sustained progress. Once therapy begins, your child’s progress will be closely supervised by a Board Certified Behavior Analyst (BCBA), who will regularly monitor and adjust their individualized therapy program. Parent involvement is also critical to achieving meaningful progress, so we offer weekly parent consultation sessions. These sessions will empower you with knowledge about your child's progress, strategies to support ABA therapy at home, and ongoing guidance to help your child reach their full potential. Ready to Begin? Early Intervention Makes a Difference We're excited to partner with you on this journey to support your child’s growth and success! Take the First Step",
+      "links": [
+        {
+          "text": "Take the First Step",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        }
+      ]
+    },
+    {
+      "route": "/es/aba-therapy-intake-process",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/aba-therapy-intake-process",
+      "observedAt": "2026-10-13T21:38:13.478915+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/aba-therapy-intake-process",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 103 ",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:13 GMT",
+        "date: Tue, 13 Oct 2026 21:38:13 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:18 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:18 GMT"
+      ],
+      "sha256": "7ac84bd729ad4f07db606c01e14422fde0aad46b880bf1a10251acbf5512f97c",
+      "title": "Guía paso a paso para comenzar la terapia ABA | Arizona Institute for Autism",
+      "description": "Descubra cómo comenzar la terapia ABA en el Instituto de Autismo de Arizona.  Nuestro proceso de admisión simple y de apoyo guía a su hijo hacia el crecimiento y el éxito.",
+      "h1": [
+        "Proceso de admisión de estudiantes"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/aba-therapy-intake-process",
+      "headings": [
+        "Cómo empezar con la terapia ABA en el Instituto de Autismo de Arizona",
+        "1. Complete el Formulario de Información del Estudiante",
+        "2. Hable con un Defensor del Cliente de AIA",
+        "3. Complete y firme el paquete de admisión del cliente",
+        "4. Verificar la información del seguro y la facturación",
+        "5. Programa la evaluación de tu hijo",
+        "6. Colaborar en un Plan de Atención Personalizado",
+        "La intervención temprana marca la diferencia"
+      ],
+      "bodyText": "Proceso de admisión de estudiantes Cómo empezar con la terapia ABA en el Instituto de Autismo de Arizona Comenzar la terapia de Análisis de Comportamiento Aplicado (ABA) con el Instituto de Autismo de Arizona (AIA) es un proceso sencillo, de apoyo y claramente guiado. Siga los pasos a continuación para comenzar el viaje de su hijo hacia el crecimiento, el desarrollo y el éxito. 1. Complete el Formulario de Información del Estudiante Comience completando nuestro Paquete de Información para Estudiantes, que recopila información esencial sobre su hijo. Este paquete proporciona a nuestro equipo información inicial para comprender las necesidades únicas de su hijo.Después de enviar el paquete, nuestro Defensor del Cliente se pondrá en contacto con usted de inmediato para discutir los próximos pasos, responder a sus preguntas y guiarlo a través del proceso de admisión. Estamos aquí para apoyarte en cada paso del camino, asegurándonos de que te sientas cómodo e informado desde el principio. 2. Hable con un Defensor del Cliente de AIA Nuestro equipo dedicado de Defensores del Cliente es apasionado por ayudar a las familias en cada aspecto de comenzar la terapia ABA. Durante esta conversación inicial, su Defensor/a: Escuche y aprenda sobre las necesidades y circunstancias específicas de su hijo. Explique claramente los servicios y el apoyo disponibles en AIA. Aborde cualquier pregunta o inquietud que pueda tener. Guiarte sin problemas a través de cada paso del proceso de admisión e incorporación. Nuestro objetivo es garantizar que su experiencia sea de apoyo, transparente y sin estrés desde el primer día. 3. Complete y firme el paquete de admisión del cliente El siguiente paso implica completar y firmar nuestro paquete de admisión de clientes. Este paquete recopila información detallada sobre las fortalezas, los desafíos y la historia del desarrollo de su hijo.Proporcionar información completa y precisa en esta etapa ayuda a nuestro equipo clínico a prepararse eficazmente para la evaluación de su hijo, permitiéndonos adaptar nuestro enfoque terapéutico específicamente a las necesidades y objetivos individuales de su hijo. 4. Verificar la información del seguro y la facturación Para asegurar un inicio fluido de la terapia, nuestro gerente de facturación verificará su cobertura y beneficios de seguro una vez que su paquete de admisión esté completo. Nuestro equipo de facturación: Revisa los detalles de tu plan de seguro, incluida la cobertura de terapia ABA. Aclare sus copagos, deducibles y cualquier autorización requerida. Responda a sus preguntas relacionadas con la facturación, manteniendo la transparencia y la claridad. Nos esforzamos por simplificar el aspecto financiero de la terapia ABA, guiándote a través del proceso para que puedas concentrarte con confianza en el cuidado de tu hijo. 5. Programa la evaluación de tu hijo Con sus detalles de admisión y facturación finalizados, nuestro Defensor del Cliente le ayudará a programar una evaluación exhaustiva con nuestro equipo clínico.Trabajaremos estrechamente con usted para encontrar un horario de cita que se adapte a la agenda de su familia y a la comodidad de su hijo. Esta evaluación es un paso vital para comprender las fortalezas de su hijo e identificar áreas donde necesita apoyo específico.La información recopilada durante la evaluación guiará la creación de un plan de tratamiento personalizado diseñado específicamente para apoyar el crecimiento y los hitos de desarrollo de su hijo. 6. Colaborar en un Plan de Atención Personalizado En el Instituto de Autismo de Arizona, la colaboración es fundamental para el éxito a largo plazo de su hijo. La comunicación y coordinación constantes entre nuestro equipo, su familia, cuidadores, educadores y clínicos externos ayudan a garantizar expectativas claras, generalización efectiva de habilidades y progreso sostenido.Una vez que comience la terapia, el progreso de su hijo será supervisado de cerca por un Analista de Conducta Certificado por la Junta (BCBA), quien monitoreará y ajustará regularmente su programa de terapia individualizado. La participación de los padres también es crucial para lograr un progreso significativo, por lo que ofrecemos sesiones semanales de consulta para padres.Estas sesiones te brindarán conocimientos sobre el progreso de tu hijo, estrategias para apoyar la terapia ABA en casa y orientación continua para ayudar a tu hijo a alcanzar su máximo potencial. ¿Listo para empezar? La intervención temprana marca la diferencia ¡Estamos emocionados de asociarnos con usted en este viaje para apoyar el crecimiento y el éxito de su hijo! Take the First Step",
+      "links": [
+        {
+          "text": "Take the First Step",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        }
+      ]
+    },
+    {
+      "route": "/autism-evaluations",
+      "requestedUrl": "https://www.azinstitute4autism.com/autism-evaluations",
+      "observedAt": "2026-10-13T21:38:14.762327+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/autism-evaluations",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 103 ",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:14 GMT",
+        "date: Tue, 13 Oct 2026 21:38:14 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:18 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:18 GMT"
+      ],
+      "sha256": "d1da50ec570839f9ffb014a5309978d62895a286273a9b58e626843ebf53b15f",
+      "title": "Accurate Autism Assessment for Children | Arizona Institute for Autism",
+      "description": "Get comprehensive childhood autism evaluations in Scottsdale, AZ. Our expert team provides accurate assessments to support your child's unique development.",
+      "h1": [
+        "Psychological"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/autism-evaluations",
+      "headings": [
+        "Autism Evaluations",
+        "Conditions We Evaluate and Treat",
+        "Evaluation Services Offered",
+        "ASD Learner Targeted Evaluation",
+        "ADHD Learner Targeted Evaluation",
+        "Combined ASD/ADHD Learner Targeted Evaluation",
+        "How Pediatric Autism Diagnostic Evaluations Work",
+        "Autism Diagnostic Observation Schedule (ADOS)"
+      ],
+      "bodyText": "Psychological Autism Evaluations At the Arizona Institute for Autism, there is no single lab test to diagnose autism. Instead, our team conducts comprehensive evaluations through a series of observations and assessments to understand the underlying causes of your child's symptoms. With an accurate diagnosis of Autism Spectrum Disorder (ASD), we can provide your child with personalized support and specialized care tailored to their unique needs. Conditions We Evaluate and Treat Autism Spectrum Disorder (ASD) Attention-Deficit/Hyperactivity Disorder (ADHD) Evaluation Services Offered ASD Learner Targeted Evaluation Recommended when there are specific concerns about Autism Spectrum Disorder. ADHD Learner Targeted Evaluation Recommended when there are specific concerns about Attention-Deficit/Hyperactivity Disorder. Combined ASD/ADHD Learner Targeted Evaluation Recommended when there are broader concerns related to IQ, executive functioning, and social-emotional development, particularly if ASD and ADHD are both suspected. How Pediatric Autism Diagnostic Evaluations Work At the Arizona Institute for Autism, we diagnose autism by carefully observing your child's behavior and reviewing developmental history provided by caregivers. Evaluations involve a multidisciplinary team, often including professionals in psychology, speech-language pathology, psychiatry, and neurology. Common evaluation methods include: Autism Diagnostic Observation Schedule (ADOS) ADOS is a structured evaluation tool used by our specialists to assess behaviors related to autism spectrum disorders. Appropriate for children of all ages, ADOS helps us understand your child's social and language skills and overall developmental level. This evaluation involves observing how your child interacts with various play-based social scenarios. For younger children, this may include activities like playing with blocks or having a snack, while older children who communicate verbally may participate in conversations about daily activities, such as attending school. Make an Appointment",
+      "links": [
+        {
+          "text": "Autism Spectrum Disorder (ASD)",
+          "href": "https://www.childrens.com/specialties-services/conditions/autism-spectrum-disorder"
+        },
+        {
+          "text": "Make an Appointment",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ]
+    },
+    {
+      "route": "/es/autism-evaluations",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/autism-evaluations",
+      "observedAt": "2026-10-13T21:38:16.017480+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/autism-evaluations",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:16 GMT",
+        "date: Tue, 13 Oct 2026 21:38:16 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:12 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:12 GMT"
+      ],
+      "sha256": "2f41ce71e8108b8076f90320758ec2b8b6a2231d7f0fffeca6fd2a90ecf363c6",
+      "title": "Evaluación precisa del autismo para niños | Arizona Institute for Autism",
+      "description": "Obtenga evaluaciones integrales de autismo infantil en Scottsdale, AZ.  Nuestro equipo de expertos proporciona evaluaciones precisas para apoyar el desarrollo único de su hijo.",
+      "h1": [
+        "Psicológicos"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/autism-evaluations",
+      "headings": [
+        "Evaluaciones de autismo",
+        "Condiciones que evaluamos y tratamos",
+        "Servicios de evaluación que ofrecemos",
+        "Evaluación focalizada para TEA",
+        "Evaluación focalizada para TDAH",
+        "Evaluación focalizada combinada para TEA/TDAH",
+        "Cómo funcionan las evaluaciones pediátricas para el diagnóstico de autismo",
+        "Escala de Observación para el Diagnóstico del Autismo (ADOS)"
+      ],
+      "bodyText": "Psicológicos Evaluaciones de autismo En el Arizona Institute for Autism, no existe una sola prueba de laboratorio para diagnosticar el autismo. En cambio, nuestro equipo realiza evaluaciones integrales mediante una serie de observaciones y pruebas para comprender las posibles causas subyacentes de los síntomas de su hijo/a. Con un diagnóstico preciso de trastorno del espectro autista (TEA), podemos brindarle a su hijo/a apoyo personalizado y atención especializada adaptada a sus necesidades únicas. Condiciones que evaluamos y tratamos Trastorno del espectro autista (TEA) Trastorno por déficit de atención e hiperactividad (TDAH) Servicios de evaluación que ofrecemos Evaluación focalizada para TEA Recomendada cuando existen inquietudes específicas sobre el trastorno del espectro autista. Evaluación focalizada para TDAH Recomendada cuando existen inquietudes específicas sobre el trastorno por déficit de atención e hiperactividad. Evaluación focalizada combinada para TEA/TDAH Recomendada cuando existen inquietudes más amplias relacionadas con el coeficiente intelectual, el funcionamiento ejecutivo y el desarrollo socioemocional, especialmente si se sospechan tanto TEA como TDAH. Cómo funcionan las evaluaciones pediátricas para el diagnóstico de autismo En el Arizona Institute for Autism, diagnosticamos el autismo observando cuidadosamente el comportamiento de su hijo/a y revisando la historia del desarrollo proporcionada por los cuidadores. Las evaluaciones incluyen un equipo multidisciplinario, que a menudo cuenta con profesionales de psicología, patología del habla y lenguaje, psiquiatría y neurología. Los métodos comunes de evaluación incluyen: Escala de Observación para el Diagnóstico del Autismo (ADOS) ADOS es una herramienta de evaluación estructurada que utilizan nuestros especialistas para evaluar comportamientos relacionados con los trastornos del espectro autista. Apropiada para niños de todas las edades, ADOS nos ayuda a comprender las habilidades sociales y del lenguaje de su hijo/a, así como su nivel general de desarrollo. Esta evaluación implica observar cómo su hijo/a interactúa en diferentes situaciones sociales basadas en el juego. Para los niños más pequeños, esto puede incluir actividades como jugar con bloques o tomar una merienda, mientras que los niños mayores que se comunican verbalmente pueden participar en conversaciones sobre actividades cotidianas, como asistir a la escuela. Programar una cita",
+      "links": [
+        {
+          "text": "trastorno del espectro autista (TEA)",
+          "href": "https://www.childrens.com/specialties-services/conditions/autism-spectrum-disorder"
+        },
+        {
+          "text": "Programar una cita",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ]
+    },
+    {
+      "route": "/services",
+      "requestedUrl": "https://www.azinstitute4autism.com/services",
+      "observedAt": "2026-10-13T21:38:17.575471+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/services",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:17 GMT",
+        "date: Tue, 13 Oct 2026 21:38:17 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:23 GMT",
+        "x-hs-cf-cache-status: REVALIDATED",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:23 GMT"
+      ],
+      "sha256": "dca03ba7b2e1bd543d024fea4e0a948461eff05b7c0f09cb25134eb84aaa7796",
+      "title": "Behavioral, Psychological, and Sociological Pediatric Autism Services",
+      "description": "Discover comprehensive autism services for children, from integrative ABA therapy to educational and family support, at the Arizona Institute for Autism.",
+      "h1": [
+        "ABA & Educational Services"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/services",
+      "headings": [
+        "Autism Spectrum Disorder Services",
+        "AIA ABA & Educational Options",
+        "Does My Learner Have Autism?",
+        "Our Services",
+        "Behavioral Services",
+        "Psychological Services",
+        "Sociological Services",
+        "Need Autism Diagnosis Support?"
+      ],
+      "bodyText": "ABA & Educational Services Discover More Get Started Home Services Autism Spectrum Disorder Services Autism Spectrum Disorder (ASD) refers to a group of complex brain development disorders and is characterized by difficulties with social interaction, verbal and non-verbal communication, and emotional control. The Arizona Institute for Autism helps with Autism Evaluations and Diagnostic Screenings, Applied Behavior Analysis (ABA) Therapy, and Educational Programming tailored to each learner’s needs. To support meaningful skill development, we design integrative ABA programs for children diagnosed with autism. We offer both individualized and group ABA Therapy, along with educational services that reflect each child’s unique strengths and goals. AIA ABA & Educational Options In-Center In-School In-Home Early Intervention Academic Readiness Clinical Supervision Parent Consultation Does My Learner Have Autism? Approximately 1 in 36 children in the United States will receive an autism diagnosis each year. If your child exhibits any of the behaviors listed above, it is possible that he or she may be diagnosed on the autism spectrum. Diagnosing children with Autism Spectrum Disorder can be challenging and complex. The most important thing you can do is consult a professional if you think your child is displaying atypical behavior. Consult with a Client Advocate Our Services Arizona Institute for Autism (AIA) offers a comprehensive range of services tailored to individuals with Autism Spectrum Disorder (ASD). Our programs include early intervention for young children, Applied Behavior Analysis (ABA) therapy, social skills groups, and educational support services. AIA is committed to providing personalized care plans to enhance the quality of life for children with autism and their families. Behavioral Services Psychological Services Sociological Services Need Autism Diagnosis Support? To meet diagnostic criteria for ASD, a child must have persistent deficits in each of three areas of social communication and interaction plus at least two of four types of restricted repetitive behaviors. Consult with a Client Advocate today to receive individual and family support! Get a Free Consultation",
+      "links": [
+        {
+          "text": "Discover More",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "text": "Get Started",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "text": "Home",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "text": "Consult with a Client Advocate",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        },
+        {
+          "text": "Behavioral Services",
+          "href": "https://www.azinstitute4autism.com/aba-therapy?hsLang=en"
+        },
+        {
+          "text": "Psychological Services",
+          "href": "https://www.azinstitute4autism.com/autism-evaluations?hsLang=en"
+        },
+        {
+          "text": "Sociological Services",
+          "href": "https://www.azinstitute4autism.com/learner-social-club?hsLang=en"
+        },
+        {
+          "text": "Get a Free Consultation",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=en"
+        }
+      ]
+    },
+    {
+      "route": "/es/services",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/services",
+      "observedAt": "2026-10-13T21:38:19.006310+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/services",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:19 GMT",
+        "date: Tue, 13 Oct 2026 21:38:19 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:22 GMT",
+        "x-hs-cf-cache-status: REVALIDATED",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:22 GMT"
+      ],
+      "sha256": "de5dca3a3265e12d894a34f5dcddd8b3730df70829bebd3e93482367f3d60098",
+      "title": "Servicios pediátricos de autismo conductuales, psicológicos y sociológicos",
+      "description": "Descubra servicios integrales para el autismo para niños, desde terapia ABA integrativa hasta apoyo educativo y familiar, en el Instituto de Autismo de Arizona.",
+      "h1": [
+        "Servicios ABA y Educativos"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/services",
+      "headings": [
+        "Servicios para el Trastorno del Espectro Autista",
+        "AIA ABA y Opciones Educativas",
+        "¿Mi alumno tiene autismo?",
+        "Nuestros Servicios",
+        "Servicios Conductuales",
+        "Servicios Psicológicos",
+        "Servicios Sociológicos",
+        "¿Necesita apoyo para el diagnóstico de autismo?"
+      ],
+      "bodyText": "Servicios ABA y Educativos Discover More Get Started Inicio Servicios Servicios para el Trastorno del Espectro Autista El Trastorno del Espectro Autista (TEA) se refiere a un grupo de trastornos complejos del desarrollo cerebral y se caracteriza por dificultades en la interacción social, la comunicación verbal y no verbal, y el control emocional. El Instituto de Autismo de Arizona ayuda con evaluaciones de autismo y cribados diagnósticos, terapia de análisis de comportamiento aplicado (ABA) y programación educativa adaptada a las necesidades de cada estudiante. Para apoyar el desarrollo significativo de habilidades, diseñamos programas integrativos de ABA para niños diagnosticados con autismo. Ofrecemos terapia ABA tanto individualizada como grupal, junto con servicios educativos que reflejan las fortalezas y metas únicas de cada niño. AIA ABA y Opciones Educativas En el centro En la escuela En el hogar Intervención temprana Preparación académica Supervisión clínica Consulta de padres ¿Mi alumno tiene autismo? Aproximadamente 1 de cada 36 niños en los Estados Unidos recibirá un diagnóstico de autismo cada año. Si su hijo presenta alguno de los comportamientos enumerados anteriormente, es posible que le diagnostiquen un trastorno del espectro autista. Diagnosticar a niños con Trastorno del Espectro Autista puede ser desafiante y complejo. Lo más importante que puedes hacer es consultar a un profesional si crees que tu hijo muestra un comportamiento atípico. Consulte con un Defensor del Cliente Nuestros Servicios El Instituto de Autismo de Arizona (AIA) ofrece una amplia gama de servicios adaptados a personas con Trastorno del Espectro Autista (TEA). Nuestros programas incluyen intervención temprana para niños pequeños, terapia de Análisis de Comportamiento Aplicado (ABA), grupos de habilidades sociales y servicios de apoyo educativo. AIA se compromete a proporcionar planes de atención personalizados para mejorar la calidad de vida de los niños con autismo y sus familias. Servicios Conductuales Servicios Psicológicos Servicios Sociológicos ¿Necesita apoyo para el diagnóstico de autismo? Para cumplir los criterios diagnósticos de TEA, un niño debe tener déficits persistentes en cada una de las tres áreas de comunicación e interacción social, además de al menos dos de los cuatro tipos de comportamientos repetitivos restringidos. ¡Consulte hoy mismo a un Defensor del Cliente para recibir apoyo individual y familiar! Programe una consulta gratuita",
+      "links": [
+        {
+          "text": "Discover More",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "text": "Get Started",
+          "href": "https://www.hubspot.com/"
+        },
+        {
+          "text": "Inicio",
+          "href": "https://www.azinstitute4autism.com/es/?hsLang=es"
+        },
+        {
+          "text": "Consulte con un Defensor del Cliente",
+          "href": "https://www.azinstitute4autism.com/es/client-consultation?hsLang=es"
+        },
+        {
+          "text": "Servicios Conductuales",
+          "href": "https://www.azinstitute4autism.com/aba-therapy?hsLang=es"
+        },
+        {
+          "text": "Servicios Psicológicos",
+          "href": "https://www.azinstitute4autism.com/autism-evaluations?hsLang=es"
+        },
+        {
+          "text": "Servicios Sociológicos",
+          "href": "https://www.azinstitute4autism.com/learner-social-club?hsLang=es"
+        },
+        {
+          "text": "Programe una consulta gratuita",
+          "href": "https://www.azinstitute4autism.com/client-consultation?hsLang=es"
+        }
+      ]
+    },
+    {
+      "route": "/learner-social-club",
+      "requestedUrl": "https://www.azinstitute4autism.com/learner-social-club",
+      "observedAt": "2026-10-13T21:38:20.445397+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/learner-social-club",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 103 ",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:20 GMT",
+        "date: Tue, 13 Oct 2026 21:38:20 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:14 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:14 GMT"
+      ],
+      "sha256": "74a812f5a6a4841bc234a8058098cbf5c37630915fde608e146b04e1a091307d",
+      "title": "Boost Emotional and Social Functioning with Learner Social Club at AIA",
+      "description": "Contact AIA for a free 1-day trial pass to see how your child's social and emotional development can benefit from our Learner Social Club for ages 8-17.",
+      "h1": [
+        "Sociological"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/learner-social-club",
+      "headings": [
+        "Learner Social Club",
+        "What We Offer",
+        "Enrollment Reminders for Parents/Guardians",
+        "Program Schedule & Ages Served",
+        "Payment Information"
+      ],
+      "bodyText": "Sociological Learner Social Club Every child needs opportunities to have fun, make friends, and build social connections while developing valuable skills. The Learner Social Club is designed specifically to support your learner’s emotional and social well-being through engaging, evidence-based enrichment activities. What We Offer Our integrative wellness enrichment services include: Music Art Games Dance Recreational activities These thoughtfully designed activities help nurture your learner’s mind and body, providing holistic wellness and saving you valuable time. Enrollment Reminders for Parents/Guardians To ensure the best experience for your learner, please keep the following in mind: Potty Training: Learners must be potty-trained before enrolling. Wipes: Pack wipes for your learner. These can be stored at our clinic. Snack & Water: Send your learner with a snack and water. These items can also be stored on-site. Pause/Cancellation Notice: Please provide AIA staff with at least a 30-day notice if you plan to pause or cancel your Learner Social Club services. Program Schedule & Ages Served The Learner Social Club currently serves youth learners aged 8–17 years. Our flexible scheduling options currently include: 2 days/week (Monday, Wednesday): 4:00 PM – 6:00 PM 1 day/week (Wednesday only): 4:00 PM – 6:00 PM Payment Information Payment Type: Private Pay Interested in Trying Out Our Program? Get a 1-Day Trial Pass by emailing us at info [at] azinstitute4autism [dot] com. Enroll Now",
+      "links": [
+        {
+          "text": "Enroll Now",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ]
+    },
+    {
+      "route": "/es/learner-social-club",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/learner-social-club",
+      "observedAt": "2026-10-13T21:38:21.763137+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/learner-social-club",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:21 GMT",
+        "date: Tue, 13 Oct 2026 21:38:22 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:22 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:22 GMT"
+      ],
+      "sha256": "2740d0ffc65bed908841c756f68ab911c3213634391d892edc127980aca80f46",
+      "title": "Impulsa el funcionamiento emocional y social con Learner Social Club en AIA",
+      "description": "Póngase en contacto con AIA para obtener un pase de prueba gratuito de 1 día y ver cómo el desarrollo social y emocional de su hijo puede beneficiarse de nuestro Learner Social Club de 8 a 17 años.",
+      "h1": [
+        "Sociológico"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/learner-social-club",
+      "headings": [
+        "Learner Social Club",
+        "Lo que ofrecemos",
+        "Recordatorios de inscripción para padres/tutores",
+        "Horario del programa y edades atendidas",
+        "Información de pago"
+      ],
+      "bodyText": "Sociológico Learner Social Club Todo niño necesita oportunidades para divertirse, hacer amigos y crear conexiones sociales mientras desarrolla habilidades valiosas. Learner Social Club está diseñado específicamente para apoyar el bienestar emocional y social de su hijo/a mediante actividades de enriquecimiento atractivas y basadas en evidencia. Lo que ofrecemos Nuestros servicios integrales de enriquecimiento para el bienestar incluyen: Música Arte Juegos Baile Actividades recreativas Estas actividades cuidadosamente diseñadas ayudan a nutrir la mente y el cuerpo de su hijo/a, brindan bienestar integral y le ahorran tiempo valioso. Recordatorios de inscripción para padres/tutores Para garantizar la mejor experiencia para su hijo/a, tenga en cuenta lo siguiente: Control de esfínteres: Los participantes deben saber usar el baño antes de inscribirse. Toallitas húmedas: Envíe toallitas húmedas para su hijo/a. Estas pueden guardarse en nuestra clínica. Merienda y agua: Envíe a su hijo/a con una merienda y agua. Estos artículos también pueden guardarse en el centro. Aviso de pausa/cancelación: Proporcione al personal de AIA un aviso con al menos 30 días de anticipación si planea pausar o cancelar los servicios de Learner Social Club. Horario del programa y edades atendidas Learner Social Club actualmente atiende a jóvenes de 8 a 17 años. Nuestras opciones de horario flexible actualmente incluyen: 2 días/semana (lunes y miércoles): 4:00 p. m. – 6:00 p. m. 1 día/semana (solo miércoles): 4:00 p. m. – 6:00 p. m. Información de pago Tipo de pago: Pago particular ¿Le interesa probar nuestro programa? Obtenga un pase de prueba de 1 día enviándonos un correo electrónico a info [at] azinstitute4autism [dot] com. Enroll Now",
+      "links": [
+        {
+          "text": "Enroll Now",
+          "href": "https://form.jotform.com/231638510219149"
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "requestedUrl": "https://www.azinstitute4autism.com/contact",
+      "observedAt": "2026-10-13T21:38:23.240692+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/contact",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:23 GMT",
+        "date: Tue, 13 Oct 2026 21:38:23 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:14 GMT",
+        "x-hs-cf-cache-status: HIT",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:14 GMT"
+      ],
+      "sha256": "2c82c274a22579805c966e8b0dba55b0881c8745c6a5fab837e931ab220f670e",
+      "title": "Contact AIA | Arizona Institute for Autism | Scottsdale",
+      "description": "Reach out to learn more about our comprehensive wellness services for children with autism, including behavioral health, education, and consultation.",
+      "h1": [
+        "Contact AIA"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/contact",
+      "headings": [
+        "Schedule a Tour",
+        "Reach Out",
+        "Contact AIA"
+      ],
+      "bodyText": "Contact AIA Schedule a Tour Reach out to one of our expert Client Advocates to see if ABA-integrated therapy is right for your learner. Schedule Tour Reach Out If you have questions about any of our services and programs, feel free to use the contact form on this page. You may also call or email using the following information. General Inquiries: 9907-786 (084) Billing Inquiries: 9240-807 (206) Email: moc.msitua4etutitsniza@ofni Address: 8901 E. Raintree Drive, Ste #160 Scottsdale, AZ 85260 Hours: Monday - Friday, 8am - 6pm MST Contact AIA",
+      "links": [
+        {
+          "text": "Schedule Tour",
+          "href": "https://www.azinstitute4autism.com/tour?hsLang=en"
+        }
+      ]
+    },
+    {
+      "route": "/es/contact",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/contact",
+      "observedAt": "2026-10-13T21:38:24.501210+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/contact",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:24 GMT",
+        "date: Tue, 13 Oct 2026 21:38:25 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sat, 03 Oct 2026 23:13:14 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:14 GMT"
+      ],
+      "sha256": "f3a1fb19e090db3e1d426db319450f70307b0a9fcd7df507cd6f3d469efcf222",
+      "title": "Contactar a AIA | Arizona Institute for Autism | Scottsdale",
+      "description": "Comuníquese con nosotros para obtener más información sobre nuestros servicios integrales de bienestar para niños con autismo, que incluyen salud conductual, educación y consulta.",
+      "h1": [
+        "Contactar a AIA"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/contact",
+      "headings": [
+        "Programar una visita",
+        "Comunícate",
+        "Contactar a AIA"
+      ],
+      "bodyText": "Contactar a AIA Programar una visita Comuníquese con uno de nuestros defensores de clientes expertos para ver si la terapia integrada con ABA es adecuada para su alumno. Programar visita Comunícate Si tiene preguntas sobre alguno de nuestros servicios y programas, no dude en utilizar el formulario de contacto de esta página. También puede llamar o enviar un correo electrónico utilizando la siguiente información. Consultas generales: 9907-786 (084) Consultas de facturación: 9240-807 (206) Correo electrónico: moc.msitua4etutitsniza@ofni Dirección: 8901 E. Raintree Drive, Ste #160 Scottsdale, AZ 85260 Horas: Lunes - Viernes, 8am - 6pm MST Contactar a AIA",
+      "links": [
+        {
+          "text": "Programar visita",
+          "href": "https://www.azinstitute4autism.com/tour?hsLang=es"
+        }
+      ]
+    },
+    {
+      "route": "/client-consultation",
+      "requestedUrl": "https://www.azinstitute4autism.com/client-consultation",
+      "observedAt": "2026-10-13T21:38:26.116995+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/client-consultation",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:26 GMT",
+        "date: Tue, 13 Oct 2026 21:38:26 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sun, 04 Oct 2026 00:00:00 GMT",
+        "x-hs-cf-cache-status: REVALIDATED",
+        "x-hs-prerendered: Sun, 04 Oct 2026 00:00:00 GMT"
+      ],
+      "sha256": "df31e8f2bc82d47e0cc1c2144177047d7f37fdfc39a0d18c26fca3a8db4cdf9b",
+      "title": "Client Consultation Form | Arizona Institute for Autism | Scottsdale",
+      "description": "Schedule your free consultation with a Client Advocate at Arizona Institute for Autism to find out what we can do for your child diagnosed with autism.",
+      "h1": [
+        "Schedule Your Free Consultation"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/client-consultation",
+      "headings": [
+        "Our ABA Therapy Services"
+      ],
+      "bodyText": "Schedule Your Free Consultation At the Arizona Institute for Autism (AIA), we have a no wait list policy and provide expert clinical care for children diagnosed with autism. We currently serve families in Scottsdale, Gilbert, Mesa, Tempe, and Phoenix Metropolitan areas. Our ABA Therapy Services Along with ABA therapy for children, our services include autism advocacy support, evaluation and assessment support, and family training.",
+      "links": []
+    },
+    {
+      "route": "/es/client-consultation",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/client-consultation",
+      "observedAt": "2026-10-13T21:38:27.620117+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/client-consultation",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:27 GMT",
+        "date: Tue, 13 Oct 2026 21:38:28 GMT",
+        "cache-control: s-maxage=36000, max-age=5",
+        "last-modified: Sun, 04 Oct 2026 00:00:44 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sun, 04 Oct 2026 00:00:44 GMT"
+      ],
+      "sha256": "3801f2baa73936af70c5298be91db629e0257fc5fb6e80c9ce22b79b74e3c95e",
+      "title": "Formulario de Consulta del Cliente | Arizona Institute for Autism | Scottsdale",
+      "description": "Programa tu consulta gratuita con un Defensor del Cliente en el Instituto de Autismo de Arizona para descubrir qué podemos hacer por tu hijo diagnosticado con autismo.",
+      "h1": [
+        "Programa tu consulta gratuita"
+      ],
+      "canonical": "https://www.azinstitute4autism.com/es/client-consultation",
+      "headings": [
+        "Nuestros Servicios de Terapia ABA"
+      ],
+      "bodyText": "Programa tu consulta gratuita Aquí en el Instituto de Autismo de Arizona (AIA), tenemos una política de lista de espera cero y brindamos atención clínica experta para niños diagnosticados con autismo. Actualmente atendemos a familias en las áreas metropolitanas de Scottsdale, Gilbert, Mesa, Tempe y Phoenix. Nuestros Servicios de Terapia ABA Además de la terapia ABA para niños, nuestros servicios incluyen apoyo para la defensa del autismo, apoyo para la evaluación y el diagnóstico, y capacitación familiar.",
+      "links": []
+    },
+    {
+      "route": "/library/author/rula-diab",
+      "requestedUrl": "https://www.azinstitute4autism.com/library/author/rula-diab",
+      "observedAt": "2026-10-13T21:38:29.113414+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/library/author/rula-diab",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:29 GMT",
+        "date: Tue, 13 Oct 2026 21:38:29 GMT",
+        "cache-control: no-store, no-cache, must-revalidate",
+        "last-modified: Sat, 03 Oct 2026 23:13:21 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:21 GMT"
+      ],
+      "sha256": "812146069ce8e70515216599ec0973f13be331141dfe186b7abbfeebc6acb15c",
+      "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+      "description": "Rula Diab is a passionate clinician and entrepreneur dedicated to supporting children with autism. She founded the Arizona Institute for Autism (AIA) to provide high-quality, individualized ABA therapy in a nurturing and culturally competent environment. Committed to integrity, empowerment, and excellence, Rula ensures that AIA prioritizes both learner success and staff development. Her vision stems from a deep desire to help children reach their highest potential, creating a positive impact on families and the community. Through perseverance and dedication, she has built AIA into a trusted center for autism care. Beyond her work, Rula enjoys the cultural and natural beauty in and around Scottsdale, from Old Town’s charm to the Desert Botanical Garden and Sedona’s red rock landscapes.",
+      "h1": [
+        "The Library at AZ Institute for Autism"
+      ],
+      "headings": [
+        "Rula Diab, Clinical Director, M.Ed, BCBA, LBA"
+      ],
+      "bodyText": "Welcome to The Library at AZ Institute for Autism [transient address omitted] Rula Diab, Clinical Director, M.Ed, BCBA, LBA Rula Diab is a passionate clinician and entrepreneur dedicated to supporting children with autism. She founded the Arizona Institute for Autism (AIA) to provide high-quality, individualized ABA therapy in a nurturing and culturally competent environment. Committed to integrity, empowerment, and excellence, Rula ensures that AIA prioritizes both learner success and staff development. Her vision stems from a deep desire to help children reach their highest potential, creating a positive impact on families and the community. Through perseverance and dedication, she has built AIA into a trusted center for autism care. Beyond her work, Rula enjoys the cultural and natural beauty in and around Scottsdale, from Old Town’s charm to the Desert Botanical Garden and Sedona’s red rock landscapes. All Post All Post Search Popular Posts Master Proactive & Reactive ABA Techniques – Schedule a Consultation Antecedent and Consequence Interventions in ABA: Strategies and Examples Executive Functioning Skills and Autism ASD Sensory-Friendly Recipes: Pancakes Guide to Teaching Self‑Advocacy in ABA Rula Diab, Clinical Director, M.Ed, BCBA, LBA 1 October 2026 Halloween and Autism: Making the Holiday Comfortable, Safe, and Fun Plan Halloween around your autistic child's needs with costume ideas, visual schedules, AAC... 10 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 28 September 2026 Sleep Issues in Autistic Children: Calmer Nights for the Whole Family Learn why autistic children may struggle with sleep, what families can try at home, when to seek... 10 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 24 September 2026 Autism Social Skills by Age: How Social Development Changes as Kids Grow See how social skills and social demands change from early childhood through the teen years, with... 13 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 9 September 2026 Back to School with Autism: ABA Strategies for a Smoother Transition Use ABA-informed routines, visual supports, communication practice, sensory planning, and school... 14 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 8 September 2026 How Many Hours of ABA Does a Child Need? Learn how ABA hours are determined, when focused or comprehensive treatment may fit, and why... 10 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 1 September 2026 After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home Why can an autistic child seem fine at school and fall apart at home? Learn how masking, fatigue,... 17 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 1 August 2026 Picky Eating and Restricted Diets in Autistic Children Learn why autistic children may have restricted diets, what parents can try without pressure, and... 14 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 8 July 2026 Does ABA Therapy Replace School? Does ABA therapy replace school? Learn how ABA, IEP services, school supports, and readiness... 8 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 1 July 2026 Daily Living Challenges in Autism: Eating, Sleeping & Self-Care Learn how autism impacts daily living skills like eating, sleeping, and hygiene, and discover how... 12 minutes read Read More 0 views 0 Rula Diab, Clinical Director, M.Ed, BCBA, LBA 1 June 2026 Supporting Friendships and Social Play for Children with Autism Learn how to support friendships and social play for autistic children. Discover practical tips for... 8 minutes read Read More 0 views 0 1 2 3 4 5",
+      "links": [
+        {
+          "text": "All Post",
+          "href": "https://www.azinstitute4autism.com/library"
+        },
+        {
+          "text": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+          "href": "https://www.azinstitute4autism.com/library/proactive-reactive-aba-strategies-guide"
+        },
+        {
+          "text": "Antecedent and Consequence Interventions in ABA: Strategies and Examples",
+          "href": "https://www.azinstitute4autism.com/library/aba-school-readiness-guide"
+        },
+        {
+          "text": "Executive Functioning Skills and Autism",
+          "href": "https://www.azinstitute4autism.com/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "ASD Sensory-Friendly Recipes: Pancakes",
+          "href": "https://www.azinstitute4autism.com/library/asd-sensory-friendly-recipes-pancakes"
+        },
+        {
+          "text": "Guide to Teaching Self‑Advocacy in ABA",
+          "href": "https://www.azinstitute4autism.com/library/autism-self-advocacy-skills-aba"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/halloween-and-autism"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Halloween and Autism: Making the Holiday Comfortable, Safe, and Fun",
+          "href": "https://www.azinstitute4autism.com/library/halloween-and-autism"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/halloween-and-autism"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/sleep-issues-autistic-children"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Sleep Issues in Autistic Children: Calmer Nights for the Whole Family",
+          "href": "https://www.azinstitute4autism.com/library/sleep-issues-autistic-children"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/sleep-issues-autistic-children"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/autism-social-skills-by-age"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+          "href": "https://www.azinstitute4autism.com/library/autism-social-skills-by-age"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/autism-social-skills-by-age"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/autism-back-to-school-transition"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Back to School with Autism: ABA Strategies for a Smoother Transition",
+          "href": "https://www.azinstitute4autism.com/library/autism-back-to-school-transition"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/autism-back-to-school-transition"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/how-many-hours-aba-child-need"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "How Many Hours of ABA Does a Child Need?",
+          "href": "https://www.azinstitute4autism.com/library/how-many-hours-aba-child-need"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/how-many-hours-aba-child-need"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/autism-after-school-meltdowns"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home",
+          "href": "https://www.azinstitute4autism.com/library/autism-after-school-meltdowns"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/autism-after-school-meltdowns"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/picky-eating-autism-parent-guide"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Picky Eating and Restricted Diets in Autistic Children",
+          "href": "https://www.azinstitute4autism.com/library/picky-eating-autism-parent-guide"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/picky-eating-autism-parent-guide"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/does-aba-therapy-replace-school"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Does ABA Therapy Replace School?",
+          "href": "https://www.azinstitute4autism.com/library/does-aba-therapy-replace-school"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/does-aba-therapy-replace-school"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/autism-daily-living-skills-challenges"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Daily Living Challenges in Autism: Eating, Sleeping & Self-Care",
+          "href": "https://www.azinstitute4autism.com/library/autism-daily-living-skills-challenges"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/autism-daily-living-skills-challenges"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/autism-friendships-social-play-support"
+        },
+        {
+          "text": "Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab"
+        },
+        {
+          "text": "Supporting Friendships and Social Play for Children with Autism",
+          "href": "https://www.azinstitute4autism.com/library/autism-friendships-social-play-support"
+        },
+        {
+          "text": "Read More",
+          "href": "https://www.azinstitute4autism.com/library/autism-friendships-social-play-support"
+        },
+        {
+          "text": "1",
+          "href": "https://www.azinstitute4autism.com/library"
+        },
+        {
+          "text": "2",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab/page/2"
+        },
+        {
+          "text": "3",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab/page/3"
+        },
+        {
+          "text": "4",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab/page/4"
+        },
+        {
+          "text": "5",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab/page/5"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab/page/2"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/library/author/rula-diab/page/6"
+        }
+      ]
+    },
+    {
+      "route": "/es/library/author/rula-diab",
+      "requestedUrl": "https://www.azinstitute4autism.com/es/library/author/rula-diab",
+      "observedAt": "2026-10-13T21:38:30.713314+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/es/library/author/rula-diab",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:30 GMT",
+        "date: Tue, 13 Oct 2026 21:38:31 GMT",
+        "cache-control: no-store, no-cache, must-revalidate",
+        "last-modified: Sat, 03 Oct 2026 23:13:18 GMT",
+        "x-hs-cf-cache-status: REVALIDATED",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:18 GMT"
+      ],
+      "sha256": "e128dfaf4ab026ca47ba22a31198abe11197f1d5bbf09bc034322d0fc7cf9c4b",
+      "title": "Biblioteca y Noticias | Instituto de Autismo de Arizona | Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+      "description": "Rula Diab es una clínica apasionada y emprendedora dedicada a apoyar a los niños con autismo. Fundó el Arizona Institute for Autism (AIA) para ofrecer terapia ABA de alta calidad e individualizada en un entorno acogedor y culturalmente competente. Comprometida con la integridad, el empoderamiento y la excelencia, Rula se asegura de que AIA priorice tanto el éxito de los alumnos como el desarrollo del personal. Su visión surge de un profundo deseo de ayudar a los niños a alcanzar su máximo potencial, creando un impacto positivo en las familias y en la comunidad. A través de la perseverancia y la dedicación, ha convertido a AIA en un centro de confianza para la atención del autismo. Más allá de su trabajo, Rula disfruta de la belleza cultural y natural en Scottsdale y sus alrededores, desde el encanto de Old Town hasta el Jardín Botánico del Desierto y los paisajes de roca roja de Sedona.",
+      "h1": [
+        "La Biblioteca en AZ Institute for Autism"
+      ],
+      "headings": [
+        "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA"
+      ],
+      "bodyText": "Bienvenido a La Biblioteca en AZ Institute for Autism [transient address omitted] Rula Diab, Directora Clínica, M.Ed, BCBA, LBA Rula Diab es una clínica apasionada y emprendedora dedicada a apoyar a los niños con autismo. Fundó el Arizona Institute for Autism (AIA) para ofrecer terapia ABA de alta calidad e individualizada en un entorno acogedor y culturalmente competente. Comprometida con la integridad, el empoderamiento y la excelencia, Rula se asegura de que AIA priorice tanto el éxito de los alumnos como el desarrollo del personal. Su visión surge de un profundo deseo de ayudar a los niños a alcanzar su máximo potencial, creando un impacto positivo en las familias y en la comunidad. A través de la perseverancia y la dedicación, ha convertido a AIA en un centro de confianza para la atención del autismo. Más allá de su trabajo, Rula disfruta de la belleza cultural y natural en Scottsdale y sus alrededores, desde el encanto de Old Town hasta el Jardín Botánico del Desierto y los paisajes de roca roja de Sedona. All Post All Post Buscar Popular Posts Guía de Autismo para Padres y Cuidadores Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades Habilidades de funcionamiento ejecutivo y autismo Por qué mi hijo puede hablar pero aún tiene dificultades sociales Por qué la regulación emocional debería ser el corazón de cada programa de ABA Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Mejorando la generalización para un impacto más amplio en el autismo Mejorar la generalización en el autismo implica generalizaciones de estímulos, respuestas y... 1 minute read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Qué esperar en la primera evaluación de autismo de su hijo Aprenda qué sucede antes, durante y después de una evaluación de autismo en un niño. Vea a quién... 8 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Guía de Autismo para Padres y Cuidadores Learn practical autism and ABA-informed strategies parents and caregivers can use to support... 11 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades Aprenda técnicas efectivas de refuerzo positivo para fomentar el comportamiento deseado en los... 4 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Habilidades de funcionamiento ejecutivo y autismo Estrategias basadas en evidencia para la función ejecutiva en el autismo: apoyos visuales para la... 3 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Guía para enseñar la autodefensa en el ABA Empodere a su hijo con terapia ABA individualizada en el Instituto de Autismo de Arizona. ¡Reserva... 2 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Tarjetas Primero/Después : Empoderando las transiciones para niños autistas Aprenda cómo Primero/después, las tarjetas apoyan transiciones más suaves y comportamientos... 2 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 8 abril 2026 Descubre consejos para el autocuidado de padres de niños con autismo Toma las riendas de tu bienestar como cuidador de una persona con autismo. Explora estrategias... 3 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 22 enero 2026 Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres Aprende los signos del autismo según la edad, quién puede diagnosticar en Arizona y los próximos... 7 minutes read Leer Más 0 views 0 Rula Diab, Directora Clínica, M.Ed, BCBA, LBA 22 enero 2026 Por qué mi hijo puede hablar pero aún tiene dificultades sociales Tu hijo puede hablar, pero tiene dificultades sociales. Vea cómo el lenguaje pragmático, la... 8 minutes read Leer Más 0 views 0 1 2",
+      "links": [
+        {
+          "text": "All Post",
+          "href": "https://www.azinstitute4autism.com/es/library"
+        },
+        {
+          "text": "Guía de Autismo para Padres y Cuidadores",
+          "href": "https://www.azinstitute4autism.com/es/library/parents-guide-to-autism-and-aba"
+        },
+        {
+          "text": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+          "href": "https://www.azinstitute4autism.com/es/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "Habilidades de funcionamiento ejecutivo y autismo",
+          "href": "https://www.azinstitute4autism.com/es/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+          "href": "https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism"
+        },
+        {
+          "text": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+          "href": "https://www.azinstitute4autism.com/es/library/emotional-regulation-aba"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/enhancing-generalization-skills"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Mejorando la generalización para un impacto más amplio en el autismo",
+          "href": "https://www.azinstitute4autism.com/es/library/enhancing-generalization-skills"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/enhancing-generalization-skills"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-evaluation-what-to-expect"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Qué esperar en la primera evaluación de autismo de su hijo",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-evaluation-what-to-expect"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-evaluation-what-to-expect"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/parents-guide-to-autism-and-aba"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Guía de Autismo para Padres y Cuidadores",
+          "href": "https://www.azinstitute4autism.com/es/library/parents-guide-to-autism-and-aba"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/parents-guide-to-autism-and-aba"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+          "href": "https://www.azinstitute4autism.com/es/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Habilidades de funcionamiento ejecutivo y autismo",
+          "href": "https://www.azinstitute4autism.com/es/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Guía para enseñar la autodefensa en el ABA",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-self-advocacy-skills-aba"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/first-then-cards-autism-transitions"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+          "href": "https://www.azinstitute4autism.com/es/library/first-then-cards-autism-transitions"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/first-then-cards-autism-transitions"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-family-self-care-tips"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Descubre consejos para el autocuidado de padres de niños con autismo",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-family-self-care-tips"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-family-self-care-tips"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/autism-evaluation-diagnosis-arizona-parent-guide"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism"
+        },
+        {
+          "text": "Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab"
+        },
+        {
+          "text": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+          "href": "https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism"
+        },
+        {
+          "text": "Leer Más",
+          "href": "https://www.azinstitute4autism.com/es/library/social-pragmatic-communication-autism"
+        },
+        {
+          "text": "1",
+          "href": "https://www.azinstitute4autism.com/es/library"
+        },
+        {
+          "text": "2",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab/page/2"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab/page/2"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/es/library/author/rula-diab/page/2"
+        }
+      ]
+    },
+    {
+      "route": "/ar/library/author/rula-diab",
+      "requestedUrl": "https://www.azinstitute4autism.com/ar/library/author/rula-diab",
+      "observedAt": "2026-10-13T21:38:32.155955+00:00",
+      "status": 200,
+      "finalUrl": "https://www.azinstitute4autism.com/ar/library/author/rula-diab",
+      "tlsVerified": false,
+      "redirectStatusLines": [
+        "HTTP/1.1 200 OK",
+        "HTTP/2 200 "
+      ],
+      "cacheHeaders": [
+        "date: Tue, 13 Oct 2026 21:38:32 GMT",
+        "date: Tue, 13 Oct 2026 21:38:32 GMT",
+        "cache-control: no-store, no-cache, must-revalidate",
+        "last-modified: Sat, 03 Oct 2026 23:13:19 GMT",
+        "x-hs-cf-cache-status: MISS",
+        "x-hs-prerendered: Sat, 03 Oct 2026 23:13:19 GMT"
+      ],
+      "sha256": "879e96d72cd531af3121545d359557f9f8bb8d582a165038a3e8b5af632e9c6c",
+      "title": "المكتبة وغرفة الأخبار | معهد أريزونا للتوحد | رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+      "description": "رولا دياب طبيبة سريرية ورائدة أعمال شغوفة، تُكرّس جهودها لدعم الأطفال المصابين بالتوحد. أسست رولا معهد أريزونا للتوحد (AIA) لتقديم علاج تحليل سلوك تطبيقي عالي الجودة ومُصمّم خصيصًا لكل طفل في بيئة داعمة ومُؤهلة ثقافيًا. تلتزم رولا بالنزاهة والتمكين والتميز، وتحرص على أن يُولي المعهد الأولوية لكل من نجاح المتعلمين وتطوير الموظفين. تنبع رؤيتها من رغبة عميقة في مساعدة الأطفال على تحقيق أقصى إمكاناتهم، مما يُحدث تأثيرًا إيجابيًا على عائلاتهم ومجتمعهم. بفضل مثابرتها وتفانيها، نجحت في بناء معهد أريزونا للتوحد ليصبح مركزًا موثوقًا لرعاية مرضى التوحد. إلى جانب عملها، تستمتع رولا بالجمال الثقافي والطبيعي في سكوتسديل ومحيطها، من سحر المدينة القديمة إلى حديقة النباتات الصحراوية ومناظر الصخور الحمراء في سيدونا.",
+      "h1": [
+        "مكتبة معهد أريزونا للتوحد"
+      ],
+      "headings": [
+        "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA"
+      ],
+      "bodyText": "مرحبًا بكم في مكتبة معهد أريزونا للتوحد [transient address omitted] رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA رولا دياب طبيبة سريرية ورائدة أعمال شغوفة، تُكرّس جهودها لدعم الأطفال المصابين بالتوحد. أسست رولا معهد أريزونا للتوحد (AIA) لتقديم علاج تحليل سلوك تطبيقي عالي الجودة ومُصمّم خصيصًا لكل طفل في بيئة داعمة ومُؤهلة ثقافيًا. تلتزم رولا بالنزاهة والتمكين والتميز، وتحرص على أن يُولي المعهد الأولوية لكل من نجاح المتعلمين وتطوير الموظفين. تنبع رؤيتها من رغبة عميقة في مساعدة الأطفال على تحقيق أقصى إمكاناتهم، مما يُحدث تأثيرًا إيجابيًا على عائلاتهم ومجتمعهم. بفضل مثابرتها وتفانيها، نجحت في بناء معهد أريزونا للتوحد ليصبح مركزًا موثوقًا لرعاية مرضى التوحد. إلى جانب عملها، تستمتع رولا بالجمال الثقافي والطبيعي في سكوتسديل ومحيطها، من سحر المدينة القديمة إلى حديقة النباتات الصحراوية ومناظر الصخور الحمراء في سيدونا. All Post All Post بحث Popular Posts مهارات الوظائف التنفيذية والتوحّد التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA 1 سبتمبر 2025 بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد تعرّف على كيفية دعم بطاقات أولاً/ثم للانتقال السلس والسلوكيات الإيجابية لدى الأطفال المصابين... 2 minutes read اقرأ المزيد 0 views 0 رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA 4 أغسطس 2025 التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات تعلّم أساليب التعزيز الإيجابي الفعّالة لتشجيع السلوكيات المرغوبة لدى الأطفال. اكتشف نصائح وأدوات... 4 minutes read اقرأ المزيد 0 views 0 رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA 18 يوليو 2025 إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن تعلم استراتيجيات الـ ABA الاستباقية والتفاعلية لخفض السلوكيات المشكلية وتعزيز النجاح. اقرأ الآن... 2 minutes read اقرأ المزيد 0 views 0 رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA 1 مايو 2025 مهارات الوظائف التنفيذية والتوحّد استراتيجيات وظائف تنفيذية قائمة على الأدلة للتوحّد: دعائم بصرية للتخطيط، وتنظيم الانفعالات، وضبط... 3 minutes read اقرأ المزيد 0 views 0 رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA 2 ديسمبر 2024 دليل تعليم مهارات الدفاع عن النفس في ABA مكّن طفلك بعلاج ABA فردي في معهد أريزونا للتوحّد. احجز استشارة مجانية اليوم وابدأ رعاية مخصّصة... 2 minutes read اقرأ المزيد 0 views 0 رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA 30 يوليو 2024 العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج خفّف توتر العودة إلى المدرسة وعزّز الاستعداد المدرسي باستراتيجيات بسيطة للمقدمات والنتائج، وتكتيكات... 1 minute read اقرأ المزيد 0 views 0 رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA 28 يونيو 2024 إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك اكتشف لماذا تحدث السلوكيات وكيفية تعليم بدائل إيجابية عبر دليلنا المبسّط. بادر الآن لروتينات أكثر... 1 minute read اقرأ المزيد 0 views 0",
+      "links": [
+        {
+          "text": "All Post",
+          "href": "https://www.azinstitute4autism.com/ar/library"
+        },
+        {
+          "text": "مهارات الوظائف التنفيذية والتوحّد",
+          "href": "https://www.azinstitute4autism.com/ar/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+          "href": "https://www.azinstitute4autism.com/ar/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+          "href": "https://www.azinstitute4autism.com/ar/library/behavior-management-functions-guide"
+        },
+        {
+          "text": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+          "href": "https://www.azinstitute4autism.com/ar/library/first-then-cards-autism-transitions"
+        },
+        {
+          "text": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+          "href": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/ar/library/first-then-cards-autism-transitions"
+        },
+        {
+          "text": "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+          "href": "https://www.azinstitute4autism.com/ar/library/author/rula-diab"
+        },
+        {
+          "text": "بطاقات \"أولاً/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+          "href": "https://www.azinstitute4autism.com/ar/library/first-then-cards-autism-transitions"
+        },
+        {
+          "text": "اقرأ المزيد",
+          "href": "https://www.azinstitute4autism.com/ar/library/first-then-cards-autism-transitions"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/ar/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+          "href": "https://www.azinstitute4autism.com/ar/library/author/rula-diab"
+        },
+        {
+          "text": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+          "href": "https://www.azinstitute4autism.com/ar/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "اقرأ المزيد",
+          "href": "https://www.azinstitute4autism.com/ar/library/positive-reinforcement-techniques"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/ar/library/proactive-reactive-aba-strategies-guide"
+        },
+        {
+          "text": "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+          "href": "https://www.azinstitute4autism.com/ar/library/author/rula-diab"
+        },
+        {
+          "text": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+          "href": "https://www.azinstitute4autism.com/ar/library/proactive-reactive-aba-strategies-guide"
+        },
+        {
+          "text": "اقرأ المزيد",
+          "href": "https://www.azinstitute4autism.com/ar/library/proactive-reactive-aba-strategies-guide"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/ar/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+          "href": "https://www.azinstitute4autism.com/ar/library/author/rula-diab"
+        },
+        {
+          "text": "مهارات الوظائف التنفيذية والتوحّد",
+          "href": "https://www.azinstitute4autism.com/ar/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "اقرأ المزيد",
+          "href": "https://www.azinstitute4autism.com/ar/library/executive-functioning-skills-autism"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-skills-aba"
+        },
+        {
+          "text": "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+          "href": "https://www.azinstitute4autism.com/ar/library/author/rula-diab"
+        },
+        {
+          "text": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+          "href": "https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-skills-aba"
+        },
+        {
+          "text": "اقرأ المزيد",
+          "href": "https://www.azinstitute4autism.com/ar/library/autism-self-advocacy-skills-aba"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide"
+        },
+        {
+          "text": "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+          "href": "https://www.azinstitute4autism.com/ar/library/author/rula-diab"
+        },
+        {
+          "text": "العودة إلى المدرسة بسهولة | تدخلات السلوك التحليلية (ABA) من خلال المقدمات والنتائج",
+          "href": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide"
+        },
+        {
+          "text": "اقرأ المزيد",
+          "href": "https://www.azinstitute4autism.com/ar/library/aba-school-readiness-guide"
+        },
+        {
+          "text": "",
+          "href": "https://www.azinstitute4autism.com/ar/library/behavior-management-functions-guide"
+        },
+        {
+          "text": "رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+          "href": "https://www.azinstitute4autism.com/ar/library/author/rula-diab"
+        },
+        {
+          "text": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+          "href": "https://www.azinstitute4autism.com/ar/library/behavior-management-functions-guide"
+        },
+        {
+          "text": "اقرأ المزيد",
+          "href": "https://www.azinstitute4autism.com/ar/library/behavior-management-functions-guide"
+        }
+      ]
+    }
+  ]
+}

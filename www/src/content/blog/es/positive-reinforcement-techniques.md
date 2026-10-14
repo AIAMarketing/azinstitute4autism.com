@@ -45,7 +45,7 @@ El refuerzo positivo ocurre cuando una consecuencia deseable sigue inmediatament
 
 -   **Mejora la regulación emocional.** Las recompensas ayudan a los niños a asociar sentimientos positivos con el autocontrol.
 
-⚙️ **Tip:** Reinforcement is more effective when it feels genuine. Use specific praise like "I love how you put your shoes away!" instead of a generic "Good job!"
+⚙️ **Consejo:** El refuerzo es más eficaz cuando se percibe como sincero. Use elogios específicos como «¡Me encanta cómo guardaste tus zapatos!» en lugar de un «¡Buen trabajo!» genérico.
 
 ## Beneficios clave para niños con autismo
 

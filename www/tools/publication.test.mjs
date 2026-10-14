@@ -253,14 +253,15 @@ test('graph validation rejects duplicate languages, nonreciprocity and missing s
   assert.throws(() => validateTranslationGraph(selfMissing), /include itself and an equivalent/);
 });
 
-test('real content declares 24 translation sets and all five exceptions are absent', () => {
+test('real content declares 25 translation sets including recovered Spanish privacy and all five exceptions are absent', () => {
   const members = actualManifest.filter((page) => page.translations.length);
   const groups = new Set(members.map((page) => `${page.entry.collection}:${page.entry.data.translationKey}`));
-  assert.equal(groups.size, 24);
-  assert.equal(members.length, 53);
+  assert.equal(groups.size, 25);
+  assert.ok(groups.has('pages:privacy-policy'));
+  assert.equal(members.length, 55);
   assert.deepEqual(members.reduce((counts, page) => {
     const lang = page.entry.data.lang; counts[lang] = (counts[lang] ?? 0) + 1; return counts;
-  }, {}), { en: 24, ar: 8, es: 21 });
+  }, {}), { en: 25, ar: 8, es: 22 });
   const excluded = ['/ar', ...verifiedExceptions.map(({ route }) => route)];
   for (const route of excluded) {
     assert.deepEqual(actualManifest.find((page) => page.route === route).translations, []);

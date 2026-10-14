@@ -579,7 +579,7 @@ test('Phase 5A preserves disabled forms and one localized H1 on every targeted p
       assert.equal(form.attr('action'), '', route);
       assert.equal(form.find('[type="submit"]:not([disabled])').length, 0, route);
       assert.ok(form.find('[type="submit"][disabled]').length, route);
-      assert.match(form.text(), /Online submission is not yet connected/, route);
+      assert.match(form.text(), route.startsWith('/es/') ? /El envío en línea aún no está habilitado/ : /Online submission is not yet connected/, route);
     });
   }
   assert.equal(meta(page('/autism-evaluations'), 'description').attr('content'), "Get comprehensive childhood autism evaluations in Scottsdale, AZ. Our expert team provides accurate assessments to support your child's unique development.");
@@ -666,7 +666,7 @@ test('Phase 5B consultation and six intake-step CTAs resolve in each homepage la
       assert.equal(link.attr('href'), `${localePrefix}/client-consultation`);
       const destination = page(link.attr('href'));
       assert.equal(destination('form [type="submit"]:not([disabled])').length, 0);
-      assert.match(destination('form').text(), /Online submission is not yet connected/);
+      assert.match(destination('form').text(), localePrefix ? /El envío en línea aún no está habilitado/ : /Online submission is not yet connected/);
     }
     const links = $('.process-grid a');
     assert.equal(links.length, 6);

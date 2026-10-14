@@ -3902,3 +3902,99 @@ file inventory and exclusions are in
 `phase-6c5-checkpoint-manifest-2026-10-13.md`. This recommendation does not accept
 Phase 6C on the user's behalf. Wait for user review and a separate checkpoint
 instruction before updating the living handoff or staging any path.
+
+## Phase 7 — Multilingual reconciliation — 2026-10-14
+
+Implemented locally from signed Phase 6C checkpoint
+`b5bc95bc2b8e36c58e8b4d8ab4b11391374a7883`; **technically ready with documented
+human-review gates**, not accepted, staged or committed. The ratified sequence
+remains Phase 7 multilingual, Phase 8 visual/accessibility, Phase 9 human
+decisions, Phase 10 final QA/cutover. The living handoff is unchanged.
+
+The [complete Phase 7 report](phase-7-multilingual-reconciliation-2026-10-14.md)
+contains all 30 non-Library page records, metadata/translation/eligibility
+matrices, source comparisons, exact changes, validation and review requirements.
+[Public evidence](phase-7-source-evidence-2026-10-13.json) records 21 bounded
+read-only GETs on October 13. Responses are cache-qualified HubSpot prerenders;
+normal certificate validation failed and the disclosed public-only retrieval
+fallback bypassed TLS verification. Neither source transport nor cached content
+is represented as independently verified current-origin freshness.
+
+- Recovered the complete Spanish privacy policy at `/es/privacy-policy`, with
+  its February 19, 2025 revision date and ten source sections. Generated text
+  exactly matches the captured body after whitespace/contact decoding. Localized
+  SEO title/description, semantic heading repair and existing contact obfuscation
+  are intentional implementation differences. English policy unchanged; all
+  HIPAA/COPPA/security/retention/analytics promises require privacy/legal approval.
+- Explicit page locale now drives Spanish form labels, options, instructions,
+  disabled notices and Contact map alternatives/zoom labels. Empty POST actions,
+  disabled controls and provider behavior remain. This does not prove complete
+  Enter/no-JavaScript isolation or activate a backend.
+- Localized Spanish/Arabic author archive labels and isolated Arabic BCBA/LBA
+  text. Author identities/biographies/graph and SEO remain unchanged. Arabic
+  physician-like biography wording versus English “clinician” is a specific
+  organizational/fluent-language review issue, not a verified qualification.
+- Translated the complete Spanish reinforcement tip, preserving its examples,
+  frontmatter and surrounding article. This supersedes the **implementation**
+  discrepancy recorded in Phase 6C.5; historical evidence remains intact and
+  fluent-Spanish/clinical acceptance remains pending.
+- Created the [Phase 8-supporting verification plan](phase-7-nonproduction-verification-plan-2026-10-14.md)
+  and [Phase 9 decision register](phase-9-decision-register-2026-10-14.md), P9-01
+  through P9-10 all Pending decision. Hosted preview requires separately
+  implemented/tested API isolation because noindex and empty API configuration
+  do not prevent current production-counter requests. No hosting or integration
+  was changed. README now accurately documents Node >=22.12.0 and Nix Node 24;
+  dependencies unchanged.
+
+Validation: Astro check 92 files, zero diagnostics; Markdown 20, publication 33,
+SEO 35, Library 49, routes 10 passing, sequentially with TMPDIR=/tmp. Both build
+modes pass. Link/image/blog audits report zero failures. Stale test expectations
+for translation counts and English form notices were corrected for the new
+eligible privacy pair and locale-aware text; no publication policy changed.
+
+Actual indexing-enabled output: **122 HTML routes / 122 unique canonicals,
+108 sitemap URLs, 180 hreflang links across 55 routes**. The one Spanish privacy
+route and reciprocal EN/ES/x-default account for all increases. Library remains
+74 records (55/12/7), nine author archives, nine redirect definitions and search
+55/12/7; both English page-6 routes retain five cards. Final normal staging build
+has 122 noindex,nofollow pages, empty sitemap and zero hreflang.
+
+[New schema-2 offline evidence](route-reconciliation-2026-10-14-offline.json)
+reuses the explicit final Phase 6C artifact's 70 historical production requests,
+with 133 dispositions and a source-matching read-only check. No new route crawl,
+historical report overwrite or redirect activation. Git diff whitespace check
+passes. Playwright opened about:blank then lost transport on the local-site
+attempt; no actual site browser, keyboard, mobile, no-JS or screen-reader
+acceptance is claimed. Phase 8 reviewers must complete the supplied checklist.
+
+Clinical/organizational, fluent Spanish/Arabic, privacy/legal, diagrams,
+accessibility, landing-page/portal/form/API, analytics/consent, author SEO,
+hosting/rollback and launch approval gates all remain explicit. Stop here for
+Phase 7 review; no Phase 8 implementation or production activation authorized.
+
+### Phase 7 checkpoint-preparation clarification — 2026-10-14
+
+Phase 7 is technically accepted for user-controlled checkpoint preparation;
+production and human acceptance remain separately gated. The living handoff now
+advances to Phase 7 and identifies Phase 8 Visual and Accessibility Acceptance
+as next. The future signed SHA is not known until the user commits.
+
+Recomputed HEAD and working-tree manifests confirm non-Library counts
+**20 EN / 8 ES / 1 AR draft → 20 EN / 9 ES / 1 AR draft**, eligible **28 → 29**,
+EN–ES pairs **8 → 9**. The final 30-record matrix excludes all three Library-root
+records. Including all Library roots gives **21/9/2 → 21/10/2**, eligible
+**31 → 32**, pairs **9 → 10**. The proposed 20/9/1 → 20/10/1 expectation mixes
+populations by including only the Spanish Library root. No publication change
+was made to force it.
+
+Spanish privacy parity is only against the saved cache-qualified response:
+standard TLS validation failed and fallback retrieval disabled certificate
+verification. This does not prove authenticated origin fidelity. A trusted-source
+comparison is mandatory before production, alongside fluent Spanish and
+privacy/legal approval of both policies. No trusted replacement was available
+for this checkpoint; P9-07 explicitly carries the unresolved gate. No new public
+retrieval, policy rewrite or evidence overwrite was performed.
+
+See [checkpoint manifest](phase-7-checkpoint-manifest-2026-10-14.md) for the final
+exact-path inventory, validation results, exclusions and host-terminal procedure.
+All ten Phase 9 decisions remain pending.

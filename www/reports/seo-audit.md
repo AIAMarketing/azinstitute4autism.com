@@ -93,3 +93,17 @@ routes and nine noindex author archives. The final staging build restores 121
 definitions remain unchanged and are not activated by this audit. The final
 report separates technical readiness from outstanding clinical, translation,
 accessibility, landing-page ownership and production-hosting approval gates.
+
+## Phase 7 Spanish privacy publication — 2026-10-14
+
+The recovered `/es/privacy-policy` page adds one self-canonical eligible route
+and validates the existing English policy's explicit translation relationship.
+Current indexing-enabled totals are 122 HTML routes/unique canonical targets,
+108 sitemap URLs and 180 hreflang links across 55 routes. The two policy pages
+each expose English, Spanish and x-default; no other relationship changed.
+Library inventory/search remains 74 records (55/12/7), with nine author archives
+and nine unchanged redirect definitions. Final staging output has 122
+noindex,nofollow pages, empty sitemap and zero hreflang. Spanish policy SEO
+wording was localized because the observed Spanish source used English metadata;
+its legal body and February 2025 date were preserved. Privacy/legal and fluent
+Spanish review remain prerequisites for release, independent of technical SEO.

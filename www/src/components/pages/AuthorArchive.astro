@@ -17,31 +17,31 @@ if (!slice?.items.length) throw new Error(`Empty author archive: ${author.archiv
 const { Content } = await render(author.entry);
 const prefix = locale === 'en' ? '' : `/${locale}`;
 const text = {
-  en: { heading: 'The Library at AZ Institute for Autism', title: 'Library & News Room | Arizona Institute for Autism', page: 'Page' },
-  es: { heading: 'La Biblioteca en AZ Institute for Autism', title: 'Biblioteca y Noticias | Instituto de Autismo de Arizona', page: 'Página' },
-  ar: { heading: 'مكتبة معهد أريزونا للتوحد', title: 'المكتبة وغرفة الأخبار | معهد أريزونا للتوحد', page: 'الصفحة' }
+  en: { heading: 'The Library at AZ Institute for Autism', title: 'Library & News Room | Arizona Institute for Autism', page: 'Page', welcome: 'Welcome to', posts: 'All Post', popular: 'Popular Posts' },
+  es: { heading: 'La Biblioteca en AZ Institute for Autism', title: 'Biblioteca y Noticias | Instituto de Autismo de Arizona', page: 'Página', welcome: 'Bienvenido a', posts: 'Todas las publicaciones', popular: 'Publicaciones populares' },
+  ar: { heading: 'مكتبة معهد أريزونا للتوحد', title: 'المكتبة وغرفة الأخبار | معهد أريزونا للتوحد', page: 'الصفحة', welcome: 'مرحبًا بكم في', posts: 'جميع المقالات', popular: 'المقالات الشائعة' }
 }[locale];
 const title = `${text.title} | ${author.displayName}${currentPage > 1 ? ` | ${text.page} ${currentPage}` : ''}`;
 // Use the existing catalog's latest-post treatment; no second article list.
 const popular = catalog.slice(0, 5);
 ---
 <BaseLayout title={title} description={author.description} image={author.avatar} lang={locale}>
-  <PageHero title={text.heading} image="/assets/images/hero-library-index.webp" eyebrow="Welcome to" constrain />
+  <PageHero title={text.heading} image="/assets/images/hero-library-index.webp" eyebrow={text.welcome} constrain />
   <section class="author-profile" aria-labelledby="author-heading">
     {author.avatar && <img class="author-profile__avatar" src={author.avatar} alt={author.displayName} width="176" height="176" />}
     <div class="author-profile__content">
-      <h2 id="author-heading"><bdi>{author.displayName}</bdi></h2>
+      <h2 id="author-heading"><bdi>{locale === 'ar' ? author.displayName.split(/(BCBA|LBA)/).map((part) => /^(BCBA|LBA)$/.test(part) ? <bdi dir="ltr" lang="en">{part}</bdi> : part) : author.displayName}</bdi></h2>
       <div class="author-biography"><Content /></div>
     </div>
   </section>
   <div class="author-listing container">
     <section aria-labelledby="author-posts-heading">
-      <h2 id="author-posts-heading" class="author-posts-heading"><a href={libraryRootRoute(locale)}>All Post</a></h2>
+      <h2 id="author-posts-heading" class="author-posts-heading"><a href={libraryRootRoute(locale)}>{text.posts}</a></h2>
       <div class="blog-list">{slice.items.map(({ entry }) => <BlogCard post={entry} prefix={prefix} />)}</div>
       <LibraryPagination locale={locale} page={slice} authorRoot={author.archiveRoute} />
     </section>
     <aside class="author-sidebar" aria-labelledby="author-popular-heading">
-      <h2 id="author-popular-heading">Popular Posts</h2>
+      <h2 id="author-popular-heading">{text.popular}</h2>
       <ul>{popular.map(({ entry, route }) => <li><a href={route}>{entry.data.title}</a></li>)}</ul>
     </aside>
   </div>

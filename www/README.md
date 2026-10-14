@@ -26,7 +26,7 @@ edits. Stop it with `Ctrl+C`.
 
 Requirements:
 
-- Node.js 20.19 or newer; the Nix shell currently supplies Node.js 22
+- Node.js 22.12 or newer (see `package.json`); the Nix shell supplies Node.js 24
 - npm
 
 This repository also has a Nix development shell at the repository root:

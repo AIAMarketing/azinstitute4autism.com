@@ -1,11 +1,14 @@
 ---
 import ContactForm from '../ContactForm.astro';
+import { formMessages } from '../../utils/form-messages';
 
 interface Props {
   title: string;
+  lang: string;
 }
 
-const { title } = Astro.props;
+const { title, lang } = Astro.props;
+const text = formMessages(lang);
 ---
 
 <section class="contact-page">
@@ -13,12 +16,12 @@ const { title } = Astro.props;
     <div class="contact-page__copy">
       <slot />
     </div>
-    <ContactForm title={title} />
+    <ContactForm title={title} lang={lang} />
   </div>
 </section>
 
-<section class="contact-map-section" aria-label="Map showing Arizona Institute for Autism in Scottsdale">
-  <div id="aia-contact-map" class="contact-map"></div>
+<section class="contact-map-section" aria-label={text.map}>
+  <div id="aia-contact-map" class="contact-map" data-tile-alt={text.tile} data-zoom-in={text.zoomIn} data-zoom-out={text.zoomOut} data-marker-label={text.marker}></div>
 </section>
 
 <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -28,7 +31,8 @@ const { title } = Astro.props;
 
   if (!mapElement || !window.L) return;
 
-  const map = window.L.map(mapElement).setView([33.63, -111.88756], 12);
+  const map = window.L.map(mapElement, { zoomControl: false }).setView([33.63, -111.88756], 12);
+  window.L.control.zoom({ zoomInTitle: mapElement.dataset.zoomIn, zoomOutTitle: mapElement.dataset.zoomOut }).addTo(map);
   const tiles = window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 19
@@ -36,13 +40,13 @@ const { title } = Astro.props;
 
   tiles.on('tileload', (event) => {
     if (event.tile && !event.tile.alt) {
-      event.tile.alt = 'OpenStreetMap tile showing area around Arizona Institute for Autism in Scottsdale, AZ';
+      event.tile.alt = mapElement.dataset.tileAlt;
     }
   });
 
   tiles.addTo(map);
 
-  window.L.marker([33.617746, -111.88756]).addTo(map).bindPopup(`
+  window.L.marker([33.617746, -111.88756], { alt: mapElement.dataset.markerLabel, title: mapElement.dataset.markerLabel }).addTo(map).bindPopup(`
     <span style="display:block;text-align:center">
       <b>Arizona Institute for Autism</b><br>
       <img class="contact-map__logo" alt="Arizona Institute for Autism" src="/assets/images/aia-logo.svg" width="94">

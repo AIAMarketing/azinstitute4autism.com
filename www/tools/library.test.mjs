@@ -709,7 +709,7 @@ test('nine author archives contain all and only matching eligible posts in stabl
     '/library/author/rula-diab/page/6'
   ]);
   const html = artifacts.get('staging').html;
-  assert.equal(html.size, 121);
+  assert.equal(html.size, 122);
   for (const [locale, sizes] of Object.entries(expected)) {
     const author = createAuthorResolver(authors)(locale, 'rula-diab');
     const links = [];
@@ -781,15 +781,15 @@ test('every card and post byline uses its resolved locale author without nested 
 test('author publication descriptors and HTML obey noindex, self-canonical, sitemap and translation exclusions in both modes', () => {
   for (const mode of ['staging', 'indexing']) {
     const { html, sitemap } = artifacts.get(mode);
-    assert.equal((sitemap.match(/<url>/g) ?? []).length, mode === 'indexing' ? 107 : 0);
+    assert.equal((sitemap.match(/<url>/g) ?? []).length, mode === 'indexing' ? 108 : 0);
     let hreflang = 0, pages = 0;
     for (const source of html.values()) {
       const $ = load(source), count = $('link[hreflang]').length;
       hreflang += count; if (count) pages++;
       if (mode === 'staging') assert.equal($('meta[name=robots]').attr('content'), 'noindex,nofollow');
     }
-    assert.equal(hreflang, mode === 'indexing' ? 174 : 0);
-    assert.equal(pages, mode === 'indexing' ? 53 : 0);
+    assert.equal(hreflang, mode === 'indexing' ? 180 : 0);
+    assert.equal(pages, mode === 'indexing' ? 55 : 0);
     for (const publication of authorPublications) {
       assert.equal(publication.eligible, true);
       assert.equal(publication.noindex, true);
@@ -1035,4 +1035,68 @@ test('article headings exclude adjacent prose while preserving source list struc
     assert.match($(element).text(), /:$/u);
     assert.ok($(element).parent().text().length > $(element).text().length);
   }
+});
+
+test('Phase 7 privacy page preserves policy sections and reciprocal eligible navigation', () => {
+  const es = manifest.find(p => p.route === '/es/privacy-policy');
+  const en = manifest.find(p => p.route === '/privacy-policy');
+  assert.ok(es?.eligible && en?.eligible);
+  assert.equal(es.entry.data.translationKey, en.entry.data.translationKey);
+  assert.ok(visitorLanguageChoices(en, routeManifest).some(c => c.route === es.route && c.lang === 'es'));
+  assert.equal(resolveNavigationDestination('/privacy-policy', 'es', routeManifest)?.href, es.route);
+  for (const mode of ['staging', 'indexing']) {
+    const $ = load(artifacts.get(mode).html.get(es.route));
+    assert.equal($('html').attr('lang'), 'es');
+    assert.equal($('h1').text(), 'Política de privacidad');
+    assert.match($('title').text(), /^Política de privacidad/);
+    assert.equal($('link[rel=canonical]').attr('href'), `${site}/es/privacy-policy`);
+    assert.equal($('meta[name=robots]').attr('content'), mode === 'indexing' ? 'index,follow' : 'noindex,nofollow');
+    assert.equal($('link[hreflang]').length, mode === 'indexing' ? 3 : 0);
+    assert.equal($('.source-page h2').length, 10);
+    assert.equal($('.source-page li h2').length, 0);
+    assert.match($('.source-page').text(), /19 de febrero de 2025/);
+    for (const url of ['https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html','https://cphs.berkeley.edu/hipaa/hipaa18.html']) assert.equal($(`a[href="${url}"]`).length,1);
+    assert.ok($('.source-page contact-obfuscation, .source-page [data-contact]').length || $('.source-page').html().includes('obfus'));
+  }
+});
+
+test('Phase 7 rendered forms localize Spanish without enabling submission', () => {
+  for (const route of ['/es/contact','/es/client-consultation','/contact','/client-consultation','/referrals','/schedule-consultation']) {
+    const $ = load(artifacts.get('staging').html.get(route));
+    const form = $('form.contact-form-card, form.form');
+    assert.equal(form.length, 1, route);
+    assert.equal(form.attr('action'), '');
+    assert.equal(form.attr('method'), 'post');
+    assert.equal(form.find('button[type=submit][disabled]').length, 1);
+    assert.deepEqual(form.find('input').map((_i,e) => $(e).attr('name')).get(), ['name','email','phone']);
+    assert.equal(form.find('select option').length, 4);
+    assert.match(form.text(), route.startsWith('/es/') ? /Nombre del padre, la madre o el tutor/ : /Parent or guardian name/);
+    assert.match(form.text(), route.startsWith('/es/') ? /El envío en línea aún no está habilitado/ : /Online submission is not yet connected/);
+  }
+  const $ = load(artifacts.get('staging').html.get('/es/contact'));
+  assert.match($('.contact-map-section').attr('aria-label'), /^Mapa/);
+  assert.equal($('#aia-contact-map').attr('data-zoom-in'), 'Acercar');
+  assert.equal($('#aia-contact-map').attr('data-zoom-out'), 'Alejar');
+  assert.match($('#aia-contact-map').attr('data-tile-alt'), /^Mapa de OpenStreetMap/);
+});
+
+test('Phase 7 author labels and Arabic credential isolation preserve archive SEO', () => {
+  for (const locale of ['en','es','ar']) {
+    const route = `${locale === 'en' ? '' : `/${locale}`}/library/author/rula-diab`;
+    const $ = load(artifacts.get('indexing').html.get(route));
+    assert.equal($('.author-posts-heading').text(), {en:'All Post',es:'Todas las publicaciones',ar:'جميع المقالات'}[locale]);
+    assert.equal($('meta[name=robots]').attr('content'), 'noindex,follow');
+    assert.equal($('link[hreflang]').length, 0);
+    if (locale === 'ar') assert.deepEqual($('#author-heading bdi[dir=ltr]').map((_i,e)=>$(e).text()).get(), ['BCBA','LBA']);
+  }
+});
+
+test('Phase 7 Spanish reinforcement tip keeps meaning and publication identity', () => {
+  const item = catalog.byLocale.es.find(p=>p.route==='/es/library/positive-reinforcement-techniques');
+  assert.ok(item);
+  assert.match(item.entry.body, /El refuerzo es más eficaz cuando se percibe como sincero/);
+  assert.match(item.entry.body, /guardaste tus zapatos/);
+  assert.doesNotMatch(item.entry.body, /Reinforcement is more effective/);
+  assert.equal(item.entry.data.translationKey, 'positive-reinforcement-techniques');
+  assert.equal(item.entry.data.author, 'rula-diab');
 });

@@ -35,8 +35,8 @@
 - Review extracted article heading hierarchy and any table markup.
 - Confirm Arabic content and RTL reading order with a fluent reviewer.
 - Review Spanish and Arabic operational labels and fallback-language notices
-  with fluent reviewers. The source-published author labels `Welcome to`, `All
-  Post`, and `Popular Posts` remain in English pending an editorial decision.
+  with fluent reviewers. Phase 7 localizes the existing Spanish and Arabic
+  author-archive labels; fluent review remains pending.
 - Test the native language disclosure, mobile navigation, search announcements,
   contact links, and full-page RTL reading order with screen readers. Phase
   6B.5 validated generated markup and keyboard semantics, but no screen-reader
@@ -121,3 +121,29 @@ scrolling, no-JavaScript interactions, screen-reader and fluent Arabic checks
 remain **pending**. The source-inherited English tip in the Spanish
 positive-reinforcement article also remains a bounded language-review item.
 See the final Phase 6C.5 report for the route-specific checklist and release gates.
+
+## Phase 7 shared locale update — 2026-10-14
+
+Spanish Contact and consultation forms now receive the publication locale
+explicitly and render Spanish labels, service choices, instructions, submit
+text and disabled-submission notices. Contact map landmark/tile alternatives
+and zoom titles are localized from server-provided data. Provider/library and
+contact values are unchanged. Empty form actions and disabled buttons remain;
+these checks do not prove full Enter-key, scripted or no-JavaScript isolation.
+
+Spanish and Arabic author archive eyebrows and list headings are localized.
+Arabic BCBA/LBA abbreviations receive LTR isolation without changing identity,
+biography or archive SEO. The Spanish reinforcement tip is now fully Spanish,
+superseding the minor language finding recorded in Phase 6C.5. New wording is
+still pending fluent-language and clinical/editorial acceptance. The Arabic
+biography's physician-like wording versus English “clinician” is separately
+flagged for organizational and fluent review; it was not silently rewritten.
+
+The recovered Spanish privacy page preserves all ten source sections with
+semantic headings, localized metadata and existing contact obfuscation.
+Generated HTML tests verify labels, one H1, language, disabled form state and
+translation navigation. Playwright opened about:blank, but its transport
+closed on the subsequent isolated-local-preview attempt. No site browser,
+keyboard, mobile, no-JavaScript or real screen-reader acceptance is claimed.
+See [Phase 7 verification plan](phase-7-nonproduction-verification-plan-2026-10-14.md)
+for reviewer fields and the API-isolation prerequisite for hosted review.
