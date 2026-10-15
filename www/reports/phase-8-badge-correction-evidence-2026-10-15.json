@@ -1,0 +1,169 @@
+{
+  "browser": "151.0.7922.75",
+  "date": "2026-10-15T18:21:13.306Z",
+  "checks": [
+    {
+      "locale": "en",
+      "width": 320,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 280,
+        "height": 238,
+        "alt": "hsa-fsa-accepted"
+      },
+      "status": "pass"
+    },
+    {
+      "locale": "es",
+      "width": 320,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 280,
+        "height": 238,
+        "alt": "Insignia HSA y FSA con una marca de verificación y la palabra «APROBADO»"
+      },
+      "status": "pass"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 350,
+        "height": 297.5,
+        "alt": "hsa-fsa-accepted"
+      },
+      "status": "pass"
+    },
+    {
+      "locale": "es",
+      "width": 390,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 350,
+        "height": 297.5,
+        "alt": "Insignia HSA y FSA con una marca de verificación y la palabra «APROBADO»"
+      },
+      "status": "pass"
+    },
+    {
+      "locale": "en",
+      "width": 768,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 284.125,
+        "height": 241.5,
+        "alt": "hsa-fsa-accepted"
+      },
+      "status": "pass"
+    },
+    {
+      "locale": "es",
+      "width": 768,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 284.125,
+        "height": 241.5,
+        "alt": "Insignia HSA y FSA con una marca de verificación y la palabra «APROBADO»"
+      },
+      "status": "pass"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 375,
+        "height": 318.75,
+        "alt": "hsa-fsa-accepted"
+      },
+      "status": "pass"
+    },
+    {
+      "locale": "es",
+      "width": 1440,
+      "dimensions": {
+        "naturalWidth": 500,
+        "naturalHeight": 425,
+        "width": 375,
+        "height": 318.75,
+        "alt": "Insignia HSA y FSA con una marca de verificación y la palabra «APROBADO»"
+      },
+      "status": "pass"
+    }
+  ],
+  "blocked": [],
+  "screenshots": [
+    {
+      "file": "en-320.png",
+      "sha256": "15263346305ce1f02bf41996c64309e92fc3aa0a5e169250a9af6379ad13b9ed"
+    },
+    {
+      "file": "es-320.png",
+      "sha256": "d20034e3658e79ebbc18cf0ec6dd41cf7aece4b7d0e66e4394ebec3f23aefed8"
+    },
+    {
+      "file": "en-390.png",
+      "sha256": "d8a1ece6117d2c73b8c09bac9b94cd80038c4de79b5ba40fc1727936fe7fd49a"
+    },
+    {
+      "file": "es-390.png",
+      "sha256": "2a4bce165537814878296c00eea733f7fa8ee0ee5a830be2f3fc47b2830dc135"
+    },
+    {
+      "file": "en-768.png",
+      "sha256": "3934ef6257468396ed9b2a4264393c675a030eb72ee3c1b0734e424cca4d8f1c"
+    },
+    {
+      "file": "es-768.png",
+      "sha256": "e5675e184b65d3745def2ea8092f00ec1e100d57c97c3864c8eb7c8126ad84d7"
+    },
+    {
+      "file": "en-1440.png",
+      "sha256": "f7286d37c0f0a9a65f4b10b4a2bf0d3537fa7cbec4e5c7cc6f0434a4125f54fd"
+    },
+    {
+      "file": "es-1440.png",
+      "sha256": "7ee67d413ec88207434604540d27b66d43311869e8ad1cf8942abb7df61d1e7e"
+    }
+  ],
+  "artifactDirectory": "/tmp/aia-p8-badge-fix",
+  "asset": {
+    "path": "www/public/assets/images/hsa-fsa-accepted-es.png",
+    "sha256": "3d24da78498c29109da13140292b7b4e4244370e2be37b161e75af40bd019c38",
+    "width": 500,
+    "height": 425,
+    "alphaDifferencePixels": 0,
+    "differenceBounds": {
+      "x": 154,
+      "y": 188,
+      "width": 192,
+      "height": 42
+    },
+    "englishOriginalUnchanged": true,
+    "method": "Built-in imagegen text-localization, followed by ImageMagick extraction of white APROBADO lettering and compositing only that lettering into the original flat-color ribbon. Original image pixels and alpha preserved outside the lettering rectangle. Generated full badge rejected for geometry/color drift.",
+    "prompt": "Change ONLY APPROVED to APROBADO, matching white tall condensed lettering; preserve original badge shape, border, checkmark, colors, size, position and canvas margins; transparent PNG, no gradients, no rescaling or shifting.",
+    "generatedLetterSource": "/home/alice/.codex/generated_images/01a10ec3-3e45-7df3-936c-87af5d89f1f1/exec-1be6bf0b-0072-4822-82a6-f182c6f42e15.png"
+  },
+  "validation": {
+    "build": "pass",
+    "brokenInternalLinks": 0,
+    "missingMappedImages": 0,
+    "offlineCheck": "pass",
+    "routeEvidence": "route-reconciliation-2026-10-15-offline-18-21-22-820Z.json",
+    "staging": {
+      "pages": 122,
+      "noindexNofollow": 122,
+      "sitemap": 0,
+      "hreflang": 0
+    },
+    "humanLanguageFinancialApproval": "pending"
+  }
+}

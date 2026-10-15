@@ -82,6 +82,35 @@ sandboxed command-line tools may fail HTTPS certificate verification. Do not
 disable certificate verification for package installation or sensitive
 retrievals; use live web search or review the retrieval from the host instead.
 
+## Optional local browser environment
+
+The repository now provides a Linux-only `browser` development shell, separate
+from the default content-editing shell. In a normal host terminal, from the
+repository root:
+
+```sh
+nix --extra-experimental-features "nix-command flakes" develop .#browser
+```
+
+It supplies a lockfile-matched Playwright driver, Chromium, headless shell and
+font configuration. New processes launched inside this shell inherit
+`PLAYWRIGHT_MODULE` and `PLAYWRIGHT_BROWSERS_PATH`; existing sessions do not.
+For a guarded real-page smoke test, run from `www`:
+
+```sh
+TMPDIR=/tmp npm run build
+TMPDIR=/tmp node tools/playwright-smoke.mjs
+```
+
+Preview and browser run in the same process environment, avoiding dependence on
+remote MCP transport or cross-execution loopback access. All non-loopback and
+non-GET/HEAD browser requests are blocked. Results/screenshots stay in `/tmp`.
+The tool does not grant access to files or sockets denied by the autonomous
+profile. If Nix realization, Chromium startup or loopback access is denied, keep
+that result as an environment limitation and use the normal host terminal;
+do not weaken TLS, identity, signing or sandbox configuration. No global MCP
+configuration or launcher permissions were changed for this setup.
+
 ## Git limitation
 
 Codex always protects `.git` recursively in its `workspace-write` sandbox.

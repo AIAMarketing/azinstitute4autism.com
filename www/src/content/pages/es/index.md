@@ -107,6 +107,13 @@ home:
     image: logo-az-dept-of-education.webp
     imageAlt: Departamento de Educación de Arizona
 
+  # Phase 7 localization carryover, reconciled during Phase 8
+  hsaFsa:
+    heading: Cuentas de ahorros para gastos médicos (HSA) y cuentas de gastos flexibles (FSA)
+    body: Muchas familias también pueden utilizar sus cuentas HSA y FSA para financiar la atención, ya que permiten pagar servicios clínicos que reúnen los requisitos con fondos antes de impuestos. Arizona Institute for Autism (AIA) acepta directamente tarjetas de cuentas HSA y FSA, lo que facilita la gestión de los gastos de bolsillo del tratamiento de su hijo o hija. Si participa en una de estas cuentas, ya sea patrocinada por su empleador o individual, puede aplicar fácilmente los fondos disponibles al pago de la matrícula y las cuotas de nuestros programas de ABA.
+    image: hsa-fsa-accepted-es.png
+    imageAlt: Insignia HSA y FSA con una marca de verificación y la palabra «APROBADO»
+
   # Ayuda financiera
   financialHelp:
     heading: ¿Necesita ayuda para pagar su atención?

@@ -1,0 +1,1788 @@
+{
+  "baseline": "8e64d322092b1fa6e0f648ddf26a665c80588198",
+  "environment": {
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "astro": "7.1.5",
+    "cheerio": "1.1.0",
+    "os": "Linux 6.18.43 x86_64 GNU/Linux",
+    "browser": "Unavailable; remote transport closed"
+  },
+  "tests": {
+    "markdown": 20,
+    "publication": 33,
+    "seo": 35,
+    "library": 49,
+    "routes": 10,
+    "phase8Contrast": 3
+  },
+  "indexing": {
+    "html": 122,
+    "authorArchives": 9,
+    "sitemap": 108,
+    "hreflang": 180,
+    "hreflangRoutes": 55,
+    "canonicalTargets": 122,
+    "canonicalOneEach": true,
+    "robots": {
+      "index,follow": 108,
+      "noindex,follow": 14
+    },
+    "redirects": 9,
+    "indexes": {
+      "en": 55,
+      "es": 12,
+      "ar": 7
+    },
+    "page6": [
+      {
+        "route": "/library/page/6",
+        "canonical": "https://www.azinstitute4autism.com/library/page/6",
+        "canonicalCount": 1,
+        "robots": "index,follow",
+        "hreflang": 0,
+        "cards": 5
+      },
+      {
+        "route": "/library/author/rula-diab/page/6",
+        "canonical": "https://www.azinstitute4autism.com/library/author/rula-diab/page/6",
+        "canonicalCount": 1,
+        "robots": "noindex,follow",
+        "hreflang": 0,
+        "cards": 5
+      }
+    ]
+  },
+  "staging": {
+    "html": 122,
+    "authorArchives": 9,
+    "sitemap": 0,
+    "hreflang": 0,
+    "hreflangRoutes": 0,
+    "canonicalTargets": 122,
+    "canonicalOneEach": true,
+    "robots": {
+      "noindex,nofollow": 122
+    },
+    "redirects": 9,
+    "indexes": {
+      "en": 55,
+      "es": 12,
+      "ar": 7
+    },
+    "page6": [
+      {
+        "route": "/library/page/6",
+        "canonical": "https://www.azinstitute4autism.com/library/page/6",
+        "canonicalCount": 1,
+        "robots": "noindex,nofollow",
+        "hreflang": 0,
+        "cards": 5
+      },
+      {
+        "route": "/library/author/rula-diab/page/6",
+        "canonical": "https://www.azinstitute4autism.com/library/author/rula-diab/page/6",
+        "canonicalCount": 1,
+        "robots": "noindex,nofollow",
+        "hreflang": 0,
+        "cards": 5
+      }
+    ]
+  },
+  "faq": {
+    "articles": 30,
+    "answers": 182
+  },
+  "browser": {
+    "openedRoutes": 0,
+    "desktopScreenshots": 0,
+    "mobileScreenshots": 0,
+    "keyboardInteractions": 0,
+    "noJSRoutes": 0,
+    "screenReaderSessions": 0,
+    "reviewerAcceptance": "Pending"
+  },
+  "representativeRoutes": [
+    "/",
+    "/es",
+    "/services",
+    "/es/services",
+    "/aba-therapy",
+    "/es/aba-therapy",
+    "/autism-evaluations",
+    "/es/autism-evaluations",
+    "/learner-social-club",
+    "/es/learner-social-club",
+    "/aba-therapy-intake-process",
+    "/es/aba-therapy-intake-process",
+    "/contact",
+    "/es/contact",
+    "/client-consultation",
+    "/es/client-consultation",
+    "/referrals",
+    "/privacy-policy",
+    "/es/privacy-policy",
+    "/team",
+    "/about",
+    "/faqs",
+    "/library",
+    "/es/library",
+    "/ar/library",
+    "/library/page/6",
+    "/library/author/rula-diab/page/6",
+    "/search",
+    "/library/aba-school-readiness-arizona",
+    "/library/aba-school-readiness-guide",
+    "/library/autism-fall-break-routine-tips-halloween-thanksgiving",
+    "/library/play-leisure-skills",
+    "/library/picky-eating-autism-parent-guide",
+    "/es/library/aba-school-readiness-arizona",
+    "/es/library/autism-evaluation-what-to-expect",
+    "/es/library/positive-reinforcement-techniques",
+    "/es/library/autism-self-advocacy-skills-aba",
+    "/ar/library/aba-school-readiness-guide",
+    "/ar/library/first-then-cards-autism-transitions",
+    "/ar/library/positive-reinforcement-techniques",
+    "/library/author/rula-diab",
+    "/es/library/author/rula-diab",
+    "/ar/library/author/rula-diab",
+    "/client-forms",
+    "/employee-portal",
+    "/careers",
+    "/insurance",
+    "/donate-autism-giveback",
+    "/tour",
+    "/schedule-consultation"
+  ],
+  "offlineEvidence": "route-reconciliation-2026-10-14-offline-07-32-07-044Z.json",
+  "static": {
+    "ruleSet": "AIA phase8-static-v1 (Cheerio DOM heuristics; not axe or WCAG certification)",
+    "generatedAt": "2026-10-14T07:37:12.844Z",
+    "routeCount": 122,
+    "htmlCount": 122,
+    "utilityRoutes": [],
+    "unexpectedRoutes": [],
+    "arabicHomePublished": false,
+    "failures": 0,
+    "reviewFindings": 2,
+    "rows": [
+      {
+        "route": "/",
+        "locale": "en",
+        "title": "Scottsdale ABA Therapy for Children | Arizona Institute for Autism",
+        "h1": "Behavioral Health& SpecialEducation",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/aba-therapy",
+        "locale": "en",
+        "title": "Integrated ABA Therapy for Autism | Arizona Institute for Autism",
+        "h1": "Behavioral",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/aba-therapy-intake-process",
+        "locale": "en",
+        "title": "Starting ABA Therapy Step-by-Step Guide | Arizona Institute for Autism",
+        "h1": "Learner Intake Process",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/about",
+        "locale": "en",
+        "title": "About Us | Arizona Institute for Autism | Scottsdale",
+        "h1": "About AIA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library",
+        "locale": "ar",
+        "title": "مكتبة معهد أريزونا للتوحد",
+        "h1": "مكتبة معهد أريزونا للتوحد",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/aba-school-readiness-guide",
+        "locale": "ar",
+        "title": "التدخلات التمهيدية واستراتيجيات العواقب في تحليل السلوك التطبيقي",
+        "h1": "التدخلات التمهيدية وتدخلات العواقب في تحليل السلوك التطبيقي: استراتيجيات وأمثلة",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [
+          {
+            "name": "رسم توضيحي قابل للتمرير أفقيًا",
+            "tabindex": "0",
+            "role": "region",
+            "src": "/assets/images/antecedent-behavior-consequence_ar.svg",
+            "alt": "رسم عربي يوضّح نموذج ABC: أحد الوالدين ينبه إلى قرب انتهاء وقت الجهاز اللوحي، والطفل يطلب وقتًا إضافيًا، ثم يمنحه الوالد دقيقتين إضافيتين بوصفهما النتيجة اللاحقة."
+          },
+          {
+            "name": "رسم توضيحي قابل للتمرير أفقيًا",
+            "tabindex": "0",
+            "role": "region",
+            "src": "/assets/images/reduce-environmental-distractions_ar.svg",
+            "alt": "طفل يعمل في مساحة هادئة تقل فيها المشتتات البصرية والبيئية، وإلى جانبه ملصق عربي يوضح خطوات ركن الهدوء."
+          },
+          {
+            "name": "رسم توضيحي قابل للتمرير أفقيًا",
+            "tabindex": "0",
+            "role": "region",
+            "src": "/assets/images/reinforcement-replacement-behavior_ar.svg",
+            "alt": "رسم عربي يقارن استجابتين لمهمة صعبة: يدفع الطفل المواد بعيدًا فيهرب من المهمة، أو يطلب المساعدة فيتلقى دعمًا يتيح له متابعة التعلم."
+          }
+        ],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/autism-self-advocacy-skills-aba",
+        "locale": "ar",
+        "title": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "h1": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/behavior-management-functions-guide",
+        "locale": "ar",
+        "title": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "h1": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/executive-functioning-skills-autism",
+        "locale": "ar",
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "h1": "مهارات الوظائف التنفيذية والتوحّد",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/first-then-cards-autism-transitions",
+        "locale": "ar",
+        "title": "بطاقات أولاً/ثم: تمكين الانتقالات للأطفال المصابين بالتوحد",
+        "h1": "بطاقات \"أولًا/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/positive-reinforcement-techniques",
+        "locale": "ar",
+        "title": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "h1": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/proactive-reactive-aba-strategies-guide",
+        "locale": "ar",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "h1": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/autism-evaluations",
+        "locale": "en",
+        "title": "Accurate Autism Assessment for Children | Arizona Institute for Autism",
+        "h1": "Psychological",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/careers",
+        "locale": "en",
+        "title": "Join Our Team | Autism Careers in AZ | Arizona Institute for Autism",
+        "h1": "Employment Opportunities",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/client-consultation",
+        "locale": "en",
+        "title": "Client Consultation Form | Arizona Institute for Autism | Scottsdale",
+        "h1": "Schedule Your Free Consultation",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/client-forms",
+        "locale": "en",
+        "title": "Essential Forms for Autism Support | Arizona Institute for Autism",
+        "h1": "Client Forms",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/contact",
+        "locale": "en",
+        "title": "Contact AIA | Arizona Institute for Autism | Scottsdale",
+        "h1": "Contact AIA",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/donate-autism-giveback",
+        "locale": "en",
+        "title": "Help Autism Families Thrive | Donate to Arizona Institute for Autism",
+        "h1": "Giveback & Donate",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/employee-portal",
+        "locale": "en",
+        "title": "AIA Employee Portal | Arizona Institute for Autism",
+        "h1": "Employee Portal",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es",
+        "locale": "es",
+        "title": "Terapia ABA cerca de mí | Arizona Institute for Autism | Scottsdale",
+        "h1": "Salud Mental yEducación Especial",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/aba-therapy",
+        "locale": "es",
+        "title": "Terapia ABA Integrada para el Autismo | Arizona Institute for Autism",
+        "h1": "Conductual",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/aba-therapy-intake-process",
+        "locale": "es",
+        "title": "Guía paso a paso para comenzar la terapia ABA | Arizona Institute for Autism",
+        "h1": "Proceso de admisión de estudiantes",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/autism-evaluations",
+        "locale": "es",
+        "title": "Evaluación precisa del autismo para niños | Arizona Institute for Autism",
+        "h1": "Psicológicos",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/client-consultation",
+        "locale": "es",
+        "title": "Formulario de Consulta del Cliente | Arizona Institute for Autism | Scottsdale",
+        "h1": "Programa tu consulta gratuita",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/contact",
+        "locale": "es",
+        "title": "Contactar a AIA | Arizona Institute for Autism | Scottsdale",
+        "h1": "Contactar a AIA",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/learner-social-club",
+        "locale": "es",
+        "title": "Impulsa el funcionamiento emocional y social con Learner Social Club en AIA",
+        "h1": "Sociológico",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library",
+        "locale": "es",
+        "title": "La Biblioteca en AZ Institute for Autism",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/aba-school-readiness-arizona",
+        "locale": "es",
+        "title": "Preparación escolar y autismo en Arizona: guía para familias",
+        "h1": "Preparación escolar para niños autistas en Arizona: cómo puede ayudar la terapia ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide",
+        "locale": "es",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "h1": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-evaluation-what-to-expect",
+        "locale": "es",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "h1": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-family-self-care-tips",
+        "locale": "es",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "h1": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-self-advocacy-skills-aba",
+        "locale": "es",
+        "title": "Desbloqueando la independencia para niños con autismo a través de la autodefensa ABA",
+        "h1": "Guía para enseñar la autodefensa en el ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/emotional-regulation-aba",
+        "locale": "es",
+        "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "h1": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/enhancing-generalization-skills",
+        "locale": "es",
+        "title": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "h1": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/executive-functioning-skills-autism",
+        "locale": "es",
+        "title": "Habilidades de funcionamiento ejecutivo y autismo: estrategias de éxito",
+        "h1": "Habilidades de funcionamiento ejecutivo y autismo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/first-then-cards-autism-transitions",
+        "locale": "es",
+        "title": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "h1": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/parents-guide-to-autism-and-aba",
+        "locale": "es",
+        "title": "Cómo ayudar a su hijo autista: Una guía para padres y cuidadores",
+        "h1": "Guía de Autismo para Padres y Cuidadores",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/positive-reinforcement-techniques",
+        "locale": "es",
+        "title": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "h1": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/social-pragmatic-communication-autism",
+        "locale": "es",
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "h1": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/privacy-policy",
+        "locale": "es",
+        "title": "Política de privacidad | Arizona Institute for Autism",
+        "h1": "Política de privacidad",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/services",
+        "locale": "es",
+        "title": "Servicios pediátricos de autismo conductuales, psicológicos y sociológicos",
+        "h1": "Servicios ABA y Educativos",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/faqs",
+        "locale": "en",
+        "title": "Helpful Autism Diagnosis & Therapy FAQs | Arizona Institute for Autism",
+        "h1": "ABA Therapy Helpline",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "/search",
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/insurance",
+        "locale": "en",
+        "title": "Arizona Autism Therapy Insurance Guide | AZ Institute for Autism",
+        "h1": "Insurance Guide",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/learner-social-club",
+        "locale": "en",
+        "title": "Boost Emotional and Social Functioning with Learner Social Club at AIA",
+        "h1": "Sociological",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aac-visual-supports-autism",
+        "locale": "en",
+        "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "h1": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-school-readiness-arizona",
+        "locale": "en",
+        "title": "ABA School Readiness in Arizona: A Parent Guide",
+        "h1": "ABA School Readiness for Autistic Children in Arizona",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-school-readiness-guide",
+        "locale": "en",
+        "title": "Antecedent Interventions & Consequence Strategies in ABA",
+        "h1": "Antecedent and Consequence Interventions in ABA: Strategies and Examples",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-benefits",
+        "locale": "en",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "h1": "The Benefits of ABA Therapy for Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-dtt-net-guide",
+        "locale": "en",
+        "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "h1": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "errors": [],
+        "review": [
+          {
+            "rule": "heading-level-jump",
+            "heading": "Insight into Discrete Trial Training (DTT):",
+            "from": 1,
+            "to": 3
+          }
+        ],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-prompting-parenting-benefits",
+        "locale": "en",
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "h1": "Benefits of Prompting & Parenting in ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-summer-routine-tips",
+        "locale": "en",
+        "title": "How to Support ABA Therapy Over Summer Break",
+        "h1": "How to Support ABA Therapy Over Summer Break",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-toilet-training-child-autism",
+        "locale": "en",
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "h1": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aia-world-autism-community-day-celebration",
+        "locale": "en",
+        "title": "AIA’s World Autism Community Day of Celebration",
+        "h1": "AIA’s World Autism Community Day of Celebration",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake",
+        "locale": "en",
+        "title": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "h1": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/asd-sensory-friendly-recipes-pancakes",
+        "locale": "en",
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "h1": "ASD Sensory-Friendly Recipes: Pancakes",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-after-school-meltdowns",
+        "locale": "en",
+        "title": "After-School Meltdowns in Autism: Why They Happen",
+        "h1": "After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-back-to-school-transition",
+        "locale": "en",
+        "title": "Back-to-School Autism Transition: ABA Strategies",
+        "h1": "Back to School with Autism: ABA Strategies for a Smoother Transition",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-daily-living-skills-challenges",
+        "locale": "en",
+        "title": "Daily Living Challenges in Autism: Eating, Sleep & Self-Care",
+        "h1": "Daily Living Challenges in Autism: Eating, Sleeping & Self-Care",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-evaluation-diagnosis-arizona-parent-guide",
+        "locale": "en",
+        "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "h1": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-evaluation-what-to-expect",
+        "locale": "en",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "h1": "What to Expect at Your Child’s First Autism Evaluation",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-fall-break-routine-tips-halloween-thanksgiving",
+        "locale": "en",
+        "title": "Autism and Fall Break: Routines and Transition Tips",
+        "h1": "Autism and Fall Break: How to Keep Routines Calm and Predictable",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-family-self-care-tips",
+        "locale": "en",
+        "title": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "h1": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-friendships-social-play-support",
+        "locale": "en",
+        "title": "Supporting Friendships and Social Play for Children with Autism",
+        "h1": "Supporting Friendships and Social Play for Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-self-advocacy-skills-aba",
+        "locale": "en",
+        "title": "Unlock Independence for Children with Autism Through ABA Self‑Advocacy",
+        "h1": "Guide to Teaching Self‑Advocacy in ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-social-skills-by-age",
+        "locale": "en",
+        "title": "Autism Social Skills by Age: Childhood to Teens | AIA",
+        "h1": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-therapy-rapport-strategies",
+        "locale": "en",
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "h1": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/behavior-management-functions-guide",
+        "locale": "en",
+        "title": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "h1": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/behavior-modification-techniques-reinforcement-theory",
+        "locale": "en",
+        "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "h1": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/communication-social-skills-autistic-children-guide",
+        "locale": "en",
+        "title": "Building Communication & Social Skills in Autistic Children",
+        "h1": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/community-highlight-meet-rula-diab",
+        "locale": "en",
+        "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "h1": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/critical-thinking-skills",
+        "locale": "en",
+        "title": "Critical Thinking Skills for Children with Autism",
+        "h1": "Critical Thinking Skills for Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/does-aba-therapy-replace-school",
+        "locale": "en",
+        "title": "Does ABA Therapy Replace School? A Parent Guide",
+        "h1": "Does ABA Therapy Replace School?",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/early-signs-autism-by-age",
+        "locale": "en",
+        "title": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "h1": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/emotional-regulation-aba",
+        "locale": "en",
+        "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "h1": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/enhancing-generalization-skills",
+        "locale": "en",
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "h1": "Enhancing Generalization for Broader Impact in Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/executive-functioning-skills-autism",
+        "locale": "en",
+        "title": "Executive Functioning Skills & Autism: Success Strategies Across Ages",
+        "h1": "Executive Functioning Skills and Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/first-then-cards-autism-transitions",
+        "locale": "en",
+        "title": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "h1": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/halloween-and-autism",
+        "locale": "en",
+        "title": "Halloween and Autism: Sensory-Friendly Tips for Families",
+        "h1": "Halloween and Autism: Making the Holiday Comfortable, Safe, and Fun",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/heart-full-of-gratitude",
+        "locale": "en",
+        "title": "Heart Full of Gratitude",
+        "h1": "Heart Full of Gratitude",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/how-many-hours-aba-child-need",
+        "locale": "en",
+        "title": "How Many Hours of ABA Does a Child Need?",
+        "h1": "How Many Hours of ABA Does a Child Need?",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/individualized-aba-therapy",
+        "locale": "en",
+        "title": "Personalized ABA Therapy Plans | Schedule Your Free Consultation",
+        "h1": "Individualized Care Plans in ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/integrated-aba-model-announcement",
+        "locale": "en",
+        "title": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "h1": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/managing-aggressive-behavior-outbursts",
+        "locale": "en",
+        "title": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "h1": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/meet-rula-diab-bcba",
+        "locale": "en",
+        "title": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "h1": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/new-aia-scottsdale-office",
+        "locale": "en",
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "h1": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/new-year-2024-autism-holiday-tips",
+        "locale": "en",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "h1": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/new-year-goals-2023",
+        "locale": "en",
+        "title": "New Year Goals for Our Children with Autism",
+        "h1": "New Year Goals for Our Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/november-2022-aia-update",
+        "locale": "en",
+        "title": "November AIA Update",
+        "h1": "November AIA Update",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/parents-guide-to-autism-and-aba",
+        "locale": "en",
+        "title": "How to Help Your Autistic Child: A Parent & Caregiver Guide",
+        "h1": "Autism Guide for Parents and Caregivers",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/picky-eating-autism-parent-guide",
+        "locale": "en",
+        "title": "Picky Eating and Autism: A Practical Parent Guide",
+        "h1": "Picky Eating and Restricted Diets in Autistic Children",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/play-leisure-skills",
+        "locale": "en",
+        "title": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "h1": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/positive-reinforcement-techniques",
+        "locale": "en",
+        "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "h1": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/proactive-reactive-aba-strategies-guide",
+        "locale": "en",
+        "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "h1": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/reduce-behavior-management",
+        "locale": "en",
+        "title": "4 Ways on How to Reduce Behavior Management",
+        "h1": "4 Ways on How to Reduce Behavior Management",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/repetitive-behavior",
+        "locale": "en",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "h1": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/sensory-processing",
+        "locale": "en",
+        "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "h1": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/sleep-issues-autistic-children",
+        "locale": "en",
+        "title": "Sleep Problems in Autism: Causes, Tips & When to Get Help",
+        "h1": "Sleep Issues in Autistic Children: Calmer Nights for the Whole Family",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/social-pragmatic-communication-autism",
+        "locale": "en",
+        "title": "Why My Child Can Talk but Still Struggles Socially",
+        "h1": "Why My Child Can Talk but Still Struggles Socially",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/understanding-autism-support",
+        "locale": "en",
+        "title": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "h1": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/privacy-policy",
+        "locale": "en",
+        "title": "Privacy Policy | Arizona Institute for Autism",
+        "h1": "Privacy Policy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/referrals",
+        "locale": "en",
+        "title": "Submit Your Autism Referral Online | Arizona Institute for Autism",
+        "h1": "Physician & Insurer Referrals",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/schedule-consultation",
+        "locale": "en",
+        "title": "Contact Arizona Institute for Autism for Your Free ASD Consultation",
+        "h1": "Reach Out for Your Free Consultation",
+        "errors": [],
+        "review": [
+          {
+            "rule": "heading-level-jump",
+            "heading": "Start Here",
+            "from": 1,
+            "to": 3
+          }
+        ],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/services",
+        "locale": "en",
+        "title": "Behavioral, Psychological, and Sociological Pediatric Autism Services",
+        "h1": "ABA & Educational Services",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/team",
+        "locale": "en",
+        "title": "Meet Our Dedicated Autism Support Team | Arizona Institute for Autism",
+        "h1": "Meet the Team",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/tour",
+        "locale": "en",
+        "title": "Tour Arizona's Premier Autism Therapy Center | Schedule Your AIA Visit",
+        "h1": "Schedule a Guided Tour",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/page/2",
+        "locale": "es",
+        "title": "La Biblioteca en AZ Institute for Autism | Página 2",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/2",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 2",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/3",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 3",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/4",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 4",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/5",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 5",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/6",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 6",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/author/rula-diab",
+        "locale": "ar",
+        "title": "المكتبة وغرفة الأخبار | معهد أريزونا للتوحد | رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+        "h1": "مكتبة معهد أريزونا للتوحد",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/author/rula-diab",
+        "locale": "es",
+        "title": "Biblioteca y Noticias | Instituto de Autismo de Arizona | Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/author/rula-diab/page/2",
+        "locale": "es",
+        "title": "Biblioteca y Noticias | Instituto de Autismo de Arizona | Rula Diab, Directora Clínica, M.Ed, BCBA, LBA | Página 2",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/2",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 2",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/3",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 3",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/4",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 4",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/5",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 5",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/6",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 6",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/search",
+        "locale": "en",
+        "title": "Search the Library | Arizona Institute for Autism",
+        "h1": "Search the Library",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "/search",
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      }
+    ]
+  },
+  "astroCheck": {
+    "files": 95,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  }
+}

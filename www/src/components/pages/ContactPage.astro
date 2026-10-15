@@ -81,6 +81,12 @@ const text = formMessages(lang);
     margin: 0 0 25px;
   }
 
+  .contact-page__copy :global(a:not(.content-button)) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: .15em;
+  }
+
   .contact-page__copy :global(.content-button) {
     margin-bottom: 40px;
   }

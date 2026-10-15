@@ -2,6 +2,13 @@
 
 ## Status
 
+Current checkpoint-preparation state (2026-10-15): Phase 8 technical work complete;
+Phase 9 decision review is next, Phase 10 retains final QA/cutover. See the
+[Phase 8 manifest and validation](phase-8-checkpoint-manifest-2026-10-15.md) and
+[updated handoff](SESSION_HANDOFF.md). The initial inventory below is historical;
+current baseline is 74 Library articles, 122 routes, 108 indexing sitemap URLs
+and 180 hreflang links across 55 routes. Human release gates remain pending.
+
 A maintainable Astro migration and substantial fidelity-first pass are
 implemented. The live public site was used as the authority for the shared
 shell, English and Spanish homepages, service-page family, team page, library
@@ -3998,3 +4005,308 @@ retrieval, policy rewrite or evidence overwrite was performed.
 See [checkpoint manifest](phase-7-checkpoint-manifest-2026-10-14.md) for the final
 exact-path inventory, validation results, exclusions and host-terminal procedure.
 All ten Phase 9 decisions remain pending.
+
+## Phase 8 visual/accessibility verification — 2026-10-14
+
+Baseline is signed Phase 7 `8e64d322092b1fa6e0f648ddf26a665c80588198`, parent
+`b5bc95bc2b8e36c58e8b4d8ab4b11391374a7883`, branch faithful-astro-migration.
+Index/tracked tree started clean. The five protected/superseded files and the
+additional old `.phase7-stage-paths.nul` staging aid remain untouched/excluded.
+
+**PHASE 8 PARTIALLY VERIFIED — MANUAL OR ENVIRONMENT GATES REMAIN.**
+Remote Playwright returned Transport closed before real-page navigation; no
+local browser executable was in PATH. A preview and HTTP fetch in the same
+execution reached Spanish privacy successfully, but cross-execution transport
+failed. No actual browser/screenshot/keyboard/no-JS/screen-reader acceptance is
+claimed. No production API/form/conversion interaction occurred.
+
+All 122 generated routes pass new bounded DOM rules; two inherited heading skips
+remain review findings. Confirmed low-contrast prose/FAQ links and authored
+navigation/language/byline/diagram focus outlines now use existing primary blue;
+inline links are persistently underlined. This is an intentional accessibility
+deviation from inherited orange link/focus styling, not a redesign. Six source
+files change CSS only; no content, imagery, publication or integration changes.
+Three contrast regression tests pass. Raster inspection of all three unchanged
+Arabic SVGs found no visibly exposed English labels or clipped Arabic in the
+inspection renderer; browser/fluent-language review remains pending.
+
+Sequential validation: Astro check 95 files, zero diagnostics; Markdown 20,
+publication 33, SEO 35, Library 49, routes 10, plus Phase 8 contrast 3 passing.
+Both builds and link/image/blog audits pass. Indexing-enabled output remains
+122 HTML/canonicals, 108 sitemap URLs, 180 hreflang links across 55 routes, 25
+translation sets, 74 articles, search 55/12/7, nine archives/redirect definitions,
+and 182 FAQ answers across 30 articles. Final normal staging: 122 noindex,nofollow
+pages, empty sitemap, zero hreflang. Whitespace check passes.
+
+The explicit Phase 7 route evidence correctly failed its source fingerprint
+check after CSS changes. New [schema-2 evidence](route-reconciliation-2026-10-14-offline-07-32-07-044Z.json)
+reuses 70 saved requests with no crawl; 133 dispositions and 122 generated routes.
+The explicit read-only check passes. Historical evidence remains unchanged.
+
+See [full Phase 8 findings and 122-route matrix](phase-8-visual-accessibility-acceptance-2026-10-14.md),
+[durable static evidence](phase-8-static-evidence-2026-10-14.json) and
+[host-browser procedure](phase-8-host-browser-verification-2026-10-14.md).
+The optional guarded Playwright runner has syntax/route-membership checks only;
+it needs an existing working host browser and manual result review. Temporary
+rasters/logs remain outside Git. No dependency change or screenshot-cache import.
+
+All P9-01–P9-10 remain pending, including trusted Spanish privacy-source comparison,
+forms/API/likes isolation, privacy/consent, clinical and author claims, landing
+page/portal ownership, hosting/rollback and launch approval. Fluent Spanish/Arabic,
+diagram language, authorized visual/keyboard/no-JS and real screen-reader review
+remain open. No handoff advancement, staging, commit, push, deployment or Phase 9
+implementation. Phase 8 requires review of the documented environment/manual gates.
+
+### Phase 8 browser-environment follow-up — 2026-10-14
+
+At the user's request, `flake.nix` now offers an opt-in Linux `browser` shell
+with the existing lockfile's Playwright driver (1.61.1), matched Chromium and
+headless shell, direct module/browser paths and Latin/Arabic fallback fonts.
+The ordinary shell, `flake.lock`, npm manifest/lock and application source are
+unchanged by this follow-up. Nix supplies patched runtime libraries; Playwright's
+conventional distro-library preflight is skipped in that shell, as recommended
+by the [NixOS Playwright documentation](https://wiki.nixos.org/wiki/Playwright).
+This does not disable TLS validation or modify sandbox permissions. Package/API
+layout was checked against the [pinned Nixpkgs driver source](https://github.com/NixOS/nixpkgs/blob/624af665418d3c65d544145b4d34ad696439570e/pkgs/development/web/playwright/driver.nix).
+
+New `tools/playwright-smoke.mjs` starts preview and browser in the same execution,
+on an ephemeral loopback port. It blocks external/non-GET requests, service workers
+and WebSockets before navigation, verifies real Spanish privacy/Library pages
+and staging robots, captures two full-page screenshots and cleans up its processes.
+Results go to a fresh `/tmp/aia-playwright-smoke-*` directory. This is a transport
+probe, not Phase 8 acceptance. AUTONOMOUS-CODEX.md, README and the Phase 8 host
+procedure document the new shell and remaining environment limits.
+
+Validation: Nix parsing/format checks and Node syntax check pass. The staging
+build passes (122 pages), internal-link audit remains zero, all-route static
+checks remain 122/0 hard failures/two review warnings, and the explicit existing
+Phase 8 offline reconciliation still passes. No new route evidence is needed.
+
+**Browser runtime remains unverified here.** Nix evaluation cannot load the pinned
+input: this sandbox lacks the host Nix store/daemon view and its archive fetch
+fails certificate trust-anchor loading (curl error 77). TLS was not weakened.
+Without the new shell loaded, the smoke test exits explicitly with “Cannot find
+package 'playwright'”; no browser or production request was made. Host operator
+must enter `nix develop .#browser` (with nix-command/flakes enabled), build staging
+and run `TMPDIR=/tmp node tools/playwright-smoke.mjs` from www. No global MCP,
+security, Git-signing, hosting or production configuration was changed. Existing
+Phase 8 and all human/Phase 9 release gates remain open; changes are unstaged.
+
+### Phase 8 actual browser verification — 2026-10-15 UTC
+
+The system-browser environment now works: Playwright 1.61.0 with Chromium
+151.0.7922.75 passed real loopback navigation, screenshots and subsequent
+navigation; Chrome 151.0.7922.108 also passed the earlier transport probe.
+This supersedes the browser-unavailable status above for this combination,
+without claiming the optional Nix shell or remote MCP transport was validated.
+No dependencies or lockfiles were changed. User-authorized prior environment
+changes remain in the working tree.
+
+See [full browser verification](phase-8-browser-verification-2026-10-15.md) and
+[durable evidence](phase-8-browser-evidence-2026-10-15.json). All 122 routes were
+opened at desktop; 50 representatives received 1440/390 full-page screenshots
+and separate no-JavaScript visits. Primary captures total 100; six later home
+captures include four replacements and two extra 320px views. Final source was
+rechecked across all 122 routes. Focused checks: 41 total, 40 pass, zero fail,
+one modal browser-chrome focus-boundary review. Real screen-reader sessions and
+human sign-offs remain zero. Capture availability is not source-fidelity approval.
+
+New bounded corrections in this continuation:
+
+- `layout.css`, `forms.css`, ContactForm and ContactPage: browser-confirmed
+  orange skip/contact/form-notice links on white changed to existing primary
+  blue with underlines; skip focus receives a primary outline. Wording and
+  submission/contact behavior are unchanged.
+- HomeDirector: scoped grid now explicitly follows the shared mobile stack at
+  ≤760px and bounds the signature width. Actual 320px homepage overflow was
+  382px; EN/ES 320/390/768/1440 checks now pass. Desktop proportions remain.
+- Browser capture utility: bounded lazy-image readiness, instantaneous capture
+  scrolling, recorded missing images, and sanitized console categories.
+  New `phase8-interactions.mjs` preserves fail-closed request interception and
+  exercises actual keyboard/scroll/search/image/fragment/no-JS behavior.
+
+Three Arabic diagrams render correctly in inspected Chromium captures and
+scroll inside named focusable regions at 390px. Fluent/clinical acceptance is
+still pending. Remaining review findings include two inherited heading skips,
+native modal focus boundary, inherited English Arabic-control/footer labels,
+broader palette/zoom review and qualified full-page source comparison. A blocked
+map leaves a blank map area with usable adjacent address/contact text. A native
+submit call on an intercepted empty fixture proves disabled buttons are not
+complete submission isolation; no server POST or production interaction occurred.
+
+Network policy allowed only exact-loopback GET/HEAD and blocked WebSockets,
+service workers and external requests. Leaflet unpkg requests were prevented;
+no production API attempt occurred. Hosted API behavior remains P9-04. All
+P9-01–P9-10, clinical/privacy/organizational, fluent-language and screen-reader
+gates remain pending. No new source crawl or insecure TLS request was made.
+
+Final sequential validation: Astro 97 files / zero diagnostics; Markdown 20,
+publication 33, SEO 35, Library 49, routes 10 and Phase 8 contrast 4, all passing
+(151 tests). Normal/indexing-enabled/final-normal builds pass. Audits report
+zero broken internal links, missing mapped images or blog failures. Static
+smoke: 122 routes / zero hard failures / two heading-review warnings.
+Publication unchanged: 122 HTML/canonicals; 108 indexing sitemap URLs;
+180 hreflang links across 55 routes; 25 translation sets; 74 Library articles;
+55/12/7 search; nine author archives and redirects; 182 FAQs across 30 articles.
+Final staging: all 122 noindex,nofollow, empty sitemap, no hreflang.
+
+Final source-matching evidence is
+`route-reconciliation-2026-10-15-offline-05-28-09-425Z.json`; explicit read-only
+check passes, 133 dispositions and 70 reused historical requests, no new crawl.
+The earlier October 15 unsuffixed report is superseded by the director-grid fix
+and must not be selected automatically for a checkpoint. Existing historical
+and protected files were preserved.
+
+**PHASE 8 PARTIALLY VERIFIED — MANUAL OR ENVIRONMENT GATES REMAIN**: local browser
+execution is no longer the blocker; source-qualified visual/human/AT acceptance
+and the recorded minor/review findings remain. No Phase 8 acceptance is declared.
+SESSION_HANDOFF.md is unchanged, the index remains empty, and no staging,
+commit, push, deployment or Phase 9 implementation was performed.
+
+### Phase 8 bounded follow-up — 2026-10-15 UTC
+
+**PHASE 8 TECHNICALLY READY FOR CHECKPOINT REVIEW.** This supersedes the earlier
+partial technical disposition, while retaining human acceptance and release gates.
+No checkpoint preparation or handoff advancement is performed. See the
+[follow-up report](phase-8-browser-verification-2026-10-15.md#bounded-follow-up--2026-10-15)
+and [supplementary evidence](phase-8-followup-evidence-2026-10-15.json).
+
+Explicit article locale now supplies Arabic counter/footer labels, accessible
+names and bidi isolation. English/Spanish behavior is preserved; likes/views
+script is byte-identical to HEAD. Three DTT/NET sections and consultation's
+“Start Here” are correctly promoted to H2 peers without changing wording,
+fragment IDs, frontmatter or rendered heading measurements. Two new Library
+regressions cover rendered locale chrome and heading/search/fragment integrity.
+
+Browser-confirmed Read More/eyebrow and selected navigation/related-link contrast
+failures were corrected using the existing primary palette, retaining dark
+footer colors. A fifth contrast regression protects those states. This is an
+explicit accessibility color deviation, not a redesign. Contact/skip links,
+focus clearance, home reflow and Arabic diagram scrolling were rechecked.
+
+Dialog behavior matches a minimal native modal: Tab/Shift+Tab may reach browser
+chrome (BODY with document.hasFocus false), but background controls are inert,
+entry/closing/restoration work at desktop and mobile, and no application focus
+leak was found. ServiceInquiryDrawer was not changed. Real AT review is separate.
+
+Native Chromium tab zoom was verified at 200% on seven routes, yielding 720 CSS
+pixels in a 1440px window, DPR 2 and no page overflow. A temporary local extension
+uses the Chrome tabs zoom API in a disposable profile; website service workers
+and network egress remain blocked. FullPage screenshot clipping at native zoom
+was a capture artifact; 176 overlapping viewport images replace it. Lazy-image
+capture readiness was also corrected in the test tool. Screenshots/profiles stay
+in /tmp, with hashes/observations in the supplementary evidence. No dependencies,
+production API code, hosting, content prose or clinical translation changed.
+
+Validation: Astro 99 files/zero diagnostics; Markdown 20, publication 33, SEO 35,
+Library 51, routes 10, Phase 8 contrast 5 — **154 pass**. Focused browser suite:
+**30 pass**, including seven-route native zoom; final zoom capture repeated only
+that grouped check. Prior 122-route browser/100-capture/50-no-JS evidence retained.
+Final generated audit: 122 routes, zero hard failures or review warnings.
+Both build modes and link/image/blog audits pass. Publication counts stay
+122 routes/canonicals, 108 sitemap, 180 hreflang/55 routes, 25 translation sets,
+74 Library records, 55/12/7 search, nine archives/redirects and 182 FAQs/30 articles.
+Final staging remains 122 noindex,nofollow pages, empty sitemap and no hreflang.
+
+New final schema-2 evidence:
+`route-reconciliation-2026-10-15-offline-06-41-27-766Z.json`; explicit read-only
+check passes with 133 dispositions and 70 reused historical requests. Earlier
+artifacts remain untouched. No fresh crawl or insecure source retrieval occurred.
+The focused/zoom runs prevented eight unpkg resource GETs; no production API,
+non-GET/HEAD submission, advertising or conversion attempt was observed.
+All protected files and earlier work are preserved; index empty, no staging,
+commit, push, deployment or Phase 9 implementation. Fluent Arabic/Spanish,
+clinical/organizational/privacy, trusted Spanish source, diagram terminology,
+real screen-reader and authorized source/visual acceptance remain pending.
+
+
+## Phase 8 consolidated localization, structural and carousel corrections — 2026-10-15
+
+See the [complete consolidated report](phase-8-consolidated-followup-2026-10-15.md)
+and [evidence](phase-8-consolidated-evidence-2026-10-15.json).
+
+- Phase 7 localization carryover: Spanish homepage now includes the faithful
+  HSA/FSA translation once after ESA/before Financial Help, with a separate
+  APROBADO graphic and Spanish alt. English content/artwork unchanged.
+- Phase 7 structural carryover: Spanish privacy now has eleven H2 sections;
+  Información que recopilamos introduces the four existing collection items.
+  Policy wording/date/contact/metadata unchanged. Historical cache/insecure-TLS
+  provenance and trusted-source/legal review remain unresolved.
+- Phase 8 Tour defect: replace flattened duplicated gallery with one enhanced
+  nine-slide carousel, caption, wraparound controls, named keyboard-operable
+  thumbnails, focus, restrained live announcements and full no-JS fallback.
+  Source is TLS-validated HTTP 200 but October 3 cached/prerendered content,
+  observed October 15. No live-page scripts executed or fresh-origin claim.
+- Preserve prior Arabic UI, headings, contrast, responsive and native-dialog
+  findings. No changes to likes/views script, forms, publication architecture,
+  dependencies, hosting, SESSION_HANDOFF or pending Phase 9 decisions.
+- Pass: 156 regression tests; 21 targeted Chromium checks and two actual-style/
+  reduced-motion probes; 122 generated-route static checks; link/image/blog
+  audits and both builds. Native 200% zoom on Tour/privacy adds 26 overlapping
+  frames, alongside 20 full-page captures and four crops (all outside Git).
+- Counts unchanged: 122 routes/canonicals, 108 sitemap, 180 hreflang/55 routes,
+  25 sets, 74 Library records, 55/12/7 search, nine archives/redirects,
+  182 Library FAQ answers on 30 articles. Final staging 122 noindex,nofollow,
+  empty sitemap, zero hreflang. Raw all-site FAQ population is separately 254/32.
+- Final explicit source-matching offline artifact:
+  [17-41-40-404Z](route-reconciliation-2026-10-15-offline-17-41-40-404Z.json),
+  133 dispositions/70 reused requests. Read-only consistency check passed.
+
+**PHASE 8 TECHNICALLY READY FOR CHECKPOINT REVIEW**, not accepted by stakeholders.
+Fluent Spanish/Arabic, HSA financial claims, clinical/organizational review,
+privacy/legal/trusted-source comparison, real screen reader, native-dialog AT,
+Arabic diagrams, source-design and non-Chromium acceptance remain open.
+P9-01 through P9-10 all Pending decision; Phase 10 cutover remains unauthorized.
+No staging, commit, checkpoint preparation, deployment or integration activation.
+
+
+### 2026-10-15 — Spanish HSA/FSA badge transparency and geometry correction
+
+User review identified an opaque white background and badge shrinkage/position drift in the initial Spanish derivative. The earlier full-image generation and white-background export were not faithful enough. This finding supersedes the Spanish badge visual-fidelity claim and image hash in the consolidated evidence; historical captures remain unchanged.
+
+Replaced only `public/assets/images/hsa-fsa-accepted-es.png`. Built-in imagegen supplied APROBADO lettering; ImageMagick compositing retained the original English artwork and alpha outside that lettering. Both images are 500×425 RGBA. Alpha comparison: **zero differing pixels**. All changed color pixels are confined to a 192×42 lettering rectangle at x154/y188. The English source image remains byte-identical to HEAD. No layout, content, metadata, or publication changes.
+
+Chromium 151.0.7922.75: **8/8 targeted checks pass**, EN and ES at 320/390/768/1440px, matching rendered image dimensions, one section per page, Spanish alt text, no page overflow. Eight section screenshots with SHA-256 hashes are recorded in [badge evidence](phase-8-badge-correction-evidence-2026-10-15.json), with temporary images in `/tmp/aia-p8-badge-fix`; Spanish mobile and desktop captures visually inspected. Loopback GET/HEAD-only guard, service workers blocked, WebSockets denied: zero blocked external/API requests and no production interactions.
+
+Normal build, link audit (0 broken), image audit (0 missing mapped), and explicit offline consistency check pass. Current source-matching artifact: [18:21 offline reconciliation](route-reconciliation-2026-10-15-offline-18-21-22-820Z.json), reusing 70 historical requests with no new crawl. Final staging output: 122 noindex,nofollow pages, empty sitemap, zero hreflang. Full previous regression suite was not repeated for this asset-only correction. Fluent-Spanish/financial-claims acceptance and all existing Phase 9 gates remain pending. No staging, commit, deployment, or handoff update.
+
+## Phase 8 checkpoint preparation — 2026-10-15 UTC
+
+Technical implementation is ready for a user-signed checkpoint; no production or
+human-review acceptance is inferred. See the [exact 59-path manifest and validation](phase-8-checkpoint-manifest-2026-10-15.md).
+Starting HEAD `8e64d322092b1fa6e0f648ddf26a665c80588198` and branch were verified;
+index empty and no preview server remained. Actual starting state was 27 modified,
+one deletion and 34 untracked (five exclusions): 57 intended paths. The badge
+correction evidence and 18:21 route report explain the increase from the earlier
+55-path estimate. Handoff plus manifest gives 59 approved paths; temporary
+`.phase8-stage-paths.nul` is separate and excluded.
+
+All sequential checks passed: Astro 101 files/zero diagnostics; Markdown 20,
+publication 33, SEO 35, Library 53, routes 10, Phase 8 5 (156 total). Both builds
+and link/image/blog audits passed. Final static smoke covers 122 routes with
+zero failures/review findings. Indexing: 122 canonicals, 108 sitemap URLs,
+180 hreflang links/55 routes, 25 sets; Library 74/search 55/12/7, nine archives,
+nine redirects, 182 FAQs across 30 articles. Both English page-six routes have
+five cards. Final staging: 122 noindex,nofollow, empty sitemap, zero hreflang.
+Explicit read-only check of `route-reconciliation-2026-10-15-offline-18-21-22-820Z.json`
+passes; no new crawl or redundant artifact. Historical reports remain intact.
+
+Checkpoint review confirmed 100 original representative capture hashes, 194
+follow-up capture references (including historical/superseded zoom frames), 50
+consolidated references and eight final badge crops: all present and matching.
+These populations are not additive unique route counts or reviewer approvals.
+Screenshots/profiles stay outside Git. No new browser session was needed.
+
+The living handoff now records Phase 8 technical completion for checkpoint
+purposes and Phase 9 decision review as next. Browser-unavailable statements are
+historical, not current system-Chromium status. Spanish badge white-export history
+is superseded by the original-alpha/geometry-preserving lettering composite.
+Tour remains cache-qualified despite normal TLS; Spanish privacy remains
+cache-qualified with historical insecure-TLS provenance and needs trusted-source
+comparison. No source JSON or implementation bytes changed during preparation.
+
+Real screen reader, authorized visual/non-Chromium, fluent Spanish/Arabic,
+clinical/organizational, Arabic diagram, HSA/FSA financial, and policy/legal
+acceptance remain pending. All ten Phase 9 decisions remain pending; Phase 10
+retains QA/rollback/cutover authorization. No staging, commit, signing repair,
+push, deployment, integration activation or Phase 9 implementation performed.

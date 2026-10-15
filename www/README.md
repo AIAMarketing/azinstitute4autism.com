@@ -38,6 +38,40 @@ cd www
 npm install
 ```
 
+### Local Playwright environment (Linux)
+
+From the repository root, enter the opt-in browser shell:
+
+```sh
+nix --extra-experimental-features "nix-command flakes" develop .#browser
+cd www
+TMPDIR=/tmp npm run build
+TMPDIR=/tmp node tools/playwright-smoke.mjs
+```
+
+The existing `flake.lock` pairs the Nix Playwright driver and Chromium/headless
+shell. `PLAYWRIGHT_MODULE` points directly to that driver; `PLAYWRIGHT_BROWSERS_PATH`
+selects its matching browsers. Fontconfig supplies Latin/Arabic fallback fonts.
+The ordinary development shell and npm dependencies remain unchanged. This
+browser shell is offered on Linux; the existing Darwin development shell is
+unchanged. Do not run `npx playwright install` or mix an unrelated npm Playwright
+version with these browser revisions.
+
+The smoke test starts Astro preview and Chromium in the **same execution** on an
+ephemeral `127.0.0.1` port. It blocks external and non-GET/HEAD requests, loads the
+real Spanish privacy and Library pages, verifies staging robots/title/H1, captures
+two full-page screenshots in a new `/tmp/aia-playwright-smoke-*` directory, and
+closes browser/preview. It does not submit forms or exercise production APIs.
+Success establishes browser transport only, not Phase 8 visual or human acceptance.
+
+Use the [Phase 8 guarded browser procedure](reports/phase-8-host-browser-verification-2026-10-14.md)
+for full review. Entering the Nix shell does not repair an already-running remote
+MCP transport or relax sandbox permissions. If the autonomous environment cannot
+access the Nix store, trusted certificates, sockets or browser runtime files, run
+the same smoke test from the host terminal. Do not disable TLS verification or
+bypass the sandbox. The Nix environment needs host validation before browser
+availability can be claimed.
+
 Copy the example environment file when testing the like/view counter or staging
 SEO behavior:
 

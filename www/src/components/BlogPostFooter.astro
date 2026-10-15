@@ -1,5 +1,6 @@
 ---
 import footerData from '../data/blog-footers.json';
+import { articleMessages } from '../utils/article-messages';
 
 interface FooterLink {
   title: string;
@@ -17,27 +18,28 @@ interface FooterData {
   related: RelatedPost[];
 }
 
-const { entryId } = Astro.props as { entryId: string };
+const { entryId, lang } = Astro.props as { entryId: string; lang: string };
+const text = articleMessages(lang);
 const footer = (footerData as Record<string, FooterData>)[entryId];
 ---
 
 {footer && (
   <footer class="blog-post-footer">
     {(footer.previous || footer.next) && (
-      <nav class="post-pagination" aria-label="Article navigation">
+      <nav class="post-pagination" aria-label={text.navigation}>
         <div class="post-pagination__item post-pagination__item--previous">
           {footer.previous && (
             <>
-              <span>Previous Post</span>
-              <h2><a href={footer.previous.href}>{footer.previous.title}</a></h2>
+              <span>{text.previous}</span>
+              <h2><a href={footer.previous.href}><bdi>{footer.previous.title}</bdi></a></h2>
             </>
           )}
         </div>
         <div class="post-pagination__item post-pagination__item--next">
           {footer.next && (
             <>
-              <span>Next Post</span>
-              <h2><a href={footer.next.href}>{footer.next.title}</a></h2>
+              <span>{text.next}</span>
+              <h2><a href={footer.next.href}><bdi>{footer.next.title}</bdi></a></h2>
             </>
           )}
         </div>
@@ -47,14 +49,14 @@ const footer = (footerData as Record<string, FooterData>)[entryId];
     {footer.related.length > 0 && (
       <section class="related-posts" aria-labelledby={`related-posts-${entryId.replace('/', '-')}`}>
         <div class="container">
-          <h2 id={`related-posts-${entryId.replace('/', '-')}`}>Similar Blog Posts</h2>
+          <h2 id={`related-posts-${entryId.replace('/', '-')}`}>{text.related}</h2>
           <div class="related-posts__list">
             {footer.related.map((post) => (
               <article class="related-post">
-                <a class="related-post__image-link" href={post.href} aria-label={`Read full post: ${post.title}`}>
+                <a class="related-post__image-link" href={post.href} aria-label={`${text.readFull}: ${post.title}`}>
                   <img src={post.image} alt={post.alt} loading="lazy" />
                 </a>
-                <h3><a href={post.href}>{post.title}</a></h3>
+                <h3><a href={post.href}><bdi>{post.title}</bdi></a></h3>
               </article>
             ))}
           </div>
@@ -104,7 +106,7 @@ const footer = (footerData as Record<string, FooterData>)[entryId];
   .post-pagination a:focus-visible,
   .related-post a:hover,
   .related-post a:focus-visible {
-    color: var(--color-accent);
+    color: var(--color-primary-dark);
   }
 
   .related-posts {

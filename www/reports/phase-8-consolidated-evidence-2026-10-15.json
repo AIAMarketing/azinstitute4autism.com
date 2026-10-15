@@ -1,0 +1,2443 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-15T17:42:05.704Z",
+  "head": "8e64d322092b1fa6e0f648ddf26a665c80588198",
+  "scope": "Phase 8 consolidated follow-up; previous evidence retained, not retrospectively rewritten.",
+  "browser": {
+    "startedAt": "2026-10-15T17:39:56.027Z",
+    "checks": [
+      {
+        "name": "home / 320",
+        "status": "pass",
+        "detail": {
+          "width": 320,
+          "documentWidth": 320,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "home /es 320",
+        "status": "pass",
+        "detail": {
+          "width": 320,
+          "documentWidth": 320,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "privacy fragment 320",
+        "status": "pass",
+        "detail": {
+          "h2": 11,
+          "fragment": true,
+          "position": {
+            "top": 1223.140625,
+            "bottom": 1303.140625
+          }
+        }
+      },
+      {
+        "name": "carousel controls keyboard 320",
+        "status": "pass",
+        "detail": {
+          "focus": {
+            "outline": "3px",
+            "color": "rgb(37, 64, 128)"
+          },
+          "image": {
+            "width": 280,
+            "height": 158,
+            "naturalWidth": 948,
+            "naturalHeight": 534
+          },
+          "wrap": true,
+          "caption": true,
+          "keyboard": "Tab Shift+Tab Enter Space ArrowLeft ArrowRight"
+        }
+      },
+      {
+        "name": "Tour no-JS 320",
+        "status": "pass",
+        "detail": {
+          "photos": 9,
+          "controlsHidden": true
+        }
+      },
+      {
+        "name": "home / 390",
+        "status": "pass",
+        "detail": {
+          "width": 390,
+          "documentWidth": 390,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "home /es 390",
+        "status": "pass",
+        "detail": {
+          "width": 390,
+          "documentWidth": 390,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "privacy fragment 390",
+        "status": "pass",
+        "detail": {
+          "h2": 11,
+          "fragment": true,
+          "position": {
+            "top": 1119.140625,
+            "bottom": 1199.140625
+          }
+        }
+      },
+      {
+        "name": "carousel controls keyboard 390",
+        "status": "pass",
+        "detail": {
+          "focus": {
+            "outline": "3px",
+            "color": "rgb(37, 64, 128)"
+          },
+          "image": {
+            "width": 350,
+            "height": 197,
+            "naturalWidth": 948,
+            "naturalHeight": 534
+          },
+          "wrap": true,
+          "caption": true,
+          "keyboard": "Tab Shift+Tab Enter Space ArrowLeft ArrowRight"
+        }
+      },
+      {
+        "name": "Tour no-JS 390",
+        "status": "pass",
+        "detail": {
+          "photos": 9,
+          "controlsHidden": true
+        }
+      },
+      {
+        "name": "home / 768",
+        "status": "pass",
+        "detail": {
+          "width": 768,
+          "documentWidth": 768,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "home /es 768",
+        "status": "pass",
+        "detail": {
+          "width": 768,
+          "documentWidth": 768,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "privacy fragment 768",
+        "status": "pass",
+        "detail": {
+          "h2": 11,
+          "fragment": true,
+          "position": {
+            "top": 972.546875,
+            "bottom": 1012.546875
+          }
+        }
+      },
+      {
+        "name": "carousel controls keyboard 768",
+        "status": "pass",
+        "detail": {
+          "focus": {
+            "outline": "3px",
+            "color": "rgb(37, 64, 128)"
+          },
+          "image": {
+            "width": 728,
+            "height": 410,
+            "naturalWidth": 948,
+            "naturalHeight": 534
+          },
+          "wrap": true,
+          "caption": true,
+          "keyboard": "Tab Shift+Tab Enter Space ArrowLeft ArrowRight"
+        }
+      },
+      {
+        "name": "Tour no-JS 768",
+        "status": "pass",
+        "detail": {
+          "photos": 9,
+          "controlsHidden": true
+        }
+      },
+      {
+        "name": "home / 1440",
+        "status": "pass",
+        "detail": {
+          "width": 1440,
+          "documentWidth": 1440,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "home /es 1440",
+        "status": "pass",
+        "detail": {
+          "width": 1440,
+          "documentWidth": 1440,
+          "dpr": 1,
+          "visualScale": 1
+        }
+      },
+      {
+        "name": "privacy fragment 1440",
+        "status": "pass",
+        "detail": {
+          "h2": 11,
+          "fragment": true,
+          "position": {
+            "top": 953.046875,
+            "bottom": 1001.046875
+          }
+        }
+      },
+      {
+        "name": "carousel controls keyboard 1440",
+        "status": "pass",
+        "detail": {
+          "focus": {
+            "outline": "3px",
+            "color": "rgb(37, 64, 128)"
+          },
+          "image": {
+            "width": 940,
+            "height": 529,
+            "naturalWidth": 948,
+            "naturalHeight": 534
+          },
+          "wrap": true,
+          "caption": true,
+          "keyboard": "Tab Shift+Tab Enter Space ArrowLeft ArrowRight"
+        }
+      },
+      {
+        "name": "Tour no-JS 1440",
+        "status": "pass",
+        "detail": {
+          "photos": 9,
+          "controlsHidden": true
+        }
+      },
+      {
+        "name": "native browser zoom 200%",
+        "status": "pass",
+        "detail": [
+          {
+            "route": "/tour",
+            "zoom": 2,
+            "width": 720,
+            "documentWidth": 720,
+            "dpr": 2,
+            "visualScale": 1,
+            "height": 456,
+            "total": 3163,
+            "overlap": "20%",
+            "frames": [
+              {
+                "file": "zoom200-_tour-0.png",
+                "scrollY": 0
+              },
+              {
+                "file": "zoom200-_tour-1.png",
+                "scrollY": 364
+              },
+              {
+                "file": "zoom200-_tour-2.png",
+                "scrollY": 728
+              },
+              {
+                "file": "zoom200-_tour-3.png",
+                "scrollY": 1092
+              },
+              {
+                "file": "zoom200-_tour-4.png",
+                "scrollY": 1456
+              },
+              {
+                "file": "zoom200-_tour-5.png",
+                "scrollY": 1820
+              },
+              {
+                "file": "zoom200-_tour-6.png",
+                "scrollY": 2184
+              },
+              {
+                "file": "zoom200-_tour-7.png",
+                "scrollY": 2548
+              },
+              {
+                "file": "zoom200-_tour-8.png",
+                "scrollY": 2706.5
+              }
+            ]
+          },
+          {
+            "route": "/es/privacy-policy",
+            "zoom": 2,
+            "width": 720,
+            "documentWidth": 720,
+            "dpr": 2,
+            "visualScale": 1,
+            "height": 456,
+            "total": 6065,
+            "overlap": "20%",
+            "frames": [
+              {
+                "file": "zoom200-_es_privacy-policy-0.png",
+                "scrollY": 0
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-1.png",
+                "scrollY": 364
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-2.png",
+                "scrollY": 728
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-3.png",
+                "scrollY": 1092
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-4.png",
+                "scrollY": 1456
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-5.png",
+                "scrollY": 1820
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-6.png",
+                "scrollY": 2184
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-7.png",
+                "scrollY": 2548
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-8.png",
+                "scrollY": 2912
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-9.png",
+                "scrollY": 3276
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-10.png",
+                "scrollY": 3640
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-11.png",
+                "scrollY": 4004
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-12.png",
+                "scrollY": 4368
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-13.png",
+                "scrollY": 4732
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-14.png",
+                "scrollY": 5096
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-15.png",
+                "scrollY": 5460
+              },
+              {
+                "file": "zoom200-_es_privacy-policy-16.png",
+                "scrollY": 5608.5
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "blocked": [],
+    "productionAttempt": false,
+    "screenshots": [
+      "home-en-320.png",
+      "home-es-320.png",
+      "privacy-320.png",
+      "tour-320.png",
+      "tour-nojs-320.png",
+      "home-en-390.png",
+      "home-es-390.png",
+      "privacy-390.png",
+      "tour-390.png",
+      "tour-nojs-390.png",
+      "home-en-768.png",
+      "home-es-768.png",
+      "privacy-768.png",
+      "tour-768.png",
+      "tour-nojs-768.png",
+      "home-en-1440.png",
+      "home-es-1440.png",
+      "privacy-1440.png",
+      "tour-1440.png",
+      "tour-nojs-1440.png",
+      "zoom200-_tour-0.png",
+      "zoom200-_tour-1.png",
+      "zoom200-_tour-2.png",
+      "zoom200-_tour-3.png",
+      "zoom200-_tour-4.png",
+      "zoom200-_tour-5.png",
+      "zoom200-_tour-6.png",
+      "zoom200-_tour-7.png",
+      "zoom200-_tour-8.png",
+      "zoom200-_es_privacy-policy-0.png",
+      "zoom200-_es_privacy-policy-1.png",
+      "zoom200-_es_privacy-policy-2.png",
+      "zoom200-_es_privacy-policy-3.png",
+      "zoom200-_es_privacy-policy-4.png",
+      "zoom200-_es_privacy-policy-5.png",
+      "zoom200-_es_privacy-policy-6.png",
+      "zoom200-_es_privacy-policy-7.png",
+      "zoom200-_es_privacy-policy-8.png",
+      "zoom200-_es_privacy-policy-9.png",
+      "zoom200-_es_privacy-policy-10.png",
+      "zoom200-_es_privacy-policy-11.png",
+      "zoom200-_es_privacy-policy-12.png",
+      "zoom200-_es_privacy-policy-13.png",
+      "zoom200-_es_privacy-policy-14.png",
+      "zoom200-_es_privacy-policy-15.png",
+      "zoom200-_es_privacy-policy-16.png"
+    ],
+    "runtimeErrors": [],
+    "browser": "151.0.7922.75",
+    "routesOpened": [
+      "/",
+      "/es",
+      "/es/privacy-policy",
+      "/tour",
+      "/client-consultation"
+    ],
+    "finishedAt": "2026-10-15T17:40:21.214Z"
+  },
+  "contrastProbe": {
+    "browser": "151.0.7922.75",
+    "blocked": [],
+    "rows": [
+      {
+        "width": 390,
+        "normal": {
+          "color": "rgb(37, 64, 128)",
+          "background": "rgba(255, 255, 255, 0.95)",
+          "outline": "rgb(37, 64, 128) solid 3px",
+          "rect": {
+            "left": 326,
+            "right": 370,
+            "width": 44,
+            "height": 44
+          }
+        },
+        "hover": {
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(37, 64, 128)"
+        },
+        "minimumContrast": 8.83281624766056,
+        "reducedMotion": true
+      },
+      {
+        "width": 1440,
+        "normal": {
+          "color": "rgb(37, 64, 128)",
+          "background": "rgba(255, 255, 255, 0.95)",
+          "outline": "rgb(37, 64, 128) solid 3px",
+          "rect": {
+            "left": 1131.1875,
+            "right": 1190,
+            "width": 59,
+            "height": 64
+          }
+        },
+        "hover": {
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(37, 64, 128)"
+        },
+        "minimumContrast": 8.83281624766056,
+        "reducedMotion": true
+      }
+    ]
+  },
+  "static": {
+    "ruleSet": "AIA phase8-static-v1 (Cheerio DOM heuristics; not axe or WCAG certification)",
+    "generatedAt": "2026-10-15T17:42:05.608Z",
+    "routeCount": 122,
+    "htmlCount": 122,
+    "utilityRoutes": [],
+    "unexpectedRoutes": [],
+    "arabicHomePublished": false,
+    "failures": 0,
+    "reviewFindings": 0,
+    "rows": [
+      {
+        "route": "/",
+        "locale": "en",
+        "title": "Scottsdale ABA Therapy for Children | Arizona Institute for Autism",
+        "h1": "Behavioral Health& SpecialEducation",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/aba-therapy",
+        "locale": "en",
+        "title": "Integrated ABA Therapy for Autism | Arizona Institute for Autism",
+        "h1": "Behavioral",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/aba-therapy-intake-process",
+        "locale": "en",
+        "title": "Starting ABA Therapy Step-by-Step Guide | Arizona Institute for Autism",
+        "h1": "Learner Intake Process",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/about",
+        "locale": "en",
+        "title": "About Us | Arizona Institute for Autism | Scottsdale",
+        "h1": "About AIA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library",
+        "locale": "ar",
+        "title": "مكتبة معهد أريزونا للتوحد",
+        "h1": "مكتبة معهد أريزونا للتوحد",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/aba-school-readiness-guide",
+        "locale": "ar",
+        "title": "التدخلات التمهيدية واستراتيجيات العواقب في تحليل السلوك التطبيقي",
+        "h1": "التدخلات التمهيدية وتدخلات العواقب في تحليل السلوك التطبيقي: استراتيجيات وأمثلة",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [
+          {
+            "name": "رسم توضيحي قابل للتمرير أفقيًا",
+            "tabindex": "0",
+            "role": "region",
+            "src": "/assets/images/antecedent-behavior-consequence_ar.svg",
+            "alt": "رسم عربي يوضّح نموذج ABC: أحد الوالدين ينبه إلى قرب انتهاء وقت الجهاز اللوحي، والطفل يطلب وقتًا إضافيًا، ثم يمنحه الوالد دقيقتين إضافيتين بوصفهما النتيجة اللاحقة."
+          },
+          {
+            "name": "رسم توضيحي قابل للتمرير أفقيًا",
+            "tabindex": "0",
+            "role": "region",
+            "src": "/assets/images/reduce-environmental-distractions_ar.svg",
+            "alt": "طفل يعمل في مساحة هادئة تقل فيها المشتتات البصرية والبيئية، وإلى جانبه ملصق عربي يوضح خطوات ركن الهدوء."
+          },
+          {
+            "name": "رسم توضيحي قابل للتمرير أفقيًا",
+            "tabindex": "0",
+            "role": "region",
+            "src": "/assets/images/reinforcement-replacement-behavior_ar.svg",
+            "alt": "رسم عربي يقارن استجابتين لمهمة صعبة: يدفع الطفل المواد بعيدًا فيهرب من المهمة، أو يطلب المساعدة فيتلقى دعمًا يتيح له متابعة التعلم."
+          }
+        ],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/autism-self-advocacy-skills-aba",
+        "locale": "ar",
+        "title": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "h1": "دليل تعليم مهارات الدفاع عن النفس في ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/behavior-management-functions-guide",
+        "locale": "ar",
+        "title": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "h1": "إتقان إدارة السلوك: اكتشف الوظائف الأربع للسلوك",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/executive-functioning-skills-autism",
+        "locale": "ar",
+        "title": "مهارات الوظائف التنفيذية والتوحّد",
+        "h1": "مهارات الوظائف التنفيذية والتوحّد",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/first-then-cards-autism-transitions",
+        "locale": "ar",
+        "title": "بطاقات أولاً/ثم: تمكين الانتقالات للأطفال المصابين بالتوحد",
+        "h1": "بطاقات \"أولًا/ثم\": تسهيل الانتقال بين الأنشطة للأطفال المصابين بالتوحّد",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/positive-reinforcement-techniques",
+        "locale": "ar",
+        "title": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "h1": "التعزيز الإيجابي في علاج تحليل السلوك التطبيقي (ABA) لتشجيع تطوير المهارات",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/proactive-reactive-aba-strategies-guide",
+        "locale": "ar",
+        "title": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "h1": "إتقان تقنيات التحليل السلوكي الاستباقية والتفاعلية– احجز استشارتك الآن",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/autism-evaluations",
+        "locale": "en",
+        "title": "Accurate Autism Assessment for Children | Arizona Institute for Autism",
+        "h1": "Psychological",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/careers",
+        "locale": "en",
+        "title": "Join Our Team | Autism Careers in AZ | Arizona Institute for Autism",
+        "h1": "Employment Opportunities",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/client-consultation",
+        "locale": "en",
+        "title": "Client Consultation Form | Arizona Institute for Autism | Scottsdale",
+        "h1": "Schedule Your Free Consultation",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/client-forms",
+        "locale": "en",
+        "title": "Essential Forms for Autism Support | Arizona Institute for Autism",
+        "h1": "Client Forms",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/contact",
+        "locale": "en",
+        "title": "Contact AIA | Arizona Institute for Autism | Scottsdale",
+        "h1": "Contact AIA",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/donate-autism-giveback",
+        "locale": "en",
+        "title": "Help Autism Families Thrive | Donate to Arizona Institute for Autism",
+        "h1": "Giveback & Donate",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/employee-portal",
+        "locale": "en",
+        "title": "AIA Employee Portal | Arizona Institute for Autism",
+        "h1": "Employee Portal",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es",
+        "locale": "es",
+        "title": "Terapia ABA cerca de mí | Arizona Institute for Autism | Scottsdale",
+        "h1": "Salud Mental yEducación Especial",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/aba-therapy",
+        "locale": "es",
+        "title": "Terapia ABA Integrada para el Autismo | Arizona Institute for Autism",
+        "h1": "Conductual",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/aba-therapy-intake-process",
+        "locale": "es",
+        "title": "Guía paso a paso para comenzar la terapia ABA | Arizona Institute for Autism",
+        "h1": "Proceso de admisión de estudiantes",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/autism-evaluations",
+        "locale": "es",
+        "title": "Evaluación precisa del autismo para niños | Arizona Institute for Autism",
+        "h1": "Psicológicos",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/client-consultation",
+        "locale": "es",
+        "title": "Formulario de Consulta del Cliente | Arizona Institute for Autism | Scottsdale",
+        "h1": "Programa tu consulta gratuita",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/contact",
+        "locale": "es",
+        "title": "Contactar a AIA | Arizona Institute for Autism | Scottsdale",
+        "h1": "Contactar a AIA",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/learner-social-club",
+        "locale": "es",
+        "title": "Impulsa el funcionamiento emocional y social con Learner Social Club en AIA",
+        "h1": "Sociológico",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library",
+        "locale": "es",
+        "title": "La Biblioteca en AZ Institute for Autism",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/aba-school-readiness-arizona",
+        "locale": "es",
+        "title": "Preparación escolar y autismo en Arizona: guía para familias",
+        "h1": "Preparación escolar para niños autistas en Arizona: cómo puede ayudar la terapia ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-evaluation-diagnosis-arizona-parent-guide",
+        "locale": "es",
+        "title": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "h1": "Evaluación del Autismo en Arizona: Guía Paso a Paso para Padres",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-evaluation-what-to-expect",
+        "locale": "es",
+        "title": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "h1": "Qué esperar en la primera evaluación de autismo de su hijo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-family-self-care-tips",
+        "locale": "es",
+        "title": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "h1": "Descubre consejos para el autocuidado de padres de niños con autismo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/autism-self-advocacy-skills-aba",
+        "locale": "es",
+        "title": "Desbloqueando la independencia para niños con autismo a través de la autodefensa ABA",
+        "h1": "Guía para enseñar la autodefensa en el ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/emotional-regulation-aba",
+        "locale": "es",
+        "title": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "h1": "Por qué la regulación emocional debería ser el corazón de cada programa de ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/enhancing-generalization-skills",
+        "locale": "es",
+        "title": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "h1": "Mejorando la generalización para un impacto más amplio en el autismo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/executive-functioning-skills-autism",
+        "locale": "es",
+        "title": "Habilidades de funcionamiento ejecutivo y autismo: estrategias de éxito",
+        "h1": "Habilidades de funcionamiento ejecutivo y autismo",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/first-then-cards-autism-transitions",
+        "locale": "es",
+        "title": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "h1": "Tarjetas Primero/Después : Empoderando las transiciones para niños autistas",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/parents-guide-to-autism-and-aba",
+        "locale": "es",
+        "title": "Cómo ayudar a su hijo autista: Una guía para padres y cuidadores",
+        "h1": "Guía de Autismo para Padres y Cuidadores",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/positive-reinforcement-techniques",
+        "locale": "es",
+        "title": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "h1": "Refuerzo positivo en la terapia ABA para fomentar el desarrollo de habilidades",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/social-pragmatic-communication-autism",
+        "locale": "es",
+        "title": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "h1": "Por qué mi hijo puede hablar pero aún tiene dificultades sociales",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/privacy-policy",
+        "locale": "es",
+        "title": "Política de privacidad | Arizona Institute for Autism",
+        "h1": "Política de privacidad",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/services",
+        "locale": "es",
+        "title": "Servicios pediátricos de autismo conductuales, psicológicos y sociológicos",
+        "h1": "Servicios ABA y Educativos",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/faqs",
+        "locale": "en",
+        "title": "Helpful Autism Diagnosis & Therapy FAQs | Arizona Institute for Autism",
+        "h1": "ABA Therapy Helpline",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "/search",
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/insurance",
+        "locale": "en",
+        "title": "Arizona Autism Therapy Insurance Guide | AZ Institute for Autism",
+        "h1": "Insurance Guide",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/learner-social-club",
+        "locale": "en",
+        "title": "Boost Emotional and Social Functioning with Learner Social Club at AIA",
+        "h1": "Sociological",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aac-visual-supports-autism",
+        "locale": "en",
+        "title": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "h1": "AAC and Visual Supports 101: Helping Your Child Be Heard",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-school-readiness-arizona",
+        "locale": "en",
+        "title": "ABA School Readiness in Arizona: A Parent Guide",
+        "h1": "ABA School Readiness for Autistic Children in Arizona",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-school-readiness-guide",
+        "locale": "en",
+        "title": "Antecedent Interventions & Consequence Strategies in ABA",
+        "h1": "Antecedent and Consequence Interventions in ABA: Strategies and Examples",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-benefits",
+        "locale": "en",
+        "title": "The Benefits of ABA Therapy for Children with Autism",
+        "h1": "The Benefits of ABA Therapy for Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-dtt-net-guide",
+        "locale": "en",
+        "title": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "h1": "Learn About DTT and NET Methods for More Effective ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-prompting-parenting-benefits",
+        "locale": "en",
+        "title": "Benefits of Prompting & Parenting in ABA Therapy",
+        "h1": "Benefits of Prompting & Parenting in ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-therapy-summer-routine-tips",
+        "locale": "en",
+        "title": "How to Support ABA Therapy Over Summer Break",
+        "h1": "How to Support ABA Therapy Over Summer Break",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aba-toilet-training-child-autism",
+        "locale": "en",
+        "title": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "h1": "Guide: Simple ABA Techniques for Toilet Training Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/aia-world-autism-community-day-celebration",
+        "locale": "en",
+        "title": "AIA’s World Autism Community Day of Celebration",
+        "h1": "AIA’s World Autism Community Day of Celebration",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/asd-sensory-friendly-recipe-thanksgiving-pumpkin-cake",
+        "locale": "en",
+        "title": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "h1": "ASD Sensory-Friendly Thanksgiving Recipe: Pumpkin Dump Cake",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/asd-sensory-friendly-recipes-pancakes",
+        "locale": "en",
+        "title": "ASD Sensory-Friendly Recipes: Pancakes",
+        "h1": "ASD Sensory-Friendly Recipes: Pancakes",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-after-school-meltdowns",
+        "locale": "en",
+        "title": "After-School Meltdowns in Autism: Why They Happen",
+        "h1": "After-School Meltdowns: Why Your Child Holds It Together at School and Falls Apart at Home",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-back-to-school-transition",
+        "locale": "en",
+        "title": "Back-to-School Autism Transition: ABA Strategies",
+        "h1": "Back to School with Autism: ABA Strategies for a Smoother Transition",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-daily-living-skills-challenges",
+        "locale": "en",
+        "title": "Daily Living Challenges in Autism: Eating, Sleep & Self-Care",
+        "h1": "Daily Living Challenges in Autism: Eating, Sleeping & Self-Care",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-evaluation-diagnosis-arizona-parent-guide",
+        "locale": "en",
+        "title": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "h1": "Autism Evaluation in Arizona: A Parent's Step-by-Step Guide",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-evaluation-what-to-expect",
+        "locale": "en",
+        "title": "What to Expect at Your Child’s First Autism Evaluation",
+        "h1": "What to Expect at Your Child’s First Autism Evaluation",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-fall-break-routine-tips-halloween-thanksgiving",
+        "locale": "en",
+        "title": "Autism and Fall Break: Routines and Transition Tips",
+        "h1": "Autism and Fall Break: How to Keep Routines Calm and Predictable",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-family-self-care-tips",
+        "locale": "en",
+        "title": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "h1": "Discover Self‑Care Hacks for Parents of Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-friendships-social-play-support",
+        "locale": "en",
+        "title": "Supporting Friendships and Social Play for Children with Autism",
+        "h1": "Supporting Friendships and Social Play for Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-self-advocacy-skills-aba",
+        "locale": "en",
+        "title": "Unlock Independence for Children with Autism Through ABA Self‑Advocacy",
+        "h1": "Guide to Teaching Self‑Advocacy in ABA",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-social-skills-by-age",
+        "locale": "en",
+        "title": "Autism Social Skills by Age: Childhood to Teens | AIA",
+        "h1": "Autism Social Skills by Age: How Social Development Changes as Kids Grow",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/autism-therapy-rapport-strategies",
+        "locale": "en",
+        "title": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "h1": "Learn the Secrets to Effective Rapport Building in ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/behavior-management-functions-guide",
+        "locale": "en",
+        "title": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "h1": "Master Behavior Management: Discover the Four Functions of Behavior",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/behavior-modification-techniques-reinforcement-theory",
+        "locale": "en",
+        "title": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "h1": "The Ultimate Guide to Behavior Modification Techniques & Reinforcement Theory",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/communication-social-skills-autistic-children-guide",
+        "locale": "en",
+        "title": "Building Communication & Social Skills in Autistic Children",
+        "h1": "Building Communication & Social Skills in Autistic Children: A Practical Guide for Families",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/community-highlight-meet-rula-diab",
+        "locale": "en",
+        "title": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "h1": "Community Highlights: Meet Rula Diab of Arizona Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/critical-thinking-skills",
+        "locale": "en",
+        "title": "Critical Thinking Skills for Children with Autism",
+        "h1": "Critical Thinking Skills for Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/does-aba-therapy-replace-school",
+        "locale": "en",
+        "title": "Does ABA Therapy Replace School? A Parent Guide",
+        "h1": "Does ABA Therapy Replace School?",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/early-signs-autism-by-age",
+        "locale": "en",
+        "title": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "h1": "Early Signs of Autism by Age: 12 Months to 4 Years",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/emotional-regulation-aba",
+        "locale": "en",
+        "title": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "h1": "Why Emotional Regulation Should Be the Heart of Every ABA Program",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/enhancing-generalization-skills",
+        "locale": "en",
+        "title": "Enhancing Generalization for Broader Impact in Autism",
+        "h1": "Enhancing Generalization for Broader Impact in Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/executive-functioning-skills-autism",
+        "locale": "en",
+        "title": "Executive Functioning Skills & Autism: Success Strategies Across Ages",
+        "h1": "Executive Functioning Skills and Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/first-then-cards-autism-transitions",
+        "locale": "en",
+        "title": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "h1": "First/Then Cards: Empowering Transitions for Autistic Children",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/halloween-and-autism",
+        "locale": "en",
+        "title": "Halloween and Autism: Sensory-Friendly Tips for Families",
+        "h1": "Halloween and Autism: Making the Holiday Comfortable, Safe, and Fun",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/heart-full-of-gratitude",
+        "locale": "en",
+        "title": "Heart Full of Gratitude",
+        "h1": "Heart Full of Gratitude",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/how-many-hours-aba-child-need",
+        "locale": "en",
+        "title": "How Many Hours of ABA Does a Child Need?",
+        "h1": "How Many Hours of ABA Does a Child Need?",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/individualized-aba-therapy",
+        "locale": "en",
+        "title": "Personalized ABA Therapy Plans | Schedule Your Free Consultation",
+        "h1": "Individualized Care Plans in ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/integrated-aba-model-announcement",
+        "locale": "en",
+        "title": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "h1": "Arizona Institute for Autism Adopts an Integrated ABA Model",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/managing-aggressive-behavior-outbursts",
+        "locale": "en",
+        "title": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "h1": "Managing Aggressive Behavior Outbursts and Proper Communication with Your Child During those Moments",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/meet-rula-diab-bcba",
+        "locale": "en",
+        "title": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "h1": "Meet Rula Diab | Board Certified Behavior Analyst (BCBA)",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/new-aia-scottsdale-office",
+        "locale": "en",
+        "title": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "h1": "Integrity, Empowerment and Excellence: Arizona Institute for Autism expands to new office",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/new-year-2024-autism-holiday-tips",
+        "locale": "en",
+        "title": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "h1": "New Year 2024: Holiday Tips for Autism Support & Awareness",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/new-year-goals-2023",
+        "locale": "en",
+        "title": "New Year Goals for Our Children with Autism",
+        "h1": "New Year Goals for Our Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/november-2022-aia-update",
+        "locale": "en",
+        "title": "November AIA Update",
+        "h1": "November AIA Update",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/parents-guide-to-autism-and-aba",
+        "locale": "en",
+        "title": "How to Help Your Autistic Child: A Parent & Caregiver Guide",
+        "h1": "Autism Guide for Parents and Caregivers",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/picky-eating-autism-parent-guide",
+        "locale": "en",
+        "title": "Picky Eating and Autism: A Practical Parent Guide",
+        "h1": "Picky Eating and Restricted Diets in Autistic Children",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/play-leisure-skills",
+        "locale": "en",
+        "title": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "h1": "Autism Play: Helping Autistic Children Build Play and Leisure Skills",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/positive-reinforcement-techniques",
+        "locale": "en",
+        "title": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "h1": "Positive Reinforcement in ABA Therapy to Encourage Skill Development",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/proactive-reactive-aba-strategies-guide",
+        "locale": "en",
+        "title": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "h1": "Master Proactive & Reactive ABA Techniques – Schedule a Consultation",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/reduce-behavior-management",
+        "locale": "en",
+        "title": "4 Ways on How to Reduce Behavior Management",
+        "h1": "4 Ways on How to Reduce Behavior Management",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/repetitive-behavior",
+        "locale": "en",
+        "title": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "h1": "Repetitive Behaviors with Children Diagnosed with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/sensory-processing",
+        "locale": "en",
+        "title": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "h1": "Understanding Sensory Processing in the Context of ABA Therapy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/sleep-issues-autistic-children",
+        "locale": "en",
+        "title": "Sleep Problems in Autism: Causes, Tips & When to Get Help",
+        "h1": "Sleep Issues in Autistic Children: Calmer Nights for the Whole Family",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/social-pragmatic-communication-autism",
+        "locale": "en",
+        "title": "Why My Child Can Talk but Still Struggles Socially",
+        "h1": "Why My Child Can Talk but Still Struggles Socially",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/understanding-autism-support",
+        "locale": "en",
+        "title": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "h1": "Navigating the Autism Journey: Understanding and Supporting Our Children with Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/privacy-policy",
+        "locale": "en",
+        "title": "Privacy Policy | Arizona Institute for Autism",
+        "h1": "Privacy Policy",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/referrals",
+        "locale": "en",
+        "title": "Submit Your Autism Referral Online | Arizona Institute for Autism",
+        "h1": "Physician & Insurer Referrals",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/schedule-consultation",
+        "locale": "en",
+        "title": "Contact Arizona Institute for Autism for Your Free ASD Consultation",
+        "h1": "Reach Out for Your Free Consultation",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "",
+            "method": "post",
+            "disabledSubmit": 1
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/services",
+        "locale": "en",
+        "title": "Behavioral, Psychological, and Sociological Pediatric Autism Services",
+        "h1": "ABA & Educational Services",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/team",
+        "locale": "en",
+        "title": "Meet Our Dedicated Autism Support Team | Arizona Institute for Autism",
+        "h1": "Meet the Team",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/tour",
+        "locale": "en",
+        "title": "Tour Arizona's Premier Autism Therapy Center | Schedule Your AIA Visit",
+        "h1": "Schedule a Guided Tour",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/page/2",
+        "locale": "es",
+        "title": "La Biblioteca en AZ Institute for Autism | Página 2",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/2",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 2",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/3",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 3",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/4",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 4",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/5",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 5",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/page/6",
+        "locale": "en",
+        "title": "The Library at AZ Institute for Autism | Page 6",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/ar/library/author/rula-diab",
+        "locale": "ar",
+        "title": "المكتبة وغرفة الأخبار | معهد أريزونا للتوحد | رولا دياب، المديرة الإكلينيكية، ماجستير في التربية، BCBA، LBA",
+        "h1": "مكتبة معهد أريزونا للتوحد",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/author/rula-diab",
+        "locale": "es",
+        "title": "Biblioteca y Noticias | Instituto de Autismo de Arizona | Rula Diab, Directora Clínica, M.Ed, BCBA, LBA",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/es/library/author/rula-diab/page/2",
+        "locale": "es",
+        "title": "Biblioteca y Noticias | Instituto de Autismo de Arizona | Rula Diab, Directora Clínica, M.Ed, BCBA, LBA | Página 2",
+        "h1": "La Biblioteca en AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/2",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 2",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/3",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 3",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/4",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 4",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/5",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 5",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/library/author/rula-diab/page/6",
+        "locale": "en",
+        "title": "Library & News Room | Arizona Institute for Autism | Rula Diab, Clinical Director, M.Ed, BCBA, LBA | Page 6",
+        "h1": "The Library at AZ Institute for Autism",
+        "errors": [],
+        "review": [],
+        "forms": [],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      },
+      {
+        "route": "/search",
+        "locale": "en",
+        "title": "Search the Library | Arizona Institute for Autism",
+        "h1": "Search the Library",
+        "errors": [],
+        "review": [],
+        "forms": [
+          {
+            "action": "/search",
+            "method": "get",
+            "disabledSubmit": 0
+          }
+        ],
+        "diagrams": [],
+        "browser": "Not tested",
+        "reviewerAcceptance": "Pending"
+      }
+    ]
+  },
+  "invariance": {
+    "privacyWordingUnchanged": true,
+    "englishHomeAndOriginalImageUnchanged": true,
+    "handoffAndDecisionRegisterUnchanged": true,
+    "apiScriptUnchanged": true,
+    "apiScriptSha256": "d26d5659b4f34fcc1ce3dcd377dc4260d9634e852aeea7df960e0dd9f68972ce",
+    "tourMetadataAmenitiesUnchanged": true,
+    "tourCtaWordingUnchangedDestinationRestored": true
+  },
+  "indexing": {
+    "html": 122,
+    "canonicalTargets": 122,
+    "sitemap": 108,
+    "hreflang": 180,
+    "hreflangRoutes": 55,
+    "robots": {
+      "index,follow": 108,
+      "noindex,follow": 14
+    },
+    "authorArchives": 9,
+    "faqAnswers": 182,
+    "faqArticles": 30,
+    "redirects": 9
+  },
+  "staging": {
+    "html": 122,
+    "canonicalTargets": 122,
+    "sitemap": 0,
+    "hreflang": 0,
+    "hreflangRoutes": 0,
+    "robots": {
+      "noindex,nofollow": 122
+    },
+    "authorArchives": 9,
+    "faqAnswers": 182,
+    "faqArticles": 30,
+    "redirects": 9
+  },
+  "faqPopulationNote": "Final counters use the accepted Library-only 182/30 population. An initial broader counter observed all-site FAQ schema 254/32, including two non-Library pages; no content change was needed.",
+  "regressionTests": {
+    "markdown": 20,
+    "publication": 33,
+    "seo": 35,
+    "library": 53,
+    "routes": 10,
+    "phase8": 5,
+    "total": 156
+  },
+  "offlineEvidence": "www/reports/route-reconciliation-2026-10-15-offline-17-41-40-404Z.json",
+  "sourceFingerprint": "66884f2b8b3af2e1eaa7f8e3dc21ebceaa97a62650c695fd5508e6b003133c6d",
+  "sourceEvidence": "phase-8-consolidated-source-evidence-2026-10-15.json",
+  "sourceObservedAt": "2026-10-15T09:24:15Z",
+  "priorCaptures": [
+    {
+      "route": "/",
+      "width": 1440,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-postfix/1440-en.png",
+      "sha256": "6a81c27d9389cdae6cac77c149df9e7fa3323b16055dd67fae0678ee5b91a25e",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    },
+    {
+      "route": "/es",
+      "width": 1440,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-postfix/1440-es.png",
+      "sha256": "e76a3cdb034c27da6f1c3cdd8cbb1622535e91be90cf221b1c69004ed4abc79a",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    },
+    {
+      "route": "/es/privacy-policy",
+      "width": 1440,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-final/1440-_es_privacy-policy.png",
+      "sha256": "c8e7f0092f7b9a7a8071e1e489e63d64a83822b575ce6822892553c47c6ff6c8",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    },
+    {
+      "route": "/tour",
+      "width": 1440,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-final/1440-_tour.png",
+      "sha256": "638d3ecf35a92b139c078ee0a69ae277b18eee03a2f01820fb778b9f8594f5c1",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-postfix/390-en.png",
+      "sha256": "ec439ed7e4106d6189c36b89366038ff01fa3003efb5e5ef6371f3273b64f2ef",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    },
+    {
+      "route": "/es",
+      "width": 390,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-postfix/390-es.png",
+      "sha256": "20a55c723a00242f9b4bc0137cb864edb71c0ab2443c7e8841776ca8d2d37e29",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    },
+    {
+      "route": "/es/privacy-policy",
+      "width": 390,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-final/390-_es_privacy-policy.png",
+      "sha256": "f84361b8f59f21e34d1e6b1c9d1a90d6663a0c782856f5fd375c549506bd50d1",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    },
+    {
+      "route": "/tour",
+      "width": 390,
+      "path": "/tmp/aia-phase8-browser-2026-10-15-final/390-_tour.png",
+      "sha256": "75d82e94049afad8154fe85d9c4386cc4c3f0912e6fd7fe85d90880f7f51c42d",
+      "fullPage": true,
+      "reviewerAcceptance": "Pending"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-en-320.png",
+      "sha256": "2d9ce450883562aede23b282f4b43acddb1927b4010bb3f1740c4d2f583621ce"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-es-320.png",
+      "sha256": "a770503ee64dec491f7bd32def5399f1f61c0cc61bc5690803a03a26a2fb5e06"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/privacy-320.png",
+      "sha256": "8071afc9872bde814362cd22c82835a1590a780813ef88b103976a1604270eb7"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-320.png",
+      "sha256": "299925db25ed58f4e705744aae7edfd423df58ab2e1085d1ecb37dc362f2e3f8"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-nojs-320.png",
+      "sha256": "02f12c546e17db44d4cd024b0c773154dc1711dd2b6cc3dcf8951a5679b442aa"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-en-390.png",
+      "sha256": "b0c3bcafd34aa9f75ac6675370e1c079bd79c563f18d1f8e5451bf92999e03cb"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-es-390.png",
+      "sha256": "0ff759d3ec53a3098bd47f88f99c6deb07abb5103668deeea3275f34239a524c"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/privacy-390.png",
+      "sha256": "06163d3b17021b99498729471b1d39f678fc34d517a2d295da6e67bd94e01c03"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-390.png",
+      "sha256": "83b1d06fde93a8a3bb5c5c67c2b30c517e14f1f40fccc7dbbdaa8141c3e0d6a8"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-nojs-390.png",
+      "sha256": "5c1dfc352f7afbdb1728ee7945a4a3beb4631969d8f866b7055a47eba2a75220"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-en-768.png",
+      "sha256": "7ded1538b0f97f9ba55684227f5fcf63f9def63a1818df05b6095565f281e85c"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-es-768.png",
+      "sha256": "c8a799a5221104695af9d43c9add18de8abba940c85db122cc45b2e2fe13f916"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/privacy-768.png",
+      "sha256": "cbd13cc6aba29e0c171f331e88ecca64cd7d9bfce1f3ae92db703b4f2f418d2c"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-768.png",
+      "sha256": "49aa5ef336f69ae8bad08d6a633a4cf9c2dabfeda44dc3eebce2fec1cbb4e9a8"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-nojs-768.png",
+      "sha256": "9e13c0c43a21d7fd538c36c4ae180324a6c7e9596db2123f580ff301fef40149"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-en-1440.png",
+      "sha256": "9adf83be9f8bb9505a9864181411262d6928f70ec930b5dc649214cb7808f0e4"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/home-es-1440.png",
+      "sha256": "3bfe4965fb4b1a3b037506a7f3a823207427f96931795f1f515d672b89f8bea6"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/privacy-1440.png",
+      "sha256": "ae5126d71e792a54ef875e1c8d41c575173eb57bdb41dbfcd9541233ecbb9a3e"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-1440.png",
+      "sha256": "8dea2374b98116de856cd286f5ad6aa996db0d3b76cfd1a6bcd2b80f452fe91c"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/tour-nojs-1440.png",
+      "sha256": "d26267f21fc4a00eddf0ffa55949c671eff417a299c69b8e32d103ce95977ff5"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-0.png",
+      "sha256": "6302dac3ccc8432339257bc50d3ec5e3462554e130a7898cb57cd5684d003866"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-1.png",
+      "sha256": "aee5449dcd93ae89080cdc6e6a9c722aa53719bf68993abf88430dd5b6fa495f"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-2.png",
+      "sha256": "d6849227178b934b595e94338e642b1735c0ee6f09d459c53313afe56fceac26"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-3.png",
+      "sha256": "448d92a7fff0fc38a162c35d8814f30462e44e1f92773d407909a9b51d13821d"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-4.png",
+      "sha256": "c34a26061beb23d4c611491808dc49537e1ed1101560001681b52ecd206a83a1"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-5.png",
+      "sha256": "1b416e99c044b035e10ce8913379e3b379b4411122dca14ec2a5f5dac5e45836"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-6.png",
+      "sha256": "1ea5283b5e7e0f484381e865df35f1d777432978eec17b253d8f4ce5149126f9"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-7.png",
+      "sha256": "6d87fb13162f9cda35c7ea1e69613f7dd381f596c5396e6baa75a2fad4304073"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_tour-8.png",
+      "sha256": "b92490e4af0988d40206426ceb7afdc2edee5e3c57a4e053d2801b0475b0f61c"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-0.png",
+      "sha256": "c63a70ea5783d3b057570ad7cc6f1f06a5a78c4982fa54451f60696679a53bb9"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-1.png",
+      "sha256": "1dd221abf064e224eae4a552b3f590c1ac619315dcc9d8a2794118f20fc942c6"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-2.png",
+      "sha256": "7a8514ec58b72f3224e2adba5b5b42e17d876f1c85bf5577d4d3abc8083e345a"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-3.png",
+      "sha256": "fe805615fa953b9bff20ea3cfeef609123983f8e13da08c2603042defe4b2a28"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-4.png",
+      "sha256": "29c60b0617be961fc6eda11870ec43ff7056f679b9d72605046ae2c1f67ece53"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-5.png",
+      "sha256": "9023a00834622bd71904b9feb4b71cb26f63a8c8c45af590c03707e7af6ea936"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-6.png",
+      "sha256": "fc029f6d6e7e8568f602c34a13dbc5bffaa68f02c7237f889e3566aa3e6e918f"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-7.png",
+      "sha256": "1216ce926c68a87adce14b166cef7e601b43c6d2a36d7eba9be1dd51a7ed990b"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-8.png",
+      "sha256": "7d78df0a33c059432348e8a19375c9be6bc98abcddaf25bb68d0e886734e705d"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-9.png",
+      "sha256": "accc9cee69479b98fce8b6fe82e87e0dcfdd6ec387a625bc19b8373f545b2fbf"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-10.png",
+      "sha256": "c51e146ffaaa1418c47cfb48355497c8410d2ecf8ef5f2325f38fd3f2aa92542"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-11.png",
+      "sha256": "11372ad278169704ff8f6e7c8499f221f33a1f2528add9dd5d81cf3d475368c2"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-12.png",
+      "sha256": "fe789f6b09429a9a0df07acf884db478c2cdae9c3c4f7acdcfc71d8afb3b69ae"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-13.png",
+      "sha256": "0cb1eb7fecc5ed015db7c2b80ab1b9f30ae1c86de2731ea5c81773e49a9cd939"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-14.png",
+      "sha256": "6d9bd98ce3ea63fd63beba761c60e60ec3e44ca095c5891b54c46f958a813bd0"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-15.png",
+      "sha256": "4b6519491cfda9653593a81e2fd53ffff5dd31a2dd84cc0fef419261e219ceaf"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/browser-complete/zoom200-_es_privacy-policy-16.png",
+      "sha256": "6f96759af1933d515446810b6a5caa2c1ab747ec54994c0f805881de7b17d8a4"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/carousel-focus-390.png",
+      "sha256": "a3eb865217ba267498335b7661ab2812ea34a2e27f27458483c54b434ea67124"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/carousel-focus-1440.png",
+      "sha256": "8b4e983db6d59863219c9da73fe2c5daf9e870fd29dca16837a94131c20e90f3"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/hsa-es-390.png",
+      "sha256": "faf9386020e3769c61a3bca670883a814f2116ef56e3fa8663fc999427c332fa"
+    },
+    {
+      "path": "/tmp/aia-p8-consolidated/hsa-es-1440.png",
+      "sha256": "94ea1beb5a77c04f3443b056da4b0f38ef14ebcc75926159848c8a69b110a8f7"
+    }
+  ],
+  "asset": {
+    "source": "www/public/assets/images/hsa-fsa-accepted.png",
+    "sourceSha256": "25d1a0c6ed1e156e0861071fa409b5b6908b7f3b02407066a0d3b7014b25c195",
+    "localized": "www/public/assets/images/hsa-fsa-accepted-es.png",
+    "localizedSha256": "7c2de1bc897045db78d91fb0ddc69959df737405bed15e23e435aff0d6c99059",
+    "method": "Built-in imagegen text-localization, then ImageMagick white-background/500x425 delivery resize. Original unchanged.",
+    "prompt": "Change ONLY APPROVED to APROBADO. Preserve HSA/FSA, blue checkmark, turquoise badge, dashed border, mint ribbon, white background, tall condensed white type, layout and proportions. No other text or graphic changes.",
+    "review": "Actual output visually inspected; generated derivative preserves recognizable design, not pixel-identical artwork. Fluent Spanish and financial-claims approval pending."
+  },
+  "correctionsDuringVerification": [
+    "Visually hide live announcement while retaining status semantics.",
+    "Update legacy English-only HSA expectation.",
+    "Clone cached gray-matter fixture data before mutation.",
+    "Allow subpixel scroll rounding (-1px) in fragment test.",
+    "Scroll to document top before full-page capture to avoid offscreen fixed skip-link capture artifact."
+  ],
+  "qualification": {
+    "realScreenReaderSessions": 0,
+    "humanApprovals": [],
+    "currentOriginFreshness": "Not established",
+    "priorSourceComparisons": "Dated/cache-qualified; no comprehensive current public pixel-parity claim",
+    "phase9": "P9-01 through P9-10 Pending decision",
+    "temporaryArtifacts": "Screenshots/profiles in /tmp; preserve reviewed captures separately before temporary storage expires"
+  }
+}

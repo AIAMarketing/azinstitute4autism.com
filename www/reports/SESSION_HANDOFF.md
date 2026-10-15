@@ -1,14 +1,14 @@
 # AIA Astro Migration — Living Session Handoff
 
-**Last updated:** October 14, 2026 (UTC)
+**Last updated:** October 15, 2026 (UTC)
 **Repository:** `AIAMarketing/azinstitute4autism.com`
 **Working branch:** `faithful-astro-migration`
-**Last accepted technical implementation:** Phase 7 — Multilingual Reconciliation
-**Previous accepted checkpoint:** Phase 6C, signed `b5bc95bc2b8e36c58e8b4d8ab4b11391374a7883`
+**Last accepted technical implementation:** Phase 8 — Visual and Accessibility Acceptance (technical checkpoint scope; human acceptance pending)
+**Previous accepted checkpoint:** Phase 7, signed `8e64d322092b1fa6e0f648ddf26a665c80588198`
 **Implementation checkpoint:** the commit containing this handoff update; obtain its actual SHA from Git history after the user creates the signed commit.
-**Next milestone:** Phase 8 — Visual and Accessibility Acceptance; then Phase 9 Human-Decision Gates and Phase 10 Final QA/Cutover Readiness.
+**Next milestone:** Phase 9 — Human-Decision Gates; then Phase 10 — Final QA/Cutover Readiness.
 
-Phase 7 is technically accepted for checkpoint preparation. Editorial,
+Phase 8 implementation is technically completed for checkpoint purposes. Editorial,
 accessibility, stakeholder and production-release approval remain separate.
 The user stages, signs and pushes from the host terminal; this handoff does not
 authorize deployment or integration activation.
@@ -30,6 +30,9 @@ Later Phase 6A ratification controls conflicting original recommendations.
 
 - Phase 6C Library/multilingual parity: signed checkpoint
   `b5bc95bc2b8e36c58e8b4d8ab4b11391374a7883`.
+
+- Phase 7 multilingual reconciliation: signed checkpoint
+  `8e64d322092b1fa6e0f648ddf26a665c80588198`.
 
 Phase 6B.5 visitor navigation remains independent of SEO hreflang. Published
 locale destinations, explicit fallback notices, native language disclosure,
@@ -87,6 +90,52 @@ The non-Library matrix excludes all three Library-root content records:
 30 records including the draft. Whole pages-collection counts (including roots)
 are 21/9/2 → 21/10/2, with 9 → 10 English–Spanish pairs. Do not mix populations.
 
+## Completed Phase 8 technical sequence
+
+- Static checks and guarded Chromium smoke covered all 122 generated routes.
+  The original browser pass captured 50 desktop/50 mobile full pages, checked
+  50 routes without JavaScript, and passed 40 focused interactions, with one
+  native-dialog review finding subsequently compared against a native control.
+- Corrected prose/FAQ/contact/form link contrast and underlines, navigation,
+  language-menu, skip-link, byline and diagram focus treatments; fixed the
+  scoped homepage director-grid overflow at 320px.
+- Localized Arabic article controls and bidi counts without changing the API
+  script. Corrected DTT/NET peer sections and consultation heading semantics
+  while preserving text, fragments and appearance. Native dialogs remain intact;
+  Chromium's browser-chrome boundary did not establish application focus escape.
+- Corrected Phase 7 carryovers: Spanish HSA/FSA section after ESA/before financial
+  help, Spanish alternative text and APROBADO artwork; Spanish privacy's missing
+  information-collection H2 (eleven sections/four items), with no legal-text change.
+  The final Spanish badge preserves the original alpha and every pixel outside
+  its lettering rectangle; the English artwork is unchanged.
+- Replaced flattened Tour Markdown with one MDX publication, structured nine-photo
+  data and accessible carousel: captions, thumbnails, wraparound, keyboard/focus,
+  restrained announcements, no auto-rotation, full no-JavaScript fallback and
+  restored consultation link. No new dependency or production integration.
+- Bounded follow-up: 30 grouped Chromium checks. Consolidated pass: 21 grouped
+  checks, two contrast/reduced-motion probes, five distinct routes, 20 full-page
+  captures, native 200% zoom on Tour/privacy (26 overlapping frames), four crops.
+  Earlier follow-up also tested seven routes at native 200% zoom. Badge correction:
+  eight EN/ES checks/crops at 320/390/768/1440px. These are distinct evidence
+  populations, not additional unique-site-route totals.
+- Loopback-only contexts allowed only local GET/HEAD, blocked external traffic,
+  WebSockets and website service workers. Map-resource attempts and a synthetic
+  fixture POST were prevented; no production API/like/form/conversion request
+  was transmitted. Disabled controls/noindex remain insufficient API isolation.
+
+See [consolidated findings](phase-8-consolidated-followup-2026-10-15.md),
+[browser results](phase-8-browser-verification-2026-10-15.md),
+[badge correction evidence](phase-8-badge-correction-evidence-2026-10-15.json),
+and the [Phase 8 checkpoint manifest and validation](phase-8-checkpoint-manifest-2026-10-15.md).
+Historical failed browser attempts remain recorded. System Playwright 1.61.0 /
+Chromium 151.0.7922.75 now work; the optional Nix browser-shell realization is
+not independently verified. No real screen-reader session or owner sign-off occurred.
+
+Tour's public source passed normal TLS but was cache-qualified. Spanish privacy's
+capture used a certificate-insecure fallback after validation failed. Neither
+establishes current origin freshness; Spanish policy additionally requires a
+trusted-source comparison. No insecure retrieval was repeated.
+
 ## Verified technical baseline
 
 | Metric | Result |
@@ -111,11 +160,12 @@ and no hreflang**. Indexing-enabled validation is local only. No deployment,
 redirect activation, form submission or production integration is authorized.
 
 Final source-matching offline evidence is
-[the Phase 7 reconciliation](route-reconciliation-2026-10-14-offline.json):
+[the Phase 8 badge-final reconciliation](route-reconciliation-2026-10-15-offline-18-21-22-820Z.json):
 133 dispositions, 70 historical production requests, schema 2. Its source
-fingerprint is `59753ffefd162f9110e05acea73e20147a7fc8286af132ea7b8e1748de180901`.
-Use the explicit evidence path for read-only checks; do not select an excluded
-intermediate automatically or recrawl production to refresh a timestamp.
+fingerprint is `8453ffad597e2f2414343b634997bf204cbdd59fc00c3d8d122babef8a632cb5`.
+Use this explicit evidence path for read-only checks. Earlier Phase 8 reports
+are historical implementation evidence, not current fingerprints. No new crawl
+is required for documentation-only checkpoint preparation.
 
 The historical Phase 6C.5 parity classifications were 10 confirmed, 58 with accepted intentional
 deviations, one minor discrepancy, five requiring human review, zero material
@@ -125,11 +175,11 @@ representations; they do not establish independent current origin freshness.
 The newer Arabic antecedent/consequence translation intentionally supersedes
 its outdated public Arabic body. Machine-assisted work is not professional approval.
 
-Phase 7 checkpoint preparation revalidation on October 14 passed sequentially with
-`TMPDIR=/tmp`: Astro check (92 files, zero diagnostics), Markdown 20,
-publication 33, SEO 35, Library 49 and route 10 tests; both build modes;
-link/image/blog audits with zero failures; explicit offline consistency check;
-and `git diff --check`. The last build restores normal staging safeguards.
+Phase 8 checkpoint preparation revalidation on October 15 passed sequentially
+with `TMPDIR=/tmp`: Astro check (101 files, zero diagnostics), Markdown 20,
+publication 33, SEO 35, **Library 53**, routes 10 and Phase 8 5 tests: **156 total**.
+Both build modes and link/image/blog audits pass. The final normal staging build
+and explicit offline consistency check retain the publication safeguards above.
 Git identity/signing remains the user’s host-terminal responsibility.
 
 ## Outstanding Stakeholder Review and Production Release Gates
@@ -157,11 +207,15 @@ Git identity/signing remains the user’s host-terminal responsibility.
   source or owner-supplied authoritative export with provenance; no trusted
   comparison is available yet. Fluent Spanish approval remains mandatory.
   Do not repeat insecure retrieval or rewrite policies to hide this limitation.
-- **Browser/accessibility:** desktop and approximately 390px mobile, keyboard
-  focus, JavaScript-disabled browsing, RTL reading order and diagram scrolling,
-  Arabic visual-language acceptance and a real screen-reader session remain
-  required. Autonomous browser attempts failed. SVG raster inspection and
-  generated HTML checks do not constitute browser or assistive-technology acceptance.
+- **Browser/accessibility:** guarded Chromium automation now covers desktop/mobile,
+  keyboard, no-JavaScript, RTL/diagram scrolling and actual 200% zoom. Authorized
+  visual/source-fidelity acceptance, non-Chromium coverage, native-dialog AT
+  behavior, Arabic visual-language acceptance and real screen-reader testing
+  remain pending. Earlier failed attempts remain historical; browser automation
+  and DOM inspection do not constitute reviewer or assistive-technology approval.
+- **Spanish HSA/FSA financial claims:** fluent-Spanish and organizational/financial
+  review of wording, account use, pre-tax and tuition claims remains pending.
+  Localized artwork is not financial eligibility or reimbursement approval.
 - **Landing-page ownership — Phase 9 owner gate:** the public
   `/lp/early-intervention` CTA from `/library/how-many-hours-aba-child-need` is
   provisionally `/client-consultation` locally. These are not approved equivalents.
@@ -187,22 +241,22 @@ Git identity/signing remains the user’s host-terminal responsibility.
   trailing-slash HTTPS-to-HTTP-to-HTTPS chain remains explicitly deferred.
   Static-build success does not verify these deployed behaviors.
 
-## Next: Phase 8 — Visual and Accessibility Acceptance
+## Next: Phase 9 — Human-Decision Gates
 
-Begin from the signed Phase 7 SHA the user supplies; verify branch, history and
-working tree. Use the [verification plan](phase-7-nonproduction-verification-plan-2026-10-14.md)
-for full-page 1440px/approximately 390px review, keyboard/focus, no-JavaScript,
-Spanish forms/privacy, language fallback/navigation, Arabic RTL/diagrams and
-real screen-reader sessions. Record reviewer, date, device, evidence and failures.
-Use an approved local environment first with synthetic data and controlled
-network requests. Do not deploy a hosted preview before API isolation and
-appropriate authorization. No Phase 8 acceptance is implied by this checkpoint.
+Begin from the actual signed Phase 8 commit supplied by the user; verify branch,
+HEAD, history and working tree. Review [P9-01 through P9-10](phase-9-decision-register-2026-10-14.md)
+and gather evidence/owner decisions before proposing bounded implementation:
+landing-page ownership; portal security/access; forms/APIs; likes/views isolation;
+analytics/consent/Ads; clinical/organizational claims; policy/legal/provenance;
+author SEO; hosting/rollback; production authorization. All ten remain **Pending decision**.
+Do not infer approval from a technically feasible option or this checkpoint.
 
-Phase 9 keeps all ten stakeholder decisions pending, including portal/landing
-ownership, form/API/privacy, analytics/advertising, clinical claims, policy
-provenance, author SEO, hosting and launch authorization. Phase 10 covers final
-QA/cutover readiness. Neither a browser pass nor technical translation approval
-clears production gates. Do not renumber the roadmap or begin production changes.
+Use the [nonproduction plan](phase-7-nonproduction-verification-plan-2026-10-14.md)
+and [reviewer procedure](phase-8-host-browser-verification-2026-10-14.md) for remaining
+human acceptance. No hosted preview before approved fail-closed integration
+isolation. Phase 10 retains final QA, deployed routing/integration tests,
+rollback rehearsal and cutover readiness. Neither phase is authorized for live
+changes by this handoff. The user separately authorizes each implementation scope.
 
 ## Working protocol and protected local files
 
@@ -220,7 +274,8 @@ reading or modifying their contents:
 - `www/reports/route-reconciliation-2026-10-13-offline.json`
 - `www/reports/route-reconciliation-2026-10-13-offline-06-16-06-857Z.json`
 
-Exclude root `merge-plan.md` and temporary `.phase7-stage-paths.nul` as well.
+Exclude root `merge-plan.md` and temporary `.phase8-stage-paths.nul` as well.
+The old `.phase7-stage-paths.nul` is absent; do not recreate it.
 The staging aid is for the user's host terminal only; never stage it or use a
 broad Git add. The actual future checkpoint SHA comes from Git after the user
 signs; do not amend merely to insert it here.

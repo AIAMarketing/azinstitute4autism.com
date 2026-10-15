@@ -1052,7 +1052,9 @@ test('Phase 7 privacy page preserves policy sections and reciprocal eligible nav
     assert.equal($('link[rel=canonical]').attr('href'), `${site}/es/privacy-policy`);
     assert.equal($('meta[name=robots]').attr('content'), mode === 'indexing' ? 'index,follow' : 'noindex,nofollow');
     assert.equal($('link[hreflang]').length, mode === 'indexing' ? 3 : 0);
-    assert.equal($('.source-page h2').length, 10);
+    assert.equal($('.source-page h2').length, 11);
+    assert.equal($('#información-que-recopilamos').next().text(), 'Podemos recopilar los siguientes tipos de información:');
+    assert.equal($('#información-que-recopilamos').next().next('ul').children('li').length, 4);
     assert.equal($('.source-page li h2').length, 0);
     assert.match($('.source-page').text(), /19 de febrero de 2025/);
     for (const url of ['https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html','https://cphs.berkeley.edu/hipaa/hipaa18.html']) assert.equal($(`a[href="${url}"]`).length,1);
@@ -1099,4 +1101,82 @@ test('Phase 7 Spanish reinforcement tip keeps meaning and publication identity',
   assert.doesNotMatch(item.entry.body, /Reinforcement is more effective/);
   assert.equal(item.entry.data.translationKey, 'positive-reinforcement-techniques');
   assert.equal(item.entry.data.author, 'rula-diab');
+});
+
+test('Arabic article and archive chrome uses localized names without changing English or Spanish labels', () => {
+  for (const { html } of artifacts.values()) {
+    for (const [route, source] of html) {
+      if (!route.startsWith('/ar/library')) continue;
+      const $ = load(source);
+      assert.equal($('html').attr('dir'), 'rtl');
+      $('[data-like]').each((_, button) => {
+        assert.equal($(button).attr('aria-label'), 'الإعجاب بهذا المقال', route);
+        assert.equal($(button).attr('aria-pressed'), 'false');
+      });
+      $('.like-view-counter').each((_, counter) => {
+        assert.match($(counter).text(), /مشاهدات/, route);
+        assert.equal($(counter).find('[data-views]').attr('dir'), 'ltr');
+        assert.equal($(counter).find('.like-group').attr('aria-label'), 'الإعجابات');
+      });
+      if ($('.post-pagination').length) assert.equal($('.post-pagination').attr('aria-label'), 'التنقل بين المقالات');
+      if ($('.related-posts').length) {
+        assert.equal($('.related-posts h2').text(), 'مقالات ذات صلة');
+        $('.related-post__image-link').each((_, a) => assert.match($(a).attr('aria-label'), /^قراءة المقال كاملاً: /));
+      }
+      assert.doesNotMatch($('.blog-post-footer').text(), /Previous Post|Next Post|Similar Blog Posts/);
+    }
+    for (const prefix of ['', '/es']) {
+      const $ = load(html.get(`${prefix}/library/autism-self-advocacy-skills-aba`));
+      assert.equal($('[data-like]').first().attr('aria-label'), 'Like this article');
+      assert.equal($('.related-posts h2').text(), 'Similar Blog Posts');
+      assert.match($('.like-view-counter').text(), /views/);
+    }
+  }
+});
+
+test('peer sections have H2 semantics with stable fragments and searchable heading text', () => {
+  for (const { html, indexes } of artifacts.values()) {
+    const dtt = load(html.get('/library/aba-therapy-dtt-net-guide'));
+    const ids = ['insight-into-discrete-trial-training-dtt', 'exploring-natural-environment-training-net', 'combining-strengths-for-comprehensive-development'];
+    for (const id of ids) assert.equal(dtt(`h2.heading-size-h3#${id}`).length, 1);
+    assert.equal(dtt('.blog-post-body h3').length, 0);
+    const search = indexes.en.find(row => row.url === '/library/aba-therapy-dtt-net-guide');
+    assert.ok(search.headings.includes('Insight into Discrete Trial Training (DTT):'));
+    const consultation = load(html.get('/schedule-consultation'));
+    assert.equal(consultation('h2.heading-size-h3#start-here').text(), 'Start Here');
+  }
+});
+
+test('Phase 8 Spanish homepage adds HSA/FSA once between ESA and financial help without replacing English artwork', () => {
+  for (const [route, asset] of [['/', 'hsa-fsa-accepted.png'], ['/es', 'hsa-fsa-accepted-es.png']]) {
+    const $ = load(artifacts.get('staging').html.get(route));
+    const section = $('.hsa-fsa-section');
+    assert.equal(section.length, 1);
+    assert.equal(section.find('img').attr('src'), `/assets/images/${asset}`);
+    assert.ok(section.find('img').attr('alt'));
+    if (route === '/es') {
+      assert.match(section.find('h2').text(), /Cuentas de ahorros/);
+      assert.match(section.prev().text(), /ESA/);
+      assert.match(section.next().text(), /Necesita ayuda/);
+      assert.match(section.find('img').attr('alt'), /APROBADO/);
+    }
+  }
+});
+
+test('Phase 8 Tour retains nine ordered source photos and captions with a complete static fallback', async () => {
+  const gallery = JSON.parse(await readFile(path.join(project, 'src/data/tour-gallery.json'), 'utf8'));
+  const $ = load(artifacts.get('staging').html.get('/tour'));
+  assert.equal(gallery.length, 9);
+  assert.equal($('[data-slide]').length, 9);
+  assert.deepEqual($('[data-slide] img').map((_, e) => $(e).attr('src')).get(), gallery.map(s => s.src));
+  assert.deepEqual($('[data-slide] figcaption').map((_, e) => $(e).text()).get(), gallery.map(s => s.caption));
+  assert.equal($('[data-slide][hidden]').length, 0);
+  assert.equal($('[data-thumbnail]').length, 9);
+  assert.equal($('[data-previous]').attr('aria-label'), 'Previous slide');
+  assert.equal($('[data-next]').attr('aria-label'), 'Next slide');
+  assert.equal($('[data-carousel-status]').attr('role'), 'status');
+  assert.equal($('[data-carousel-controls]:not([hidden])').length, 0);
+  assert.ok($('[data-image-carousel]').attr('aria-label'));
+  assert.equal(manifest.filter(p => p.route === '/tour').length, 1);
+  assert.equal($('.source-page a[href="/client-consultation"]').text(), 'Schedule a Tour Today');
 });

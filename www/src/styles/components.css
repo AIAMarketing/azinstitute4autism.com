@@ -4,6 +4,8 @@
 .card h2, .card h3 { margin-top: 0; }
 .card h2 a, .card h3 a { color: inherit; text-decoration: none; }
 .text-link { font-weight: 700; }
+.text-link, .text-link:visited { color: var(--color-primary); text-decoration: underline; text-underline-offset: .15em; }
+.text-link:hover, .text-link:active { color: var(--color-primary-dark); }
 .source-list { margin-block: 0 1.5rem; padding-inline-start: 2.5rem; }
 .source-list li { line-height: 1.625; margin: 0; padding-inline-start: .15rem; }
 .source-list li::marker { color: var(--color-accent); }

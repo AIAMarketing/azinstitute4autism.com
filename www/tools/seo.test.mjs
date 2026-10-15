@@ -150,7 +150,8 @@ await build({root:${JSON.stringify(temporary)},configFile:${JSON.stringify(path.
   // through the actual renderer, in the existing isolated override build.
   for (const lang of ['en', 'es']) {
     const target = path.join(temporary, 'src/content/pages', lang, 'index.md');
-    const { data, content } = matter(await readFile(target, 'utf8'));
+    // gray-matter caches parsed objects; never mutate the manifest's source data.
+    const { data, content } = structuredClone(matter(await readFile(target, 'utf8')));
     delete data.home.hsaFsa;
     delete data.home.logos;
     data.home.process.steps.forEach((step) => delete step.href);
@@ -622,17 +623,17 @@ test('Phase 5B corrects ABA-specific ages and audiences without rewriting histor
   assert.equal(page('/es')('head title').text(), 'Terapia ABA cerca de mí | Arizona Institute for Autism | Scottsdale');
 });
 
-test('Phase 5B preserves section order, English-only HSA/FSA and the final source logo row', () => {
+test('Phase 8 preserves homepage section order, localized HSA/FSA and the final source logo row', () => {
   for (const mode of ['staging', 'indexing']) {
     for (const route of ['/', '/es']) {
       const $ = page(route, mode);
       const home = manifest.find((item) => item.route === route).entry.data.home;
       const expected = [home.servicesIntro.servicesHeading, home.servicesIntro.commitmentsHeading,
         home.benefits.heading, home.skills.heading, home.insurance.heading, home.esa.heading,
-        ...(route === '/' ? [home.hsaFsa.heading] : []), home.financialHelp.heading,
+        home.hsaFsa.heading, home.financialHelp.heading,
         home.process.heading, home.director.heading, home.testimonials.heading];
       assert.deepEqual($('main h2').map((_, el) => $(el).text()).get(), expected);
-      assert.equal($('.hsa-fsa-section').length, route === '/' ? 1 : 0);
+      assert.equal($('.hsa-fsa-section').length, 1);
       assert.deepEqual($('.home-logos img').map((_, el) => $(el).attr('src')).get(), ['/assets/images/logo-BACB.png', '/assets/images/casp-member-logo.webp']);
       assert.equal($('.testimonial-section').nextAll(':not(script):not(style)').first().hasClass('home-logos'), true);
       if (route === '/') {
@@ -642,7 +643,11 @@ test('Phase 5B preserves section order, English-only HSA/FSA and the final sourc
         assert.equal($('.hsa-fsa-section img').attr('src'), '/assets/images/hsa-fsa-accepted.png');
         assert.equal($('.hsa-fsa-section img').attr('alt'), 'hsa-fsa-accepted');
         assert.equal($('.hsa-fsa-section').find('a, form, script, iframe').length, 0);
-      } else assert.doesNotMatch($('main').text(), /Health Savings|HSA|FSA/);
+      } else {
+        assert.equal($('.hsa-fsa-section img').attr('src'), '/assets/images/hsa-fsa-accepted-es.png');
+        assert.equal(text($('.hsa-fsa-section p').text()), home.hsaFsa.body);
+        assert.doesNotMatch($('.hsa-fsa-section').text(), /Health Savings/);
+      }
       assert.deepEqual(jsonLd($).map((item) => item['@type']), ['MedicalOrganization']);
     }
   }

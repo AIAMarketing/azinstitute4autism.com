@@ -561,12 +561,14 @@ if (schema) {
   }
 
   .faq-accordion--source .faq-answer__inner :global(a) {
-    color: var(--color-accent-strong);
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: .15em;
   }
 
   .faq-accordion--source .faq-answer__inner :global(a:hover),
   .faq-accordion--source .faq-answer__inner :global(a:focus-visible) {
-    color: var(--color-accent);
+    color: var(--color-primary-dark);
   }
 
   .faq-accordion--page {

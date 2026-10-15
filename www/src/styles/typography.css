@@ -8,6 +8,8 @@ h1, h2, h3, h4 { color: var(--color-primary); font-family: var(--font-heading); 
 h1 { font-size: clamp(2.5rem, 5vw, 3rem); line-height: 1.12; margin: 0 0 var(--space-md); }
 h2 { font-size: clamp(2rem, 4vw, 2.4rem); line-height: 1.25; }
 h3 { font-size: clamp(1.8rem, 3.4vw, 2rem); }
+/* Preserve source H3 appearance when its semantic section level is H2. */
+h2.heading-size-h3 { font-size: clamp(1.8rem, 3.4vw, 2rem); line-height: 1.15; margin-block-end: 1em; }
 h4 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
 a, a:visited { color: var(--color-accent-strong); text-decoration: none; }
 a:hover, a:active { color: var(--color-accent); }
@@ -15,7 +17,7 @@ a:hover, a:active { color: var(--color-accent); }
 
 .eyebrow {
   margin: 0;
-  color: var(--color-accent-strong);
+  color: var(--color-primary);
   font-family: var(--font-accent);
   font-size: 2rem;
 }

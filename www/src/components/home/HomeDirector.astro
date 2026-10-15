@@ -9,6 +9,11 @@ const { section } = Astro.props;
   .director-card img { border-radius: 3px; height: auto; margin: 0 auto; width: 100%; }
   .director-card h3 { font-family: var(--font-body); font-size: .84rem; letter-spacing: .5px; margin-top: 1rem; }
   .signature { max-width: 270px; }
+  /* Keep the shared mobile stack despite this component's scoped grid rule. */
+  @media (max-width: 760px) {
+    .director-layout { grid-template-columns: minmax(0, 1fr); }
+    .signature { width: 100%; }
+  }
 </style>
 
 <section class="section director-section">

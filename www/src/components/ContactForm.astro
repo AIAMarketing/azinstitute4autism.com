@@ -30,6 +30,12 @@ const title = Astro.props.title ?? text.contactHeading;
 </form>
 
 <style>
+  .contact-form-card__note :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: .15em;
+  }
+
   .contact-form-card {
     background: white;
     border-radius: 4px;

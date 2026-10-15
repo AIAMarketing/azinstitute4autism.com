@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-10-15T09:24:15Z",
+  "url": "https://www.azinstitute4autism.com/tour",
+  "finalUrl": "https://www.azinstitute4autism.com/tour",
+  "status": 200,
+  "tlsVerification": true,
+  "headers": [
+    "HTTP/2 103",
+    "HTTP/2 200",
+    "date: Thu, 15 Oct 2026 09:24:15 GMT",
+    "cache-control: s-maxage=36000, max-age=5",
+    "last-modified: Sat, 03 Oct 2026 23:13:15 GMT",
+    "x-hs-cf-cache-status: HIT",
+    "x-hs-prerendered: Sat, 03 Oct 2026 23:13:15 GMT"
+  ],
+  "robots": "User-agent: *\nAllow: /\nDisallow: /_hcms/preview/\nDisallow: /hs/manage-preferences/\nDisallow: /hs/preferences-center/\nDisallow: /*?*hs_preview=*\nDisallow: /*?*hsCacheBuster=*\n",
+  "sourceHash": "b003866430e9c70906987db40fb81197c575a79f7d0421f2e2d8a8c3ce58a6f3",
+  "slides": [
+    {
+      "src": "/hubfs/01-aia-front-entrance.webp",
+      "alt": "AIA Scottsdale Location",
+      "caption": "Our Scottsdale Location"
+    },
+    {
+      "src": "/hubfs/02-aia-receptionist-area.webp",
+      "alt": "Receptionist Area",
+      "caption": "Receptionist Area"
+    },
+    {
+      "src": "/hubfs/03-aia-entrance-hallway.webp",
+      "alt": "AIA Main Entrance Hallway",
+      "caption": "Entrance Hallway"
+    },
+    {
+      "src": "/hubfs/04-common-room.webp",
+      "alt": "AIA Common Room",
+      "caption": "Common Room"
+    },
+    {
+      "src": "/hubfs/05-sensory-recreational-room.webp",
+      "alt": "AIA Sensory-Recreational Room",
+      "caption": "Sensory-Recreational Room"
+    },
+    {
+      "src": "/hubfs/06-aba-academic-readiness-room-entrance.webp",
+      "alt": "Academic Readiness Room Entrance",
+      "caption": "Academic Readiness Room Entrance"
+    },
+    {
+      "src": "/hubfs/07-aba-academic-readiness-room.webp",
+      "alt": "Academic Readiness Room",
+      "caption": "Academic Readiness Room"
+    },
+    {
+      "src": "/hubfs/08-aba-academic-readiness-room-reading-corner.webp",
+      "alt": "Academic Readiness Room Reading Corner",
+      "caption": "Academic Readiness Room Reading Corner"
+    },
+    {
+      "src": "/hubfs/09-aia-art-gallery.webp",
+      "alt": "Art Gallery",
+      "caption": "Art Gallery"
+    }
+  ],
+  "sourceGalleryCss": "\n  /* allow full-page-width map */\n  .dnd-section .dnd-column:has(#hs_cos_wrapper_widget_1743125355601) {\n    padding: 0;\n  }\n  \n  .mySlides {\n    display: none;\n    margin: 0;\n  }\n  img { vertical-align: middle; }\n\n  /* Slideshow container */\n  .slideshow-container {\n    max-width: 1000px;\n    position: relative;\n    margin: 0 auto 2rem;\n  }\n\n  /* Next & previous buttons */\n  .prev, .next {\n    cursor: pointer;\n    position: absolute;\n    top: 50%;\n    width: auto;\n    padding: 16px;\n    margin-top: -1.5rem;\n    background-color: rgba(255,255,255,0.8);\n    color: #254080;\n    font-weight: bold;\n    font-size: 1rem;\n    transition: 0.6s ease;\n    border: none;\n    border-radius: 0 3px 3px 0;\n    user-select: none;\n  }\n  .prev {\n    left: 0;\n  }\n  .next {\n    right: 0;\n    border-radius: 3px 0 0 3px;\n  }\n  .prev:hover, .next:hover {\n    background-color: rgba(37,64,128,0.8);\n    color: #ff914d;\n  }\n  .prev:focus, .next:focus {\n    outline: none;\n  }\n\n  figcaption, .numbertext {\n    background-color: rgba(37,64,128,0.8);\n    color: #f2f2f2;\n    font-size: .8rem;\n    padding: .5rem .75rem;\n    position: absolute;\n  }\n  figcaption {\n    bottom: .5rem;\n    width: 100%;\n    text-align: center;\n  }\n  .numbertext {\n    top: 0;\n  }\n\n  /* Thumbnail navigation styling */\n  .thumbnail-list {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    text-align: center;\n  }\n  .thumbnail-list li {\n    display: inline-block;\n  }\n  .thumbnail {\n    cursor: pointer;\n    width: 80px;\n    height: 80px;\n    margin: 0 2px;\n    display: inline-block;\n    object-fit: cover;\n    opacity: 0.6;\n    transition: opacity 0.6s ease, border 0.6s ease;\n    border: 2px solid transparent;\n  }\n  .thumbnail:hover,\n  .thumbnail.active {\n    opacity: 1;\n    border-color: #ff914d;\n  }\n\n  /* Fading animation */\n  .fade {\n    animation-name: fade;\n    animation-duration: 1.5s;\n  }\n  @keyframes fade {\n    from { opacity: .4; }\n    to { opacity: 1; }\n  }\n  @media only screen and (min-width: 480px) {\n    .prev, .next {\n      font-size: 2rem;\n      margin-top: -2rem;\n    }\n    figcaption { font-size: 1rem; }\n  }\n",
+  "sourceGalleryScript": "\n  let slideIndex = 1;\n  document.addEventListener('DOMContentLoaded', function() {\n    const slides = document.querySelectorAll('.slideshow-container .mySlides');\n    const totalSlides = slides.length;\n    slides.forEach((slide, index) => {\n      const numberText = document.createElement('div');\n      numberText.className = 'numbertext';\n      numberText.textContent = (index + 1) + ' / ' + totalSlides;\n      slide.insertBefore(numberText, slide.firstChild);\n    });\n\n    const prevButton = document.querySelector('.prev');\n    const nextButton = document.querySelector('.next');\n    prevButton.addEventListener('click', function() {\n      plusSlides(-1);\n    });\n    nextButton.addEventListener('click', function() {\n      plusSlides(1);\n    });\n\n    const thumbnailPictures = document.querySelectorAll('.thumbnail-list picture');\n    thumbnailPictures.forEach((picture, index) => {\n      picture.addEventListener('click', function() {\n        currentSlide(index + 1);\n      });\n    });\n\n    showSlides(slideIndex);\n  });\n\n  function plusSlides(n) {\n    showSlides(slideIndex += n);\n  }\n\n  function currentSlide(n) {\n    showSlides(slideIndex = n);\n  }\n\n  function showSlides(n) {\n    const slides = document.getElementsByClassName(\"mySlides\");\n    const thumbnails = document.getElementsByClassName(\"thumbnail\");\n\n    if (n > slides.length) { slideIndex = 1; }\n    if (n < 1) { slideIndex = slides.length; }\n\n    for (let i = 0; i < slides.length; i++) {\n      slides[i].style.display = \"none\";\n    }\n    for (let i = 0; i < thumbnails.length; i++) {\n      thumbnails[i].className = thumbnails[i].className.replace(\" active\", \"\");\n    }\n\n    slides[slideIndex - 1].style.display = \"block\";\n    thumbnails[slideIndex - 1].className += \" active\";\n  }\n",
+  "limitations": "Cache HIT/prerender October 3. TLS-validated public representation, not guaranteed origin freshness. No public-page scripts executed. Sanitized headers omit cookies.",
+  "tourCta": {
+    "text": "Schedule a Tour Today",
+    "sourceHref": "https://www.azinstitute4autism.com/client-consultation?hsLang=en",
+    "localHref": "/client-consultation",
+    "normalization": "Remove HubSpot language query; preserve existing published destination."
+  }
+}
