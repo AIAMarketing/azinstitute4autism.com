@@ -661,7 +661,9 @@ test('/search is a noindex static Library-only compatibility route in both build
   const publication = createLibrarySearchPublication(site);
   for (const mode of ['staging', 'indexing']) {
     const { html, sitemap } = artifacts.get(mode);
-    assert.equal(html.size, routeManifest.filter((item) => item.eligible).length + 1);
+    // /search is permanent; /lp is a staging-only reviewer utility.
+    assert.equal(html.size, routeManifest.filter((item) => item.eligible).length + (mode === 'staging' ? 2 : 1));
+    assert.equal(sitemap.includes('<loc>https://www.azinstitute4autism.com/lp</loc>'), false);
     const $ = load(html.get('/search'));
     assert.equal($('link[rel="canonical"]').attr('href'), `${site}/search`);
     assert.equal($('meta[name="robots"]').attr('content'), robotsFor(publication, mode === 'indexing'));
@@ -709,7 +711,14 @@ test('nine author archives contain all and only matching eligible posts in stabl
     '/library/author/rula-diab/page/6'
   ]);
   const html = artifacts.get('staging').html;
-  assert.equal(html.size, 122);
+  assert.equal(html.size, 128); // Includes the staging-only /lp reviewer index.
+  assert.ok(html.has('/lp'));
+  const reviewIndex = load(html.get('/lp'));
+  assert.deepEqual(reviewIndex('nav a').toArray().map(el => reviewIndex(el).attr('href')), [
+    '/lp/aba-therapy', '/lp/aba-insurance', '/lp/aba-ahcccs', '/lp/aba-private-pay', '/lp/early-intervention'
+  ]);
+  assert.equal(reviewIndex('meta[name="robots"]').attr('content'), 'noindex,nofollow');
+  assert.equal(artifacts.get('indexing').html.has('/lp'), false);
   for (const [locale, sizes] of Object.entries(expected)) {
     const author = createAuthorResolver(authors)(locale, 'rula-diab');
     const links = [];
@@ -781,7 +790,7 @@ test('every card and post byline uses its resolved locale author without nested 
 test('author publication descriptors and HTML obey noindex, self-canonical, sitemap and translation exclusions in both modes', () => {
   for (const mode of ['staging', 'indexing']) {
     const { html, sitemap } = artifacts.get(mode);
-    assert.equal((sitemap.match(/<url>/g) ?? []).length, mode === 'indexing' ? 108 : 0);
+    assert.equal((sitemap.match(/<url>/g) ?? []).length, mode === 'indexing' ? 109 : 0);
     let hreflang = 0, pages = 0;
     for (const source of html.values()) {
       const $ = load(source), count = $('link[hreflang]').length;

@@ -1,0 +1,104 @@
+---
+import type { LandingPageConfig } from '../../data/campaign/landingPages';
+import { paymentPaths } from '../../data/campaign/landingPages';
+import LandingLayout from '../../layouts/CampaignLayout.astro';
+import Hero from './Hero.astro';
+import FAQ from './FAQ.astro';
+import ConsultationForm from './ConsultationForm.astro';
+import Icon from './Icon.astro';
+import EditorialImage from './EditorialImage.astro';
+
+interface Props { page: LandingPageConfig }
+const { page } = Astro.props;
+---
+<LandingLayout title={page.title} description={page.description} canonicalPath={page.slug} primaryCta={page.primaryCta}>
+  <Hero
+    eyebrow={page.eyebrow}
+    h1={page.h1}
+    subhead={page.subhead}
+    eligibilityNote={page.eligibilityNote}
+    primaryCta={page.primaryCta}
+    heroImage={page.heroImage}
+    heroAlt={page.heroAlt}
+    heroHeight={page.heroHeight}
+  />
+
+  <section class="section reassurance" aria-labelledby="reassurance-heading">
+    <div class="container grid-2">
+      <div>
+        <div class="eyebrow">A clear first step</div>
+        <h2 id="reassurance-heading">{page.reassuranceTitle}</h2>
+        <p class="lede">{page.reassuranceBody}</p>
+      </div>
+      <div class="expectations">
+        <h3>What you can expect</h3>
+        <ul class="check-list">
+          {page.highlights.map((item) => <li><span class="check-mark"><Icon name="check" /></span><span>{item}</span></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft payment" aria-labelledby="payer-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Payment and coverage path</div>
+        <h2 id="payer-heading">{page.payerTitle}</h2>
+        <p class="lede">{page.payerBody}</p>
+      </div>
+      <div class="cards">
+        {page.payerPoints.map((item, index) => (
+          <article class="payment-card">
+            <span class="icon-circle"><Icon name={index === 0 ? 'coverage' : index === 1 ? 'heart' : 'conversation'} /></span>
+            <p>{item}</p>
+            {page.intent === 'general' && <a class="text-link" href={paymentPaths[index].href} data-payment-intent={paymentPaths[index].intent}>{paymentPaths[index].label}<Icon name="arrow" /></a>}
+          </article>
+        ))}
+      </div>
+      {page.intent !== 'general' && <a class="text-link payment__action" href="#consultation">{page.primaryCta}<Icon name="arrow" /></a>}
+    </div>
+  </section>
+
+
+
+  <section class="section care" aria-labelledby="aba-heading">
+    <div class="container grid-2 care__grid">
+      <figure class="care__media">
+        <EditorialImage src={page.careImage} alt={page.careAlt} />
+      </figure>
+      <div class="care__copy">
+        <div class="eyebrow">ABA at AIA</div>
+        <h2 id="aba-heading">Care should be individualized and meaningful</h2>
+        <p class="lede">Talk with AIA about your child's communication, daily routines, and goals. Clinical recommendations depend on an individualized assessment.</p>
+        <a class="text-link" href="#consultation">{page.primaryCta}<Icon name="arrow" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section next-steps" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Next steps</div>
+        <h2 id="process-heading">{page.processTitle}</h2>
+      </div>
+      <ol class="process">
+        {page.processSteps.map((step, index) => (
+          <li>
+            <span class="process__number" aria-hidden="true">0{index + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <FAQ items={page.faq} />
+
+  <ConsultationForm
+    sourcePage={page.intent}
+    title={page.formTitle}
+    intro={page.formIntro}
+    buttonText={page.primaryCta}
+  />
+</LandingLayout>

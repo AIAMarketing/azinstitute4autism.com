@@ -22,6 +22,7 @@ const shared = {
   translationKey,
   draft: z.boolean().default(false),
   noindex: z.boolean().default(false),
+  campaign: z.enum(['general', 'commercial', 'ahcccs', 'private_pay', 'early_intervention']).optional(),
   home: homePageSchema.optional(),
   sections: homeSectionsSchema.optional(),
   team: teamPageSchema.optional()

@@ -1,0 +1,35 @@
+---
+import '../styles/campaign.css';
+import Header from '../components/campaign/Header.astro';
+import Footer from '../components/campaign/Footer.astro';
+import Seo from '../components/Seo.astro';
+import OrganizationSchema from '../components/OrganizationSchema.astro';
+import { getPublication } from '../utils/publication';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  primaryCta?: string;
+}
+const { title, description, canonicalPath, primaryCta } = Astro.props;
+const publication = await getPublication(canonicalPath);
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Seo title={title} description={description} publication={publication} />
+    <OrganizationSchema />
+    <link rel="preload" href="/assets/campaign/fonts/playfair-display-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/campaign/fonts/rubik-400.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header primaryCta={primaryCta} />
+    <main id="main-content" tabindex="-1"><slot /></main>
+    <Footer />
+    {primaryCta && <div class="mobile-cta"><a class="button" href="#consultation">{primaryCta}</a></div>}
+  </body>
+</html>

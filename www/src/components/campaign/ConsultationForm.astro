@@ -1,0 +1,83 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  sourcePage: 'general' | 'commercial' | 'ahcccs' | 'private_pay';
+  title: string;
+  intro: string;
+  buttonText: string;
+}
+const { sourcePage, title, intro, buttonText } = Astro.props;
+const phone = import.meta.env.PUBLIC_AIA_PHONE || '480-687-7099';
+const tel = phone.replace(/[^0-9+]/g, '');
+---
+<section class="section consultation" id="consultation" aria-labelledby="consultation-heading">
+  <div class="container consultation__panel grid-2">
+    <div class="consultation__copy">
+      <div class="eyebrow">Talk with AIA</div>
+      <h2 id="consultation-heading">{title}</h2>
+      <p class="lede">{intro}</p>
+    </div>
+    <div class="form-wrap">
+      <!-- TODO: Replace this inactive presentation with the approved Jotform integration under P9-03. -->
+      <!-- TODO: Verify privacy, spam protection and notifications before production activation. -->
+      <div id="lead-form" role="group" aria-labelledby="campaign-form-heading" aria-describedby="campaign-form-status" data-forms-mode="off">
+        <h3 id="campaign-form-heading">Start with your contact details</h3>
+        <p class="form-note form-intro">Use this form to request a conversation. An AIA team member can explain the next steps for your family.</p>
+        <input disabled type="hidden" name="sourcePage" value={sourcePage} />
+        <div class="form-grid">
+          <div class="field field--full">
+            <label for="name">Parent or caregiver name</label>
+            <input disabled id="name" name="name" autocomplete="name" required maxlength="160" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input disabled id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="80" />
+          </div>
+          <div class="field field--website" aria-hidden="true" inert>
+            <label for="website">Website</label>
+            <input disabled id="website" name="website" type="text" tabindex="-1" autocomplete="off" data-1p-ignore />
+          </div>
+          <div class="field">
+            <label for="email">Email <span id="email-requirement" class="form-note">(optional)</span></label>
+            <input disabled id="email" name="email" type="email" autocomplete="email" maxlength="320" />
+          </div>
+          <div class="field field--full">
+            <label for="preferredContact">Preferred contact method</label>
+            <select disabled id="preferredContact" name="preferredContact" required>
+              <option value="">Choose one</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+            </select>
+          </div>
+        </div>
+        <p class="form-note">
+          Please avoid entering detailed medical, diagnostic, or insurance-member information here. An AIA team member can gather any needed details through the appropriate follow-up process.
+        </p>
+        <p class="form-note">
+          By submitting this form, you are asking AIA to contact you about services. Review AIA's <a href="/privacy-policy">privacy policy</a>.
+        </p>
+        <div id="form-error" class="form-error" role="alert" tabindex="-1"></div>
+        <button class="button" type="button" disabled>{buttonText}<Icon name="arrow" /></button>
+        <p id="campaign-form-status" class="form-note">Online requests are not enabled on this site yet. Please <a href={`tel:${tel}`}>call AIA at {phone}</a> during staffed hours.</p>
+      </div>
+    </div>
+    <div class="consultation__details">
+      <div class="consultation__contact">
+        <h3><a href={`tel:${tel}`}><Icon name="phone" />Call AIA at {phone}</a></h3>
+        <p>Mon–Fri, 8:00 AM–6:00 PM<br />Online requests are not enabled yet.</p>
+      </div>
+      <div class="clinic-location" aria-labelledby="clinic-location-heading">
+        <span class="icon-circle"><Icon name="pin" /></span>
+        <div class="clinic-location__body">
+          <h3 id="clinic-location-heading">Scottsdale clinic location</h3>
+          <address>8901 E Raintree Dr, Ste 160<br />Scottsdale, AZ 85260</address>
+          <a class="clinic-location__directions" href="https://www.google.com/maps/search/?api=1&query=8901+E+Raintree+Dr+Ste+160+Scottsdale+AZ+85260" target="_blank" rel="noopener noreferrer">Get directions <Icon name="arrow" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .field--website { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+</style>

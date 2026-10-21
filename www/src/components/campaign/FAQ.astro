@@ -1,0 +1,21 @@
+---
+import type { FAQItem } from '../../data/campaign/landingPages';
+interface Props { items: FAQItem[] }
+const { items } = Astro.props;
+---
+<section class="section faq-section" aria-labelledby="faq-heading">
+  <div class="container faq-grid">
+    <div>
+    <div class="eyebrow">Questions families ask</div>
+    <h2 id="faq-heading">Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      {items.map((item) => (
+        <details>
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+interface Props { primaryCta?: string }
+const { primaryCta } = Astro.props;
+const phone = import.meta.env.PUBLIC_AIA_PHONE || '480-687-7099';
+const tel = phone.replace(/[^0-9+]/g, '');
+---
+<header class="site-header">
+  <div class="site-header__ribbon">
+    <div class="container"><span>ABA therapy · Scottsdale clinic</span><span>Calls answered Mon–Fri, 8 AM–6 PM</span></div>
+  </div>
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Arizona Institute for Autism home">
+      <img src="/assets/campaign/media/brand/aia-logo.svg" alt="Arizona Institute for Autism" width="679" height="316" />
+    </a>
+    <div class="header-actions">
+      <a class="header-phone" href={`tel:${tel}`}><Icon name="phone" /><span>Call {phone}</span></a>
+      {primaryCta && <a class="button" href="#consultation">{primaryCta}</a>}
+    </div>
+  </div>
+</header>

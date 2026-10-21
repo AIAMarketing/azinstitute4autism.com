@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Seo from '../components/Seo.astro';
-import site from '../data/site.json';
+import OrganizationSchema from '../components/OrganizationSchema.astro';
 import { getPublication, getRoutePublicationManifest } from '../utils/publication';
 import type { VisitorLocale, VisitorPublication } from '../utils/visitor-navigation';
 import '../styles/global.css';
@@ -16,22 +16,7 @@ const imageAlt = image && image === publication.entry.data.featuredImage
   : undefined;
 const dir = lang === 'ar' ? 'rtl' : 'ltr';
 const skipLink = { en: 'Skip to content', es: 'Saltar al contenido', ar: 'انتقل إلى المحتوى' }[lang as VisitorLocale] ?? 'Skip to content';
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'MedicalOrganization',
-  name: site.name,
-  url: site.url,
-  // Contact details are rendered through ContactObfuscation to avoid plain text in HTML.
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '8901 E Raintree Dr Ste 160',
-    addressLocality: 'Scottsdale',
-    addressRegion: 'AZ',
-    postalCode: '85260',
-    addressCountry: 'US'
-  },
-  sameAs: Object.values(site.social)
-};
+
 ---
 <!doctype html>
 <html lang={lang} dir={dir}>
@@ -41,7 +26,7 @@ const organizationSchema = {
     <link rel="icon" href="/assets/images/favicon.svg" />
     <Seo title={title} description={description} publication={publication} image={image} imageAlt={imageAlt} type={type} />
     <slot name="head" />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
+    <OrganizationSchema />
   </head>
   <body>
     <a class="skip-link" href="#main">{skipLink}</a>

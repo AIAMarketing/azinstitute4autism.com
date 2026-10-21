@@ -1,0 +1,24 @@
+---
+import CampaignPage from '../../components/campaign/LandingPage.astro';
+import { landingPages, type LandingPageConfig } from '../../data/campaign/landingPages';
+import { getPublicationManifest } from '../../utils/publication';
+
+export async function getStaticPaths() {
+  return (await getPublicationManifest())
+    .filter(({ eligible, entry }) => eligible && entry.collection === 'pages' && entry.data.campaign && entry.data.campaign !== 'early_intervention')
+    .map(({ entry, route, noindex }) => {
+      const key = entry.data.campaign!;
+      if (key === 'early_intervention') throw new Error('Dedicated route required');
+      const page = landingPages[key];
+      // Fail on drift between the imported copy configuration and CMS metadata.
+      if (entry.data.lang !== 'en' || !noindex || route !== page.slug ||
+          entry.data.title !== page.title || entry.data.description !== page.description ||
+          entry.data.displayH1 !== page.h1) {
+        throw new Error(`Campaign publication/configuration mismatch: ${route}`);
+      }
+      return { params: { campaign: route.slice('/lp/'.length) }, props: { page } };
+    });
+}
+const { page } = Astro.props as { page: LandingPageConfig };
+---
+<CampaignPage page={page} />

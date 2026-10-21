@@ -1,0 +1,39 @@
+---
+import Icon from './Icon.astro';
+import EditorialImage from './EditorialImage.astro';
+interface Props {
+  eyebrow: string;
+  h1: string;
+  subhead: string;
+  eligibilityNote: string;
+  primaryCta: string;
+  heroImage: string;
+  heroAlt: string;
+  heroHeight: number;
+}
+const { eyebrow, h1, subhead, eligibilityNote, primaryCta, heroImage, heroAlt, heroHeight } = Astro.props;
+const phone = import.meta.env.PUBLIC_AIA_PHONE || '480-687-7099';
+const tel = phone.replace(/[^0-9+]/g, '');
+---
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <div class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span>{eyebrow}</div>
+      <h1>{h1}</h1>
+      <p class="lede">{subhead}</p>
+      <p class="eligibility-note">{eligibilityNote}</p>
+      <div class="hero__actions">
+        <a class="button" href="#consultation">{primaryCta}<Icon name="arrow" /></a>
+        <a class="hero__call" href={`tel:${tel}`}><Icon name="phone" />Call {phone}</a>
+      </div>
+      <p class="form-note">Calls are answered Mon–Fri, 8:00 AM–6:00 PM. Forms are available anytime.</p>
+    </div>
+    <div class="hero__visual">
+      <img class="hero__gear" src="/assets/campaign/media/brand/gear-outline.svg" alt="" width="160" height="160" aria-hidden="true" />
+      <figure class="hero__media">
+        <EditorialImage src={heroImage} alt={heroAlt} height={heroHeight} priority sizes="(max-width: 800px) 100vw, 800px" />
+      </figure>
+      <div class="hero__location"><span class="icon-circle"><Icon name="pin" /></span><div>Arizona Institute for Autism<strong>Scottsdale clinic</strong></div></div>
+    </div>
+  </div>
+</section>

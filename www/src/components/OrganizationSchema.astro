@@ -1,0 +1,20 @@
+---
+import site from '../data/site.json';
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalOrganization',
+  name: site.name,
+  url: site.url,
+  // Contact details are rendered through ContactObfuscation to avoid plain text in HTML.
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '8901 E Raintree Dr Ste 160',
+    addressLocality: 'Scottsdale',
+    addressRegion: 'AZ',
+    postalCode: '85260',
+    addressCountry: 'US'
+  },
+  sameAs: Object.values(site.social)
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />

@@ -354,7 +354,9 @@ after(async () => {
 
 for (const mode of ['staging', 'indexing']) {
   test(`${mode} build: only eligible local routes are generated, including home/Library`, () => {
-    assert.deepEqual([...artifacts.get(mode).html.keys()].sort(), generatedPublications(fixtureManifest).map((page) => page.route).sort());
+    const expected = generatedPublications(fixtureManifest).map((page) => page.route);
+    if (mode === 'staging') expected.push('/lp');
+    assert.deepEqual([...artifacts.get(mode).html.keys()].sort(), expected.sort());
     assert.ok(!artifacts.get(mode).html.has('/ar'));
     assert.ok(artifacts.get(mode).html.has('/schedule-consultation'));
     assert.ok(artifacts.get(mode).html.has('/search'));
@@ -394,6 +396,12 @@ function assertRenderedTranslations({ html }, manifest, allowIndexing) {
   const pages = new Map(publications.map((page) => [page.route, page]));
   for (const [route, content] of html) {
     const page = pages.get(route);
+    if (route === '/lp' && !allowIndexing) {
+      const $ = load(content);
+      assert.equal($('meta[name="robots"]').attr('content'), 'noindex,nofollow');
+      assert.equal($('link[hreflang], .lang-switcher').length, 0);
+      continue;
+    }
     assert.ok(page, `Unknown generated route: ${route}`);
     const $ = load(content);
     const links = $('head link[rel="alternate"][hreflang]').map((_, tag) => ({

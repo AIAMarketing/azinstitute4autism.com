@@ -278,7 +278,8 @@ for (const mode of ['staging', 'indexing']) {
     const { html, sitemap } = artifacts.get(mode);
     assert.deepEqual([...html.keys()].sort(), [
       ...routeManifest.filter((item) => item.eligible).map((item) => item.route),
-      createLibrarySearchPublication(site).route
+      createLibrarySearchPublication(site).route,
+      ...(mode === 'staging' ? ['/lp'] : [])
     ].sort());
     assert.equal(sitemap, renderSitemap(routeManifest, mode === 'indexing'));
     for (const publication of manifest.filter((item) => item.eligible)) {
@@ -307,6 +308,7 @@ for (const mode of ['staging', 'indexing']) {
       assert.ok(!sitemap.includes(`${site}${route}<`));
     }
     assert.ok(!html.has('/ar'));
+    assert.equal(html.has('/lp'), mode === 'staging');
   });
 }
 

@@ -1,0 +1,26 @@
+---
+import '../styles/early-intervention.css';
+import { getEntry } from 'astro:content';
+import Seo from '../components/Seo.astro';
+import OrganizationSchema from '../components/OrganizationSchema.astro';
+import { getPublication } from '../utils/publication';
+const publication = await getPublication('/lp/early-intervention');
+const entry = await getEntry('pages', 'en/lp/early-intervention');
+if (!entry || !publication.eligible) throw new Error('Early-intervention publication unavailable');
+const { title, description } = entry.data;
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <Seo title={title} description={description} publication={publication} />
+  <OrganizationSchema />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="early-header"><a href="/" aria-label="Arizona Institute for Autism home"><img src="/assets/images/aia-logo.svg" width="300" height="140" alt="Arizona Institute for Autism" /></a></header>
+  <main id="main-content" tabindex="-1"><slot /></main>
+  <footer class="early-footer"><span>© 2018–2026 Arizona Institute for Autism ♥ All Rights Reserved</span><div><a href="/privacy-policy">Privacy Policy</a> | <a href="/faqs">FAQ</a></div></footer>
+</body>
+</html>

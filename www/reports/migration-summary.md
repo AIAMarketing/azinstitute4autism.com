@@ -4310,3 +4310,26 @@ clinical/organizational, Arabic diagram, HSA/FSA financial, and policy/legal
 acceptance remain pending. All ten Phase 9 decisions remain pending; Phase 10
 retains QA/rollback/cutover authorization. No staging, commit, signing repair,
 push, deployment, integration activation or Phase 9 implementation performed.
+
+
+## Phase 9 — Campaign landing-page integration — 2026-10-20
+
+Owner-authorized import of four campaign pages from the separate `aia-aba-landing-pages` repository at `ee5b297c4c7758bdb6fdbf3f93c8273b20a92c50`. Preserves `/lp/aba-therapy`, `/lp/aba-insurance`, `/lp/aba-ahcccs`, `/lp/aba-private-pay`, their typed copy/metadata, independent layout/CSS, eight shared presentation components and 23 unchanged media/font/license assets. Campaign records live under `pages/en/lp` to avoid collection-ID collisions with the main ABA service page. The shared publication manifest and canonical domain remain authoritative; separate renderer entrypoints isolate campaign CSS. Existing organization schema is reused without visual changes.
+
+Intentional integration differences: local navigation instead of production navigation during preview; canonical domain fixed to `www.azinstitute4autism.com`; stricter staging robots; inactive visual form groups with disabled controls and phone fallback; no source Contabo submission, Google tracking, query forwarding, success marker or thank-you endpoint. Newer P9-03 Jotform decisions remain in force. No form or advertising activation was authorized. The separate public `/lp/early-intervention` page is not replaced or redirected by this import.
+
+Final validation: 163 regression tests (20 Markdown, 33 publication, 35 SEO, 53 Library, 10 routes, 5 Phase 8, 7 campaign), clean Astro check, both builds and link/image/blog audits pass. Guarded Chromium comparison: four campaign routes × four widths (320/390/768/1440), eight existing-main-page viewport checks, 32 source/import full-page captures and four no-JavaScript routes; zero external or mutation attempts. Human visual, real screen-reader, clinical/privacy and release acceptance remain pending.
+
+Publication totals: 126 routes/canonicals; indexing-enabled sitemap remains 108, hreflang 180 across 55 routes; Library 74/search 55/12/7, nine archives, nine redirects and 182 Library FAQs across 30 articles unchanged. Final staging: all 126 noindex,nofollow, empty sitemap, zero hreflang. New schema-2 offline reconciliation reuses 70 saved production requests and explicitly verifies against the final staging output, without a fresh crawl.
+
+Details: [integration report](phase-9-campaign-page-integration-2026-10-20.md), [source/assets/browser evidence](phase-9-campaign-integration-evidence-2026-10-20.json), [final offline reconciliation](route-reconciliation-2026-10-20-offline.json). Source repository, living handoff and pending decision statuses are unchanged. No staging, commit, deployment or production activation.
+
+### Same-session scope extension — branded early intervention
+
+The owner also authorized `/lp/early-intervention`. It is migrated independently of the four campaign layouts using its cache-qualified live HTML/CSS and existing byte-identical local images. A dedicated layout preserves the compact branding and seven sections. Its source Contabo POST, attribution and runtime scripts are not activated; an inactive non-form panel provides telephone fallback. Source metadata is preserved with a self-canonical URL. Final inventory is 127 HTML routes/canonicals, 109 indexing-enabled sitemap URLs, unchanged 180 hreflang links / 55 routes and 74 Library records. All staging pages remain noindex,nofollow with an empty sitemap and no hreflang. This supersedes the preceding four-page scope/count statement, not its recorded browser evidence. See the updated campaign integration report and early-intervention source evidence. No handoff or decision statuses are advanced.
+
+### Temporary `/lp` review index (2026-10-20)
+
+At the owner's request, added a simple five-link review index modeled on the publicly retrieved `https://astro.web3app.dev/` index (normal TLS). `src/pages/lp/[...review].astro` generates only `/lp`, only when `PUBLIC_ALLOW_INDEXING` is not `true`. It is explicitly labeled temporary/testing, always `noindex,nofollow`, absent from sitemap/hreflang and normal navigation, and links only to eligible local landing-page records. No submissions, scripts, tracking or external assets were added. Production/indexing-enabled output remains 127 routes; normal staging has 128, including this review utility. Indexing is a build gate, not access control: never deploy the staging artifact as a production release.
+
+Build and link audit pass. Library regression coverage checks the exact five destinations, staging robots, sitemap exclusion and absence from the indexing-enabled build. Guarded Chromium checks at 320/1440px pass with visible keyboard focus, no overflow and all five local links returning 200; no external browser requests occurred. Screenshots and browser evidence are temporary at `/tmp/aia-campaign-browser-HdWNvy/`. Prior five-page integration evidence remains historical; the new offline reconciliation records the extra staging utility. Nothing was staged, committed or deployed.

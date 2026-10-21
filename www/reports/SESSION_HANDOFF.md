@@ -1,17 +1,16 @@
 # AIA Astro Migration — Living Session Handoff
 
-**Last updated:** October 15, 2026 (UTC)
+**Last updated:** October 20, 2026 (UTC)
 **Repository:** `AIAMarketing/azinstitute4autism.com`
 **Working branch:** `faithful-astro-migration`
-**Last accepted technical implementation:** Phase 8 — Visual and Accessibility Acceptance (technical checkpoint scope; human acceptance pending)
-**Previous accepted checkpoint:** Phase 7, signed `8e64d322092b1fa6e0f648ddf26a665c80588198`
+**Last accepted technical implementation:** Phase 9 bounded landing-page integration (presentation and inactive lead UI only; human decisions and production activation pending)
+**Previous accepted checkpoint:** P9-03 documentation, signed `537f9864a0a3d0806180cbeca909bf1d03200c6f`
 **Implementation checkpoint:** the commit containing this handoff update; obtain its actual SHA from Git history after the user creates the signed commit.
-**Next milestone:** Phase 9 — Human-Decision Gates; then Phase 10 — Final QA/Cutover Readiness.
+**Next milestone:** continue Phase 9 owner decisions and authorized integration batches; then Phase 10 — Final QA/Cutover Readiness.
 
-Phase 8 implementation is technically completed for checkpoint purposes. Editorial,
-accessibility, stakeholder and production-release approval remain separate.
-The user stages, signs and pushes from the host terminal; this handoff does not
-authorize deployment or integration activation.
+The landing-page migration is technically completed for checkpoint purposes.
+Editorial, accessibility, stakeholder and production-release approval remain
+separate. This handoff does not authorize deployment or integration activation.
 
 ## Authority and checkpoint history
 
@@ -33,6 +32,13 @@ Later Phase 6A ratification controls conflicting original recommendations.
 
 - Phase 7 multilingual reconciliation: signed checkpoint
   `8e64d322092b1fa6e0f648ddf26a665c80588198`.
+
+- Phase 8 visual/accessibility implementation: signed checkpoint
+  `59911eb929579af7bcd6c42de6476128dab62289`.
+- P9-03 Jotform contract and complete owner inventory: signed checkpoint
+  `537f9864a0a3d0806180cbeca909bf1d03200c6f`.
+- Phase 9 landing-page integration: the commit containing this handoff update;
+  obtain its actual SHA from Git history. It does not resolve P9-01 through P9-10.
 
 Phase 6B.5 visitor navigation remains independent of SEO hreflang. Published
 locale destinations, explicit fallback notices, native language disclosure,
@@ -136,14 +142,47 @@ capture used a certificate-insecure fallback after validation failed. Neither
 establishes current origin freshness; Spanish policy additionally requires a
 trusted-source comparison. No insecure retrieval was repeated.
 
+## Completed Phase 9 landing-page integration
+
+- Imported four independently styled campaign routes from the sibling landing-page
+  repository: `/lp/aba-therapy`, `/lp/aba-insurance`, `/lp/aba-ahcccs` and
+  `/lp/aba-private-pay`. Their local fonts, images, components, metadata and
+  source noindex policy are isolated from ordinary site pages.
+- Migrated the branded public `/lp/early-intervention` route with its compact
+  header/footer, source section order, existing byte-identical local imagery and
+  cache-qualified source evidence. It is self-canonical and adds one sitemap URL.
+- Omitted the sibling project's API, tracking, success-state and attribution
+  runtime. All five visible lead panels remain inactive, with no native POST,
+  live Jotform or conversion behavior. P9-01, P9-03, P9-05 and P9-07 remain open.
+- Added `/lp` as a temporary staging/testing index linking the five pages. It is
+  always `noindex,nofollow`, sitemap/hreflang-excluded and omitted entirely when
+  `PUBLIC_ALLOW_INDEXING=true`. This build gate is not access control.
+- Detailed evidence is in the
+  [integration report](phase-9-campaign-page-integration-2026-10-20.md),
+  [sanitized evidence JSON](phase-9-campaign-integration-evidence-2026-10-20.json),
+  [early-intervention source record](phase-9-early-intervention-source-2026-10-20.json)
+  and [final offline reconciliation](route-reconciliation-2026-10-20-offline-18-37-43-828Z.json).
+  Earlier October 20 reconciliations remain superseded local evidence outside
+  the checkpoint.
+
+The indexing-enabled build has 127 HTML routes/canonicals and 109 sitemap URLs.
+Normal staging has 128 `noindex,nofollow` pages because it also contains `/lp`;
+its sitemap and hreflang are empty. Existing 180 hreflang links across 55 routes,
+25 translation sets, 74 Library articles, nine author archives and nine redirect
+definitions are unchanged. Guarded Chromium covered the four campaign routes at
+320/390/768/1440px, the branded route at those widths plus no-JavaScript checks,
+and `/lp` at 320/1440px. Real screen-reader, non-Chromium and authorized visual,
+clinical, privacy and organizational acceptance remain pending.
+
 ## Verified technical baseline
 
 | Metric | Result |
 |---|---:|
 | Library articles / locale search records | 55 EN / 12 ES / 7 AR = 74 |
-| Generated HTML routes / unique canonical targets | 122 / 122 |
+| Indexing-enabled HTML routes / unique canonical targets | 127 / 127 |
+| Normal staging HTML routes, including temporary `/lp` | 128 |
 | Author archive routes | 9 |
-| Indexing-enabled sitemap URLs | 108 |
+| Indexing-enabled sitemap URLs | 109 |
 | Hreflang links / participating routes | 180 / 55 |
 | Validated page/article translation sets | 25 |
 | Repository redirect definitions | 9, not activated on deployed hosts |
@@ -155,17 +194,16 @@ HTML alias. Search remains locale-scoped, metadata-only and demand-loaded.
 Publication ordering uses original dates, not modification dates. Existing
 syndicated external-canonical/noindex exceptions remain unchanged.
 
-Normal staging output is **122 `noindex,nofollow` HTML pages, an empty sitemap
+Normal staging output is **128 `noindex,nofollow` HTML pages, an empty sitemap
 and no hreflang**. Indexing-enabled validation is local only. No deployment,
 redirect activation, form submission or production integration is authorized.
 
-Final source-matching offline evidence is
-[the Phase 8 badge-final reconciliation](route-reconciliation-2026-10-15-offline-18-21-22-820Z.json):
-133 dispositions, 70 historical production requests, schema 2. Its source
-fingerprint is `8453ffad597e2f2414343b634997bf204cbdd59fc00c3d8d122babef8a632cb5`.
-Use this explicit evidence path for read-only checks. Earlier Phase 8 reports
-are historical implementation evidence, not current fingerprints. No new crawl
-is required for documentation-only checkpoint preparation.
+Final source-matching offline evidence is the
+[October 20 reconciliation](route-reconciliation-2026-10-20-offline-18-37-43-828Z.json):
+138 dispositions, 128 local generated routes, 70 reused historical production
+requests and schema 2. Use this explicit evidence path for read-only checks.
+Earlier Phase 8 and October 20 reports remain historical evidence, not the
+current source fingerprint. No fresh production crawl was performed.
 
 The historical Phase 6C.5 parity classifications were 10 confirmed, 58 with accepted intentional
 deviations, one minor discrepancy, five requiring human review, zero material
@@ -216,11 +254,12 @@ Git identity/signing remains the user’s host-terminal responsibility.
 - **Spanish HSA/FSA financial claims:** fluent-Spanish and organizational/financial
   review of wording, account use, pre-tax and tuition claims remains pending.
   Localized artwork is not financial eligibility or reimbursement approval.
-- **Landing-page ownership — Phase 9 owner gate:** the public
-  `/lp/early-intervention` CTA from `/library/how-many-hours-aba-child-need` is
-  provisionally `/client-consultation` locally. These are not approved equivalents.
-  Do not import the separate landing-pages repository, create a redirect or
-  activate a form without explicit authorization.
+- **Landing-page integration — Phase 9 owner gate:** presentation for the four
+  campaign routes and `/lp/early-intervention` is now imported under explicit
+  owner authorization. The Library CTA remains provisionally
+  `/client-consultation`; its equivalence to `/lp/early-intervention`, campaign
+  routing, redirects and live form behavior are not approved. Do not activate
+  submissions or production redirects without separate authorization.
 - **Employee portal — P9-02:** staff/management access separation, authentication,
   authorization and employee/clinical data security remain unresolved; current
   metadata-only route is not a completed portal. See the
@@ -243,8 +282,9 @@ Git identity/signing remains the user’s host-terminal responsibility.
 
 ## Next: Phase 9 — Human-Decision Gates
 
-Begin from the actual signed Phase 8 commit supplied by the user; verify branch,
-HEAD, history and working tree. Review [P9-01 through P9-10](phase-9-decision-register-2026-10-14.md)
+Begin from the commit containing this handoff update; obtain its actual SHA from
+Git history and verify branch, history and working tree. Review
+[P9-01 through P9-10](phase-9-decision-register-2026-10-14.md)
 and gather evidence/owner decisions before proposing bounded implementation:
 landing-page ownership; portal security/access; forms/APIs; likes/views isolation;
 analytics/consent/Ads; clinical/organizational claims; policy/legal/provenance;
@@ -262,7 +302,7 @@ changes by this handoff. The user separately authorizes each implementation scop
 
 Preserve the Markdown-first manifest-driven architecture, explicit translation
 relationships and ratified publication policies. Implement only authorized scope;
-report evidence and structural diffs before the user stages or commits. Follow
+report evidence and structural diffs before checkpoint actions. Follow
 `AUTONOMOUS-CODEX.md`; do not repair identity/signing or bypass sandbox restrictions.
 
 Do not read, modify, move, delete, stage or checksum root `merge-plan.md`.

@@ -1,0 +1,137 @@
+{
+  "retrievedOn": "2026-10-20",
+  "url": "https://www.azinstitute4autism.com/lp/early-intervention",
+  "httpStatus": 200,
+  "tls": "Normal certificate validation; no insecure fallback",
+  "headers": {
+    "date": "Tue, 20 Oct 2026 17:54:46 GMT",
+    "last-modified": "Sat, 03 Oct 2026 23:13:22 GMT",
+    "x-hs-cf-cache-status": "HIT",
+    "x-hs-prerendered": "Sat, 03 Oct 2026 23:13:22 GMT"
+  },
+  "sha256": "e384826309e593771c1fdbb79476fd1143e2c72f5bb861ea9df1fa1cb8714b80",
+  "robots": "Bounded public retrieval permitted by captured robots.txt",
+  "limitations": [
+    "Cache-qualified public representation, not verified current origin freshness.",
+    "Local source fixture removes scripts, external font requests, HubSpot wrappers only in implementation, and makes its form inert.",
+    "Source typo Evidense-Based retained rather than silently editing editorial copy."
+  ],
+  "title": "Early Autism Intervention Makes a Difference",
+  "description": "Explore early autism intervention options with Arizona Institute for Autism in Scottsdale. Request a free consultation or call (480) 687-7099.",
+  "sourceCanonical": null,
+  "sourceRobots": null,
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Early Autism Intervention Makes a Difference"
+    },
+    {
+      "level": "h2",
+      "text": "Request a free consultation"
+    },
+    {
+      "level": "h2",
+      "text": "Call AIA"
+    },
+    {
+      "level": "h2",
+      "text": "What early support may focus on"
+    },
+    {
+      "level": "h3",
+      "text": "Communication and connection"
+    },
+    {
+      "level": "h3",
+      "text": "Play and everyday routines"
+    },
+    {
+      "level": "h3",
+      "text": "Guidance for caregivers"
+    },
+    {
+      "level": "h2",
+      "text": "A clear path to understanding your options"
+    },
+    {
+      "level": "h3",
+      "text": "Send a short request"
+    },
+    {
+      "level": "h3",
+      "text": "Consult with AIA"
+    },
+    {
+      "level": "h3",
+      "text": "Next steps"
+    },
+    {
+      "level": "h2",
+      "text": "A calm place to start"
+    },
+    {
+      "level": "h2",
+      "text": "Take the next step"
+    },
+    {
+      "level": "h2",
+      "text": "Learn more about Arizona Institute for Autism"
+    }
+  ],
+  "bodyText": "Evidense-Based ABA Therapy Early Autism Intervention Makes a Difference If you have questions about your child's communication, play, or everyday routines, AIA offers a calm, practical place to explore early support and possible next steps, including ABA therapy and school readiness programs. For parents and caregivers with questions about a young child’s development Request a consultationCall (480) 687-7099 Could this help my child? A free consultation may be useful if: You have questions about your child's communication, play, or routines. You want to understand what early developmental support may involve. You’re looking for clear next steps without pressure. Leave this field blank Request a free consultation Share your name and the best number to reach you. Email is optional. Parent or caregiver name Phone number Email address (optional) Request a consultation Prefer to talk? Call AIA Call to speak with a client advocate about early intervention and the consultation process. (480) 687-7099 Early support, explained What early support may focus on 01 Communication and connection Support may build on how a child communicates needs, shares attention, and connects with other people. 02 Play and everyday routines Goals may include play, transitions, participation, and other skills used throughout the day. 03 Guidance for caregivers Families can learn practical ways to support skills across home and community routines. What happens next A clear path to understanding your options 1 Send a short request Share your name and contact details. This first step does not ask for medical history or other private health information. 2 Consult with AIA An AIA team member can listen to your questions and explain relevant services, timing, and what information may be useful next. 3 Next steps If you want to continue, AIA can explain the appropriate consultation, evaluation, referral, or service path. AIA offers A calm place to start You do not need to know what kind of support your child may need before contacting AIA. A consultation is a chance to learn about possible next steps, including ABA therapy and school readiness programs; it is not a diagnosis or a promise of outcomes. Plain-language answers about the process Space to ask about services and scheduling Private details handled through approved intake channels Start where you are Take the next step Send a short request or call AIA to talk it through. Request a consultationCall (480) 687-7099 More about AIA Learn more about Arizona Institute for Autism Visit AIA's main website for more information about the organization, its services, and extensive family resources. Visit the AIA website",
+  "styles": [
+    {
+      "url": "https://www.azinstitute4autism.com/hubfs/hub_generated/template_assets/1/196802924227/1791069163428/template_library.min.css",
+      "file": "source-0.css",
+      "sha256": "35e68261679a73a7218dd1dadd0b9f35944b89a11c51f95b4ac16ee422016ba9",
+      "cache": null
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/hubfs/hub_generated/template_assets/1/196802924225/1791069163930/template_main.min.css",
+      "file": "source-1.css",
+      "sha256": "1dc9c3aa3d653f58025795fb41b666b97425afc128fe26da24d640c3cae9fe5b",
+      "cache": null
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/hubfs/hub_generated/template_assets/1/243003805371/1791069155685/template_theme-overrides.min.css",
+      "file": "source-2.css",
+      "sha256": "a37bc0233b5f3bf49f46b5ec9e342df2c507a57cd2eb1da4a8fd11030d317091",
+      "cache": null
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/hubfs/hub_generated/template_assets/1/197033022154/1791069153214/template_child.min.css",
+      "file": "source-3.css",
+      "sha256": "a1af3ca340a74a8f249e13ac8fbab6c04dfd9d15c58b550d0fcec4b8c3ead6fc",
+      "cache": null
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/hubfs/hub_generated/module_assets/1/197902924502/1740712474234/module_footer-copyright.min.css",
+      "file": "source-4.css",
+      "sha256": "54f9caa7304078ad7a870991c65c087a9e06194c6505d0a75140e49001cfb6ab",
+      "cache": null
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://www.azinstitute4autism.com/hubfs/bcba-with-happy-toddler.webp",
+      "local": "public/assets/images/bcba-with-happy-toddler.webp",
+      "sha256": "fe0cc18897bcfaa9d3d7514b130b8c2f404147d0f57ed7585ee93c79484b339f",
+      "matchesExistingLocal": true
+    },
+    {
+      "url": "https://www.azinstitute4autism.com/hubfs/playing-girl.webp",
+      "local": "public/assets/images/playing-girl.webp",
+      "sha256": "36fd4dbc6a41330edb84f9dee44c08f56e95a6ae3b4ebc3d5e40a7fd73aa375d",
+      "matchesExistingLocal": true
+    }
+  ],
+  "intentionalDifferences": [
+    "Single main landmark instead of nested main elements.",
+    "Local canonical/SEO/publication manifest replaces missing source canonical.",
+    "No source form POST, attribution fields, success redirect, tracker or third-party scripts. Disabled non-form group with explicit phone fallback.",
+    "Logo/footer reconstructed without HubSpot theme dependencies.",
+    "Self-hosted fonts and source-identical existing images; source-authored page CSS isolated from other layouts.",
+    "Reduced-motion and visible keyboard-focus treatment."
+  ],
+  "approval": "No clinical, privacy, language, source freshness or release approval implied."
+}

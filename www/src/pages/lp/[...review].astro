@@ -1,0 +1,55 @@
+---
+// Temporary reviewer utility. Do not include in indexing-enabled release builds.
+import { allowIndexing, getPublicationManifest } from '../../utils/publication';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+import site from '../../data/site.json';
+
+export function getStaticPaths() {
+  return allowIndexing ? [] : [{ params: { review: undefined } }];
+}
+
+const published = new Set((await getPublicationManifest()).filter(p => p.eligible).map(p => p.route));
+const pages = [
+  { route: '/lp/aba-therapy', label: 'General ABA' },
+  { route: '/lp/aba-insurance', label: 'Commercial Insurance' },
+  { route: '/lp/aba-ahcccs', label: 'AHCCCS / UnitedHealthcare Community Plan' },
+  { route: '/lp/aba-private-pay', label: 'Private Pay' },
+  { route: '/lp/early-intervention', label: 'Early Intervention — existing AIA branding' }
+].filter(page => published.has(page.route));
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AIA Landing Pages — Testing Index</title>
+    <meta name="description" content="Temporary index for reviewing the five AIA landing pages." />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="canonical" href={new URL('/lp', site.url).href} />
+    <OrganizationSchema />
+  </head>
+  <body>
+    <main>
+      <p class="notice">Temporary · testing only</p>
+      <h1>AIA landing pages</h1>
+      <p>This index is for local and staging review. Campaign traffic should use the individual landing-page URLs.</p>
+      <nav aria-label="Landing pages">
+        <ul>{pages.map(page => <li><a href={page.route}>{page.label}</a><span>{page.route}</span></li>)}</ul>
+      </nav>
+      <p class="note">The first four pages retain their campaign design. Early Intervention uses the existing AIA branding. Online submissions remain disabled.</p>
+    </main>
+  </body>
+</html>
+<style>
+  :global(body) { margin: 0; background: #f7f8fb; color: #254080; font-family: system-ui, sans-serif; line-height: 1.6; }
+  main { max-width: 48rem; margin: 0 auto; padding: clamp(1.25rem, 5vw, 4rem); }
+  h1 { line-height: 1.2; font-size: clamp(2rem, 5vw, 3rem); }
+  .notice { font-weight: 700; text-transform: uppercase; font-size: .85rem; letter-spacing: .06em; }
+  ul { padding-left: 1.4rem; }
+  li { margin-block: 1.25rem; }
+  a { color: #254080; text-decoration: underline; text-underline-offset: .2em; font-weight: 650; }
+  a:hover { color: #17264c; }
+  a:focus-visible { outline: 3px solid #254080; outline-offset: 4px; }
+  li span { display: block; color: #535d70; font-size: .9rem; overflow-wrap: anywhere; }
+  .note { border-top: 1px solid #c9cedb; padding-top: 1.5rem; }
+</style>

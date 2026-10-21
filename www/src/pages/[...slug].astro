@@ -12,7 +12,11 @@ import LibraryEnglish from '../components/pages/LibraryEnglish.astro';
 import LibrarySpanish from '../components/pages/LibrarySpanish.astro';
 import LibraryArabic from '../components/pages/LibraryArabic.astro';
 export async function getStaticPaths() {
-  return (await getRoutePublicationManifest()).filter((page) => page.eligible).map((publication) => ({
+  // Campaign records share publication policy, but render through an isolated
+  // route/layout so their global design styles cannot leak into the main site.
+  return (await getRoutePublicationManifest()).filter((page) =>
+    page.eligible && !('campaign' in page.entry.data && page.entry.data.campaign)
+  ).map((publication) => ({
     params: { slug: publication.route === '/' ? undefined : decodeURI(publication.route.slice(1)) },
     props: {
       entry: publication.entry,

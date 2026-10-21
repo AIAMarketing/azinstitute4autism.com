@@ -1,0 +1,1057 @@
+{
+  "date": "2026-10-20",
+  "mainCheckpoint": "537f9864a0a3d0806180cbeca909bf1d03200c6f",
+  "sourceRepository": "../aia-aba-landing-pages",
+  "sourceCheckpoint": "ee5b297c4c7758bdb6fdbf3f93c8273b20a92c50",
+  "sources": [
+    {
+      "path": "src/components/landing/Header.astro",
+      "sha256": "aeba63a2a590410cce467588aeb18a15d5b1481ce366b2bed20f6624a1559c1d"
+    },
+    {
+      "path": "src/components/landing/EditorialImage.astro",
+      "sha256": "06a6d21d9e799b4199e25e03e60b960cef45e6b7d3ac85d676615137cb87bab7"
+    },
+    {
+      "path": "src/components/landing/FAQ.astro",
+      "sha256": "1187452be28a7a4d7d9ef72af1b571785ddd87d19aee491c76f5c75c1ebcbe94"
+    },
+    {
+      "path": "src/components/landing/LandingPage.astro",
+      "sha256": "771ce4ec7a669bfbab25525c50b8ae474796b88500aa5e98ccb4774ec56245eb"
+    },
+    {
+      "path": "src/components/landing/AbaConversion.astro",
+      "sha256": "3391c1a89c719157397a8894f6000e49b0d8580a9bf242f57dc87fce2917df1b"
+    },
+    {
+      "path": "src/components/landing/Footer.astro",
+      "sha256": "85562225a81527f6de9d7a0f76bfa9373fc61e5756a8386045f0be4844548fa9"
+    },
+    {
+      "path": "src/components/landing/Icon.astro",
+      "sha256": "00e0dca9f21f4960efa6557e4acf47d4e84b0be8352ee801afb8abf0447a4df5"
+    },
+    {
+      "path": "src/components/landing/Hero.astro",
+      "sha256": "011f26c554b95be17e7c8339c438eb87a1f8b8efb8369b54d506a2edc711d037"
+    },
+    {
+      "path": "src/components/landing/Tracking.astro",
+      "sha256": "100a51121032fbfbb55db124b1b1569ce63547e9de36869bd422ddd13706f6fd"
+    },
+    {
+      "path": "src/components/landing/ConsultationForm.astro",
+      "sha256": "78a79303d3cfc342f3e696349da835c66ab5cda3e638d072bf57143eb9be5299"
+    },
+    {
+      "path": "src/layouts/LandingLayout.astro",
+      "sha256": "a963a4368eb1a34470c53c04470f52ecd347c7678f2269c3a55b82d7d52d317f"
+    },
+    {
+      "path": "src/data/landingPages.ts",
+      "sha256": "5543748262a35b98ba58a411b0b890768430079a4908ef830edf93e4f1953185"
+    },
+    {
+      "path": "src/styles/global.css",
+      "sha256": "066aef3e892c128f4895b516f1fd70a9145918d26d13bb27e496beb0286e5e94"
+    },
+    {
+      "path": "PROJECT_SPEC.md",
+      "sha256": "cdd3f125687a79a9e54378b7fd4d33354ec4ec6d066e36f798a117e859078557"
+    },
+    {
+      "path": "docs/VERIFICATION_REQUIRED.md",
+      "sha256": "b294bce30991170f69d6f998cdad65cc1d47f3985fdb8b359662824d2644d16f"
+    },
+    {
+      "path": "docs/MEDIA_REVIEW.md",
+      "sha256": "c34be907fc1bc39e840e067a3dace45e2f997dd0eb7da53f4075d45c6d33b2f9"
+    },
+    {
+      "path": "docs/BUILD_STATE.md",
+      "sha256": "c86b92caa74efba73ab0e1ca153ff18254faceb1d7c97d544731a2d690f2703e"
+    }
+  ],
+  "assets": [
+    {
+      "source": "public/media/aba/ahcccs/everyday-routine-640.webp",
+      "destination": "public/assets/campaign/media/aba/ahcccs/everyday-routine-640.webp",
+      "sha256": "b572aa58d9cfd02ed7ca0fc185e59fc0f6be943333d2f9b72d8a3a4a06e9ce25"
+    },
+    {
+      "source": "public/media/aba/ahcccs/everyday-routine.webp",
+      "destination": "public/assets/campaign/media/aba/ahcccs/everyday-routine.webp",
+      "sha256": "9d029828af66c3075c2715320d6d1aeccc08e2832b4b9973abb8b45d68e0c933"
+    },
+    {
+      "source": "public/media/aba/ahcccs/family-support-640.webp",
+      "destination": "public/assets/campaign/media/aba/ahcccs/family-support-640.webp",
+      "sha256": "d03af9a4504ac8a57686a8da4924c5f701f452ca4778b2c4aa9902358259a06a"
+    },
+    {
+      "source": "public/media/aba/ahcccs/family-support.webp",
+      "destination": "public/assets/campaign/media/aba/ahcccs/family-support.webp",
+      "sha256": "c3be4910baf8ef6b5cce14643edb512328f8e18448e4b54d7c9241d8d6b92244"
+    },
+    {
+      "source": "public/media/aba/commercial/creative-play-640.webp",
+      "destination": "public/assets/campaign/media/aba/commercial/creative-play-640.webp",
+      "sha256": "cac3fb3e6221981b74805363bf6eae613b3a798029bdd155dfe90ade8a203cb9"
+    },
+    {
+      "source": "public/media/aba/commercial/creative-play.webp",
+      "destination": "public/assets/campaign/media/aba/commercial/creative-play.webp",
+      "sha256": "27ea0ec54da1f5cf325c79a683671d61ce2e7a249c25e29891a97d9fbb52ef73"
+    },
+    {
+      "source": "public/media/aba/commercial/insurance-support-640.webp",
+      "destination": "public/assets/campaign/media/aba/commercial/insurance-support-640.webp",
+      "sha256": "7c8bdbb286dd21d3bcf3c2bb212504039d8bb2a03496f49d39efe796496d573d"
+    },
+    {
+      "source": "public/media/aba/commercial/insurance-support.webp",
+      "destination": "public/assets/campaign/media/aba/commercial/insurance-support.webp",
+      "sha256": "b8713b084c9fc27e713efce29d3b411d672a25880ab1ae213255089f5b4560fd"
+    },
+    {
+      "source": "public/media/aba/general/hero-640.webp",
+      "destination": "public/assets/campaign/media/aba/general/hero-640.webp",
+      "sha256": "9063961ccee484ca194b6d7d5dd81a5c254a9cce8259a26398e4b173ea16888a"
+    },
+    {
+      "source": "public/media/aba/general/hero.webp",
+      "destination": "public/assets/campaign/media/aba/general/hero.webp",
+      "sha256": "f474946c9b47a386dd05b13d053dea2fe84654dd7914b95b66a405a72361bcb2"
+    },
+    {
+      "source": "public/media/aba/general/shared-reading-640.webp",
+      "destination": "public/assets/campaign/media/aba/general/shared-reading-640.webp",
+      "sha256": "2c77aabd4b0b8d8805fc8523ad03868143010e6b6243a5d06ad0c6055519ca3d"
+    },
+    {
+      "source": "public/media/aba/general/shared-reading.webp",
+      "destination": "public/assets/campaign/media/aba/general/shared-reading.webp",
+      "sha256": "d7c719e1c507bfb920be0e72a07aa22ae7908257d80435155410db48c98d5460"
+    },
+    {
+      "source": "public/media/aba/private-pay/consultation-640.webp",
+      "destination": "public/assets/campaign/media/aba/private-pay/consultation-640.webp",
+      "sha256": "7ecdd3c247884c632de521a8727439c69450bc7a38de3d004f3560a33df40522"
+    },
+    {
+      "source": "public/media/aba/private-pay/consultation.webp",
+      "destination": "public/assets/campaign/media/aba/private-pay/consultation.webp",
+      "sha256": "ccacce358c3292178903c0c5acca6007bb56e69ea3dfb10221f897aba9cbf732"
+    },
+    {
+      "source": "public/media/aba/private-pay/plant-care-640.webp",
+      "destination": "public/assets/campaign/media/aba/private-pay/plant-care-640.webp",
+      "sha256": "ae4c1c8258d3a26543fd55fdbf13514633e76222adfb65e7462e70c90eff8215"
+    },
+    {
+      "source": "public/media/aba/private-pay/plant-care.webp",
+      "destination": "public/assets/campaign/media/aba/private-pay/plant-care.webp",
+      "sha256": "9501d84f3382c17a56b5e01233582af9f571f4e5e03a75c64b9eaeb73ac5a831"
+    },
+    {
+      "source": "public/media/brand/aia-logo.svg",
+      "destination": "public/assets/campaign/media/brand/aia-logo.svg",
+      "sha256": "d5f54e7d2803446e384241168d2cf7c64e31ae1a3591163164edefbdcc334493"
+    },
+    {
+      "source": "public/media/brand/gear-outline.svg",
+      "destination": "public/assets/campaign/media/brand/gear-outline.svg",
+      "sha256": "6840350809e8ba14679c521f41f4550279e584c891fc22c0b6bfa5ea22fb8046"
+    },
+    {
+      "source": "public/fonts/Playfair-Display-OFL.txt",
+      "destination": "public/assets/campaign/fonts/Playfair-Display-OFL.txt",
+      "sha256": "0bb2b43ffd21233963b5d0c0eb6f1abffa776ec53c56131b5818708f2730ffd6"
+    },
+    {
+      "source": "public/fonts/Rubik-OFL.txt",
+      "destination": "public/assets/campaign/fonts/Rubik-OFL.txt",
+      "sha256": "3cb6a6084f5d942a8f3b5fda0f6a90dde18d7f7f1798886f4043d18f8c1a811e"
+    },
+    {
+      "source": "public/fonts/playfair-display-700.woff2",
+      "destination": "public/assets/campaign/fonts/playfair-display-700.woff2",
+      "sha256": "2fadcfd2be3107ccd5f2e70b9e262dfa8cc866fcd8b6de00a287655abdd758e1"
+    },
+    {
+      "source": "public/fonts/rubik-400.woff2",
+      "destination": "public/assets/campaign/fonts/rubik-400.woff2",
+      "sha256": "65b14f9b03f72a2e787e89830941e5369fe15220399f574c5bce46ba0d262a08"
+    },
+    {
+      "source": "public/fonts/rubik-700.woff2",
+      "destination": "public/assets/campaign/fonts/rubik-700.woff2",
+      "sha256": "f84f7178919eeed1426b4961596bac1fbe56d35a5897903de706e6f876b6dbfb"
+    }
+  ],
+  "indexing": {
+    "html": 127,
+    "canonicals": 127,
+    "robots": {
+      "index,follow": 109,
+      "noindex,follow": 18
+    },
+    "sitemap": 109,
+    "hreflang": 180,
+    "hreflangRoutes": 55,
+    "archives": 9,
+    "blog": 72,
+    "faqs": 182,
+    "faqArticles": 30,
+    "search": {
+      "en": 55,
+      "es": 12,
+      "ar": 7
+    }
+  },
+  "staging": {
+    "html": 128,
+    "canonicals": 128,
+    "robots": {
+      "noindex,nofollow": 128
+    },
+    "sitemap": 0,
+    "hreflang": 0,
+    "hreflangRoutes": 0,
+    "archives": 9,
+    "blog": 72,
+    "faqs": 182,
+    "faqArticles": 30,
+    "search": {
+      "en": 55,
+      "es": 12,
+      "ar": 7
+    }
+  },
+  "validation": [
+    {
+      "command": "npm run test:markdown",
+      "passing": 20,
+      "failures": 0,
+      "log": "/tmp/aia-final-markdown.log"
+    },
+    {
+      "command": "npm run test:publication",
+      "passing": 33,
+      "failures": 0,
+      "log": "/tmp/aia-final-publication.log"
+    },
+    {
+      "command": "npm run test:seo",
+      "passing": 35,
+      "failures": 0,
+      "log": "/tmp/aia-final-seo.log"
+    },
+    {
+      "command": "npm run test:library",
+      "passing": 53,
+      "failures": 0,
+      "log": "/tmp/aia-final-library.log"
+    },
+    {
+      "command": "npm run test:routes",
+      "passing": 10,
+      "failures": 0,
+      "log": "/tmp/aia-final-routes.log"
+    },
+    {
+      "command": "node --test tools/phase8.test.mjs",
+      "passing": 5,
+      "failures": 0,
+      "log": "/tmp/aia-final-phase8.log"
+    },
+    {
+      "command": "npm run test:campaign",
+      "passing": 8,
+      "failures": 0,
+      "log": "/tmp/aia-final-campaign.log"
+    },
+    {
+      "command": "npm run audit:links",
+      "failures": 0,
+      "log": "/tmp/aia-five-links.log"
+    },
+    {
+      "command": "npm run audit:images",
+      "failures": 0,
+      "log": "/tmp/aia-five-images.log"
+    },
+    {
+      "command": "npm run audit:blog",
+      "failures": 0,
+      "log": "/tmp/aia-five-blog.log"
+    }
+  ],
+  "sourceDataMatchesExceptAssetNamespace": true,
+  "sourceCssMatchesExceptAssetNamespaceAndInertContainerSelector": true,
+  "browser": {
+    "date": "2026-10-20T11:08:52.957Z",
+    "output": "/tmp/aia-campaign-browser-WSTAuI",
+    "checks": [
+      {
+        "route": "/lp/aba-therapy",
+        "width": 320,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-insurance",
+        "width": 320,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-ahcccs",
+        "width": 320,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-private-pay",
+        "width": 320,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-therapy",
+        "width": 390,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-insurance",
+        "width": 390,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-ahcccs",
+        "width": 390,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-private-pay",
+        "width": 390,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-therapy",
+        "width": 768,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-insurance",
+        "width": 768,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-ahcccs",
+        "width": 768,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-private-pay",
+        "width": 768,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-therapy",
+        "width": 1440,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-insurance",
+        "width": 1440,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-ahcccs",
+        "width": 1440,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/lp/aba-private-pay",
+        "width": 1440,
+        "sourceParity": true,
+        "overflow": false,
+        "assets": true,
+        "faqKeyboard": true,
+        "cta": true,
+        "forms": "off"
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "mainSiteUnchanged": true
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "mainSiteUnchanged": true
+      },
+      {
+        "route": "/es",
+        "width": 390,
+        "mainSiteUnchanged": true
+      },
+      {
+        "route": "/es",
+        "width": 1440,
+        "mainSiteUnchanged": true
+      },
+      {
+        "route": "/library",
+        "width": 390,
+        "mainSiteUnchanged": true
+      },
+      {
+        "route": "/library",
+        "width": 1440,
+        "mainSiteUnchanged": true
+      },
+      {
+        "route": "/aba-therapy",
+        "width": 390,
+        "mainSiteUnchanged": true
+      },
+      {
+        "route": "/aba-therapy",
+        "width": 1440,
+        "mainSiteUnchanged": true
+      }
+    ],
+    "blocked": [],
+    "screenshots": [
+      {
+        "file": "source-_lp_aba-therapy-320.png",
+        "sha256": "418c52834e4fc2c7fb573c93b2fec3459156c1220182c074440b3d9821adda0d"
+      },
+      {
+        "file": "integrated-_lp_aba-therapy-320.png",
+        "sha256": "8fa771b87946f7813386b170fcad77bd649255f77a9fc1dbc0d5ba5d53cb82db"
+      },
+      {
+        "file": "source-_lp_aba-insurance-320.png",
+        "sha256": "caa1841f0452652d5f27114f58072f8dceddc3471a155826be76672247af9402"
+      },
+      {
+        "file": "integrated-_lp_aba-insurance-320.png",
+        "sha256": "2d2f5a2b5e3e59694de95f3d7c82e079ab5100dd817412cc6e324486884a8a4c"
+      },
+      {
+        "file": "source-_lp_aba-ahcccs-320.png",
+        "sha256": "9bebcb8792d791229202661d3e955b858f8dc2efe75368af65ec7de103b624fc"
+      },
+      {
+        "file": "integrated-_lp_aba-ahcccs-320.png",
+        "sha256": "8d7f4c944f2025ceeeaa88c26c9156cc30b34469252764b51e1b4acd9d587a30"
+      },
+      {
+        "file": "source-_lp_aba-private-pay-320.png",
+        "sha256": "51fc83308175db4f33605bddcd1e14ea072052ed7ec4c26953bf133bf2fe8ebf"
+      },
+      {
+        "file": "integrated-_lp_aba-private-pay-320.png",
+        "sha256": "d17be54b52847a9bd82f76ffbb2631e617311641f33937f45a1d4d26ad9e2b82"
+      },
+      {
+        "file": "source-_lp_aba-therapy-390.png",
+        "sha256": "71ba88b94db8959b6e5bbe0904b0b11c97b99eaa5abf31bff4997a25d1951012"
+      },
+      {
+        "file": "integrated-_lp_aba-therapy-390.png",
+        "sha256": "ac258a1d4c3d20cd551f0bb568d5f9a04da661299641951147e4de3b963eb04c"
+      },
+      {
+        "file": "source-_lp_aba-insurance-390.png",
+        "sha256": "0ff202ab45c590a0de56b02aa8eda0cbb4e03124b7609b09743b010df8eaafdb"
+      },
+      {
+        "file": "integrated-_lp_aba-insurance-390.png",
+        "sha256": "856947f16d705e0ade36188ad11c2359abd68593c8ea8e3dbb4f65d5acbe8327"
+      },
+      {
+        "file": "source-_lp_aba-ahcccs-390.png",
+        "sha256": "2bf8e8338b3803125f357d7d168ee03ae1bca74f55fa306e3fc105e677a5af91"
+      },
+      {
+        "file": "integrated-_lp_aba-ahcccs-390.png",
+        "sha256": "2ab34f373319576d6c8dfe025f9aa558b9ab4cdcfd8f6b7e9bcd7800f5b22920"
+      },
+      {
+        "file": "source-_lp_aba-private-pay-390.png",
+        "sha256": "37f65d6e48e51d4b8d7c286c25a454bfc08e473ce8f7cd593c408293bf709b58"
+      },
+      {
+        "file": "integrated-_lp_aba-private-pay-390.png",
+        "sha256": "d1e103334a3219b4583ae0a8016e343b7c91c8a72ec1626448d6ba9c5f069157"
+      },
+      {
+        "file": "source-_lp_aba-therapy-768.png",
+        "sha256": "1829f364710e9c594c67b8120fc14e9c8bae6ab64eb7342d354a3b6d75d2d45a"
+      },
+      {
+        "file": "integrated-_lp_aba-therapy-768.png",
+        "sha256": "06a471cbe105025ea22a8846ead35fca0ad54068cd8178de73b4bf2b1721a106"
+      },
+      {
+        "file": "source-_lp_aba-insurance-768.png",
+        "sha256": "70356c6c18f090f5cc3ae855db52a094f61efbd9d8ed0521170dd95c44a35aa2"
+      },
+      {
+        "file": "integrated-_lp_aba-insurance-768.png",
+        "sha256": "c65f11719080b943fa1907fd9e863520d91abe2ec7547084a04b3b9691894813"
+      },
+      {
+        "file": "source-_lp_aba-ahcccs-768.png",
+        "sha256": "58cb8ed9032b21ceaadc387e7fcc8d2178d35c0d5e4c2f565b943937974a69fb"
+      },
+      {
+        "file": "integrated-_lp_aba-ahcccs-768.png",
+        "sha256": "9e3f876033135e99fa3b271aba0bf9accabfbb5c5648f27817a5a5f01495a45a"
+      },
+      {
+        "file": "source-_lp_aba-private-pay-768.png",
+        "sha256": "0dec97fcf5d98d955bd7e7ae39039eb9a9b1f5ae6c8c1a231c2089b0176a4227"
+      },
+      {
+        "file": "integrated-_lp_aba-private-pay-768.png",
+        "sha256": "a00f27cb19c9d858c9b11c1e4436f33198ac9f31082ac9b29db7a152d87713f2"
+      },
+      {
+        "file": "source-_lp_aba-therapy-1440.png",
+        "sha256": "daaac29365e8c17b631a586db195ee001a24118721f25ad722ec6213682bb97d"
+      },
+      {
+        "file": "integrated-_lp_aba-therapy-1440.png",
+        "sha256": "6968ed3032d8f9b8c9bf9bb1eb39b57f3a24c8dcd43a9ca631606a06dc27dc06"
+      },
+      {
+        "file": "source-_lp_aba-insurance-1440.png",
+        "sha256": "97a619b05abce5bed4ec7157f818c2b6c777a44398642128f9fe1aa9799d36c5"
+      },
+      {
+        "file": "integrated-_lp_aba-insurance-1440.png",
+        "sha256": "1b812a431afd6d5993f04f8c66e0b7b6e4cc3bfe02deeb9d9d1c9e1209fec024"
+      },
+      {
+        "file": "source-_lp_aba-ahcccs-1440.png",
+        "sha256": "b5ccc02f7789f4510bac660b0168280cf993506a2f98281785463489e7ae364e"
+      },
+      {
+        "file": "integrated-_lp_aba-ahcccs-1440.png",
+        "sha256": "f233e8510cf0fe32c5b7cc019802e51f30b77258674408fc594543d5e2261781"
+      },
+      {
+        "file": "source-_lp_aba-private-pay-1440.png",
+        "sha256": "572bb04003d50ff266fbec16ba211aa6506119b068a3defe037c7344db58f228"
+      },
+      {
+        "file": "integrated-_lp_aba-private-pay-1440.png",
+        "sha256": "546d2e293cbdc24768e8165799b56a5b5be8f6d58631a77da621470bd9ca9791"
+      }
+    ],
+    "errors": [],
+    "browser": "151.0.7922.75",
+    "noJavaScriptRoutes": [
+      "/lp/aba-therapy",
+      "/lp/aba-insurance",
+      "/lp/aba-ahcccs",
+      "/lp/aba-private-pay"
+    ],
+    "status": "passed"
+  },
+  "playwrightVersion": "1.63.0",
+  "nodeVersion": "24.18.0",
+  "astroCheck": {
+    "files": 120,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "routeReconciliation": "reports/route-reconciliation-2026-10-20-offline-18-04-39-776Z.json",
+  "sourceFingerprint": "d2c2790a7581dc3a1b7b2df663cebfacbd79a5c992e6bbc6b7c6eaa68b4b290b",
+  "notes": [
+    "blog in build metrics counts BlogPosting entities (72), not Library records (74).",
+    "Source/main snapshots served on loopback only; screenshots outside Git.",
+    "Inactive consultation region intentionally differs; no submissions or tracking enabled.",
+    "Historical request evidence is not current production content or hosting acceptance.",
+    "The staging-only /lp reviewer index raises the normal build to 128 pages and is omitted entirely from indexing-enabled output.",
+    "Owner-authorized fifth page adds one indexable publication. Four-page browser results remain a distinct earlier pass; fifth-page results cover one route at four widths and two no-JavaScript widths."
+  ],
+  "fourPageIntermediate": {
+    "indexing": {
+      "html": 126,
+      "canonicals": 126,
+      "robots": {
+        "index,follow": 108,
+        "noindex,follow": 18
+      },
+      "sitemap": 108,
+      "hreflang": 180,
+      "hreflangRoutes": 55,
+      "archives": 9,
+      "blog": 72,
+      "faqs": 182,
+      "faqArticles": 30,
+      "search": {
+        "en": 55,
+        "es": 12,
+        "ar": 7
+      }
+    },
+    "staging": {
+      "html": 126,
+      "canonicals": 126,
+      "robots": {
+        "noindex,nofollow": 126
+      },
+      "sitemap": 0,
+      "hreflang": 0,
+      "hreflangRoutes": 0,
+      "archives": 9,
+      "blog": 72,
+      "faqs": 182,
+      "faqArticles": 30,
+      "search": {
+        "en": 55,
+        "es": 12,
+        "ar": 7
+      }
+    },
+    "validation": [
+      {
+        "command": "npm run test:markdown",
+        "exitCode": 0,
+        "seconds": 1.8,
+        "log": "/tmp/aia-campaign-validation-0.log"
+      },
+      {
+        "command": "npm run test:publication",
+        "exitCode": 0,
+        "seconds": 13.7,
+        "log": "/tmp/aia-campaign-validation-1.log"
+      },
+      {
+        "command": "npm run test:seo",
+        "exitCode": 0,
+        "seconds": 34.9,
+        "log": "/tmp/aia-campaign-validation-2.log"
+      },
+      {
+        "command": "npm run test:library",
+        "exitCode": 0,
+        "seconds": 9.4,
+        "log": "/tmp/aia-campaign-validation-3.log"
+      },
+      {
+        "command": "npm run test:routes",
+        "exitCode": 0,
+        "seconds": 0.3,
+        "log": "/tmp/aia-campaign-validation-4.log"
+      },
+      {
+        "command": "node --test tools/phase8.test.mjs",
+        "exitCode": 0,
+        "seconds": 0.1,
+        "log": "/tmp/aia-campaign-validation-5.log"
+      },
+      {
+        "command": "node --test tools/campaign.test.mjs",
+        "exitCode": 0,
+        "seconds": 0.3,
+        "log": "/tmp/aia-campaign-validation-6.log"
+      },
+      {
+        "command": "npm run audit:links",
+        "exitCode": 0,
+        "seconds": 0.3,
+        "log": "/tmp/aia-campaign-validation-7.log"
+      },
+      {
+        "command": "npm run audit:images",
+        "exitCode": 0,
+        "seconds": 0.1,
+        "log": "/tmp/aia-campaign-validation-8.log"
+      },
+      {
+        "command": "npm run audit:blog",
+        "exitCode": 0,
+        "seconds": 0.2,
+        "log": "/tmp/aia-campaign-validation-9.log"
+      }
+    ],
+    "astroCheck": {
+      "files": 115,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "routeReconciliation": "reports/route-reconciliation-2026-10-20-offline.json",
+    "sourceFingerprint": "aaadbb324abb6ce187019b55206a0389ac88f621eb903df10c90bf242455a691"
+  },
+  "earlyInterventionBrowser": {
+    "date": "2026-10-20T18:03:50.388Z",
+    "output": "/tmp/aia-early-browser-i07rXk",
+    "status": "passed",
+    "error": "",
+    "browser": "151.0.7922.75",
+    "checks": [
+      {
+        "width": 320,
+        "javaScriptEnabled": true,
+        "sourceCompared": true,
+        "status": "passed",
+        "headings": [
+          "Early Autism Intervention Makes a Difference",
+          "Request a free consultation",
+          "Call AIA",
+          "What early support may focus on",
+          "Communication and connection",
+          "Play and everyday routines",
+          "Guidance for caregivers",
+          "A clear path to understanding your options",
+          "Send a short request",
+          "Consult with AIA",
+          "Next steps",
+          "A calm place to start",
+          "Take the next step",
+          "Learn more about Arizona Institute for Autism"
+        ],
+        "heroWidth": 320,
+        "font": "700 40.8px / 41.616px \"Playfair Display\", Georgia, serif",
+        "images": [
+          {
+            "alt": "Arizona Institute for Autism",
+            "loaded": true
+          },
+          {
+            "alt": "A smiling young child with an AIA team member",
+            "loaded": true
+          },
+          {
+            "alt": "A young child playing with a colorful toy",
+            "loaded": true
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "javaScriptEnabled": true,
+        "sourceCompared": true,
+        "status": "passed",
+        "headings": [
+          "Early Autism Intervention Makes a Difference",
+          "Request a free consultation",
+          "Call AIA",
+          "What early support may focus on",
+          "Communication and connection",
+          "Play and everyday routines",
+          "Guidance for caregivers",
+          "A clear path to understanding your options",
+          "Send a short request",
+          "Consult with AIA",
+          "Next steps",
+          "A calm place to start",
+          "Take the next step",
+          "Learn more about Arizona Institute for Autism"
+        ],
+        "heroWidth": 390,
+        "font": "700 46.8px / 47.736px \"Playfair Display\", Georgia, serif",
+        "images": [
+          {
+            "alt": "Arizona Institute for Autism",
+            "loaded": true
+          },
+          {
+            "alt": "A smiling young child with an AIA team member",
+            "loaded": true
+          },
+          {
+            "alt": "A young child playing with a colorful toy",
+            "loaded": true
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "width": 768,
+        "javaScriptEnabled": true,
+        "sourceCompared": true,
+        "status": "passed",
+        "headings": [
+          "Early Autism Intervention Makes a Difference",
+          "Request a free consultation",
+          "Call AIA",
+          "What early support may focus on",
+          "Communication and connection",
+          "Play and everyday routines",
+          "Guidance for caregivers",
+          "A clear path to understanding your options",
+          "Send a short request",
+          "Consult with AIA",
+          "Next steps",
+          "A calm place to start",
+          "Take the next step",
+          "Learn more about Arizona Institute for Autism"
+        ],
+        "heroWidth": 768,
+        "font": "700 67.2px / 68.544px \"Playfair Display\", Georgia, serif",
+        "images": [
+          {
+            "alt": "Arizona Institute for Autism",
+            "loaded": true
+          },
+          {
+            "alt": "A smiling young child with an AIA team member",
+            "loaded": true
+          },
+          {
+            "alt": "A young child playing with a colorful toy",
+            "loaded": true
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "javaScriptEnabled": true,
+        "sourceCompared": true,
+        "status": "passed",
+        "headings": [
+          "Early Autism Intervention Makes a Difference",
+          "Request a free consultation",
+          "Call AIA",
+          "What early support may focus on",
+          "Communication and connection",
+          "Play and everyday routines",
+          "Guidance for caregivers",
+          "A clear path to understanding your options",
+          "Send a short request",
+          "Consult with AIA",
+          "Next steps",
+          "A calm place to start",
+          "Take the next step",
+          "Learn more about Arizona Institute for Autism"
+        ],
+        "heroWidth": 1180,
+        "font": "700 67.2px / 68.544px \"Playfair Display\", Georgia, serif",
+        "images": [
+          {
+            "alt": "Arizona Institute for Autism",
+            "loaded": true
+          },
+          {
+            "alt": "A smiling young child with an AIA team member",
+            "loaded": true
+          },
+          {
+            "alt": "A young child playing with a colorful toy",
+            "loaded": true
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "javaScriptEnabled": false,
+        "sourceCompared": false,
+        "status": "passed",
+        "headings": [
+          "Early Autism Intervention Makes a Difference",
+          "Request a free consultation",
+          "Call AIA",
+          "What early support may focus on",
+          "Communication and connection",
+          "Play and everyday routines",
+          "Guidance for caregivers",
+          "A clear path to understanding your options",
+          "Send a short request",
+          "Consult with AIA",
+          "Next steps",
+          "A calm place to start",
+          "Take the next step",
+          "Learn more about Arizona Institute for Autism"
+        ],
+        "heroWidth": 390,
+        "font": "700 46.8px / 47.736px \"Playfair Display\", Georgia, serif",
+        "images": [
+          {
+            "alt": "Arizona Institute for Autism",
+            "loaded": true
+          },
+          {
+            "alt": "A smiling young child with an AIA team member",
+            "loaded": true
+          },
+          {
+            "alt": "A young child playing with a colorful toy",
+            "loaded": true
+          }
+        ],
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "javaScriptEnabled": false,
+        "sourceCompared": false,
+        "status": "passed",
+        "headings": [
+          "Early Autism Intervention Makes a Difference",
+          "Request a free consultation",
+          "Call AIA",
+          "What early support may focus on",
+          "Communication and connection",
+          "Play and everyday routines",
+          "Guidance for caregivers",
+          "A clear path to understanding your options",
+          "Send a short request",
+          "Consult with AIA",
+          "Next steps",
+          "A calm place to start",
+          "Take the next step",
+          "Learn more about Arizona Institute for Autism"
+        ],
+        "heroWidth": 1180,
+        "font": "700 67.2px / 68.544px \"Playfair Display\", Georgia, serif",
+        "images": [
+          {
+            "alt": "Arizona Institute for Autism",
+            "loaded": true
+          },
+          {
+            "alt": "A smiling young child with an AIA team member",
+            "loaded": true
+          },
+          {
+            "alt": "A young child playing with a colorful toy",
+            "loaded": true
+          }
+        ],
+        "overflow": false
+      }
+    ],
+    "blocked": [],
+    "screenshots": [
+      {
+        "file": "source-320-js.png",
+        "sha256": "3d41410a956fa67c916e8ff7f2c4b35e9fb19b8339728fd183dfc2031dee7d4c"
+      },
+      {
+        "file": "import-320-js.png",
+        "sha256": "1cf3a45486d9595b29b44993cf8304dedb31a945a546c777b41976e90f71ff74"
+      },
+      {
+        "file": "source-390-js.png",
+        "sha256": "5d2f30833d878fc5e28cf5dab715fd177cdb4de3936980f2f45655230ce4cca7"
+      },
+      {
+        "file": "import-390-js.png",
+        "sha256": "5ddc56da003c8f3aca0bc373ab16fcb8d972338da60f26f0196dbb9370972fd3"
+      },
+      {
+        "file": "source-768-js.png",
+        "sha256": "c9efacd1a6f2715ac2f7cbdac57ac11afd800803cf6a27887bc5f9e84ffd1b9d"
+      },
+      {
+        "file": "import-768-js.png",
+        "sha256": "603582ce25137d766c010dafb39ba775bd8741947b30acd90941fe044141df83"
+      },
+      {
+        "file": "source-1440-js.png",
+        "sha256": "1c576904e66b8ef3579fd655d26df969fc8de782ffbd70dd6fec04dd2445ed49"
+      },
+      {
+        "file": "import-1440-js.png",
+        "sha256": "d47245d11731298524a0a53391eb4aa6b0bd5717c6f1a9eb799e4f4b320821b4"
+      },
+      {
+        "file": "import-390-nojs.png",
+        "sha256": "5ddc56da003c8f3aca0bc373ab16fcb8d972338da60f26f0196dbb9370972fd3"
+      },
+      {
+        "file": "import-1440-nojs.png",
+        "sha256": "d47245d11731298524a0a53391eb4aa6b0bd5717c6f1a9eb799e4f4b320821b4"
+      }
+    ],
+    "errors": []
+  },
+  "earlyInterventionSource": "reports/phase-9-early-intervention-source-2026-10-20.json",
+  "reconciliationCheck": "Passed after final normal staging build; /tmp/aia-five-reconcile-check.log"
+}
