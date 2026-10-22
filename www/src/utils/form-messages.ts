@@ -7,6 +7,7 @@ const messages = {
     service: 'Service of interest', options: ['ABA Therapy', 'Autism Evaluation', 'Learner Social Club', 'Other'],
     message: 'How can we help?', submit: 'Submit',
     disabled: 'Online submission is not yet connected. Please call',
+    mock: 'Demo only: this local fixture never sends information.', mockSuccess: 'Demo only: the local fixture completed without sending anything.', mockFailed: 'Demo only: the local fixture simulated a failed submission.', mockUnavailable: 'Demo only: the local fixture simulated an unavailable service.',
     map: 'Map showing Arizona Institute for Autism in Scottsdale',
     tile: 'OpenStreetMap tile showing area around Arizona Institute for Autism in Scottsdale, AZ',
     zoomIn: 'Zoom in', zoomOut: 'Zoom out', marker: 'Arizona Institute for Autism'
@@ -18,6 +19,7 @@ const messages = {
     service: 'Servicio de interés', options: ['Terapia ABA', 'Evaluación de autismo', 'Learner Social Club', 'Otro'],
     message: '¿Cómo podemos ayudarle?', submit: 'Enviar',
     disabled: 'El envío en línea aún no está habilitado. Llame al',
+    mock: 'Solo demostración: esta prueba local nunca envía información.', mockSuccess: 'Solo demostración: la prueba local terminó sin enviar información.', mockFailed: 'Solo demostración: la prueba local simuló un envío fallido.', mockUnavailable: 'Solo demostración: la prueba local simuló un servicio no disponible.',
     map: 'Mapa de la ubicación de Arizona Institute for Autism en Scottsdale',
     tile: 'Mapa de OpenStreetMap de los alrededores de Arizona Institute for Autism en Scottsdale, Arizona',
     zoomIn: 'Acercar', zoomOut: 'Alejar', marker: 'Arizona Institute for Autism'

@@ -3,31 +3,38 @@ import Button from './Button.astro';
 import ContactObfuscation from './ContactObfuscation.astro';
 
 import { formMessages } from '../utils/form-messages';
+import { formModeForRuntime, resolveFormMode, resolveMockFormResult, type LogicalForm } from '../utils/form-integration';
 
 interface Props {
   lang?: string;
   title?: string;
+  logicalForm?: LogicalForm;
 }
 
-const { lang = 'en' } = Astro.props;
+const { lang = 'en', logicalForm = 'general' } = Astro.props;
 const text = formMessages(lang);
 const title = Astro.props.title ?? text.contactHeading;
+const config = resolveFormMode(import.meta.env.PUBLIC_AIA_FORMS_MODE, import.meta.env.PUBLIC_AIA_FORMS_LIVE_APPROVED);
+const mode = formModeForRuntime(config);
+const mockResult = resolveMockFormResult(import.meta.env.PUBLIC_AIA_FORMS_MOCK_RESULT);
 ---
-
-<form class="contact-form-card" method="post" action="">
-  <!-- TODO: Wire this form to Netlify Forms, a custom API endpoint, or another backend service. -->
-  <!-- TODO: Add spam protection before production launch. -->
+<div class="contact-form-card" role="group" data-aia-form data-form-mode={mode} data-form-mode-reason={config.reason} data-logical-form={logicalForm} data-mock-result={mockResult} data-mock-success={text.mockSuccess} data-mock-failed={text.mockFailed} data-mock-unavailable={text.mockUnavailable}>
   <h3 class="contact-form-card__title">{title}</h3>
   <div class="contact-form-card__fields">
-    <label>{text.name}<input name="name" autocomplete="name" /></label>
-    <label>{text.email}<input type="email" name="email" autocomplete="email" /></label>
-    <label>{text.phone}<input type="tel" name="phone" autocomplete="tel" /></label>
-    <label>{text.service}<select name="service">{text.options.map((label) => <option>{label}</option>)}</select></label>
-    <label>{text.message}<textarea name="message" rows="5"></textarea></label>
-    <Button type="submit" disabled aria-describedby="contact-form-note" class="contact-form-card__submit">{text.submit}</Button>
-    <p id="contact-form-note" class="contact-form-card__note">{text.disabled} <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
+    <label>{text.name}<input name="name" autocomplete="name" disabled={mode === 'off'} /></label>
+    <label>{text.email}<input type="email" name="email" autocomplete="email" disabled={mode === 'off'} /></label>
+    <label>{text.phone}<input type="tel" name="phone" autocomplete="tel" disabled={mode === 'off'} /></label>
+    <label>{text.service}<select name="service" disabled={mode === 'off'}>{text.options.map((label) => <option>{label}</option>)}</select></label>
+    <label>{text.message}<textarea name="message" rows="5" disabled={mode === 'off'}></textarea></label>
+    <Button type="button" data-mock-submit disabled={mode === 'off'} aria-describedby="contact-form-note" class="contact-form-card__submit">{text.submit}</Button>
+    <p id="contact-form-note" class="contact-form-card__note" data-form-status>{mode === 'mock' ? text.mock : <>{text.disabled} <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</>}</p>
   </div>
-</form>
+</div>
+
+<script>
+  import { bindMockForms } from '../scripts/mock-form';
+  bindMockForms();
+</script>
 
 <style>
   .contact-form-card__note :global(a) {

@@ -1071,14 +1071,15 @@ test('Phase 7 privacy page preserves policy sections and reciprocal eligible nav
   }
 });
 
-test('Phase 7 rendered forms localize Spanish without enabling submission', () => {
+test('Phase 9 off-mode form surfaces localize Spanish without enabling submission', () => {
   for (const route of ['/es/contact','/es/client-consultation','/contact','/client-consultation','/referrals','/schedule-consultation']) {
     const $ = load(artifacts.get('staging').html.get(route));
-    const form = $('form.contact-form-card, form.form');
+    const form = $('[data-aia-form]');
     assert.equal(form.length, 1, route);
-    assert.equal(form.attr('action'), '');
-    assert.equal(form.attr('method'), 'post');
-    assert.equal(form.find('button[type=submit][disabled]').length, 1);
+    assert.equal(form.attr('data-form-mode'), 'off');
+    assert.equal($('form').length, 0, route);
+    assert.equal(form.find('[name]:not([disabled])').length, 0);
+    assert.equal(form.find('[data-mock-submit]:not([disabled])').length, 0);
     assert.deepEqual(form.find('input').map((_i,e) => $(e).attr('name')).get(), ['name','email','phone']);
     assert.equal(form.find('select option').length, 4);
     assert.match(form.text(), route.startsWith('/es/') ? /Nombre del padre, la madre o el tutor/ : /Parent or guardian name/);

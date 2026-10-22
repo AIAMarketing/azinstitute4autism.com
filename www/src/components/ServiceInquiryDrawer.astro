@@ -1,5 +1,6 @@
 ---
 import ContactObfuscation from './ContactObfuscation.astro';
+import { formModeForRuntime, resolveFormMode, resolveMockFormResult } from '../utils/form-integration';
 
 type ServiceKey = 'aba-therapy' | 'autism-evaluations' | 'learner-social-club';
 
@@ -42,6 +43,9 @@ const copy = serviceCopy[service];
 const drawerId = `service-inquiry-${service}`;
 const titleId = `${drawerId}-title`;
 const noteId = `${drawerId}-note`;
+const config = resolveFormMode(import.meta.env.PUBLIC_AIA_FORMS_MODE, import.meta.env.PUBLIC_AIA_FORMS_LIVE_APPROVED);
+const mode = formModeForRuntime(config);
+const mockResult = resolveMockFormResult(import.meta.env.PUBLIC_AIA_FORMS_MOCK_RESULT);
 ---
 
 <dialog
@@ -68,17 +72,15 @@ const noteId = `${drawerId}-note`;
     <p>{copy.prompt}</p>
   </header>
 
-  <form class="service-inquiry-form" method="post" action="">
-    <!-- TODO: Wire this form to Netlify Forms, a custom API endpoint, or another backend service. -->
-    <!-- TODO: Add spam protection before production launch. -->
+  <div class="service-inquiry-form" role="group" data-aia-form data-form-mode={mode} data-form-mode-reason={config.reason} data-logical-form="service" data-mock-result={mockResult} data-mock-success="Demo only: the local fixture completed without sending anything." data-mock-failed="Demo only: the local fixture simulated a failed submission." data-mock-unavailable="Demo only: the local fixture simulated an unavailable service.">
     <div class="service-inquiry-form__grid">
       <label>
         <span>First Name<span class="required-mark" aria-hidden="true">*</span></span>
-        <input name="first_name" autocomplete="given-name" required />
+        <input name="first_name" autocomplete="given-name" required disabled={mode === 'off'} />
       </label>
       <label>
         <span>Last Name<span class="required-mark" aria-hidden="true">*</span></span>
-        <input name="last_name" autocomplete="family-name" required />
+        <input name="last_name" autocomplete="family-name" required disabled={mode === 'off'} />
       </label>
       <label>
         <span>Phone Number<span class="required-mark" aria-hidden="true">*</span></span>
@@ -90,29 +92,29 @@ const noteId = `${drawerId}-note`;
           </span>
           <span class="service-inquiry-form__phone-number">
             <span aria-hidden="true">+1</span>
-            <input type="tel" name="phone" autocomplete="tel-national" required />
+            <input type="tel" name="phone" autocomplete="tel-national" required disabled={mode === 'off'} />
           </span>
         </span>
       </label>
       <label>
         <span>Email<span class="required-mark" aria-hidden="true">*</span></span>
-        <input type="email" name="email" autocomplete="email" required />
+        <input type="email" name="email" autocomplete="email" required disabled={mode === 'off'} />
       </label>
       <label>
         <span>Child First Name</span>
-        <input name="child_first_name" autocomplete="off" />
+        <input name="child_first_name" autocomplete="off" disabled={mode === 'off'} />
       </label>
       <label>
         <span>Child Last Name</span>
-        <input name="child_last_name" autocomplete="off" />
+        <input name="child_last_name" autocomplete="off" disabled={mode === 'off'} />
       </label>
       <label class="service-inquiry-form__wide">
         <span>Child Birth Date</span>
-        <input name="child_birth_date" inputmode="numeric" autocomplete="bday" placeholder="MM - DD - YYYY" />
+        <input name="child_birth_date" inputmode="numeric" autocomplete="bday" placeholder="MM - DD - YYYY" disabled={mode === 'off'} />
       </label>
       <label>
         <span>Location Interest</span>
-        <select name="location_interest">
+        <select name="location_interest" disabled={mode === 'off'}>
           <option value="" selected>Please Select</option>
           <option value="aia_scottsdale">AIA Scottsdale</option>
           <option value="aia_glendale">AIA Glendale</option>
@@ -121,7 +123,7 @@ const noteId = `${drawerId}-note`;
       </label>
       <label>
         <span>Service Interest</span>
-        <select name="service_interest">
+        <select name="service_interest" disabled={mode === 'off'}>
           <option value="" selected>Please Select</option>
           <option value="behavioral">Behavioral - ABA Therapy Service</option>
           <option value="psychological">Psychological - Autism Evaluation Service</option>
@@ -131,7 +133,7 @@ const noteId = `${drawerId}-note`;
       </label>
       <label>
         <span>Insurance &amp; Payment Options</span>
-        <select name="payment_options">
+        <select name="payment_options" disabled={mode === 'off'}>
           <option value="" selected>Please select</option>
           <option>United Healthcare AHCCCS</option>
           <option>BCBS AZ</option>
@@ -145,7 +147,7 @@ const noteId = `${drawerId}-note`;
       </label>
       <label>
         <span>How did you hear about us?</span>
-        <select name="referred_by">
+        <select name="referred_by" disabled={mode === 'off'}>
           <option value="" selected>Please select</option>
           <option>Facebook</option>
           <option>Google</option>
@@ -158,18 +160,20 @@ const noteId = `${drawerId}-note`;
       </label>
       <label class="service-inquiry-form__wide">
         <span>Additional Information/Comments</span>
-        <textarea name="comment" rows="2"></textarea>
+        <textarea name="comment" rows="2" disabled={mode === 'off'}></textarea>
       </label>
     </div>
 
     <div class="service-inquiry-form__footer">
-      <p id={noteId}>Online submission is not yet connected. Please call <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
-      <button type="submit" disabled aria-describedby={noteId}>Submit</button>
+      <p id={noteId} data-form-status>{mode === 'mock' ? 'Demo only: this local fixture never sends information.' : <>Online submission is not yet connected. Please call <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</>}</p>
+      <button type="button" data-mock-submit disabled={mode === 'off'} aria-describedby={noteId}>Submit</button>
     </div>
-  </form>
+  </div>
 </dialog>
 
 <script>
+  import { bindMockForms } from '../scripts/mock-form';
+  bindMockForms();
   const initializeServiceInquiryDrawers = () => {
     document.querySelectorAll('[data-service-inquiry-drawer]').forEach((element) => {
       if (!(element instanceof HTMLDialogElement) || element.dataset.initialized === 'true') return;

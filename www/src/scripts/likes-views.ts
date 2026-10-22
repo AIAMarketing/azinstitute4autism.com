@@ -1,1 +1,2 @@
-export const AIA_API_BASE = import.meta.env.PUBLIC_AIA_API_BASE || 'https://api.azinstitute4autism.com';
+/** Live counter behavior is intentionally not enabled by this migration. */
+export { counterModeForRuntime, resolveCounterConfig } from '../utils/counter-mode';

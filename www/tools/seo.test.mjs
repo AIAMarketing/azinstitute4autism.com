@@ -568,7 +568,7 @@ test('Phase 5A conversion CTAs resolve to the intended published local route or 
   }
 });
 
-test('Phase 5A preserves disabled forms and one localized H1 on every targeted page', () => {
+test('Phase 9 preserves isolated off-mode form surfaces and one localized H1 on every targeted page', () => {
   const slugs = ['aba-therapy', 'autism-evaluations', 'learner-social-club', 'services', 'client-consultation', 'aba-therapy-intake-process'];
   const routes = ['/referrals', '/schedule-consultation', '/insurance', ...['en', 'es'].flatMap((lang) => slugs.map((slug) => `${prefix(lang)}/${slug}`))];
   for (const route of routes) {
@@ -577,12 +577,14 @@ test('Phase 5A preserves disabled forms and one localized H1 on every targeted p
     assert.equal($('html').attr('lang'), route.startsWith('/es/') ? 'es' : 'en', route);
     assert.equal($('html').attr('dir'), 'ltr', route);
     assert.equal($('iframe[src*="jotform"], script[src*="jotform"]').length, 0, route);
-    $('main form').each((_, el) => {
-      const form = $(el);
-      assert.equal(form.attr('action'), '', route);
-      assert.equal(form.find('[type="submit"]:not([disabled])').length, 0, route);
-      assert.ok(form.find('[type="submit"][disabled]').length, route);
-      assert.match(form.text(), route.startsWith('/es/') ? /El envío en línea aún no está habilitado/ : /Online submission is not yet connected/, route);
+    const surfaces = $('main [data-aia-form]');
+    assert.equal($('main form').length, 0, route);
+    surfaces.each((_, el) => {
+      const surface = $(el);
+      assert.equal(surface.attr('data-form-mode'), 'off', route);
+      assert.equal(surface.find('[name]:not([disabled])').length, 0, route);
+      assert.equal(surface.find('[data-mock-submit]:not([disabled])').length, 0, route);
+      assert.match(surface.text(), route.startsWith('/es/') ? /El envío en línea aún no está habilitado/ : /Online submission is not yet connected/, route);
     });
   }
   assert.equal(meta(page('/autism-evaluations'), 'description').attr('content'), "Get comprehensive childhood autism evaluations in Scottsdale, AZ. Our expert team provides accurate assessments to support your child's unique development.");
@@ -672,8 +674,8 @@ test('Phase 5B consultation and six intake-step CTAs resolve in each homepage la
       assert.equal(link.length, 1);
       assert.equal(link.attr('href'), `${localePrefix}/client-consultation`);
       const destination = page(link.attr('href'));
-      assert.equal(destination('form [type="submit"]:not([disabled])').length, 0);
-      assert.match(destination('form').text(), localePrefix ? /El envío en línea aún no está habilitado/ : /Online submission is not yet connected/);
+      assert.equal(destination('[data-aia-form] [data-mock-submit]:not([disabled])').length, 0);
+      assert.match(destination('[data-aia-form]').text(), localePrefix ? /El envío en línea aún no está habilitado/ : /Online submission is not yet connected/);
     }
     const links = $('.process-grid a');
     assert.equal(links.length, 6);

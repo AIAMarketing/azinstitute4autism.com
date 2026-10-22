@@ -79,5 +79,5 @@ if (entry.data.slug === 'team' && entry.data.lang === 'en' && !entry.data.team) 
     ? <ContactPage title={bannerTitle} lang={entry.data.lang}><slot /></ContactPage>
     : <article class:list={['prose', 'source-page', 'container', { 'service-page': isService }]}><slot /></article>}
   {isService && entry.data.lang === 'en' && <ServiceInquiryDrawer service={entry.data.slug} />}
-  {showForm && <FormShell lang={entry.data.lang} title={bannerTitle} showBackground={entry.data.slug === 'client-consultation'} />}
+  {showForm && <FormShell lang={entry.data.lang} title={bannerTitle} logicalForm={entry.data.slug === 'referrals' ? 'referral' : 'service'} showBackground={entry.data.slug === 'client-consultation'} />}
 </BaseLayout>

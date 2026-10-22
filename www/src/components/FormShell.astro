@@ -2,23 +2,31 @@
 import Button from './Button.astro';
 import ContactObfuscation from './ContactObfuscation.astro';
 import { formMessages } from '../utils/form-messages';
+import { formModeForRuntime, resolveFormMode, resolveMockFormResult, type LogicalForm } from '../utils/form-integration';
 const { lang = 'en', showBackground = false } = Astro.props;
 const text = formMessages(lang);
 const title = Astro.props.title ?? text.heading;
+const logicalForm: LogicalForm = Astro.props.logicalForm ?? (Astro.props.title === 'Physician & Insurer Referrals' ? 'referral' : 'service');
+const config = resolveFormMode(import.meta.env.PUBLIC_AIA_FORMS_MODE, import.meta.env.PUBLIC_AIA_FORMS_LIVE_APPROVED);
+const mode = formModeForRuntime(config);
+const mockResult = resolveMockFormResult(import.meta.env.PUBLIC_AIA_FORMS_MOCK_RESULT);
 ---
 <section class:list={['form-section', { 'form-section-background': showBackground }]} aria-labelledby="form-title">
   <div class="container form-grid">
     <div><p class="eyebrow">{text.eyebrow}</p><h2 id="form-title">{title}</h2><p>{text.intro}</p></div>
-    <form class="form" method="post" action="">
-      <!-- TODO: Wire this form to Netlify Forms, a custom API endpoint, or another backend service. -->
-      <!-- TODO: Add spam protection before production launch. -->
-      <label>{text.name}<input name="name" autocomplete="name" /></label>
-      <label>{text.email}<input type="email" name="email" autocomplete="email" /></label>
-      <label>{text.phone}<input type="tel" name="phone" autocomplete="tel" /></label>
-      <label>{text.service}<select name="service">{text.options.map((label) => <option>{label}</option>)}</select></label>
-      <label>{text.message}<textarea name="message" rows="5"></textarea></label>
-      <Button type="submit" disabled aria-describedby="form-note">{text.submit}</Button>
-      <p id="form-note" class="form-note">{text.disabled} <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</p>
-    </form>
+    <div class="form" role="group" data-aia-form data-form-mode={mode} data-form-mode-reason={config.reason} data-logical-form={logicalForm} data-mock-result={mockResult} data-mock-success={text.mockSuccess} data-mock-failed={text.mockFailed} data-mock-unavailable={text.mockUnavailable}>
+      <label>{text.name}<input name="name" autocomplete="name" disabled={mode === 'off'} /></label>
+      <label>{text.email}<input type="email" name="email" autocomplete="email" disabled={mode === 'off'} /></label>
+      <label>{text.phone}<input type="tel" name="phone" autocomplete="tel" disabled={mode === 'off'} /></label>
+      <label>{text.service}<select name="service" disabled={mode === 'off'}>{text.options.map((label) => <option>{label}</option>)}</select></label>
+      <label>{text.message}<textarea name="message" rows="5" disabled={mode === 'off'}></textarea></label>
+      <Button type="button" data-mock-submit disabled={mode === 'off'} aria-describedby="form-note">{text.submit}</Button>
+      <p id="form-note" class="form-note" data-form-status>{mode === 'mock' ? text.mock : <>{text.disabled} <ContactObfuscation phone="(480) 687-7099" hrefValue="+14806877099" obfuscatedText="9907-786 (084)" />.</>}</p>
+    </div>
   </div>
 </section>
+
+<script>
+  import { bindMockForms } from '../scripts/mock-form';
+  bindMockForms();
+</script>

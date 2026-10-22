@@ -1,116 +1,35 @@
 ---
 import { articleMessages } from '../utils/article-messages';
+import { counterModeForRuntime, resolveCounterConfig } from '../utils/counter-mode';
 interface Props { slug: string; lang: string }
 const { slug, lang } = Astro.props;
 const text = articleMessages(lang);
+const counterConfig = resolveCounterConfig(
+  import.meta.env.PUBLIC_COUNTERS_MODE,
+  import.meta.env.PUBLIC_AIA_API_BASE,
+  import.meta.env.PUBLIC_COUNTERS_LIVE_APPROVED,
+);
+const runtimeMode = counterModeForRuntime(counterConfig);
+const mockResult = import.meta.env.PUBLIC_COUNTERS_MOCK_RESULT === 'failed' || import.meta.env.PUBLIC_COUNTERS_MOCK_RESULT === 'unavailable'
+  ? import.meta.env.PUBLIC_COUNTERS_MOCK_RESULT
+  : 'success';
+const statusId = `counter-status-${slug.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
 ---
-<div class="like-view-counter" data-counter>
-  <span aria-label={text.articleViews}><span class="view-count" data-views dir={lang === 'ar' ? 'ltr' : undefined}>0</span> {text.views}</span>
+<div class="like-view-counter" data-counter data-counter-mode={runtimeMode} data-counter-reason={counterConfig.reason} data-mock-result={mockResult}>
+  <span aria-label={text.articleViews}><span class="view-count" data-views dir={lang === 'ar' ? 'ltr' : undefined}>—</span> {text.views}</span>
   <span class="like-group" role={lang === 'ar' ? 'group' : undefined} aria-label={lang === 'ar' ? text.likes : undefined}>
     <span class="like-count" data-likes dir={lang === 'ar' ? 'ltr' : undefined}>—</span>
-    <button class="like-button" type="button" data-like data-slug={slug} aria-label={text.like} aria-pressed="false">
+    <button class="like-button" type="button" data-like data-slug={slug} aria-label={text.like} aria-describedby={statusId} aria-pressed="false" disabled={runtimeMode === 'off'}>
       <svg aria-hidden="true" viewBox="0 0 12 10" width="20" height="20" focusable="false" class="like-icon">
         <path d="m1 4.4c-1-4 2.5-5 4.5-2.5l.5 .6l.5-.6c2-2.5 6-1.5 4.5 2.5q-1 3-5 5q-4-2-5-5z"></path>
       </svg>
     </button>
   </span>
+  <span id={statusId} class="counter-status" aria-live="polite">{runtimeMode === 'mock' ? 'Demo metrics only' : text.counterUnavailable}</span>
 </div>
 <script>
-  const apiBase = import.meta.env.PUBLIC_AIA_API_BASE || 'https://api.azinstitute4autism.com';
-
-  const cleanSlug = (raw: string | undefined) =>
-    raw ? raw.split('?')[0].replace(/^\/+|\/+$/g, '') : '';
-
-  const readCookies = () =>
-    Object.fromEntries(
-      document.cookie
-        .split('; ')
-        .filter(Boolean)
-        .map((pair) => pair.split('=').map(decodeURIComponent)),
-    );
-
-  const setLikedCookie = (name: string, liked: boolean) => {
-    if (!liked) {
-      document.cookie = `${encodeURIComponent(name)}=; Max-Age=0; path=/`;
-      return;
-    }
-
-    const expires = new Date(Date.now() + 365 * 864e5).toUTCString();
-    document.cookie = `${encodeURIComponent(name)}=1; expires=${expires}; path=/`;
-  };
-
-  const fetchJson = async (url: string, options: RequestInit) => {
-    const response = await fetch(url, options);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
-  };
-
-  document.querySelectorAll<HTMLElement>('[data-counter]').forEach(async (counter) => {
-    const button = counter.querySelector<HTMLButtonElement>('[data-like]');
-    const slug = cleanSlug(button?.dataset.slug);
-    const likes = counter.querySelector<HTMLElement>('[data-likes]');
-    const views = counter.querySelector<HTMLElement>('[data-views]');
-    if (!button || !slug) return;
-
-    const isLocalhost = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
-    if (isLocalhost) {
-      counter.dataset.unavailable = 'true';
-      if (likes) likes.textContent = '0';
-      if (views) views.textContent = '0';
-      return;
-    }
-
-    const cookieName = `liked_${slug}`;
-    const renderLiked = (liked: boolean) => {
-      button.classList.toggle('liked', liked);
-      button.setAttribute('aria-pressed', String(liked));
-    };
-
-    renderLiked(Object.prototype.hasOwnProperty.call(readCookies(), cookieName));
-
-    try {
-      const data = await fetchJson(`${apiBase}/stats/batch`, {
-        method: 'POST',
-        credentials: 'include',
-        cache: 'no-store',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slugs: [slug] }),
-      });
-      const stats = data[slug];
-      if (likes) likes.textContent = String(stats?.likes ?? 0);
-      if (views) views.textContent = String(stats?.views ?? 0);
-    } catch {
-      counter.dataset.unavailable = 'true';
-      if (likes) likes.textContent = '0';
-      if (views) views.textContent = '0';
-    }
-
-    button.addEventListener('click', async () => {
-      const willLike = !button.classList.contains('liked');
-      button.disabled = true;
-
-      try {
-        const data = await fetchJson(
-          willLike ? `${apiBase}/likes` : `${apiBase}/likes/${encodeURIComponent(slug)}`,
-          willLike
-            ? {
-                method: 'POST',
-                credentials: 'include',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ slug }),
-              }
-            : { method: 'DELETE', credentials: 'include' },
-        );
-        setLikedCookie(cookieName, willLike);
-        renderLiked(willLike);
-        if (likes) likes.textContent = String(data.count ?? 0);
-      } catch {
-        counter.dataset.unavailable = 'true';
-      } finally {
-        button.disabled = false;
-      }
-    });
-  });
+  import { bindMockForms } from '../scripts/mock-form';
+  bindMockForms();
 </script>
 
 <style>
@@ -119,6 +38,7 @@ const text = articleMessages(lang);
   .like-group { align-items: center; display: inline-flex; gap: .35rem; }
   .like-view-counter button { align-items: center; background: white; border: none; color: inherit; display: inline-flex; gap: 0; padding: 0; }
   .like-view-counter .like-count { color: var(--color-text); min-width: 1ch; }
+  .like-view-counter .counter-status { color: var(--color-muted); font-size: .75rem; }
   .like-view-counter .like-icon { fill: none; flex: 0 0 auto; stroke: #d92d20; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
   .like-view-counter button.liked .like-icon { fill: #d92d20; stroke: #d92d20; }
   .like-view-counter button:disabled { cursor: wait; opacity: .65; }
