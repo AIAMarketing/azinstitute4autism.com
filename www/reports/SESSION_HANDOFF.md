@@ -264,10 +264,10 @@ Git identity/signing remains the user’s host-terminal responsibility.
   authorization and employee/clinical data security remain unresolved; current
   metadata-only route is not a completed portal. See the
   [portal brief](employee-portal-migration-brief-2026-10-08.md).
-- **Likes/views API — P9-04:** production fallback outside localhost includes
-  credentialed stats requests and interaction writes. Empty configuration/noindex
-  do not isolate it. Hosted review requires separately authorized fail-closed
-  isolation and evidence of zero production API traffic.
+- **Likes/views API — P9-04:** the uncommitted local implementation now defaults
+  to explicit fail-closed `off`, with deterministic local `mock` behavior and
+  no live adapter. A future live adapter still requires separate API-origin,
+  credential, cookie, consent and production-approval evidence.
 - **Author SEO:** keep archives self-canonical, `noindex,follow` in indexing-enabled
   builds, sitemap-excluded and hreflang-excluded. Changes require explicit approval.
 - **Forms/privacy/analytics/advertising:** approve form destinations and submission
@@ -279,6 +279,32 @@ Git identity/signing remains the user’s host-terminal responsibility.
   rollback and organizational release approval. The temporary Docker/nginx
   trailing-slash HTTPS-to-HTTP-to-HTTPS chain remains explicitly deferred.
   Static-build success does not verify these deployed behaviors.
+
+## Uncommitted extended Phase 10 technical QA — 2026-10-22
+
+The signed baseline remains `e874b26bb9dc24beb6bce2e83a10e7800e7e12b9` on
+`faithful-astro-migration`; this section records uncommitted verification and
+must not be treated as an accepted checkpoint. The local Phase 9 batches for
+counter isolation, off/mock form infrastructure and Contabo release planning
+were revalidated. Two bounded responsive defects were corrected: mobile
+PageHero headings now fit their available width, and the Library two-column
+grid allows its primary track to shrink at tablet width.
+
+The final guarded Chromium pass opened 128/128 staging routes. The responsive
+matrix passed 110/110 checks across 22 routes at 320/390/768/1024/1440px.
+Four Leaflet GET requests were intercepted before transmission; no production
+API, Jotform, Contabo form, analytics, advertising or WebSocket request was
+transmitted. The normal staging artifact has 128 noindex,nofollow pages, an
+empty sitemap and zero hreflang; the indexing artifact has 127 pages, 109
+sitemap URLs and 180 hreflang links, with the temporary `/lp` review index
+excluded.
+
+New local verification tools and reports are described in the Phase 10 audit,
+browser, release-rehearsal and technical-readiness reports. A loopback Node
+release rehearsal passed atomic switch and rollback. nginx, Contabo topology,
+real screen-reader, non-Chromium, fluent-language, clinical, privacy/legal and
+all P9 owner decisions remain pending. No checkpoint SHA is assigned to this
+uncommitted work; the next signed SHA must come from the user's Git history.
 
 ## Next: Phase 9 — Human-Decision Gates
 
