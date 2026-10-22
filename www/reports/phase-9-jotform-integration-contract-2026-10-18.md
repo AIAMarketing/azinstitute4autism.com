@@ -1,10 +1,10 @@
 # P9-03 Jotform integration contract
 
-**Contract ID:** P9-03-JF-2026-10-18 · **Version:** 1.1 · **Date:** 2026-10-18
+**Contract ID:** P9-03-JF-2026-10-18 · **Version:** 1.2 · **Decision revision:** 2026-10-21
 
 **Status: documented planning architecture; implementation and activation NOT authorized.**
 
-This is the authoritative P9-03 planning contract for the owner decisions supplied on October 18. It supersedes conflicting *proposals* in the [October 17 inventory](phase-9-form-entry-point-inventory-2026-10-17.md), without rewriting that historical record. It does not supersede project policy, approve clinical/legal content, close the Phase 9 register, or authorize production changes. Future changes require an explicit owner decision, a version/change record and evidence links. Version 1.0 records the original planning instruction; version 1.1 adds the owner-supplied complete roster without changing decisions or approvals; no future commit SHA is invented.
+This is the authoritative P9-03 planning contract for the owner decisions supplied on October 18 and revised on October 21. It supersedes conflicting *proposals* in the [October 17 inventory](phase-9-form-entry-point-inventory-2026-10-17.md), without rewriting that historical record. It does not supersede project policy, approve clinical/legal content, close the Phase 9 register, or authorize production changes. Future changes require an explicit owner decision, a version/change record and evidence links. Version 1.0 records the original planning instruction; version 1.1 adds the owner-supplied complete roster; version 1.2 supersedes the copy-based Form B proposal with three new blank forms without changing the three-form architecture or pending approvals. No future commit SHA is invented.
 
 Companions: [source-specific implementation plan](phase-9-jotform-implementation-plan-2026-10-18.md), [verification and approval ledger](phase-9-jotform-verification-checklist-2026-10-18.csv).
 
@@ -33,7 +33,8 @@ Evidence classes must remain distinct:
 - **All public lead submissions go directly to Jotform.** No Contabo submission proxy, PHI-bearing webhook, completed form-data forwarding or clinical-document transfer to Contabo.
 - Prefer iframe presentation, preserving Astro design and locale behavior; use a hosted form fallback where embedding is unsuitable.
 - Use three logical forms: **A General Enquiries, B Service Consultations, C Professional Referral Initiation**. Prefer one EN/ES multilingual physical form for each where verified; separate EN/ES copies are a fallback requiring approval.
-- Form B uses a future separately authorized working copy of **AIA Lead Generator | plain**, source ID `250727122848156`. The original is reference-only and must not be modified, cloned, disabled, deleted or repurposed during this task. No working copy exists or is authorized by this contract.
+- **Create three new forms from blank forms:** A General Enquiries, B Service Consultations and C Professional Referral Initiation. Do not clone or repurpose an existing operational form. The former proposal to use a working copy of **AIA Lead Generator | plain** is superseded.
+- The historical source ID `250727122848156` remains reference evidence only. It must not be modified, cloned, disabled, deleted, repurposed or used as an embed destination under this decision. Existing clinical, agreement, billing, event, HR, administrative and CentralReach workflows remain independent.
 - No appointment booking in initial consultation forms. Staff contact the family to arrange follow-up.
 - Begin with the generic Jotform notification in section 8, subject to actual settings/recipient/privacy review. Timestamps and campaign labels are deferred.
 - GA4, Google Ads, GTM, remarketing, enhanced conversions and user-data collection remain disabled/unapproved.
@@ -46,7 +47,7 @@ The user reports that all 27 assets were classified and ENABLED during the Octob
 | Asset | Reference-only form ID | Connector elements | Disposition |
 |---|---|---:|---|
 | AIA Lead Generator | `250207157108146` | 22 | Promotional/structural comparison only; legacy service/waitlist/age claims not approved |
-| AIA Lead Generator &#124; plain | `250727122848156` | 16 | Selected structural source for a future authorized **copy**, never the original live embed |
+| AIA Lead Generator &#124; plain | `250727122848156` | 16 | Historical structural reference only; not a source for cloning and never an embed destination |
 | AIA Client Consultation Form | `231638510219149` | 16 | Operational reference; not selected source; booking/address/child fields not inherited |
 | AIA Event Submission Form | `242248780044153` | 12 | Separate event-calendar request/approval workflow; preserve, do not merge into A |
 | Other clinical/operational assets, combined | 23 additional IDs listed below | Not supplied | Preserve all; no proposed initial-lead reuse |
@@ -90,14 +91,22 @@ Classifications are the **owner-supplied planning categories**, not verified Jot
 
 Validation: **27 rows, 27 unique IDs**. The four previously identified assets are included; the other 23 are now individually listed. The individual roster is no longer outstanding. This fills the metadata inventory gap only: JF-01 through JF-09 and all owner approvals remain pending. The October 17 worksheet and source evidence are preserved unchanged.
 
-`250727122848156` is the selected **source-template ID only**, never an approved production embed ID. Preserve every listed clinical, agreement, billing, event, HR, administrative and other operational workflow; no classification permits modification, repurposing or deletion. This roster contains no submitted answers, patient data, submission metadata or inferred field-level configuration.
+`250727122848156` is a **historical reference ID only**, never an approved production embed ID or blank-form source. Preserve every listed clinical, agreement, billing, event, HR, administrative and other operational workflow; no classification permits modification, repurposing or deletion. This roster contains no submitted answers, patient data, submission metadata or inferred field-level configuration.
 
 
 The plain form's reported update timestamp is `2026-05-07 22:27:30`, timezone unknown. Element counts include headings/static content/buttons and are **not input-field counts**. Its reported input labels are Full Name, Phone Number, E-mail, Service Interest, Location Interest, Insurance & Payment Options, How Did You Hear About Us?, Child's Name, Child's Date of Birth, Child's Age, Additional Information/Comments. These labels do not establish types, IDs, required flags, defaults, PHI settings or option values.
 
 The operational consultation form includes adult contact/service/payment, child name/age, appointment date/time, address, area, source and comments. None is adopted merely because present. The richer Lead Generator's broad children/teens and service/waitlist claims require current organizational review.
 
-**No production embed ID is assigned for A, B or C.** All four existing IDs above are evidence references only. The source B ID must be rejected as the future B working-copy/live mapping. Account slot availability is not creation permission; three new forms would provisionally mean 30/100, while six separate EN/ES forms would mean 33/100, subject to actual reuse and account-limit verification.
+**No production embed ID is assigned for A, B or C.** All four existing IDs above are evidence references only. The former source B ID must be rejected as a clone, working-copy or live mapping. Account slot availability is not creation permission; three new forms would provisionally mean 30/100, subject to actual account-limit verification.
+
+### Revised blank-form decision and legacy review
+
+The owner has selected **three purpose-built forms created from blank Jotform forms**. This avoids inheriting legacy fields, stale service/location/insurance language, conditional logic, recipients, attachments, redirects or other operational settings. The physical target is three forms, with one EN/ES multilingual configuration per form where Builder and runtime verification support it; separate language forms remain a fallback requiring approval.
+
+Each new form is to remain disabled during configuration, use minimum-necessary fields with PHI protection enabled by default, begin with built-in confirmation, and have no unapproved integrations, webhooks, answer-forwarding, PDFs or dynamic notification fields. A short English/Spanish family acknowledgment may be considered later, but it requires language, privacy and account-owner approval and must not echo submitted information.
+
+The owner also reports remediation of the existing `AIA Lead Generator | plain` form: all fields marked PHI-protected, automatic email-template updates disabled, autoresponder content revised to exclude submitted PHI, Spanish autoresponder behavior checked, email delivery tested by the owner and the generated submission PDF attachment removed. These are owner-reported actions, not an independent audit or HIPAA certification. Historical notification recipients, access, retention, delivery, other legacy forms and actual account settings remain separate privacy/operational review items. No submissions or historical emails were accessed.
 
 ## 4. Proposed semantic field contracts
 
@@ -157,20 +166,22 @@ Cross-checked against F-001–F-009 in the local CSV, current source and eligibl
 
 Three implementations, nine instances: seven EN, two ES, zero AR. Eleven GET search instances are not lead forms and must not be disabled or routed to Jotform. No new Arabic form or translated publication is authorized. Spanish service pages currently use Spanish consultation CTAs, not drawers. Arabic visitors retain established English fallbacks and clear language notices. All three logical forms prefer EN/ES capability, but no Spanish referral page or new route is implied.
 
+The five imported landing-page journeys—`/lp/aba-therapy`, `/lp/aba-insurance`, `/lp/aba-ahcccs`, `/lp/aba-private-pay` and `/lp/early-intervention`—are all future Form B destinations. Their current consultation panels remain inactive; they do not add five native form implementations or new Jotform IDs.
+
 Tour's actual CTA currently goes to `/client-consultation` (B destination). A is the provisional proposed Tour mapping, **not a completed route change**. Fundraising awaits owner confirmation. Historical event requests remain separate; do not reinterpret the historical Eventbrite link as the account's Event Submission Form without evidence. `/client-forms` retains existing clinical, agreement, Sign and CentralReach links. The six repository-linked Jotform destinations are not automatically matched to the four named account assets.
 
 `/lp/early-intervention` and the provisional local `/client-consultation` substitution remain P9-01 decisions. Campaign landing pages outside this repository are out of scope. Phone/email legacy-target issues in the inventory remain unresolved; no target is silently replaced.
 
 ## 6. Verification gates — all Pending / Unverified
 
-The connector supplied titles, IDs, enabled status, timestamps, labels and limited summaries—not a full Builder audit. Each gate must record the exact source/working-copy ID, reviewer, date, sanitized evidence and disposition. A source-form finding does not automatically pass the corresponding working-copy gate.
+The connector supplied titles, IDs, enabled status, timestamps, labels and limited summaries—not a full Builder audit. Each gate must record the exact new-form ID when one exists, reviewer, date, sanitized evidence and disposition. A historical-form finding does not automatically pass a newly created blank form's gate.
 
 | Gate | Required verification | Owner / evidence |
 |---|---|---|
 | JF-01 | Types, required flags, defaults, exact options, visibility, internal identifiers, field-level PHI | Account owner + operations/privacy; Builder properties, no answers |
 | JF-02 | Show/hide, skip, calculations, update-field logic, conditional recipients and submission routing | Account owner; sanitized Conditions settings |
 | JF-03 | EN/ES support, complete translation, default/selector, errors, conditional logic, confirmation and embed locale behavior | Account owner + fluent reviewers; Builder plus later authorized runtime tests; never assume `?language=es` |
-| JF-04 | Notifications/autoresponders, recipient roles, subject/body/dynamic tags, attachments, reply-to, conditional routes, default IDs/links, cloned production recipients | Account/privacy owner; sanitized settings, no recipient addresses in public reports |
+| JF-04 | Notifications/autoresponders, recipient roles, subject/body/dynamic tags, attachments, reply-to, conditional routes, default IDs/links and inherited production recipients or defaults | Account/privacy owner; sanitized settings, no recipient addresses in public reports |
 | JF-05 | Native confirmation, redirects, answer echo, all targets, HTTP POST forwarding | Account/privacy owner; Builder; **submission-data POST to Astro/Contabo OFF** |
 | JF-06 | Integrations, webhooks, exports, destinations, Google/analytics, protected-data flows | Account/security/privacy owner; actual integration inventory, not cloning assumptions |
 | JF-07 | HIPAA/form/field protection, spam, availability, prefill, save/continue, access, retention, limits and duplicates | Account/privacy/security owner; settings and approved operational policy |
@@ -189,7 +200,7 @@ Suggested semantic setting: `PUBLIC_AIA_FORMS_MODE`, exact values `off`, `mock`,
 | mock | Synthetic local-only fixture, no external endpoint or real data; safe guarded Playwright use; no Jotform ID required |
 | live | Separate owner/deployment approval; exact approved IDs/HTTPS origins/URLs and build/deploy gate; no automatic original-form fallback. Distinguish authorized isolated test form from authorized production form |
 
-Off/mock output must not contain **new lead embed IDs/URLs or the B source-template ID** in HTML, scripts, preload hints or client bundles. Existing clinical/Sign links intentionally remain in the site; they already contain production destinations. Preserving them conflicts with a blanket “no production ID anywhere” assertion, so this contract's new-embed restriction is scoped to the new lead integration. Existing user-initiated clinical navigation is not permission for automatic loading or test submissions. Do not claim the whole site has zero vendor destinations.
+Off/mock output must not contain **new lead embed IDs/URLs or the historical `250727122848156` reference ID** in HTML, scripts, preload hints or client bundles. Existing clinical/Sign links intentionally remain in the site; they already contain production destinations. Preserving them conflicts with a blanket “no production ID anywhere” assertion, so this contract's new-embed restriction is scoped to the new lead integration. Existing user-initiated clinical navigation is not permission for automatic loading or test submissions. Do not claim the whole site has zero vendor destinations.
 
 A separately approved isolated test can exercise live integration capability with **test-only mappings** and controlled notifications. Normal staging defaults off and cannot inherit production mappings. `PUBLIC_ALLOW_INDEXING` is independent and provides no privacy isolation. Forms modes do not change the separate likes/views API policy or existing map resource behavior; guarded tests still block those endpoints.
 
@@ -214,11 +225,11 @@ No dynamic answer tags, PDFs or other submission attachments, respondent reply-t
 
 Jotform's [HIPAA email guidance](https://www.jotform.com/help/504-how-to-use-notification-and-autoresponder-emails-in-hipaa-accounts/) describes excluding protected fields; its [field-protection guidance](https://www.jotform.com/help/518-How-to-set-PHI-fields-on-your-forms/) requires proper field classification. These do not prove a current template is safe. Inspect the actual copy, approved recipient roles and delivered synthetic message later. Never create a Contabo webhook receiving full answers to generate a generic email.
 
-## 9. Working-copy safety and success measurement
+## 9. Blank-form creation safety and success measurement
 
-No working-copy creation or original mutation is authorized now. A later permitted copy must first be isolated from public access and live notifications/automations using an account-owner-approved process. If immediate isolation cannot be established safely, stop rather than creating an exposed copy. Verify settings before opening/filling it; do not test inherited recipients to discover where mail goes.
+No form creation or original mutation is authorized now. Batch B may create exactly three disabled blank forms only after explicit Jotform mutation authorization naming the forms, account, reviewers, environment and stopping conditions. The new forms must be configured from the approved minimum field contracts, with PHI protection and generic notification defaults reviewed before any synthetic submission. Do not clone, copy, import or repurpose an existing form, and never copy submissions.
 
-The official [cloning guide](https://www.jotform.com/help/27-how-to-clone-an-existing-form-from-your-account/) warns that email settings, including recipients, and several workflow/thank-you settings are copied. It also describes encryption-related changes and differing treatment of integrations/payment connections. This is a reason to audit the actual copy, not a guarantee of AIA's exact copy behavior or HIPAA configuration. Never copy submissions. Capacity and “Clone of” naming do not establish a safe development environment.
+The historical [cloning guide](https://www.jotform.com/help/27-how-to-clone-an-existing-form-from-your-account/) remains evidence for why the owner rejected inheritance: copied forms can carry email settings, recipients and workflow/thank-you behavior, with account-specific treatment of integrations and protection requiring verification. It is not an implementation path. The old source ID `250727122848156` remains reference-only and must be rejected by any future configuration validator. Account capacity does not establish creation permission.
 
 The [Ads handoff](google-ads-consultation-conversion.md) documents account `515-940-4739` and tag `AW-18494479353`, reference-only. Its prior approved-API response premise needs a separate P9-05 redesign for direct Jotform submission. The accepted-submission principle remains; no counting CTA clicks, frame loads, opens, starts, failed attempts, arbitrary thank-you visits or untrusted postMessage events. Cross-origin iframe visibility is not a verified acceptance signal. No success-event name or payload is invented.
 
@@ -232,7 +243,7 @@ All implementation approvals below are **Pending**. Organizational selection of 
 |---|---|---|
 | OA-01 | Intake/operations | Minimum fields, required flags/contact preference consistency, follow-up/callback expectations, Tour/fundraising scope |
 | OA-02 | Clinical leadership | Eligibility, service/evaluation availability, private-pay Social Club distinction, referral boundary and approved claims |
-| OA-03 | Jotform account owner | JF-01–08, safe copy process and actual new IDs/configuration; original preservation |
+| OA-03 | Jotform account owner | JF-01–08, blank-form creation, actual new IDs/configuration and preservation of all existing forms |
 | OA-04 | English/Spanish reviewer | Labels, errors, instructions, confirmations and locale switching; no automatic translation approval |
 | OA-05 | Privacy/legal/security | Protected fields, generic email/headers/recipients, embeds/referrers, vendor flows, access/retention and tracking boundaries |
 | OA-06 | Marketing | Deferred attribution categories and redesigned successful-submission semantics |
@@ -254,3 +265,5 @@ In addition to the specific references above, official guidance reviewed on Octo
 Version 1.0, 2026-10-18: records the owner's three-form/direct-Jotform/no-booking/generic-notification direction and supplied connector evidence; reconciles nine local instances; adds pending verification and authorization gates. Any successor must identify changed decisions, approver/date/evidence and affected implementation batches. Until separately authorized, stop at documentation.
 
 Version 1.1, 2026-10-18: adds the complete owner-supplied 27-ID roster and distinguishes reported metadata from planning classifications. Removes superseded missing-roster statements. Architecture, source-template restrictions, implementation authority and pending approval statuses are unchanged. No Jotform access or mutation occurred during this reconciliation.
+
+Version 1.2, 2026-10-21: records the owner's decision to create three new blank Jotform forms from scratch. Supersedes the earlier working-copy proposal for `250727122848156`; preserves that ID as historical reference evidence only. Adds the owner-reported legacy-form remediation summary, retains all existing workflows, changes Batch B and OA-03 to blank-form creation, and leaves JF-01–09 and all owner approvals Pending/Unverified. No Jotform access or mutation occurred during this documentation revision.

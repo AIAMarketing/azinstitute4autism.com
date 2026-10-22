@@ -1,6 +1,6 @@
 # P9-03 source-specific implementation plan
 
-Date: **2026-10-18** · Plan version **1.1** · Governing contract: [P9-03-JF-2026-10-18 v1.1](phase-9-jotform-integration-contract-2026-10-18.md).
+Date: **2026-10-18** · Plan version **1.2 revision 2026-10-21** · Governing contract: [P9-03-JF-2026-10-18 v1.2](phase-9-jotform-integration-contract-2026-10-18.md).
 
 **Planning only. Do not execute any batch from this document without separate authorization.** Phase 9 establishes decisions and bounded implementation authority. Phase 10 retains final production integration acceptance, rollback and cutover. The user stages, signs and pushes.
 
@@ -24,12 +24,14 @@ Current source-manifest construction confirmed nine eligible enquiry routes and 
 
 Nine instances = 7 EN + 2 ES, three implementations. Eleven GET search instances remain separate. No Arabic enquiry form or Spanish referral route is created. EN/ES-capable logical forms do not imply new published routes.
 
+The five imported landing-page journeys—`/lp/aba-therapy`, `/lp/aba-insurance`, `/lp/aba-ahcccs`, `/lp/aba-private-pay` and `/lp/early-intervention`—are accounted for as future Form B destinations. Their inactive consultation panels are not additional native form implementations and do not have Jotform IDs.
+
 ### Discrepancies and supersession notes
 
 1. October 17 proposed possible event/fundraising consolidation into general enquiries. October 18 explicitly preserves the Event Submission Form separately; fundraising still needs approval. Tour currently points to consultation/B; A is provisional and requires a deliberate approved CTA disposition.
 2. October 17 proposed one chosen contact channel. Current owner field proposal requires adult email for A/B, with B phone undecided. Operations must approve final requirements and contact-preference validation; do not implement the old alternative.
 3. The older report allowed date/time/source notification extensions after review. Initial contract now explicitly defers them; use only the exact generic template after notification approval.
-4. The older inventory knew no confirmed lead source. The supplied October 18 evidence now selects `250727122848156` as a **structural source for a future copy**, not a validated schema or active embed destination.
+4. The older inventory knew no confirmed lead source. The supplied October 18 evidence preserves `250727122848156` as a **historical structural reference only**. The revised owner decision rejects cloning or repurposing it; it is not a validated schema or active embed destination.
 5. Three multilingual forms are the new preference, including C capability. Earlier fallback five physical forms assumed C EN-only; a complete EN/ES physical fallback for all three would be six. No new Spanish route is implied or authorized.
 6. The follow-up owner-supplied roster now lists all 27 unique IDs in contract section 3. IDs/titles are reported connector metadata; classifications are supplied planning categories, not verified settings or usage. Preserve the historical 27/27 ENABLED report. The October 17 worksheet remains unchanged; field/configuration and usage approvals remain pending.
 7. Connector element totals are not field counts; the prompt's plain-form title contains a literal vertical bar. Record the title correctly rather than treating it as an extra table column.
@@ -78,7 +80,7 @@ Logical descriptor semantics: logical form key; supported locale set; reviewed a
 | Off with a stray live URL | Ignore/reject without emitting URL/ID, frame, helper, preload, cookie or vendor request |
 | Mock | Harness-served synthetic document only; no live configuration required or included; no external submission traffic |
 | Live without approved deployment role, logical mapping, locale, exact HTTPS origin/URL or evidence | Build rejection; never silently substitute another form/locale |
-| Live B configured with source `250727122848156` | Reject; a separately created approved working-copy ID is required |
+| Live A, B or C configured with existing source `250727122848156` | Reject; an approved ID from a separately created blank form is required |
 | Unsupported locale | No invented translation; localized approved route fallback where available, otherwise fail configuration safely |
 | Approved isolated-test live configuration | Explicit test-only mapping and recipient controls; no production fallback; separate D authorization |
 | Approved production live configuration | E/F authorization, correct reviewed artifact and mapping; no inference from indexing-enabled build |
@@ -91,38 +93,40 @@ Parent component preserves approved page design, explanatory text, iframe title,
 
 Drawer decision is a prerequisite for replacing its live content: retain timer only if approved and incapable of loading vendor resources without the approved trigger; otherwise use an explicitly approved open/load interaction or full-page fallback. Preserve Escape/initial focus/restoration and test cross-origin focus boundaries. No wholesale dialog replacement.
 
-## 4. Builder review and copy procedure prerequisites
+## 4. Builder review and blank-form creation prerequisites
 
-Use [JF-01–09 and owner gates](phase-9-jotform-verification-checklist-2026-10-18.csv). All start Pending/Unverified. Verify source settings read-only in A; reverify actual working-copy settings in B. Successful source review is not approval of inherited copy settings. Runtime portions of JF-03/08 remain open until D.
+Use [JF-01–09 and owner gates](phase-9-jotform-verification-checklist-2026-10-18.csv). All start Pending/Unverified. Verify the blank-form Builder settings in A/B before any synthetic test; no existing form is a source for inheritance. Runtime portions of JF-03/08 remain open until D.
 
-Before any copy, approve a safe account process that prevents unexpected public submissions, production recipients and automations. The [official clone guide](https://www.jotform.com/help/27-how-to-clone-an-existing-form-from-your-account/) notes that notification settings and several workflow settings can be copied. Do not assume integrations, payments or encryption/protection behave safely in this account. Record exact new ID only after authorized creation; preserve original completely; no copying/importing submissions. If safe immediate isolation cannot be established, stop before copying.
+Before any creation, approve an account process that creates exactly three disabled blank forms, prevents public access and live notifications, and records the new IDs only after the account owner confirms the forms are isolated. Configure minimum fields, PHI protection, generic notifications, confirmation behavior and no-forwarding settings explicitly. Do not copy/import fields, settings or submissions from existing forms. If safe isolation cannot be established, stop before creation.
 
 Review all default/hidden fields, protected flags, conditional routing, reply-to, subjects, attachments, staff recipients, autoresponders, integrations, webhooks, exports, save/continue, limits, duplicates and access/retention. Inspect actual thank-you behavior and ensure answer echo and HTTP POST forwarding to Astro/Contabo are off. Generic notification setup itself requires authorized Jotform mutation; no “test email” to inherited recipients before review.
 
+The owner separately reports that the existing `AIA Lead Generator | plain` form has had field PHI protection enabled, automatic email-template updates disabled, autoresponder content revised to exclude submitted PHI, Spanish autoresponder behavior checked, delivery tested and its generated PDF attachment removed. Treat this as owner-reported remediation only. It does not audit historical recipients, access, retention, other legacy forms or HIPAA compliance, and it does not make that form a source for A/B/C. No submissions or historical emails are to be retrieved in this planning document.
+
 ## 5. Independently authorizable batches
 
-### Batch A — Builder settings verification and final field approval
+### Batch A — Final form specifications
 
 - **Objective:** close configuration knowledge gaps and secure owner decisions, not change forms.
 - **Authorization:** explicit read-only Builder/metadata review scope. No credentials or submissions requested; owner may provide sanitized screenshots/exports. Use the complete roster in contract section 3; verify uncertain generic titles and relevant configuration without retrieving answers or assuming operational usage.
 - **Owners/dependencies:** account owner, operations, clinical, privacy, EN/ES reviewers; JF-01–08 configuration portions, OA-01–05; P9-01 Tour/campaign boundaries where relevant.
-- **Outputs:** versioned source-ID field map, approved semantic schema/options/requirements, notification contract, eligibility/copy decision, clone-safety process, language/embed uncertainties. Update only separately authorized evidence/ledger files.
+- **Outputs:** versioned semantic field map, approved options/required flags, notification contract, eligibility/form decision, blank-form creation procedure, language/embed uncertainties. Update only separately authorized evidence/ledger files.
 - **Acceptance:** distinguish static elements from fields; every proposed field mapped or explicitly pending; no guessed internal IDs or locale behavior. Required callback/contact expectations approved.
 - **Stop:** before any form creation/editing, tests generating notifications, or production mapping.
 
-### Batch B — Safe working-copy creation and notification/redirect review
+### Batch B — Create three blank Jotform forms
 
-- **Objective:** create an isolated B copy from the selected original and separately authorized A/C assets; not repurpose operational originals.
-- **Authorization:** explicit Jotform mutation permission identifying source, action, proposed copy names, isolation steps and whether A/C creation is included. A's source remains undecided; C is a new dedicated form. Capacity is not authorization.
-- **Prerequisites:** A's field decisions and safe isolation procedure; account/privacy owner available; approved test recipient roles; no live notification inheritance accepted.
-- **Systems:** Jotform copies/configuration only, plus sanitized provenance documents. Never edit original B or Event Submission Form.
-- **Acceptance:** record actual new IDs, before/after metadata, copied setting audit, protected fields, generic notification, no booking/child identifiers, no PHI forwarding, no Google integration; JF-01–08 repeated for copy. No submitted data imported.
-- **Stop:** isolated copies reviewed, no synthetic submissions unless D separately authorized; no site embed or live activation.
+- **Objective:** create exactly three purpose-built disabled forms from blank forms: A General Enquiries, B Service Consultations and C Professional Referral Initiation.
+- **Authorization:** explicit Jotform mutation permission naming the three forms, account owner, reviewers, environment, isolation steps, proposed settings and stopping conditions. The historical `250727122848156` form is not a source and must not be cloned or repurposed.
+- **Prerequisites:** Batch A field decisions; account/privacy owner available; approved test recipient roles; blank-form creation confirmed; no production form is edited.
+- **Systems:** new Jotform forms and sanitized provenance documents only. Preserve all 27 existing assets, including clinical, agreement, event and operational workflows.
+- **Acceptance:** record actual new IDs, blank-form provenance, protected fields, generic notification, no booking/child identifiers, no PHI forwarding, no Google integration, and no inherited recipients/conditions/attachments/redirects. JF-01–08 are verified for each new form.
+- **Stop:** new forms remain disabled and unembedded; no synthetic submissions unless Batch D is separately authorized.
 
 ### Batch C — Local-only Astro off/mock integration
 
 - **Objective:** implement typed mode boundary and source-faithful inactive/mock presentation on existing routes.
-- **Authorization:** explicit repository implementation scope; **no Jotform account mutation or external form requests**. Can begin independently of B after minimal fallback/copy/UX decisions; no fabricated schema may substitute for A.
+- **Authorization:** explicit repository implementation scope; **no Jotform account mutation or external form requests**. Can begin independently of B after minimal fallback/form/UX decisions; no fabricated schema may substitute for A.
 - **Files:** proposed files in section 2; bounded edits to ContactForm/FormShell/PageLayout/drawer, form-messages and styles; environment example/types only if needed. Preserve ContactObfuscation, search, map provider, content metadata and publication policies.
 - **Suggested first code slice:** configuration + `/contact` and `/es/contact` off/mock with inert fallback, then remaining seven instances in a separately reviewed continuation. Report partial coverage honestly until all nine are protected. First slice must not claim a whole-site form-isolation guarantee.
 - **Acceptance:** off no POST surface or vendor hints; local mock; EN/ES fallback; invalid configuration tests; guarded Chromium checks and existing regression suites. No live IDs in emitted new lead integration.
@@ -132,7 +136,7 @@ Review all default/hidden fields, protected flags, conditional routing, reply-to
 
 - **Objective:** verify JF-09 and runtime JF-03/08 with actual approved isolated form(s).
 - **Authorization:** separately approve test form IDs, origins, environment, synthetic input set, notification recipient roles, permitted methods/network destinations and test window. This is not covered by GET-only prior browser authorization.
-- **Prerequisites:** B isolation reviewed; C mode guards; operations/privacy/language settings approved. Use loopback preview, exact test-only allowlist; production counters/maps/Google/unrelated resources blocked.
+- **Prerequisites:** Three blank forms created and their configuration review recorded in B; C mode guards; operations/privacy/language settings approved. Use loopback preview, exact test-only allowlist; production counters/maps/Google/unrelated resources blocked.
 - **Acceptance:** actual EN/ES submit/error/cancel/retry behavior; delivered generic emails and headers inspected in a controlled workflow; no answers/identifiers/attachments; no Contabo forwarding; iframe/fallback, keyboard, real screen reader where available, 200%/400% zoom, slow/offline/block scenarios. Use no real patient data; retain only sanitized results.
 - **Stop:** test-form evidence and remaining gates; no production IDs or deployment.
 
@@ -141,7 +145,7 @@ Review all default/hidden fields, protected flags, conditional routing, reply-to
 - **Objective:** prepare reviewed production lead descriptors and page integration without activating them.
 - **Authorization:** separate approval of exact IDs, origins, locales, recipients, privacy/security/operations decisions and static artifact scope. “Staged-site” means a proposed release artifact unless a hosted preview is separately authorized; it never means permission to use Git staging.
 - **Prerequisites:** A–D evidence, OA-01–05 and OA-07, JF settings stable, Tour/evaluation/payment decisions resolved. P9-04 preview isolation remains separate.
-- **Files/systems:** approved typed mapping, reviewed components/messages, tests and configuration documentation; no nginx/DNS/API changes. Working-copy and production IDs must be explicitly distinguished.
+- **Files/systems:** approved typed mapping, reviewed components/messages, tests and configuration documentation; no nginx/DNS/API changes. Isolated-test and production IDs must be explicitly distinguished.
 - **Acceptance:** all nine instances mapped, controlled comparison with approved forms, production-mode artifact inspected without browser egress, normal staging still off; no original-form fallback or publication changes.
 - **Stop:** release-candidate review. No live submissions, notification activation, deployment or indexing activation.
 
@@ -176,13 +180,13 @@ These are specifications for later tests, not test results or executable code ad
 | FT-09 | Screen-reader names/errors/confirmation and EN/ES review | D + human reviewers; remains Pending if unavailable |
 | FT-10 | Actual approved synthetic success/failure, email privacy/headers, no identifiers/attachments/POST forwarding | D only, JF-09; protected data never used |
 | FT-11 | No production Jotform, Contabo form POST, Google/GA4 or counter traffic outside explicitly approved test endpoints | C/D guarded request ledger; attempted versus transmitted distinguished |
-| FT-12 | No booking, child identifiers, unapproved service/payment/location/claim inheritance in approved copy | A/B schema/copy review; D rendered confirmation |
+| FT-12 | No booking, child identifiers, unapproved service/payment/location/claim inheritance in approved form copy | A/B schema/copy review; D rendered confirmation |
 | FT-13 | No conversion on click/load/start/failure/thank-you replay/untrusted message | G only; supported success contract required |
 | FT-14 | Clinical/Sign/CentralReach paths, search and publication invariants unchanged | Existing link/publication suites, C/E |
 
 Existing test/tooling hooks: `www/tools/publication.test.mjs`, `seo.test.mjs`, `library.test.mjs`, `phase8.test.mjs`, `playwright-smoke.mjs` and Phase 8 guarded runners. Extend focused tests; do not duplicate 122 complete page snapshots. Do not put a mock fixture in the published collection or add a production route just to test it.
 
-After an authorized source batch, run sequentially from `www`:
+After an authorized implementation batch, run sequentially from `www`:
 
 ```sh
 npm run check
@@ -207,9 +211,9 @@ Source changes require a newly named offline reconciliation using explicit final
 
 ## 8. Remaining approvals, evidence and next action
 
-First recommended authorized batch: **Batch A**, read-only Builder settings verification and final field approval, using the now-complete owner-supplied 27-asset roster. First safe **code** batch is C's off/mock contact slice after its explicit authorization; it can avoid external account changes while B is pending, but cannot invent Jotform settings.
+First recommended authorized batch: **Batch A**, final blank-form specifications and owner field approval, using the now-complete owner-supplied 27-asset roster as historical context only. First safe **code** batch is C's off/mock contact slice after its explicit authorization; it can avoid external account changes while B is pending, but cannot invent Jotform settings.
 
-Owner ledger OA-01–08 and JF-01–09 are all Pending/Unverified in the companion CSV. Pending facts include actual form question IDs/types/defaults/options, PHI flags, conditional routing, real translations/locale URLs, email recipients/templates, integrations/webhooks/exports, thank-you/POST behavior, security/retention/access, safe clone state and supported success signaling. No new production embed ID is known. A's source/reuse decision and final C creation are pending. Tour/event/fundraising separation must be retained.
+Owner ledger OA-01–08 and JF-01–09 are all Pending/Unverified in the companion CSV. Pending facts include actual new-form question IDs/types/defaults/options, PHI flags, conditional routing, real translations/locale URLs, email recipients/templates, integrations/webhooks/exports, thank-you/POST behavior, security/retention/access, blank-form isolation and supported success signaling. No new production embed ID exists. Final field approval and creation of A/B/C are pending. Tour/event/fundraising separation must be retained.
 
 Any approval record must identify approver role, date, exact form/environment/version, sanitized evidence and scope. An account label ENABLED, a BAA, a successful static build or a generic vendor help article cannot close these gates. Keep the real screen-reader, authorized visual/non-Chromium, fluent-language, clinical, financial and policy/source-provenance requirements from SESSION_HANDOFF.
 
@@ -220,3 +224,5 @@ Preflight branch/HEAD/index checked; three October 17 artifacts present; their c
 Validation passed: local Markdown links, balanced code fences and whitespace; 18 unique checklist gates all Pending/Unverified (INV-01 retains configuration/usage verification, while roster receipt is recorded in its evidence) with blank approval dates; unchanged hashes for the three permitted October 17 inventory artifacts; unchanged tracked files; empty index; and `git diff --check`. Protected exclusions were not hashed or read. This task creates only the two October 18 Markdown documents and sanitized checklist CSV. No account mutation, form creation, submission/network POST, tracking, hosting change, build or deployment is performed. No historical document or living handoff is advanced. Protected exclusions and prior staging aid are neither read nor changed.
 
 Roster reconciliation, version 1.1: only the October 18 contract, plan and checklist were updated. The individual inventory gap is closed by owner-supplied metadata; no JF or owner approval is closed and no implementation batch is executed.
+
+Decision revision, version 1.2, 2026-10-21: the owner superseded the working-copy proposal with three new blank Jotform forms. Batch A now finalizes specifications, Batch B creates the three disabled forms only after explicit mutation authorization, and later batches retain off/mock/live safeguards. The 27-form legacy roster and all existing workflows remain historical/operationally independent. No source components, tests, Jotform forms or production systems were changed.
