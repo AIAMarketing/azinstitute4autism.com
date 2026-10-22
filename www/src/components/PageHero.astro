@@ -32,7 +32,7 @@ const { title, subtitle, image, eyebrow, constrain = false } = Astro.props;
   .page-hero__copy { max-width: 600px; }
   .page-hero--constrained { background-image: var(--hero-image), linear-gradient(var(--color-tint), var(--color-tint)); background-clip: content-box, border-box; background-origin: content-box, border-box; background-position: center, center; background-repeat: no-repeat, repeat; background-size: cover, auto; padding-inline: max(0px, calc((100% - var(--container-w)) / 2)); }
   @media (max-width: 760px) {
-    .page-hero__heading { background: #fffb; padding: 2rem; }
+    .page-hero__heading { background: #fffb; box-sizing: border-box; max-width: 100%; padding: 2rem; width: 100%; }
     .page-hero--image > .container { padding-block: 6.25rem; }
     .page-hero--image { text-align: center; }
     .page-hero--image h1, .page-hero--image h2, .page-hero__copy { margin-inline: auto; }

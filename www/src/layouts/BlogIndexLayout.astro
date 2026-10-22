@@ -28,7 +28,7 @@ const { entry } = await getPublication(Astro.url.pathname);
 <style>
   :global(.library-intro) { background: var(--color-primary); color: white; padding-block: 3rem; }
   :global(.library-intro h2) { color: white; }
-  :global(.library-layout) { align-items: start; display: grid; gap: 3rem; grid-template-columns: 1fr 240px; }
+  :global(.library-layout) { align-items: start; display: grid; gap: 3rem; grid-template-columns: minmax(0, 1fr) 240px; }
   :global(.library-sidebar) { position: sticky; top: 1rem; }
   :global(.library-sidebar h2) { font-size: 1.1rem; margin-top: 2rem; }
   :global(.library-sidebar ul) { list-style: none; padding: 0; }
