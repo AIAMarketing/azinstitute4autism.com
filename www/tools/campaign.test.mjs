@@ -97,6 +97,19 @@ test('inactive lead presentation has no native submission surface or live integr
   }
 });
 
+test('inactive form messaging directs visitors to telephone contact', () => {
+  for (const page of pages) {
+    const $ = html(page);
+    const heroNote = $('.hero .form-note').text();
+    assert.doesNotMatch(heroNote, /forms are available anytime/i);
+    assert.match(heroNote, /online forms are not enabled/i);
+    assert.ok($('.hero .form-note a[href^="tel:"]').length);
+    assert.doesNotMatch($('#lead-form').text(), /By submitting this form/i);
+    assert.match($('#lead-form').text(), /Online submissions are not enabled/i);
+    assert.ok($('#lead-form a[href^="tel:"]').length);
+  }
+});
+
 test('campaign links resolve locally and fragments identify exactly one section', () => {
   for (const page of pages) {
     const $ = html(page);
@@ -139,4 +152,25 @@ test('early-intervention preserves its own publication identity and source secti
   assert.equal($('img[src^="https:"]').length, 0);
   assert.ok($('.early-header').length);
   assert.equal($('.mobile-cta').length, 0);
+});
+
+test('early-intervention inactive copy does not promise online requests', () => {
+  const $ = load(read('dist/lp/early-intervention/index.html'));
+  assert.equal($('.eyebrow').first().text(), 'Evidence-Based ABA Therapy');
+  assert.doesNotMatch($('.qr-landing').text(), /Send a short request/);
+  assert.doesNotMatch($('.qr-landing').text(), /Evidense-Based/);
+  assert.match($('.qr-contact-section').text(), /Online requests are not enabled/);
+  assert.ok($('.qr-hero-actions a[href^="tel:"]').length);
+  assert.ok($('.qr-final-cta a[href^="tel:"]').length);
+  assert.equal($('form').length, 0);
+});
+
+test('campaign claim guardrails retain the approved AHCCCS distinction', () => {
+  const ahcccs = landingPages.ahcccs;
+  assert.match(ahcccs.subhead, /UnitedHealthcare Community Plan/);
+  assert.match(ahcccs.subhead, /only AHCCCS plan/i);
+  assert.ok(ahcccs.payerPoints.some(point => /only AHCCCS plan|(?:no|any) other AHCCCS plan/i.test(point)));
+  assert.match(landingPages.private_pay.payerBody, /HSA\/FSA cards/);
+  assert.match(landingPages.commercial.faq[1].answer, /Blue Cross Blue Shield of Arizona PPO/);
+  assert.doesNotMatch(landingPages.general.faq[1].answer, /diagnos(?:is|es) from AIA/i);
 });
